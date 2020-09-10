@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RulePackDef>
+    <defName>NeoNamer</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[F] '[F]' [F]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class = "Rule_File">
+          <keyword>F</keyword>
+          <path>NeziAvaliNameGen/NeoName</path>
+        </li>
+      </rulesRaw>
+     </rulePack>
+  </RulePackDef>
+    <RulePackDef>
+    <defName>EimilNamer</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[EimilName] [EmilName] [EimilName]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class = "Rule_File">
+            <keyword>EimilName</keyword>
+            <path>NeziAvaliNameGen/EimilName</path>
+          </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+</Defs>

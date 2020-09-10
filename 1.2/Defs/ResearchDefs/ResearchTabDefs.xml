@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ResearchTabDef>
+    <defName>RimValiResearch</defName>
+    <label>Avali [main]</label>
+  </ResearchTabDef>
+  
+  <ResearchTabDef>
+    <defName>AvaliBionics</defName>
+    <label>Avali [bionics]</label>
+  </ResearchTabDef>
+</Defs>

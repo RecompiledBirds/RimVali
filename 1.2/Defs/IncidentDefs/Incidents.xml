@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <IncidentDef>
+    <defName>IlluminatePodDrop</defName>
+    <label>Illuminate Airdrop</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>AvaliMod.IlluminateAirdrop</workerClass>
+    <baseChance>100.0</baseChance>
+  </IncidentDef>
+</Defs>

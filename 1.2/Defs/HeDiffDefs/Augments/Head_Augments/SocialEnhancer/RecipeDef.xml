@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallSC</defName>
+    <label>Install social capability enhancer</label>
+    <description>Install a social capability enhancer.</description>
+    <descriptionHyperlinks><ThingDef>SocialEnhancer</ThingDef></descriptionHyperlinks>
+    <jobString>Installing social capability enhancer.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SocialEnhancer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>SocialEnhancer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>SocialEnhancer</addsHediff>
+  </RecipeDef>
+</Defs>

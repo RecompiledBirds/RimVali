@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>AvaliASR</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/torso</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <techHediffsTags>
+      <li>BasicAvali</li>
+    </techHediffsTags>
+    
+    <label>Autophagic system rewrite augment</label>
+    <description>This augment rewrites the metabolic processes associated with the managment of biological waste. The lymph nodes in the body are altered to generate products from cell waste, which are then recycled. These enhance most body functions.</description>
+    <descriptionHyperlinks><RecipeDef>InstallAvaliTemperatureImplantBasic</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Steel>15</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>0.3</Mass>
+      <MarketValue>50</MarketValue>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliBionics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

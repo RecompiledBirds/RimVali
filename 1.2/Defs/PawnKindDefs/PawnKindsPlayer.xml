@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PawnKindDef Abstract = "True" Name="BaseAvali">
+    <race>RimVali</race>
+    <combatPower>10</combatPower>
+    <baseRecruitDifficulty>0.8</baseRecruitDifficulty>
+    <isFighter>false</isFighter>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+  <forceNormalGearQuality>true</forceNormalGearQuality>
+  </PawnKindDef>
+  <!-- Normal -->
+
+  <PawnKindDef ParentName="BaseAvali">
+    <defName>RimValiColonist</defName>
+    <label>Colonist</label>
+    <defaultFactionType>AvaliPlayerColony</defaultFactionType>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <apparelTags>
+      <li>Spacer</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <techHediffsMoney>
+      <min>0</min>
+      <max>600</max>
+    </techHediffsMoney>
+    <techHediffsTags>
+      <li>BasicAvali</li>
+    </techHediffsTags>
+    <techHediffsChance>0.65</techHediffsChance>
+    <apparelMoney>180~400</apparelMoney>
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="BaseAvali">
+    <defName>RimValiEggColonist</defName>
+    <label>Colonist</label>
+    <defaultFactionType>AvaliPlayerColony</defaultFactionType>
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>    
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="BaseAvali">
+    <defName>RimValiCrashedColonist</defName>
+    <label>Colonist</label>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <apparelTags>
+      <li>Spacer</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <techHediffsMoney>
+      <min>100</min>
+      <max>600</max>
+    </techHediffsMoney>
+    <apparelMoney>100~200</apparelMoney>
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+  </PawnKindDef>
+  <!-- RitualNeo -->
+
+   <PawnKindDef ParentName="BaseAvali">
+    <defName>RitualNeo</defName>
+    <label>RitualNeo</label>
+     <techHediffsTags>
+      <li>BasicAvali</li>
+    </techHediffsTags>
+    <defaultFactionType>NeoPlayerColony</defaultFactionType>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <apparelTags>
+      <li>Spacer</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <apparelMoney>100~200</apparelMoney>
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+  </PawnKindDef>
+  <!-- Eimilian -->
+    <PawnKindDef ParentName="BaseAvali">
+    <defName>Eimilian</defName>
+    <label>Eimilian</label>
+     <techHediffsTags>
+      <li>BasicAvali</li>
+    </techHediffsTags>
+    <defaultFactionType>EimilPlayerColony</defaultFactionType>
+    <chemicalAddictionChance>0.02</chemicalAddictionChance>
+    <apparelTags>
+      <li>Spacer</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <apparelMoney>100~200</apparelMoney>
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+  </PawnKindDef>
+
+</Defs>

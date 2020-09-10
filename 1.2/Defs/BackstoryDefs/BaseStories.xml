@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AlienRace.BackstoryDef Name="MaleBase" Abstract = "true">
+    <femaleCommonality>0</femaleCommonality>
+  </AlienRace.BackstoryDef>
+  <AlienRace.BackstoryDef Name="FemaleBase" Abstract = "true">
+    <maleCommonality>0</maleCommonality>
+  </AlienRace.BackstoryDef>
+    <AlienRace.BackstoryDef>
+    <defName>AvaliChild</defName>
+    <title>Avali</title>
+    <titleShort>Avali</titleShort>
+    <baseDescription>BASE</baseDescription>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>RimValiBackstories</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef>
+    <defName>AvalAdult</defName>
+    <title>Avali</title>
+    <titleShort>Avali</titleShort>
+    <baseDescription>BASE</baseDescription>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>RimValiBackstoriesBase</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef>
+    <defName>AvaliSolider</defName>
+    <title>Illuminate Solider</title>
+    <titleShort>Solider</titleShort>
+    <baseDescription>[PAWN_nameDef] was a solider for the Illuminate. [PAWN_pronoun] was taught many combat tatics, as well as basic first aid.</baseDescription>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>RimValiBackstories</li>
+    </spawnCategories>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef>
+    <defName>AvaliFarmer</defName>
+    <title>Farmer</title>
+    <titleShort>Farmer</titleShort>
+    <baseDescription>On Avalon, [PAWN_nameDef] was a farmer. [PAWN_pronoun] mainly worked with the few plants/microorganisms, due to the conditions on avalon.</baseDescription>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>RimValiBackstories</li>
+    </spawnCategories>
+    <skillGains>
+      <li>
+        <defName>Plants</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef>
+    <defName>AvaliResearcher</defName>
+    <title>Illuminate Researcher</title>
+    <titleShort>Researcher</titleShort>
+    <baseDescription>[PAWN_nameDef] was a researcher for the Illuminate. Even now, they still are, occasionally reporting their scientific findings back to the Illuminate, when [PAWN_pronoun] can.</baseDescription>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>RimValiBackstories</li>
+    </spawnCategories>
+    <skillGains>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef>
+    <defName>AvaliBuilder</defName>
+    <title>Builder</title>
+    <titleShort>Builder</titleShort>
+    <baseDescription>[PAWN_nameDef] learned to construct permanent buildings, and helped with the construction of more permanent settlements on avalon. Now, they are being sent to help construct buildings on other planets.</baseDescription>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>RimValiBackstories</li>
+    </spawnCategories>
+    <skillGains>
+      <li>
+        <defName>Construction</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+  </AlienRace.BackstoryDef>
+</Defs>

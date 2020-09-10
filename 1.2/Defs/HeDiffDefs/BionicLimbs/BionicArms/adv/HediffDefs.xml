@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>AvaliAdvancedBionicArm</defName>
+    <label>Advanced bionic arm</label>
+    <labelNoun>a advanced bionic arm</labelNoun>
+    <description>A advanced bionic avali arm.</description>
+    <spawnThingOnRemoved>AvaliAdvancedBionicArm</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.5</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+          <MaxHitPoints>15</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

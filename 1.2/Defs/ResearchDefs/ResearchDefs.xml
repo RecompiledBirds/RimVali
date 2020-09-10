@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef Abstract="True" Name="BaseAvaliResearch">
+    <tab>RimValiResearch</tab>
+    <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef Abstract="True" Name="BionicAvaliResearch">
+    <tab>AvaliBionics</tab>
+    <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>BasicRimValiTech</defName>
+    <label>Basic Avali Tech</label>
+    <description>Basic avali technologies, such as weapons printing. Although, it seems further research will be needed to do more useful tasks with them...</description>
+    <tab>RimValiResearch</tab>
+    <baseCost>500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>0</researchViewX>
+    <researchViewY>1.50</researchViewY>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+   </ResearchProjectDef>
+   
+   <!-- Tungsten -->
+
+   <ResearchProjectDef>
+     <defName>TungstenProcessingBasic</defName>
+     <label>Basic Tungsten Processing</label>
+     <description>Basic Tungsten processing- you probably wont find much use for this resource right now, but tungsten is great later on.</description>
+     <baseCost>100</baseCost>
+     <techLevel>Industrial</techLevel>
+     <researchViewX>2</researchViewX>
+     <researchViewY>3.75</researchViewY>
+     <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
+     <tab>RimValiResearch</tab>
+     <prerequisites>
+      <li>ResearchNanoForge</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <!-- Nano-forge -->
+  <ResearchProjectDef>
+    <defName>ResearchNanoForge</defName>
+    <label>Nano-forge</label>
+    <description>One of the most important workbenches, this workbench is where tungsten can be processed and weapons made.</description>
+    <baseCost>150</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1</researchViewX>
+    <researchViewY>3.05</researchViewY>
+    <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
+    <tab>RimValiResearch</tab>
+    <prerequisites>
+			<li>BasicRimValiTech</li>
+		</prerequisites>
+  </ResearchProjectDef>
+   <!-- Basic weapons -->
+  <ResearchProjectDef ParentName="BaseAvaliResearch">
+    <defName>AvaliBasicWeapons</defName>
+    <label>Basic Avali Weaponry</label>
+    <description>A few basic weapons. Nothing too special about them.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.90</researchViewY>
+    <prerequisites>
+      <li>ResearchNanoForge</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+  <!-- "Advanced" guns -->
+  <ResearchProjectDef ParentName="BaseAvaliResearch">
+    <defName>AvaliAdvancedGuns</defName>
+    <label>Advanced Avali Guns</label>
+    <description>The avali version of their human counterparts, these weapons are designed to be used at long range.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Ultra</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>3.20</researchViewY>
+    <prerequisites>
+      <li>AvaliBasicWeapons</li>
+      <li>TungstenProcessingBasic</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+  <!-- "Advanced" melee weapons -->
+  <ResearchProjectDef ParentName="BaseAvaliResearch">
+    <defName>AvaliAdvancedMelee</defName>
+    <description>Slightly better than a "pokey stick", as some avali have called previous weapons, these are more likely to be less "pokey" and more "stabny".</description>
+    <label>Advanced Avali Melee weapons</label>
+    <baseCost>500</baseCost>
+    <techLevel>Ultra</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.30</researchViewY>
+    <prerequisites>
+      <li>AvaliBasicWeapons</li>
+    </prerequisites>
+  </ResearchProjectDef>
+   <!-- Nano-loom -->
+  <ResearchProjectDef>
+    <defName>ResearchNanoLoom</defName>
+    <label>Nano-loom</label>
+    <description>Another important workbench, Avali use this for all their weaving needs.</description>
+    <baseCost>150</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.35</researchViewY>
+    <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
+    <tab>RimValiResearch</tab>
+    <prerequisites>
+			<li>BasicRimValiTech</li>
+		</prerequisites>
+  </ResearchProjectDef>
+  
+  <!-- Nano-carbon -->
+    <ResearchProjectDef ParentName="BaseAvaliResearch">
+      <defName>NanoCarbonResearch</defName>
+      <label>Nano-carbon</label>
+      <techLevel>Industrial</techLevel>
+      <description>Nano-carbon, while mostly useless by itself, can be used with nanofiber to create better, stronger cloth-like materials.</description>
+      <researchViewX>2.00</researchViewX>
+      <researchViewY>1.40</researchViewY>
+      <prerequisites>
+			  <li>ResearchNanoForge</li>
+		  </prerequisites>
+    </ResearchProjectDef>
+    
+    <!-- NanoFiber -->
+
+    <ResearchProjectDef ParentName="BaseAvaliResearch">
+      <defName>NanoFibreResearch</defName>
+      <label>Nanofibre</label>
+      <techLevel>Industrial</techLevel>
+      <description>A key element in the creation of most avali cloth-like materials, nanofibre is a good resource to have on hand. It can be used with other materials to create better insulation, or more protective cloth.</description>
+      <researchViewX>2.00</researchViewX>
+      <researchViewY>0.85</researchViewY>
+      <prerequisites>
+			  <li>ResearchNanoLoom</li>
+		  </prerequisites>
+    </ResearchProjectDef>
+    
+    <!-- Aeroweave -->
+    <ResearchProjectDef ParentName="BaseAvaliResearch">
+      <defName>AeroWeaveResearch</defName>
+      <label>Aeroweave</label>
+      <techLevel>Industrial</techLevel>
+      <description>Aero weave is a very insulated cloth, making it perfect for assisting in surviving those hot conditions.</description>
+      <researchViewX>3.00</researchViewX>
+      <researchViewY>0.80</researchViewY>
+      <prerequisites>
+        <li>NanoFibreResearch</li>
+		  </prerequisites>
+    </ResearchProjectDef>
+   <!-- Tungsten Batch (1) -->
+
+   <ResearchProjectDef>
+     <defName>TungstenProcessingBatch</defName>
+     <label>Batch Tungsten Processing</label>
+     <description>Produce twice as much tungsten- you'll need it later.</description>
+     <baseCost>500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>3.00</researchViewX>
+      <researchViewY>4.05</researchViewY>
+     <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
+     <tab>RimValiResearch</tab>
+     <prerequisites>
+			<li>TungstenProcessingBasic</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   <ResearchProjectDef>
+     <defName>TungstenProcessingBatchTwo</defName>
+     <label>Batch Tungsten Processing (2)</label>
+     <description>Produce three times as much tungsten- you'll need it later.</description>
+     <baseCost>1000</baseCost>
+     <techLevel>Ultra</techLevel>
+     <researchViewX>4</researchViewX>
+     <researchViewY>4</researchViewY>
+     <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
+     <tab>RimValiResearch</tab>
+     <prerequisites>
+			<li>TungstenProcessingBatch</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <!-- Aero-tungsten -->
+   <ResearchProjectDef  ParentName="BaseAvaliResearch">
+     <defName>AvaliAeroTungsten</defName>
+     <label>Aero-Tungsten Carbide</label>
+     <description>Aero-Tungsten Carbide, a supermaterial mainly forged from both tungsten and carbon, with other materials mixed in to strengthen the mixture.</description>
+     <baseCost>2000</baseCost>
+     <techLevel>Ultra</techLevel>
+     <researchViewX>3</researchViewX>
+     <researchViewY>4.75</researchViewY>
+     <prerequisites>
+			<li>TungstenProcessingBasic</li>
+		</prerequisites>
+   </ResearchProjectDef>
+
+
+    <!-- Bionics -->
+       <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>BasicAvaliBionics</defName>
+     <label>Basic Bionics</label>
+     <description>Create basic bionics to help avoid your avali getting their arms blown off.</description>
+     <baseCost>1400</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>0</researchViewX>
+     <researchViewY>0</researchViewY>
+   </ResearchProjectDef>
+   
+      <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>BasicAvaliImplants</defName>
+     <label>Basic Implants</label>
+     <description>Design basic implants, capable of assisting with simple body functions and such.</description>
+     <baseCost>500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>1</researchViewX>
+     <researchViewY>0</researchViewY>
+     <prerequisites>
+			<li>BasicAvaliBionics</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>AvaliAdvCooling</defName>
+     <label>Better cooling</label>
+     <description>Get the blueprints to a better TCA, meant to help survive harsher conditions.</description>
+     <baseCost>500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>2</researchViewX>
+     <researchViewY>1</researchViewY>
+     <prerequisites>
+			<li>BasicAvaliImplants</li>
+      <li>MicroelectronicsBasics</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>AvaliEliteCooling</defName>
+     <label>Elite cooling</label>
+     <description>Research the blueprints to one of the most advanced TCA augments ever designed.</description>
+     <baseCost>1500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>3</researchViewX>
+     <researchViewY>1</researchViewY>
+     <prerequisites>
+			<li>AvaliAdvCooling</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>AdvancedAvaliBionics</defName>
+     <label>Advanced Bionics</label>
+     <description>Better, faster, stronger bionics.. but still not the best.</description>
+     <baseCost>2000</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>0</researchViewX>
+     <researchViewY>2</researchViewY>
+     <prerequisites>
+			<li>BasicAvaliBionics</li>
+      <li>MicroelectronicsBasics</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>AvaliFighting</defName>
+     <label>Basic weapon augments</label>
+     <description>Weaponised augments. These make the user much more dangerous.</description>
+     <baseCost>2500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>2</researchViewX>
+     <researchViewY>0</researchViewY>
+     <prerequisites>
+       <li>BasicAvaliImplants</li>
+     </prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>WingRWOne</defName>
+    <label>Wing extensions</label>
+    <description>By themselves, these are actually fairly irritating to use. But in combination with other bionics, maybe they'd be better...</description>
+    <baseCost>3500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>2</researchViewX>
+    <researchViewY>4</researchViewY>
+    <prerequisites>
+      <li>AdvancedAvaliBionics</li>
+    </prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BionicAvaliResearch">
+     <defName>WingRWTwo</defName>
+     <label>Spring-loaded legs</label>
+     <description>These bionic legs are loaded with springs, allowing the user to travel much faster by bouncing on them.</description>
+     <baseCost>4000</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>2</researchViewX>
+     <researchViewY>5</researchViewY>
+     <prerequisites>
+      <li>AdvancedAvaliBionics</li>
+    </prerequisites>
+   </ResearchProjectDef>
+ </Defs>
