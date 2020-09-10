@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModMetaData>
+
+	<name>RimVali: Far From Avalon</name>
+	<author>Nesi The Avali, Zentimental</author>
+	<supportedVersions>
+    <li>1.2</li>
+  </supportedVersions>
+	<packageId>NeziTheAvali.RimVali</packageId>
+	<description>
+[WIP]
+[Please dont add this to a save you care about until it’s done.]
+Yes, another Avali mod.
+
+This particular mod is designed to focus more on the tech-y side of Avali, especially features like augmentation and such. It has (or will/is planned to have, at time of writing (Date: 8/3/20)) the following:
+
+==============================================================
+
+-Avali
+
+-> Probably the reason you came here, these little fluffy raptors may not be much by themselves, but they’re not to be messed with in packs. Avali prefer to sleep in barracks, rather than indivual bedrooms, and will receive a negative thought if they sleep alone. They prefer colder temperatures, and will easily get heatstroke in hotter temperatures without augmentation. You can tell their gender based on the markings. (Also, you might notice the markings are their own colour. This is WIP.) You can also buy eggs from traders, if you feel you don’t have enough Avali. Keep the eggs cold though!
+
+==============================================================
+
+-Research
+
+-> Avali have their own research. To get most of it, you’ll need an Avali and an Avali research bench. From there you’ll be able to research their tech, materials, augments, etc.
+
+==============================================================
+
+-Weapons
+
+-> Avali ranged weaponry is rail-based. No muzzle flash, and long range. These weapons tend to be more accurate long range, and shouldn’t be used at close range.
+
+-> Avali melee weapons, such as the viroblade.
+
+==============================================================
+
+-Resources
+
+->Tungsten. Used in Avali weaponry and some structure building, tungsten is very strong. However, it is also quite expensive to build with.
+
+-> Aerogel (“Ferrogel”, due to the fact you use steel). A orange building resource, slightly stronger than steel and somewhat pretty.
+
+-> Nanofiber. A fiber made of cloth, woven at a nano-loom. Somewhat stronger and better for deflecting bullets.
+
+-> Aeroweave. A great insulator, Aeroweave will help survive those hot temperatures.
+
+-> Aero-Tungsten carbide. A supermaterial, mainly constructed of Tungsten and Aerogel.
+
+==============================================================
+
+-Buildings
+
+-> Nano-Forge. Here, Tungsten is processed and weapons are made.
+
+-> Nano-Loom. Used for weaving, the nano-loom is essential in making Avali cloth materials.
+
+-> Research bench. The Avali research bench is needed to research Avali technologies.
+
+==============================================================
+
+-Cybernetics
+
+-> Basic and advanced bionics. Avali are fairly weak at the start, so some basic bionics should help solve that issue. The bionics are more durable, and slightly better than their biological counterparts. The advanced bionics are for later in the game, and are better than their biological counterparts in almost every way.
+
+-> Augments. Avali are known to have at least a small amount of augments that aren’t always visible, like a temperature regulation system to help them out in the hotter temperatures. These augments can provide boosts to different stats, such as manipulation, limb health, and more. However, not all augments work together, and some have their downsides. So be careful when building your crazy avali war-cyborg or whatever you do.
+
+==============================================================
+
+-RimThemes
+
+-> Comes with 1 theme, when RimThemes is loaded.
+
+==============================================================
+
+Discord: https://discord.gg/RpCM3RU
+
+
+Avali are by RyuujinZERO.
+
+==============================================================
+
+This mod IS compatible with Jaffer’s avali mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1034393407
+Backstories, weapons, etc (excluding apparel) from this mod are all useable by Jaffer’s Avali. The reverse also applies (Avali from this mod can use content from Jaffer’s)
+
+This mod may be compatible with “Avali Continued”, HOWEVER compatibly WILL NOT be supported, at this time.
+
+This mod uses MoHar: https://steamcommunity.com/sharedfiles/filedetails/?id=2057001924
+
+==============================================================
+
+In regards to patches and addons:
+Feel free to create addons/patches for this. I wouldn’t try to stop you, even if I didn’t like it. (I see it as free help, tbh.) Obviously I can’t provide support for every mod in the world myself (I wish I could), or something everyone wants.
+
+I’m also usually pretty happy to help with those apparel patches. (The code part)
+
+==============================================================
+	</description>
+  <modDependencies>
+     <li>
+       <packageId>erdelf.HumanoidAlienRaces</packageId>
+       <displayName>HumanoidAlienRaces 2.0</displayName>
+       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=839005762</steamWorkshopUrl>
+     </li>
+     <li>
+       <packageId>UnlimitedHugs.HugsLib</packageId>
+       <displayName>hugsLib</displayName>
+       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
+     </li>
+  </modDependencies>
+  <loadAfter>
+    <li>erdelf.HumanoidAlienRaces</li>
+  </loadAfter>
+  <incompatibleWith>
+    <li>Erisss.Ksisa.Avali</li>
+	</incompatibleWith>
+</ModMetaData>
