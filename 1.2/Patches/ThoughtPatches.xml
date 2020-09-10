@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Modifies rimworld's bedroom thoughts so our's work properly. No impact on gameplay for humans/other races using vanilla thoughts. -->
+
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThoughtDef[defName="SleptInBedroom"]/stages/li[2]</xpath>
+    <value>
+      <li>
+        <label>dull bedroom</label>
+        <description>My bedroom is dull and boring.</description>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThoughtDef[defName="SleptInBedroom"]/stages/li[3]</xpath>
+    <value>
+      <li>
+        <label>mediocre bedroom</label>
+        <description>My bedroom is mediocre.</description>
+      </li>
+    </value>
+  </Operation>
+</Patch>
