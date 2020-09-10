@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TerrainDef ParentName="TileMetalBase">
+      <defName>TungstenTile</defName>
+      <label>Tungsten tile</label>
+      <renderPrecedence>240</renderPrecedence>
+      <description>Tungsten tiles, with a nice shine to them.</description>
+      <color>(163,134,116)</color>
+      <statBases>
+        <WorkToBuild>800</WorkToBuild>
+        <Beauty>2</Beauty>
+        <Cleanliness>0.5</Cleanliness>
+      </statBases>
+      <costList>
+      <AvaliTungstenPowder>7</AvaliTungstenPowder>
+    </costList>
+    <designationHotKey>Misc7</designationHotKey>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+  </TerrainDef>
+  <TerrainDef ParentName="TileMetalBase">
+      <defName>AeroTungstenTile</defName>
+      <label>Aero-Tungsten Carbide tile</label>
+      <renderPrecedence>240</renderPrecedence>
+      <description>A metallic, white tile. It looks quite nice.</description>
+      <color>(255,255,255)</color>
+      <statBases>
+        <WorkToBuild>800</WorkToBuild>
+        <Beauty>3</Beauty>
+        <Cleanliness>0.6</Cleanliness>
+      </statBases>
+      <costList>
+      <AeroTungstenCarbide>7</AeroTungstenCarbide>
+    </costList>
+    <designationHotKey>Misc7</designationHotKey>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+  </TerrainDef>
+  <TerrainDef ParentName="TileMetalBase">
+      <defName>AerogellTile</defName>
+      <label>Ferrogel tile</label>
+      <renderPrecedence>240</renderPrecedence>
+      <description>A bright orange tile made from ferrogel.</description>
+      <color>(244,119,33)</color>
+      <statBases>
+        <WorkToBuild>800</WorkToBuild>
+        <Beauty>1</Beauty>
+        <Cleanliness>0.3</Cleanliness>
+      </statBases>
+      <costList>
+      <AvaliAerogel>7</AvaliAerogel>
+    </costList>
+    <designationHotKey>Misc7</designationHotKey>
+  </TerrainDef>
+</Defs>

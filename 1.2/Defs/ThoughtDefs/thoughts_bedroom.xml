@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Alone thoughts -->
+
+  <ThoughtDef>
+    <defName>AvaliSleptWithoutPack</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>Slept without pack</label>
+        <description>I had to sleep without my pack..</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Shared room thoughts -->
+
+  <ThoughtDef>
+  <defName>AvaliSharedBedRoom</defName>
+  <durationDays>1</durationDays>
+  <stackLimit>1</stackLimit>
+  <stages>
+    <li>
+      <label>Slept with pack</label>
+      <description>This. Is. Amazing. My packmates love it, I love it, I hope we never have to leave this place.</description>
+      <baseMoodEffect>4</baseMoodEffect>
+    </li>
+   </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>AvaliSharingRoom</defName>
+    <durationDays>1</durationDays>
+  <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>With pack</label>
+        <description>With my pack, I'll always feel a bit better.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

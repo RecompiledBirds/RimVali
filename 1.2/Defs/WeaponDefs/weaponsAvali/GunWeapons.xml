@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- Base guns -->
+
+  <ThingDef Name="AvaliGun" Abstract="True" ParentName="BaseWeapon">
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <statBases>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>      
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="AvaliGunWithQuality" Abstract="True" ParentName="AvaliGun">
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="AvaliMakeableGun" ParentName="AvaliGunWithQuality" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  <!-- Pistol bullet -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>AvaliPistolBullet</defName>
+    <label>Avali Bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>11</damageAmountBase>
+      <stoppingPower>2</stoppingPower>
+      <speed>65</speed>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Pistol -->
+  <ThingDef ParentName="AvaliMakeableGun">
+    <defName>AvaliPistol</defName>
+    <label>Avali Pistol</label>
+    <description>A common avali pistol. Unlike most human pistols, this gun uses rail technology to fire its bullets.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Pistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>500</WorkToMake>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.9</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.4</AccuracyLong>
+      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>AvaliPistolBullet</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>10</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <AvaliTungstenPowder>5</AvaliTungstenPowder>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  <!-- SMG bullet -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>AvaliSMGBullet</defName>
+    <label>Avali SMG bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <speed>50</speed>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <!-- SMG -->
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>AvaliSMG</defName>
+    <label>Avali SMG</label>
+    <description>A railgun based SMG. Works best at long range, like most avali weapons do.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/SMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>34000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.40</AccuracyTouch>
+      <AccuracyShort>0.5</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.7</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <AvaliTungstenPowder>15</AvaliTungstenPowder>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>AvaliSMGBullet</defaultProjectile>
+        <warmupTime>1.8</warmupTime>
+        <range>30.4</range>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  <!-- Rife bullet -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>AvaliRifleBullet</defName>
+    <label>Avali Rifle bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/RifleBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <speed>80</speed>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+    <!-- Rifle -->
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>AvaliRifle</defName>
+    <label>Avali Rifle</label>
+    <description>A classic railgun weapon, the rifle. Good for taking out enemies at a distance.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>34000</WorkToMake>
+      <Mass>5.5</Mass>
+      <AccuracyTouch>0.3</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.6</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <AvaliTungstenPowder>10</AvaliTungstenPowder>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>AvaliRifleBullet</defaultProjectile>
+        <warmupTime>1.8</warmupTime>
+        <range>40.5</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+    <!--Sniper Rife bullet -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>AvaliSniperBullet</defName>
+    <label>Avali Sniper Rifle bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SniperBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <speed>100</speed>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+    <!-- Sniper rifle -->
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>AvaliSniperRifle</defName>
+    <label>Avali Sniper Rifle</label>
+    <description>A weapon, perfect for picking off enemies at a distance</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/SniperRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>34000</WorkToMake>
+      <Mass>5.5</Mass>
+      <AccuracyTouch>0.6</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.9</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentSpacer>5</ComponentSpacer>
+      <AvaliTungstenPowder>3</AvaliTungstenPowder>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>AvaliRifleBullet</defaultProjectile>
+        <warmupTime>5</warmupTime>
+        <range>55</range>
+        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+    <!-- Shotgun bullet -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>AvaliShotgunBullet</defName>
+    <label>Avali Shotgun bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/ShotgunBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <speed>50</speed>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Shotgun -->
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>AvaliShotgun</defName>
+    <label>Avali Shotgun</label>
+    <description>An avali shotgun. Unlike classic avali technologies, this weapon does NOT use rail technology to fire, and is much closer to a human gun than the others.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>34000</WorkToMake>
+      <Mass>5.5</Mass>
+      <AccuracyTouch>0.56</AccuracyTouch>
+      <AccuracyShort>0.66</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.8</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <AvaliTungstenPowder>5</AvaliTungstenPowder>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>AvaliShotgunBullet</defaultProjectile>
+        <warmupTime>1.3</warmupTime>
+        <range>25</range>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_Shotgun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThoughtDef>
+    <defName>NonAvaliAteEgg</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Ate avali egg</label>
+        <description>That egg tasted decent.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>AvaliAteEgg</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Ate avali egg</label>
+        <description>I had to eat an avali egg... one of our own kind..</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>AvaliAteHumamlikeDirect</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Ate humanlike</label>
+        <description>It probably would have tasted better cooked.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>AvaliAteHumanlikeCooked</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Ate humanlike as ingredient</label>
+        <description>It tasted ok, I suppose.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>AvaliButcheredHumanlike</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Butchered humanlike</label>
+        <description>I butchered a sentient creature</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AvaliKnowButcheredHumanLike</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>A humanlike was butchered</label>
+        <description>A sentient creature was butchered.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

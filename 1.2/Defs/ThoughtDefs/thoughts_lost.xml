@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThoughtDef>
+    <defName>KitLost</defName>
+    <stages>
+      <li>
+        <label>My kit {0} is missing</label>
+        <description>My kit is missing.. I hope they return someday.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>MateLost</defName>
+    <stages>
+      <li>
+        <label>My mate {0} is missing</label>
+        <description>My mate is missing.. I hope they'll return soon.</description>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="LostMemoryFamily">
+    <defName>MyParentLost</defName>
+    <stages>
+      <li>
+        <label>My parent {0} is missing</label>
+        <description>One of my parents is missing. I hope they find their way back, someday.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="LostMemory">
+    <defName>PackmateLost</defName>
+    <durationDays>20</durationDays>
+    <stackLimit>50</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>My packmate {0} is missing</label>
+        <description>My packmate is missing... the world just isn't the same without them.</description> 
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <stuffCategoryDef>
+      <defName>AvaliFabrics</defName>
+      <label>Avali Fabrics</label>
+  </stuffCategoryDef>
+  <stuffCategoryDef>
+      <defName>Tungsten</defName>
+      <label>Tungsten</label>
+  </stuffCategoryDef>
+</Defs>

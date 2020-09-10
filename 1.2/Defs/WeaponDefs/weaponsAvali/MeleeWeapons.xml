@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef Name="AvaliMeleeWeapon_Sharp_Quality" Abstract="True" ParentName="BaseMeleeWeapon_Sharp">
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponMelee</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Scythe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliScythe</defName>
+    <label>Avali Scythe</label>
+    <description>A high tech scythe, complete with a built-in 3D function that keeps the blade from breaking.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>10</AvaliAerogel>
+      <Steel>20</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali Scythe Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Scythe Blade</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Spear</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliSpear</defName>
+    <label>Avali Spear</label>
+    <description>An avali spear. The handle has a built in 3D printer for the blade, using aerogel.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costList>
+      <AvaliAerogel>5</AvaliAerogel>
+      <Steel>35</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali Spear Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Spear Blade</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>5</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+      <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Viroblade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliViroblade</defName>
+    <label>Avali Viroblade</label>
+    <description>The most well known/"classic" Avali weapon, the viroblade is seen many places. Some variants of it are called a "singing" blade, named for the noise they make.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>15</AvaliAerogel>
+      <Steel>35</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali Viroblade Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>3</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Viroblade guard</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Viroblade</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+</Defs>

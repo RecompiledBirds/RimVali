@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <defName>AvaliResourceTrader</defName>
+  <label>Trader</label>
+  <stockGenerators>
+    <li Class="StockGeneratorCategory">
+      <categoryDef>FoodMeals</categoryDef>
+      <thingDefCountRange>
+        <min>0</min>
+        <max>10</max>
+      </thingDefCountRange>
+      <countRange>
+        <min>1</min>
+        <max>5</max>
+      </countRange>
+    </li>
+    <li Class="StockGenerator_SingleDef">
+      <thingDef>AvaliAerogel</thingDef>
+      <countRange>
+        <min>0</min>
+        <max>10</max>
+      </countRange>
+    </li>
+    <li Class="StockGenerator_SingleDef">
+      <thingDef>Silver</thingDef>
+      <countRange>
+        <min>100</min>
+        <max>3000</max>
+      </countRange>
+    </li>
+  </stockGenerators>
+</Defs>
