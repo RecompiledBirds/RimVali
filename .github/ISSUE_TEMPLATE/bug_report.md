@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Report issues with this template, and we'll look into it!
 title: ''
 labels: bug
 assignees: ''
@@ -26,3 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Additional context**
 Add any other context about the problem here.
 If you also have other mods, please tell us.
+
+
+**(Optional, for modders) Suggested fix**
+If you have a suggestion on how to fix this bug, feel free to leave it here.
