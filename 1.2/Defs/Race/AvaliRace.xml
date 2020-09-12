@@ -76,6 +76,22 @@
                 <sharedBedroomThought>AvaliSharedBedRoom</sharedBedroomThought>
                 <sleptApartThought>AvaliSleptWithoutPack</sleptApartThought>
             </li>
+            
+            <li Class="AvaliMod.PackProps">
+              <racesInPacks>
+                <li>RimVali</li>
+              </racesInPacks>
+              <aloneThought>AvaliPackLoss</aloneThought>
+              <relation>AvaliTest</relation>
+            </li>
+            
+            
+            <li Class="AvaliMod.AvaliEggLayer_Props">
+              <eggLayIntervalDays>30</eggLayIntervalDays>
+              <eggCountRange>1</eggCountRange>
+              <eggFertilizationCountMax>1</eggFertilizationCountMax>
+              <eggFertilizedDef>AvaliEgg</eggFertilizedDef>
+            </li>
         </comps>
         <drawGUIOverlay>true</drawGUIOverlay>
     </AlienRace.ThingDef_AlienRace>
