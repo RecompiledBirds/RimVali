@@ -9,7 +9,7 @@ namespace AvaliMod
         public static Dictionary<SkillRecord, float> Skills(Pawn pawn)
         {
             Dictionary<SkillRecord, float> skillNums = new Dictionary<SkillRecord, float>();
-            List<SkillRecord> skills = pawn.skills.skills;
+            IEnumerable<SkillRecord> skills = pawn.skills.skills;
             foreach (SkillRecord skill in skills)
             {
                 skillNums.Add(skill, skill.XpTotalEarned);
@@ -20,15 +20,16 @@ namespace AvaliMod
         public static Dictionary<Pawn, PawnRelationDef> PawnRelations(Pawn pawn)
         {
             Dictionary<Pawn, PawnRelationDef> relatedPawnsToReturn = new Dictionary<Pawn, PawnRelationDef>();
-            List<Pawn> pawns = pawn.relations.RelatedPawns.ToList<Pawn>();
-            foreach(Pawn relatedPawn in pawns)
+            
+            IEnumerable<Pawn> pawns = pawn.relations.RelatedPawns;
+            foreach (Pawn relatedPawn in pawns)
             {
                 int onRelation = 0;
-                while(onRelation > relatedPawn.relations.RelatedPawns.Count())
+                while (onRelation > relatedPawn.relations.RelatedPawns.Count())
                 {
-                    foreach(PawnRelationDef relationDef in RimValiRelationsFound.relationsFound)
+                    foreach (PawnRelationDef relationDef in RimValiRelationsFound.relationsFound)
                     {
-                        if(relatedPawn.relations.DirectRelationExists(relationDef, pawn))
+                        if (relatedPawn.relations.DirectRelationExists(relationDef, pawn))
                         {
                             relatedPawnsToReturn.Add(relatedPawn, relationDef);
                         }
@@ -41,27 +42,27 @@ namespace AvaliMod
 
         public static Dictionary<Trait, int> Traits(Pawn pawn)
         {
-            List<Trait> traits = pawn.story.traits.allTraits;
+            IEnumerable<Trait> traits = pawn.story.traits.allTraits;
             Dictionary<Trait, int> traitDataToReturn = new Dictionary<Trait, int>();
-            foreach(Trait trait in traits)
+            foreach (Trait trait in traits)
             {
                 traitDataToReturn.Add(trait, trait.Degree);
             }
             return traitDataToReturn;
         }
-        
-                
+
+
 
 
         public static bool CheckIfPackmatesInRoom(Pawn pawn, PawnRelationDef relationDef)
         {
             Room room = pawn.GetRoom();
-            if(!(room == null) && (pawn.Position.Roofed(pawn.Map)))
+            if (!(room == null) && (pawn.Position.Roofed(pawn.Map)))
             {
-                List<Pawn> pawns = RimValiUtility.GetPackPawns(pawn, relationDef);
-                foreach(Pawn packmate in pawns)
+                IEnumerable<Pawn> pawns = RimValiUtility.GetPackPawns(pawn, relationDef);
+                foreach (Pawn packmate in pawns)
                 {
-                    if(packmate.GetRoom(RegionType.Set_Passable) == room)
+                    if (packmate.GetRoom(RegionType.Set_Passable) == room)
                     {
                         return true;
                     }
@@ -75,7 +76,7 @@ namespace AvaliMod
         public static int GetPackSize(Pawn pawn, PawnRelationDef relationDef)
         {
             int foundMembers = 1;
-            List<Pawn> relatedPawns = pawn.relations.RelatedPawns.ToList<Pawn>();
+            IEnumerable<Pawn> relatedPawns = pawn.relations.RelatedPawns;
             foreach (Pawn packmate in relatedPawns)
             {
                 if (packmate.relations.DirectRelationExists(relationDef, pawn) || pawn.relations.DirectRelationExists(relationDef, packmate))
@@ -86,13 +87,27 @@ namespace AvaliMod
             return foundMembers;
         }
 
+        public static IEnumerable<Pawn> AllPawnsOfRaceOnMap(ThingDef race, Map map)
+        {
+            IEnumerable<Pawn> pawns = map.mapPawns.AllPawns;
+            List<Pawn> pawnsToReturn = new List<Pawn>();
+            foreach(Pawn pawn in pawns)
+            {
+                if(pawn.def == race)
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            return pawnsToReturn;
+        }
+
         public static IEnumerable<Pawn> CheckAllPawnsInMapAndFaction(Map map, Faction faction)
         {
-            List<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
+            IEnumerable<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
             List<Pawn> pawnsInMap = new List<Pawn>();
             foreach (Pawn pawn in pawns)
             {
-                if(pawn.Map == map)
+                if (pawn.Map == map)
                 {
                     pawnsInMap.Add(pawn);
                 }
@@ -111,12 +126,12 @@ namespace AvaliMod
             {
                 if (room.ContainedBeds.Count() > 0)
                 {
-                    List<Building_Bed> beds = room.ContainedBeds.ToList<Building_Bed>();
+                    IEnumerable<Building_Bed> beds = room.ContainedBeds;
                     foreach (Building_Bed bed in beds)
                     {
                         if (bed.OwnersForReading != null)
                         {
-                            List<Pawn> owners = bed.OwnersForReading;
+                            IEnumerable<Pawn> owners = bed.OwnersForReading;
                             foreach (Pawn other in owners)
                             {
                                 if (other.relations.DirectRelationExists(relationDef, pawn))
@@ -127,7 +142,7 @@ namespace AvaliMod
                         }
                     }
                 }
-                if(packmatesFound > 0)
+                if (packmatesFound > 0)
                 {
                     return true;
                 }
@@ -140,7 +155,7 @@ namespace AvaliMod
         }
 
 
-            public static void AddThought(Pawn pawn, ThoughtDef thought)
+        public static void AddThought(Pawn pawn, ThoughtDef thought)
         {
             pawn.needs.mood.thoughts.memories.TryGainMemory(thought);
         }
@@ -150,10 +165,10 @@ namespace AvaliMod
             pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(thought);
         }
 
-        public static List<Pawn> GetPackPawns(Pawn pawn, PawnRelationDef relationDef)
+        public static IEnumerable<Pawn> GetPackPawns(Pawn pawn, PawnRelationDef relationDef)
         {
             List<Pawn> packmates = new List<Pawn>();
-            List<Pawn> pawns = pawn.relations.RelatedPawns.ToList<Pawn>();
+            IEnumerable<Pawn> pawns = pawn.relations.RelatedPawns.ToList<Pawn>();
             foreach (Pawn packmate in pawns)
             {
                 if (packmate.relations.DirectRelationExists(relationDef, pawn))
@@ -180,17 +195,14 @@ namespace AvaliMod
 
 
 
-        public static void RemovePackRelationIfDead(Pawn pawn, Pawn packmate, Pawn packmate2, PawnRelationDef relationDef)
+        public static void RemovePackRelationIfDead(Pawn pawn, List<Pawn> packmates, PawnRelationDef relationDef)
         {
-            if (packmate.Dead || packmate2.Dead || packmate.DestroyedOrNull() || packmate2.DestroyedOrNull() || pawn.Dead || pawn.DestroyedOrNull())
+            foreach (Pawn packmate in packmates)
             {
-                packmate.relations.RemoveDirectRelation(relationDef, packmate2);
-                packmate2.relations.RemoveDirectRelation(relationDef, packmate);
-
-                packmate.relations.RemoveDirectRelation(relationDef, pawn);
-                packmate2.relations.RemoveDirectRelation(relationDef, pawn);
-                pawn.relations.RemoveDirectRelation(relationDef, packmate);
-                pawn.relations.RemoveDirectRelation(relationDef, packmate2);
+                if (packmate.DestroyedOrNull())
+                {
+                    pawn.relations.RemoveDirectRelation(relationDef, packmate);
+                }
             }
         }
 
@@ -220,7 +232,8 @@ namespace AvaliMod
 
         public static int PawnOfRaceCount(Faction faction, ThingDef race)
         {
-            List<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
+
+            IEnumerable<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
             int foundMatches = 0;
             foreach (Pawn pawn in pawns)
             {
@@ -232,9 +245,9 @@ namespace AvaliMod
             return foundMatches;
         }
 
-        public static List<Pawn> PawnsOfRaceInFaction(ThingDef race, Faction faction)
+        public static IEnumerable<Pawn> PawnsOfRaceInFaction(ThingDef race, Faction faction)
         {
-            List<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
+            IEnumerable<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
             List<Pawn> pawnsToReturn = null;
             foreach (Pawn pawn in pawns)
             {
@@ -329,7 +342,6 @@ namespace AvaliMod
         }
 
 
-
         public static void MakePack(Pawn pawn, PawnRelationDef relationDef, List<ThingDef> racesInPacks, int packLimit)
         {
             IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction);
@@ -353,13 +365,21 @@ namespace AvaliMod
                                             {
                                                 if (!(packmate2.relations.DirectRelationExists(relationDef, packmate)))
                                                 {
-                                                    if (!(GetPackSize(packmate, relationDef) >= packLimit))
+                                                    if (!(GetPackSize(packmate, relationDef) >= packLimit) && !(GetPackSize(packmate2, relationDef) >= packLimit))
                                                     {
                                                         packmate2.relations.AddDirectRelation(relationDef, packmate);
                                                         packmate.relations.AddDirectRelation(relationDef, packmate2);
                                                         CollectPackmates(packmate, packmate2, relationDef);
                                                     }
+                                                    else
+                                                    {
+                                                        break;
+                                                    }
                                                     TrimPack(packmate, packmate2, relationDef, packmate.Faction, packLimit);
+                                                }
+                                                else
+                                                {
+                                                    break;
                                                 }
                                             }
                                         }

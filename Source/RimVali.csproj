@@ -70,10 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packs\PackMapComponents\AvaliThoughtDriver.cs" />
+    <Compile Include="Packs\PackMapComponents\PackDriver\PackDiverMapComp.cs" />
+    <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
+    <Compile Include="Packs\PackMapComponents\ThoughtDriver\AvaliThoughtDriver.cs" />
     <Compile Include="HarmonyPatches\ApparelPatch.cs" />
-    <Compile Include="Packs\PackMapComponents\ThingComp\AvaliThoughtDriverComp.cs" />
-    <Compile Include="Packs\PackMapComponents\ThingComp\AvaliThoughtDriverProps.cs" />
+    <Compile Include="Packs\PackMapComponents\ThoughtDriver\ThingComps\AvaliThoughtDriverComp.cs" />
+    <Compile Include="Packs\PackMapComponents\ThoughtDriver\ThingComps\AvaliThoughtDriverProps.cs" />
     <Compile Include="HediffStuff\TraitsOverTime\TraitsOverTimeClass.cs" />
     <Compile Include="ShowTextV3\showTextV3Props.cs" />
     <Compile Include="ShowTextV3\showTextPropsV3Class.cs" />
@@ -81,10 +83,9 @@
     <Compile Include="RimValiUtilities\ReturnData.cs" />
     <Compile Include="RimValiUtilities\RimValiSettings.cs" />
     <Compile Include="RimValiUtilities\RimValiUtils.cs" />
-    <Compile Include="Packs\HediffComp\PackHediffComp.cs" />
-    <Compile Include="Packs\HediffComp\PackHediffProps.cs" />
-    <Compile Include="ThingComps\EggLaying\CodeFile1.cs" />
-    <Compile Include="ThingComps\EggLaying\CodeFile2.cs" />
+    <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackProps.cs" />
+    <Compile Include="ThingComps\EggLaying\Comp.cs" />
+    <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />
     <Compile Include="ThingComps\SpawnThing\spawnThingComp.cs" />
     <Compile Include="ThingComps\SpawnThing\spawnThingProperties.cs" />

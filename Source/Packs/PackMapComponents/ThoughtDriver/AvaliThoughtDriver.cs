@@ -7,6 +7,7 @@ namespace AvaliMod
     public class AvaliUpdater : MapComponent
     {
         private readonly bool mapCompOn = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().mapCompOn;
+        private readonly bool packLossEnabled = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packLossEnabled;
         private int onTick;
         public AvaliUpdater(Map map)
             : base(map)
@@ -62,6 +63,27 @@ namespace AvaliMod
                     }
                 }
             }
+        }
+        public void RemoveThought(ThoughtDef thought, PawnRelationDef relationDef, Pawn pawn)
+        {
+            if (RimValiUtility.GetPackSize(pawn, relationDef) > 1 && packLossEnabled)
+            {
+                RimValiUtility.RemoveThought(pawn, thought);
+            }
+        }
+
+        public void AddThought(ThoughtDef thought, PawnRelationDef relationDef, Pawn pawn)
+        {
+            if (RimValiUtility.GetPackSize(pawn, relationDef) == 1 && packLossEnabled)
+            {
+                RimValiUtility.AddThought(pawn, thought);
+            }
+        }
+
+        public void UpdateThought(Pawn pawn, PawnRelationDef relationDef, ThoughtDef thought)
+        {
+            AddThought(thought, relationDef, pawn);
+            RemoveThought(thought, relationDef, pawn);
         }
         public override void MapComponentTick()
         {
