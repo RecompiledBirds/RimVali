@@ -15,6 +15,7 @@ namespace AvaliMod
         public bool allowAllRaces;
         public int maxPackSize;
         public bool enableDebugMode;
+        public bool mapCompOn;
         public bool avaliLayEggs;
         public Dictionary<string, bool> enabledRaces;
         public override void ExposeData()
@@ -27,6 +28,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref avaliLayEggs, "avaliLayEggs", false);
             Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces");
             Scribe_Values.Look(ref enableDebugMode, "debugModeOn", false);
+            Scribe_Values.Look(ref mapCompOn, "mapCompOn", true);
             base.ExposeData();
         }
     }
@@ -111,6 +113,13 @@ namespace AvaliMod
             listing_Standard.Label("        Avali settings");
             listing_Standard.Gap(10);
             listing_Standard.CheckboxLabeled("Avali can have eggs", ref settings.avaliLayEggs, "Enable/disable eggs");
+            if (this.settings.enableDebugMode)
+            {
+                listing_Standard.Gap(10);
+                listing_Standard.Label("        Debug settings");
+                listing_Standard.Gap(10);
+                listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
+            }
             listing_Standard.EndScrollView(ref inRect);
             base.DoSettingsWindowContents(inRect);
 
