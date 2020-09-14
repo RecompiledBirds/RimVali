@@ -13,6 +13,8 @@ namespace AvaliMod
         private readonly bool allowAllRaces = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().allowAllRaces;
         private bool AddedRaces = false;
         private int onTick = 0;
+        private int onOtherTick = 0;
+        public Dictionary<Pawn, bool> pawnHadPack;
         public AvaliPackDriver(Map map)
             : base(map)
         {
@@ -42,26 +44,31 @@ namespace AvaliMod
             }
         }
 
-
+        public override void ExposeData()
+        {
+            Scribe_Collections.Look<Pawn, bool>(ref pawnHadPack, "pawnsThatHaveHadPacks");
+        }
         public void UpdatePacks()
         {
-            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map);
+            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map).Where(x => (RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < maxSize) & racesInPacks.Contains(x.def));
             foreach (Pawn pawn in pawnsOnMap)
             {
-                if (racesInPacks.Contains(pawn.def))
+
+                PackComp comp = pawn.TryGetComp<PackComp>();
+                if (!(comp == null))
                 {
-                    PackComp comp = pawn.TryGetComp<PackComp>();
-                    if (!(comp == null))
+                    //Pull the comp info from the pawn
+                    PawnRelationDef relationDef = comp.Props.relation;
+                    SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
+                    if (RimValiUtility.GetPackSize(pawn, relationDef) == 1)
                     {
-                        PawnRelationDef relationDef = comp.Props.relation;
-                        if (RimValiUtility.GetPackSize(pawn, relationDef) == 1)
+                        //Tells us that this pawn has had a pack
+                        if (enableDebug)
                         {
-                            if (enableDebug)
-                            {
-                                Log.Message("Attempting to make pack..");
-                            }
-                            RimValiUtility.MakePack(pawn, relationDef, racesInPacks, maxSize);
+                            Log.Message("Attempting to make pack.. [Base pack]");
                         }
+                        //Makes the pack.
+                        RimValiUtility.KeoBuildMakePack(pawn, relationDef, racesInPacks, maxSize);
                     }
                 }
             }
@@ -84,6 +91,14 @@ namespace AvaliMod
             else
             {
                 onTick += 1;
+            }
+            if(onOtherTick == 1800)
+            {
+                onOtherTick = 0;
+            }
+            else
+            {
+                onOtherTick += 1;
             }
         }
 
