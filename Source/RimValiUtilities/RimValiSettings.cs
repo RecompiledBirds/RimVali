@@ -15,6 +15,7 @@ namespace AvaliMod
         public bool allowAllRaces;
         public int maxPackSize;
         public bool enableDebugMode;
+        public bool textEnabled;
         public bool mapCompOn;
         public bool avaliLayEggs;
         public Dictionary<string, bool> enabledRaces;
@@ -29,6 +30,7 @@ namespace AvaliMod
             Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces");
             Scribe_Values.Look(ref enableDebugMode, "debugModeOn", false);
             Scribe_Values.Look(ref mapCompOn, "mapCompOn", true);
+            Scribe_Values.Look(ref textEnabled, "textEnabled", true);
             base.ExposeData();
         }
     }
@@ -91,7 +93,7 @@ namespace AvaliMod
             }
             catch
             {
-                listing_Standard.Label("RimVali was unable to show this item! We're sorry for any inconvience. :(".Colorize(Color.red));
+                listing_Standard.Label("RimVali '".Colorize(Color.red) + RimValiUtility.build.Colorize(Color.red) + "' was unable to show this item! We're sorry for any inconvience. :(".Colorize(Color.red));
                 listing_Standard.CheckboxLabeled("Enable debug mode".Colorize(Color.red), ref settings.enableDebugMode, "It appears RimVali encountered an error. You can use debug mode to return logs with more information on what RimVali was doing. [WIP]".Colorize(Color.red));
             }
             LogDebugOn();
@@ -113,6 +115,7 @@ namespace AvaliMod
             listing_Standard.Label("        Avali settings");
             listing_Standard.Gap(10);
             listing_Standard.CheckboxLabeled("Avali can have eggs", ref settings.avaliLayEggs, "Enable/disable eggs");
+            listing_Standard.CheckboxLabeled("Display text (chirp, peep, etc)", ref settings.textEnabled);
             if (this.settings.enableDebugMode)
             {
                 listing_Standard.Gap(10);
