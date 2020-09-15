@@ -45,31 +45,29 @@ namespace AvaliMod
 
         public void UpdatePawns(Map map)
         {
-            List<ThingDef> races = RimvaliPotentialPackRaces.potentialPackRaces.ToList<ThingDef>();
-            IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer);
-            foreach(Pawn pawn in pawns)
+            IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => x.def == AvaliDefs.RimVali);
+            foreach (Pawn pawn in pawns)
             {
-                if (pawn.IsHashIntervalTick(120))
+                AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
+                PackComp packComp = pawn.TryGetComp<PackComp>();
+                if (!(avaliThoughtDriver == null))
                 {
-                    AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-                    PackComp packComp = pawn.TryGetComp<PackComp>();
-                    if(!(avaliThoughtDriver == null)) {
-                        if (pawn.def == AvaliDefs.RimVali)
-                        {
-                            if (RimValiUtility.GetPackSize(pawn, avaliThoughtDriver.Props.relationDef) > 1)
-                            {
-                                PawnRelationDef relationDef = avaliThoughtDriver.Props.relationDef;
-                                UpdateSharedRoomThought(pawn, relationDef, avaliThoughtDriver.Props.inSameRoomThought);
-                                UpdateBedRoomThought(pawn, relationDef, avaliThoughtDriver.Props.sharedBedroomThought, avaliThoughtDriver.Props.sleptApartThought);
-                            }
-
-                        }
-                    }if (!(packComp == null))
+                    if (pawn.def == AvaliDefs.RimVali)
                     {
-                        if (packComp.Props.canHaveAloneThought)
+                        if (RimValiUtility.GetPackSize(pawn, avaliThoughtDriver.Props.relationDef) > 1)
                         {
-                            UpdateThought(pawn, packComp.Props.relation, packComp.Props.aloneThought);
+                            PawnRelationDef relationDef = avaliThoughtDriver.Props.relationDef;
+                            UpdateSharedRoomThought(pawn, relationDef, avaliThoughtDriver.Props.inSameRoomThought);
+                            UpdateBedRoomThought(pawn, relationDef, avaliThoughtDriver.Props.sharedBedroomThought, avaliThoughtDriver.Props.sleptApartThought);
                         }
+
+                    }
+                }
+                if (!(packComp == null))
+                {
+                    if (packComp.Props.canHaveAloneThought)
+                    {
+                        UpdateThought(pawn, packComp.Props.relation, packComp.Props.aloneThought);
                     }
                 }
             }

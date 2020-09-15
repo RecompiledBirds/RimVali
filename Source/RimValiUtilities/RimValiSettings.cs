@@ -75,7 +75,7 @@ namespace AvaliMod
             listing_Standard.BeginScrollView(inRect, ref vector, ref rect);
             listing_Standard.Gap(50);
             listing_Standard.Label("        Pack settings");
-            listing_Standard.Gap(10);
+            listing_Standard.GapLine(10);
             listing_Standard.CheckboxLabeled("Pack loss enabled", ref settings.packLossEnabled, "Enable/disable pack loss.");
             listing_Standard.CheckboxLabeled("Packs enabled", ref settings.packsEnabled, "Enable/disable packs");
             listing_Standard.CheckboxLabeled("Enable other avali", ref settings.checkOtherRaces, "Pull any other potential 'avali' races from other mods, and factor them into the pack system. ");
@@ -93,6 +93,7 @@ namespace AvaliMod
             }
             catch
             {
+                listing_Standard.GapLine(10);
                 listing_Standard.Label("RimVali '".Colorize(Color.red) + RimValiUtility.build.Colorize(Color.red) + "' was unable to show this item! We're sorry for any inconvience. :(".Colorize(Color.red));
                 listing_Standard.CheckboxLabeled("Enable debug mode".Colorize(Color.red), ref settings.enableDebugMode, "It appears RimVali encountered an error. You can use debug mode to return logs with more information on what RimVali was doing. [WIP]".Colorize(Color.red));
             }
@@ -111,16 +112,16 @@ namespace AvaliMod
                 listing_Standard.Label("Maximum pack size: " + settings.maxPackSize.ToString(), -1, "RimVali was made to play this way.".Colorize(Color.green));
             }
             settings.maxPackSize = (int)listing_Standard.Slider(settings.maxPackSize, 2, 50);
-            listing_Standard.Gap(10);
+            listing_Standard.GapLine(10);
             listing_Standard.Label("        Avali settings");
-            listing_Standard.Gap(10);
+            listing_Standard.GapLine(10);
             listing_Standard.CheckboxLabeled("Avali can have eggs", ref settings.avaliLayEggs, "Enable/disable eggs");
             listing_Standard.CheckboxLabeled("Display text (chirp, peep, etc)", ref settings.textEnabled);
             if (this.settings.enableDebugMode)
             {
-                listing_Standard.Gap(10);
+                listing_Standard.GapLine(10);
                 listing_Standard.Label("        Debug settings");
-                listing_Standard.Gap(10);
+                listing_Standard.GapLine(10);
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
             }
             listing_Standard.EndScrollView(ref inRect);
