@@ -27,6 +27,7 @@
       </skillRequirements>
       <recipeUsers>
         <li>FabricationBench</li>
+        <li>TableMachining</li>
       </recipeUsers>
     </recipeMaker>
   </ThingDef>

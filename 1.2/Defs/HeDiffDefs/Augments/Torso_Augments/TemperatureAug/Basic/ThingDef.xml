@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef ParentName="BodyPartBionicBase">
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>AvaliBasicTempControl</defName>
     <graphicData>
       <texPath>avali/Things/Cybernetics/torso</texPath>
