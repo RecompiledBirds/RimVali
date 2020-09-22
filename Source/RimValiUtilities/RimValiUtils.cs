@@ -1,13 +1,44 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using System;
+using System.IO;
 using Verse;
 namespace AvaliMod
 {
     public static class RimValiUtility
     {
-
         public static string build = "Keo";
+        public static string dir;
+        public static void AssetBundleFinder(DirectoryInfo info)
+        {
+            foreach(FileInfo file in info.GetFiles())
+            {
+                if (file.Extension.NullOrEmpty())
+                {
+                    AssetBundle bundle = AssetBundle.LoadFromFile(file.FullName);
+                    if (!(bundle == null))
+                    {
+                        Log.Message("RimVali loaded bundle: " + bundle.name);
+                        UnityEngine.Shader[] shaders = bundle.LoadAllAssets<UnityEngine.Shader>();
+                    }
+                    else
+                    {
+                        Log.Message("RimVali was unable to load the bundle: " + file.FullName);
+                    }
+                }
+            }
+        }
+
+        public static AssetBundle shaderLoader(string info)
+        {
+            AssetBundle assetBundle = AssetBundle.LoadFromFile(info);
+            Log.Message("-----------------------------------------");
+            Log.Message("Loaded bundle: " + assetBundle.name);
+            Log.Message(assetBundle.GetAllAssetNames()[0], false);
+            return assetBundle;
+        }
         public static Dictionary<SkillRecord, float> Skills(Pawn pawn)
         {
             Dictionary<SkillRecord, float> skillNums = new Dictionary<SkillRecord, float>();
@@ -357,14 +388,19 @@ namespace AvaliMod
         //The "Keo" build's newer pack system.
         //It's faster, easier to understand, and smarter. 
         //It can allow any races enabled to join, like a few of its predecessors.
+
+        //KeoBuildMakePack should be used for building packs over time, while KeoBuildMakeBasePack serves for inital generation.
         public static void KeoBuildMakePack(Pawn pawn, PawnRelationDef relationDef, IEnumerable<ThingDef> racesInPacks, int packLimit)
         {
             //Get all pawns in the allowed list.
-            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def));
+            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def) && RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < packLimit);
             foreach (Pawn packmate in packMates)
             {
+                SimpleCurve ageCurve = pawn.TryGetComp<PackComp>().Props.packGenChanceOverAge;
+                float x = (float)pawn.ageTracker.AgeBiologicalYearsFloat / pawn.def.race.lifeExpectancy;
+                float y = (float)packmate.ageTracker.AgeBiologicalYearsFloat / packmate.def.race.lifeExpectancy;
                 //check that neither's pack size is too big, and that they aren't the same
-                if (!(GetPackSize(packmate, relationDef) >= packLimit) && !(GetPackSize(pawn, relationDef) >= packLimit) && !(pawn == packmate))
+                if (!(GetPackSize(packmate, relationDef) >= packLimit) && !(GetPackSize(pawn, relationDef) >= packLimit) && !(pawn == packmate) && (double)Rand.Value < (double)ageCurve.Evaluate(x) && (double)Rand.Value < (double)ageCurve.Evaluate(y))
                 {
                     // adds the relation and evens out the pack.
                     pawn.relations.AddDirectRelation(relationDef, packmate);
@@ -374,7 +410,7 @@ namespace AvaliMod
                 else
                 {
                     //break if the pawn has reached the max pack limit.
-                    if(GetPackSize(pawn, relationDef) == packLimit)
+                    if (GetPackSize(pawn, relationDef) == packLimit)
                     {
                         break;
                     }

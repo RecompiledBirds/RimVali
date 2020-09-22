@@ -14,7 +14,7 @@ namespace AvaliMod
         private bool AddedRaces = false;
         private int onTick = 0;
         private int onOtherTick = 0;
-        public Dictionary<Pawn, bool> pawnHadPack;
+        public Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>(new PawnEqaulityComparer());
         public AvaliPackDriver(Map map)
             : base(map)
         {
@@ -46,14 +46,26 @@ namespace AvaliMod
 
         public override void ExposeData()
         {
-            Scribe_Collections.Look<Pawn, bool>(ref pawnHadPack, "pawnsThatHaveHadPacks");
+            base.ExposeData();
         }
-        public void UpdatePacks()
-        {
-            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map).Where(x => (RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < maxSize) & racesInPacks.Contains(x.def));
+
+
+        public void MakeNewPacks()
+        { 
+            if(pawnsHaveHadPacks == null)
+            {
+                pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
+            }
+            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map).Where(x => (RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) == 1) & racesInPacks.Contains(x.def));
             foreach (Pawn pawn in pawnsOnMap)
             {
-
+                if (!(pawnsHaveHadPacks == null))
+                {
+                    if (!pawnsHaveHadPacks.ContainsKey(pawn))
+                    {
+                        pawnsHaveHadPacks.Add(pawn, false);
+                    }
+                }
                 PackComp comp = pawn.TryGetComp<PackComp>();
                 if (!(comp == null))
                 {
@@ -62,13 +74,52 @@ namespace AvaliMod
                     SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
                     if (RimValiUtility.GetPackSize(pawn, relationDef) == 1)
                     {
-                        //Tells us that this pawn has had a pack
-                        if (enableDebug)
+                        if (!pawnsHaveHadPacks.TryGetValue(pawn))
                         {
-                            Log.Message("Attempting to make pack.. [Base pack]");
+                            //Tells us that this pawn has had a pack
+                            if (enableDebug)
+                            {
+                                Log.Message("Attempting to make pack.. [New/added pack]");
+                            }
+                            //Makes the pack.
+                            foreach (Pawn packmate in pawnsOnMap)
+                            {
+                                RimValiUtility.KeoBuildMakePack(pawn, relationDef, racesInPacks, maxSize);
+                                if(RimValiUtility.GetPackSize(pawn, relationDef) == maxSize)
+                                {
+                                    break;
+                                }
+                            }
+                            pawnsHaveHadPacks.SetOrAdd(pawn, true);
                         }
-                        //Makes the pack.
-                        RimValiUtility.KeoBuildMakePack(pawn, relationDef, racesInPacks, maxSize);
+                    }
+                }
+            }
+        }
+
+        public void UpdatePacks()
+        {
+            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map).Where(x => (RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < maxSize) & racesInPacks.Contains(x.def));
+            foreach (Pawn pawn in pawnsOnMap)
+            {
+                if (pawnsHaveHadPacks.ContainsKey(pawn))
+                {
+                    PackComp comp = pawn.TryGetComp<PackComp>();
+                    if (!(comp == null))
+                    {
+                        //Pull the comp info from the pawn
+                        PawnRelationDef relationDef = comp.Props.relation;
+                        SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
+                        if (RimValiUtility.GetPackSize(pawn, relationDef) == 1)
+                        {
+                            //Tells us that this pawn has had a pack
+                            if (enableDebug)
+                            {
+                                Log.Message("Attempting to make pack.. [Base pack]");
+                            }
+                            //Makes the pack.
+                            RimValiUtility.KeoBuildMakeBasePack(pawn, relationDef, racesInPacks, maxSize);
+                        }
                     }
                 }
             }
@@ -92,8 +143,12 @@ namespace AvaliMod
             {
                 onTick += 1;
             }
-            if(onOtherTick == 1800)
+            if(onOtherTick == 180)
             {
+                if (packsEnabled)
+                {
+                    MakeNewPacks();
+                }
                 onOtherTick = 0;
             }
             else
