@@ -25,7 +25,8 @@ namespace AvaliMod
 
 
         //Relation Defs
-        public static PawnRelationDef AvaliTest;
+        public static PawnRelationDef Packmate;
+        public static PawnRelationDef PackLeader;
 
         //HediffDefs
         public static HediffDef TestHediffOne;
