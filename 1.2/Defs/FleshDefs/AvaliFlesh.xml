@@ -8,12 +8,15 @@
     <wounds>
       <li>
         <texture>Things/Pawn/Wounds/WoundFleshA</texture>
+        <color>(204, 49, 212)</color>
       </li>
       <li>
         <texture>Things/Pawn/Wounds/WoundFleshB</texture>
+        <color>(204, 49, 212)</color>
       </li>
       <li>
         <texture>Things/Pawn/Wounds/WoundFleshC</texture>
+        <color>(204, 49, 212)</color>
       </li>
     </wounds>
   </FleshTypeDef>
