@@ -36,6 +36,8 @@
       <li>RitualNeoStory</li>
       <li>Unique</li>
     </spawnCategories>
+    <!--The skills gained-->
+    <!--List of skills: Medicine, Melee, Shooting, Cooking, Crafting, Social, Intellectual-->
     <skillGains>
       <li>
         <defName>Melee</defName>
