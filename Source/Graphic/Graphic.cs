@@ -3,7 +3,7 @@ using UnityEngine;
 using Verse;
 namespace AvaliMod
 {
-    public class AvaliGraphic
+    public class AvaliGraphic : Graphic
     {
         public Color color = Color.white;
         public Color colorTwo = Color.white;
