@@ -6,7 +6,7 @@ namespace AvaliMod
 {
     public class IlluminateAirdrop : IncidentWorker
     {
-        public book hasDropped;
+        public bool hasDropped;
         public override void ExposeData()
         {
             Scribe_Values.Look(ref hasDropped, “hasDropped", false);
