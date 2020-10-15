@@ -70,6 +70,9 @@
             <li>
                 <compClass>CompAttachBase</compClass>
             </li>
+		
+	    <!--Cool things, these handle alot of the pack systems.-->
+            <!-- Just don't remove any lines from these, please.-->
             <li Class="AvaliMod.AvaliDriverThoughtProps">
                 <relationDef>Packmate</relationDef>
                 <inSameRoomThought>AvaliSharingRoom</inSameRoomThought>
@@ -96,7 +99,7 @@
         <drawGUIOverlay>true</drawGUIOverlay>
     </AlienRace.ThingDef_AlienRace>
 	
-	<AlienRace.ThingDef_AlienRace ParentName="BaseAvaliRace" Name="BaseAvaliType">
+	<AlienRace.ThingDef_AlienRace ParentName="BaseAvaliRace" Name="BaseAvali">
         <defName>RimVali</defName>
         <label>Avali</label>
         <description>Cute, fluffy raptors with highly advanced tech. The primary in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
