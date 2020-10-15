@@ -14,9 +14,8 @@ namespace AvaliMod
            string dir = RimValiUtility.dir;
         
             Log.Message(dir);
-            string test = dir;
-            string info = test + "/RimValiAssetBundles/shader";
-            AssetBundle bundle = RimValiUtility.shaderLoader(info);
+            string path = dir + "/RimValiAssetBundles/shader";
+            AssetBundle bundle = RimValiUtility.shaderLoader(path);
             Tricolor = (Shader)bundle.LoadAsset("assets/resources/materials/avalishader.shader");
             if (!(Tricolor == null))
             {
