@@ -36,6 +36,7 @@
       <li>RitualNeoStory</li>
       <li>Unique</li>
     </spawnCategories>
+    <!--skills from core: Melee, Shooting, Medicine, Intellectual, Plants, Animals, Social, Crafting.-->
     <skillGains>
       <li>
         <defName>Melee</defName>
