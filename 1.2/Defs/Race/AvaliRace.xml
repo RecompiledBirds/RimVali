@@ -904,8 +904,8 @@
             <MiningSpeed>0.8</MiningSpeed>
             <SocialImpact>1.5</SocialImpact>
 		      	<ConstructionSpeed>0.8</ConstructionSpeed>
-			      <AnimalGatherSpeed>-0.3</AnimalGatherSpeed>
-			      <AnimalGatherYield>-0.3</AnimalGatherYield>
+			      <AnimalGatherSpeed>0.3</AnimalGatherSpeed>
+			      <AnimalGatherYield>0.3</AnimalGatherYield>
 			      <ImmunityGainSpeed>1.15</ImmunityGainSpeed>
             <PsychicSensitivity>1.5</PsychicSensitivity>
 			      <ShootingAccuracyPawn>6</ShootingAccuracyPawn>
