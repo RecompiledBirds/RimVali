@@ -71,7 +71,7 @@
     <defName>EmilStoryChild</defName>
     <title>Eimilian</title>
     <titleShort>Eimilian</titleShort>
-    <baseDescription>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other pawns might not in combat, but is more intrested in melee. However, he is a terrible cook.</baseDescription>
+    <baseDescription>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other Avali might not in combat, but is more intrested in melee. However, he is a terrible cook.</baseDescription>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>EimilStory</li>
@@ -142,3 +142,86 @@
     </skillGains>
   </AlienRace.BackstoryDef>
 </Defs>
+
+   <AlienRace.BackstoryDef ParentName = "MaleBase">
+    <defName>KBraidStoryChild</defName>
+    <title>Braid</title>
+    <titleShort>Braid</titleShort>
+    <baseDescription>In his youthful years, Braid showed a lot of creativity and had a level of intelegance far more prevalent than his peers.</baseDescription>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>KBraidStory</li>
+      <li>Unique</li>
+    </spawnCategories>
+    <skillGains>
+      <li>
+          <defName>Intellectual</defName>
+          <amount>3</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <linkedBackstory>KBraidStoryAdult</linkedBackstory>
+  </AlienRace.BackstoryDef>
+
+   <AlienRace.BackstoryDef ParentName = "MaleBase">
+    <defName>KBraidStoryAdult</defName>
+    <title>Braid</title>
+    <titleShort>Braid</titleShort>
+    <baseDescription>Braid's pack chose the path of the soldier, their fireteam proving themselves to be exeptional. However, on one assignment everything had gone horribly wrong and his whole pack was wiped out, leaving him all alone... </baseDescription>
+    <linkedBackstory>KBraidStoryChild</linkedBackstory>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>KBraidStory</li>
+      <li>Unique</li>
+    </spawnCategories>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+          <defName>Shooting</defName>
+          <amount>5</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-10</amount>
+      </li>
+    </skillGains>
+  </AlienRace.BackstoryDef>
+  
+   <AlienRace.BackstoryDef ParentName = "FemaleBase">
+    <defName>KEiliStoryChild</defName>
+    <title>Eili</title>
+    <titleShort>Eili</titleShort>
+    <baseDescription>Eili was created as a clone of Braid, to act as his companion. Her adolessance was geneticly rushed resulting in slight bone deformities and the mental behaviour of a child. </baseDescription>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>KEiliStory</li>
+      <li>Unique</li>
+    </spawnCategories>
+    <linkedBackstory>KEiliStoryAdult</linkedBackstory>
+  </AlienRace.BackstoryDef>
+
+   <AlienRace.BackstoryDef ParentName = "FemaleBase">
+    <defName>KEiliStoryAdult</defName>
+    <title>Eili</title>
+    <titleShort>Eili</titleShort>
+    <baseDescription> </baseDescription>
+    <linkedBackstory>KEiliStoryChild</linkedBackstory>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>KEiliStory</li>
+      <li>Unique</li>
+    </spawnCategories>
+    <skillGains>
+      <li>
+        <defName>Crafting</defName>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+  </AlienRace.BackstoryDef>
+  
