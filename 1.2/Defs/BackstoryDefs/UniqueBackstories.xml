@@ -141,9 +141,8 @@
       </li>
     </skillGains>
   </AlienRace.BackstoryDef>
-</Defs>
-
-   <AlienRace.BackstoryDef ParentName = "MaleBase">
+    
+  <AlienRace.BackstoryDef ParentName = "MaleBase">
     <defName>KBraidStoryChild</defName>
     <title>Braid</title>
     <titleShort>Braid</titleShort>
@@ -225,3 +224,5 @@
     </skillGains>
   </AlienRace.BackstoryDef>
   
+
+</Defs>
