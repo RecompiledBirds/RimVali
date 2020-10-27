@@ -210,7 +210,7 @@
     <defName>KEiliStoryAdult</defName>
     <title>Eili</title>
     <titleShort>Eili</titleShort>
-    <baseDescription> </baseDescription>
+    <baseDescription>Eili was created as a clone of Braid, to act as his companion. Her adolessance was geneticly rushed resulting in slight bone deformities and the mental behaviour of a child. </baseDescription>
     <linkedBackstory>KEiliStoryChild</linkedBackstory>
     <slot>Adulthood</slot>
     <spawnCategories>
