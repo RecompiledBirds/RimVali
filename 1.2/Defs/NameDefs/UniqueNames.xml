@@ -28,4 +28,40 @@
       </rulesRaw>
     </rulePack>
   </RulePackDef>
+    <RulePackDef>
+    <defName>KBraidNamer</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[KBraidFirstName] [KBraidFirstName] [KBraidLastName]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class = "Rule_File">
+            <keyword>KBraidFirstName</keyword>
+            <path>NeziAvaliNameGen/KBraidFirstName</path>
+          </li>
+        <li Class = "Rule_File">
+          <keyword>KBraidLastName</keyword>
+          <path>NeziAvaliNameGen/KBraidLastName</path>          
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+    <RulePackDef>
+    <defName>KEiliNamer</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[KBraidEiliName] [KBraidEiliName] [KBraidLastName]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class = "Rule_File">
+            <keyword>KBraidEiliName</keyword>
+            <path>NeziAvaliNameGen/KBraidEiliName</path>
+          </li>
+        <li Class = "Rule_File">
+          <keyword>KBraidLastName</keyword>
+          <path>NeziAvaliNameGen/KBraidLastName</path>          
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
 </Defs>
