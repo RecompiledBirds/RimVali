@@ -36,7 +36,8 @@
       <li>RitualNeoStory</li>
       <li>Unique</li>
     </spawnCategories>
-    <!--skills from core: Melee, Shooting, Medicine, Intellectual, Plants, Animals, Social, Crafting.-->
+    <!--The skills gained-->
+    <!--List of skills: Medicine, Melee, Shooting, Cooking, Crafting, Social, Intellectual-->
     <skillGains>
       <li>
         <defName>Melee</defName>
@@ -58,12 +59,34 @@
     <defName>Danny</defName>
     <title>Danny</title>
     <titleShort>Danny</titleShort>
-    <baseDescription>Danny spent most of his life as a dreamer, out of place for being born into such a small pack. Once he was of age, he declared himself leader of his pack, which they gladly followed. He than began a campaign that lasted months, attempting to unify the avali local to him under a singular state. He didn't get too far, being exiled after losing a battle to a powerful pack.</baseDescription>
+    <baseDescription>Danny spent most of his life as a dreamer, out of place for being born into such a small pack. Once he was of age, he declared himself leader of his pack, which they gladly followed. He than began a campaign that lasted months, attempting to unify the avali local to him under a singular state. Tragedy struck, when during a battle, a stray bullet hit him right in the head. However... He survived. Danny woke up, dazed in an empty field, unsure of what was going on. He was found there by a neutral pack, who didn't seem to understand what he was saying. He still searches for his lost pack. Also, he may have a slight case of severe brain damage.</baseDescription>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>Danny</li>
       <li>Unique</li>
     </spawnCategories>
+	<skillGains>
+      <li>
+        <defName>Social</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+          <defName>Shooting</defName>
+          <amount>3</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+		<li>
+	    <defName>Bloodlust</defName>
+	   </li>
+	   <li>
+	   <defName>Bisexual</defName>
+	   </li>
+	</forcedTraits>
   </AlienRace.BackstoryDef>
   
   <!-- Eimilian/SoulBlazerRP's child & adulthood backstories -->
@@ -71,7 +94,7 @@
     <defName>EmilStoryChild</defName>
     <title>Eimilian</title>
     <titleShort>Eimilian</titleShort>
-    <baseDescription>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other Avali might not in combat, but is more intrested in melee. However, he is a terrible cook.</baseDescription>
+    <baseDescription>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other pawns might not in combat, but is more intrested in melee. However, he is a terrible cook.</baseDescription>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>EimilStory</li>
@@ -142,7 +165,7 @@
     </skillGains>
   </AlienRace.BackstoryDef>
     
-  <AlienRace.BackstoryDef ParentName = "MaleBase">
+    <AlienRace.BackstoryDef ParentName = "MaleBase">
     <defName>KBraidStoryChild</defName>
     <title>Braid</title>
     <titleShort>Braid</titleShort>

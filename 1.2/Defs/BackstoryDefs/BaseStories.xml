@@ -110,7 +110,7 @@
   
   <AlienRace.BackstoryDef>
     <defName>AvaliExplorer</defName>
-    <title>Explorer</title>
+    <title>AExplorer</title>
     <titleShort>Explorer</titleShort>
     <baseDescription>[PAWN_nameDef] was an inter-planetary explorer back on Avalon, tasked with charting the artic landscape of the planet. [PAWN_nameDef] usually worked alone, and as such didn't have much social interaction, besides reporting their findings. Still, they learned many invaluable survival skills.</baseDescription>
     <slot>Adulthood</slot>
@@ -141,7 +141,8 @@
     </skillGains>
 	<forcedTraits>
 	   <li>
-	    <defName>Steadfast</defName>
+	    <defName>Nerves</defName>
+		<degree>1</degree>
 	   </li>
 	</forcedTraits>
   </AlienRace.BackstoryDef>
@@ -216,6 +217,7 @@
         <amount>1</amount>
       </li>
     </skillGains>
+	</AlienRace.BackstoryDef>
 	
 	<AlienRace.BackstoryDef>
     <defName>AvaliSpy</defName>
@@ -381,8 +383,7 @@
     <defName>AvaliSheriff</defName>
     <title>Sheriff</title>
     <titleShort>Sheriff</titleShort>
-    <baseDescription>[PAWN_nameDef] was the single Sheriff of [PAWN_possessive] pack back on Avalon. Being a smaller, more tribal pack, they worked mostly alone. [PAWN_nameDef] was often completely swamped with tasks, because even though the pack was fairly small (to Avali standards, anyway), [PAWN_nameDef] still had many tasks to do. [PAWN_pronoun] could never seem to get a break. One day, after another "lost my PDA in the snow" report, [PAWN_nameDef] snapped, leaving the town and taking all [PAWN_possessive] gear with [PAWN_objective]. Soon, [PAWN_nameDef] heard of a new oppurtunity to get off of Avalon with a small group, and quickly enlisted. They want to be the authority to a pack they truly respect.
-	</baseDescription>
+    <baseDescription>[PAWN_nameDef] was the single Sheriff of [PAWN_possessive] pack back on Avalon. Being a smaller, more tribal pack, they worked mostly alone. [PAWN_nameDef] was often completely swamped with tasks, because even though the pack was fairly small (to Avali standards, anyway), [PAWN_nameDef] still had many tasks to do. [PAWN_pronoun] could never seem to get a break. One day, after another "lost my PDA in the snow" report, [PAWN_nameDef] snapped, leaving the town and taking all [PAWN_possessive] gear with [PAWN_objective]. Soon, [PAWN_nameDef] heard of a new oppurtunity to get off of Avalon with a small group, and quickly enlisted. They want to be the authority to a pack they truly respect.</baseDescription>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>RimValiBackstories</li>
@@ -408,31 +409,22 @@
     <defName>AvaliTrained</defName>
     <title>Devoted Colonist</title>
     <titleShort>Devoted Colonist</titleShort>
-    <baseDescription>[PAWN_nameDef] wanted to join the colonising program, every since they were a hatchling. They dedicated their entire life to picking up all the skills neccesary to survive, wanting to be the best possible choice. Sadly, [PAWN_pronoun] was called out to duty years before [PAWN_pronoun] anticipated, having been able to only pick up bare minimums. I guess there is no better way to learn then doing it yourself, for real... right?
-	</baseDescription>
+    <baseDescription>[PAWN_nameDef] wanted to join the colonising program, every since they were a hatchling. They dedicated their entire life to picking up all the skills neccesary to survive, wanting to be the best possible choice. Sadly, [PAWN_pronoun] was called out to duty years before [PAWN_pronoun] anticipated, having been able to only pick up bare minimums. I guess there is no better way to learn then doing it yourself, for real, right?</baseDescription>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>RimValiBackstories</li>
     </spawnCategories>
     <skillGains>
 	  <li>
-        <defName>Shooting</defName>
-        <amount>2</amount>
-      </li>
-	  <li>
         <defName>Construction</defName>
         <amount>3</amount>
       </li>
 	  <li>
-        <defName>Medical</defName>
+        <defName>Medicine</defName>
         <amount>2</amount>
       </li>
 	  <li>
         <defName>Cooking</defName>
-        <amount>1</amount>
-      </li>
-	  <li>
-        <defName>Melee</defName>
         <amount>1</amount>
       </li>
 	  <li>
@@ -443,14 +435,11 @@
         <defName>Plants</defName>
         <amount>3</amount>
       </li>
-	  <li>
-        <defName>Social</defName>
-        <amount>1</amount>
-      </li>
     </skillGains>
 	<forcedTraits>
 	   <li>
-	    <defName>Optimist</defName>
+	    <defName>NaturalMood</defName>
+		<degree>1</degree>
 	   </li>
 	</forcedTraits>
   </AlienRace.BackstoryDef>
@@ -489,7 +478,8 @@
 	    <defName>Pyromaniac</defName>
 	   </li>
 	   <li>
-	    <defName>Psychically Hypersensitive</defName>
+	    <defName>PsychicSensitivity</defName>
+		<degree>-2</degree>
 	   </li>
 	</forcedTraits>
 	<maleCommonality>5</maleCommonality>
@@ -511,6 +501,7 @@
 	  <li>Firefighting</li>
 	  <li>Hauling</li>
 	  <li>Mining</li>
+	  <li>ManualDumb</li>
     </workAllows>
     <skillGains>
 	  <li>
@@ -533,14 +524,12 @@
 	<maleCommonality>1</maleCommonality>
 	<femaleCommonality>0</femaleCommonality>
   </AlienRace.BackstoryDef>
-</Defs>
 
  <AlienRace.BackstoryDef>
     <defName>AvaliFactoryWorker</defName>
     <title>Factory Worker</title>
     <titleShort>Worker</titleShort>
-    <baseDescription>[PAWN_nameDef] spent most of [PAWN_possessive] life working in factories in Avalon, mostly working on refining metals and assembly line production. Bizarrely, [PAWN_pronoun] loved it, and do not mind doing basic, repetitive tasks, day after day, for measly paychecks. How cool!
-	</baseDescription>
+    <baseDescription>[PAWN_nameDef] spent most of [PAWN_possessive] life working in factories in Avalon, mostly working on refining metals and assembly line production. Bizarrely, [PAWN_pronoun] loved it, and do not mind doing basic, repetitive tasks, day after day, for measly paychecks. How cool! </baseDescription>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>RimValiBackstories</li>
@@ -557,7 +546,8 @@
     </skillGains>
 	<forcedTraits>
 	   <li>
-	    <defName>Industrious</defName>
+	    <defName>Industriousness</defName>
+		<degree>2</degree>
 	   </li>
 	</forcedTraits>
   </AlienRace.BackstoryDef>
@@ -594,10 +584,12 @@
     </skillGains>
 	<forcedTraits>
 	   <li>
-	    <defName>Beautiful</defName>
+	    <defName>Beauty</defName>
+		<degree>2</degree>
 	   </li>
 	   <li>
-	    <defName>Nervous</defName>
+	    <defName>Nerves</defName>
+		<degree>-1</degree>
 	   </li>
 	</forcedTraits>
   </AlienRace.BackstoryDef>
@@ -632,7 +624,7 @@
     </skillGains>
   </AlienRace.BackstoryDef>
   
-     <AlienRace.BackstoryDef>
+    <AlienRace.BackstoryDef>
     <defName>AvaliAnimalScientist</defName>
     <title>Animal Scientist</title>
     <titleShort>Scientist</titleShort>
@@ -659,7 +651,7 @@
         <defName>Melee</defName>
         <amount>-3</amount>
       </li>
-	  	  <li>
+	  <li>
         <defName>Shooting</defName>
         <amount>-4</amount>
       </li>
