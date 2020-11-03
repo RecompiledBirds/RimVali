@@ -58,9 +58,13 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
@@ -70,28 +74,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeFile1.cs" />
+    <Compile Include="CodeFile2.cs" />
+    <Compile Include="Comparators\comparer.cs" />
+    <Compile Include="Graphic\Linked.cs" />
+    <Compile Include="Graphic\GraphicClasses.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\PackDiverMapComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\AvaliThoughtDriver.cs" />
     <Compile Include="HarmonyPatches\ApparelPatch.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\ThingComps\AvaliThoughtDriverComp.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\ThingComps\AvaliThoughtDriverProps.cs" />
-    <Compile Include="HediffStuff\TraitsOverTime\TraitsOverTimeClass.cs" />
-    <Compile Include="ShowTextV3\showTextV3Props.cs" />
-    <Compile Include="ShowTextV3\showTextPropsV3Class.cs" />
+    <Compile Include="HediffStuff\ShowTextV3\showTextV3Props.cs" />
+    <Compile Include="HediffStuff\ShowTextV3\showTextPropsV3Class.cs" />
     <Compile Include="ResourceDrop.cs" />
     <Compile Include="RimValiUtilities\ReturnData.cs" />
     <Compile Include="RimValiUtilities\RimValiSettings.cs" />
     <Compile Include="RimValiUtilities\RimValiUtils.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackProps.cs" />
+    <Compile Include="Graphic\GraphicData.cs" />
+    <Compile Include="Graphic\GraphicDatabase.cs" />
+    <Compile Include="Graphic\GraphicRequest.cs" />
+    <Compile Include="Graphic\Graphic.cs" />
+    <Compile Include="Graphic\BaseContent.cs" />
+    <Compile Include="Graphic\GraphicUtility.cs" />
     <Compile Include="ThingComps\EggLaying\Comp.cs" />
     <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />
     <Compile Include="ThingComps\SpawnThing\spawnThingComp.cs" />
     <Compile Include="ThingComps\SpawnThing\spawnThingProperties.cs" />
-    <Compile Include="HediffStuff\TraitsOverTime\TraitsOverTimeComp.cs" />
-    <Compile Include="HediffStuff\TraitsOverTime\TraitsOverTimeProps.cs" />
-    <Compile Include="ShowTextV3\ShowTextV3Comp.cs" />
+    <Compile Include="HediffStuff\ShowTextV3\ShowTextV3Comp.cs" />
     <Compile Include="HediffStuff\Conflicts\ConflictsWithProps.cs" />
     <Compile Include="HediffStuff\Conflicts\ConflictsWithComp.cs" />
     <Compile Include="HediffStuff\MPB\MPBProperties.cs" />

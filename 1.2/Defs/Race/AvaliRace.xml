@@ -45,7 +45,7 @@
     </pawnKindSettings>
   </AlienRace.RaceSettings>
   
-	<AlienRace.ThingDef_AlienRace Name="BaseNeziRace" Abstract="True">
+	<AlienRace.ThingDef_AlienRace Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
         <thingClass>Pawn</thingClass>
         <category>Pawn</category>
         <selectable>true</selectable>
@@ -54,24 +54,15 @@
         <useHitPoints>false</useHitPoints>
         <hasTooltip>true</hasTooltip>
         <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
-        <inspectorTabs>
-			<li>ITab_Pawn_Health</li>
-			<li>ITab_Pawn_Needs</li>
-			<li>ITab_Pawn_Character</li>
-			<li>ITab_Pawn_Training</li>
-			<li>ITab_Pawn_Gear</li>
-			<li>ITab_Pawn_Guest</li>
-			<li>ITab_Pawn_Prisoner</li>
-			<li>ITab_Pawn_Social</li>
-			<li>ITab_Pawn_Log</li>
-			<li>ITab_Pawn_FormingCaravan</li>
-        </inspectorTabs>
         <comps>
             <li>
                 <compClass>CompAttachBase</compClass>
             </li>
+		
+	    <!--Cool things, these handle alot of the pack systems.-->
+            <!-- Just don't remove any lines from these, please.-->
             <li Class="AvaliMod.AvaliDriverThoughtProps">
-                <relationDef>AvaliTest</relationDef>
+                <relationDef>Packmate</relationDef>
                 <inSameRoomThought>AvaliSharingRoom</inSameRoomThought>
                 <sharedBedroomThought>AvaliSharedBedRoom</sharedBedroomThought>
                 <sleptApartThought>AvaliSleptWithoutPack</sleptApartThought>
@@ -82,7 +73,7 @@
                 <li>RimVali</li>
               </racesInPacks>
               <aloneThought>AvaliPackLoss</aloneThought>
-              <relation>AvaliTest</relation>
+              <relation>Packmate</relation>
             </li>
             
             
@@ -96,7 +87,7 @@
         <drawGUIOverlay>true</drawGUIOverlay>
     </AlienRace.ThingDef_AlienRace>
 	
-	<AlienRace.ThingDef_AlienRace ParentName="BaseNeziRace" Name="BaseAvaliType">
+	<AlienRace.ThingDef_AlienRace ParentName="BaseAvaliRace" Name="BaseAvali">
         <defName>RimVali</defName>
         <label>Avali</label>
         <description>Cute, fluffy raptors with highly advanced tech. The primary in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
@@ -661,7 +652,7 @@
             </li>
           </ateThoughtSpecific>
           <ateThoughtGeneral>
-            <thought>AvaliAteHumamlikeDirect</thought>
+            <thought>AvaliAteHumanlikeDirect</thought>
             <ingredientThought>AvaliAteHumanlikeCooked</ingredientThought>
           </ateThoughtGeneral>
           <butcherThoughtGeneral>
@@ -913,8 +904,8 @@
             <MiningSpeed>0.8</MiningSpeed>
             <SocialImpact>1.5</SocialImpact>
 		      	<ConstructionSpeed>0.8</ConstructionSpeed>
-			      <AnimalGatherSpeed>-0.3</AnimalGatherSpeed>
-			      <AnimalGatherYield>-0.3</AnimalGatherYield>
+			      <AnimalGatherSpeed>0.3</AnimalGatherSpeed>
+			      <AnimalGatherYield>0.3</AnimalGatherYield>
 			      <ImmunityGainSpeed>1.15</ImmunityGainSpeed>
             <PsychicSensitivity>1.5</PsychicSensitivity>
 			      <ShootingAccuracyPawn>6</ShootingAccuracyPawn>

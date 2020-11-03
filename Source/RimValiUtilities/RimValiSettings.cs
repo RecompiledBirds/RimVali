@@ -1,8 +1,4 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 namespace AvaliMod
@@ -18,7 +14,7 @@ namespace AvaliMod
         public bool textEnabled;
         public bool mapCompOn;
         public bool avaliLayEggs;
-        public Dictionary<string, bool> enabledRaces;
+        public Dictionary<string, bool> enabledRaces = new Dictionary<string, bool>();
         public override void ExposeData()
         {
             Scribe_Values.Look(ref packLossEnabled, "packLossEnabled", true);
@@ -27,24 +23,34 @@ namespace AvaliMod
             Scribe_Values.Look(ref allowAllRaces, "allowAllRaces", false);
             Scribe_Values.Look(ref maxPackSize, "maxPackSize", 5);
             Scribe_Values.Look(ref avaliLayEggs, "avaliLayEggs", false);
-            Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces");
             Scribe_Values.Look(ref enableDebugMode, "debugModeOn", false);
             Scribe_Values.Look(ref mapCompOn, "mapCompOn", true);
             Scribe_Values.Look(ref textEnabled, "textEnabled", true);
+            Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces",LookMode.Undefined, LookMode.Undefined);
             base.ExposeData();
         }
     }
+
     public class RimValiMod : Mod
     {
         RimValiModSettings settings;
+        public ModContentPack mod;
+        
         public RimValiMod(ModContentPack content) : base(content)
         {
+            this.mod = content;
             this.settings = GetSettings<RimValiModSettings>();
+            RimValiUtility.dir = this.mod.RootDir.ToString();
+            
+
         }
+        
         private Vector2 vector = Vector2.left;
         Rect rect = new Rect();
         private bool hasRun = false;
         private bool saidDebugWasEnabled;
+        private int settingsAreStable = 0;
+        private bool resetSettings;
         private void LogDebugOn()
         {
             if(!saidDebugWasEnabled & settings.enableDebugMode)
@@ -66,10 +72,14 @@ namespace AvaliMod
                 Log.Message(racesFound);
             }
         }
+
         public override void DoSettingsWindowContents(Rect inRect)
         {
             rect.Set(inRect.x, inRect.y - 2, 500, 5000);
-
+            if (this.settings.enabledRaces == null)
+            {
+                this.settings.enabledRaces = new Dictionary<string, bool>();
+            }
             Rect WidgetRect = rect.LeftHalf().BottomPart(0.1f);
             Listing_Standard listing_Standard = new Listing_Standard();
             listing_Standard.BeginScrollView(inRect, ref vector, ref rect);
@@ -85,10 +95,9 @@ namespace AvaliMod
                 ShowRaces();
                 foreach (ThingDef race in RimvaliPotentialPackRaces.potentialRaces)
                 {
-                    bool checkOn;
-                    bool isEnabled = this.settings.enabledRaces.TryGetValue(race.defName, out checkOn);
-                    listing_Standard.CheckboxLabeled(race.label, ref isEnabled);
-                    this.settings.enabledRaces.SetOrAdd<string, bool>(race.defName, isEnabled);
+                    bool checkOn = this.settings.enabledRaces.TryGetValue(race.defName);
+                    listing_Standard.CheckboxLabeled(race.label, ref checkOn);
+                    this.settings.enabledRaces.SetOrAdd(race.defName, checkOn);
                 }
             }
             catch
@@ -99,18 +108,19 @@ namespace AvaliMod
             }
             LogDebugOn();
             listing_Standard.Gap(10);
-            if ((settings.maxPackSize < 20 & settings.maxPackSize >10) | settings.maxPackSize < 3)
+            if ((settings.maxPackSize < 20 & settings.maxPackSize > 10) | settings.maxPackSize < 3)
             {
-                listing_Standard.Label("Maximum pack size: ".Colorize(Color.yellow) + settings.maxPackSize.ToString().Colorize(Color.yellow), -1,"This size may cause issues.".Colorize(Color.yellow));
+                settingsAreStable = 1;
             }
-            else if(settings.maxPackSize >= 20)
+            else if (settings.maxPackSize >= 20)
             {
-                listing_Standard.Label("Maximum pack size: ".Colorize(Color.red) + settings.maxPackSize.ToString().Colorize(Color.red), -1, "RimVali can and will have issues with this setting. It is not recommended. USE AT YOUR OWN RISK.".Colorize(Color.red));
+                settingsAreStable = 2;
             }
             else
             {
-                listing_Standard.Label("Maximum pack size: " + settings.maxPackSize.ToString(), -1, "RimVali was made to play this way.".Colorize(Color.green));
+                settingsAreStable = 0;
             }
+            listing_Standard.Label("Maximum pack size: " + settings.maxPackSize.ToString(), -1, "RimVali was made to play this way.".Colorize(Color.green));
             settings.maxPackSize = (int)listing_Standard.Slider(settings.maxPackSize, 2, 50);
             listing_Standard.GapLine(10);
             listing_Standard.Label("        Avali settings");
@@ -123,6 +133,35 @@ namespace AvaliMod
                 listing_Standard.Label("        Debug settings");
                 listing_Standard.GapLine(10);
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
+            }
+
+            if (settingsAreStable == 0)
+            {
+               resetSettings = listing_Standard.ButtonText("Stable");
+            }
+            else if (settingsAreStable == 1) { 
+               resetSettings= listing_Standard.ButtonText("Potential issues");
+            }
+            else
+            {
+                resetSettings = listing_Standard.ButtonText("Unstable; Use at your own risk.");
+            }
+            if (resetSettings)
+            {
+                settings.maxPackSize = 5;
+                settings.packLossEnabled = true;
+                settings.packsEnabled = true;
+                settings.textEnabled = true;
+                settings.checkOtherRaces = true;
+                settings.allowAllRaces = false;
+                settings.enableDebugMode = false;
+                settings.avaliLayEggs = false;
+            }
+            bool debugButton = listing_Standard.ButtonText("Toggle debug mode");
+            if (debugButton)
+            {
+                settings.enableDebugMode = !settings.enableDebugMode;
+                debugButton = !debugButton;
             }
             listing_Standard.EndScrollView(ref inRect);
             base.DoSettingsWindowContents(inRect);

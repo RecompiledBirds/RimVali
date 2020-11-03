@@ -11,27 +11,6 @@
         <showConflicts>false</showConflicts>
       </li>
       
-      <li Class="AvaliMod.TraitsOverTimeProps">
-        <traits>
-          <li>
-            <traitDef>ShootingAccuracy</traitDef>
-            <recordDef>Headshots</recordDef>
-            <recordCount>100</recordCount>
-            <ageFractionCurve>
-              <points>
-                <li>(0.5, 1.0)</li>
-                <li>(0.625, 0.1)</li>
-                <li>(0.75, 0.05)</li>
-                <li>(0.875, 0.0073)</li>
-                <li>(1, 0.0053)</li>
-              </points>
-            </ageFractionCurve>
-            <degree>1</degree>
-          </li>
-          
-        </traits>
-      </li>
-      
       <li Class="AvaliMod.ShowTextPropsV3">
       <showText>
         <li>

@@ -36,6 +36,8 @@
       <li>RitualNeoStory</li>
       <li>Unique</li>
     </spawnCategories>
+    <!--The skills gained-->
+    <!--List of skills: Medicine, Melee, Shooting, Cooking, Crafting, Social, Intellectual--
     <!--skills from core: Melee, Shooting, Medicine, Intellectual, Plants, Animals, Social, Crafting.-->
     <skillGains>
       <li>
@@ -142,7 +144,7 @@
     </skillGains>
   </AlienRace.BackstoryDef>
     
-  <AlienRace.BackstoryDef ParentName = "MaleBase">
+    <AlienRace.BackstoryDef ParentName = "MaleBase">
     <defName>KBraidStoryChild</defName>
     <title>Braid</title>
     <titleShort>Braid</titleShort>
