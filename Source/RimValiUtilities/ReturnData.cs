@@ -8,7 +8,7 @@ namespace AvaliMod
     public class RimvaliPotentialPackRaces
     {
         public static List<ThingDef> potentialPackRaces = new List<ThingDef>();
-        public static IEnumerable<ThingDef> potentialRaces = DefDatabase<AlienRace.ThingDef_AlienRace>.AllDefs.Where<AlienRace.ThingDef_AlienRace>((x => x.race != null));
+        public static IEnumerable<ThingDef> potentialRaces = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>((x => x.race != null));
         public static void GetRaces()
         {
             foreach (ThingDef race in potentialRaces)

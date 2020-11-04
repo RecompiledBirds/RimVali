@@ -61,7 +61,7 @@ namespace AvaliMod
         }
         private void ShowRaces()
         {
-            if (!hasRun & settings.enableDebugMode)
+            /*if (!hasRun & settings.enableDebugMode)
             {
                 string racesFound = "Races found: ";
                 foreach (ThingDef race in RimvaliPotentialPackRaces.potentialRaces)
@@ -70,7 +70,7 @@ namespace AvaliMod
                 }
                 hasRun = false;
                 Log.Message(racesFound);
-            }
+            }*/
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

@@ -10,7 +10,7 @@ namespace AvaliMod
         }
         public override void CreateRelation(Pawn generated, Pawn other, ref PawnGenerationRequest request)
         {
-            generated.relations.AddDirectRelation(AvaliDefs.AvaliTest, other);
+            generated.relations.AddDirectRelation(AvaliDefs.Packmate, other);
         }
     }
 }
