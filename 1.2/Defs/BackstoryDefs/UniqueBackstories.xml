@@ -6,7 +6,7 @@
     <!-- This is very important. -->
     <!-- ParentName = "MaleBase" can be exchanged for ParentName = "FemaleBase", if you want a female backstory. -->
     <!-- Or, removing it entirley allows both genders to have the story. -->
-   <AlienRace.BackstoryDef ParentName = "MaleBase">
+   <RVHAR.BackstoryDef ParentName = "MaleBase">
    <!-- This should be a unique name. It's not shown in-game. This is the name we use to reference it in other parts of the code. -->
     <defName>NeoStoryChild</defName>
    <!-- What you want the actual name of the story to be in-game. -->
@@ -23,9 +23,9 @@
       <li>Unique</li>
     </spawnCategories>
     <linkedBackstory>NeoStoryAdult</linkedBackstory>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
 
-   <AlienRace.BackstoryDef ParentName = "MaleBase">
+   <RVHAR.BackstoryDef ParentName = "MaleBase">
     <defName>NeoStoryAdult</defName>
     <title>RitualNeo</title>
     <titleShort>Neo</titleShort>
@@ -37,8 +37,7 @@
       <li>Unique</li>
     </spawnCategories>
     <!--The skills gained-->
-    <!--List of skills: Medicine, Melee, Shooting, Cooking, Crafting, Social, Intellectual--
-    <!--skills from core: Melee, Shooting, Medicine, Intellectual, Plants, Animals, Social, Crafting.-->
+    <!--List of skills: Medicine, Melee, Shooting, Cooking, Crafting, Social, Intellectual-->
     <skillGains>
       <li>
         <defName>Melee</defName>
@@ -53,10 +52,10 @@
         <amount>2</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
   <!-- Danny's backstories -->
-  <AlienRace.BackstoryDef ParentName = "MaleBase">
+  <RVHAR.BackstoryDef ParentName = "MaleBase">
     <defName>Danny</defName>
     <title>Danny</title>
     <titleShort>Danny</titleShort>
@@ -66,14 +65,14 @@
       <li>Danny</li>
       <li>Unique</li>
     </spawnCategories>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
   <!-- Eimilian/SoulBlazerRP's child & adulthood backstories -->
-       <AlienRace.BackstoryDef ParentName = "MaleBase">
+       <RVHAR.BackstoryDef ParentName = "MaleBase">
     <defName>EmilStoryChild</defName>
     <title>Eimilian</title>
     <titleShort>Eimilian</titleShort>
-    <baseDescription>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other Avali might not in combat, but is more intrested in melee. However, he is a terrible cook.</baseDescription>
+    <baseDescription>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other pawns might not in combat, but is more intrested in melee. However, he is a terrible cook.</baseDescription>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>EimilStory</li>
@@ -94,9 +93,9 @@
         <amount>-4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
 
-   <AlienRace.BackstoryDef ParentName = "MaleBase">
+   <RVHAR.BackstoryDef ParentName = "MaleBase">
     <defName>EimilStoryAdult</defName>
     <title>Eimilian</title>
     <titleShort>Eimilian</titleShort>
@@ -116,9 +115,9 @@
         <amount>2</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef ParentName="MaleBase">
+  <RVHAR.BackstoryDef ParentName="MaleBase">
     <defName>SommeilStoryAdult</defName>
     <title>Sommeil</title>
     <titleShort>Sommeil</titleShort>
@@ -142,9 +141,9 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
     
-    <AlienRace.BackstoryDef ParentName = "MaleBase">
+    <RVHAR.BackstoryDef ParentName = "MaleBase">
     <defName>KBraidStoryChild</defName>
     <title>Braid</title>
     <titleShort>Braid</titleShort>
@@ -165,9 +164,9 @@
       </li>
     </skillGains>
     <linkedBackstory>KBraidStoryAdult</linkedBackstory>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
 
-   <AlienRace.BackstoryDef ParentName = "MaleBase">
+   <RVHAR.BackstoryDef ParentName = "MaleBase">
     <defName>KBraidStoryAdult</defName>
     <title>Braid</title>
     <titleShort>Braid</titleShort>
@@ -192,9 +191,9 @@
         <amount>-10</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-   <AlienRace.BackstoryDef ParentName = "FemaleBase">
+   <RVHAR.BackstoryDef ParentName = "FemaleBase">
     <defName>KEiliStoryChild</defName>
     <title>Eili</title>
     <titleShort>Eili</titleShort>
@@ -205,9 +204,9 @@
       <li>Unique</li>
     </spawnCategories>
     <linkedBackstory>KEiliStoryAdult</linkedBackstory>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
 
-   <AlienRace.BackstoryDef ParentName = "FemaleBase">
+   <RVHAR.BackstoryDef ParentName = "FemaleBase">
     <defName>KEiliStoryAdult</defName>
     <title>Eili</title>
     <titleShort>Eili</titleShort>
@@ -224,7 +223,7 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
 
 </Defs>

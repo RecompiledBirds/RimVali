@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <AlienRace.BackstoryDef Name="MaleBase" Abstract = "true">
+  <RVHAR.BackstoryDef Name="MaleBase" Abstract = "true">
     <femaleCommonality>0</femaleCommonality>
-  </AlienRace.BackstoryDef>
-  <AlienRace.BackstoryDef Name="FemaleBase" Abstract = "true">
+  </RVHAR.BackstoryDef>
+  <RVHAR.BackstoryDef Name="FemaleBase" Abstract = "true">
     <maleCommonality>0</maleCommonality>
-  </AlienRace.BackstoryDef>
-    <AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
+    <RVHAR.BackstoryDef>
     <defName>AvaliChild</defName>
     <title>Avali</title>
     <titleShort>Avali</titleShort>
@@ -15,9 +15,9 @@
     <spawnCategories>
       <li>RimValiBackstories</li>
     </spawnCategories>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvalAdult</defName>
     <title>Avali</title>
     <titleShort>Avali</titleShort>
@@ -26,9 +26,9 @@
     <spawnCategories>
       <li>RimValiBackstoriesBase</li>
     </spawnCategories>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliSolider</defName>
     <title>Illuminate Solider</title>
     <titleShort>Solider</titleShort>
@@ -51,9 +51,9 @@
         <amount>2</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliFarmer</defName>
     <title>Farmer</title>
     <titleShort>Farmer</titleShort>
@@ -72,9 +72,9 @@
         <amount>1</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliResearcher</defName>
     <title>Illuminate Researcher</title>
     <titleShort>Researcher</titleShort>
@@ -89,9 +89,9 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliBuilder</defName>
     <title>Builder</title>
     <titleShort>Builder</titleShort>
@@ -106,9 +106,9 @@
         <amount>3</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliExplorer</defName>
     <title>AExplorer</title>
     <titleShort>Explorer</titleShort>
@@ -145,9 +145,9 @@
 		<degree>1</degree>
 	   </li>
 	</forcedTraits>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliDiplomat</defName>
     <title>Diplomat</title>
     <titleShort>Diplomat</titleShort>
@@ -179,9 +179,9 @@
 	    <defName>Kind</defName>
 	   </li>
 	</forcedTraits>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliLoner</defName>
     <title>Loner</title>
     <titleShort>Loner</titleShort>
@@ -217,9 +217,9 @@
         <amount>1</amount>
       </li>
     </skillGains>
-	</AlienRace.BackstoryDef>
+	</RVHAR.BackstoryDef>
 	
-	<AlienRace.BackstoryDef>
+	<RVHAR.BackstoryDef>
     <defName>AvaliSpy</defName>
     <title>Illuminate Spy</title>
     <titleShort>Spy</titleShort>
@@ -257,9 +257,9 @@
 	    <defName>Bloodlust</defName>
 	   </li>
 	</forcedTraits>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliThief</defName>
     <title>Thief</title>
     <titleShort>Thief</titleShort>
@@ -295,9 +295,9 @@
 	    <defName>Greedy</defName>
 	   </li>
 	</forcedTraits>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliTinkerer</defName>
     <title>Tinkerer</title>
     <titleShort>Tinkerer</titleShort>
@@ -323,9 +323,9 @@
         <amount>3</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliCaveMedic</defName>
     <title>Miner Medic</title>
     <titleShort>Miner Medic</titleShort>
@@ -351,9 +351,9 @@
         <amount>2</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-   <AlienRace.BackstoryDef>
+   <RVHAR.BackstoryDef>
     <defName>AvaliBionicDesigner</defName>
     <title>Bionic Designer</title>
     <titleShort>Bionic Designer</titleShort>
@@ -377,9 +377,9 @@
         <amount>-5</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliSheriff</defName>
     <title>Sheriff</title>
     <titleShort>Sheriff</titleShort>
@@ -403,9 +403,9 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliTrained</defName>
     <title>Devoted Colonist</title>
     <titleShort>Devoted Colonist</titleShort>
@@ -442,9 +442,9 @@
 		<degree>1</degree>
 	   </li>
 	</forcedTraits>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliCultist</defName>
     <title>Cultist</title>
     <titleShort>Cultist</titleShort>
@@ -484,9 +484,9 @@
 	</forcedTraits>
 	<maleCommonality>5</maleCommonality>
 	<femaleCommonality>5</femaleCommonality>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-   <AlienRace.BackstoryDef>
+   <RVHAR.BackstoryDef>
     <defName>AvaliBerserker</defName>
     <title>Berserker</title>
     <titleShort>Berserker</titleShort>
@@ -523,9 +523,9 @@
 	</forcedTraits>
 	<maleCommonality>1</maleCommonality>
 	<femaleCommonality>0</femaleCommonality>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
 
- <AlienRace.BackstoryDef>
+ <RVHAR.BackstoryDef>
     <defName>AvaliFactoryWorker</defName>
     <title>Factory Worker</title>
     <titleShort>Worker</titleShort>
@@ -550,9 +550,9 @@
 		<degree>2</degree>
 	   </li>
 	</forcedTraits>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliModel</defName>
     <title>Avali Model</title>
     <titleShort>Model</titleShort>
@@ -592,9 +592,9 @@
 		<degree>-1</degree>
 	   </li>
 	</forcedTraits>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-   <AlienRace.BackstoryDef>
+   <RVHAR.BackstoryDef>
     <defName>AvaliBurger</defName>
     <title>Food Cart Owner</title>
     <titleShort>Foodcart Owner</titleShort>
@@ -622,9 +622,9 @@
         <amount>-4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-    <AlienRace.BackstoryDef>
+    <RVHAR.BackstoryDef>
     <defName>AvaliAnimalScientist</defName>
     <title>Animal Scientist</title>
     <titleShort>Scientist</titleShort>
@@ -656,9 +656,9 @@
         <amount>-4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
-  <AlienRace.BackstoryDef>
+  <RVHAR.BackstoryDef>
     <defName>AvaliPalaceDesigner</defName>
     <title>Palace Designer</title>
     <titleShort>Designer</titleShort>
@@ -678,6 +678,6 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AlienRace.BackstoryDef>
+  </RVHAR.BackstoryDef>
   
 </Defs>
