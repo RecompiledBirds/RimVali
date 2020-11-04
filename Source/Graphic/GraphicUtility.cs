@@ -75,6 +75,7 @@ namespace AvaliMod
           Color newColorTwo,
           Color newColorThree)
         {
+            Log.Message("couldbethisone");
             AvaliGraphic_Linked graphicLinked = new AvaliGraphic_Linked(this.subGraphic.GetColoredVersion(newShader, newColor, newColorTwo, newColorThree));
             graphicLinked.data = this.data;
             return (AvaliGraphic)graphicLinked;

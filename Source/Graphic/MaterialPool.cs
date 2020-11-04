@@ -81,6 +81,7 @@ namespace AvaliMod
 		// Token: 0x06001CE6 RID: 7398 RVA: 0x000F20B4 File Offset: 0x000F02B4
 		public static Material MatFrom(AvaliMaterialRequest req)
 		{
+			//Log.Message("thisine");
 			if (!UnityData.IsInMainThread)
 			{
 				Log.Error("Tried to get a material from a different thread.", false);
@@ -96,13 +97,16 @@ namespace AvaliMod
 				Log.Warning("Matfrom with null shader.", false);
 				return AvaliBaseContent.BadMat;
 			}
+			/*
 			if (req.maskTex != null && !req.shader.SupportsMaskTex())
 			{
 				Log.Error("MaterialRequest has maskTex but shader does not support it. req=" + req.ToString(), false);
 				req.maskTex = null;
 			}
+			*/
 			req.color = req.color;
 			req.colorTwo = req.colorTwo;
+			req.colorThree = req.colorThree;
 			Material material;
 			if (!AvaliMaterialPool.matDictionary.TryGetValue(req, out material))
 			{
@@ -110,12 +114,12 @@ namespace AvaliMod
 				material.name = req.shader.name + "_" + req.mainTex.name;
 				material.mainTexture = req.mainTex;
 				material.color = req.color;
-				if (req.maskTex != null)
-				{
-					material.SetTexture(AvaliShaderPropertyIDs.MaskTex, req.maskTex);
-					material.SetColor(AvaliShaderPropertyIDs.ColorTwo, req.colorTwo);
-					material.SetColor(AvaliShaderPropertyIDs.ColorThree, req.colorThree);
-				}
+				material.SetTexture(AvaliShaderPropertyIDs.MaskTex, req.maskTex);
+				material.SetColor(AvaliShaderPropertyIDs.ColorTwo, req.colorTwo);
+				material.SetColor(AvaliShaderPropertyIDs.ColorThree, req.colorThree);
+				// liQd Comment there it is
+				material.SetTexture(ShaderPropertyIDs.MaskTex, req.maskTex);
+				//Log.Message("thisthinghascolor3: " + req.colorThree);
 				if (req.renderQueue != 0)
 				{
 					material.renderQueue = req.renderQueue;

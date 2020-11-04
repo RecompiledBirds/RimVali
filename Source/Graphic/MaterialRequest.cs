@@ -21,11 +21,12 @@ namespace AvaliMod
 		// Token: 0x06001CE9 RID: 7401 RVA: 0x000F228C File Offset: 0x000F048C
 		public AvaliMaterialRequest(Texture2D tex)
 		{
+			Log.Message("this mat req");
 			this.shader = ShaderDatabase.Cutout;
 			this.mainTex = tex;
-			this.color = Color.white;
-			this.colorTwo = Color.white;
-			this.colorThree = Color.black;
+			this.color = Color.red;
+			this.colorTwo = Color.green;
+			this.colorThree = Color.blue;
 			this.maskTex = null;
 			this.renderQueue = 0;
 			this.shaderParameters = null;
@@ -34,11 +35,12 @@ namespace AvaliMod
 		// Token: 0x06001CEA RID: 7402 RVA: 0x000F22E4 File Offset: 0x000F04E4
 		public AvaliMaterialRequest(Texture2D tex, Shader shader)
 		{
+			Log.Message("matreq2");
 			this.shader = shader;
 			this.mainTex = tex;
-			this.color = Color.white;
-			this.colorTwo = Color.white;
-			this.colorThree = Color.black;
+			this.color = Color.green;
+			this.colorTwo = Color.blue;
+			this.colorThree = Color.red;
 			this.maskTex = null;
 			this.renderQueue = 0;
 			this.shaderParameters = null;
@@ -47,11 +49,12 @@ namespace AvaliMod
 		// Token: 0x06001CEB RID: 7403 RVA: 0x000F2338 File Offset: 0x000F0538
 		public AvaliMaterialRequest(Texture2D tex, Shader shader, Color color)
 		{
+			Log.Message("matreq3");
 			this.shader = shader;
 			this.mainTex = tex;
 			this.color = color;
-			this.colorTwo = Color.white;
-			this.colorThree = Color.black;
+			this.colorTwo = Color.red;
+			this.colorThree = Color.blue;
 			this.maskTex = null;
 			this.renderQueue = 0;
 			this.shaderParameters = null;
