@@ -97,21 +97,6 @@ I’m also usually pretty happy to help with those apparel patches. (The code pa
 
 ==============================================================
 	</description>
-  <modDependencies>
-     <li>
-       <packageId>erdelf.HumanoidAlienRaces</packageId>
-       <displayName>HumanoidAlienRaces 2.0</displayName>
-       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=839005762</steamWorkshopUrl>
-     </li>
-     <li>
-       <packageId>UnlimitedHugs.HugsLib</packageId>
-       <displayName>hugsLib</displayName>
-       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
-     </li>
-  </modDependencies>
-  <loadAfter>
-    <li>erdelf.HumanoidAlienRaces</li>
-  </loadAfter>
   <incompatibleWith>
     <li>Erisss.Ksisa.Avali</li>
 	</incompatibleWith>
