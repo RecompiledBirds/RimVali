@@ -31,6 +31,7 @@ namespace RVHAR
         static HarmonyPatches()
         {
             Harmony harmony = new Harmony(id:"RVHAR.patches");
+            Log.Message("Sanity");
             //Harmony.DEBUG = true;
 
             harmony.Patch(AccessTools.Method(typeof(PawnRelationWorker_Child), nameof(PawnRelationWorker_Child.GenerationChance)), prefix: null,
@@ -2065,24 +2066,24 @@ namespace RVHAR
                 alienComp.AssignProperMeshs();
 
                 Traverse.Create(alien.story).Field(name: "headGraphicPath").SetValue(alienComp.crownType.NullOrEmpty() ?
-                                                                                                      apg.RandomAlienHead(
-                                                                                                                                                        graphicPaths.head, alien) :
-                                                                                                      AlienPartGenerator.GetAlienHead(graphicPaths.head,
-                                                                                                          apg.useGenderedHeads ?
-                                                                                                                      alien.gender.ToString() :
-                                                                                                                      "", alienComp.crownType));
+                apg.RandomAlienHead(graphicPaths.head, alien) : AlienPartGenerator.GetAlienHead(graphicPaths.head, apg.useGenderedHeads ? alien.gender.ToString() : "", alienComp.crownType));
 
-                __instance.nakedGraphic = !graphicPaths.body.NullOrEmpty() ?
-                                              apg.GetNakedGraphic(alien.story.bodyType,
-                                                                                                ContentFinder<Texture2D>.Get(
-                                                                                                                                     AlienPartGenerator.GetNakedPath(alien.story.bodyType, graphicPaths.body,
-                                                                                                                                                                               apg.useGenderedBodies ? alien.gender.ToString() : "") +
-                                                                                                                                               "_northm", reportFailure: false) == null ?
-                                                                                                            graphicPaths.skinShader?.Shader ?? AvaliShaderDatabase.Tricolor :
-                                                                                                            AvaliShaderDatabase.Tricolor, __instance.pawn.story.SkinColor,
-                                                                                                apg.SkinColor(alien, first: false), graphicPaths.body,
-                                                                                                alien.gender.ToString()) :
-                                              null;
+                // liQdComment 1: This is the start, nothing here, nothing in game.
+                
+                __instance.nakedGraphic = !graphicPaths.body.NullOrEmpty() ? 
+                apg.GetNakedGraphic(
+                    alien.story.bodyType,
+                    //ContentFinder<Texture2D>.Get(AlienPartGenerator.GetNakedPath(alien.story.bodyType, graphicPaths.body, apg.useGenderedBodies ? alien.gender.ToString() : "") + "_northm", reportFailure: false) == null ? graphicPaths.skinShader?.Shader ?? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, 
+                    AvaliShaderDatabase.Tricolor,
+                    __instance.pawn.story.SkinColor, 
+                    apg.SkinColor(alien, 2), 
+                    apg.SkinColor(alien, 3), 
+                    graphicPaths.body, 
+                    alien.gender.ToString()
+                    ) : null;
+                
+
+
                 __instance.rottingGraphic = !graphicPaths.body.NullOrEmpty() ?
                                                 apg.GetNakedGraphic(alien.story.bodyType, graphicPaths.skinShader?.Shader ?? AvaliShaderDatabase.Tricolor,
                                                                                                   PawnGraphicSet.RottingColor, PawnGraphicSet.RottingColor, graphicPaths.body,
@@ -2094,7 +2095,7 @@ namespace RVHAR
                                                  ContentFinder<Texture2D>.Get(alien.story.HeadGraphicPath + "_northm", reportFailure: false) == null ?
                                                              graphicPaths.skinShader?.Shader ?? AvaliShaderDatabase.Tricolor :
                                                              AvaliShaderDatabase.Tricolor, Vector2.one, alien.story.SkinColor,
-                                                 apg.SkinColor(alien, first: false)) :
+                                                 apg.SkinColor(alien, 2)) :
                                              null;
                 __instance.desiccatedHeadGraphic = alien.health.hediffSet.HasHead && !alien.story.HeadGraphicPath.NullOrEmpty() ?
                                                        AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(alien.story.HeadGraphicPath, AvaliShaderDatabase.Tricolor, Vector2.one,
@@ -2109,8 +2110,8 @@ namespace RVHAR
                                 AvaliShaderDatabase.Tricolor, Vector2.one, alien.story.hairColor, alienComp.GetChannel(channel: "hair").second);
                 __instance.headStumpGraphic = !graphicPaths.stump.NullOrEmpty() ?
                                                   AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphicPaths.stump,
-                                                      alien.story.SkinColor == apg.SkinColor(alien, first: false) ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, Vector2.one,
-                                                      alien.story.SkinColor, apg.SkinColor(alien, first: false)) :
+                                                      alien.story.SkinColor == apg.SkinColor(alien, 2) ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, Vector2.one,
+                                                      alien.story.SkinColor, apg.SkinColor(alien, 2)) :
                                                   null;
                 __instance.desiccatedHeadStumpGraphic = !graphicPaths.stump.NullOrEmpty() ?
                                                             AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphicPaths.stump,
@@ -2134,7 +2135,6 @@ namespace RVHAR
                 }
 
                 __instance.ResolveApparelGraphics();
-
                 PortraitsCache.SetDirty(alien);
 
                 return false;
@@ -2163,7 +2163,7 @@ namespace RVHAR
         public static void SkinColorPostfix(Pawn_StoryTracker __instance, ref Color __result)
         {
             Pawn pawn = Traverse.Create(__instance).Field(name: "pawn").GetValue<Pawn>();
-            if (pawn.def is ThingDef_AlienRace alienProps) __result = alienProps.alienRace.generalSettings.alienPartGenerator.SkinColor(pawn);
+            if (pawn.def is ThingDef_AlienRace alienProps) __result = alienProps.alienRace.generalSettings.alienPartGenerator.SkinColor(pawn, 1);
         }
 
         public static void GenerateBodyTypePostfix(ref Pawn pawn)
