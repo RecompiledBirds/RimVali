@@ -124,6 +124,7 @@ namespace AvaliMod
         {
             req.color = (Color)(Color32)req.color;
             req.colorTwo = (Color)(Color32)req.colorTwo;
+            req.colorThree = (Color)(Color32)req.colorThree;
             AvaliGraphic graphic;
             if (!AvaliGraphicDatabase.allGraphics.TryGetValue(req, out graphic))
             {
