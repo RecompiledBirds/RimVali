@@ -15,6 +15,8 @@ namespace AvaliMod
         public static ThingDef RimVali;
         public static ThingDef AvaliAerogel;
         public static ThingDef AvaliResearchBench;
+        public static ThingDef AvaliNexus;
+
 
         //Stat defs
         public static StatDef ExplodeBombRadius;
@@ -41,5 +43,14 @@ namespace AvaliMod
 
         //Letters
         public static LetterDef IlluminateAirdrop;
+
+        //Faction defs
+        public static FactionDef AvaliFaction;
+
+        //Research defs
+        public static ResearchProjectDef AvaliAdvancedGuns;
+        public static ResearchProjectDef AvaliAdvancedMelee;
+        public static ResearchProjectDef AeroWeaveResearch;
+        public static ResearchProjectDef AvaliAeroTungsten;
     }
 }
