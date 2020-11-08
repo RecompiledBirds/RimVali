@@ -18,7 +18,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\__LocalCopy_RimVali_ Far From Avalon_-2-11 - Copy\1.2\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -71,14 +71,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graphic\ShaderDatabase.cs" />
+    <Compile Include="RimValiUtilities\CodeFile1.cs" />
+    <Compile Include="RimValiUtilities\CodeFile2.cs" />
+    <Compile Include="TempComp.cs" />
+    <Compile Include="Graphic\CodeFile3.cs" />
+    <Compile Include="Graphic\CodeFile4.cs" />
+    <Compile Include="HarmonyPatches\TransformValue.cs" />
+    <Compile Include="Packs\Packs.cs" />
     <Compile Include="RVHAR\AlienPartGenerator.BodyAddon.cs" />
     <Compile Include="RVHAR\AlienPartGenerator.cs" />
     <Compile Include="RVHAR\BackstoryDef.cs" />
     <Compile Include="Airdrop.cs" />
     <Compile Include="RVHAR\ColorGenerators.cs" />
     <Compile Include="Comparators\comparer.cs" />
-    <Compile Include="Graphic\MaterialAllocator.cs" />
     <Compile Include="Graphic\ShaderIDs.cs" />
     <Compile Include="Graphic\MaterialPool.cs" />
     <Compile Include="Graphic\MaterialRequest.cs" />
@@ -105,7 +110,6 @@
     <Compile Include="Graphic\Graphic.cs" />
     <Compile Include="Graphic\BaseContent.cs" />
     <Compile Include="Graphic\GraphicUtility.cs" />
-    <Compile Include="RVHAR\ScenPart_StartingHumanlikes.cs" />
     <Compile Include="ThingComps\EggLaying\Comp.cs" />
     <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />
