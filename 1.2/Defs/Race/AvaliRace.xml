@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+  <RVR.RVRace>
+    <graphics>
+    
+    </graphics>
+  </RVR.RVRace>
   <RVHAR.RaceSettings>
     <defName>AvaliRaceSettings</defName>
     <pawnKindSettings>
@@ -53,12 +57,17 @@
         <altitudeLayer>Pawn</altitudeLayer>
         <useHitPoints>false</useHitPoints>
         <hasTooltip>true</hasTooltip>
+        <inspectorTabs>
+          <li>AvaliMod.AvaliTab</li>
+        </inspectorTabs>
         <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
         <comps>
             <li>
                 <compClass>CompAttachBase</compClass>
             </li>
-		
+		        <li>
+              <compClass>AvaliMod.TempComp</compClass>
+            </li>
 	    <!--Cool things, these handle alot of the pack systems.-->
             <!-- Just don't remove any lines from these, please.-->
             <li Class="AvaliMod.AvaliDriverThoughtProps">
@@ -74,6 +83,14 @@
               </racesInPacks>
               <aloneThought>AvaliPackLoss</aloneThought>
               <relation>Packmate</relation>
+              <packGenChanceOverAge>
+                <points>
+                  <li>(0,1)</li>
+                  <li>(5,0.2)</li>
+                  <li>(8,0)</li>
+                </points>
+                
+              </packGenChanceOverAge>
             </li>
             
             
@@ -189,6 +206,9 @@
               <second Class="RVHAR.ColorGenerator_CustomAlienChannel">
                 <colorChannel>skin_2</colorChannel>
               </second>
+              <third Class="RVHAR.ColorGenerator_CustomAlienChannel">
+                <colorChannel>skin_2</colorChannel>
+              </third>
             </li>
           </colorChannels>
               <headOffset>(0,0.4)</headOffset>
@@ -767,6 +787,11 @@
             </li>
           </researchList>
           <weaponList>
+            <li>AvaliPistol</li>
+            <li>AvaliSMG</li>
+            <li>AvaliRifle</li>
+            <li>AvaliSniperRifle</li>
+            <li>AvaliShotgun</li>
           </weaponList>
           <conceptList>
             <li>RimValiBasicConcept</li>
