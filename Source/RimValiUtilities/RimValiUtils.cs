@@ -4,14 +4,15 @@ using System.Linq;
 using UnityEngine;
 using System;
 using System.IO;
+using System.Threading;
 using Verse;
 namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Keo";
+        public static string build = "Ei 0.0.1";
         public static string dir;
-        public static void AssetBundleFinder(DirectoryInfo info)
+       /* public static void AssetBundleFinder(DirectoryInfo info)
         {
             foreach(FileInfo file in info.GetFiles())
             {
@@ -29,7 +30,7 @@ namespace AvaliMod
                     }
                 }
             }
-        }
+        }*/
 
         public static AssetBundle shaderLoader(string info)
         {
@@ -393,53 +394,159 @@ namespace AvaliMod
         public static void KeoBuildMakePack(Pawn pawn, PawnRelationDef relationDef, IEnumerable<ThingDef> racesInPacks, int packLimit)
         {
             //Get all pawns in the allowed list.
-            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def) && RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < packLimit);
+            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit);
             foreach (Pawn packmate in packMates)
             {
                 SimpleCurve ageCurve = pawn.TryGetComp<PackComp>().Props.packGenChanceOverAge;
                 float x = (float)pawn.ageTracker.AgeBiologicalYearsFloat / pawn.def.race.lifeExpectancy;
                 float y = (float)packmate.ageTracker.AgeBiologicalYearsFloat / packmate.def.race.lifeExpectancy;
+                //if (!(pawn == packmate) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit && !(pawn.relations.DirectRelationExists(relationDef, packmate)))
                 //check that neither's pack size is too big, and that they aren't the same
-                if (!(GetPackSize(packmate, relationDef) >= packLimit) && !(GetPackSize(pawn, relationDef) >= packLimit) && !(pawn == packmate) && (double)Rand.Value < (double)ageCurve.Evaluate(x) && (double)Rand.Value < (double)ageCurve.Evaluate(y))
+                if (!(GetPackSize(packmate, relationDef) >= packLimit) && !(GetPackSize(pawn, relationDef) >= packLimit) && !(pawn == packmate) && (double)Rand.Value < (double)ageCurve.Evaluate(x) && (double)Rand.Value < (double)ageCurve.Evaluate(y) && !(pawn.relations.DirectRelationExists(relationDef, packmate)))
                 {
+
                     // adds the relation and evens out the pack.
                     pawn.relations.AddDirectRelation(relationDef, packmate);
                     CollectPackmates(packmate, pawn, relationDef);
                     TrimPack(pawn, packmate, relationDef, packmate.Faction, packLimit);
                 }
-                else
+                else if (GetPackSize(pawn, relationDef) == packLimit)
                 {
-                    //break if the pawn has reached the max pack limit.
-                    if (GetPackSize(pawn, relationDef) == packLimit)
-                    {
-                        break;
-                    }
+                    break;
                 }
             }
         }
         public static void KeoBuildMakeBasePack(Pawn pawn, PawnRelationDef relationDef, IEnumerable<ThingDef> racesInPacks, int packLimit)
         {
             //Get all pawns in the allowed list.
-            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def));
+            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit);
             foreach (Pawn packmate in packMates)
             {
+
                 //check that neither's pack size is too big, and that they aren't the same
-                if (GetPackSize(packmate, relationDef) ==1 && GetPackSize(pawn, relationDef) == 1 && !(pawn == packmate))
+                if (!(pawn == packmate) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit && !(pawn.relations.DirectRelationExists(relationDef, packmate)))
                 {
+                    //Log.Message("Adding relation between: " + pawn.Name + " and " + packmate.Name);
                     // adds the relation and evens out the pack.
                     pawn.relations.AddDirectRelation(relationDef, packmate);
                     CollectPackmates(packmate, pawn, relationDef);
                     TrimPack(pawn, packmate, relationDef, packmate.Faction, packLimit);
                 }
-                else
+                else if (GetPackSize(pawn, relationDef) == packLimit)
                 {
-                    //break if the pawn has reached the max pack limit.
-                    if (GetPackSize(pawn, relationDef) == packLimit)
+                    break;
+                }
+            }
+        }
+
+        public static List<AvaliPack> EiPackHandler(List<AvaliPack> packs, Pawn pawn, IEnumerable<ThingDef> racesInPacks, int packLimit)
+        {
+            void createNewPack()
+            {
+                AvaliPack NewPack = EiCreatePack(pawn);
+                Log.Message("Creating new pack- " + NewPack.name);
+                packs.Add(NewPack);
+            }
+            AvaliPack PawnPack = null;
+            //Log.Message("Checking all packs.");
+            if (packs.Count > 0)
+            {
+                foreach (AvaliPack pack in packs)
+                {
+                    if (pack.pawns.Contains(pawn))
                     {
+                        PawnPack = pack;
+                        //Log.Message("Found pack for pawn: " + pawn.Name);
+                        //Log.Message(pack.name);
+                        break;
+                    }
+                    if(pack.size < packLimit && pawn.Faction == pack.faction)
+                    {
+                        PawnPack = JoinPack(pawn, pack);
+                        packs.Replace<AvaliPack>(pack, PawnPack);
                         break;
                     }
                 }
+
+                if (PawnPack == null)
+                {
+                    createNewPack();
+
+                }
             }
+            else
+            {
+                Log.Message("No packs found, creating new pack.");
+                createNewPack();
+            }
+            return packs;
+        }
+
+        public static AvaliPack JoinPack(Pawn pawn, AvaliPack pack)
+        {
+            pack.pawns.Add(pawn);
+            Log.Message("Members in "+pack.name+":");
+            foreach(Pawn packmate in pack.pawns)
+            {
+                Log.Message(packmate.Name.ToString());
+            }
+            Log.Message("--------");
+            pack.size = pack.pawns.Count;
+            return pack;
+        }
+
+        public static AvaliPack EiCreatePack(Pawn pawn)
+        {
+            AvaliPack PawnPack = new AvaliPack();
+            PawnPack.name = pawn.Name.ToString() + " 's pack";
+            PawnPack.faction = pawn.Faction;
+            //Log.Message(PawnPack.name);
+            //Log.Message(pawn.Name.ToString());
+            PawnPack.pawns.Add(pawn);
+            return PawnPack;
+        }
+
+        public static AvaliPack GetPack(Pawn pawn)
+        {
+            AvaliPack pack = null;
+            if(pawn == null)
+            {
+                Log.Error("Pawn check is null!");
+                return null;
+            }
+            Log.Message(pawn.Name.ToString());
+            if(AvaliPackDriver.packs.Count > 0)
+            {
+                foreach(AvaliPack APack in AvaliPackDriver.packs)
+                {
+                    if (APack.pawns.Count > 0)
+                    {
+                        if (APack.pawns.Contains(pawn))
+                        {
+                            return APack;
+                        }
+                    }
+                }
+            }
+            /*foreach(AvaliPack packToCheck in AvaliPackDriver.packs)
+            {
+                Log.Message("Checking pack: "+ packToCheck.name);
+                /*if (packToCheck.pawns.Contains(pawn))
+                {
+                    Log.Message("Found pack: " + pack.name);
+                    return packToCheck;
+                }
+                foreach(Pawn pawn1 in packToCheck.pawns)
+                {
+                    if(pawn1 == pawn)
+                    {
+                        Log.Message("Found pack: " + pack.name);
+                        return packToCheck;
+                    }
+                }
+            }*/
+            Log.Message("Didn't find pack, returning null.");
+            return pack;
         }
     }
 }
