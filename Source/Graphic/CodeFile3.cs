@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.IO;
-
 namespace AvaliMod
 {
     [StaticConstructorOnStartup]
-    public class AvaliShaderDatabase
+    public static class AvaliShaderDatabase
     {
         static AvaliShaderDatabase()
         {
@@ -15,7 +14,8 @@ namespace AvaliMod
 
             Log.Message(dir);
             string path = dir + "/RimValiAssetBundles/shader";
-            AssetBundle bundle = RimValiUtility.shaderLoader(path);
+            Log.Message(path);
+            AssetBundle bundle = AssetBundle.LoadFromFile(path);
             Tricolor = (Shader)bundle.LoadAsset("assets/resources/materials/avalishader.shader");
             if (!(Tricolor == null))
             {
