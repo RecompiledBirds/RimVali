@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <AlienRace.RaceSettings>
+  <RVR.RVRace>
+    <graphics>
+    
+    </graphics>
+  </RVR.RVRace>
+  <RVHAR.RaceSettings>
     <defName>AvaliRaceSettings</defName>
     <pawnKindSettings>
      <startingColonists>
@@ -43,9 +47,9 @@
         </li>
       </alienwandererkinds>
     </pawnKindSettings>
-  </AlienRace.RaceSettings>
+  </RVHAR.RaceSettings>
   
-	<AlienRace.ThingDef_AlienRace Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
+	<RVHAR.ThingDef_AlienRace Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
         <thingClass>Pawn</thingClass>
         <category>Pawn</category>
         <selectable>true</selectable>
@@ -53,12 +57,17 @@
         <altitudeLayer>Pawn</altitudeLayer>
         <useHitPoints>false</useHitPoints>
         <hasTooltip>true</hasTooltip>
+        <inspectorTabs>
+          <li>AvaliMod.AvaliTab</li>
+        </inspectorTabs>
         <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
         <comps>
             <li>
                 <compClass>CompAttachBase</compClass>
             </li>
-		
+		        <li>
+              <compClass>AvaliMod.TempComp</compClass>
+            </li>
 	    <!--Cool things, these handle alot of the pack systems.-->
             <!-- Just don't remove any lines from these, please.-->
             <li Class="AvaliMod.AvaliDriverThoughtProps">
@@ -74,6 +83,14 @@
               </racesInPacks>
               <aloneThought>AvaliPackLoss</aloneThought>
               <relation>Packmate</relation>
+              <packGenChanceOverAge>
+                <points>
+                  <li>(0,1)</li>
+                  <li>(5,0.2)</li>
+                  <li>(8,0)</li>
+                </points>
+                
+              </packGenChanceOverAge>
             </li>
             
             
@@ -85,9 +102,9 @@
             </li>
         </comps>
         <drawGUIOverlay>true</drawGUIOverlay>
-    </AlienRace.ThingDef_AlienRace>
+    </RVHAR.ThingDef_AlienRace>
 	
-	<AlienRace.ThingDef_AlienRace ParentName="BaseAvaliRace" Name="BaseAvali">
+	<RVHAR.ThingDef_AlienRace ParentName="BaseAvaliRace" Name="BaseFullAvali">
         <defName>RimVali</defName>
         <label>Avali</label>
         <description>Cute, fluffy raptors with highly advanced tech. The primary in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
@@ -166,15 +183,32 @@
                    </li>
                   </options>
               </second>
+              <third Class="ColorGenerator_Options">
+                <options>
+                   <li>
+                     <weight>10</weight>
+                     <min>RGBA(50, 50, 50, 255)</min>
+                     <max>RGBA(200, 200, 200, 255)</max>
+                   </li>
+                   <li>
+                     <weight>2</weight>
+                     <min>RGBA(40, 40, 40, 255)</min>
+                     <max>RGBA(60, 60, 60, 255)</max>
+                   </li>
+                  </options>
+              </third>
             </li>
             <li>
               <name>hair</name>
-              <first Class="AlienRace.ColorGenerator_CustomAlienChannel">
+              <first Class="RVHAR.ColorGenerator_CustomAlienChannel">
                 <colorChannel>skin_2</colorChannel>
               </first>
-              <second Class="AlienRace.ColorGenerator_CustomAlienChannel">
+              <second Class="RVHAR.ColorGenerator_CustomAlienChannel">
                 <colorChannel>skin_2</colorChannel>
               </second>
+              <third Class="RVHAR.ColorGenerator_CustomAlienChannel">
+                <colorChannel>skin_2</colorChannel>
+              </third>
             </li>
           </colorChannels>
               <headOffset>(0,0.4)</headOffset>
@@ -753,6 +787,11 @@
             </li>
           </researchList>
           <weaponList>
+            <li>AvaliPistol</li>
+            <li>AvaliSMG</li>
+            <li>AvaliRifle</li>
+            <li>AvaliSniperRifle</li>
+            <li>AvaliShotgun</li>
           </weaponList>
           <conceptList>
             <li>RimValiBasicConcept</li>
@@ -1081,7 +1120,7 @@
       <li>InstallPE</li>
 
 		</recipes>
-	</AlienRace.ThingDef_AlienRace>
+	</RVHAR.ThingDef_AlienRace>
   
   
 </Defs>
