@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+  <AvaliBasicBionicTail.label>Basic bionic tail</AvaliBasicBionicTail.label>
+  <AvaliBasicBionicTail.description>A basic bionic tail. It isn't much better, but it's not too bad.</AvaliBasicBionicTail.description>
+  
+  <AvaliAdvancedBionicTail.label>Advanced bionic tail</AvaliAdvancedBionicTail.label>
+  <AvaliAdvancedBionicTail.description>An advanced bionic tail, featuring better self repair systems, and a direct neural connection to the users brain, allowing it to do almost exactly what they want in a very precise manner.</AvaliAdvancedBionicTail.description>
+</LanguageData>
