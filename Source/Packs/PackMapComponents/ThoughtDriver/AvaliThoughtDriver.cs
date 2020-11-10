@@ -46,22 +46,28 @@ namespace AvaliMod
         public void UpdatePawns(Map map)
         {
             IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => x.def == AvaliDefs.RimVali);
+            IEnumerable<AvaliPack> packs = AvaliPackDriver.packs;
             foreach (Pawn pawn in pawns)
             {
                 AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
                 PackComp packComp = pawn.TryGetComp<PackComp>();
                 if (!(avaliThoughtDriver == null))
                 {
-                    if (pawn.def == AvaliDefs.RimVali)
+                    AvaliPack pawnPack = RimValiUtility.GetPack(pawn);
+                    foreach (Pawn packmate in pawnPack.pawns)
                     {
-                        if (RimValiUtility.GetPackSize(pawn, avaliThoughtDriver.Props.relationDef) > 1)
+                        Thought_Memory thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(AvaliDefs.AvaliPackmateThought);
+                        if (!(packmate == pawn))
                         {
-                            PawnRelationDef relationDef = avaliThoughtDriver.Props.relationDef;
-                            UpdateSharedRoomThought(pawn, relationDef, avaliThoughtDriver.Props.inSameRoomThought);
-                            UpdateBedRoomThought(pawn, relationDef, avaliThoughtDriver.Props.sharedBedroomThought, avaliThoughtDriver.Props.sleptApartThought);
+                            bool bubble;
+                            if (!thought_Memory2.TryMergeWithExistingMemory(out bubble))
+                            {
+                                Log.Message("Adding thought to pawn.");
+                                pawn.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, packmate);
+                            }
                         }
-
                     }
+
                 }
                 if (!(packComp == null))
                 {

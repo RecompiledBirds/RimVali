@@ -3,6 +3,8 @@ using Verse;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System;
+
 namespace AvaliMod
 {
     public class AvaliPackDriver : MapComponent
@@ -54,51 +56,8 @@ namespace AvaliMod
 
         public override void ExposeData()
         {
-            Scribe_Values.Look<List<AvaliPack>>(ref packs, "packs", new List<AvaliPack>(), true);
+            Scribe_Collections.Look<AvaliPack>(ref packs, "packs", LookMode.Deep, Array.Empty<object>());
             base.ExposeData();
-        }
-
-
-        public void MakeNewPacks()
-        {
-            if (enableDebug && multiThreaded)
-            {
-                Log.Message("Thread started.");
-            }
-            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map).Where<Pawn>(x => RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < maxSize);
-            foreach (Pawn pawn in pawnsOnMap)
-            {
-                PackComp comp = pawn.TryGetComp<PackComp>();
-                if (!(comp == null))
-                {
-                    //Pull the comp info from the pawn
-                    PawnRelationDef relationDef = comp.Props.relation;
-                    SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
-                    //Tells us that this pawn has had a pack
-                    if (enableDebug)
-                    {
-                        Log.Message("Attempting to make pack.. [New/added pack]");
-                    }
-                    //Makes the pack.
-                    foreach (Pawn packmate in pawnsOnMap)
-                    {
-                        //RimValiUtility.KeoBuildMakeBasePack(pawn, relationDef, racesInPacks, maxSize);
-                        RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
-                        if (RimValiUtility.GetPackSize(pawn, relationDef) <= 0)
-                        {
-                            packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
-                        }
-                        else
-                        {
-                            packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
-                        }
-                        if (RimValiUtility.GetPackSize(pawn, relationDef) == maxSize)
-                        {
-                            break;
-                        }
-                    }
-                }
-            }
         }
 
         public void UpdatePacks()
@@ -135,7 +94,7 @@ namespace AvaliMod
             {
                 LoadAll();
             }
-            if (onTick == 120)
+            if (onTick == 0)
             {
                 if (packsEnabled)
                 {
@@ -159,11 +118,11 @@ namespace AvaliMod
                         Log.Message(packs[0].name);
                     }*/
                 }
-                onTick = 0;
+                onTick = 120;
             }
             else
             {
-                onTick += 1;
+                onTick--;
             }
         }
 
