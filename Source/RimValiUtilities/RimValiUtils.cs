@@ -10,7 +10,7 @@ namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Ei 0.0.1";
+        public static string build = "Ei 0.0.2";
         public static string dir;
        /* public static void AssetBundleFinder(DirectoryInfo info)
         {
@@ -498,7 +498,7 @@ namespace AvaliMod
         public static AvaliPack EiCreatePack(Pawn pawn)
         {
             AvaliPack PawnPack = new AvaliPack();
-            PawnPack.name = pawn.Name.ToString() + " 's pack";
+            PawnPack.name = pawn.Name.ToStringShort + "'s pack";
             PawnPack.faction = pawn.Faction;
             //Log.Message(PawnPack.name);
             //Log.Message(pawn.Name.ToString());

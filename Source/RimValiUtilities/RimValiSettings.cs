@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 namespace AvaliMod
@@ -53,7 +54,7 @@ namespace AvaliMod
             }
 
         }
-        private Vector2 vector = Vector2.left;
+        private Vector2 vector = Vector2.up;
         Rect rect = new Rect();
         private bool saidDebugWasEnabled;
         private int settingsAreStable = 0;
@@ -81,11 +82,10 @@ namespace AvaliMod
             }*/
         }
 
-        public override void DoSettingsWindowContents(Rect inRect)
+        public override void DoSettingsWindowContents(Rect rect)
         {
 
             bool threaded = settings.packMultiThreading;
-            rect.Set(inRect.x, inRect.y - 2, 500, 5000);
             if (this.settings.enabledRaces == null)
             {
                 this.settings.enabledRaces = new Dictionary<string, bool>();
@@ -104,33 +104,37 @@ namespace AvaliMod
                 AvaliDefs.AvaliAdvancedMelee.requiredResearchBuilding = AvaliDefs.AvaliNexus;
                 AvaliDefs.AvaliAeroTungsten.requiredResearchBuilding = AvaliDefs.AvaliNexus;
             }
-            Rect WidgetRect = rect.LeftHalf().BottomPart(0.1f);
+            Rect TopHalf = rect.TopHalf();
+            Rect TopLeft = TopHalf.LeftHalf();
+            Rect TopRight = TopHalf.RightHalf();
+            Rect BottomHalf = rect.BottomHalf();
+            Rect BottomLeft = BottomHalf.LeftHalf();
+            Rect BottomRight = BottomHalf.RightHalf();
             Listing_Standard listing_Standard = new Listing_Standard();
-            listing_Standard.BeginScrollView(inRect, ref vector, ref rect);
-            listing_Standard.Gap(50);
-            listing_Standard.Label("        Pack settings");
+            listing_Standard.Begin(TopLeft);
+            listing_Standard.Label("PackLabel".Translate());
             listing_Standard.GapLine(10);
-            listing_Standard.CheckboxLabeled("Pack loss enabled", ref settings.packLossEnabled, "Enable/disable pack loss.");
-            listing_Standard.CheckboxLabeled("Multithreading enabled", ref settings.packMultiThreading, "Enable/disable pack multithreading. !!!Caution: Does not pair well with Dubs Performance Analyser, however your game may run slower without it!!!");
-            listing_Standard.CheckboxLabeled("Packs enabled", ref settings.packsEnabled, "Enable/disable packs");
+            listing_Standard.CheckboxLabeled("PackLossCheck".Translate(), ref settings.packLossEnabled, "PackLossDesc".Translate());
+            listing_Standard.CheckboxLabeled("MultithreadingCheck".Translate(), ref settings.packMultiThreading, "MultiThreadingDesc".Translate());
+            listing_Standard.CheckboxLabeled("PacksCheck".Translate(), ref settings.packsEnabled, "PacksDesc".Translate());
             listing_Standard.CheckboxLabeled("Enable other avali", ref settings.checkOtherRaces, "Pull any other potential 'avali' races from other mods, and factor them into the pack system. ");
-            listing_Standard.CheckboxLabeled("Enable all races", ref settings.allowAllRaces, "Allow all races to join packs.");
-           /* try
-            {
-                ShowRaces();
-                foreach (ThingDef race in RimvaliPotentialPackRaces.potentialRaces)
-                {
-                    bool checkOn = this.settings.enabledRaces.TryGetValue(race.defName);
-                    listing_Standard.CheckboxLabeled(race.label, ref checkOn);
-                    this.settings.enabledRaces.SetOrAdd(race.defName, checkOn);
-                }
-            }
-            catch
-            {
-                listing_Standard.GapLine(10);
-                listing_Standard.Label("RimVali '".Colorize(Color.red) + RimValiUtility.build.Colorize(Color.red) + "' was unable to show this item! We're sorry for any inconvience. :(".Colorize(Color.red));
-                listing_Standard.CheckboxLabeled("Enable debug mode".Colorize(Color.red), ref settings.enableDebugMode, "It appears RimVali encountered an error. You can use debug mode to return logs with more information on what RimVali was doing. [WIP]".Colorize(Color.red));
-            }*/
+            
+            /* try
+             {
+                 ShowRaces();
+                 foreach (ThingDef race in RimvaliPotentialPackRaces.potentialRaces)
+                 {
+                     bool checkOn = this.settings.enabledRaces.TryGetValue(race.defName);
+                     listing_Standard.CheckboxLabeled(race.label, ref checkOn);
+                     this.settings.enabledRaces.SetOrAdd(race.defName, checkOn);
+                 }
+             }
+             catch
+             {
+                 listing_Standard.GapLine(10);
+                 listing_Standard.Label("RimVali '".Colorize(Color.red) + RimValiUtility.build.Colorize(Color.red) + "' was unable to show this item! We're sorry for any inconvience. :(".Colorize(Color.red));
+                 listing_Standard.CheckboxLabeled("Enable debug mode".Colorize(Color.red), ref settings.enableDebugMode, "It appears RimVali encountered an error. You can use debug mode to return logs with more information on what RimVali was doing. [WIP]".Colorize(Color.red));
+             }*/
             LogDebugOn();
             listing_Standard.Gap(10);
             if ((settings.maxPackSize < 20 & settings.maxPackSize > 10) | settings.maxPackSize < 3)
@@ -145,35 +149,42 @@ namespace AvaliMod
             {
                 settingsAreStable = 0;
             }
-            listing_Standard.Label("Maximum pack size: " + settings.maxPackSize.ToString(), -1, "RimVali was made to play this way.".Colorize(Color.green));
+            Rect packRacesRect = rect;
+            packRacesRect.Set(packRacesRect.x, packRacesRect.y, BottomLeft.width-20, packRacesRect.height + (RimvaliPotentialPackRaces.potentialRaces.Count()*17));
+            listing_Standard.Label("MaxPackSize".Translate() + settings.maxPackSize.ToString(), -1, "RimVali was made to play this way.".Colorize(Color.green));
             settings.maxPackSize = (int)listing_Standard.Slider(settings.maxPackSize, 2, 50);
+            listing_Standard.End();
+            listing_Standard.Begin(TopRight);
+            listing_Standard.Label("GameplayLabel".Translate());
             listing_Standard.GapLine(10);
-            listing_Standard.Label("        Gameplay settings");
+            listing_Standard.CheckboxLabeled("CanHaveEggs".Translate(), ref settings.avaliLayEggs, "EggsDesc".Translate());
+            listing_Standard.CheckboxLabeled("ShowText".Translate(), ref settings.textEnabled);
+            listing_Standard.CheckboxLabeled("AirdropsText".Translate(), ref settings.enableAirdrops);
+            listing_Standard.End();
+            listing_Standard.Begin(BottomRight);
+            listing_Standard.Label("DebugLabel".Translate());
             listing_Standard.GapLine(10);
-            listing_Standard.CheckboxLabeled("Avali can have eggs", ref settings.avaliLayEggs, "Enable/disable eggs");
-            listing_Standard.CheckboxLabeled("Display text (chirp, peep, etc)", ref settings.textEnabled);
-            listing_Standard.CheckboxLabeled("Enabled airdrops", ref settings.enableAirdrops);
             if (this.settings.enableDebugMode)
             {
                 listing_Standard.GapLine(10);
-                listing_Standard.Label("        Debug settings");
+                listing_Standard.Label("Debug settings");
                 listing_Standard.GapLine(10);
-                listing_Standard.Label("RimVali build: " + RimValiUtility.build);
+                listing_Standard.Label("RVBuild".Translate() + RimValiUtility.build);
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
 
             }
 
             if (settingsAreStable == 0)
             {
-                resetSettings = listing_Standard.ButtonText("Stable");
+                resetSettings = listing_Standard.ButtonText("StableSettings".Translate());
             }
             else if (settingsAreStable == 1)
             {
-                resetSettings = listing_Standard.ButtonText("Potential issues");
+                resetSettings = listing_Standard.ButtonText("PotentialIssuesSettings".Translate());
             }
             else
             {
-                resetSettings = listing_Standard.ButtonText("Unstable; Use at your own risk.");
+                resetSettings = listing_Standard.ButtonText("UnstableSettings".Translate());
             }
             if (resetSettings)
             {
@@ -186,7 +197,7 @@ namespace AvaliMod
                 settings.enableDebugMode = false;
                 settings.avaliLayEggs = false;
             }
-            bool debugButton = listing_Standard.ButtonText("Toggle debug mode");
+            bool debugButton = listing_Standard.ButtonText("ToggleDebug".Translate());
             if (debugButton)
             {
 
@@ -198,14 +209,19 @@ namespace AvaliMod
                 settings.Write();
                 GenCommandLine.Restart();
             }
-            Widgets.BeginScrollView(WidgetRect, ref vector, WidgetRect);
+            listing_Standard.End();
+            listing_Standard.BeginScrollView(BottomLeft,ref vector,ref packRacesRect);
+            listing_Standard.Gap(50);
+            listing_Standard.Label("RacesInPacks".Translate());
+            listing_Standard.GapLine(10);
+
             try
             {
                 ShowRaces();
                 foreach (ThingDef race in RimvaliPotentialPackRaces.potentialRaces)
                 {
                     bool checkOn = this.settings.enabledRaces.TryGetValue(race.defName);
-                    Widgets.CheckboxLabeled(WidgetRect, race.label, ref checkOn);
+                    listing_Standard.CheckboxLabeled(race.label, ref checkOn);
                     this.settings.enabledRaces.SetOrAdd(race.defName, checkOn);
                 }
             }
@@ -215,14 +231,14 @@ namespace AvaliMod
                 listing_Standard.Label("RimVali '".Colorize(Color.red) + RimValiUtility.build.Colorize(Color.red) + "' was unable to show this item! We're sorry for any inconvience. :(".Colorize(Color.red));
                 listing_Standard.CheckboxLabeled("Enable debug mode".Colorize(Color.red), ref settings.enableDebugMode, "It appears RimVali encountered an error. You can use debug mode to return logs with more information on what RimVali was doing. [WIP]".Colorize(Color.red));
             }
-            Widgets.EndScrollView();
-            listing_Standard.EndScrollView(ref inRect);
-            base.DoSettingsWindowContents(inRect);
+            listing_Standard.Gap(50);
+            listing_Standard.EndScrollView(ref BottomLeft);
+            base.DoSettingsWindowContents(rect);
 
         }
         public override string SettingsCategory()
         {
-            return "RimVali- avali";
+            return "RimValiCore";
         }
     }
 }
