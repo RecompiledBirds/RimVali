@@ -16,6 +16,47 @@
       <li>RimValiBackstories</li>
     </spawnCategories>
   </AlienRace.BackstoryDef>
+	
+    <AlienRace.BackstoryDef>
+    <defName>AvaliWarchild</defName>
+    <title>War Hatchling</title>
+    <titleShort>War Hatchling</titleShort>
+    <baseDescription>When [PAWN_nameDef] was just a mere hatchling, [PAWN_possessive] colony was raided by an opposing pack. Luckily, they never found little [PAWN_nameDef], who was hid away before the attack. Only a few days later, [PAWN_Pronoun] was found by explorers, who luckily decided to take [PAWN_nameDef] back home with them. [PAWN_nameDef] lived a relatively normal life afterwards, not even made aware of [PAWN_Possessive] past until adulthood.</baseDescription>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>RimValiBackstories</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+	
+<AlienRace.BackstoryDef>
+    <defName>AvaliSoldierChild</defName>
+    <title>Child Soldier</title>
+    <titleShort>Child Soldier</titleShort>
+    <baseDescription>From an extremely young age, [PAWN_nameDef] was taught how to fight. [PAWN_possessive] pack was extremely militaristic in nature, and believed in honor codes. [PAWN_nameDef] was drilled from an extremely young age, in harsh conditions, and harsh tests.
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>RimValiBackstories</li>
+    </spawnCategories>
+	    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+	      <defName>Social</defName>
+	      <amount>-1</amount>
+		    </li>
+    </skillGains>
+  </AlienRace.BackstoryDef>
+  
   
   <AlienRace.BackstoryDef>
     <defName>AvalAdult</defName>
