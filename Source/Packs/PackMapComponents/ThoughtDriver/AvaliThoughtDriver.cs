@@ -53,7 +53,24 @@ namespace AvaliMod
                 PackComp packComp = pawn.TryGetComp<PackComp>();
                 if (!(avaliThoughtDriver == null))
                 {
-                    AvaliPack pawnPack = RimValiUtility.GetPack(pawn);
+                    //Log.Message("Pawn has pack comp, moving to next step...");
+                    if (AvaliPackDriver.packs == null || AvaliPackDriver.packs.Count == 0)
+                    {
+                        Log.Message("How did we get here? [Pack list was 0 or null]");
+                        return;
+                    }
+                    AvaliPack pawnPack = null;
+                    //This errors out when pawns dont have a pack. That is bad. This stops it from doing that.
+                    try { pawnPack = RimValiUtility.GetPack(pawn); }
+                    catch
+                    {
+                        return;
+                    }
+                    Log.Message("Tried to get packs pack, worked.");
+                    if (pawnPack == null)
+                    {
+                        Log.Message("How did we get here? [Pack was null.]");
+                    }
                     foreach (Pawn packmate in pawnPack.pawns)
                     {
                         Thought_Memory thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(AvaliDefs.AvaliPackmateThought);
@@ -68,13 +85,6 @@ namespace AvaliMod
                         }
                     }
 
-                }
-                if (!(packComp == null))
-                {
-                    if (packComp.Props.canHaveAloneThought)
-                    {
-                        UpdateThought(pawn, packComp.Props.relation, packComp.Props.aloneThought);
-                    }
                 }
             }
         }
@@ -103,7 +113,7 @@ namespace AvaliMod
         }
         public override void MapComponentTick()
         {
-            if (mapCompOn)
+            if (mapCompOn && !(AvaliPackDriver.packs == null) && AvaliPackDriver.packs.Count > 0)
             {
                 if (onTick == 120)
                 {

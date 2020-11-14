@@ -21,7 +21,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref name, "packName", "NoName", true);
             Scribe_Values.Look(ref size, "size", 1, true);
             Scribe_References.Look<Faction>(ref faction, "faction", false);
-            Scribe_Values.Look(ref deathDates, "deathDates", null, true);
+            Scribe_Collections.Look<DeathDate>(ref deathDates, "deathDates", LookMode.Reference, true);
             Scribe_Values.Look(ref creationDate, "creationDate", null, true);
         }
         public string GetUniqueLoadID()
@@ -30,7 +30,7 @@ namespace AvaliMod
         }
 
     }
-    public class Date
+    public class Date : Thing, ILoadReferenceable, IExposable
     {
         public int day;
         public Quadrum quadrum;

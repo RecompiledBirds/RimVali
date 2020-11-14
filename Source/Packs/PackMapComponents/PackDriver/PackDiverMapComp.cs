@@ -74,7 +74,6 @@ namespace AvaliMod
                 if (!(comp == null))
                 {
                     //Pull the comp info from the pawn
-                    PawnRelationDef relationDef = comp.Props.relation;
                     SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
                     //Tells us that this pawn has had a pack
                     if (enableDebug)
