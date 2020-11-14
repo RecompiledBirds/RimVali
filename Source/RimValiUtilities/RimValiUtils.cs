@@ -320,124 +320,7 @@ namespace AvaliMod
             }
         }
 
-        public static void CollectPackmates(Pawn pawn, Pawn pawn2, PawnRelationDef relationDef)
-        {
-            //Grab a list of all of their pack relations.
-            IEnumerable<Pawn> firstRelatedPawns = pawn.relations.RelatedPawns.Where(x => x.relations.DirectRelationExists(relationDef, pawn));
-            IEnumerable<Pawn> secondRelatedPawns = pawn2.relations.RelatedPawns.Where(x => x.relations.DirectRelationExists(relationDef, pawn2));
-            foreach (Pawn pawnFound in firstRelatedPawns)
-            {
-                //if a packmate relation exists between pawn and firstRelatedPawns[relatedItem]
-                if (pawn.relations.DirectRelationExists(relationDef, pawnFound))
-                {
-                    //and the other pawn does not have it
-                    if (!pawn2.relations.DirectRelationExists(relationDef, pawnFound) && !(pawn2 == pawnFound))
-                    {
-                        //add the relation to both
-                        pawn2.relations.AddDirectRelation(relationDef, pawnFound);
-                    }
-                }
-            }
-            //same thing, except pawn2 is in place of pawn, and secondRelatedPawns replaces firstRelated
-            foreach (Pawn foundPawn in secondRelatedPawns)
-            {
-                if (pawn2.relations.DirectRelationExists(relationDef, foundPawn))
-                {
-                    if (!pawn.relations.DirectRelationExists(relationDef, foundPawn) && !(pawn == foundPawn))
-                    {
-                        pawn.relations.AddDirectRelation(relationDef, foundPawn);
-                    }
-                }
-            }
-        }
 
-        public static void TrimPack(Pawn pawn, Pawn pawn2, PawnRelationDef relationDef, Faction faction = null, int limit = 5)
-        {
-            if (faction == null)
-            {
-                faction = pawn.Faction;
-            }
-            IEnumerable<Pawn> firstRelatedPawns = pawn.relations.RelatedPawns.Where(x => x.relations.DirectRelationExists(relationDef, pawn));
-            IEnumerable<Pawn> secondRelatedPawns = pawn2.relations.RelatedPawns.Where(x => x.relations.DirectRelationExists(relationDef, pawn2));
-            foreach (Pawn pawnFound in firstRelatedPawns)
-            {
-                //if a packmate relation exists between pawn and firstRelatedPawns[relatedItem]
-                if (pawn.relations.DirectRelationExists(relationDef, pawnFound) && GetPackSize(pawn, relationDef) > limit)
-                {
-                    //and the other pawn does not have it
-                    if (pawn2.relations.DirectRelationExists(relationDef, pawnFound))
-                    {
-                        //remove the relation from both
-                        pawn2.relations.TryRemoveDirectRelation(relationDef, pawnFound);
-                    }
-                }
-            }
-            //same thing, except pawn2 is in place of pawn, and secondRelatedPawns replaces firstRelated
-            foreach (Pawn foundPawn in secondRelatedPawns)
-            {
-                if (pawn2.relations.DirectRelationExists(relationDef, foundPawn) && GetPackSize(pawn2, relationDef) > limit)
-                {
-                    if (pawn.relations.DirectRelationExists(relationDef, foundPawn))
-                    {
-                        pawn.relations.TryRemoveDirectRelation(relationDef, foundPawn);
-                    }
-                }
-            }
-        }
-
-
-        //The "Keo" build's newer pack system.
-        //It's faster, easier to understand, and smarter. 
-        //It can allow any races enabled to join, like a few of its predecessors.
-
-        //KeoBuildMakePack should be used for building packs over time, while KeoBuildMakeBasePack serves for inital generation.
-        public static void KeoBuildMakePack(Pawn pawn, PawnRelationDef relationDef, IEnumerable<ThingDef> racesInPacks, int packLimit)
-        {
-            //Get all pawns in the allowed list.
-            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit);
-            foreach (Pawn packmate in packMates)
-            {
-                SimpleCurve ageCurve = pawn.TryGetComp<PackComp>().Props.packGenChanceOverAge;
-                float x = (float)pawn.ageTracker.AgeBiologicalYearsFloat / pawn.def.race.lifeExpectancy;
-                float y = (float)packmate.ageTracker.AgeBiologicalYearsFloat / packmate.def.race.lifeExpectancy;
-                //if (!(pawn == packmate) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit && !(pawn.relations.DirectRelationExists(relationDef, packmate)))
-                //check that neither's pack size is too big, and that they aren't the same
-                if (!(GetPackSize(packmate, relationDef) >= packLimit) && !(GetPackSize(pawn, relationDef) >= packLimit) && !(pawn == packmate) && (double)Rand.Value < (double)ageCurve.Evaluate(x) && (double)Rand.Value < (double)ageCurve.Evaluate(y) && !(pawn.relations.DirectRelationExists(relationDef, packmate)))
-                {
-
-                    // adds the relation and evens out the pack.
-                    pawn.relations.AddDirectRelation(relationDef, packmate);
-                    CollectPackmates(packmate, pawn, relationDef);
-                    TrimPack(pawn, packmate, relationDef, packmate.Faction, packLimit);
-                }
-                else if (GetPackSize(pawn, relationDef) == packLimit)
-                {
-                    break;
-                }
-            }
-        }
-        public static void KeoBuildMakeBasePack(Pawn pawn, PawnRelationDef relationDef, IEnumerable<ThingDef> racesInPacks, int packLimit)
-        {
-            //Get all pawns in the allowed list.
-            IEnumerable<Pawn> packMates = PawnsFinder.AllMaps_SpawnedPawnsInFaction(pawn.Faction).Where<Pawn>(x => racesInPacks.Contains(x.def) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit);
-            foreach (Pawn packmate in packMates)
-            {
-
-                //check that neither's pack size is too big, and that they aren't the same
-                if (!(pawn == packmate) && RimValiUtility.GetPackSize(pawn, relationDef) < packLimit && !(pawn.relations.DirectRelationExists(relationDef, packmate)))
-                {
-                    //Log.Message("Adding relation between: " + pawn.Name + " and " + packmate.Name);
-                    // adds the relation and evens out the pack.
-                    pawn.relations.AddDirectRelation(relationDef, packmate);
-                    CollectPackmates(packmate, pawn, relationDef);
-                    TrimPack(pawn, packmate, relationDef, packmate.Faction, packLimit);
-                }
-                else if (GetPackSize(pawn, relationDef) == packLimit)
-                {
-                    break;
-                }
-            }
-        }
 
         public static List<AvaliPack> EiPackHandler(List<AvaliPack> packs, Pawn pawn, IEnumerable<ThingDef> racesInPacks, int packLimit)
         {
@@ -460,7 +343,7 @@ namespace AvaliMod
                         //Log.Message(pack.name);
                         break;
                     }
-                    if(pack.size < packLimit && pawn.Faction == pack.faction)
+                    if (pack.size < packLimit && pawn.Faction == pack.faction)
                     {
                         PawnPack = JoinPack(pawn, pack);
                         packs.Replace<AvaliPack>(pack, PawnPack);
@@ -482,23 +365,19 @@ namespace AvaliMod
             return packs;
         }
 
-        public static AvaliPack JoinPack(Pawn pawn, AvaliPack pack)
+      
+        public static AvaliPack JoinPack(Pawn pawn, AvaliPack pack, int reqOpinionPawn = 30, int reqOpionionPack = 30)
         {
             pack.pawns.Add(pawn);
-            Log.Message("Members in "+pack.name+":");
-            foreach(Pawn packmate in pack.pawns)
-            {
-                Log.Message(packmate.Name.ToString());
-            }
-            Log.Message("--------");
-            pack.size = pack.pawns.Count;
+            pack.size++;
             return pack;
         }
-
         public static AvaliPack EiCreatePack(Pawn pawn)
         {
+            
             AvaliPack PawnPack = new AvaliPack();
             PawnPack.name = pawn.Name.ToStringShort + "'s pack";
+            PawnPack.size = 1;
             PawnPack.faction = pawn.Faction;
             //Log.Message(PawnPack.name);
             //Log.Message(pawn.Name.ToString());
@@ -508,17 +387,23 @@ namespace AvaliMod
 
         public static AvaliPack GetPack(Pawn pawn)
         {
-            AvaliPack pack = null;
+            //Verify the pawn somehow isnt null. Really shouldnt be an issue, but another "saftey check"
             if(pawn == null)
             {
                 Log.Error("Pawn check is null!");
                 return null;
             }
-            Log.Message(pawn.Name.ToString());
+            //This really shouldnt be needed, but it's a failsafe if something messes up.
+            if(AvaliPackDriver.packs == null || AvaliPackDriver.packs.Count == 0)
+            {
+                return null;
+            }
+            //We really should be getting here
             if(AvaliPackDriver.packs.Count > 0)
             {
                 foreach(AvaliPack APack in AvaliPackDriver.packs)
                 {
+                    //Checks if somehow a pack has 0 pawns (never should happen), then checks if the pawn is in it.
                     if (APack.pawns.Count > 0)
                     {
                         if (APack.pawns.Contains(pawn))
@@ -528,25 +413,13 @@ namespace AvaliMod
                     }
                 }
             }
-            /*foreach(AvaliPack packToCheck in AvaliPackDriver.packs)
+            else
             {
-                Log.Message("Checking pack: "+ packToCheck.name);
-                /*if (packToCheck.pawns.Contains(pawn))
-                {
-                    Log.Message("Found pack: " + pack.name);
-                    return packToCheck;
-                }
-                foreach(Pawn pawn1 in packToCheck.pawns)
-                {
-                    if(pawn1 == pawn)
-                    {
-                        Log.Message("Found pack: " + pack.name);
-                        return packToCheck;
-                    }
-                }
-            }*/
+                return null;
+            }
+            //If somehow nothing worked, just return null.
             Log.Message("Didn't find pack, returning null.");
-            return pack;
+            return null;
         }
     }
 }

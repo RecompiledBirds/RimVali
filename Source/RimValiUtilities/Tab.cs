@@ -48,9 +48,9 @@ namespace AvaliMod
 
 			pack = this.GetPack(pawn);
 
-			if (!(pack == null))
+			if (!(pack == null) && pack.size > 1)
 			{
-				string members = "Packmates: ";
+				string members = "Packmates".Translate();
 				int onItem = 0;
 				foreach (Pawn packmember in pack.pawns)
 				{
@@ -101,7 +101,9 @@ namespace AvaliMod
 			}
 			else
 			{
-				Widgets.Label(rect, "test");
+				Widgets.Label(rect, "NoPack".Translate());
+				//Log.Message("Pack list size: " + AvaliPackDriver.packs.Count);						
+				Widgets.EndScrollView();
 			}
 			//Widgets.Label(rect, "test");
 			Widgets.EndScrollView();
