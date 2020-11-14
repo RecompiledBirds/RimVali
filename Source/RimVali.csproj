@@ -71,10 +71,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RimValiUtilities\CodeFile1.cs" />
+    <Compile Include="CodeFile1.cs" />
+    <Compile Include="HediffStuff\AddHediff.cs" />
     <Compile Include="RimValiUtilities\Dialog_NamePack.cs" />
     <Compile Include="RimValiUtilities\Tab.cs" />
-    <Compile Include="TempComp.cs" />
+    <Compile Include="HarmonyPatches\TempComp.cs" />
     <Compile Include="Graphic\CodeFile3.cs" />
     <Compile Include="Graphic\CodeFile4.cs" />
     <Compile Include="HarmonyPatches\TransformValue.cs" />
@@ -122,9 +123,6 @@
     <Compile Include="HediffStuff\MPB\MPBProperties.cs" />
     <Compile Include="HediffStuff\MPB\MPBComp.cs" />
     <Compile Include="HarmonyPatches\StatPart_Temperature.cs" />
-    <Compile Include="HarmonyPatches\PawnGeneratorPatch.cs" />
-    <Compile Include="Packs\RelationWorkers\PackMateWorker.cs" />
-    <Compile Include="Packs\RelationWorkers\PackUtilityWorker.cs" />
     <Compile Include="Defs.cs" />
     <Compile Include="RVHAR\ThingDef_AlienRace.cs" />
     <Compile Include="RVHAR\Utilities.cs" />
@@ -133,7 +131,6 @@
     <Compile Include="Verbs\ExplodeBombVerb.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="HarmonyPatches\EggFactionPicker.cs" />
-    <Compile Include="HediffStuff\AddHediff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

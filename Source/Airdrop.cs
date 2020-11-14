@@ -34,14 +34,15 @@ namespace AvaliMod
             if (RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= 5 && !hasDropped)
             {
                 hasDropped = true;
-                for(int a = 0; a < random.Next(4, 5); a++)
+                for(int a = 0; a < random.Next(2, 5); a++)
                 {
                     Faction faction = FactionGenerator.NewGeneratedFaction(AvaliDefs.AvaliFaction);
+                    faction.Name = "IlluminateFactionName".Translate()+": #"+a.ToString();
                     faction.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Ally);
                     newFactions.Add(faction);
                 }
                 DropPodUtility.DropThingsNear(intVec3, target, (IEnumerable<Thing>)thingList);
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("Illuminate airdrop", "An Illuminate airdrop has landed nearby!", AvaliMod.AvaliDefs.IlluminateAirdrop,newFactions[random.Next(newFactions.Count)]);
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliMod.AvaliDefs.IlluminateAirdrop,newFactions[random.Next(newFactions.Count)]);
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
         }
