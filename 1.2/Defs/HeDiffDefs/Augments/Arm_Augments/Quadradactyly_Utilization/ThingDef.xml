@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>TetradactylyUtilization</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/arm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Tetradactyly Utilitizer</label>
+    <description>Installed on Avali who don't expect to use their wings to fly, mild adjustments in the user's joints change the position and shape of the fourth digits in the both the hand and feet increasing the practical use of both. Other avali might find this a bit freaky, however...</description>
+    <descriptionHyperlinks><RecipeDef>InstallTetradactylyUtilitizer</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>2</Plasteel>
+      <AvaliAerogel>2</AvaliAerogel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <AvaliTungstenPowder>5</AvaliTungstenPowder>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliBionics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

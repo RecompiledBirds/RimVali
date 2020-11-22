@@ -280,30 +280,4 @@
        <li>BasicAvaliImplants</li>
      </prerequisites>
    </ResearchProjectDef>
-   
-   <ResearchProjectDef ParentName="BionicAvaliResearch">
-     <defName>WingRWOne</defName>
-    <label>Wing extensions</label>
-    <description>By themselves, these are actually fairly irritating to use. But in combination with other bionics, maybe they'd be better...</description>
-    <baseCost>3500</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>2</researchViewX>
-    <researchViewY>4</researchViewY>
-    <prerequisites>
-      <li>AdvancedAvaliBionics</li>
-    </prerequisites>
-   </ResearchProjectDef>
-   
-   <ResearchProjectDef ParentName="BionicAvaliResearch">
-     <defName>WingRWTwo</defName>
-     <label>Spring-loaded legs</label>
-     <description>These bionic legs are loaded with springs, allowing the user to travel much faster by bouncing on them.</description>
-     <baseCost>4000</baseCost>
-     <techLevel>Spacer</techLevel>
-     <researchViewX>2</researchViewX>
-     <researchViewY>5</researchViewY>
-     <prerequisites>
-      <li>AdvancedAvaliBionics</li>
-    </prerequisites>
-   </ResearchProjectDef>
  </Defs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallAvaliBasicBionicEar</defName>
+    <label>Install basic bionic Ear</label>
+    <description>Install a basic bionic Ear.</description>
+    <descriptionHyperlinks><ThingDef>AvaliBasicBionicEar</ThingDef></descriptionHyperlinks>
+    <jobString>Installing basic bionic Ear.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliBasicBionicEar</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AvaliBasicBionicEar</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>RimValiEar</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>AvaliBasicBionicEar</addsHediff>
+  </RecipeDef>
+</Defs>
