@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
-    <defName>AvaliAdvancedBionicEar</defName>
+    <defName>ParallelArm</defName>
     <graphicData>
-      <texPath>avali/Things/Cybernetics/ear</texPath>
+      <texPath>avali/Things/Cybernetics/arm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
-    <label>Advanced bionic Ear</label>
-    <description>An advanced bionic Ear, featuring better self repair systems, and better auditory processing.</description>
-    <descriptionHyperlinks><RecipeDef>InstallAvaliAdvancedBionicEar</RecipeDef></descriptionHyperlinks>
+    <label>Parallel arms</label>
+    <description>A set of parallel arms. Great for fine details, but more fragile.</description>
+    <descriptionHyperlinks><RecipeDef>InstallParallelArm</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>15</Plasteel>
-      <AvaliAerogel>2</AvaliAerogel>
-      <ComponentSpacer>4</ComponentSpacer>
-      <AvaliTungstenPowder>10</AvaliTungstenPowder>
+      <AeroTungstenCarbide>20</AeroTungstenCarbide>
+      <ComponentSpacer>10</ComponentSpacer>
+      <Steel>20</Steel>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
       <Mass>0.3</Mass>
-      <MarketValue>300</MarketValue>
     </statBases>
     <recipeMaker>
       <researchPrerequisite>AdvancedAvaliBionics</researchPrerequisite>

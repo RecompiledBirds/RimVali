@@ -13,7 +13,7 @@
   <PawnKindDef ParentName="BaseAvali">
     <defName>RimValiColonist</defName>
     <label>Colonist</label>
-    <defaultFactionType>AvaliPlayerColony</defaultFactionType>
+    <defaultFactionType>RimValiPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
     <apparelTags>
       <li>Spacer</li>
@@ -34,14 +34,14 @@
   <PawnKindDef ParentName="BaseAvali">
     <defName>RimValiEggColonist</defName>
     <label>Colonist</label>
-    <defaultFactionType>AvaliPlayerColony</defaultFactionType>
+    <defaultFactionType>RimValiPlayerColony</defaultFactionType>
     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>    
   </PawnKindDef>
   
   <PawnKindDef ParentName="BaseAvali">
     <defName>RimValiCrashedColonist</defName>
     <label>Colonist</label>
-    <defaultFactionType>PlayerColony</defaultFactionType>
+    <defaultFactionType>RimValiPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
     <apparelTags>
       <li>Spacer</li>

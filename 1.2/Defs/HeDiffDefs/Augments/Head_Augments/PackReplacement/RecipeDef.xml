@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallPackReplacementAI</defName>
+    <label>Install pack replacement chip</label>
+    <description>Install apack replacement chip</description>
+    <descriptionHyperlinks><ThingDef>PackReplacementAI</ThingDef></descriptionHyperlinks>
+    <jobString>Installingpack replacement chip</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PackReplacementAI</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>PackReplacementAI</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>PackReplacementAI</addsHediff>
+  </RecipeDef>
+</Defs>

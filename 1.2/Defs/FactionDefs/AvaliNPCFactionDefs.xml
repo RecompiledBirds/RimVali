@@ -45,6 +45,7 @@
   <caravanTraderKinds>
     <li>Caravan_Outlander_BulkGoods</li>
     <li>Caravan_Outlander_Exotic</li>
+    <li>AvaliResourceTrader</li>
   
   </caravanTraderKinds>
   
@@ -87,13 +88,13 @@
       <li>
         <kindDef>Trader</kindDef>
         <traders>
-          <AvaliTrader>10</AvaliTrader>
+          <AvaliTrader>20</AvaliTrader>
         </traders>
         <carriers>
           <Muffalo>5</Muffalo>
         </carriers>
         <guards>
-          <AvaliSniper>6</AvaliSniper>
+          <AvaliSniper>15</AvaliSniper>
         </guards>
       </li>
       <li>

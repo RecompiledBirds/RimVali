@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
-    <defName>PositiveE</defName>
+    <defName>PackReplacementAI</defName>
     <graphicData>
       <texPath>avali/Things/Cybernetics/head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <label>Positive enforcement augment</label>
-    <description>This augment manipulates the brain of the avali it is installed on, raising their opinion of others. However, they may become more forgetful.</description>
-    <descriptionHyperlinks><RecipeDef>InstallTailStiffeningAugment</RecipeDef></descriptionHyperlinks>
+    <description>This augment prevents pack loss by simulating pack members, even if the pawn does not have any</description>
+    <descriptionHyperlinks><RecipeDef>InstallPackReplacementAI</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>5</Plasteel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-      <Gold>2</Gold>
-      <Steel>14</Steel>
+      <AIPersonaCore>1</AIPersonaCore>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Steel>15</Steel>
+      <Gold>5</Gold>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>

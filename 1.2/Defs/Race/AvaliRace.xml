@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
   <RVR.RVRace>
     <graphics>
     
@@ -7,46 +8,55 @@
   </RVR.RVRace>
   <RVHAR.RaceSettings>
     <defName>AvaliRaceSettings</defName>
-    <pawnKindSettings>
-     <startingColonists>
-        <li>
-          <pawnKindEntries>
-            <li>
-              <kindDefs>
-                <li>NeziCrashedColonist</li>
-              </kindDefs>
-             <chance>10.0</chance>
-            </li>
-          </pawnKindEntries>
-          <factionDefs>
-            <li>PlayerColony</li>
-          </factionDefs>
-        </li>
-      </startingColonists>
-      <alienslavekinds>
-        <li>
-          <kindDefs>
-            <li>NeziCrashedColonist</li>
-          </kindDefs>
-          <chance>15.0</chance>
-        </li>
-      </alienslavekinds>
-      <alienwandererkinds>
-        <li>
-          <pawnKindEntries>
-            <li>
-              <kindDefs>
-                <li>NeziCrashedColonist</li>
-              </kindDefs>
-             <chance>15.0</chance>
-            </li>
-          </pawnKindEntries>
-          <factionDefs>
-            <li>PlayerColony</li>
-          </factionDefs>
-        </li>
-      </alienwandererkinds>
-    </pawnKindSettings>
+<pawnKindSettings>
+			<startingColonists>
+				<li>
+					<pawnKindEntries>
+						<li>
+							<kindDefs>
+								<li>AvaliVillager</li>
+							</kindDefs>
+							<chance>10.0</chance>
+						</li>
+					</pawnKindEntries>
+					<factionDefs>
+						<li>PlayerColony</li>
+					</factionDefs>
+				</li>
+			</startingColonists>
+			<alienslavekinds>
+				<li>
+					<kindDefs>
+						<li>AvaliVillager</li>
+					</kindDefs>
+					<chance>5.0</chance>
+				</li>
+			</alienslavekinds>
+			<alienrefugeekinds>
+				<li>
+					<kindDefs>
+						<li>AvaliVillager</li>
+					</kindDefs>
+					<chance>15.0</chance>
+				</li>
+			</alienrefugeekinds>
+			<alienwandererkinds>
+				<li>
+					<pawnKindEntries>
+						<li>
+							<kindDefs>
+								<li>AvaliVillager</li>
+							</kindDefs>
+							<chance>15.0</chance>
+						</li>
+					</pawnKindEntries>
+					<factionDefs>
+						<li>PlayerColony</li>
+            <li>RimValiPlayerColony</li>
+					</factionDefs>
+				</li>
+			</alienwandererkinds>
+		</pawnKindSettings>
   </RVHAR.RaceSettings>
   
 	<RVHAR.ThingDef_AlienRace Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
@@ -73,16 +83,22 @@
             <li Class="AvaliMod.AvaliDriverThoughtProps">
                 <relationDef>Packmate</relationDef>
                 <inSameRoomThought>AvaliSharingRoom</inSameRoomThought>
-                <sharedBedroomThought>AvaliSharedBedRoom</sharedBedroomThought>
-                <sleptApartThought>AvaliSleptWithoutPack</sleptApartThought>
+                <sharedBedroomThought>SharedRoomWithPack</sharedBedroomThought>
+                <sleptApartThought>BedroomWithoutPack</sleptApartThought>
+                <packLossPreventers>
+                <li>PackReplacementAI</li>
+              </packLossPreventers>
             </li>
-            
+            <li>
+              <compClass>AvaliMod.TempComp</compClass>
+            </li>
             <li Class="AvaliMod.PackProps">
               <racesInPacks>
                 <li>RimVali</li>
               </racesInPacks>
               <aloneThought>AvaliPackLoss</aloneThought>
-              <relation>Packmate</relation>
+              <togetherThought>AvaliPackmateThought</togetherThought>
+              <deathThought>PackMateDied</deathThought>
               <packGenChanceOverAge>
                 <points>
                   <li>(0,1)</li>
@@ -91,6 +107,7 @@
                 </points>
                 
               </packGenChanceOverAge>
+              
             </li>
             
             
@@ -130,7 +147,7 @@
         <factionRelations>
           <li>
             <factions>
-              <li>RimValiFaction</li>
+              <li>AvaliFaction</li>
             </factions>
             <goodwill>
               <min>-10</min>
@@ -139,7 +156,7 @@
           </li>
         </factionRelations>
         <notXenophobistTowards>
-        <!-- This simply keeps us from being xenophobist to the other avali mods. Avali should'nt hate avali. Other than that, no gameplay impact.-->
+        <!-- This simply keeps us from being xenophobist to the other avali mods. Avali shouldnt hate avali. Other than that, no gameplay impact.-->
 
           <li>Alien_Avali</li>
         </notXenophobistTowards>
@@ -216,10 +233,11 @@
               <customPortraitHeadDrawSize>(1,1)</customPortraitHeadDrawSize>
               <customPortraitDrawSize>(1,1)</customPortraitDrawSize>
               <customDrawSize>(1,1)</customDrawSize>
-            
+              
+              <!-- My sanity is gone. Send help. -->
               <bodyAddons>
                 <li>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <path>avali/Heads/Female/FemaleHead</path>
                   <drawForMale>false</drawForMale>
                   <bodyPart>Head</bodyPart>
@@ -265,7 +283,7 @@
                 </li>
                                 
                 <li>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <drawForMale>false</drawForMale>
                   <drawnInBed>false</drawnInBed>
                   <path>avali/Body/Female/FemaleBody</path>
@@ -312,7 +330,7 @@
                 
                 <li>
                   <drawnInBed>false</drawnInBed>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <drawForMale>false</drawForMale>
                   <layerInvert>true</layerInvert>
                   <angle>-3</angle>
@@ -321,7 +339,7 @@
                   <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
                   <bodyPart>RimValiTail</bodyPart>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.2700965</layerOffset>
+                  <layerOffset>-0.2379422</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -341,7 +359,7 @@
                     </north>
                     <east>
                       <bodyTypes>
-                        <Avali>(-0.4308682,0.2797428)</Avali>
+                        <Avali>(-0.1157557,0.215434)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -357,9 +375,118 @@
                     <Danny>avali/Unique/Danny/Tail/Danny</Danny>
                   </backstoryGraphics>
                 </li>
+                 <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Mouth/Mouth</path>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <bodyPart>Head</bodyPart>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3311899</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Eyes/EyeL</path>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3311899</layerOffset>
+                  <bodyPart>left eye</bodyPart>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                </li>
                 
                 <li>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Eyes/EyeR</path>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3311899</layerOffset>
+                  <bodyPart>right eye</bodyPart>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                </li>
+                
+                <li>
+                  <drawSize>0.6</drawSize>
                   <path>avali/Heads/Male/MaleHead</path>
                   <drawForFemale>false</drawForFemale>
                   <bodyPart>Head</bodyPart>
@@ -405,7 +532,7 @@
                 </li>
                 
                 <li>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <drawForFemale>false</drawForFemale>
                   <path>avali/Body/Male/MaleBody</path>
                   <drawnInBed>false</drawnInBed>
@@ -451,7 +578,7 @@
                 </li>
                 
                 <li>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <drawForFemale>false</drawForFemale>
                   <path>avali/Tail/Male/MaleTail</path>
                   <drawnInBed>false</drawnInBed>
@@ -460,7 +587,7 @@
                   <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
                   <bodyPart>RimValiTail</bodyPart>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.2700965</layerOffset>
+                  <layerOffset>-0.2379422</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -480,7 +607,7 @@
                     </north>
                     <east>
                       <bodyTypes>
-                        <Avali>(-0.4308682,0.2797428)</Avali>
+                        <Avali>(-0.1543409,0.215434)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -499,7 +626,7 @@
                 
                 <li>
                   <drawnInBed>false</drawnInBed>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <bodyPart>RimValiTail</bodyPart>
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
@@ -510,7 +637,7 @@
                   <offsets>
                     <south>
                       <bodyTypes>
-                        <Avali>(0,0)</Avali>
+                        <Avali>(-0.42,0.3765274)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -518,7 +645,7 @@
                     </south>
                     <north>
                       <bodyTypes>
-                        <Avali>(0,0.6752412)</Avali>
+                        <Avali>(0,0.6881029)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -526,7 +653,7 @@
                     </north>
                     <east>
                       <bodyTypes>
-                        <Avali>(-0.3954984,0.311897)</Avali>
+                        <Avali>(-0.1221865,0.2315113)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -543,7 +670,7 @@
                   </backstoryGraphics>
                 </li>
                 <li>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <drawnInBed>false</drawnInBed>
                   <bodyPart>RimValiTail</bodyPart>
                   <inFrontOfBody>false</inFrontOfBody>
@@ -555,7 +682,7 @@
                   <offsets>
                     <south>
                       <bodyTypes>
-                        <Avali>(0,0)</Avali>
+                        <Avali>(-0.42,0.3765274)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -563,7 +690,7 @@
                     </south>
                     <north>
                       <bodyTypes>
-                        <Avali>(0,0.6752412)</Avali>
+                        <Avali>(0,0.6881029)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -571,7 +698,7 @@
                     </north>
                     <east>
                       <bodyTypes>
-                        <Avali>(-0.3954984,0.311897)</Avali>
+                        <Avali>(-0.1221865,0.2315113)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -580,7 +707,7 @@
                   </offsets>
                 </li>
                 <li>
-                  <drawSize>1</drawSize>
+                  <drawSize>0.6</drawSize>
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
                   <colorChannel>skin</colorChannel>
@@ -622,6 +749,621 @@
                     <li>UpperHead</li>
                     <li>FullHead</li>
                   </hiddenUnderApparelFor>
+                </li>
+                
+                <!-- Female ears -->
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/LowerLeft/FemaleLowerLeft</path>
+                  <drawForMale>false</drawForMale>
+                  <bodyPart>left lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3311896</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/UpperLeft/FemaleUpperLeft</path>
+                  <drawForMale>false</drawForMale>
+                  <bodyPart>left upper ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.33</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/LowerRight/FemaleLowerRight</path>
+                 <drawForMale>false</drawForMale>
+                  <bodyPart>right lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3376206</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                 <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/UpperRight/FemaleUpperRight</path>
+                 <drawForMale>false</drawForMale>
+                  <bodyPart>right upper ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.331</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                 <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/West/LowerLeft/FemaleLowerLeft</path>
+                  <drawForMale>false</drawForMale>
+                  <bodyPart>left lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3376207</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/West/UpperLeft/FemaleUpperLeft</path>
+                  <drawForMale>false</drawForMale>
+                  <bodyPart>Head</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.33</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/West/LowerRight/FemaleLowerRight</path>
+                  <drawForMale>false</drawForMale>
+                  <bodyPart>right lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3376207</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                 <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Female/West/UpperRight/FemaleUpperRight</path>
+                  <drawForMale>false</drawForMale>
+                  <bodyPart>Head</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.2538296</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                
+                
+                
+                <!-- Male ears -->
+
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/LowerLeft/MaleLowerLeft</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>left lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3311896</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/UpperLeft/MaleUpperLeft</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>left upper ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.33</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/LowerRight/MaleLowerRight</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>right lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3376206</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                 <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/UpperRight/MaleUpperRight</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>right upper ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.331</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                 <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/West/LowerLeft/MaleLowerLeft</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>left lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3183278</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/West/UpperLeft/MaleUpperLeft</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>Head</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.33</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/West/LowerRight/MaleLowerRight</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>right lower ear</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.3311896</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
+                </li>
+                 <li>
+                  <drawSize>0.6</drawSize>
+                  <path>avali/Ears/Male/West/UpperRight/MaleUpperRight</path>
+                  <drawForFemale>false</drawForFemale>
+                  <bodyPart>Head</bodyPart>
+                  <inFrontOfBody>false</inFrontOfBody>
+                  <layerInvert>false</layerInvert>
+                  <colorChannel>skin</colorChannel>
+                  <layerOffset>-0.2538296</layerOffset>
+                  <offsets>
+                    <south>
+                      <bodyTypes>
+                        <Avali>(-0.4212219,0.3794212)</Avali>
+                      </bodyTypes>
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </south>
+                    <north>
+                      <bodyTypes>
+                        <Avali>(0,0.681672)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>                 
+                    </north>
+                    <east>
+                      <bodyTypes>
+                        <Avali>(-0.3826366,0.3151125)</Avali>
+                      </bodyTypes> 
+                      <crownTypes>
+                        <AvaliHead>(0,0)</AvaliHead>
+                      </crownTypes>
+                    </east>
+                 
+                  </offsets>
+                  
                 </li>
               </bodyAddons>
             </alienPartGenerator>
@@ -705,8 +1447,17 @@
             <li>SleepDisturbed</li>
             
             <li>ObservedLayingCorpse</li>
+            
           </cannotReceiveThoughts>
           <replacerList>
+            <li>
+              <original>SleptInBedroom</original>
+              <replacer>AvaliSleptAlone</replacer>
+            </li>
+            <li>
+              <original>SleptInBarracks</original>
+              <replacer>AvaliSharedBedRoom</replacer>
+            </li>
             <li>
               <original>NonAvaliAteEgg</original>
               <replacer>AvaliAteEgg</replacer>
@@ -796,11 +1547,11 @@
           <conceptList>
             <li>RimValiBasicConcept</li>
           </conceptList>
-          <whiteBuildingList>
-            <li>RimValiWeaponsPrinter</li>
+          <buildingList>
+            <li>AvaliNanoForge</li>
             <li>AvaliResearchBench</li>
-            <li>RimValiNanolathe</li>
-          </whiteBuildingList>
+            <li>AvaliNanoLoom</li>
+          </buildingList>
           <onlyUseRaceRestrictedWeapons>false</onlyUseRaceRestrictedWeapons>
           <apparelList>
             <li>AvaliTDW</li>
@@ -838,6 +1589,7 @@
             
             <!-- Brain -->
             <li>InstallPE</li>
+            <li>InstallPackReplacementAI</li>
             
             <!-- Items -->
 
@@ -937,7 +1689,7 @@
             <MoveSpeed>8.5</MoveSpeed>
             <Flammability>200</Flammability>
             <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>10</ComfyTemperatureMax>
+            <ComfyTemperatureMax>15</ComfyTemperatureMax>
             <LeatherAmount>5</LeatherAmount>
             <ResearchSpeed>1.5</ResearchSpeed>
             <MiningSpeed>0.8</MiningSpeed>
@@ -949,6 +1701,8 @@
             <PsychicSensitivity>1.5</PsychicSensitivity>
 			      <ShootingAccuracyPawn>6</ShootingAccuracyPawn>
 						<Mass>45</Mass>
+            <RestRateMultiplier>1.25</RestRateMultiplier>
+            <restFallFactor>1.5</restFallFactor>
         </statBases>
         <tools>
             <li>
@@ -1001,6 +1755,7 @@
             <intelligence>Humanlike</intelligence>
             <makesFootprints>true</makesFootprints>
             <lifeExpectancy>100</lifeExpectancy>
+            <deathActionWorkerClass>AvaliMod.DeathActionWorker_Test</deathActionWorkerClass>
 			      <leatherDef>Leather_RimVali</leatherDef>
 			      <nameGenerator>AvaliPersonNamer</nameGenerator>
             <body>RimValiBody</body>

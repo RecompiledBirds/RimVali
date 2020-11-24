@@ -94,7 +94,7 @@
   </ThingDef>
 
   <!-- Research bench -->
-
+	
 
   <ThingDef ParentName="BenchBase">
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -148,6 +148,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>MultiAnalyzer</li>
+		  <li>AvaliNexus</li>
         </linkableFacilities>
       </li>
       <li Class="CompProperties_Breakdownable"/>
@@ -167,6 +168,66 @@
     <researchPrerequisites>
       <li>BasicRimValiTech</li>
     </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>AvaliNexus</defName>
+    <label>Illuminate Nexus Connection</label>
+    <description>This device can be used to access higher levels of tech, thanks to its connection to te nexus.</description>
+    <graphicData>
+      <texPath>avali/buildings/production/sync_crystal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <uiIconScale>0.85</uiIconScale>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+		<li Class="CompProperties_Glower">
+			<glowRadius>8</glowRadius>
+			<glowColor>(236, 166, 245)</glowColor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.1</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+      </li>
+    </comps>
+	<researchPrerequisites>
+		<li>AvaliAeroTungsten</li>
+	</researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
   
   <!-- Nano-loom -->
