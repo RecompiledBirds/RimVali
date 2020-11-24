@@ -26,20 +26,11 @@ namespace AvaliMod
 
 
 
-        //Relation Defs
-        public static PawnRelationDef Packmate;
-        public static PawnRelationDef PackLeader;
 
         //HediffDefs
         public static HediffDef TestHediffOne;
         public static HediffDef TestHediffTwo;
         public static HediffDef TestHediffThree;
-
-
-        //Thoughts
-        public static ThoughtDef AvaliSharedBedRoom;
-        public static ThoughtDef AvaliSleptWithoutPack;
-        public static ThoughtDef AvaliSharingRoom;
 
         //Letters
         public static LetterDef IlluminateAirdrop;
@@ -52,5 +43,6 @@ namespace AvaliMod
         public static ResearchProjectDef AvaliAdvancedMelee;
         public static ResearchProjectDef AeroWeaveResearch;
         public static ResearchProjectDef AvaliAeroTungsten;
+
     }
 }

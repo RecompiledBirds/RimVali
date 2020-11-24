@@ -6,6 +6,7 @@ namespace AvaliMod
 {
     public class AirDropHandler : MapComponent
     {
+        private readonly bool airdrops = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableAirdrops;
         private System.Random random = new System.Random();
         private int ticks = 0;
         public AirDropHandler(Map map)
@@ -30,17 +31,18 @@ namespace AvaliMod
             Map target = map;
             List<Faction> newFactions = new List<Faction>();
             IntVec3 intVec3 = DropCellFinder.TradeDropSpot(target);
-            if (/*RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= 5 &&*/ !hasDropped)
+            if (RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= 5 && !hasDropped)
             {
                 hasDropped = true;
-                for(int a = 0; a < random.Next(4, 5); a++)
+                for(int a = 0; a < random.Next(2, 5); a++)
                 {
                     Faction faction = FactionGenerator.NewGeneratedFaction(AvaliDefs.AvaliFaction);
+                    faction.Name = "IlluminateFactionName".Translate()+": #"+a.ToString();
                     faction.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Ally);
                     newFactions.Add(faction);
                 }
                 DropPodUtility.DropThingsNear(intVec3, target, (IEnumerable<Thing>)thingList);
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("Illuminate airdrop", "An Illuminate airdrop has landed nearby!", AvaliMod.AvaliDefs.IlluminateAirdrop,newFactions[random.Next(newFactions.Count)]);
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliMod.AvaliDefs.IlluminateAirdrop,newFactions[random.Next(newFactions.Count)]);
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
         }
@@ -49,8 +51,11 @@ namespace AvaliMod
             ticks++;
             if (ticks == 120)
             {
-                SendDrop();
-                ticks = 0;
+                if (airdrops)
+                {
+                    SendDrop();
+                    ticks = 0;
+                }
             }
         }
     }
