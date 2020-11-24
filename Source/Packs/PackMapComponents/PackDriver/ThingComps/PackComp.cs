@@ -13,6 +13,28 @@ namespace AvaliMod
                 return (PackProps)this.props;
             }
         }
+        private ThoughtDef deathThought
+        {
+            get
+            {
+                return Props.deathThought;
+            }
+        }
+        private ThoughtDef togetherThought
+        {
+            get
+            {
+                return Props.togetherThought;
+            }
+        }
+
+        private int packLossStages
+        {
+            get
+            {
+                return Props.packLossStages;
+            }
+        }
         private List<ThingDef> RacesInPacks
         {
             get
@@ -38,15 +60,6 @@ namespace AvaliMod
             }
         }
 
-        //the "pack" relation we want. (xml)
-        private PawnRelationDef RelationDef
-        {
-            get
-            {
-                return Props.relation;
-            }
-        }
-
         //A curve of age gen over time. (xml)
         private SimpleCurve AgeCurve
         {
@@ -64,6 +77,6 @@ namespace AvaliMod
                 return RimvaliPotentialPackRaces.potentialPackRaces.ToList<ThingDef>();
             }
         }
-
+        public int ticksSinceLastInpack = 0;
     }
 }
