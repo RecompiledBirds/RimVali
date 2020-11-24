@@ -9,18 +9,23 @@ namespace AvaliMod
     {
         private static Dictionary<AvaliGraphicRequest, AvaliGraphic> allGraphics = new Dictionary<AvaliGraphicRequest, AvaliGraphic>();
 
+        private static Shader shadertest;
+
         public static AvaliGraphic Get<T>(string path) where T : AvaliGraphic, new()
         {
+            //Log.Message("Was Got8");
             return (AvaliGraphic)AvaliGraphicDatabase.GetInner<T>(new AvaliGraphicRequest(typeof(T), path, ShaderDatabase.Cutout, Vector2.one, Color.white, Color.white, Color.white, (AvaliGraphicData)null, 0, (List<ShaderParameter>)null));
         }
 
         public static AvaliGraphic Get<T>(string path, Shader shader) where T : AvaliGraphic, new()
         {
+            //Log.Message("Was Got7" + shader.name + " Color3: ");
             return (AvaliGraphic)AvaliGraphicDatabase.GetInner<T>(new AvaliGraphicRequest(typeof(T), path, shader, Vector2.one, Color.white, Color.white, Color.white, (AvaliGraphicData)null, 0, (List<ShaderParameter>)null));
         }
 
         public static AvaliGraphic Get<T>(string path, Shader shader, Vector2 drawSize, Color color) where T : AvaliGraphic, new()
         {
+            //Log.Message("Was Got6" + shader.name + " Color3: ");
             return (AvaliGraphic)AvaliGraphicDatabase.GetInner<T>(new AvaliGraphicRequest(typeof(T), path, shader, drawSize, color, Color.white, Color.white, (AvaliGraphicData)null, 0, (List<ShaderParameter>)null));
         }
 
@@ -32,6 +37,7 @@ namespace AvaliMod
           int renderQueue)
           where T : AvaliGraphic, new()
         {
+            //Log.Message("Was Got5");
             return (AvaliGraphic)AvaliGraphicDatabase.GetInner<T>(new AvaliGraphicRequest(typeof(T), path, shader, drawSize, color, Color.white, Color.white, (AvaliGraphicData)null, renderQueue, (List<ShaderParameter>)null));
         }
 
@@ -44,6 +50,7 @@ namespace AvaliMod
           Color colorThree)
           where T : AvaliGraphic, new()
         {
+            //Log.Message("Was Got4");
             return (AvaliGraphic)AvaliGraphicDatabase.GetInner<T>(new AvaliGraphicRequest(typeof(T), path, shader, drawSize, color, colorTwo, colorThree, (AvaliGraphicData)null, 0, (List<ShaderParameter>)null));
         }
         public static AvaliGraphic Get<T>(
@@ -54,6 +61,7 @@ namespace AvaliMod
           Color colorTwo)
           where T : AvaliGraphic, new()
         {
+            //Log.Message("Was Got3: " + shader.name + " Color3: ");
             return (AvaliGraphic)AvaliGraphicDatabase.GetInner<T>(new AvaliGraphicRequest(typeof(T), path, shader, drawSize, color, colorTwo, Color.white, (AvaliGraphicData)null, 0, (List<ShaderParameter>)null));
         }
         public static AvaliGraphic Get<T>(
@@ -66,6 +74,9 @@ namespace AvaliMod
           AvaliGraphicData data)
           where T : AvaliGraphic, new()
         {
+            //if (shader.name != "Custom/Cutout") { shadertest = shader; }
+            //if (shader.name == "Custom/Cutout") { shader = shadertest; }
+            //Log.Message("Was Got2: " + shader.name + " Color3: " + colorThree);
             return (AvaliGraphic)AvaliGraphicDatabase.GetInner<T>(new AvaliGraphicRequest(typeof(T), path, shader, drawSize, color, colorTwo, colorThree, data, 0, (List<ShaderParameter>)null));
         }
 
@@ -78,6 +89,7 @@ namespace AvaliMod
           Color colorTwo,
           Color colorThree)
         {
+            //Log.Message("Was Got1");
             return AvaliGraphicDatabase.Get(graphicClass, path, shader, drawSize, color, colorTwo, colorThree, (AvaliGraphicData)null, (List<ShaderParameter>)null);
         }
 
@@ -93,6 +105,12 @@ namespace AvaliMod
           List<ShaderParameter> shaderParameters)
         {
             AvaliGraphicRequest req = new AvaliGraphicRequest(graphicClass, path, shader, drawSize, color, colorTwo, colorThree, data, 0, shaderParameters);
+            // liQdComment 2 This is what the game requests 
+            if (req.graphicClass == typeof(Graphic_Multi))
+            {
+                //Log.Message("AvaliGraphic request of type Graphic_Multi");
+                return (AvaliGraphic)AvaliGraphicDatabase.GetInner<AvaliGraphic_Multi>(req);
+            }
             if (req.graphicClass == typeof(AvaliGraphic_Single))
                 return (AvaliGraphic)AvaliGraphicDatabase.GetInner<AvaliGraphic_Single>(req);
             if (req.graphicClass == typeof(AvaliGraphic_Terrain))
@@ -119,11 +137,13 @@ namespace AvaliMod
             }
             return AvaliBaseContent.BadGraphic;
         }
-
+        
         private static T GetInner<T>(AvaliGraphicRequest req) where T : AvaliGraphic, new()
         {
+
             req.color = (Color)(Color32)req.color;
             req.colorTwo = (Color)(Color32)req.colorTwo;
+            req.colorThree = (Color)(Color32)req.colorThree;
             AvaliGraphic graphic;
             if (!AvaliGraphicDatabase.allGraphics.TryGetValue(req, out graphic))
             {
@@ -133,7 +153,7 @@ namespace AvaliMod
             }
             return (T)graphic;
         }
-
+        
         public static void Clear()
         {
             AvaliGraphicDatabase.allGraphics.Clear();

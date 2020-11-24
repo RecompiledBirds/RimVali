@@ -5,10 +5,7 @@ namespace AvaliMod
 {
     public class AvaliGraphic : Graphic
     {
-        public Color color = Color.white;
-        public Color colorTwo = Color.white;
         public Color colorThree = Color.white;
-        public Vector2 drawSize = Vector2.one;
         public AvaliGraphicData data;
         public string path;
         private Graphic_Shadow cachedShadowGraphicInt;
@@ -23,31 +20,7 @@ namespace AvaliMod
             }
         }
 
-        public Graphic_Shadow ShadowGraphic
-        {
-            get
-            {
-                if (this.cachedShadowGraphicInt == null && this.data != null && this.data.shadowData != null)
-                    this.cachedShadowGraphicInt = new Graphic_Shadow(this.data.shadowData);
-                return this.cachedShadowGraphicInt;
-            }
-        }
 
-        public Color Color
-        {
-            get
-            {
-                return this.color;
-            }
-        }
-
-        public Color ColorTwo
-        {
-            get
-            {
-                return this.colorTwo;
-            }
-        }
         public Color ColorThree
         {
             get
@@ -56,7 +29,7 @@ namespace AvaliMod
             }
         }
 
-        public virtual Material MatSingle
+        public override Material MatSingle
         {
             get
             {
@@ -64,7 +37,7 @@ namespace AvaliMod
             }
         }
 
-        public virtual Material MatWest
+        public override Material MatWest
         {
             get
             {
@@ -72,7 +45,7 @@ namespace AvaliMod
             }
         }
 
-        public virtual Material MatSouth
+        public override Material MatSouth
         {
             get
             {
@@ -80,7 +53,7 @@ namespace AvaliMod
             }
         }
 
-        public virtual Material MatEast
+        public override Material MatEast
         {
             get
             {
@@ -88,7 +61,7 @@ namespace AvaliMod
             }
         }
 
-        public virtual Material MatNorth
+        public override Material MatNorth
         {
             get
             {
@@ -96,15 +69,14 @@ namespace AvaliMod
             }
         }
 
-        public virtual bool WestFlipped
+        public override bool WestFlipped
         {
             get
             {
                 return this.DataAllowsFlip && !this.ShouldDrawRotated;
             }
         }
-
-        public virtual bool EastFlipped
+        public override bool ShouldDrawRotated
         {
             get
             {
@@ -112,15 +84,7 @@ namespace AvaliMod
             }
         }
 
-        public virtual bool ShouldDrawRotated
-        {
-            get
-            {
-                return false;
-            }
-        }
-
-        public virtual float DrawRotatedExtraAngleOffset
+        public override float DrawRotatedExtraAngleOffset
         {
             get
             {
@@ -128,7 +92,7 @@ namespace AvaliMod
             }
         }
 
-        public virtual bool UseSameGraphicForGhost
+        public override bool UseSameGraphicForGhost
         {
             get
             {
@@ -136,13 +100,6 @@ namespace AvaliMod
             }
         }
 
-        protected bool DataAllowsFlip
-        {
-            get
-            {
-                return this.data == null || this.data.allowFlip;
-            }
-        }
 
         public virtual void Init(AvaliGraphicRequest req)
         {
@@ -213,12 +170,12 @@ namespace AvaliMod
             this.ShadowGraphic.DrawWorker(loc, rot, thingDef, thing, extraRotation);
         }
 
-        protected virtual void DrawMeshInt(Mesh mesh, Vector3 loc, Quaternion quat, Material mat)
+        protected override void DrawMeshInt(Mesh mesh, Vector3 loc, Quaternion quat, Material mat)
         {
             Graphics.DrawMesh(mesh, loc, quat, mat, 0);
         }
 
-        public virtual void Print(SectionLayer layer, Thing thing)
+        public override void Print(SectionLayer layer, Thing thing)
         {
             Vector2 size;
             bool flipUv;

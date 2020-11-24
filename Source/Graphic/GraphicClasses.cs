@@ -54,6 +54,7 @@ namespace AvaliMod
           Color newColorTwo,
           Color newColorThree)
         {
+            Log.Message("treidmoasrasd");
             if (newColorTwo != Color.white)
                 Log.ErrorOnce("Cannot use Graphic_Appearances.GetColoredVersion with a non-white colorTwo.", 9910251, false);
             return AvaliGraphicDatabase.Get<AvaliGraphic_Appearances>(this.path, newShader, this.drawSize, newColor, Color.white, Color.white,this.data);
@@ -257,6 +258,7 @@ namespace AvaliMod
           Color newColorTwo,
           Color newColorThree)
         {
+            Log.Message("actuallythisone");
             return AvaliGraphicDatabase.Get<AvaliGraphic_Single>(this.path, newShader, this.drawSize, newColor, newColorTwo, Color.white,this.data);
         }
 
@@ -393,6 +395,7 @@ namespace AvaliMod
         {
             get
             {
+
                 return this.MatSouth;
             }
         }
@@ -409,6 +412,13 @@ namespace AvaliMod
         {
             get
             {
+                //this.mats[2].shader = ShaderDatabase.CutoutSkin; //No mask
+                //this.mats[2].shader = ShaderDatabase.CutoutComplex; //No change
+                //this.mats[2].shader = ShaderDatabase.Cutout;
+                //this.mats[2].SetColor("_Color", Color.red);
+                //this.mats[2].SetColor("_ColorTwo", Color.blue);
+                //this.mats[2].SetColor("_ColorThree", Color.green);
+                //Log.Message("Mat with shader: " + this.mats[2].shader.name + "C: " + this.mats[2].GetColor("_Color"));
                 return this.mats[2];
             }
         }
@@ -469,6 +479,7 @@ namespace AvaliMod
             this.path = req.path;
             this.color = req.color;
             this.colorTwo = req.colorTwo;
+            this.colorThree = req.colorThree;
             this.drawSize = req.drawSize;
             Texture2D[] texture2DArray1 = new Texture2D[this.mats.Length];
             texture2DArray1[0] = ContentFinder<Texture2D>.Get(req.path + "_north", false);
@@ -499,6 +510,7 @@ namespace AvaliMod
             {
                 Log.Error("Failed to find any textures at " + req.path + " while constructing " + this.ToStringSafe<AvaliGraphic_Multi>(), false);
             }
+            
             else
             {
                 if (texture2DArray1[2] == null)
@@ -524,8 +536,10 @@ namespace AvaliMod
                         texture2DArray1[3] = texture2DArray1[0];
                 }
                 Texture2D[] texture2DArray2 = new Texture2D[this.mats.Length];
-                if (req.shader.SupportsMaskTex())
+                //if (req.shader.SupportsMaskTex())
+                if (req.shader == AvaliShaderDatabase.Tricolor)
                 {
+                    //Log.Message("Generating MaskTex");
                     texture2DArray2[0] = ContentFinder<Texture2D>.Get(req.path + "_northm", false);
                     texture2DArray2[1] = ContentFinder<Texture2D>.Get(req.path + "_eastm", false);
                     texture2DArray2[2] = ContentFinder<Texture2D>.Get(req.path + "_southm", false);
@@ -547,15 +561,20 @@ namespace AvaliMod
                         texture2DArray2[3] = !(texture2DArray2[1] != null) ? texture2DArray2[0] : texture2DArray2[1];
                 }
                 for (int index = 0; index < this.mats.Length; ++index)
-                    this.mats[index] = MaterialPool.MatFrom(new MaterialRequest()
+                {
+                    //this.mats[index] = MaterialPool.MatFrom(new MaterialRequest()
+                    this.mats[index] = AvaliMaterialPool.MatFrom(new AvaliMaterialRequest()
                     {
                         mainTex = texture2DArray1[index],
                         shader = req.shader,
                         color = this.color,
                         colorTwo = this.colorTwo,
+                        colorThree = this.colorThree,
                         maskTex = texture2DArray2[index],
                         shaderParameters = req.shaderParameters
                     });
+                    
+                };
             }
         }
 
@@ -565,6 +584,7 @@ namespace AvaliMod
           Color newColorTwo,
           Color newColorThree)
         {
+            //Log.Message("Imtryingtogetthis");
             return AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(this.path, newShader, this.drawSize, newColor, newColorTwo, newColorThree,this.data);
         }
 
@@ -595,6 +615,7 @@ namespace AvaliMod
           Color newColorTwo,
           Color newColorThree)
         {
+            //Log.Message("butalsothert");
             if (newColorTwo != Color.white)
                 Log.ErrorOnce("Cannot use Graphic_Random.GetColoredVersion with a non-white colorTwo.", 9910251, false);
             return AvaliGraphicDatabase.Get < AvaliGraphic_Random>(this.path, newShader, this.drawSize, newColor, Color.white, Color.white,this.data);
@@ -720,6 +741,7 @@ namespace AvaliMod
           Color newColorTwo,
           Color newColorThree)
         {
+            //Log.Message("ormaybhetisone");
             return AvaliGraphicDatabase.Get<AvaliGraphic_StackCount>(this.path, newShader, this.drawSize, newColor, newColorTwo, newColorThree
                 ,this.data);
         }

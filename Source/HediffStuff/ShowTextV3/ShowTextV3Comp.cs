@@ -87,6 +87,7 @@ namespace AvaliMod
                     }
                     else if (pawn.Position.ShouldSpawnMotesAt(pawn.Map))
                     {
+                        /*
                         if(mustBeSharingRoomWithPack && RimValiUtility.CheckIfPackmatesInRoom(pawn, relationDef)){
                             SpawnText(pawn, textToShow, mustBeAwake, genderLock, gender, timeToFade, mustBeAsleep);
                         }
@@ -94,6 +95,7 @@ namespace AvaliMod
                         {
                             SpawnText(pawn, textToShow, mustBeAwake, genderLock, gender, timeToFade, mustBeAsleep);
                         }
+                        */
                     }
                 }
             }
