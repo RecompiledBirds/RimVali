@@ -18,7 +18,7 @@
     <alwaysHaulable>true</alwaysHaulable>
     <drawGUIOverlay>true</drawGUIOverlay>
     <rotatable>false</rotatable>
-    <description>An orange aerogel, manufactured by avali. Due to the nature of the manufacturing, this specific aerogel has been renamed to "Ferrogel" It's been made in neat, stackable pucks for easy storage.</description>
+    <description>Often mistranslated to aerogel, ferrogel is the base building block of many avali technologies. It's been made in neat, stackable pucks for easy storage.</description>
     <graphicData>
       <texPath>avali/Things/Aerogel/BaseAerogel/Aerogel</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>

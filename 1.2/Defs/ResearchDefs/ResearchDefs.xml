@@ -5,7 +5,10 @@
     <tab>RimValiResearch</tab>
     <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
   </ResearchProjectDef>
-  
+  <ResearchProjectDef Abstract="True" Name="BaseAdvAvaliResearch">
+    <tab>RimValiResearch</tab>
+    <requiredResearchBuilding>AvaliNexus</requiredResearchBuilding>
+  </ResearchProjectDef>
   <ResearchProjectDef Abstract="True" Name="BionicAvaliResearch">
     <tab>AvaliBionics</tab>
     <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
@@ -72,7 +75,7 @@
   </ResearchProjectDef>
   
   <!-- "Advanced" guns -->
-  <ResearchProjectDef ParentName="BaseAvaliResearch">
+  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
     <defName>AvaliAdvancedGuns</defName>
     <label>Advanced Avali Guns</label>
     <description>The avali version of their human counterparts, these weapons are designed to be used at long range.</description>
@@ -87,7 +90,7 @@
   </ResearchProjectDef>
   
   <!-- "Advanced" melee weapons -->
-  <ResearchProjectDef ParentName="BaseAvaliResearch">
+  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
     <defName>AvaliAdvancedMelee</defName>
     <description>Slightly better than a "pokey stick", as some avali have called previous weapons, these are more likely to be less "pokey" and more "stabny".</description>
     <label>Advanced Avali Melee weapons</label>
@@ -143,7 +146,7 @@
     </ResearchProjectDef>
     
     <!-- Aeroweave -->
-    <ResearchProjectDef ParentName="BaseAvaliResearch">
+    <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
       <defName>AeroWeaveResearch</defName>
       <label>Aeroweave</label>
       <techLevel>Industrial</techLevel>
@@ -186,7 +189,7 @@
    </ResearchProjectDef>
    
    <!-- Aero-tungsten -->
-   <ResearchProjectDef  ParentName="BaseAvaliResearch">
+   <ResearchProjectDef  ParentName="BaseAdvAvaliResearch">
      <defName>AvaliAeroTungsten</defName>
      <label>Aero-Tungsten Carbide</label>
      <description>Aero-Tungsten Carbide, a supermaterial mainly forged from both tungsten and carbon, with other materials mixed in to strengthen the mixture.</description>
@@ -276,31 +279,5 @@
      <prerequisites>
        <li>BasicAvaliImplants</li>
      </prerequisites>
-   </ResearchProjectDef>
-   
-   <ResearchProjectDef ParentName="BionicAvaliResearch">
-     <defName>WingRWOne</defName>
-    <label>Wing extensions</label>
-    <description>By themselves, these are actually fairly irritating to use. But in combination with other bionics, maybe they'd be better...</description>
-    <baseCost>3500</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>2</researchViewX>
-    <researchViewY>4</researchViewY>
-    <prerequisites>
-      <li>AdvancedAvaliBionics</li>
-    </prerequisites>
-   </ResearchProjectDef>
-   
-   <ResearchProjectDef ParentName="BionicAvaliResearch">
-     <defName>WingRWTwo</defName>
-     <label>Spring-loaded legs</label>
-     <description>These bionic legs are loaded with springs, allowing the user to travel much faster by bouncing on them.</description>
-     <baseCost>4000</baseCost>
-     <techLevel>Spacer</techLevel>
-     <researchViewX>2</researchViewX>
-     <researchViewY>5</researchViewY>
-     <prerequisites>
-      <li>AdvancedAvaliBionics</li>
-    </prerequisites>
    </ResearchProjectDef>
  </Defs>

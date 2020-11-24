@@ -1,32 +1,117 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <TraderKindDef>
   <defName>AvaliResourceTrader</defName>
-  <label>Trader</label>
-  <stockGenerators>
-    <li Class="StockGeneratorCategory">
-      <categoryDef>FoodMeals</categoryDef>
-      <thingDefCountRange>
-        <min>0</min>
-        <max>10</max>
-      </thingDefCountRange>
-      <countRange>
-        <min>1</min>
-        <max>5</max>
-      </countRange>
-    </li>
-    <li Class="StockGenerator_SingleDef">
-      <thingDef>AvaliAerogel</thingDef>
-      <countRange>
-        <min>0</min>
-        <max>10</max>
-      </countRange>
-    </li>
-    <li Class="StockGenerator_SingleDef">
-      <thingDef>Silver</thingDef>
-      <countRange>
-        <min>100</min>
-        <max>3000</max>
-      </countRange>
-    </li>
-  </stockGenerators>
+  <label>Avali trader</label>
+    <stockGenerators>
+
+      <!-- Resources -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>750~1200</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentIndustrial</thingDef>
+        <countRange>30~40</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentSpacer</thingDef>
+        <countRange>-10~2</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Steel</thingDef>
+        <countRange>250~400</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Cloth</thingDef>
+        <countRange>250~400</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Chemfuel</thingDef>
+        <countRange>250~400</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Neutroamine</thingDef>
+        <countRange>70~160</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Beer</thingDef>
+        <totalPriceRange>-100~100</totalPriceRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Chocolate</thingDef>
+        <totalPriceRange>10~40</totalPriceRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>FoodRaw</categoryDef>
+        <excludedCategories>
+          <li>EggsFertilized</li>
+        </excludedCategories>
+        <thingDefCountRange>3~3</thingDefCountRange>
+        <totalPriceRange>150~600</totalPriceRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>Textiles</categoryDef>
+      </li>
+      <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>Chocolate</li>
+          <li>Kibble</li>
+          <li>Pemmican</li>
+        </thingDefs>
+      </li>
+      
+      <!-- Drugs -->
+      <li Class="StockGenerator_Category">
+        <categoryDef>Drugs</categoryDef>
+      </li>
+      
+      <!-- Techprints -->
+      <!-- none -->
+      
+      <!-- Weapons -->
+      <!-- none -->
+      
+      <!-- Apparel -->
+      <li Class="StockGenerator_Clothes">
+        <countRange>10~10</countRange>
+      </li>
+      
+      <!-- Implants -->
+      <!-- none -->
+      
+      <!-- Buildings -->
+      <li Class="StockGenerator_Category">
+        <categoryDef>BuildingsFurniture</categoryDef>
+        <thingDefCountRange>3~3</thingDefCountRange>
+        <countRange>1~1</countRange>
+      </li>
+      
+      <!-- Exotic -->
+      <!-- none -->
+      
+      <!-- Slaves -->
+      <!-- none -->
+      
+      <!-- Animals -->
+      <li Class="StockGenerator_Animals">
+        <maxWildness>0.70</maxWildness>
+        <tradeTagsSell>
+          <li>AnimalFarm</li>
+          <li>AnimalPet</li>
+        </tradeTagsSell>
+        <tradeTagsBuy>
+          <li>AnimalExotic</li>
+        </tradeTagsBuy>
+        <kindCountRange>1~1</kindCountRange>
+        <countRange>3~4</countRange>
+      </li>
+      
+      <!-- Buying -->
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
+      
+    </stockGenerators>
+  </TraderKindDef>
 </Defs>

@@ -7,7 +7,7 @@
   </TraitDef>
   <TraitDef ParentName="CantFightFire">
     <defName>AvaliFireAfraid</defName>
-    <commonality>100</commonality>
+    <commonality>90</commonality>
     <degreeDatas>
       <li>
         <label>Avali</label>
