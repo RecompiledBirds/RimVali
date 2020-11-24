@@ -84,7 +84,7 @@ namespace AvaliMod
  
                     }
                     //Makes the pack.
-                    Log.Message("EiPackHandlerFromPackDriverMapComp started.");
+                    //Log.Message("EiPackHandlerFromPackDriverMapComp started.");
                     packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
                 }
             }

@@ -266,7 +266,7 @@ namespace AvaliMod
         }
         public static IEnumerable<Pawn> AllPawnsOfRaceInWorld(ThingDef race)
         {
-            IEnumerable<Pawn> pawns = PawnsFinder.All_AliveOrDead;
+            IEnumerable<Pawn> pawns = PawnsFinder.All_AliveOrDead.Where<Pawn>(x => !x.Dead);
             List<Pawn> pawnsToReturn = new List<Pawn>();
             foreach (Pawn pawn in pawns)
             {
@@ -277,7 +277,22 @@ namespace AvaliMod
             }
             return pawnsToReturn;
         }
-        public static IEnumerable<Pawn> AllPawnsOfRaceInMapAndFaction(Pawn pawn, Faction faction)
+
+        public static IEnumerable<Pawn> AllPawnsOfRaceInWorld(ThingDef race, Faction faction)
+        {
+            IEnumerable<Pawn> pawns = PawnsFinder.All_AliveOrDead.Where<Pawn>(x => x.Faction == faction && !x.Dead);
+            List<Pawn> pawnsToReturn = new List<Pawn>();
+            foreach (Pawn pawn in pawns)
+            {
+                if (pawn.def == race)
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            return pawnsToReturn;
+        }
+
+        public static IEnumerable<Pawn> AllPawnsOfRaceInMapAndFaction(Pawn pawn)
         {
             List<Pawn> pawnsInMap = new List<Pawn>();
             IEnumerable<Pawn> pawns = CheckAllPawnsInMapAndFaction(pawn.Map, pawn.Faction);
@@ -445,9 +460,19 @@ namespace AvaliMod
 
         public static List<AvaliPack> EiPackHandler(List<AvaliPack> packs, Pawn pawn, IEnumerable<ThingDef> racesInPacks, int packLimit)
         {
-            Log.Message(pawn.Faction.Name);
+            void createPack()
+            {
+                Log.Message("Creating pack for pawn..");
+                packs.Add(EiCreatePack(pawn));
+            }
+            //Log.Message(pawn.Name.ToStringShort);
+            //Log.Message(pawn.Faction.Name);
             if (packs.Count > 0)
             {
+                if (!pawn.Spawned)
+                {
+                    return packs;
+                }
                 List<AvaliPack> packsToUse = packs.Where<AvaliPack>(x => x.faction == pawn.Faction).ToList();
                 if(packsToUse.Count <= 0)
                 {
@@ -457,31 +482,27 @@ namespace AvaliMod
                 }
                 foreach (AvaliPack pack in packsToUse)
                 {
-                    int packListSize = packs.Where<AvaliPack>(x => x.faction == pawn.Faction).Count();
-                    Log.Message(packListSize.ToString());
-                    if (pack.pawns.Contains(pawn) && pack.size == 1)
+                    if (pack.pawns.Contains(pawn))
                     {
                         break;
-                    }else if(pack.size == 1)
-                    {
-                        packs.Remove(pack);
                     }
                     if (pack.size < packLimit)
                     {
+                        Log.Message("Attempting to join pack: " + pack.name + " with " + pawn.Name.ToStringShort);
                         JoinPack(pawn, pack);
                         break;
                     }
                     else
                     {
-                        //Log.Message("Creating pack for pawn..");
-                        packs.Add(EiCreatePack(pawn));
-                        break;
+                        createPack();
+                        return packs;
+
                     }
                 }
             }
             else
             {
-                packs.Add(EiCreatePack(pawn));
+                createPack();
             }
             return packs;
         }
@@ -506,6 +527,7 @@ namespace AvaliMod
             }*/
             AvaliPack PawnPack = new AvaliPack();
             PawnPack.name = pawn.Name.ToStringShort + "'s pack";
+            Log.Message("Creating pack: " + PawnPack.name);
             PawnPack.size = 1;
             PawnPack.faction = pawn.Faction;
             PawnPack.pawns.Add(pawn);
