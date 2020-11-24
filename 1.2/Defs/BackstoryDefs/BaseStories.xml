@@ -32,7 +32,7 @@
     <defName>AvaliSoldierChild</defName>
     <title>Child Soldier</title>
     <titleShort>Child Soldier</titleShort>
-    <baseDescription>From an extremely young age, [PAWN_nameDef] was taught how to fight. [PAWN_possessive] pack was extremely militaristic in nature, and believed in honor codes. [PAWN_nameDef] was drilled from an extremely young age, in harsh conditions, and harsh tests.
+    <baseDescription>From an extremely young age, [PAWN_nameDef] was taught how to fight. [PAWN_possessive] pack was extremely militaristic in nature, and believed in honor codes. [PAWN_nameDef] was drilled from an extremely young age, in harsh conditions, and harsh tests.</baseDescription>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>RimValiBackstories</li>
@@ -61,7 +61,7 @@
     <defName>AvaliLaborChild</defName>
     <title>Child Laborer</title>
     <titleShort>Child Laborer</titleShort>
-    <baseDescription>[PAWN_nameDef] was born into a ethically questionable situation. Well, "questionable" is an understatement. Their family was part of a shady illuminate business, and [PAWN_nameDef] suffered the same fate as their family; working in awful conditions, for little pay, even as a youngling. They can work really well, but they are socially underdeveloped.
+    <baseDescription>[PAWN_nameDef] was born into a ethically questionable situation. Well, "questionable" is an understatement. Their family was part of a shady illuminate business, and [PAWN_nameDef] suffered the same fate as their family; working in awful conditions, for little pay, even as a youngling. They can work really well, but they are socially underdeveloped.</baseDescription>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>RimValiBackstories</li>
@@ -87,7 +87,7 @@
     <defName>AvaliBlessedChild</defName>
     <title>Chosen One</title>
     <titleShort>Chosen One</titleShort>
-    <baseDescription>[PAWN_nameDef] was excitedly raised by [PAWN_possessive] pack, they believed [PAWN_nameDef] would be destined to be big for their pack, their beliefs stating that being born on that day would bring great prestige. As such, [PAWN_nameDef] was treated to many things that most Avali younglings never had.
+    <baseDescription>[PAWN_nameDef] was excitedly raised by [PAWN_possessive] pack, they believed [PAWN_nameDef] would be destined to be big for their pack, their beliefs stating that being born on that day would bring great prestige. As such, [PAWN_nameDef] was treated to many things that most Avali younglings never had.</baseDescription>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>RimValiBackstories</li>
@@ -112,7 +112,7 @@
     <defName>AvaliLateHatch</defName>
     <title>Late Hatch</title>
     <titleShort>Late Hatch</titleShort>
-    <baseDescription>[PAWN_nameDef] for some reason hatched way later then the rest of their kit. They grew up behind everyone else and didn't fit in with the rest.
+    <baseDescription>[PAWN_nameDef] for some reason hatched way later then the rest of their kit. They grew up behind everyone else and didn't fit in with the rest.</baseDescription>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>RimValiBackstories</li>
