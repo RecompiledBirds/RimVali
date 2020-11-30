@@ -38,7 +38,7 @@ namespace AvaliMod
                 Event.current.Use();
             }
             Text.Font = GameFont.Medium;
-            string text = "Pack name: ";
+            string text = "PackNameLabel".Translate() +": ";
             Widgets.Label(new Rect(15f, 15f, 500f, 50f), text);
             Text.Font = GameFont.Small;
             string text2 = Widgets.TextField(new Rect(15f, 50f, inRect.width / 2f - 20f, 35f), this.curPackName);

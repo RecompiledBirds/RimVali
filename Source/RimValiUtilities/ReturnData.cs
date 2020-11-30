@@ -2,16 +2,18 @@
 using System.Linq;
 using Verse;
 using RimWorld;
+using AlienRace;
 namespace AvaliMod
 {
     [StaticConstructorOnStartup]
-    public class RimvaliPotentialPackRaces
+    public class RimValiDefChecks
     {
-        public static List<ThingDef> potentialPackRaces = new List<ThingDef>();
-        public static IEnumerable<ThingDef> potentialRaces = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>((x => x.race != null));
+        
+        public static List<AlienRace.ThingDef_AlienRace> potentialPackRaces = new List<AlienRace.ThingDef_AlienRace>();
+        public static IEnumerable<AlienRace.ThingDef_AlienRace> potentialRaces = DefDatabase<AlienRace.ThingDef_AlienRace>.AllDefs.Where<AlienRace.ThingDef_AlienRace>((x => x.race != null));
         public static void GetRaces()
         {
-            foreach (ThingDef race in potentialRaces)
+            foreach (AlienRace.ThingDef_AlienRace race in potentialRaces)
             {
                 if (race.defName.ToLower().Contains("avali") && !potentialPackRaces.Contains(race))
                 {

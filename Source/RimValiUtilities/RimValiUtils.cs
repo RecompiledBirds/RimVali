@@ -10,27 +10,79 @@ namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Ei 0.0.2";
-        public static string dir;
-       /* public static void AssetBundleFinder(DirectoryInfo info)
+        public static string build = "Ei 0.0.3 - Modular";
+        public static string modulesFound ="Modules:\n";
+
+        public static SkillRecord GetHighestSkillOfpack(AvaliPack pack)
         {
-            foreach(FileInfo file in info.GetFiles())
+            int highestSkillLevel = 0;
+            SkillRecord highestSkill = null;
+            foreach(Pawn pawn in pack.pawns)
             {
-                if (file.Extension.NullOrEmpty())
+   
+                List<SkillRecord> list = new List<SkillRecord>();
+                foreach(SkillRecord skillRecord in pawn.skills.skills)
                 {
-                    AssetBundle bundle = AssetBundle.LoadFromFile(file.FullName);
-                    if (!(bundle == null))
+                    list.Add(skillRecord);
+                    foreach(SkillRecord skill in list)
                     {
-                        Log.Message("RimVali loaded bundle: " + bundle.name);
-                        UnityEngine.Shader[] shaders = bundle.LoadAllAssets<UnityEngine.Shader>();
+                        if(skill.Level > highestSkillLevel)
+                        {
+                            highestSkillLevel = skill.Level;
+                            highestSkill = skill;
+                        }
                     }
-                    else
+                }
+
+            }
+            return highestSkill;
+        }
+
+        public static SkillRecord GetHighestSkillOfpack(Pawn pawn)
+        {
+            AvaliPack pack = GetPack(pawn);
+            int highestSkillLevel = 0;
+            SkillRecord highestSkill = null;
+            foreach (Pawn pawn2 in pack.pawns)
+            {
+                List<SkillRecord> list = new List<SkillRecord>();
+                foreach (SkillRecord skillRecord in pawn2.skills.skills)
+                {
+                    list.Add(skillRecord);
+                    foreach (SkillRecord skill in list)
                     {
-                        Log.Message("RimVali was unable to load the bundle: " + file.FullName);
+                        if (skill.Level > highestSkillLevel)
+                        {
+                            highestSkillLevel = skill.Level;
+                            highestSkill = skill;
+                        }
                     }
                 }
             }
-        }*/
+            return highestSkill;
+        }
+       
+        //private static readonly bool enableDebug = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableDebugMode;
+        public static string dir;
+        public static void AssetBundleFinder(DirectoryInfo info)
+         {
+             foreach(FileInfo file in info.GetFiles())
+             {
+                 if (file.Extension.NullOrEmpty())
+                 {
+                     AssetBundle bundle = AssetBundle.LoadFromFile(file.FullName);
+                     if (!(bundle == null))
+                     {
+                         Log.Message("RimVali loaded bundle: " + bundle.name);
+                         UnityEngine.Shader[] shaders = bundle.LoadAllAssets<UnityEngine.Shader>();
+                     }
+                     else
+                     {
+                         Log.Message("RimVali was unable to load the bundle: " + file.FullName);
+                     }
+                 }
+             }
+         }
 
         public static AssetBundle shaderLoader(string info)
         {
@@ -40,39 +92,7 @@ namespace AvaliMod
             Log.Message(assetBundle.GetAllAssetNames()[0], false);
             return assetBundle;
         }
-        public static Dictionary<SkillRecord, float> Skills(Pawn pawn)
-        {
-            Dictionary<SkillRecord, float> skillNums = new Dictionary<SkillRecord, float>();
-            IEnumerable<SkillRecord> skills = pawn.skills.skills;
-            foreach (SkillRecord skill in skills)
-            {
-                skillNums.Add(skill, skill.XpTotalEarned);
-            }
-            return skillNums;
-        }
 
-        public static Dictionary<Pawn, PawnRelationDef> PawnRelations(Pawn pawn)
-        {
-            Dictionary<Pawn, PawnRelationDef> relatedPawnsToReturn = new Dictionary<Pawn, PawnRelationDef>();
-
-            IEnumerable<Pawn> pawns = pawn.relations.RelatedPawns;
-            foreach (Pawn relatedPawn in pawns)
-            {
-                int onRelation = 0;
-                while (onRelation > relatedPawn.relations.RelatedPawns.Count())
-                {
-                    foreach (PawnRelationDef relationDef in RimValiRelationsFound.relationsFound)
-                    {
-                        if (relatedPawn.relations.DirectRelationExists(relationDef, pawn))
-                        {
-                            relatedPawnsToReturn.Add(relatedPawn, relationDef);
-                        }
-                    }
-                    onRelation += 1;
-                }
-            }
-            return null;
-        }
 
         public static Dictionary<Trait, int> Traits(Pawn pawn)
         {
@@ -86,89 +106,9 @@ namespace AvaliMod
         }
 
 
-
-
-        public static bool CheckIfPackmatesInRoom(Pawn pawn, PawnRelationDef relationDef)
+        /*public static bool CheckIfBedRoomHasPackmates(Pawn pawn, PawnRelationDef relationDef)
         {
-            Room room = pawn.GetRoom();
-            if (!(room == null) && (pawn.Position.Roofed(pawn.Map)))
-            {
-                IEnumerable<Pawn> pawns = RimValiUtility.GetPackPawns(pawn, relationDef);
-                foreach (Pawn packmate in pawns)
-                {
-                    if (packmate.GetRoom(RegionType.Set_Passable) == room)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-
-
-        public static int GetPackSize(Pawn pawn, PawnRelationDef relationDef)
-        {
-            int foundMembers = 1;
-            IEnumerable<Pawn> relatedPawns = pawn.relations.RelatedPawns;
-            foreach (Pawn packmate in relatedPawns)
-            {
-                if (packmate.relations.DirectRelationExists(relationDef, pawn) || pawn.relations.DirectRelationExists(relationDef, packmate))
-                {
-                    foundMembers += 1;
-                }
-            }
-            return foundMembers;
-        }
-
-        public static IEnumerable<Pawn> AllPawnsOfRaceOnMap(ThingDef race, Map map)
-        {
-            IEnumerable<Pawn> pawns = map.mapPawns.AllPawns;
-            List<Pawn> pawnsToReturn = new List<Pawn>();
-            foreach (Pawn pawn in pawns)
-            {
-                if (pawn.def == race)
-                {
-                    pawnsToReturn.Add(pawn);
-                }
-            }
-            return pawnsToReturn;
-        }
-
-        //Added in the "Keo" build. 
-        public static IEnumerable<Pawn> AllPawnsOfRaceInMapAndFaction(Pawn pawn, Faction faction)
-        {
-            List<Pawn> pawnsInMap = new List<Pawn>();
-            IEnumerable<Pawn> pawns = CheckAllPawnsInMapAndFaction(pawn.Map, pawn.Faction);
-            foreach(Pawn pawn1 in pawns)
-            {
-                if(pawn1.def == pawn.def)
-                {
-                    pawnsInMap.Add(pawn1);
-                }
-            }
-            return pawnsInMap;
-        }
-
-        public static IEnumerable<Pawn> CheckAllPawnsInMapAndFaction(Map map, Faction faction)
-        {
-            IEnumerable<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
-            List<Pawn> pawnsInMap = new List<Pawn>();
-            foreach (Pawn pawn in pawns)
-            {
-                if (pawn.Map == map)
-                {
-                    pawnsInMap.Add(pawn);
-                }
-            }
-            IEnumerable<Pawn> pawnsFound = pawnsInMap;
-            return pawnsFound;
-        }
-
-
-
-        public static bool CheckIfBedRoomHasPackmates(Pawn pawn, PawnRelationDef relationDef)
-        {
+            // liQdComment - Needs to be changed to non-relation
             int packmatesFound = 0;
             Room room = pawn.GetRoom();
             if (!pawn.Awake())
@@ -201,19 +141,239 @@ namespace AvaliMod
                 }
             }
             return false;
+        }*/
+        public static bool PackInBedroom(Pawn pawn)
+        {
+            int packmatesInRoom = 0;
+            Room room = pawn.GetRoom();
+            AvaliPack avaliPack = GetPackWithoutSelf(pawn);
+            if (room.ContainedBeds.Count() > 0)
+            {
+                IEnumerable<Building_Bed> beds = room.ContainedBeds;
+                if (beds.Count() < 2)
+                {
+                    return false;
+                }
+                foreach (Building_Bed bed in beds)
+                {
+                    if (bed.OwnersForReading != null)
+                    {
+                        foreach (Pawn other in bed.OwnersForReading)
+                        {
+                            if (avaliPack.pawns.Contains(other))
+                            {
+                                packmatesInRoom += 1;
+                            }
+                        }
+                    }
+                }
+            }
+            if (packmatesInRoom > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+
+
+        public static bool CheckIfPackmatesInRoom(Pawn pawn)
+        {
+            Room room = pawn.GetRoom();
+            if (!(room == null) && (pawn.Position.Roofed(pawn.Map)))
+            {
+                AvaliPack pack = GetPackWithoutSelf(pawn);
+                foreach (Pawn packmate in pack.pawns)
+                {
+                    if (packmate.GetRoom() == room)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return false;
+        }
+
+
+        public static int GetPackSize(Pawn pawn)
+        {
+            /*
+            int foundMembers = 1;
+            IEnumerable<Pawn> relatedPawns = pawn.relations.RelatedPawns;
+            foreach (Pawn packmate in relatedPawns)
+            {
+                if (packmate.relations.DirectRelationExists(relationDef, pawn) || pawn.relations.DirectRelationExists(relationDef, packmate))
+                {
+                    foundMembers += 1;
+                }
+            }
+            return foundMembers;
+            */
+            int i = 0;
+            try
+            {
+                i = GetPack(pawn).pawns.Count();
+            }
+            catch
+            {
+                //Log.Message("Pawn has no pack");
+            }
+            return i;
+        }
+
+        public static IEnumerable<Pawn> AllPawnsOfRaceOnMap(List<ThingDef> races, Map map)
+        {
+            IEnumerable<Pawn> pawns = map.mapPawns.AllPawns;
+            List<Pawn> pawnsToReturn = new List<Pawn>();
+            foreach (Pawn pawn in pawns)
+            {
+                if (races.Contains(pawn.def))
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            return pawnsToReturn;
+        }
+        public static IEnumerable<Pawn> AllPawnsOfRaceOnMap(ThingDef race, Map map)
+        {
+            IEnumerable<Pawn> pawns = map.mapPawns.AllPawns;
+            List<Pawn> pawnsToReturn = new List<Pawn>();
+            foreach (Pawn pawn in pawns)
+            {
+                if (pawn.def == race)
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            return pawnsToReturn;
+        }
+        public static IEnumerable<Pawn> AllPawnsOfRaceInWorld(List<ThingDef> races)
+        {
+            IEnumerable<Pawn> pawns = PawnsFinder.All_AliveOrDead;
+            IEnumerable<Pawn> caravanPawns = PawnsFinder.AllCaravansAndTravelingTransportPods_AliveOrDead;
+            List<Pawn> pawnsToReturn = new List<Pawn>();
+            foreach (Pawn pawn in pawns)
+            {
+                if (races.Contains(pawn.def))
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            foreach(Pawn pawn in caravanPawns)
+            {
+                if (races.Contains(pawn.def) && !pawnsToReturn.Contains(pawn))
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            return pawnsToReturn;
+        }
+        public static IEnumerable<Pawn> AllPawnsOfRaceInWorld(ThingDef race)
+        {
+            IEnumerable<Pawn> pawns = PawnsFinder.All_AliveOrDead.Where<Pawn>(x => !x.Dead);
+            IEnumerable<Pawn> caravanPawns = PawnsFinder.AllCaravansAndTravelingTransportPods_AliveOrDead;
+            List<Pawn> pawnsToReturn = new List<Pawn>();
+            foreach (Pawn pawn in pawns)
+            {
+                if (pawn.def == race)
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            foreach (Pawn pawn in caravanPawns)
+            {
+                if (pawn.def == race && !pawnsToReturn.Contains(pawn))
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            return pawnsToReturn;
+        }
+
+        public static IEnumerable<Pawn> AllPawnsOfRaceInWorld(ThingDef race, Faction faction)
+        {
+            IEnumerable<Pawn> pawns = PawnsFinder.All_AliveOrDead.Where<Pawn>(x => x.Faction == faction && !x.Dead);
+            IEnumerable<Pawn> caravanPawns = PawnsFinder.AllCaravansAndTravelingTransportPods_AliveOrDead;
+            List<Pawn> pawnsToReturn = new List<Pawn>();
+            foreach (Pawn pawn in pawns)
+            {
+                if (pawn.def == race)
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            foreach (Pawn pawn in caravanPawns)
+            {
+                if (pawn.def == race && !pawnsToReturn.Contains(pawn))
+                {
+                    pawnsToReturn.Add(pawn);
+                }
+            }
+            return pawnsToReturn;
+        }
+
+        public static IEnumerable<Pawn> AllPawnsOfRaceInMapAndFaction(Pawn pawn)
+        {
+            List<Pawn> pawnsInMap = new List<Pawn>();
+            IEnumerable<Pawn> pawns = CheckAllPawnsInMapAndFaction(pawn.Map, pawn.Faction);
+            foreach (Pawn pawn1 in pawns)
+            {
+                if (pawn1.def == pawn.def)
+                {
+                    pawnsInMap.Add(pawn1);
+                }
+            }
+            return pawnsInMap;
+        }
+        public static IEnumerable<Pawn> AllPawnsOfRaceInMapAndFaction(ThingDef race,Map map, Faction faction)
+        {
+            List<Pawn> pawnsInMap = new List<Pawn>();
+            IEnumerable<Pawn> pawns = CheckAllPawnsInMapAndFaction(map, faction);
+            foreach (Pawn pawn1 in pawns)
+            {
+                if (pawn1.def == race)
+                {
+                    pawnsInMap.Add(pawn1);
+                }
+            }
+            return pawnsInMap;
+        }
+
+        public static IEnumerable<Pawn> CheckAllPawnsInMapAndFaction(Map map, Faction faction)
+        {
+            IEnumerable<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
+            List<Pawn> pawnsInMap = new List<Pawn>();
+            foreach (Pawn pawn in pawns)
+            {
+                if (pawn.Map == map)
+                {
+                    pawnsInMap.Add(pawn);
+                }
+            }
+            IEnumerable<Pawn> pawnsFound = pawnsInMap;
+            return pawnsFound;
+        }
+
 
 
         public static void AddThought(Pawn pawn, ThoughtDef thought)
         {
             pawn.needs.mood.thoughts.memories.TryGainMemory(thought);
         }
-
+        public static void AddThought(Pawn pawn, ThoughtDef thought, int stage)
+        {
+            pawn.needs.mood.thoughts.memories.TryGainMemory(thought);
+            pawn.needs.mood.thoughts.memories.GetFirstMemoryOfDef(thought).SetForcedStage(stage);
+        }
         public static void RemoveThought(Pawn pawn, ThoughtDef thought)
         {
             pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(thought);
         }
-
+        /*
         public static IEnumerable<Pawn> GetPackPawns(Pawn pawn, PawnRelationDef relationDef)
         {
             List<Pawn> packmates = new List<Pawn>();
@@ -227,6 +387,7 @@ namespace AvaliMod
             }
             return packmates;
         }
+        */
         public static bool IsOfRace(Pawn pawn, ThingDef race)
         {
             if (pawn.def.defName == race.defName)
@@ -281,7 +442,6 @@ namespace AvaliMod
 
         public static int PawnOfRaceCount(Faction faction, ThingDef race)
         {
-
             IEnumerable<Pawn> pawns = PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction);
             int foundMatches = 0;
             foreach (Pawn pawn in pawns)
@@ -324,84 +484,97 @@ namespace AvaliMod
 
         public static List<AvaliPack> EiPackHandler(List<AvaliPack> packs, Pawn pawn, IEnumerable<ThingDef> racesInPacks, int packLimit)
         {
-            void createNewPack()
+            void createPack()
             {
-                AvaliPack NewPack = EiCreatePack(pawn);
-                Log.Message("Creating new pack- " + NewPack.name);
-                packs.Add(NewPack);
+                packs.Add(EiCreatePack(pawn));
             }
-            AvaliPack PawnPack = null;
-            //Log.Message("Checking all packs.");
+            //Log.Message(pawn.Name.ToStringShort);
+            //Log.Message(pawn.Faction.Name);
             if (packs.Count > 0)
             {
-                foreach (AvaliPack pack in packs)
+                if (!pawn.Spawned)
+                {
+                    return packs;
+                }
+                List<AvaliPack> packsToUse = packs.Where<AvaliPack>(x => x.faction == pawn.Faction).ToList();
+                if (packsToUse.Count <= 0)
+                {
+                    AvaliPack newPack = EiCreatePack(pawn);
+                    //Log.Message(newPack.name);
+                    packs.Add(newPack);
+                }
+                foreach (AvaliPack pack in packsToUse)
                 {
                     if (pack.pawns.Contains(pawn))
                     {
-                        PawnPack = pack;
-                        //Log.Message("Found pack for pawn: " + pawn.Name);
-                        //Log.Message(pack.name);
                         break;
                     }
-                    if (pack.size < packLimit && pawn.Faction == pack.faction)
+                    if (pack.pawns.Count < packLimit)
                     {
-                        PawnPack = JoinPack(pawn, pack);
-                        packs.Replace<AvaliPack>(pack, PawnPack);
+                        AvaliPackDriver.packs.Remove(GetPack(pawn));
+                        Log.Message("Attempting to join pack: " + pack.name + " with " + pawn.Name.ToStringShort);
+                        JoinPack(pawn, pack);
+                        Log.Message("Pawns in pack count now: " + pack.pawns.Count + "pack limit is supposed to be " + packLimit);
                         break;
+                    }
+                    else
+                    {
+                        if (pack == packsToUse.Last<AvaliPack>())
+                        { createPack(); }
                     }
                 }
 
-                if (PawnPack == null)
-                {
-                    createNewPack();
-
-                }
             }
             else
             {
-                Log.Message("No packs found, creating new pack.");
-                createNewPack();
+                createPack();
             }
             return packs;
         }
 
-      
+
         public static AvaliPack JoinPack(Pawn pawn, AvaliPack pack, int reqOpinionPawn = 30, int reqOpionionPack = 30)
         {
             pack.pawns.Add(pawn);
             pack.size++;
+            /*if (enableDebug)
+            {
+                Log.Message("Pawn: " + pawn.Name.ToStringShort + " joined " + pack.name);
+            }*/
             return pack;
         }
+
         public static AvaliPack EiCreatePack(Pawn pawn)
         {
-            
+            /*if (enableDebug)
+            {
+                Log.Message("No packs, creating new from pawn: " + pawn.Name.ToStringShort);
+            }*/
             AvaliPack PawnPack = new AvaliPack();
             PawnPack.name = pawn.Name.ToStringShort + "'s pack";
+            Log.Message("Creating pack: " + PawnPack.name);
             PawnPack.size = 1;
             PawnPack.faction = pawn.Faction;
-            //Log.Message(PawnPack.name);
-            //Log.Message(pawn.Name.ToString());
             PawnPack.pawns.Add(pawn);
             return PawnPack;
         }
 
         public static AvaliPack GetPack(Pawn pawn)
         {
-            //Verify the pawn somehow isnt null. Really shouldnt be an issue, but another "saftey check"
-            if(pawn == null)
+            if (pawn == null)
             {
                 Log.Error("Pawn check is null!");
                 return null;
             }
-            //This really shouldnt be needed, but it's a failsafe if something messes up.
-            if(AvaliPackDriver.packs == null || AvaliPackDriver.packs.Count == 0)
+            if (AvaliPackDriver.packs == null || AvaliPackDriver.packs.Count == 0)
             {
+                Log.Message("No packs");
                 return null;
             }
             //We really should be getting here
-            if(AvaliPackDriver.packs.Count > 0)
+            if (AvaliPackDriver.packs.Count > 0)
             {
-                foreach(AvaliPack APack in AvaliPackDriver.packs)
+                foreach (AvaliPack APack in AvaliPackDriver.packs)
                 {
                     //Checks if somehow a pack has 0 pawns (never should happen), then checks if the pawn is in it.
                     if (APack.pawns.Count > 0)
@@ -418,7 +591,55 @@ namespace AvaliMod
                 return null;
             }
             //If somehow nothing worked, just return null.
-            Log.Message("Didn't find pack, returning null.");
+            /*if (enableDebug)
+            {
+                Log.Message("Didn't find pack, returning null.");
+            }*/
+            return null;
+        }
+
+        public static AvaliPack GetPackWithoutSelf(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                Log.Error("Pawn check is null!");
+                return null;
+            }
+            if (AvaliPackDriver.packs == null || AvaliPackDriver.packs.Count == 0)
+            {
+                Log.Message("No packs");
+                return null;
+            }
+            //We really should be getting here
+            if (AvaliPackDriver.packs.Count > 0)
+            {
+                foreach (AvaliPack APack in AvaliPackDriver.packs)
+                {
+                    //Checks if somehow a pack has 0 pawns (never should happen), then checks if the pawn is in it.
+                    if (APack.pawns.Count > 0)
+                    {
+                        if (APack.pawns.Contains(pawn))
+                        {
+                            AvaliPack returnPack = new AvaliPack();
+                            returnPack.pawns.AddRange(APack.pawns);
+                            returnPack.pawns.Remove(pawn);
+                            returnPack.size = APack.size;
+                            returnPack.deathDates.AddRange(APack.deathDates);
+                            returnPack.creationDate = APack.creationDate;
+                            return returnPack;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
+            //If somehow nothing worked, just return null.
+            /*if (enableDebug)
+            {
+                Log.Message("Didn't find pack, returning null.");
+            }*/
             return null;
         }
     }
