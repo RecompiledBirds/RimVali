@@ -146,7 +146,7 @@
     <products>
       <AvaliTungstenPowder>16</AvaliTungstenPowder>
     </products>
-    <researchPrerequisite>TungstenProcessingBatch</researchPrerequisite>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
   </RecipeDef>
   <RecipeDef>
     <workAmount>500</workAmount>
@@ -170,7 +170,7 @@
     <products>
       <AvaliTungstenPowder>40</AvaliTungstenPowder>
     </products>
-    <researchPrerequisite>TungstenProcessingBatchTwo</researchPrerequisite>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
   </RecipeDef>
   
   <!-- Nanofiber -->

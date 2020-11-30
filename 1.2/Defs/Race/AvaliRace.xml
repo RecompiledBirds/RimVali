@@ -75,22 +75,29 @@
             <li>
                 <compClass>CompAttachBase</compClass>
             </li>
-		        <li>
-              <compClass>AvaliMod.TempComp</compClass>
-            </li>
 	    <!--Cool things, these handle alot of the pack systems.-->
             <!-- Just don't remove any lines from these, please.-->
             <li Class="AvaliMod.AvaliDriverThoughtProps">
-                <relationDef>Packmate</relationDef>
                 <inSameRoomThought>AvaliSharingRoom</inSameRoomThought>
                 <sharedBedroomThought>SharedRoomWithPack</sharedBedroomThought>
                 <sleptApartThought>BedroomWithoutPack</sleptApartThought>
                 <packLossPreventers>
-                <li>PackReplacementAI</li>
+                  <li>PackReplacementAI</li>
               </packLossPreventers>
             </li>
-            <li>
-              <compClass>AvaliMod.TempComp</compClass>
+            <li Class="AvaliMod.SlotPropsThingDef">
+              <slots>
+                <li>
+                  <name>Temperature</name>
+                </li>
+                <li>
+                  <name>Torso</name>
+                  <size>2</size>
+                </li>
+                <li>
+                  <name>Brain</name>
+                </li>
+              </slots>
             </li>
             <li Class="AvaliMod.PackProps">
               <racesInPacks>
@@ -229,10 +236,10 @@
             </li>
           </colorChannels>
               <headOffset>(0,0.4)</headOffset>
-              <customHeadDrawSize>(1,1)</customHeadDrawSize>
-              <customPortraitHeadDrawSize>(1,1)</customPortraitHeadDrawSize>
-              <customPortraitDrawSize>(1,1)</customPortraitDrawSize>
-              <customDrawSize>(1,1)</customDrawSize>
+              <customHeadDrawSize>(0.3,0.3)</customHeadDrawSize>
+              <customPortraitHeadDrawSize>(0.3,0.3)</customPortraitHeadDrawSize>
+              <customPortraitDrawSize>(0.3,0.3)</customPortraitDrawSize>
+              <customDrawSize>(0.3,0.3)</customDrawSize>
               
               <!-- My sanity is gone. Send help. -->
               <bodyAddons>
@@ -333,7 +340,6 @@
                   <drawSize>0.6</drawSize>
                   <drawForMale>false</drawForMale>
                   <layerInvert>true</layerInvert>
-                  <angle>-3</angle>
                   <inFrontOfBody>false</inFrontOfBody>
                   <path>avali/Tail/Female/FemaleTail</path>
                   <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
@@ -359,7 +365,7 @@
                     </north>
                     <east>
                       <bodyTypes>
-                        <Avali>(-0.1157557,0.215434)</Avali>
+                        <Avali>(-0.1286174,0.2282957)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -607,7 +613,7 @@
                     </north>
                     <east>
                       <bodyTypes>
-                        <Avali>(-0.1543409,0.215434)</Avali>
+                        <Avali>(-0.1286174,0.2282957)</Avali>
                       </bodyTypes>
                       <crownTypes>
                         <AvaliHead>(0,0)</AvaliHead>
@@ -760,7 +766,7 @@
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.3311896</layerOffset>
+                  <layerOffset>-0.3054661</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -836,7 +842,7 @@
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.3376206</layerOffset>
+                  <layerOffset>-0.3311898</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -912,7 +918,7 @@
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.3376207</layerOffset>
+                  <layerOffset>-0.356913</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -1069,7 +1075,7 @@
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.3311896</layerOffset>
+                  <layerOffset>-0.3054661</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -1145,7 +1151,7 @@
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.3376206</layerOffset>
+                  <layerOffset>-0.3311898</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -1221,7 +1227,7 @@
                   <inFrontOfBody>false</inFrontOfBody>
                   <layerInvert>false</layerInvert>
                   <colorChannel>skin</colorChannel>
-                  <layerOffset>-0.3183278</layerOffset>
+                  <layerOffset>-0.356913</layerOffset>
                   <offsets>
                     <south>
                       <bodyTypes>
@@ -1517,8 +1523,6 @@
               <projects>
                 <li>BasicRimValiTech</li>
                 <li>TungstenProcessingBasic</li>
-                <li>TungstenProcessingBatch</li>
-                <li>TungstenProcessingBatchTwo</li>
                 <li>BasicAvaliBionics</li>
                 <li>ResearchNanoForge</li>
                 <li>ResearchNanoLoom</li>
@@ -1560,46 +1564,52 @@
           <recipeList>
           
             <!-- Arms -->
-
             <li>InstallAvaliBasicBionicArm</li>
             <li>InstallAvaliAdvancedBionicArm</li>
-          
+            <li>InstallParallelArm</li>
+            
             <!-- Legs -->
-
             <li>InstallAvaliAdvancedBionicLeg</li>
             <li>InstallAvaliBasicBionicLeg</li>
             
+            <!-- Torso -->
+            <li>InstallAvaliASR</li>
+            
+            <!-- Ribcage -->
+            <li>InstallDM</li>
+            <li>InstallDC</li>
+            <li>InstallDP</li>
+            
             <!-- Temperature -->
-
             <li>InstallAvaliTemperatureImplantBasic</li>
             <li>InstallAvaliTemperatureImplantElite</li>
             <li>InstallAvaliTemperatureImplantAdv</li>
       
             <!-- Tail -->
-            
             <li>RimValiInstallPegTail</li>
             <li>InstallTailStiffeningAugment</li>
             <li>InstallNaturalAvaliTail</li>
             <li>InstallAvaliAdvancedBionicTail</li>
             <li>InstallAvaliBasicBionicTail</li>
             
-            <!-- Head -->
+            <!-- Neck -->
+            <li>InstallVocalReplacements</li>
             
+            <!-- Head -->
             <li>InstallVenomTeeth</li>
             
             <!-- Brain -->
             <li>InstallPE</li>
             <li>InstallPackReplacementAI</li>
+            <li>InstallSC</li>
+            <li>InstallTC</li>
             
             <!-- Items -->
-
             <li>RimValiPrintAerogel</li>
             <li>RimValiPrintAerogelTwo</li>
             <li>RimValiPrintAerogelThree</li>
             
             <li>RimValiPowderTungsten</li>
-            <li>RimValiPowderTungstenTwo</li>
-            <li>RimValiPowderTungstenThree</li>
             
             <li>WeaveNanoFiber</li>
             <li>WeaveNanoFiberTwo</li>
@@ -1680,6 +1690,7 @@
             <li>Apparel_WarVeil</li>
             <li>OrbitalTargeterBombardment</li>
             <li>OrbitalTargeterBeam</li>
+            <li MayRequire="Dubwise.Rimatomics">Apparel_RadiationSuit</li>
           </whiteApparelList>
           <onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
         </raceRestriction>
