@@ -52,7 +52,7 @@ namespace AvaliMod
                             }
                             foreach(Pawn packmate in pack.pawns)
                             {
-                                if(!(pawn == packmate))
+                                if(!(pawn == packmate) && !pawn.Dead)
                                 {
                                     PackComp comp = packmate.TryGetComp<PackComp>();
                                     if(comp.Props.deathThought != null)

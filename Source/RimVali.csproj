@@ -39,6 +39,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Refs\0Harmony.dll</HintPath>
     </Reference>
+    <Reference Include="AlienRace, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RimVali-beta\Source\Refs\AlienRace.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp, Version=1.2.7558.21380, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Refs\Assembly-CSharp.dll</HintPath>
@@ -72,13 +76,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeFile1.cs" />
+    <Compile Include="ModScanner.cs" />
+    <Compile Include="DeathWorker.cs" />
     <Compile Include="HediffStuff\AddHediff.cs" />
+    <Compile Include="HediffStuff\Slots\Slots.cs" />
+    <Compile Include="HediffStuff\Slots\SlotsComp.cs" />
+    <Compile Include="Packs\PackMapComponents\ThoughtDriver\Shared_room_worker.cs" />
+    <Compile Include="Packs\PackMapComponents\ThoughtDriver\PackLossWorker.cs" />
     <Compile Include="RimValiUtilities\Dialog_NamePack.cs" />
     <Compile Include="RimValiUtilities\Tab.cs" />
-    <Compile Include="HarmonyPatches\TempComp.cs" />
     <Compile Include="Graphic\CodeFile3.cs" />
     <Compile Include="Graphic\CodeFile4.cs" />
-    <Compile Include="HarmonyPatches\TransformValue.cs" />
     <Compile Include="Packs\Packs.cs" />
     <Compile Include="RVHAR\AlienPartGenerator.BodyAddon.cs" />
     <Compile Include="RVHAR\AlienPartGenerator.cs" />
@@ -92,7 +100,7 @@
     <Compile Include="Graphic\Linked.cs" />
     <Compile Include="Graphic\GraphicClasses.cs" />
     <Compile Include="RVHAR\HarmonyPatches.cs" />
-    <Compile Include="Packs\PackMapComponents\PackDriver\PackDiverMapComp.cs" />
+    <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackDiverMapComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\AvaliThoughtDriver.cs" />
     <Compile Include="HarmonyPatches\ApparelPatch.cs" />

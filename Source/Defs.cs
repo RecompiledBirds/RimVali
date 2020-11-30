@@ -32,12 +32,6 @@ namespace AvaliMod
         public static HediffDef TestHediffTwo;
         public static HediffDef TestHediffThree;
 
-
-        //Thoughts
-        public static ThoughtDef AvaliSharedBedRoom;
-        public static ThoughtDef AvaliSleptWithoutPack;
-        public static ThoughtDef AvaliSharingRoom;
-
         //Letters
         public static LetterDef IlluminateAirdrop;
 
@@ -50,7 +44,5 @@ namespace AvaliMod
         public static ResearchProjectDef AeroWeaveResearch;
         public static ResearchProjectDef AvaliAeroTungsten;
 
-        //ThoughtDefs
-        public static ThoughtDef AvaliPackmateThought;
     }
 }

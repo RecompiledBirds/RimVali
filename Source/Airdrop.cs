@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Verse;
+using System.Linq;
 namespace AvaliMod
 {
     public class AirDropHandler : MapComponent
@@ -9,6 +10,7 @@ namespace AvaliMod
         private readonly bool airdrops = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableAirdrops;
         private System.Random random = new System.Random();
         private int ticks = 0;
+        private bool hasStarted = false;
         public AirDropHandler(Map map)
             : base(map)
         {
@@ -16,7 +18,7 @@ namespace AvaliMod
         }
 
         public bool hasDropped;
-
+        
         public override void ExposeData()
         {
             Scribe_Values.Look(ref hasDropped, "hasDropped", false);
@@ -31,7 +33,7 @@ namespace AvaliMod
             Map target = map;
             List<Faction> newFactions = new List<Faction>();
             IntVec3 intVec3 = DropCellFinder.TradeDropSpot(target);
-            if (RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= 5 && !hasDropped)
+            if (RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= 5 && !hasDropped && map.IsPlayerHome)
             {
                 hasDropped = true;
                 for(int a = 0; a < random.Next(2, 5); a++)
@@ -46,6 +48,7 @@ namespace AvaliMod
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
         }
+
         public override void MapComponentTick()
         {
             ticks++;
