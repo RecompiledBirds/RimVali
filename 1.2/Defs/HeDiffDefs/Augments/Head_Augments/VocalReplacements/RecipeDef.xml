@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallVocalReplacements</defName>
+    <label>Install vocal replacements</label>
+    <description>Install a vocal replacements.</description>
+    <descriptionHyperlinks><ThingDef>VocalReplacements</ThingDef></descriptionHyperlinks>
+    <jobString>Installing vocal replacements.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VocalReplacements</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VocalReplacements</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Neck</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VocalReplacements</addsHediff>
+  </RecipeDef>
+</Defs>

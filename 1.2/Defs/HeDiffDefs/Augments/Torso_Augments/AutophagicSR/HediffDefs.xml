@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef>
+  <HediffDef ParentName="ImplantHediffBase">
     <defName>AvaliASR</defName>
     <label>Autophagic System Rewrite</label>
+     <hediffClass>HediffWithComps</hediffClass>
     <description>This augmesnt rewrites metabolic processes associated with managing biological waste. Lymph nodes are altered to generate new products from celluar waste. These are used in metabolic reactions, which slightly increase most body functions.</description>
     <stages>
       <li>
@@ -22,5 +23,12 @@
         </capMods>
       </li>
     </stages>
+    <comps>
+      <li Class="AvaliMod.SlotPropsHediff">
+        <slotsUsed>
+          <li>Torso</li>
+        </slotsUsed>
+      </li>
+    </comps>
   </HediffDef>
 </Defs>

@@ -128,17 +128,6 @@
   </AlienRace.BackstoryDef>
 		
   <AlienRace.BackstoryDef>
-    <defName>AvalAdult</defName>
-    <title>Avali</title>
-    <titleShort>Avali</titleShort>
-    <baseDescription>BASE</baseDescription>
-    <slot>Adulthood</slot>
-    <spawnCategories>
-      <li>RimValiBackstoriesBase</li>
-    </spawnCategories>
-  </AlienRace.BackstoryDef>
-  
-  <AlienRace.BackstoryDef>
     <defName>AvaliSolider</defName>
     <title>Illuminate Solider</title>
     <titleShort>Solider</titleShort>
@@ -608,10 +597,12 @@
     </spawnCategories>
 	<workAllows>
       <li>Violent</li>
-	  <li>Firefighting</li>
-	  <li>Hauling</li>
-	  <li>Mining</li>
-	  <li>ManualDumb</li>
+	    <li>Firefighting</li>
+	    <li>Hauling</li>
+	    <li>Mining</li>
+      <li>ManualSkilled</li>
+      <li>Commoner</li>
+	    <li>ManualDumb</li>
     </workAllows>
     <skillGains>
 	  <li>

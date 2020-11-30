@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>VocalReplacements</defName>
+    <label>Vocal replacements</label>
+    <labelNoun>a vocal replacement</labelNoun>
+    <description>This augment assists the user in targeting, allowing for faster aim times and somewhat higher accuracy.</description>
+    <spawnThingOnRemoved>VocalReplacements</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <comps>
+      <li Class="AvaliMod.ConflictsWithProps">
+          <conflictingHediffs>
+            <li>PackReplacementAI</li>
+            <li>PositiveE</li>
+            <li>SocialEnhancer</li>
+          </conflictingHediffs>
+          <showConflicts>true</showConflicts>
+        </li>
+    </comps>
+  </HediffDef>
+</Defs>
