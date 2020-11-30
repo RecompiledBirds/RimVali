@@ -2,44 +2,40 @@
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+
+using System.Threading;
 namespace AvaliMod
 {
     public class AvaliUpdater : MapComponent
     {
+        private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
         private readonly bool mapCompOn = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().mapCompOn;
-        private readonly bool packLossEnabled = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packLossEnabled;
         private int onTick;
+        private List<Pawn> pawnsHaveBeenSold = new List<Pawn>();
+        private List<Pawn> pawnsAreMissing = new List<Pawn>();
         public AvaliUpdater(Map map)
             : base(map)
         {
 
         }
-
-        public void UpdateSharedRoomThought(Pawn pawn, PawnRelationDef relationDef, ThoughtDef thought)
+        public override void ExposeData()
         {
-            if (pawn.Awake())
-            {
-                AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-                if (RimValiUtility.CheckIfPackmatesInRoom(pawn, relationDef))
-                {
-                    RimValiUtility.AddThought(pawn, thought);
-                }
-                else
-                {
-                    RimValiUtility.RemoveThought(pawn, thought);
-                }
-            }
+            Scribe_Collections.Look<Pawn>(ref pawnsHaveBeenSold, "soldPawns");
+            Scribe_Collections.Look<Pawn>(ref pawnsAreMissing, "missingPawns");
         }
 
-        public void UpdateBedRoomThought(Pawn pawn, PawnRelationDef relationDef, ThoughtDef togetherThought, ThoughtDef aloneThought)
+        public bool CheckIfLost(Pawn pawn)
         {
-            if(RimValiUtility.CheckIfBedRoomHasPackmates(pawn, relationDef))
+            TaleManager manager = new TaleManager();
+          
+            if (pawnsAreMissing.Count > 0 && pawn.IsKidnapped() && !pawnsAreMissing.Contains(pawn))
             {
-                RimValiUtility.AddThought(pawn, togetherThought);
+                pawnsAreMissing.Add(pawn);
+                return true;
             }
             else
             {
-                RimValiUtility.RemoveThought(pawn, aloneThought);
+                return false;
             }
         }
 
@@ -56,61 +52,45 @@ namespace AvaliMod
                     //Log.Message("Pawn has pack comp, moving to next step...");
                     if (AvaliPackDriver.packs == null || AvaliPackDriver.packs.Count == 0)
                     {
-                        Log.Message("How did we get here? [Pack list was 0 or null]");
+                        //Log.Message("How did we get here? [Pack list was 0 or null]");
                         return;
                     }
                     AvaliPack pawnPack = null;
-                    //This errors out when pawns dont have a pack. That is bad. This stops it from doing that.
+                    //This errors out when pawns dont have a pack, in rare cases. That is bad. This stops it from doing that.
                     try { pawnPack = RimValiUtility.GetPack(pawn); }
                     catch
                     {
                         return;
                     }
-                    Log.Message("Tried to get packs pack, worked.");
+                    //Log.Message("Tried to get packs pack, worked.");
                     if (pawnPack == null)
                     {
-                        Log.Message("How did we get here? [Pack was null.]");
+                        //Log.Message("How did we get here? [Pack was null.]");
+                        break;
                     }
                     foreach (Pawn packmate in pawnPack.pawns)
                     {
-                        Thought_Memory thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(AvaliDefs.AvaliPackmateThought);
+                        Thought_Memory thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
                         if (!(packmate == pawn))
                         {
                             bool bubble;
                             if (!thought_Memory2.TryMergeWithExistingMemory(out bubble))
                             {
-                                Log.Message("Adding thought to pawn.");
+                                //Log.Message("Adding thought to pawn.");
                                 pawn.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, packmate);
                             }
                         }
                     }
-
                 }
             }
         }
 
-
-        public void RemoveThought(ThoughtDef thought, PawnRelationDef relationDef, Pawn pawn)
+        public void UpdateThreaded()
         {
-            if (RimValiUtility.GetPackSize(pawn, relationDef) > 1 && packLossEnabled)
-            {
-                RimValiUtility.RemoveThought(pawn, thought);
-            }
+            Map map = this.map;
+            UpdatePawns(map);
         }
 
-        public void AddThought(ThoughtDef thought, PawnRelationDef relationDef, Pawn pawn)
-        {
-            if (RimValiUtility.GetPackSize(pawn, relationDef) == 1 && packLossEnabled)
-            {
-                RimValiUtility.AddThought(pawn, thought);
-            }
-        }
-
-        public void UpdateThought(Pawn pawn, PawnRelationDef relationDef, ThoughtDef thought)
-        {
-            AddThought(thought, relationDef, pawn);
-            RemoveThought(thought, relationDef, pawn);
-        }
         public override void MapComponentTick()
         {
             if (mapCompOn && !(AvaliPackDriver.packs == null) && AvaliPackDriver.packs.Count > 0)
@@ -118,7 +98,17 @@ namespace AvaliMod
                 if (onTick == 120)
                 {
                     Map map = this.map;
-                    UpdatePawns(map);
+                    if (multiThreaded)
+                    {
+                        ThreadStart packThreadRef = new ThreadStart(UpdateThreaded);
+                        Thread packThread = new Thread(packThreadRef);
+                        packThread.Start();
+                    }
+                    else
+                    {
+                        
+                        UpdatePawns(map);
+                    }
                     onTick = 0;
                 }
                 else

@@ -11,7 +11,7 @@ namespace AvaliMod
         public List<Pawn> pawns = new List<Pawn>();
         public int size = 1;
         public Faction faction = null;
-        public List<DeathDate> deathDates;
+        public List<DeathDate> deathDates = new List<DeathDate>();
         public Date creationDate;
 
 

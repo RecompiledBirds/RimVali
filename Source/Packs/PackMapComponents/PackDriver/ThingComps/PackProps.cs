@@ -8,8 +8,11 @@ namespace AvaliMod
         public List<ThingDef> racesInPacks;
         public bool canHaveAloneThought;
         public ThoughtDef aloneThought;
-        public PawnRelationDef relation;
+        public ThoughtDef deathThought = null;
         public SimpleCurve packGenChanceOverAge;
+        public ThoughtDef togetherThought;
+        public int packLossStages;
+
         public PackProps()
         {
             this.compClass = typeof(PackComp);
