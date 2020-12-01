@@ -15,12 +15,13 @@
       </li>
     </stages>
     <comps>
-      <li Class="AvaliMod.SlotPropsHediff">
-        <slotsUsed>
-          <li>Temperature</li>
-          <li>Torso</li>
-        </slotsUsed>
-      </li>
+      <li Class="AvaliMod.ConflictsWithProps">
+          <conflictingHediffs>
+            <li>AvaliTemperatureImplantElite</li>
+            <li>AvaliTemperatureImplantBasic</li>
+          </conflictingHediffs>
+          <showConflicts>true</showConflicts>
+        </li>
     </comps>
   </HediffDef>
 </Defs>

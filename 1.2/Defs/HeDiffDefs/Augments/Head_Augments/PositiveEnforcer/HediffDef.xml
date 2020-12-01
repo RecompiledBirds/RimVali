@@ -13,16 +13,9 @@
     </addedPartProps>
     <stages>
       <li>
-        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+        <opinionOfOthersFactor>0.2</opinionOfOthersFactor>
         <forgetMemoryThoughtMtbDays>0.2</forgetMemoryThoughtMtbDays>
       </li>
     </stages>
-    <comps>
-       <li Class="AvaliMod.SlotPropsHediff">
-        <slotsUsed>
-          <li>Brain</li>
-        </slotsUsed>
-      </li>
-    </comps>
   </HediffDef>
 </Defs>

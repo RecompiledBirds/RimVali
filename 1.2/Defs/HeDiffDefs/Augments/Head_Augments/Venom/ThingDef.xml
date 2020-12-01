@@ -9,7 +9,7 @@
     </graphicData>
     <label>Venomous Teeth augment</label>
     <description>This augment allows the avali it's installed on to inject a amount of venom when they bite a target. However, talking and eating become harder, as they must avoid triggering the mechanism.</description>
-    <descriptionHyperlinks><RecipeDef>InstallVenomTeeth</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>InstallAvaliAdvancedBionicLeg</RecipeDef></descriptionHyperlinks>
     <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
     <statBases>
       <Mass>5</Mass>

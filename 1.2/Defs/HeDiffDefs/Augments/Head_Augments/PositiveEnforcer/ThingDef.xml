@@ -12,9 +12,8 @@
     <descriptionHyperlinks><RecipeDef>InstallTailStiffeningAugment</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>5</Plasteel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-      <Gold>2</Gold>
-      <Steel>14</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Steel>10</Steel>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
