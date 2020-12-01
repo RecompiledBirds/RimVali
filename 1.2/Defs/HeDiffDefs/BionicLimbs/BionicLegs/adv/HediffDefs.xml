@@ -8,14 +8,14 @@
     <spawnThingOnRemoved>AvaliAdvancedBionicLeg</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
-      <partEfficiency>1.5</partEfficiency>
+      <partEfficiency>1.6</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
     <stages>
       <li>
         <statOffsets>
-          <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
           <MaxHitPoints>15</MaxHitPoints>
         </statOffsets>
       </li>

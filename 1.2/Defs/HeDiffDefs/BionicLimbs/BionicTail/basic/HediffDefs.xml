@@ -9,14 +9,14 @@
     <hediffClass>HediffWithComps</hediffClass>
     <addedPartProps>
       <solid>true</solid>
-      <partEfficiency>1.05</partEfficiency>
+      <partEfficiency>1.30</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
     <stages>
       <li>
         <statOffsets>
-          <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-          <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
           <MaxHitPoints>5</MaxHitPoints>
         </statOffsets>
       </li>
