@@ -3,15 +3,13 @@ using RimWorld;
 using Verse;
 namespace AvaliMod
 {
-    [HarmonyPatch(typeof(CompHatcher))]
-    [HarmonyPatch("Hatch")]
-    internal class SetEggFaction
+    [HarmonyPatch(typeof(CompHatcher), "Hatch")]
+    class EggPatch
     {
-        public static void Prefix(CompHatcher __instance)
+        static void Postfix(CompHatcher __instance)
         {
-            if (__instance.hatcheeParent == null & __instance.Props.hatcherPawn.RaceProps.body.defName.ToString() == "NeziAvaliBody")
+            if (__instance.hatcheeParent == null & __instance.Props.hatcherPawn.RaceProps.body.defName == "RimValiBody")
                 __instance.hatcheeFaction = Faction.OfPlayer;
-            Log.Message("Changed hatched avali's faction to player faction.", false);
         }
     }
 }
