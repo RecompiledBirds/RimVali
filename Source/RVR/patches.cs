@@ -5,7 +5,7 @@ using UnityEngine;
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
-
+using AlienRace;
 namespace AvaliMod
 {
     [StaticConstructorOnStartup]
@@ -15,30 +15,31 @@ namespace AvaliMod
         public static Dictionary<ThingDef, List<ThingDef>> equipmentRestrictions = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<ThingDef, List<ThingDef>> consumableRestrictions = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<BuildableDef, List<string>> buildingRestrictions = new Dictionary<BuildableDef, List<string>>();
-        
+
         public static Dictionary<ResearchProjectDef, List<ThingDef>> researchRestrictions = new Dictionary<ResearchProjectDef, List<ThingDef>>();
-        
+
         public static Dictionary<TraitDef, List<ThingDef>> traitRestrictions = new Dictionary<TraitDef, List<ThingDef>>();
-        
+
         public static Dictionary<ThoughtDef, List<ThingDef>> thoughtRestrictions = new Dictionary<ThoughtDef, List<ThingDef>>();
         //Whitelists
         public static Dictionary<ThingDef, List<ThingDef>> buildingWhitelists = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<ThingDef, List<ThingDef>> equipabblbleWhiteLists = new Dictionary<ThingDef, List<ThingDef>>();
         static Restrictions()
         {
+            Log.Message("[RVR]: Setting up race restrictions.");
             foreach (RimValiRaceDef raceDef in RimValiDefChecks.races)
             {
-                Log.Message(raceDef.defName);
-                if (raceDef.restrictions.buildables.Count>0)
+                if (raceDef.restrictions.buildables.Count > 0)
                 {
                     foreach (ThingDef thing in raceDef.restrictions.buildables)
                     {
-                        if (!(DefDatabase<ThingDef>.AllDefs.ToList().Contains(thing))){
+                        if (!(DefDatabase<ThingDef>.AllDefs.ToList().Contains(thing)))
+                        {
                             Log.Error("Could not find thing!");
                             return;
                         }
                         if (!buildingRestrictions.ContainsKey(thing))
-                        { 
+                        {
                             Restrictions.buildingRestrictions.Add(thing, new List<string>());
                             //I originally thought this would be somethine like "Restrictions.buildingRestrictions.SetOrAdd(thing, list<string>.add());".
                             //Turns out its alot more like python then i thought. (python syntax: list[thing].append(racedef.defName) would do the same thing as this.)
@@ -127,7 +128,7 @@ namespace AvaliMod
                 }
                 if (raceDef.restrictions.equippablesWhitelist.Count > 0)
                 {
-                    foreach(ThingDef thing in raceDef.restrictions.equippablesWhitelist)
+                    foreach (ThingDef thing in raceDef.restrictions.equippablesWhitelist)
                     {
                         if (!buildingWhitelists.ContainsKey(thing))
                         {
@@ -141,6 +142,77 @@ namespace AvaliMod
                     }
                 }
             }
+            if (ModLister.HasActiveModWithName("Humanoid Alien Races 2.0"))
+            {
+                Log.Message("[RVR]: HAR is loaded, merging race restrictions.");
+                //I ended up using the same method of storing restrictions that HAR does to make this easier.
+                foreach (AlienRace.ThingDef_AlienRace raceDef in DefDatabase<AlienRace.ThingDef_AlienRace>.AllDefs.Where<AlienRace.ThingDef_AlienRace>(x => x is AlienRace.ThingDef_AlienRace))
+                {
+                    foreach (ThingDef thing in raceDef.alienRace.raceRestriction.buildingList)
+                    {
+                        if (!(DefDatabase<ThingDef>.AllDefs.ToList().Contains(thing)))
+                        {
+                            Log.Error("Could not find thing!");
+                            return;
+                        }
+                        if (!buildingRestrictions.ContainsKey(thing))
+                        {
+                            Restrictions.buildingRestrictions.Add(thing, new List<string>());
+                            Restrictions.buildingRestrictions[thing].Add(raceDef.defName);
+                        }
+                        else
+                        {
+                            buildingRestrictions[thing].Add(raceDef.defName);
+                        }
+                    }
+                    if (raceDef.alienRace.raceRestriction.foodList.Count > 0)
+                    {
+                        foreach (ThingDef thing in raceDef.alienRace.raceRestriction.foodList)
+                        {
+                            if (!consumableRestrictions.ContainsKey(thing))
+                            {
+                                consumableRestrictions.Add(thing, new List<ThingDef>());
+                                consumableRestrictions[thing].Add(raceDef);
+                            }
+                            else
+                            {
+                                consumableRestrictions[thing].Add(raceDef);
+                            }
+                        }
+                    }
+                    if (raceDef.alienRace.raceRestriction.apparelList.Count > 0)
+                    {
+                        foreach (ThingDef thing in raceDef.alienRace.raceRestriction.apparelList)
+                        {
+                            if (!equipmentRestrictions.ContainsKey(thing))
+                            {
+                                equipmentRestrictions.Add(thing, new List<ThingDef>());
+                                equipmentRestrictions[thing].Add(raceDef);
+                            }
+                            else
+                            {
+                                equipmentRestrictions[thing].Add(raceDef);
+                            }
+                        }
+                    }
+                    if (raceDef.alienRace.raceRestriction.traitList.Count > 0)
+                    {
+                        foreach (TraitDef trait in raceDef.alienRace.raceRestriction.traitList)
+                        {
+                            if (!traitRestrictions.ContainsKey(trait))
+                            {
+                                traitRestrictions.Add(trait, new List<ThingDef>());
+                                traitRestrictions[trait].Add(raceDef);
+                            }
+                            else
+                            {
+                                traitRestrictions[trait].Add(raceDef);
+                            }
+                        }
+                    }
+
+                }
+            }
         }
     }
     //Generation patch for bodytypes
@@ -150,7 +222,7 @@ namespace AvaliMod
         [HarmonyPostfix]
         public static void bodyPatch(ref Pawn pawn)
         {
-            if(pawn.def is RimValiRaceDef rimValiRace)
+            if (pawn.def is RimValiRaceDef rimValiRace)
             {
                 int randChoice = Random.RandomRange(0, rimValiRace.mainSettings.bodyTypeDefs.Count - 1);
                 pawn.story.bodyType = rimValiRace.mainSettings.bodyTypeDefs[randChoice];
@@ -161,8 +233,7 @@ namespace AvaliMod
     //I dont think these patches interefere with HAR, nor should HAR patches interefere with these?
 
     //Was going to patch WillEat, but this seems better? I'd imagine they still *could* eat it by force if i patched WillEat.
-    [HarmonyPatch(typeof(RaceProperties), "CanEverEat", new[] { typeof(ThingDef)
-})]
+    [HarmonyPatch(typeof(RaceProperties), "CanEverEat", new[] { typeof(ThingDef) })]
     public static class FoodPatch
     {
         [HarmonyPostfix]
@@ -171,8 +242,8 @@ namespace AvaliMod
             if (Restrictions.consumableRestrictions.ContainsKey(t))
             {
                 List<ThingDef> races = Restrictions.consumableRestrictions[t];
-                ThingDef pawn = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(x=> x.race!=null && x.race==__instance).First();
-                if (!races.Contains(pawn)){
+                ThingDef pawn = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(x => x.race != null && x.race == __instance).First();
+                if (!races.Contains(pawn)) {
                     __result = false;
                 }
                 else
@@ -201,7 +272,7 @@ namespace AvaliMod
                 if (!races.Contains(pawn.def) && !(Restrictions.equipabblbleWhiteLists.ContainsKey(thing.def) ? Restrictions.equipabblbleWhiteLists[thing.def].Contains(pawn.def) : false))
                 {
                     __result = false;
-                    cantReason = "Test";
+                    cantReason = pawn.Label + " CannotWear".Translate();
                     return;
                 }
                 else
@@ -221,7 +292,7 @@ namespace AvaliMod
     {
         [HarmonyPostfix]
         public static void constructable(Thing t, Pawn p, ref bool __result)
-        {             
+        {
             //Log.Message(t.def.ToString());
             if (Restrictions.buildingRestrictions.ContainsKey(t.def.entityDefToBuild))
             {
@@ -242,53 +313,162 @@ namespace AvaliMod
             return;
         }
     }
+
     [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics")]
     public static class ResolvePatch
     {
-        
-        
+       
+
         [HarmonyPrefix]
-        public static bool ResolveAllGraphicsPrefix(PawnGraphicSet __instance)
+        public static bool ResolveGraphics(PawnGraphicSet __instance)
         {
             Pawn pawn = __instance.pawn;
             if (pawn.def is RimValiRaceDef rimvaliRaceDef)
             {
                 graphics graphics = rimvaliRaceDef.graphics;
+
                 
-
-
-
-                //This is the "body" texture of the pawn.
-                AvaliGraphic nakedGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphics.bodyTex, ContentFinder<Texture2D>.Get(graphics.bodyTex + "_northm", reportFailure: false) == null ? AvaliShaderDatabase.Tricolor :
-                                                             AvaliShaderDatabase.Tricolor, Vector2.one, pawn.story.SkinColor);
-                __instance.nakedGraphic = nakedGraphic;
-
-                //Find the pawns head graphic and set it..
-                AvaliGraphic headGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphics.headTex, ContentFinder<Texture2D>.Get(graphics.headTex + "_northm", reportFailure: false) == null ? AvaliShaderDatabase.Tricolor :
-                                                             AvaliShaderDatabase.Tricolor, Vector2.one, pawn.story.SkinColor);
-                __instance.headGraphic = headGraphic;
-
-                //First, let's get the pawns hair texture.
-                AvaliGraphic hairGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(__instance.pawn.story.hairDef.texPath, ContentFinder<Texture2D>.Get(graphics.headTex + "_northm", reportFailure: false) == null ? AvaliShaderDatabase.Tricolor :
-                                                             AvaliShaderDatabase.Tricolor, Vector2.one, pawn.story.SkinColor);
-
-                //Should the race have hair?
-                if (!rimvaliRaceDef.hasHair)
+                List<Colors> colors = graphics.colorSets;
+                if (graphics.skinColorSet != null)
                 {
-                    //This leads to a blank texture. So the pawn doesnt have hair, visually. I might (and probably should) change this later.
-                    hairGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>("avali/Heads/AvaliHead");
+                    TriColor_ColorGenerators generators = colors.First<Colors>(x => x.name == graphics.skinColorSet).colorGenerator;
+                    Color color1 = generators.firstColor.NewRandomizedColor();
+                    Color color2 = generators.secondColor.NewRandomizedColor();
+                    Color color3 = generators.thirdColor.NewRandomizedColor();
+                    AvaliGraphic nakedGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphics.bodyTex, ContentFinder<Texture2D>.Get(graphics.bodyTex + "_south") == null ? AvaliShaderDatabase.Tricolor :
+                                                                 AvaliShaderDatabase.Tricolor, graphics.bodySize, color1, color2, color3);
+                    __instance.nakedGraphic = nakedGraphic;
 
+                    //Find the pawns head graphic and set it..
+                    AvaliGraphic headGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphics.headTex, ContentFinder<Texture2D>.Get(graphics.headTex + "_south") == null ? AvaliShaderDatabase.Tricolor :
+                                                                 AvaliShaderDatabase.Tricolor, graphics.headSize, color1, color2, color3);
+                    __instance.headGraphic = headGraphic;
+
+                    //First, let's get the pawns hair texture.
+                    AvaliGraphic hairGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(__instance.pawn.story.hairDef.texPath, ContentFinder<Texture2D>.Get(graphics.headTex + "_south") == null ? AvaliShaderDatabase.Tricolor :
+                                                                 AvaliShaderDatabase.Tricolor, graphics.headSize, pawn.story.SkinColor);
+                    //Should the race have hair?
+                    if (!rimvaliRaceDef.hasHair)
+                    {
+                        //This leads to a blank texture. So the pawn doesnt have hair, visually. I might (and probably should) change this later.
+                        hairGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>("avali/Heads/AvaliHead");
+
+                    }
+                    __instance.hairGraphic = hairGraphic;
                 }
-                __instance.hairGraphic = hairGraphic;
+                else
+                {
+
+                    //This is the "body" texture of the pawn.
+
+                    AvaliGraphic nakedGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphics.bodyTex, ContentFinder<Texture2D>.Get(graphics.bodyTex + "_south") == null ? AvaliShaderDatabase.Tricolor :
+                                                                 AvaliShaderDatabase.Tricolor, graphics.bodySize, pawn.story.SkinColor, Color.green, Color.red);
+                    __instance.nakedGraphic = nakedGraphic;
+
+                    //Find the pawns head graphic and set it..
+                    AvaliGraphic headGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(graphics.headTex, ContentFinder<Texture2D>.Get(graphics.headTex + "_south") == null ? AvaliShaderDatabase.Tricolor :
+                                                                 AvaliShaderDatabase.Tricolor, graphics.headSize, pawn.story.SkinColor, Color.green, Color.red);
+                    __instance.headGraphic = headGraphic;
+
+                    //First, let's get the pawns hair texture.
+                    AvaliGraphic hairGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(__instance.pawn.story.hairDef.texPath, ContentFinder<Texture2D>.Get(graphics.headTex + "_south") == null ? AvaliShaderDatabase.Tricolor :
+                                                                 AvaliShaderDatabase.Tricolor, graphics.headSize, pawn.story.SkinColor);
+
+                    //Should the race have hair?
+                    if (!rimvaliRaceDef.hasHair)
+                    {
+                        //This leads to a blank texture. So the pawn doesnt have hair, visually. I might (and probably should) change this later.
+                        hairGraphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>("avali/Heads/AvaliHead");
+
+                    }
+                    __instance.hairGraphic = hairGraphic;
+                }
+
                 foreach (RenderableDef renderable in rimvaliRaceDef.bodyPartGraphics)
                 {
                     Log.Message(renderable.linkedBodyPart);
 
                 }
+                __instance.ResolveApparelGraphics();
+                PortraitsCache.SetDirty(pawn);
                 return false;
             }
             return true;
         }
     }
 
+
+    [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) })]
+    static class RenderPatchTwo
+    {
+        
+        public static void RenderBodyParts(bool portrait, Vector3 vector, PawnRenderer pawnRenderer, Rot4 rotation)
+        {
+            
+            Pawn pawn = pawnRenderer.graphics.pawn;
+            if (pawn.def is RimValiRaceDef rimValiRaceDef)
+            {
+                foreach(RenderableDef renderable in rimValiRaceDef.bodyPartGraphics){
+                    if (renderable.CanShow(pawn))
+                    {
+                        Vector3 offset = new Vector3();
+                        Vector2 size = new Vector2();
+                        if(renderable.west == null)
+                        {
+                            renderable.west = renderable.east;
+                        }
+                        if(rotation == Rot4.East)
+                        {
+                            offset = new Vector3(renderable.east.position.x, renderable.east.layer, renderable.east.position.y);
+                            size = renderable.east.size;
+                        }else if(rotation == Rot4.North)
+                        {
+                            offset = new Vector3(renderable.north.position.x, renderable.north.layer, renderable.north.position.y);
+                            size = renderable.north.size;
+                        }
+                        else if(rotation == Rot4.South)
+                        {
+                            offset = new Vector3(renderable.south.position.x, renderable.south.layer, renderable.south.position.y);
+                            size = renderable.south.size;
+                        }
+                        else if(rotation == Rot4.West)
+                        {
+                            offset = new Vector3(renderable.west.position.x, renderable.west.layer, renderable.west.position.y);
+                            size = renderable.west.size;
+                        }
+                        if (renderable.useColorSet != null)
+                        {
+                            graphics graphics = rimValiRaceDef.graphics;
+                            List<Colors> colors = graphics.colorSets;
+                            TriColor_ColorGenerators generators = colors.First<Colors>(x => x.name == graphics.skinColorSet).colorGenerator;
+                            /*Color color1 = generators.firstColor.NewRandomizedColor();
+                            Color color2 = generators.secondColor.NewRandomizedColor();
+                            Color color3 = generators.thirdColor.NewRandomizedColor();*/
+                            Color color1 = Color.red;
+                            Color color2 = Color.green;
+                            Color color3 = Color.blue;
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath, ContentFinder<Texture2D>.Get(renderable.texPath + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1,color2,color3);
+                            GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), offset + vector.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, Quaternion.identity)) * 2f * 57.29578f),
+                            Quaternion.AngleAxis(0, Vector3.up), graphic.MatAt(rotation), portrait);
+                        }
+                        else
+                        {
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath, ContentFinder<Texture2D>.Get(renderable.texPath + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
+                            GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), offset + vector.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, Quaternion.identity)) * 2f * 57.29578f),
+                            Quaternion.AngleAxis(0, Vector3.up), graphic.MatAt(rotation), portrait);
+                        }
+                    }
+                }
+            }
+        }
+        [HarmonyPostfix]
+        static void RenderPawnInternal(Vector3 rootLoc, float angle, bool renderBody, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, bool portrait, bool headStump, bool invisible, PawnRenderer __instance)
+        {
+            if (__instance.graphics.pawn.def is RimValiRaceDef)
+            {
+                RenderBodyParts(portrait, rootLoc, __instance, __instance.graphics.pawn.Rotation);
+            }
+
+        }
+    }
 }

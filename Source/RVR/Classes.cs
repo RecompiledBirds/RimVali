@@ -1,16 +1,22 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using UnityEngine;
+
 namespace AvaliMod
 {
     public class graphics
     {
+        public string skinColorSet;
+
         public string bodyTex;
         public string headTex;
         public string skeleton = "Things/Pawn/Humanlike/HumanoidDessicated";
         public string skull = "Things/Pawn/Humanlike/Heads/None_Average_Skull";
         public string stump = "Things/Pawn/Humanlike/Heads/None_Average_Stump";
-
+        public Vector2 headSize = new Vector2(1f, 1f);
+        public Vector2 bodySize = new Vector2(1f, 1f);
+        public List<Colors> colorSets;
     }
 
     public class restrictions
@@ -45,4 +51,25 @@ namespace AvaliMod
 
         public List<BodyTypeDef> bodyTypeDefs = new List<BodyTypeDef>();
     }
-}
+
+    public class BodyPartGraphicPos
+    {
+        public Vector2 position = new Vector2(0f,0f);
+        public float layer = 1f;
+        public Vector2 size = new Vector2(1f,1f);
+      
+    }
+
+    public class Colors
+    {
+        public string name;
+        public TriColor_ColorGenerators colorGenerator;
+    }
+
+    public class TriColor_ColorGenerators
+    {
+        public ColorGenerator firstColor;
+        public ColorGenerator secondColor;
+        public ColorGenerator thirdColor;
+    }
+}  

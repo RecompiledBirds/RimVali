@@ -10,5 +10,6 @@ namespace AvaliMod
         public bool hasHair = false;
         public restrictions restrictions = new restrictions();
         public Main mainSettings = new Main();
+
     }
 }
