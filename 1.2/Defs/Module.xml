@@ -5,6 +5,152 @@
     <name>RimVali: Far from avalon</name>
   </AvaliMod.ModuleDef>
   
+  <AvaliMod.RenderableDef Name="BaseAvaliPart" Abstract="True">
+    <useColorSet>Test</useColorSet>
+  </AvaliMod.RenderableDef>
+  
+  
+  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <defName>EarLL</defName>
+    <texPath>avali/Ears/Male/LowerLeft/MaleLowerLeft</texPath>
+    <linkedBodyPart>head</linkedBodyPart>
+    <east>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </east>
+    <north>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </north>
+    <south>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </south>
+  </AvaliMod.RenderableDef>
+  
+  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <defName>EarLR</defName>
+    <texPath>avali/Ears/Male/LowerRight/MaleLowerRight</texPath>
+    <linkedBodyPart>head</linkedBodyPart>
+    <east>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </east>
+    <north>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </north>
+    <south>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </south>
+  </AvaliMod.RenderableDef>
+  
+  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <defName>EarUR</defName>
+    <texPath>avali/Ears/Male/UpperRight/MaleUpperRight</texPath>
+    <linkedBodyPart>head</linkedBodyPart>
+        
+  </AvaliMod.RenderableDef>
+  
+    <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <defName>EarUL</defName>
+    <texPath>avali/Ears/Male/UpperLeft/MaleUpperLeft</texPath>
+    <linkedBodyPart>head</linkedBodyPart>
+    <east>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </east>
+    <north>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </north>
+    <south>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </south>
+  </AvaliMod.RenderableDef>
+    
+    
+    <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+      <defName>EyeL</defName>
+      <texPath>avali/Eyes/EyeL</texPath>
+        <linkedBodyPart>head</linkedBodyPart>
+        <east>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </east>
+    <north>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </north>
+    <south>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </south>
+  </AvaliMod.RenderableDef>
+  
+  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+      <defName>EyeR</defName>
+      <texPath>avali/Eyes/EyeR</texPath>
+        <linkedBodyPart>head</linkedBodyPart>
+  </AvaliMod.RenderableDef>
+  
+  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+      <defName>AvaliMouth</defName>
+      <texPath>avali/Mouth/Mouth</texPath>
+        <linkedBodyPart>head</linkedBodyPart>
+        <east>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </east>
+    <north>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </north>
+    <south>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </south>
+  </AvaliMod.RenderableDef>
+  
+  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <defName>TailSkirt</defName>
+    <texPath>avali/Tail/Tailskirt/Male/MaleTailskirt</texPath>
+    <linkedBodyPart>tail</linkedBodyPart>
+    <east>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </east>
+    <north>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </north>
+    <south>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </south>
+  </AvaliMod.RenderableDef>
+  
+  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <defName>TailMain</defName>
+    <texPath>avali/Tail/Male/MaleTail</texPath>
+    <linkedBodyPart>tail</linkedBodyPart>
+    <east>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </east>
+    <north>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </north>
+    <south>
+      <position>(0,0)</position>
+      <layer>1</layer>
+    </south>
+  </AvaliMod.RenderableDef>
+  
+  
   <AvaliMod.RimValiRaceDef ParentName="BasePawn">
    
     <label>Avali</label>
@@ -16,16 +162,77 @@
       </bodyTypeDefs>
     </mainSettings>
     <graphics>
-      <bodyTex>avali/Body/Female/FemaleBody</bodyTex>
-      <headTex>avali/Heads/Female/FemaleHead</headTex>
+      <skinColorSet>Test</skinColorSet>
+    
+      <bodyTex>avali/Body/Male/MaleBody</bodyTex>
+      <headTex>avali/Heads/Male/MaleHead</headTex>
+      <headSize>(0.5, 0.5)</headSize>
+      <colorSets>
+        <li>
+          <name>Test</name>
+          <colorGenerator>
+          <firstColor Class="ColorGenerator_Options">
+                <options>
+                  <li>
+                    <weight>10</weight>
+                    <min>RGBA(200, 200, 200, 255)</min>
+                    <max>RGBA(255, 255, 255, 255)</max>
+                  </li>
+                  <li>
+                    <weight>2</weight>
+                    <min>RGBA(220, 220, 220, 255)</min>
+                    <max>RGBA(240, 240, 240, 255)</max>
+                  </li>
+                </options>
+              </firstColor>
+              <secondColor Class="ColorGenerator_Options">
+                <options>
+                   <li>
+                     <weight>10</weight>
+                     <min>RGBA(50, 50, 50, 255)</min>
+                     <max>RGBA(200, 200, 200, 255)</max>
+                   </li>
+                   <li>
+                     <weight>2</weight>
+                     <min>RGBA(40, 40, 40, 255)</min>
+                     <max>RGBA(60, 60, 60, 255)</max>
+                   </li>
+                  </options>
+              </secondColor>
+              <thirdColor Class="ColorGenerator_Options">
+                <options>
+                   <li>
+                     <weight>10</weight>
+                     <min>RGBA(50, 50, 50, 255)</min>
+                     <max>RGBA(200, 200, 200, 255)</max>
+                   </li>
+                   <li>
+                     <weight>2</weight>
+                     <min>RGBA(40, 40, 40, 255)</min>
+                     <max>RGBA(60, 60, 60, 255)</max>
+                   </li>
+                  </options>
+              </thirdColor>
+             </colorGenerator>
+        </li>
+      </colorSets>
     </graphics>
     <hasHair>false</hasHair>
     <bodyPartGraphics>
-      <li>
-        <defName>test</defName>
-        <texPath>this doesnt do anything yet.</texPath>
-        <linkedBodyPart>head</linkedBodyPart>
-      </li>
+      
+      <li>EarLL</li>
+      <li>EarLR</li>
+      <li>EarUR</li>
+      <li>EarUL</li>
+      
+      <li>EyeL</li>
+      <li>EyeR</li>
+      
+      <li>AvaliMouth</li>
+      
+      <li>TailMain</li>
+      <li>TailSkirt</li>
+      
     </bodyPartGraphics>
     <restrictions>
       <equippables>
