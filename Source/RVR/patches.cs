@@ -6,6 +6,8 @@ using Verse;
 using System.Collections.Generic;
 using System.Linq;
 using AlienRace;
+using System;
+
 namespace AvaliMod
 {
     [StaticConstructorOnStartup]
@@ -141,6 +143,10 @@ namespace AvaliMod
                         }
                     }
                 }
+                if (raceDef.useHumanRecipes)
+                {
+                    raceDef.recipes.AddRange(ThingDefOf.Human.recipes.Where(x => !x.targetsBodyPart || x.appliedOnFixedBodyParts.NullOrEmpty() ||x.appliedOnFixedBodyParts.Any(y => raceDef.race.body.AllParts.Any(z=> z.def == y))));
+                }
             }
             if (ModLister.HasActiveModWithName("Humanoid Alien Races 2.0"))
             {
@@ -210,12 +216,104 @@ namespace AvaliMod
                             }
                         }
                     }
+                    
 
                 }
             }
         }
     }
-    //Generation patch for bodytypes
+   
+
+    [HarmonyPatch(typeof(ThoughtUtility), "CanGetThought_NewTemp")]
+    public static class thoughtPatch
+    {
+        [HarmonyPostfix]
+
+        
+        public static void GetThought(ref bool __result, Pawn pawn, ThoughtDef def)
+        {
+            if (Restrictions.thoughtRestrictions.ContainsKey(def))
+            {
+                if (Restrictions.thoughtRestrictions[def].Contains(pawn.def))
+                {
+                    __result = __result && true;
+                }
+                else
+                {
+                    __result = false;
+                }
+            }
+            else
+            {
+                __result = __result && true;
+            }
+            if(pawn.def is RimValiRaceDef rimValiRaceDef)
+            {
+                def = rimValiRaceDef.replaceThought(def);
+                if (rimValiRaceDef.restrictions.thoughtBlacklist.Contains(def))
+                {
+                    __result = false;
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(PawnRenderer), "BaseHeadOffsetAt")]
+    public static class headPatch
+    {
+        [HarmonyPostfix]
+        public static void setPos(ref Vector3 __result, Rot4 rotation, PawnRenderer __instance)
+        {
+            Pawn pawn = __instance.graphics.pawn;
+            PawnGraphicSet set = __instance.graphics;
+            if (pawn.def is RimValiRaceDef rimValiRaceDef)
+            {
+                ResolvePatch.ResolveGraphics(set);
+                //This is an automatic check to see if we can put the head position here.
+                //no human required
+                if (!(rimValiRaceDef.bodyPartGraphics.Where<RenderableDef>(x => x.defName.ToLower() == "head").Count() > 0))
+                {
+                    RenderableDef headDef = rimValiRaceDef.bodyPartGraphics.First(x => x.defName.ToLower() == "head");
+                    Vector3 pos = new Vector3(0,0,0);
+                    if(headDef.west == null)
+                    {
+                        headDef.west = headDef.east;
+                    }
+                    if (pawn.Rotation == Rot4.South)
+                    {
+                        pos.x = headDef.south.position.x;
+                        pos.y = headDef.south.position.y;
+                    }
+                    else if (pawn.Rotation == Rot4.North)
+                    {
+                        pos.x = headDef.north.position.x;
+                        pos.y = headDef.north.position.y;
+                    }
+                    else if(pawn.Rotation == Rot4.East)
+                    {
+                        pos.x = headDef.east.position.x;
+                        pos.y = headDef.east.position.y;
+                    }
+                    else
+                    {
+                        pos.x = headDef.west.position.x;
+                        pos.y = headDef.west.position.y;
+                    }
+                    __result = __result + pos;
+                }
+                else
+                {
+                    __result = __result;
+                }
+            }
+            else
+            {
+                __result = __result;
+            }
+        }
+    }
+
+  //Generation patch for bodytypes
     [HarmonyPatch(typeof(PawnGenerator), "GenerateBodyType_NewTemp")]
     public static class BodyPatch
     {
@@ -224,8 +322,14 @@ namespace AvaliMod
         {
             if (pawn.def is RimValiRaceDef rimValiRace)
             {
-                int randChoice = Random.RandomRange(0, rimValiRace.mainSettings.bodyTypeDefs.Count - 1);
-                pawn.story.bodyType = rimValiRace.mainSettings.bodyTypeDefs[randChoice];
+                System.Random randChoice = new System.Random();
+
+                //You would think this works, but 1/2 the time it throws an error. Huh.
+                //pawn.story.bodyType =rimValiRace.mainSettings.bodyTypeDefs[randChoice.Next(rimValiRace.mainSettings.bodyTypeDefs.Count-1)];
+
+                //This is what HAR does, but wouldn't the above effectively be the same thing?
+                pawn.story.bodyType=rimValiRace.mainSettings.bodyTypeDefs.RandomElement<BodyTypeDef>();
+                //Apparently that throws the error too occasionally. 
             }
         }
     }
@@ -327,6 +431,10 @@ namespace AvaliMod
             {
                 graphics graphics = rimvaliRaceDef.graphics;
 
+                if(rimvaliRaceDef.colorSets==null || rimvaliRaceDef.colorSets.Count() == 0)
+                {
+                    rimvaliRaceDef.GenColors();
+                }
                 
                 List<Colors> colors = graphics.colorSets;
                 if (graphics.skinColorSet != null)
@@ -383,12 +491,6 @@ namespace AvaliMod
                     }
                     __instance.hairGraphic = hairGraphic;
                 }
-
-                foreach (RenderableDef renderable in rimvaliRaceDef.bodyPartGraphics)
-                {
-                    Log.Message(renderable.linkedBodyPart);
-
-                }
                 __instance.ResolveApparelGraphics();
                 PortraitsCache.SetDirty(pawn);
                 return false;
@@ -396,42 +498,61 @@ namespace AvaliMod
             return true;
         }
     }
+    //Render renderables the correct way in the portrait. 
+    [HarmonyPatch(typeof(PawnRenderer),"RenderPortrait")]
+    static class RenderPatch
+    {
+        [HarmonyPostfix]
+        static void Portrait(PawnRenderer __instance)
+        {
+            Pawn pawn = __instance.graphics.pawn;
+            Vector3 zero = Vector3.zero;
+            if(pawn.def is RimValiRaceDef rimValiRaceDef)
+            {
+                RenderPatchTwo.RenderBodyParts(true, zero, __instance, Rot4.South);
+            }
+        }
+    }
+
 
 
     [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) })]
     static class RenderPatchTwo
     {
-        
+
         public static void RenderBodyParts(bool portrait, Vector3 vector, PawnRenderer pawnRenderer, Rot4 rotation)
         {
-            
+
             Pawn pawn = pawnRenderer.graphics.pawn;
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
-                foreach(RenderableDef renderable in rimValiRaceDef.bodyPartGraphics){
+                
+                foreach (RenderableDef renderable in rimValiRaceDef.bodyPartGraphics)
+                {
                     if (renderable.CanShow(pawn))
                     {
                         Vector3 offset = new Vector3();
                         Vector2 size = new Vector2();
-                        if(renderable.west == null)
+                        if (renderable.west == null)
                         {
                             renderable.west = renderable.east;
                         }
-                        if(rotation == Rot4.East)
+                        if (rotation == Rot4.East)
                         {
                             offset = new Vector3(renderable.east.position.x, renderable.east.layer, renderable.east.position.y);
                             size = renderable.east.size;
-                        }else if(rotation == Rot4.North)
+                        }
+                        else if (rotation == Rot4.North)
                         {
                             offset = new Vector3(renderable.north.position.x, renderable.north.layer, renderable.north.position.y);
                             size = renderable.north.size;
                         }
-                        else if(rotation == Rot4.South)
+                        else if (rotation == Rot4.South)
                         {
                             offset = new Vector3(renderable.south.position.x, renderable.south.layer, renderable.south.position.y);
                             size = renderable.south.size;
                         }
-                        else if(rotation == Rot4.West)
+                        else if (rotation == Rot4.West)
                         {
                             offset = new Vector3(renderable.west.position.x, renderable.west.layer, renderable.west.position.y);
                             size = renderable.west.size;
@@ -447,13 +568,22 @@ namespace AvaliMod
                             Color color1 = Color.red;
                             Color color2 = Color.green;
                             Color color3 = Color.blue;
-                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath, ContentFinder<Texture2D>.Get(renderable.texPath + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1,color2,color3);
+                            string colorSetToUse = renderable.useColorSet;
+                            if (rimValiRaceDef.colorSets.ContainsKey(colorSetToUse))
+                            {
+                                color1 = rimValiRaceDef.colorSets[colorSetToUse].colorOne;
+                                color2 = rimValiRaceDef.colorSets[colorSetToUse].colorTwo;
+                                color3 = rimValiRaceDef.colorSets[colorSetToUse].colorThree;
+                            }
+                            
+                           
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), ContentFinder<Texture2D>.Get(renderable.texPath(pawn) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1, color2, color3);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), offset + vector.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, Quaternion.identity)) * 2f * 57.29578f),
                             Quaternion.AngleAxis(0, Vector3.up), graphic.MatAt(rotation), portrait);
                         }
                         else
                         {
-                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath, ContentFinder<Texture2D>.Get(renderable.texPath + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), ContentFinder<Texture2D>.Get(renderable.texPath(pawn) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), offset + vector.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, Quaternion.identity)) * 2f * 57.29578f),
                             Quaternion.AngleAxis(0, Vector3.up), graphic.MatAt(rotation), portrait);
                         }
@@ -466,7 +596,10 @@ namespace AvaliMod
         {
             if (__instance.graphics.pawn.def is RimValiRaceDef)
             {
-                RenderBodyParts(portrait, rootLoc, __instance, __instance.graphics.pawn.Rotation);
+                if (!portrait)
+                {
+                    RenderBodyParts(portrait, rootLoc, __instance, __instance.graphics.pawn.Rotation);
+                }
             }
 
         }

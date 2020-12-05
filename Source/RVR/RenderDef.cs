@@ -7,10 +7,94 @@ using UnityEngine;
 
 namespace AvaliMod
 {
+
+    public class hediffTex
+    {
+        public HediffDef hediff;
+        public string tex;
+        public string femaleTex;
+    }
+    public class backstoryTex
+    {
+        public string backstoryTitle;
+        public string tex;
+        public string femaleTex;
+    }
+
+    public class hediffStoryTex
+    {
+        public string backstoryTitle;
+        public HediffDef hediffDef;
+        public string tex;
+        public string femaleTex;
+    }
+
     public class RenderableDef : Def
     {
-        public string texPath;
-        public string linkedBodyPart = null;
+        public string texPath(Pawn pawn)
+        {
+            string path = tex;
+
+            foreach (backstoryTex backstoryTex in backstoryTextures)
+            {
+                if (pawn.story.childhood.untranslatedTitle == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitle == backstoryTex.backstoryTitle)
+                {
+                    path = backstoryTex.tex;
+                    if (backstoryTex.femaleTex != null && pawn.gender == Gender.Female)
+                    {
+                        path = backstoryTex.femaleTex;
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+
+            foreach (hediffTex hediffTex in hediffTextures)
+            {
+
+                if (pawn.health.hediffSet.HasHediff(hediffTex.hediff, false))
+                {
+                    path = hediffTex.tex;
+                    if (hediffTex.femaleTex != null && pawn.gender == Gender.Female)
+                    {
+                        path = hediffTex.femaleTex;
+                    }
+                }
+            }
+
+            if (femaleTex != null && pawn.gender == Gender.Female)
+            {
+                path = femaleTex;
+            }
+            foreach(hediffStoryTex hediffStoryTex in hediffStoryTextures) {
+                if (pawn.story.childhood.untranslatedTitle == hediffStoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitle == hediffStoryTex.backstoryTitle)
+                {
+                    if (pawn.health.hediffSet.HasHediff(hediffStoryTex.hediffDef))
+                    {
+                        if(hediffStoryTex.femaleTex != null && pawn.gender == Gender.Female)
+                        {
+                            path = hediffStoryTex.femaleTex;
+                        }
+                        else
+                        {
+                            path = hediffStoryTex.tex;
+                        }
+                    }
+                }
+            }
+
+            
+            return path;
+
+        }
+
+        public string tex;
+        public string femaleTex;
+        public string bodyPart = null;
+
+        public bool showsInBed = true;
 
         public string useColorSet;
         public BodyPartGraphicPos east = new BodyPartGraphicPos();
@@ -18,11 +102,13 @@ namespace AvaliMod
         public BodyPartGraphicPos south = new BodyPartGraphicPos();
         public BodyPartGraphicPos west;
 
-  
+        List<backstoryTex> backstoryTextures = new List<backstoryTex>();
+        List<hediffTex> hediffTextures = new List<hediffTex>();
+        List<hediffStoryTex> hediffStoryTextures = new List<hediffStoryTex>();
 
         public bool CanShow(Pawn pawn)
         {
-            if(linkedBodyPart == null)
+            if (bodyPart == null)
             {
                 return true;
             }
@@ -30,8 +116,9 @@ namespace AvaliMod
             {
                 IEnumerable<BodyPartRecord> bodyParts = pawn.health.hediffSet.GetNotMissingParts();
 
-                if (bodyParts.Where<BodyPartRecord>(x => x.def.defName.ToLower() == linkedBodyPart.ToLower() || x.untranslatedCustomLabel.ToLower() == linkedBodyPart.ToLower()).Count() > 0)
+                if (bodyParts.Where<BodyPartRecord>(x => x.def.defName.ToLower() == bodyPart.ToLower() || x.untranslatedCustomLabel.ToLower() == bodyPart.ToLower()).Count() > 0)
                 {
+                    
                     return true;
                 }
             }

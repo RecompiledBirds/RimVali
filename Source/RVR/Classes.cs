@@ -28,6 +28,8 @@ namespace AvaliMod
         public List<ThingDef> buildables = new List<ThingDef>();
         //Thoughts
         public List<ThoughtDef> thoughtDefs = new List<ThoughtDef>();
+        public List<ThoughtDef> thoughtBlacklist = new List<ThoughtDef>();
+
         //Traits
         public List<TraitDef> traits = new List<TraitDef>();
 
@@ -60,6 +62,20 @@ namespace AvaliMod
       
     }
 
+    public class ColorSet
+    {
+        public Color colorOne;
+        public Color colorTwo;
+        public Color colorThree;
+
+        public ColorSet(Color colorOne, Color colorTwo, Color colorThree)
+        {
+            this.colorOne = colorOne;
+            this.colorTwo = colorTwo;
+            this.colorThree = colorThree;
+        }
+    }
+
     public class Colors
     {
         public string name;
@@ -72,4 +88,5 @@ namespace AvaliMod
         public ColorGenerator secondColor;
         public ColorGenerator thirdColor;
     }
+    
 }  
