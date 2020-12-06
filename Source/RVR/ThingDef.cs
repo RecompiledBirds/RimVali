@@ -2,9 +2,11 @@
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+
 namespace AvaliMod
 {
-    public class RimValiRaceDef : ThingDef, IExposable
+    public class RimValiRaceDef : ThingDef
     {
         public List<RenderableDef> bodyPartGraphics = new List<RenderableDef>();
         public graphics graphics = new graphics();
@@ -15,7 +17,11 @@ namespace AvaliMod
 
         public List<ReplaceableThoughts> replaceableThoughts = new List<ReplaceableThoughts>();
 
-        
+        public override void ResolveReferences()
+        {
+            this.comps.Add(new colorCompProps());
+            base.ResolveReferences();
+        }
         public ThoughtDef replaceThought(ThoughtDef thought)
         {
             foreach(ReplaceableThoughts replaceable in this.replaceableThoughts)
@@ -28,23 +34,20 @@ namespace AvaliMod
             }
             return thought;
         }
-        public Dictionary<string, ColorSet> colorSets = new Dictionary<string, ColorSet>();
-        public void ExposeData()
-        {
-            Scribe_Collections.Look<string, ColorSet>(ref colorSets, "pawnColorSet");
-            if(colorSets == null)
-            {
-                colorSets = new Dictionary<string, ColorSet>();
-            }
-        }
         public void GenColors(Pawn pawn)
         {
-            foreach(Colors colors in graphics.colorSets)
+            if(pawn.def is RimValiRaceDef rimValiRaceDef)
             {
-                if (!colorSets.ContainsKey(colors.name))
+                colorComp colorcomp = pawn.TryGetComp<colorComp>();
+                foreach(Colors color in rimValiRaceDef.graphics.colorSets)
                 {
-                    ColorSet colorSet = new ColorSet(colors.colorGenerator.firstColor.NewRandomizedColor(), colors.colorGenerator.secondColor.NewRandomizedColor(), colors.colorGenerator.thirdColor.NewRandomizedColor());
-                    colorSets.Add(colors.name, colorSet);
+                    if (!colorcomp.colors.ContainsKey(color.name))
+                    {
+                        Color color1 = color.colorGenerator.firstColor.NewRandomizedColor();
+                        Color color2 = color.colorGenerator.secondColor.NewRandomizedColor();
+                        Color color3 = color.colorGenerator.thirdColor.NewRandomizedColor();
+                        colorcomp.colors.Add(color.name, new ColorSet(color1,color2,color3));
+                    }
                 }
             }
         }

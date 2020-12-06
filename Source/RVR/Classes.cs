@@ -89,4 +89,23 @@ namespace AvaliMod
         public ColorGenerator thirdColor;
     }
     
+    public class colorComp : ThingComp, IExposable
+    {
+        public Dictionary<string, ColorSet> colors = new Dictionary<string, ColorSet>();
+        public void ExposeData()
+        {
+            Scribe_Collections.Look<string, ColorSet>(ref colors, "colors");
+            if (colors==null)
+            {
+                colors = new Dictionary<string, ColorSet>();
+            }
+        }
+    }
+    public class colorCompProps : CompProperties
+    {
+        public colorCompProps()
+        {
+            this.compClass = typeof(colorComp);
+        }
+    }
 }  

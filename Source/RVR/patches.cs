@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AlienRace;
 using System;
+using Verse.AI;
 using System.Threading;
 
 namespace AvaliMod
@@ -269,7 +270,6 @@ namespace AvaliMod
             PawnGraphicSet set = __instance.graphics;
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
-                ResolvePatch.ResolveGraphics(set);
                 //This is an automatic check to see if we can put the head position here.
                 //no human required
                 if (!(rimValiRaceDef.bodyPartGraphics.Where<RenderableDef>(x => x.defName.ToLower() == "head").Count() > 0))
@@ -350,6 +350,7 @@ namespace AvaliMod
                 ThingDef pawn = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(x => x.race != null && x.race == __instance).First();
                 if (!races.Contains(pawn))
                 {
+                    JobFailReason.Is(pawn.label + " " + "CannotEat".Translate());
                     __result = false;
                 }
                 else
@@ -375,7 +376,7 @@ namespace AvaliMod
             {
                 //Log.Message(t.def.defName + " is in building restrictions.");
                 List<ThingDef> races = Restrictions.equipmentRestrictions[thing.def];
-                if (!races.Contains(pawn.def) && !(Restrictions.equipabblbleWhiteLists.ContainsKey(thing.def) ? Restrictions.equipabblbleWhiteLists[thing.def].Contains(pawn.def) : false))
+                if ((!races.Contains(pawn.def) && !(Restrictions.equipabblbleWhiteLists.ContainsKey(thing.def)) || Restrictions.equipabblbleWhiteLists[thing.def].Contains(pawn.def)))
                 {
                     __result = false;
                     cantReason = pawn.Label + " CannotWear".Translate();
@@ -407,6 +408,7 @@ namespace AvaliMod
                 if (!races.Contains(p.def.defName))
                 {
                     __result = false;
+                    JobFailReason.Is(p.def.label + " " + "CannotBuild".Translate());
                     return;
                 }
                 else
@@ -432,8 +434,9 @@ namespace AvaliMod
             if (pawn.def is RimValiRaceDef rimvaliRaceDef)
             {
                 graphics graphics = rimvaliRaceDef.graphics;
+                colorComp colorComp = pawn.TryGetComp<colorComp>();
 
-                if (rimvaliRaceDef.colorSets == null || rimvaliRaceDef.colorSets.Count() == 0)
+                if (colorComp.colors == null || colorComp.colors.Count() == 0)
                 {
                     rimvaliRaceDef.GenColors(pawn);
                 }
@@ -533,6 +536,7 @@ namespace AvaliMod
                 {
                     if (renderable.CanShow(pawn))
                     {
+                        colorComp colorComp = pawn.TryGetComp<colorComp>();
                         Vector3 offset = new Vector3();
                         Vector2 size = new Vector2();
                         if (renderable.west == null)
@@ -571,11 +575,11 @@ namespace AvaliMod
                             Color color2 = Color.green;
                             Color color3 = Color.blue;
                             string colorSetToUse = renderable.useColorSet;
-                            if (rimValiRaceDef.colorSets.ContainsKey(colorSetToUse))
+                            if ( colorComp.colors.ContainsKey(colorSetToUse))
                             {
-                                color1 = rimValiRaceDef.colorSets[colorSetToUse].colorOne;
-                                color2 = rimValiRaceDef.colorSets[colorSetToUse].colorTwo;
-                                color3 = rimValiRaceDef.colorSets[colorSetToUse].colorThree;
+                                color1 = colorComp.colors[colorSetToUse].colorOne;
+                                color2 = colorComp.colors[colorSetToUse].colorTwo;
+                                color3 = colorComp.colors[colorSetToUse].colorThree;
                             }
 
 
@@ -604,6 +608,7 @@ namespace AvaliMod
                 {
                     if (renderable.CanShow(pawn))
                     {
+                        colorComp colorComp = pawn.TryGetComp<colorComp>();
                         Vector3 offset = new Vector3();
                         Vector2 size = new Vector2();
                         if (renderable.west == null)
@@ -642,11 +647,11 @@ namespace AvaliMod
                             Color color2 = Color.green;
                             Color color3 = Color.blue;
                             string colorSetToUse = renderable.useColorSet;
-                            if (rimValiRaceDef.colorSets.ContainsKey(colorSetToUse))
+                            if (colorComp.colors.ContainsKey(colorSetToUse))
                             {
-                                color1 = rimValiRaceDef.colorSets[colorSetToUse].colorOne;
-                                color2 = rimValiRaceDef.colorSets[colorSetToUse].colorTwo;
-                                color3 = rimValiRaceDef.colorSets[colorSetToUse].colorThree;
+                                color1 = colorComp.colors[colorSetToUse].colorOne;
+                                color2 = colorComp.colors[colorSetToUse].colorTwo;
+                                color3 = colorComp.colors[colorSetToUse].colorThree;
                             }
 
 
