@@ -37,7 +37,12 @@ namespace AvaliMod
 
             foreach (backstoryTex backstoryTex in backstoryTextures)
             {
-                if (pawn.story.childhood.untranslatedTitle == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitle == backstoryTex.backstoryTitle)
+                if (pawn.story.childhood.untranslatedTitle == backstoryTex.backstoryTitle 
+                    || pawn.story.adulthood.untranslatedTitle == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleShort == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleFemale == backstoryTex.backstoryTitle 
+                    || pawn.story.childhood.untranslatedTitleShort == backstoryTex.backstoryTitle || pawn.story.childhood.untranslatedTitleFemale == backstoryTex.backstoryTitle || pawn.story.childhood.title == backstoryTex.backstoryTitle
+                    || pawn.story.adulthood.title == backstoryTex.backstoryTitle 
+                    || pawn.story.adulthood.titleShort == backstoryTex.backstoryTitle || pawn.story.adulthood.titleFemale == backstoryTex.backstoryTitle 
+                    || pawn.story.childhood.titleShort == backstoryTex.backstoryTitle || pawn.story.childhood.titleFemale == backstoryTex.backstoryTitle)
                 {
                     path = backstoryTex.tex;
                     if (backstoryTex.femaleTex != null && pawn.gender == Gender.Female)
@@ -69,7 +74,12 @@ namespace AvaliMod
                 path = femaleTex;
             }
             foreach(hediffStoryTex hediffStoryTex in hediffStoryTextures) {
-                if (pawn.story.childhood.untranslatedTitle == hediffStoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitle == hediffStoryTex.backstoryTitle)
+                if (pawn.story.childhood.untranslatedTitle == hediffStoryTex.backstoryTitle
+                    || pawn.story.adulthood.untranslatedTitle == hediffStoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleShort == hediffStoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleFemale == hediffStoryTex.backstoryTitle
+                    || pawn.story.childhood.untranslatedTitleShort == hediffStoryTex.backstoryTitle || pawn.story.childhood.untranslatedTitleFemale == hediffStoryTex.backstoryTitle || pawn.story.childhood.title == hediffStoryTex.backstoryTitle
+                    || pawn.story.adulthood.title == hediffStoryTex.backstoryTitle
+                    || pawn.story.adulthood.titleShort == hediffStoryTex.backstoryTitle || pawn.story.adulthood.titleFemale == hediffStoryTex.backstoryTitle
+                    || pawn.story.childhood.titleShort == hediffStoryTex.backstoryTitle || pawn.story.childhood.titleFemale == hediffStoryTex.backstoryTitle)
                 {
                     if (pawn.health.hediffSet.HasHediff(hediffStoryTex.hediffDef))
                     {

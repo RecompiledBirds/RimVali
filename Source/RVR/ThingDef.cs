@@ -15,7 +15,6 @@ namespace AvaliMod
 
         public List<ReplaceableThoughts> replaceableThoughts = new List<ReplaceableThoughts>();
 
-        public Dictionary<string, ColorSet> colors = new Dictionary<string, ColorSet>();
         
         public ThoughtDef replaceThought(ThoughtDef thought)
         {
@@ -29,16 +28,16 @@ namespace AvaliMod
             }
             return thought;
         }
-        public Dictionary<string, ColorSet> colorSets;
+        public Dictionary<string, ColorSet> colorSets = new Dictionary<string, ColorSet>();
         public void ExposeData()
         {
             Scribe_Collections.Look<string, ColorSet>(ref colorSets, "pawnColorSet");
-            if(colors == null)
+            if(colorSets == null)
             {
-                colors = new Dictionary<string, ColorSet>();
+                colorSets = new Dictionary<string, ColorSet>();
             }
         }
-        public void GenColors()
+        public void GenColors(Pawn pawn)
         {
             foreach(Colors colors in graphics.colorSets)
             {
