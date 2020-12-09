@@ -15,6 +15,8 @@ namespace AvaliMod
         public static ThingDef RimVali;
         public static ThingDef AvaliAerogel;
         public static ThingDef AvaliResearchBench;
+        public static ThingDef AvaliNexus;
+
 
         //Stat defs
         public static StatDef ExplodeBombRadius;
@@ -24,22 +26,23 @@ namespace AvaliMod
 
 
 
-        //Relation Defs
-        public static PawnRelationDef Packmate;
-        public static PawnRelationDef PackLeader;
 
         //HediffDefs
         public static HediffDef TestHediffOne;
         public static HediffDef TestHediffTwo;
         public static HediffDef TestHediffThree;
 
-
-        //Thoughts
-        public static ThoughtDef AvaliSharedBedRoom;
-        public static ThoughtDef AvaliSleptWithoutPack;
-        public static ThoughtDef AvaliSharingRoom;
-
         //Letters
         public static LetterDef IlluminateAirdrop;
+
+        //Faction defs
+        public static FactionDef AvaliFaction;
+
+        //Research defs
+        public static ResearchProjectDef AvaliAdvancedGuns;
+        public static ResearchProjectDef AvaliAdvancedMelee;
+        public static ResearchProjectDef AeroWeaveResearch;
+        public static ResearchProjectDef AvaliAeroTungsten;
+
     }
 }

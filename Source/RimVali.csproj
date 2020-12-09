@@ -18,7 +18,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\__LocalCopy_RimVali_ Far From Avalon_-2-11 - Copy\1.2\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -38,6 +38,11 @@
     <Reference Include="0Harmony, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Refs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AlienRace, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RimVali-beta\Source\Refs\AlienRace.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp, Version=1.2.7558.21380, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -71,31 +76,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graphic\CodeFile2.cs" />
+    <None Include="AlienPartGenerator.BodyAddon.cs" />
+    <None Include="AlienPartGenerator.cs" />
+    <None Include="BackstoryDef.cs" />
+    <Compile Include="CodeFile1.cs" />
+    <None Include="ColorGenerators.cs" />
+    <None Include="HarmonyPatches.cs" />
+    <Compile Include="ModScanner.cs" />
+    <Compile Include="DeathWorker.cs" />
+    <Compile Include="HediffStuff\AddHediff.cs" />
+    <Compile Include="HediffStuff\Slots\Slots.cs" />
+    <Compile Include="HediffStuff\Slots\SlotsComp.cs" />
+    <Compile Include="Packs\PackMapComponents\ThoughtDriver\Shared_room_worker.cs" />
+    <Compile Include="Packs\PackMapComponents\ThoughtDriver\PackLossWorker.cs" />
+    <None Include="PawnBioDef.cs" />
+    <None Include="RaceSettings.cs" />
+    <Compile Include="RimValiUtilities\Dialog_NamePack.cs" />
+    <Compile Include="RimValiUtilities\Tab.cs" />
     <Compile Include="Graphic\CodeFile3.cs" />
-    <Compile Include="RVHAR\AlienPartGenerator.BodyAddon.cs" />
-    <Compile Include="RVHAR\AlienPartGenerator.cs" />
-    <Compile Include="RVHAR\BackstoryDef.cs" />
+    <Compile Include="Graphic\CodeFile4.cs" />
+    <Compile Include="Packs\Packs.cs" />
     <Compile Include="Airdrop.cs" />
-    <Compile Include="RVHAR\ColorGenerators.cs" />
     <Compile Include="Comparators\comparer.cs" />
-    <Compile Include="Graphic\CodeFile1.cs" />
     <Compile Include="Graphic\ShaderIDs.cs" />
     <Compile Include="Graphic\MaterialPool.cs" />
     <Compile Include="Graphic\MaterialRequest.cs" />
     <Compile Include="Graphic\Linked.cs" />
     <Compile Include="Graphic\GraphicClasses.cs" />
-    <Compile Include="RVHAR\HarmonyPatches.cs" />
-    <Compile Include="Packs\PackMapComponents\PackDriver\PackDiverMapComp.cs" />
+    <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackDiverMapComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\AvaliThoughtDriver.cs" />
-    <Compile Include="HarmonyPatches\ApparelPatch.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\ThingComps\AvaliThoughtDriverComp.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\ThingComps\AvaliThoughtDriverProps.cs" />
     <Compile Include="HediffStuff\ShowTextV3\showTextV3Props.cs" />
     <Compile Include="HediffStuff\ShowTextV3\showTextPropsV3Class.cs" />
-    <Compile Include="RVHAR\PawnBioDef.cs" />
-    <Compile Include="RVHAR\RaceSettings.cs" />
     <Compile Include="RimValiUtilities\ReturnData.cs" />
     <Compile Include="RimValiUtilities\RimValiSettings.cs" />
     <Compile Include="RimValiUtilities\RimValiUtils.cs" />
@@ -106,7 +120,11 @@
     <Compile Include="Graphic\Graphic.cs" />
     <Compile Include="Graphic\BaseContent.cs" />
     <Compile Include="Graphic\GraphicUtility.cs" />
-    <Compile Include="RVHAR\ScenPart_StartingHumanlikes.cs" />
+    <Compile Include="RVR\Classes.cs" />
+    <Compile Include="RVR\CodeFile1.cs" />
+    <Compile Include="RVR\patches.cs" />
+    <Compile Include="RVR\RenderDef.cs" />
+    <Compile Include="RVR\ThingDef.cs" />
     <Compile Include="ThingComps\EggLaying\Comp.cs" />
     <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />
@@ -118,18 +136,14 @@
     <Compile Include="HediffStuff\MPB\MPBProperties.cs" />
     <Compile Include="HediffStuff\MPB\MPBComp.cs" />
     <Compile Include="HarmonyPatches\StatPart_Temperature.cs" />
-    <Compile Include="HarmonyPatches\PawnGeneratorPatch.cs" />
-    <Compile Include="Packs\RelationWorkers\PackMateWorker.cs" />
-    <Compile Include="Packs\RelationWorkers\PackUtilityWorker.cs" />
     <Compile Include="Defs.cs" />
-    <Compile Include="RVHAR\ThingDef_AlienRace.cs" />
-    <Compile Include="RVHAR\Utilities.cs" />
+    <None Include="ThingDef_AlienRace.cs" />
+    <None Include="Utilities.cs" />
     <Compile Include="Verbs\ExplodeEMP.cs" />
     <Compile Include="Verbs\ExplodeFireVerb .cs" />
     <Compile Include="Verbs\ExplodeBombVerb.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="HarmonyPatches\EggFactionPicker.cs" />
-    <Compile Include="HediffStuff\AddHediff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -145,7 +159,5 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RimValiHAR\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
