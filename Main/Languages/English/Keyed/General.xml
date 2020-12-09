@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- Pack tab -->
+
+  <PackTab>Pack</PackTab>
+  <Packmates>Packmates: </Packmates>
+  <PackNameLabel>Pack name</PackNameLabel>
+  <NoPack>This pawn is not in a pack.</NoPack>
+  <!-- Settings -->
+  
+  <!-- Pack settings -->
+  <PackLabel>Pack settings</PackLabel>
+  
+  <PackLossCheck>Pack loss enabled:</PackLossCheck>
+  
+  <PackLossDesc>Enable/disable pack loss.\n Pack loss is a time-based effect if an avali does not have a pack. Recommended for a "full" experience.</PackLossDesc>
+  
+  <PacksNum>The maximum number of avali in a pack.\n5 is usually recommended.</PacksNum>
+  
+  <MultithreadingCheck>Multithreading enabled:</MultithreadingCheck>
+  
+  <MultiThreadingDesc>Enable/disable pack multithreading. [WARNING: RESTARTS THE GAME.]\nIt is recommended to have this enabled, as it reduces lag greatly. May cause issues with Dub's performance anaylzer.</MultiThreadingDesc>
+  
+  <PacksCheck>Packs enabled:</PacksCheck>
+  
+  <PacksDesc>Enable/disable packs. These give boosts to your pawns! Recommended for a "full" experience.</PacksDesc>
+  
+  <MaxPackSize>Maximum pack size: </MaxPackSize>
+  
+  g<RacesInPacks>Races in packs:</RacesInPacks>
+  
+  <!-- Gameplay -->
+  <GameplayLabel>Gameplay Settings</GameplayLabel>
+  <CanHaveEggs>Avali can have eggs:</CanHaveEggs>
+  <EggsDesc>Enable/disable eggs. In case you wanted that.</EggsDesc>
+  <ShowText>Display text (chirp, peep, etc):</ShowText>
+  <ShowTextLabel>Ocasionally, avali will display little bits of text. This may lag lower-end computers or games with more colonists, so you can disable it here.</ShowTextLabel>
+  <AirdropsText>Airdrops enabled:</AirdropsText>
+  <AirdropsLabel>Enables/disables the Illuminate airdrop event. \nThis event adds the "Illuminate Nexus Connection".</AirdropsLabel>
+  
+  <!-- Stability warn -->
+  <StableSettings>Stable.</StableSettings>
+  <PotentialIssuesSettings>Potential issues may occur.</PotentialIssuesSettings>
+  <UnstableSettings>Unstable.</UnstableSettings>
+  
+  <!-- Debug -->
+  <DebugLabel>Debug and advanced settings</DebugLabel>
+  <ToggleDebug>Toggle debug mode</ToggleDebug>
+  <RVBuild>RimVali build: </RVBuild>
+  
+    
+  <!-- Events -->
+  <IlluminateFactionName>Illuminate colony</IlluminateFactionName>
+  <IlluminateAirdrop>Illuminate airdrop</IlluminateAirdrop>
+  <AirdropEventDesc>An Illuminate airdrop has landed nearby!</AirdropEventDesc>
+  
+  <!-- Slots -->
+  <SlotsEnabled>Bionic slots:</SlotsEnabled>
+  <SlotsLabel>Enables/Disables RimVali's bionic slots. \nThese mostly exist to help balance out the bionics in the mod. If you dont't like them, turn them off!</SlotsLabel>
+  
+  
+  <!-- Slots in game -->
+  <SlotsUsed>Slots used</SlotsUsed>
+  
+  <!-- RVR -->
+  <CannotWear>can't wear this</CannotWear>
+  <CannotBuild>can't build this</CannotBuild>
+  <CannotEat>can't eat this</CannotEat>
+</LanguageData>
