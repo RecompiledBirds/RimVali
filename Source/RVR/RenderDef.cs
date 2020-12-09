@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity;
 using UnityEngine;
+using System;
 
 namespace AvaliMod
 {
@@ -37,11 +38,11 @@ namespace AvaliMod
 
             foreach (backstoryTex backstoryTex in backstoryTextures)
             {
-                if (pawn.story.childhood.untranslatedTitle == backstoryTex.backstoryTitle 
-                    || pawn.story.adulthood.untranslatedTitle == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleShort == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleFemale == backstoryTex.backstoryTitle 
+                if (pawn.story.childhood.untranslatedTitle == backstoryTex.backstoryTitle
+                    || pawn.story.adulthood.untranslatedTitle == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleShort == backstoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleFemale == backstoryTex.backstoryTitle
                     || pawn.story.childhood.untranslatedTitleShort == backstoryTex.backstoryTitle || pawn.story.childhood.untranslatedTitleFemale == backstoryTex.backstoryTitle || pawn.story.childhood.title == backstoryTex.backstoryTitle
-                    || pawn.story.adulthood.title == backstoryTex.backstoryTitle 
-                    || pawn.story.adulthood.titleShort == backstoryTex.backstoryTitle || pawn.story.adulthood.titleFemale == backstoryTex.backstoryTitle 
+                    || pawn.story.adulthood.title == backstoryTex.backstoryTitle
+                    || pawn.story.adulthood.titleShort == backstoryTex.backstoryTitle || pawn.story.adulthood.titleFemale == backstoryTex.backstoryTitle
                     || pawn.story.childhood.titleShort == backstoryTex.backstoryTitle || pawn.story.childhood.titleFemale == backstoryTex.backstoryTitle)
                 {
                     path = backstoryTex.tex;
@@ -58,22 +59,31 @@ namespace AvaliMod
 
             foreach (hediffTex hediffTex in hediffTextures)
             {
-
-                if (pawn.health.hediffSet.HasHediff(hediffTex.hediff, false))
+                foreach (BodyPartRecord bodyPartRecord in pawn.def.race.body.AllParts)
                 {
-                    path = hediffTex.tex;
-                    if (hediffTex.femaleTex != null && pawn.gender == Gender.Female)
+                    BodyPartDef def = bodyPartRecord.def;
+                    if (def.defName.ToLower() == bodyPart.ToLower() || def.label.ToLower() == bodyPart.ToLower())
                     {
-                        path = hediffTex.femaleTex;
+                        if (pawn.health.hediffSet.HasHediff(hediffTex.hediff, bodyPartRecord, false))
+                        {
+                            path = hediffTex.tex;
+
+                            if (hediffTex.femaleTex != null && pawn.gender == Gender.Female)
+                            {
+                                path = hediffTex.femaleTex;
+                            }
+                        }
                     }
                 }
+
             }
 
             if (femaleTex != null && pawn.gender == Gender.Female)
             {
                 path = femaleTex;
             }
-            foreach(hediffStoryTex hediffStoryTex in hediffStoryTextures) {
+            foreach (hediffStoryTex hediffStoryTex in hediffStoryTextures)
+            {
                 if (pawn.story.childhood.untranslatedTitle == hediffStoryTex.backstoryTitle
                     || pawn.story.adulthood.untranslatedTitle == hediffStoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleShort == hediffStoryTex.backstoryTitle || pawn.story.adulthood.untranslatedTitleFemale == hediffStoryTex.backstoryTitle
                     || pawn.story.childhood.untranslatedTitleShort == hediffStoryTex.backstoryTitle || pawn.story.childhood.untranslatedTitleFemale == hediffStoryTex.backstoryTitle || pawn.story.childhood.title == hediffStoryTex.backstoryTitle
@@ -81,21 +91,31 @@ namespace AvaliMod
                     || pawn.story.adulthood.titleShort == hediffStoryTex.backstoryTitle || pawn.story.adulthood.titleFemale == hediffStoryTex.backstoryTitle
                     || pawn.story.childhood.titleShort == hediffStoryTex.backstoryTitle || pawn.story.childhood.titleFemale == hediffStoryTex.backstoryTitle)
                 {
-                    if (pawn.health.hediffSet.HasHediff(hediffStoryTex.hediffDef))
+                    foreach (BodyPartRecord bodyPartRecord in pawn.def.race.body.AllParts)
                     {
-                        if(hediffStoryTex.femaleTex != null && pawn.gender == Gender.Female)
+                        BodyPartDef def = bodyPartRecord.def;
+                        if (def.defName.ToLower() == bodyPart.ToLower() || def.label.ToLower() == bodyPart.ToLower())
                         {
-                            path = hediffStoryTex.femaleTex;
-                        }
-                        else
-                        {
-                            path = hediffStoryTex.tex;
+                            if (pawn.health.hediffSet.HasHediff(hediffStoryTex.hediffDef, bodyPartRecord, false))
+                                if (pawn.health.hediffSet.HasHediff(hediffStoryTex.hediffDef))
+                                {
+                                    if (def.defName.ToLower() == bodyPart.ToLower() || def.label.ToLower() == bodyPart.ToLower())
+                                    {
+                                        if (pawn.health.hediffSet.HasHediff(hediffStoryTex.hediffDef, bodyPartRecord, false))
+                                            if (hediffStoryTex.femaleTex != null && pawn.gender == Gender.Female)
+                                            {
+                                                path = hediffStoryTex.femaleTex;
+                                            }
+                                            else
+                                            {
+                                                path = hediffStoryTex.tex;
+                                            }
+                                    }
+                                }
                         }
                     }
                 }
             }
-
-            
             return path;
 
         }
@@ -122,18 +142,31 @@ namespace AvaliMod
             {
                 return true;
             }
+            IEnumerable<BodyPartRecord> bodyParts = pawn.health.hediffSet.GetNotMissingParts();
+            //Log.Message(bodyParts.Any(x => x.def.defName.ToLower() == "left lower ear" || x.untranslatedCustomLabel.ToLower() == "left lower ear".ToLower()).ToString());
             try
             {
-                IEnumerable<BodyPartRecord> bodyParts = pawn.health.hediffSet.GetNotMissingParts();
-
-                if (bodyParts.Where<BodyPartRecord>(x => x.def.defName.ToLower() == bodyPart.ToLower() || x.untranslatedCustomLabel.ToLower() == bodyPart.ToLower()).Count() > 0)
+                if (bodyParts.Any(x => x.def.defName.ToLower() == bodyPart.ToLower() || x.Label.ToLower() == bodyPart.ToLower()))
                 {
-                    
+                    if (!pawn.Spawned)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        if(!this.showsInBed && pawn.InBed() && !pawn.CurrentBed().def.building.bed_showSleeperBody)
+                        {
+                            return false;
+                        }
+                    }
                     return true;
                 }
-            }
-            catch
-            {
+                else
+                {
+                    return false;
+                }
+            }catch (Exception e) {
+                //Log.Message(e.ToString(), true);
                 return true;
             }
 

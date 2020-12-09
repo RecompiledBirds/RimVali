@@ -15,7 +15,7 @@ namespace AvaliMod
         public Main mainSettings = new Main();
         public bool useHumanRecipes = true;
 
-        public List<ReplaceableThoughts> replaceableThoughts = new List<ReplaceableThoughts>();
+        public List<ReplaceableThoughts> replaceableThoughts;
 
         public override void ResolveReferences()
         {
@@ -34,6 +34,7 @@ namespace AvaliMod
             }
             return thought;
         }
+
         public void GenColors(Pawn pawn)
         {
             if(pawn.def is RimValiRaceDef rimValiRaceDef)
@@ -47,6 +48,11 @@ namespace AvaliMod
                         Color color2 = color.colorGenerator.secondColor.NewRandomizedColor();
                         Color color3 = color.colorGenerator.thirdColor.NewRandomizedColor();
                         colorcomp.colors.Add(color.name, new ColorSet(color1,color2,color3));
+                        /*
+                        color1 = color.colorGeneratorFemale.firstColor.NewRandomizedColor();
+                        color2 = color.colorGeneratorFemale.secondColor.NewRandomizedColor();
+                        color3 = color.colorGeneratorFemale.thirdColor.NewRandomizedColor();
+                        colorcomp.colors.Add(color.name, new ColorSet(color1, color2, color3));*/
                     }
                 }
             }

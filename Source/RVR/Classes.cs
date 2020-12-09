@@ -14,7 +14,8 @@ namespace AvaliMod
         public string skeleton = "Things/Pawn/Humanlike/HumanoidDessicated";
         public string skull = "Things/Pawn/Humanlike/Heads/None_Average_Skull";
         public string stump = "Things/Pawn/Humanlike/Heads/None_Average_Stump";
-        public Vector2 headSize = new Vector2(1f, 1f);
+        public Vector2 headOffset;
+        public Vector2 headSize;
         public Vector2 bodySize = new Vector2(1f, 1f);
         public List<Colors> colorSets;
     }
@@ -39,11 +40,14 @@ namespace AvaliMod
         public bool thoughtDefsIsWhiteList = false;
         public bool traitsIsWhiteList = false;
 
+        public bool canOnlyUseApprovedApparel = false;
         //Whitelists
         public List<ThingDef> equippablesWhitelist = new List<ThingDef>();
         public List<ThingDef> consumablesWhitelist = new List<ThingDef>();
         public List<ThingDef> buildablesWhitelist = new List<ThingDef>();
 
+        //Mod lists
+        public List<string> modContentRestrictionsApparelWhiteList = new List<string>();
     }
 
     public class Main
@@ -80,6 +84,7 @@ namespace AvaliMod
     {
         public string name;
         public TriColor_ColorGenerators colorGenerator;
+        public TriColor_ColorGenerators colorGeneratorFemale;
     }
 
     public class TriColor_ColorGenerators
