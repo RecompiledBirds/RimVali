@@ -31,8 +31,6 @@ namespace AvaliMod
             {
                 return ThoughtState.Inactive;
             }
-            return ThoughtState.Inactive;
-
         }
     }
 }

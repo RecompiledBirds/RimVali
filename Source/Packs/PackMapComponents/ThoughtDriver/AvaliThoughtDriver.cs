@@ -20,8 +20,8 @@ namespace AvaliMod
         }
         public override void ExposeData()
         {
-            Scribe_Collections.Look<Pawn>(ref pawnsHaveBeenSold, "soldPawns");
-            Scribe_Collections.Look<Pawn>(ref pawnsAreMissing, "missingPawns");
+            Scribe_Collections.Look<Pawn>(ref pawnsHaveBeenSold, "soldPawns", LookMode.Reference);
+            Scribe_Collections.Look<Pawn>(ref pawnsAreMissing, "missingPawns", LookMode.Reference);
         }
 
         public bool CheckIfLost(Pawn pawn)

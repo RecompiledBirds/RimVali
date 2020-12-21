@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System;
+using System.Threading.Tasks;
 
 namespace AvaliMod
 {
@@ -20,7 +21,9 @@ namespace AvaliMod
         private bool HasStarted = false;
         public static List<AvaliPack> packs = new List<AvaliPack>();
         private int onTick = 0;
-        public Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>(new PawnEqaulityComparer());
+        public static Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
+        public static List<Pawn> pawns = new List<Pawn>();
+        public static List<bool> bools = new List<bool>();
         public AvaliPackDriver(Map map)
             : base(map)
         {
@@ -48,6 +51,10 @@ namespace AvaliMod
                         if(otherRaces.TryGetValue(race.defName) == true)
                         {
                             racesInPacks.Add(race);
+                            if (enableDebug)
+                            {
+                                Log.Message("Adding race: " + race.defName + " to racesInPacks.");
+                            }
                         }
                     }
                 }
@@ -57,10 +64,26 @@ namespace AvaliMod
 
         public override void ExposeData()
         {
-            Scribe_Collections.Look<AvaliPack>(ref packs, "packs", LookMode.Deep, Array.Empty<object>());
+
+            if (pawnsHaveHadPacks.EnumerableNullOrEmpty() ==false)
+            {
+                foreach (Pawn pawn in pawnsHaveHadPacks.Keys)
+                {
+                    pawns.Add(pawn);
+                    bools.Add(pawnsHaveHadPacks[pawn]);
+                }
+            }
+            Scribe_Collections.Look<AvaliPack>(ref packs, "packs", LookMode.Deep);
+
+            Scribe_Collections.Look<Pawn, bool>(ref pawnsHaveHadPacks, "pawnsHasHadPacks", LookMode.Reference, LookMode.Undefined, ref pawns, ref bools);
+          
+            if (pawnsHaveHadPacks == null)
+            {
+                pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
+            } 
+
             base.ExposeData();
         }
-
         public void UpdatePacks()
         {
             if (enableDebug && multiThreaded)
@@ -106,9 +129,14 @@ namespace AvaliMod
                         {
                             //Log.Message("Attempting to make new thread.");
                         }
-                        ThreadStart packThreadRef = new ThreadStart(UpdatePacks);
+                        /*ThreadStart packThreadRef = new ThreadStart(UpdatePacks);
                         Thread packThread = new Thread(packThreadRef);
                         packThread.Start();
+                        */
+                        Task packTask = new Task(UpdatePacks);
+                        packTask.Start();
+                        Task[] tasks = { packTask };
+                        Task.WaitAll(packTask);
                     }
                     else
                     {
