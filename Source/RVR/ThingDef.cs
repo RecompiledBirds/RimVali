@@ -14,27 +14,43 @@ namespace AvaliMod
         public restrictions restrictions = new restrictions();
         public Main mainSettings = new Main();
         public bool useHumanRecipes = true;
+        public RVRRaceInsertion raceInsertion = new RVRRaceInsertion();
+        public List<ReplaceableThoughts> replaceableThoughts = new List<ReplaceableThoughts>();
 
-        public List<ReplaceableThoughts> replaceableThoughts;
+        public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
+
 
         public override void ResolveReferences()
         {
             this.comps.Add(new colorCompProps());
             base.ResolveReferences();
         }
-        public ThoughtDef replaceThought(ThoughtDef thought)
+        public ThoughtDef replaceThought(ThoughtDef thought, bool log = false)
         {
-            foreach(ReplaceableThoughts replaceable in this.replaceableThoughts)
+            //Log.Message(replaceableThoughts.Count.ToString());
+            //Log.Message("checking thought list..", true);
+            foreach (ReplaceableThoughts replaceable in this.replaceableThoughts)
             {
-                if (replaceable.thoughtToReplace == thought)
+               
+                //The issue seems to be in this check, although i cannot imagine why
+                if (replaceable.thoughtToReplace.defName == thought.defName)
                 {
-                    Log.Message("Replacing thought.");
-                    thought = replaceable.replacementThought;
+                    thought = replaceable.thoughtToReplace;
                 }
+                else
+                {
+                    Log.Message("no");
+                }
+                //This check DOES work.
+                //Until i added the else statement.. ._.
+                if (thought.defName == replaceable.thoughtToReplace.defName)
+                {
+                    Log.Message("Cant replace thought: " + thought.defName);
+                }
+
             }
             return thought;
         }
-
         public void GenColors(Pawn pawn)
         {
             if(pawn.def is RimValiRaceDef rimValiRaceDef)
@@ -42,28 +58,20 @@ namespace AvaliMod
                 colorComp colorcomp = pawn.TryGetComp<colorComp>();
                 foreach(Colors color in rimValiRaceDef.graphics.colorSets)
                 {
+                    
                     if (!colorcomp.colors.ContainsKey(color.name))
                     {
-                        Color color1 = color.colorGenerator.firstColor.NewRandomizedColor();
-                        Color color2 = color.colorGenerator.secondColor.NewRandomizedColor();
-                        Color color3 = color.colorGenerator.thirdColor.NewRandomizedColor();
-                        colorcomp.colors.Add(color.name, new ColorSet(color1,color2,color3));
-                        /*
-                        color1 = color.colorGeneratorFemale.firstColor.NewRandomizedColor();
-                        color2 = color.colorGeneratorFemale.secondColor.NewRandomizedColor();
-                        color3 = color.colorGeneratorFemale.thirdColor.NewRandomizedColor();
-                        colorcomp.colors.Add(color.name, new ColorSet(color1, color2, color3));*/
+                        Color color1 = color.Generator(pawn).firstColor.NewRandomizedColor();
+                        Color color2 = color.Generator(pawn).secondColor.NewRandomizedColor();
+                        Color color3 = color.Generator(pawn).thirdColor.NewRandomizedColor();
+                        colorcomp.colors.Add(color.name, new ColorSet(color1,color2,color3,color.isDyeable));
                     }
                 }
             }
         }
         
        
-        /*
-        public ThoughtDef ReplaceThought(ThoughtDef thought) =>
-            (this.replaceableThoughts == null || this.replaceableThoughts.Select(x=>x.).Contains(thought))
-               ? thought : this.replaceableThoughts.FirstOrDefault(predicate: tr => tr.original == thought)?.replacer ?? thought;
-        */
+        
         public class ReplaceableThoughts
         {
             public ThoughtDef thoughtToReplace;
