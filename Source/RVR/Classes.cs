@@ -5,6 +5,31 @@ using UnityEngine;
 
 namespace AvaliMod
 {
+    public class raceOrganHarvestThought
+    {
+        public string organDefName = "any";
+        public ThingDef race;
+       
+        public ThoughtDef thought;
+    }
+    public class raceButcherThought
+    {
+        public ThingDef race;
+        public ThoughtDef butcheredPawnThought;
+        public ThoughtDef knowButcheredPawn;
+        public ThoughtDef ateThought;
+        public ThoughtDef ateCookedThought;
+    }
+
+    public class butcherAndHarvestThoughts
+    {
+        public List<raceButcherThought> butcherThoughts;
+        public List<raceOrganHarvestThought> harvestedThoughts;
+        //If a race isnt defined in the above, it gets the default thought.
+        public bool careAboutUndefinedRaces = true;
+        public ThoughtDef myOrganHarvested = ThoughtDefOf.MyOrganHarvested;
+    }
+
     public class graphics
     {
         public string skinColorSet;

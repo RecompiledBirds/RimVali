@@ -19,13 +19,14 @@ namespace AvaliMod
 
         public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
 
+        public butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
 
         public override void ResolveReferences()
         {
             this.comps.Add(new colorCompProps());
             base.ResolveReferences();
         }
-        public ThoughtDef replaceThought(ThoughtDef thought, bool log = false)
+        public bool replaceThought(ref ThoughtDef thought, bool log = false)
         {
             //Log.Message(replaceableThoughts.Count.ToString());
             //Log.Message("checking thought list..", true);
@@ -35,21 +36,13 @@ namespace AvaliMod
                 //The issue seems to be in this check, although i cannot imagine why
                 if (replaceable.thoughtToReplace.defName == thought.defName)
                 {
-                    thought = replaceable.thoughtToReplace;
+                    thought = replaceable.replacementThought;
+                    return true;
                 }
-                else
-                {
-                    Log.Message("no");
-                }
-                //This check DOES work.
-                //Until i added the else statement.. ._.
-                if (thought.defName == replaceable.thoughtToReplace.defName)
-                {
-                    Log.Message("Cant replace thought: " + thought.defName);
-                }
+             
 
             }
-            return thought;
+            return false;
         }
         public void GenColors(Pawn pawn)
         {

@@ -25,7 +25,7 @@ namespace AvaliMod
         public static Dictionary<BodyTypeDef, List<ThingDef>> bodyTypeRestrictions = new Dictionary<BodyTypeDef, List<ThingDef>>();
 
         public static Dictionary<ThingDef, List<ThingDef>> bedRestrictions = new Dictionary<ThingDef, List<ThingDef>>();
-        
+
         public static Dictionary<ThoughtDef, List<ThingDef>> thoughtRestrictions = new Dictionary<ThoughtDef, List<ThingDef>>();
         //Whitelists
         public static Dictionary<ThingDef, List<ThingDef>> buildingWhitelists = new Dictionary<ThingDef, List<ThingDef>>();
@@ -184,10 +184,10 @@ namespace AvaliMod
                 {
                     foreach (BodyTypeDef bodyTypeDef in raceDef.restrictions.bodyTypes)
                     {
-                        if (!Restrictions.bodyTypeRestrictions.ContainsKey(bodyTypeDef))
+                        if (!bodyTypeRestrictions.ContainsKey(bodyTypeDef))
                         {
-                            Restrictions.bodyTypeRestrictions.Add(bodyTypeDef, new List<ThingDef>());
-                            Restrictions.bodyTypeRestrictions[bodyTypeDef].Add(raceDef);
+                            bodyTypeRestrictions.Add(bodyTypeDef, new List<ThingDef>());
+                            bodyTypeRestrictions[bodyTypeDef].Add(raceDef);
                         }
                         else
                         {
@@ -205,15 +205,15 @@ namespace AvaliMod
                         foreach (ThingDef def in mod.AllDefs.Where(x => x is ThingDef thingDef && (thingDef.IsApparel || thingDef.IsWeapon || thingDef.IsMeleeWeapon || thingDef.IsRangedWeapon)))
                         {
                             //Log.Message(def.defName);
-                            if (!Restrictions.equipabblbleWhiteLists.ContainsKey(def))
+                            if (!equipabblbleWhiteLists.ContainsKey(def))
                             {
-                                Restrictions.equipabblbleWhiteLists.Add(def, new List<ThingDef>());
-                                Restrictions.equipabblbleWhiteLists[def].Add(raceDef);
+                                equipabblbleWhiteLists.Add(def, new List<ThingDef>());
+                                equipabblbleWhiteLists[def].Add(raceDef);
                                 //Log.Message("Adding " + def.defName + " to whitelist: " + raceDef.defName);
                             }
                             else
                             {
-                                Restrictions.equipabblbleWhiteLists[def].Add(raceDef);
+                                equipabblbleWhiteLists[def].Add(raceDef);
                             }
                         }
                     }
@@ -404,7 +404,7 @@ namespace AvaliMod
                     }
                 }
             }
-            foreach(ThingStuffPair pair in apparel)
+            foreach (ThingStuffPair pair in apparel)
             {
                 apparelInfo.GetValue<List<ThingStuffPair>>().Remove(pair);
 
@@ -436,7 +436,160 @@ namespace AvaliMod
             return true;
         }
     }
+    [HarmonyPatch(typeof(ThoughtUtility), "GiveThoughtsForPawnOrganHarvested")]
+    public static class organPatch
+    {
+        static void ThoughtAdder(Pawn pawn, Pawn victim, bool guest = false)
+        {
+            if (pawn.def is RimValiRaceDef def)
+            {
+                foreach (raceOrganHarvestThought rOHT in def.butcherAndHarvestThoughts.harvestedThoughts)
+                {
+                    if (rOHT.race == victim.def)
+                    {
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(rOHT.thought);
+                        return;
+                    }
+                }
+                if (def.butcherAndHarvestThoughts.careAboutUndefinedRaces)
+                {
+                    if (!guest) {
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowColonistOrganHarvested);
+                        return;
+                    }
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowGuestOrganHarvested);
+                    return;
+                }
+            }
+            if (!guest)
+            {
+                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowColonistOrganHarvested);
+                return;
+            }
+            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowGuestOrganHarvested);
+        }
 
+
+
+        [HarmonyPostfix]
+        public static void patch(Pawn victim)
+        {
+            if (!victim.RaceProps.Humanlike)
+            {
+                return;
+            }
+            ThoughtDef def = null;
+            bool isGuest;
+            if (victim.IsColonist)
+            {
+                isGuest = false;
+            }
+            else if(victim.HostFaction == Faction.OfPlayer){
+                isGuest = true;
+            }
+            foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
+            {
+                if (pawn.needs.mood != null)
+                {
+                    if (pawn == victim)
+                    {
+                        if (pawn.def is RimValiRaceDef rDef)
+                        {
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(rDef.butcherAndHarvestThoughts.myOrganHarvested, null);
+                        }
+                        else
+                        {
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.MyOrganHarvested, null);
+                        }
+                    }else if (def != null)
+                    {
+                        if(pawn.def is RimValiRaceDef rDef)
+                        {
+                            
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+    [HarmonyPatch(typeof(Corpse), "ButcherProducts")]
+    public static class butcherPatch
+    {
+        //Gets the thought for butchering.
+        static void butcheredThoughAdder(Pawn pawn, Pawn butchered, bool butcher= true)
+        {
+            if (pawn.def is RimValiRaceDef def)
+            {
+                foreach (raceButcherThought rBT in def.butcherAndHarvestThoughts.butcherThoughts)
+                {
+                    if (rBT.race == butchered.def)
+                    {
+                       
+                        if (butcher)
+                        {
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
+                        }
+                        else
+                        {
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
+                        }
+                        return;
+                    }
+                }
+                if (def.butcherAndHarvestThoughts.careAboutUndefinedRaces)
+                {
+                    if (butcher)
+                    {
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
+                    }
+                    else
+                    {
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+                    }
+                }
+                return;
+            }
+            if (butcher)
+            {
+                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
+                return;
+            }
+            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+        }
+        [HarmonyPrefix]
+        public static bool patch(Pawn butcher, float efficiency, ref IEnumerable<Thing> __result, Corpse __instance)
+        {
+            TaleRecorder.RecordTale(TaleDefOf.ButcheredHumanlikeCorpse, new object[] { butcher });
+            Pawn deadPawn = __instance.InnerPawn;
+
+
+            __result = deadPawn.ButcherProducts(butcher, efficiency);
+
+            if (!(deadPawn.def is RimValiRaceDef))
+            {
+                return false;
+            }
+            if(butcher.def is RimValiRaceDef def)
+            {
+                butcheredThoughAdder(butcher, deadPawn);
+            }
+            foreach(Pawn targetPawn in butcher.Map.mapPawns.SpawnedPawnsInFaction(butcher.Faction))
+            {
+                if(targetPawn.def is RimValiRaceDef rVRDef)
+                {
+                    butcheredThoughAdder(butcher, deadPawn,false);
+                }
+            }
+
+
+
+
+
+            return false;
+        }
+
+    }
 
     [HarmonyPatch(typeof(ThoughtUtility), "CanGetThought_NewTemp")]
     public static class thoughtPatch
@@ -447,7 +600,7 @@ namespace AvaliMod
             
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
-                def = rimValiRaceDef.replaceThought(def);
+                rimValiRaceDef.replaceThought(ref def);
                 if (!rimValiRaceDef.restrictions.thoughtBlacklist.NullOrEmpty())
                 {
                     if (rimValiRaceDef.restrictions.thoughtBlacklist.Contains(def))
@@ -572,7 +725,7 @@ namespace AvaliMod
         {
             if (__instance.pawn.def is RimValiRaceDef RVDef)
             {
-                def = RVDef.replaceThought(def);
+                RVDef.replaceThought(ref def);
             }
         }
     }
@@ -584,7 +737,7 @@ namespace AvaliMod
         {
             if (__instance.pawn.def is RimValiRaceDef RVDef)
             {
-                def = RVDef.replaceThought(def);
+                RVDef.replaceThought(ref def);
             }
         }
     }
@@ -596,7 +749,7 @@ namespace AvaliMod
         {
             if (__instance.pawn.def is RimValiRaceDef RVDef)
             {
-                def = RVDef.replaceThought(def);
+                RVDef.replaceThought(ref def);
             }
         }
     }
@@ -609,7 +762,7 @@ namespace AvaliMod
         {
             if (__instance.pawn.def is RimValiRaceDef RVDef)
             {
-                def = RVDef.replaceThought(def);
+                RVDef.replaceThought(ref def);
             }
         }
     }
@@ -621,7 +774,7 @@ namespace AvaliMod
         {
             if (__instance.pawn.def is RimValiRaceDef RVDef)
             {
-                def = RVDef.replaceThought(def);
+                RVDef.replaceThought(ref def);
             }
         }
     }
@@ -633,10 +786,11 @@ namespace AvaliMod
         {
             if (__instance.pawn.def is RimValiRaceDef RVDef)
             {
-                ThoughtDef nDef = RVDef.replaceThought(newThought.def);
+                Thought_Memory nT = newThought;
+                RVDef.replaceThought(ref nT.def);
 
-                Thought_Memory newMem = (Thought_Memory)ThoughtMaker.MakeThought(nDef, newThought.CurStageIndex);
-                newThought = newMem;
+                newThought = ThoughtMaker.MakeThought(nT.def, newThought.CurStageIndex);
+                
                 
             }
             return true;
@@ -653,7 +807,7 @@ namespace AvaliMod
             Pawn pawn = __instance.pawn;
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
-                def = rimValiRaceDef.replaceThought(def);
+                rimValiRaceDef.replaceThought(ref def);
                 //Log.Message("Test2");
                 
             }
