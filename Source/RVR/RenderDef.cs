@@ -31,6 +31,10 @@ namespace AvaliMod
    
     public class RenderableDef : Def
     {
+
+        public Graphic graphic;
+
+
         public bool StoryIsName(Backstory story, string title)
         {
             //I have to check if everything is null so we get this mess, otherwise sometimes a null reference exception occurs.
@@ -48,13 +52,32 @@ namespace AvaliMod
                         || story.title == title)));
             //Now we hope Tynan never changes backstories. Ever. Or else this thing breaks.
         }
-        public string texPath(Pawn pawn)
-        {
-            string path = tex;
 
-            if (femaleTex != null && pawn.gender == Gender.Female)
+        public int getMyIndex(Pawn pawn)
+        {
+            if(pawn.def is RimValiRaceDef)
             {
-                path = femaleTex;
+                colorComp comp = pawn.TryGetComp<colorComp>();
+                foreach(string str in comp.renderableDefIndexes.Keys)
+                {
+                    if (str == defName || (linkIndexWithDef != null && linkIndexWithDef.defName == str))
+                    {
+                        return comp.renderableDefIndexes[str];
+                    }
+                }
+            }
+            return 0;
+        }
+
+
+        public string texPath(Pawn pawn, int index)
+        {
+            
+            string path = textures[index].tex;
+
+            if (textures[index].femaleTex != null && pawn.gender == Gender.Female)
+            {
+                path = textures[index].femaleTex;
             }
 
             //HediffStory gets highests priority here, by being lowest on this set
@@ -74,7 +97,7 @@ namespace AvaliMod
                     {
                         path = backstoryTex.femaleTex;
                     }
-                    path = backstoryTex.tex; ;
+                    path = backstoryTex.tex;
                 }
             }
             foreach (hediffTex hediffTex in hediffTextures)
@@ -91,7 +114,7 @@ namespace AvaliMod
                             {
                                 path = hediffTex.femaleTex;
                             }
-                            path = hediffTex.tex; ;
+                            path = hediffTex.tex;
                         }
                     }
                 }
@@ -133,9 +156,10 @@ namespace AvaliMod
 
         }
 
-        public string tex;
-        public string femaleTex;
+        public List<baseTex> textures;
         public string bodyPart = null;
+
+        public RenderableDef linkIndexWithDef;
 
         public bool showsInBed = true;
 

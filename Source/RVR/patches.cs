@@ -16,6 +16,7 @@ namespace AvaliMod
         //Normal restrictions
         public static Dictionary<ThingDef, List<ThingDef>> equipmentRestrictions = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<ThingDef, List<ThingDef>> consumableRestrictions = new Dictionary<ThingDef, List<ThingDef>>();
+        public static Dictionary<ThingDef, List<ThingDef>> consumableRestrictionsWhiteList = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<BuildableDef, List<string>> buildingRestrictions = new Dictionary<BuildableDef, List<string>>();
 
         public static Dictionary<ResearchProjectDef, List<ThingDef>> researchRestrictions = new Dictionary<ResearchProjectDef, List<ThingDef>>();
@@ -31,7 +32,65 @@ namespace AvaliMod
         public static Dictionary<ThingDef, List<ThingDef>> buildingWhitelists = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<ThingDef, List<ThingDef>> equipabblbleWhiteLists = new Dictionary<ThingDef, List<ThingDef>>();
 
+        //Faction restrictions
+        public static Dictionary<ResearchProjectDef, List<FactionDef>> factionResearchRestrictions = new Dictionary<ResearchProjectDef, List<FactionDef>>();
+        public static Dictionary<ResearchProjectDef, List<FactionDef>> factionResearchBlacklist = new Dictionary<ResearchProjectDef, List<FactionDef>>();
+        /// <summary>
+        /// A way of condensing most of our restriction logic into one nice little function. May have uses elsewhere, as well.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="V"></typeparam>
+        /// <param name="pairs"> A dictionary, using Dictionary<T,List<V>>.</param>
+        /// <param name="item">The key to check.</param>
+        /// <param name="race">We check if this is in the list.</param>
+        /// <returns>Returns true if:
+        /// pairs contains item, and pairs[item] contains race
+        /// otherwise returns false.
+        /// </returns>
+        public static bool checkRestrictions<T, V>(Dictionary<T, List<V>> pairs, T item, V race) {
+            if (pairs.ContainsKey(item))
+            {
+                if (pairs[item] is List<V>)
+                {
+                    if (pairs[item].Contains(race))
+                    {
+                        return true;
+                    }
+                }
+            }
+            //For things that arent in the dictionary
+            if (!pairs.ContainsKey(item))
+            {
+                return true;
+            }
+            return false;
+        }
 
+        /// <summary>
+        /// Adds a restriction to the given restriction dictionary
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="V"></typeparam>
+        /// <param name="pairs">The dictionary to modify</param>
+        /// <param name="item">The item to restrict</param>
+        /// <param name="race">The race to give it</param>
+        /// <returns>Returns true if it can, returns false if it can't.</returns>
+        public static bool AddRestriction<T,V>(ref Dictionary<T, List<V>> pairs, T item, V race)
+        {
+            if (!pairs.ContainsKey(item)){
+                pairs.Add(item, new List<V>());
+                pairs[item].Add(race);
+            }
+            else
+            {
+                if(pairs[item] is List<V>)
+                {
+                    pairs[item].Add(race);
+                    return true;
+                }
+            }
+            return false;
+        }
 
         static Restrictions()
         {
@@ -47,152 +106,64 @@ namespace AvaliMod
                             Log.Error("Could not find thing!");
                             return;
                         }
-                        if (!buildingRestrictions.ContainsKey(thing))
-                        {
-                            Restrictions.buildingRestrictions.Add(thing, new List<string>());
-                            //I originally thought this would be somethine like "Restrictions.buildingRestrictions.SetOrAdd(thing, list<string>.add());".
-                            //Turns out its alot more like python then i thought. (python syntax: list[thing].append(racedef.defName) would do the same thing as this.)
-                            Restrictions.buildingRestrictions[thing].Add(raceDef.defName);
-                        }
-                        else
-                        {
-                            buildingRestrictions[thing].Add(raceDef.defName);
-                        }
+                        AddRestriction(ref buildingRestrictions, thing, raceDef.defName);
                     }
                 }
                 if (raceDef.restrictions.consumables.Count > 0)
                 {
                     foreach (ThingDef thing in raceDef.restrictions.consumables)
                     {
-                        if (!consumableRestrictions.ContainsKey(thing))
-                        {
-                            consumableRestrictions.Add(thing, new List<ThingDef>());
-                            consumableRestrictions[thing].Add(raceDef);
-                        }
-                        else
-                        {
-                            consumableRestrictions[thing].Add(raceDef);
-                        }
+                        AddRestriction(ref consumableRestrictions, thing, raceDef);
                     }
                 }
                 if (raceDef.restrictions.equippables.Count > 0)
                 {
                     foreach (ThingDef thing in raceDef.restrictions.equippables)
                     {
-                        if (!equipmentRestrictions.ContainsKey(thing))
-                        {
-                            equipmentRestrictions.Add(thing, new List<ThingDef>());
-                            equipmentRestrictions[thing].Add(raceDef);
-                        }
-                        else
-                        {
-                            equipmentRestrictions[thing].Add(raceDef);
-                        }
+                        AddRestriction(ref equipmentRestrictions, thing, raceDef);
                     }
                 }
                 if (raceDef.restrictions.researchProjectDefs.Count > 0)
                 {
                     foreach (ResearchProjectDef research in raceDef.restrictions.researchProjectDefs)
                     {
-                        if (!researchRestrictions.ContainsKey(research))
-                        {
-                            researchRestrictions.Add(research, new List<ThingDef>());
-                            researchRestrictions[research].Add(raceDef);
-                        }
-                        else
-                        {
-                            researchRestrictions[research].Add(raceDef);
-                        }
+                        AddRestriction(ref researchRestrictions, research, raceDef);
                     }
                 }
                 if (raceDef.restrictions.traits.Count > 0)
                 {
                     foreach (TraitDef trait in raceDef.restrictions.traits)
                     {
-                        if (!traitRestrictions.ContainsKey(trait))
-                        {
-                            traitRestrictions.Add(trait, new List<ThingDef>());
-                            traitRestrictions[trait].Add(raceDef);
-                        }
-                        else
-                        {
-                            traitRestrictions[trait].Add(raceDef);
-                        }
+                        AddRestriction(ref traitRestrictions, trait, raceDef);
                     }
                 }
                 if (raceDef.restrictions.thoughtDefs.Count > 0)
                 {
                     foreach (ThoughtDef thought in raceDef.restrictions.thoughtDefs)
                     {
-                        if (!thoughtRestrictions.ContainsKey(thought))
-                        {
-                            thoughtRestrictions.Add(thought, new List<ThingDef>());
-                            thoughtRestrictions[thought].Add(raceDef);
-                        }
-                        else
-                        {
-                            thoughtRestrictions[thought].Add(raceDef);
-                        }
+                        AddRestriction(ref thoughtRestrictions, thought, raceDef);
                     }
                 }
                 if (raceDef.restrictions.equippablesWhitelist.Count > 0)
                 {
                     foreach (ThingDef thing in raceDef.restrictions.equippablesWhitelist)
                     {
-                        if (!equipabblbleWhiteLists.ContainsKey(thing))
-                        {
-                            equipabblbleWhiteLists.Add(thing, new List<ThingDef>());
-                            equipabblbleWhiteLists[thing].Add(raceDef);
-                        }
-                        else
-                        {
-                            equipabblbleWhiteLists[thing].Add(raceDef);
-                        }
+                        AddRestriction(ref equipabblbleWhiteLists, thing, raceDef);
                     }
                 }
                 if (raceDef.restrictions.bedDefs.Count > 0)
                 {
                     foreach (ThingDef thing in raceDef.restrictions.bedDefs)
                     {
-                        if (!bedRestrictions.ContainsKey(thing))
-                        {
-                            bedRestrictions.Add(thing, new List<ThingDef>());
-                            bedRestrictions[thing].Add(raceDef);
-                        }
-                        else
-                        {
-                            bedRestrictions[thing].Add(raceDef);
-                        }
+                        AddRestriction(ref bedRestrictions, thing, raceDef);
                     }
                 }
-                if (raceDef.restrictions.researchProjectDefs.Count > 0)
-                {
-                    foreach (ResearchProjectDef research in raceDef.restrictions.researchProjectDefs)
-                    {
-                        if (!researchRestrictions.ContainsKey(research))
-                        {
-                            researchRestrictions.Add(research, new List<ThingDef>());
-                            researchRestrictions[research].Add(raceDef);
-                        }
-                        else
-                        {
-                            researchRestrictions[research].Add(raceDef);
-                        }
-                    }
-                }
+
                 if (raceDef.restrictions.bodyTypes.Count > 0)
                 {
                     foreach (BodyTypeDef bodyTypeDef in raceDef.restrictions.bodyTypes)
                     {
-                        if (!bodyTypeRestrictions.ContainsKey(bodyTypeDef))
-                        {
-                            bodyTypeRestrictions.Add(bodyTypeDef, new List<ThingDef>());
-                            bodyTypeRestrictions[bodyTypeDef].Add(raceDef);
-                        }
-                        else
-                        {
-                            Restrictions.bodyTypeRestrictions[bodyTypeDef].Add(raceDef);
-                        }
+                        AddRestriction(ref bodyTypeRestrictions, bodyTypeDef, raceDef);
                     }
                 }
 
@@ -201,20 +172,59 @@ namespace AvaliMod
 
                     foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading.Where(x => raceDef.restrictions.modContentRestrictionsApparelWhiteList.Contains(x.Name) || raceDef.restrictions.modContentRestrictionsApparelWhiteList.Contains(x.PackageId)))
                     {
-                        Log.Message(mod.Name);
                         foreach (ThingDef def in mod.AllDefs.Where(x => x is ThingDef thingDef && (thingDef.IsApparel || thingDef.IsWeapon || thingDef.IsMeleeWeapon || thingDef.IsRangedWeapon)))
                         {
-                            //Log.Message(def.defName);
-                            if (!equipabblbleWhiteLists.ContainsKey(def))
-                            {
-                                equipabblbleWhiteLists.Add(def, new List<ThingDef>());
-                                equipabblbleWhiteLists[def].Add(raceDef);
-                                //Log.Message("Adding " + def.defName + " to whitelist: " + raceDef.defName);
-                            }
-                            else
-                            {
-                                equipabblbleWhiteLists[def].Add(raceDef);
-                            }
+                            AddRestriction(ref equipabblbleWhiteLists, def, raceDef);
+                        }
+                    }
+                }
+
+                if (raceDef.restrictions.modContentRestrictionsApparelList.Count > 0)
+                {
+
+                    foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading.Where(x => raceDef.restrictions.modContentRestrictionsApparelList.Contains(x.Name) || raceDef.restrictions.modContentRestrictionsApparelList.Contains(x.PackageId)))
+                    {
+                        foreach (ThingDef def in mod.AllDefs.Where(x => x is ThingDef thingDef && (thingDef.IsApparel || thingDef.IsWeapon || thingDef.IsMeleeWeapon || thingDef.IsRangedWeapon)))
+                        {
+                            AddRestriction(ref equipmentRestrictions, def, raceDef);
+                        }
+                    }
+                }
+
+
+                if (raceDef.restrictions.modResearchRestrictionsList.Count > 0)
+                {
+
+                    foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading.Where(x => raceDef.restrictions.modResearchRestrictionsList.Contains(x.Name) || raceDef.restrictions.modResearchRestrictionsList.Contains(x.PackageId)))
+                    {
+                        foreach (ResearchProjectDef research in mod.AllDefs.Where(x => x is ResearchProjectDef))
+                        {
+                            AddRestriction(ref researchRestrictions, research, raceDef);
+                        }
+                    }
+                }
+
+
+                if (raceDef.restrictions.modTraitRestrictions.Count > 0)
+                {
+
+                    foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading.Where(x => raceDef.restrictions.modTraitRestrictions.Contains(x.Name) || raceDef.restrictions.modTraitRestrictions.Contains(x.PackageId)))
+                    {
+                        foreach (TraitDef trait in mod.AllDefs.Where(x => x is TraitDef))
+                        {
+                            AddRestriction(ref traitRestrictions, trait, raceDef);
+                        }
+                    }
+                }
+
+
+                if (raceDef.restrictions.modBuildingRestrictions.Count > 0)
+                {
+
+                    foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading.Where(x => raceDef.restrictions.modBuildingRestrictions.Contains(x.Name) || raceDef.restrictions.modBuildingRestrictions.Contains(x.PackageId)))
+                    {
+                        foreach (ThingDef def in mod.AllDefs.Where(x => x is ThingDef thingDef)) {
+                            AddRestriction(ref buildingRestrictions, def, raceDef.defName);
                         }
                     }
                 }
@@ -251,6 +261,27 @@ namespace AvaliMod
 
                     }
                     raceDef.recipes.RemoveDuplicates();
+                }
+            }
+            Log.Message("[RVR]: Setting up faction restrictions.");
+            foreach(FactionResearchRestrictionDef factionResearchRestrictionDef in DefDatabase<FactionResearchRestrictionDef>.AllDefsListForReading)
+            {
+                foreach(FactionResearchRestriction factionResearchRestriction in factionResearchRestrictionDef.factionResearchRestrictions)
+                {
+                    if (!factionResearchRestrictions.ContainsKey(factionResearchRestriction.researchProj))
+                    {
+                        factionResearchRestrictions.Add(factionResearchRestriction.researchProj, new List<FactionDef>());
+                    }
+                    factionResearchRestrictions[factionResearchRestriction.researchProj].Add(factionResearchRestriction.factionDef);
+                }
+
+                foreach (FactionResearchRestriction factionResearchRestriction in factionResearchRestrictionDef.factionResearchRestrictionBlackList)
+                {
+                    if (!factionResearchBlacklist.ContainsKey(factionResearchRestriction.researchProj))
+                    {
+                        factionResearchBlacklist.Add(factionResearchRestriction.researchProj, new List<FactionDef>());
+                    }
+                    factionResearchBlacklist[factionResearchRestriction.researchProj].Add(factionResearchRestriction.factionDef);
                 }
             }
         }
@@ -351,12 +382,9 @@ namespace AvaliMod
         [HarmonyPostfix]
         public static void bedPostfix(ref bool __result, Pawn p, ThingDef bedDef)
         {
-            if (Restrictions.bedRestrictions.ContainsKey(bedDef))
+            if (!Restrictions.checkRestrictions(Restrictions.bedRestrictions, bedDef, p.def))
             {
-                if (!Restrictions.bedRestrictions[bedDef].Contains(p.def))
-                {
-                    __result = false;
-                }
+                __result = false;
             }
         }
     }
@@ -380,23 +408,19 @@ namespace AvaliMod
             foreach (ThingStuffPair pair in apparelInfo.GetValue<List<ThingStuffPair>>().ListFullCopy())
             {
                 ThingDef thing = pair.thing;
-                if (Restrictions.equipmentRestrictions.ContainsKey(thing))
-                {
-                    //Log.Message(t.def.defName + " is in building restrictions.");
-                    List<ThingDef> races = Restrictions.equipmentRestrictions[thing];
-                    if ((!races.Contains(pawn.def) || Restrictions.equipabblbleWhiteLists.ContainsKey(thing) && !Restrictions.equipabblbleWhiteLists[thing].Contains(pawn.def)))
-                    {
-                        apparel.Add(pair);
-                    }
 
+                if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing, pawn.def) && !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing, pawn.def))
+                {
+                    apparel.Add(pair);
                 }
+
                 if (pawn.def is RimValiRaceDef valiRaceDef)
                 {
                     if (valiRaceDef.restrictions.canOnlyUseApprovedApparel)
                     {
                         if (thing.IsApparel)
                         {
-                            if ((Restrictions.equipmentRestrictions.ContainsKey(thing) && !Restrictions.equipmentRestrictions[thing].Contains(valiRaceDef)) || (Restrictions.equipabblbleWhiteLists.ContainsKey(thing) && !Restrictions.equipabblbleWhiteLists[thing].Contains(pawn.def)))
+                            if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing, valiRaceDef) || !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing, valiRaceDef))
                             {
                                 apparel.Add(pair);
                             }
@@ -418,14 +442,6 @@ namespace AvaliMod
         public static bool traitGain(Trait trait, TraitSet __instance)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (Restrictions.traitRestrictions.ContainsKey(trait.def))
-            {
-                if (Restrictions.traitRestrictions[trait.def].Contains(pawn.def))
-                {
-                    return true;
-                }
-                return false;
-            }
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
                 if (rimValiRaceDef.restrictions.disabledTraits.Contains(trait.def))
@@ -433,7 +449,11 @@ namespace AvaliMod
                     return false;
                 }
             }
-            return true;
+            if (Restrictions.checkRestrictions(Restrictions.traitRestrictions, trait.def, pawn.def))
+            {
+                return true;
+            }
+            return false;
         }
     }
     [HarmonyPatch(typeof(ThoughtUtility), "GiveThoughtsForPawnOrganHarvested")]
@@ -484,7 +504,7 @@ namespace AvaliMod
             {
                 isGuest = false;
             }
-            else if(victim.HostFaction == Faction.OfPlayer){
+            else if (victim.HostFaction == Faction.OfPlayer) {
                 isGuest = true;
             }
             foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
@@ -501,12 +521,12 @@ namespace AvaliMod
                         {
                             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.MyOrganHarvested, null);
                         }
-                    }else if (def != null)
+                    } else if (def != null)
                     {
-                        if(pawn.def is RimValiRaceDef rDef)
+                        if (pawn.def is RimValiRaceDef rDef)
                         {
-                            
-                           
+
+
                         }
                     }
                 }
@@ -517,23 +537,73 @@ namespace AvaliMod
     public static class butcherPatch
     {
         //Gets the thought for butchering.
-        static void butcheredThoughAdder(Pawn pawn, Pawn butchered, bool butcher= true)
+        static void butcheredThoughAdder(Pawn pawn, Pawn butchered, bool butcher = true)
         {
+            try
+            {
+                //Backstories
+                if (/*!DefDatabase<RVRBackstory>.AllDefs.Where(x => x.hasButcherThoughtOverrides == true && x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).EnumerableNullOrEmpty()*/ true)
+                {
+                    butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
+
+                    butcherAndHarvestThoughts = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).First().butcherAndHarvestThoughtOverrides;
+                    try
+                    {
+                        foreach (raceButcherThought rBT in butcherAndHarvestThoughts.butcherThoughts)
+                        {
+                            try { Log.Message(butchered.def.defName); } catch { Log.Message("hey!"); }
+                            if (rBT.race == butchered.def)
+                            {
+
+                                if (butcher)
+                                {
+                                    pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
+                                    return;
+                                }
+                            }
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
+                            return;
+                        }
+                    }
+                    catch
+                    {
+                        Log.Message("hey");
+                    }
+
+                    if (butcherAndHarvestThoughts.careAboutUndefinedRaces)
+                    {
+                        if (butcher)
+                        {
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
+                        }
+                        else
+                        {
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+                        }
+                    }
+                    return;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Message(e.Message);
+            }
+
+
+            //Races
             if (pawn.def is RimValiRaceDef def)
             {
                 foreach (raceButcherThought rBT in def.butcherAndHarvestThoughts.butcherThoughts)
                 {
                     if (rBT.race == butchered.def)
                     {
-                       
+
                         if (butcher)
                         {
                             pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
+                            return;
                         }
-                        else
-                        {
-                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
-                        }
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
                         return;
                     }
                 }
@@ -542,14 +612,15 @@ namespace AvaliMod
                     if (butcher)
                     {
                         pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
+                        return;
                     }
-                    else
-                    {
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
-                    }
+
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+                    return;
                 }
-                return;
             }
+
+            //If the pawn is not from RVR.
             if (butcher)
             {
                 pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
@@ -557,9 +628,17 @@ namespace AvaliMod
             }
             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
         }
+
+
+
+
         [HarmonyPrefix]
         public static bool patch(Pawn butcher, float efficiency, ref IEnumerable<Thing> __result, Corpse __instance)
         {
+            if (Harmony.HasAnyPatches("rimworld.erdelf.alien_race.main"))
+            {
+                return true;
+            }
             TaleRecorder.RecordTale(TaleDefOf.ButcheredHumanlikeCorpse, new object[] { butcher });
             Pawn deadPawn = __instance.InnerPawn;
 
@@ -570,15 +649,15 @@ namespace AvaliMod
             {
                 return false;
             }
-            if(butcher.def is RimValiRaceDef def)
+            if (butcher.def is RimValiRaceDef def)
             {
                 butcheredThoughAdder(butcher, deadPawn);
             }
-            foreach(Pawn targetPawn in butcher.Map.mapPawns.SpawnedPawnsInFaction(butcher.Faction))
+            foreach (Pawn targetPawn in butcher.Map.mapPawns.SpawnedPawnsInFaction(butcher.Faction))
             {
-                if(targetPawn.def is RimValiRaceDef rVRDef)
+                if (targetPawn.def is RimValiRaceDef rVRDef)
                 {
-                    butcheredThoughAdder(butcher, deadPawn,false);
+                    butcheredThoughAdder(butcher, deadPawn, false);
                 }
             }
 
@@ -597,7 +676,7 @@ namespace AvaliMod
         [HarmonyPostfix]
         public static void CanGetPatch(Pawn pawn, ThoughtDef def, bool checkIfNullified, ref bool __result)
         {
-            
+
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
                 rimValiRaceDef.replaceThought(ref def);
@@ -616,15 +695,8 @@ namespace AvaliMod
                         __result = false;
                         return;
                     }
-                    //if __result needs to = false, __result = false, otherwise, don't change this
-                    //otherwise every single thought possible will get applied at once, which is bad.
-                    /*else
-                    {
-                        __result = true;
-                        return;
-                    }*/
                 }
-                
+
             }
             __result = __result && true;
         }
@@ -790,8 +862,8 @@ namespace AvaliMod
                 RVDef.replaceThought(ref nT.def);
 
                 newThought = ThoughtMaker.MakeThought(nT.def, newThought.CurStageIndex);
-                
-                
+
+
             }
             return true;
         }
@@ -801,7 +873,7 @@ namespace AvaliMod
     public static class thoughtReplacerPatchSituational {
         [HarmonyPrefix]
         //Never gets called???
-        public static bool replaceThought(ref ThoughtDef def, SituationalThoughtHandler __instance)
+        public static void replaceThought(ref ThoughtDef def, SituationalThoughtHandler __instance)
         {
             //Log.Message("test1");
             Pawn pawn = __instance.pawn;
@@ -809,9 +881,8 @@ namespace AvaliMod
             {
                 rimValiRaceDef.replaceThought(ref def);
                 //Log.Message("Test2");
-                
+
             }
-            return !Traverse.Create(__instance).Field(name: "tmpCachedThoughts").GetValue<HashSet<ThoughtDef>>().Contains(def);
         }
     }
     [HarmonyPatch(typeof(PawnBioAndNameGenerator), "GeneratePawnName")]
@@ -847,7 +918,7 @@ namespace AvaliMod
         public static void setPos(ref Vector3 __result, Rot4 rotation, PawnRenderer __instance)
         {
             Pawn pawn = __instance.graphics.pawn;
-            
+
             PawnGraphicSet set = __instance.graphics;
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
@@ -855,7 +926,7 @@ namespace AvaliMod
                 //no human required
                 if (rimValiRaceDef.bodyPartGraphics.Where(x => x.defName.ToLower() == "head").Count() > 0)
                 {
-                    
+
                     Vector2 offset = new Vector2(0, 0);
                     if (rimValiRaceDef.graphics.headOffsets != null)
                     {
@@ -920,15 +991,37 @@ namespace AvaliMod
     [HarmonyPatch(typeof(PawnGenerator), "GenerateBodyType_NewTemp")]
     public static class BodyPatch
     {
+        public static void setBody(RVRBackstory story, ref Pawn pawn)
+        {
+            RimValiRaceDef rimValiRace = pawn.def as RimValiRaceDef;
+            if (story.bodyDefOverride != null)
+                pawn.RaceProps.body = story.bodyDefOverride;
+            if (story.bodyType != null)
+                pawn.story.bodyType = story.bodyType;
+            else
+                pawn.story.bodyType = rimValiRace.mainSettings.bodyTypeDefs[UnityEngine.Random.Range(0, rimValiRace.mainSettings.bodyTypeDefs.Count - 1)];
+        }
         [HarmonyPostfix]
         public static void bodyPatch(ref Pawn pawn)
         {
+            Pawn p2 = pawn;
             if (pawn.def is RimValiRaceDef rimValiRace)
             {
                 try
                 {
 
                     pawn.story.crownType = CrownType.Average;
+                    if ((pawn.story.adulthood != null && DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == p2.story.adulthood.identifier).Count() > 0))
+                    {
+                        RVRBackstory story = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == p2.story.adulthood.identifier).FirstOrDefault();
+                        setBody(story, ref pawn);
+                        return;
+                    }
+                    if (DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == p2.story.childhood.identifier).Count() > 0){
+                        RVRBackstory story = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == p2.story.childhood.identifier).FirstOrDefault();
+                        setBody(story, ref pawn);
+                        
+                    }
                     pawn.story.bodyType = rimValiRace.mainSettings.bodyTypeDefs[UnityEngine.Random.Range(0, rimValiRace.mainSettings.bodyTypeDefs.Count - 1)];
 
                 }
@@ -957,25 +1050,16 @@ namespace AvaliMod
         [HarmonyPostfix]
         public static void edible(ref bool __result, RaceProperties __instance, ThingDef t)
         {
-            if (Restrictions.consumableRestrictions.ContainsKey(t))
+            ThingDef pawn = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(x => x.race != null && x.race == __instance).First();
+            if (!Restrictions.checkRestrictions(Restrictions.consumableRestrictions, t, pawn) && !!Restrictions.checkRestrictions(Restrictions.consumableRestrictionsWhiteList, t, pawn))
             {
-                List<ThingDef> races = Restrictions.consumableRestrictions[t];
-                ThingDef pawn = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(x => x.race != null && x.race == __instance).First();
-                if (!races.Contains(pawn))
-                {
-                    JobFailReason.Is(pawn.label + " " + "CannotEat".Translate());
-                    __result = false;
-                }
-                else
-                {
-                    //No "Consume grass" for you.
-                    __result = __result && true;
-                }
+                JobFailReason.Is(pawn.label + " " + "CannotEat".Translate());
+                __result = false;
             }
-            else
-            {
-                __result = __result && true;
-            }
+
+            //No "Consume grass" for you.
+            __result = __result && true;
+
         }
     }
     //Cant patch CanEquip, apparently. This still works though.
@@ -985,37 +1069,45 @@ namespace AvaliMod
         [HarmonyPostfix]
         public static void equipable(ref bool __result, Thing thing, Pawn pawn, ref string cantReason)
         {
-
-            if (Restrictions.equipmentRestrictions.ContainsKey(thing.def))
+            if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing.def, pawn.def) || (!Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing.def, pawn.def)))
             {
-                //Log.Message(t.def.defName + " is in building restrictions.");
-                List<ThingDef> races = Restrictions.equipmentRestrictions[thing.def];
-                if ((!races.Contains(pawn.def) || !Restrictions.equipabblbleWhiteLists[thing.def].Contains(pawn.def)))
-                {
-                    __result = false;
-                    cantReason = pawn.def.label + " " + "CannotWear".Translate();
-                    return;
-                }
+               
+                __result = false;
+                cantReason = pawn.def.label + " " + "CannotWear".Translate();
+                return;
 
             }
+
             if (pawn.def is RimValiRaceDef valiRaceDef)
             {
                 if (valiRaceDef.restrictions.canOnlyUseApprovedApparel)
                 {
                     if (thing.def.IsApparel)
                     {
-                        if ((Restrictions.equipmentRestrictions.ContainsKey(thing.def) && Restrictions.equipmentRestrictions[thing.def].Contains(valiRaceDef)) || (Restrictions.equipabblbleWhiteLists.ContainsKey(thing.def) && Restrictions.equipabblbleWhiteLists[thing.def].Contains(pawn.def)))
+
+                       if(Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing.def, pawn.def) ||  Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing.def, pawn.def))
                         {
                             __result = true;
-                            cantReason = pawn.def.label + " " + "CannotWear".Translate();
+                         
                             return;
                         }
                         else
                         {
+                            
                             __result = false;
                             cantReason = pawn.def.label + " " + "CannotWear".Translate();
                             return;
                         }
+                    }
+                }
+                else
+                {
+                    if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing.def, pawn.def))
+                    {
+                        __result = false;
+                        cantReason = pawn.def.label + " " + "CannotWear".Translate();
+                        return;
+
                     }
                 }
             }
@@ -1032,24 +1124,17 @@ namespace AvaliMod
         public static void constructable(Thing t, Pawn p, ref bool __result)
         {
             //Log.Message(t.def.ToString());
-            if (Restrictions.buildingRestrictions.ContainsKey(t.def.entityDefToBuild))
+            if (!Restrictions.checkRestrictions<BuildableDef, string>(Restrictions.buildingRestrictions, t.def.entityDefToBuild, p.def.defName))
             {
-                //Log.Message(t.def.defName + " is in building restrictions.");
-                List<string> races = Restrictions.buildingRestrictions[t.def.entityDefToBuild];
-                if (!races.Contains(p.def.defName))
-                {
-                    __result = false;
-                    JobFailReason.Is(p.def.label + " " + "CannotBuild".Translate());
-                    return;
-                }
-                else
-                {
-                    __result = true && __result;
-                    return;
-                }
+
+                __result = false;
+                JobFailReason.Is(p.def.label + " " + "CannotBuild".Translate());
+                return;
             }
+
             __result = true && __result;
             return;
+
         }
     }
     [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics")]
@@ -1067,7 +1152,7 @@ namespace AvaliMod
 
                 if (colorComp.colors == null || colorComp.colors.Count() == 0)
                 {
-                    rimvaliRaceDef.GenColors(pawn);
+                    rimvaliRaceDef.GenGraphics(pawn);
                 }
                 if (!ColorInfo.sets.ContainsKey(pawn.GetHashCode().ToString()))
                 {
@@ -1140,7 +1225,7 @@ namespace AvaliMod
     }
 
 
-    //This patch helps with automatic resizing, and apparel graphics
+    // //This patch helps with automatic resizing, and apparel graphics
     [HarmonyPatch(typeof(ApparelGraphicRecordGetter), "TryGetGraphicApparel")]
     public static class Avali_ApparelGraphicRecordGetter_TryGetGraphicApparel_AvaliSpecificHat_Patch
     {
@@ -1150,7 +1235,7 @@ namespace AvaliMod
           ref BodyTypeDef bodyType,
           ref ApparelGraphicRecord rec)
         {
-           
+
             if (bodyType != AvaliMod.AvaliDefs.Avali && bodyType != AvaliMod.AvaliDefs.Avali)
                 return;
             if (apparel.def.apparel.LastLayer == ApparelLayerDefOf.Overhead)
@@ -1161,7 +1246,7 @@ namespace AvaliMod
                     Pawn pawn = apparel.Wearer;
                     if (!((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
                     {
-                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout,apparel.def.graphicData.drawSize/def.bodyPartGraphics.First(x=>x.defName.ToLower()=="head").south.size, apparel.DrawColor);
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / def.bodyPartGraphics.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
                         rec = new ApparelGraphicRecord(graphic, apparel);
                     }
                 }
@@ -1170,10 +1255,10 @@ namespace AvaliMod
                     if (apparel.Wearer.def is RimValiRaceDef defTwo)
                     {
                         Pawn pawn = apparel.Wearer;
-                        
+
                         if (!((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
                         {
-                            Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize/defTwo.bodyPartGraphics.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
+                            Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / defTwo.bodyPartGraphics.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
                             rec = new ApparelGraphicRecord(graphic, apparel);
                         }
                     }
@@ -1213,6 +1298,7 @@ namespace AvaliMod
                 if (pawn.def is RimValiRaceDef rimValiRaceDef)
                 {
                     RenderPatchTwo.RenderBodyParts(true, zero, __instance, Rot4.South);
+                    
                 }
             }
             catch(Exception error)
@@ -1231,7 +1317,6 @@ namespace AvaliMod
   [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) }) ]
     static class RenderPatchTwo
     {
-
         public static void RenderBodyParts(bool portrait, float angle, Vector3 vector, PawnRenderer pawnRenderer, Rot4 rotation)
         {
             Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.up);
@@ -1297,13 +1382,13 @@ namespace AvaliMod
                                 Log.ErrorOnce("Pawn graphics does not contain color set: " + renderable.useColorSet + " for " + renderable.defName + ", going to fallback RGB colors. (These should look similar to your mask colors)", 1);
                             }
 
-                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), ContentFinder<Texture2D>.Get(renderable.texPath(pawn) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1, color2, color3);
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn, renderable.getMyIndex(pawn)), ContentFinder<Texture2D>.Get(renderable.texPath(pawn, renderable.getMyIndex(pawn)) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1, color2, color3);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), vector + offset.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, quaternion)) * 2f * 57.29578f),
                             Quaternion.AngleAxis(0, Vector3.up) * quaternion, graphic.MatAt(rotation), portrait);
                         }
                         else
                         {
-                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), ContentFinder<Texture2D>.Get(renderable.texPath(pawn) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn, renderable.getMyIndex(pawn)), ContentFinder<Texture2D>.Get(renderable.texPath(pawn, renderable.getMyIndex(pawn)) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), vector + offset.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, quaternion)) * 2f * 57.29578f),
                             Quaternion.AngleAxis(0, Vector3.up) * quaternion, graphic.MatAt(rotation), portrait);
                         }
@@ -1372,13 +1457,13 @@ namespace AvaliMod
                                 color3 = colorComp.colors[colorSetToUse].colorThree;
                             }
 
-                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), ContentFinder<Texture2D>.Get(renderable.texPath(pawn) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1, color2, color3);
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn, renderable.getMyIndex(pawn)), ContentFinder<Texture2D>.Get(renderable.texPath(pawn, renderable.getMyIndex(pawn)) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1, color2, color3);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), offset + vector.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, Quaternion.identity)) * 2f * 57.29578f),
                             Quaternion.AngleAxis(0, Vector3.up), graphic.MatAt(rotation), portrait);
                         }
                         else
                         {
-                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), ContentFinder<Texture2D>.Get(renderable.texPath(pawn) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
+                            AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn, renderable.getMyIndex(pawn)), ContentFinder<Texture2D>.Get(renderable.texPath(pawn, renderable.getMyIndex(pawn)) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), offset + vector.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, Quaternion.identity)) * 2f * 57.29578f),
                             Quaternion.AngleAxis(0, Vector3.up), graphic.MatAt(rotation), portrait);
                         }
@@ -1391,20 +1476,44 @@ namespace AvaliMod
         {
             Pawn pawn = __instance.graphics.pawn;
             PawnGraphicSet graphics = __instance.graphics;
-            
-            if (__instance.graphics.pawn.def is RimValiRaceDef)
+            if (__instance.graphics.pawn.def is RimValiRaceDef && !portrait)
             {
-                if (!portrait)
+                if (__instance.graphics.pawn.GetPosture() != PawnPosture.Standing)
                 {
-                    RenderBodyParts(portrait, angle, rootLoc, __instance, __instance.graphics.pawn.Rotation);
-
+                    angle = __instance.BodyAngle();
+                    __instance.LayingFacing();
+                    Building_Bed building_Bed = __instance.graphics.pawn.CurrentBed();
+                    if (building_Bed != null && __instance.graphics.pawn.RaceProps.Humanlike)
+                    {
+                        renderBody = building_Bed.def.building.bed_showSleeperBody;
+                        AltitudeLayer altLayer = (AltitudeLayer)Mathf.Max((int)building_Bed.def.altitudeLayer, 17);
+                        Vector3 vector2;
+                        Vector3 a3 = vector2 = __instance.graphics.pawn.Position.ToVector3ShiftedWithAltitude(altLayer);
+                        vector2.y += 0.024489796f;
+                        Rot4 rotation = building_Bed.Rotation;
+                        rotation.AsInt += 2;
+                        float d = -__instance.BaseHeadOffsetAt(Rot4.South).z;
+                        Vector3 a2 = rotation.FacingCell.ToVector3();
+                        rootLoc = a3 + a2 * d;
+                        rootLoc.y += 0.009183673f;
+                    }
+                    else if (!__instance.graphics.pawn.Dead && __instance.graphics.pawn.CarriedBy == null)
+                    {
+                        rootLoc.y = AltitudeLayer.LayingPawn.AltitudeFor() + 0.009183673f;
+                    }
 
                 }
-
+                
+                RenderPatchTwo.RenderBodyParts(portrait, angle, rootLoc, __instance, __instance.graphics.pawn.Rotation);
+                if (__instance.graphics.pawn.Spawned && !__instance.graphics.pawn.Dead)
+                {
+                    __instance.graphics.pawn.stances.StanceTrackerDraw();
+                    __instance.graphics.pawn.pather.PatherDraw();
+                }
             }
         }
     }
-    
+
     [HarmonyPatch(typeof(WorkGiver_Researcher), "ShouldSkip")]
     public class researchPatch
     {
@@ -1413,16 +1522,22 @@ namespace AvaliMod
         {
             if (Find.ResearchManager.currentProj != null)
             {
-                if (Restrictions.researchRestrictions.Count() > 0 && Restrictions.researchRestrictions.ContainsKey(Find.ResearchManager.currentProj))
+                if (Restrictions.factionResearchRestrictions.ContainsKey(Find.ResearchManager.currentProj) && !Restrictions.factionResearchRestrictions[Find.ResearchManager.currentProj].Contains(Faction.OfPlayer.def))
                 {
-                    if (!Restrictions.researchRestrictions[Find.ResearchManager.currentProj].Contains(pawn.def))
-                    {
-                        __result = false;
-                    }
-                    else
-                    {
-                        __result = true && __result;
-                    }
+                    __result = false;
+                    return;
+                }
+                if (Restrictions.factionResearchBlacklist.ContainsKey(Find.ResearchManager.currentProj) && Restrictions.factionResearchBlacklist[Find.ResearchManager.currentProj].Contains(Faction.OfPlayer.def))
+                {
+                    __result = false;
+                    return;
+                }
+                if (!Restrictions.checkRestrictions(Restrictions.researchRestrictions, Find.ResearchManager.currentProj, pawn.def)) {
+                    __result = false;
+                }
+                else
+                {
+                    __result = true && __result;
                 }
             }
         }

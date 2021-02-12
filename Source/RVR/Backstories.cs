@@ -2,6 +2,7 @@
 using Verse;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace AvaliMod { 
 
@@ -46,13 +47,23 @@ namespace AvaliMod {
         public List<traitList> forcedTraits = new List<traitList>();
         public List<traitList> disabledTraits = new List<traitList>();
         public List<WorkTags> disabledWorkTypes = new List<WorkTags>();
+        public List<WorkTags> enabledWorkTypes = new List<WorkTags>();
 
         public string linkedStoryIdentifier;
 
+        public List<Colors> colorGenOverrides = new List<Colors>();
+        public bool hasButcherThoughtOverrides = false;
+
+        public butcherAndHarvestThoughts butcherAndHarvestThoughtOverrides = new butcherAndHarvestThoughts();
+        public BodyDef bodyDefOverride;
+        public BodyTypeDef bodyType;
         //Not accessible in XML, dont use them.
         public Backstory story;
         private List<TraitEntry> traitsToForce = new List<TraitEntry>();
         private List<TraitEntry> traitsToDisable = new List<TraitEntry>();
+
+        
+
         public bool CanSpawn(Pawn pawn)
         {
             if(this.backstorySlot == BackstorySlot.Adulthood)
@@ -73,7 +84,7 @@ namespace AvaliMod {
             }
             if (Rand.Range(0, 100) < globalChance)
             {
-
+              
                 if (!canSpawnFemale && pawn.gender == Gender.Female)
                 {
                     return false;
@@ -118,10 +129,6 @@ namespace AvaliMod {
             foreach (traitList traitItem in forcedTraits){
                 traitsToForce.Add(new TraitEntry(traitItem.def, traitItem.degree));
             }
-            foreach(traitList traitItem in disabledTraits)
-            {
-
-            }
             this.story = new Backstory
             {
                 slot = this.backstorySlot,
@@ -135,16 +142,19 @@ namespace AvaliMod {
                 skillGainsResolved = skills,
                 forcedTraits = this.traitsToForce,
                 disallowedTraits = this.traitsToDisable,
-                workDisables = ((Func<WorkTags>)delegate
-                {
-                    WorkTags tags = WorkTags.None;
-                    this.disabledWorkTypes.ForEach(tag => tags |= tag);
-                    return tags;
-                }).Invoke()
-
+               
+                workDisables=((Func<WorkTags>) delegate {
+                    WorkTags work = WorkTags.None;
+                   Enum.GetValues(typeof(WorkTags)).Cast<WorkTags>().Where(tag =>
+                   ((!enabledWorkTypes.NullOrEmpty() && !enabledWorkTypes.Contains(tag))
+                    || disabledWorkTypes.Contains(tag)) 
+                    && (!(disabledWorkTypes.Contains(WorkTags.AllWork)) && !(tag == WorkTags.AllWork))
+                    ).ToList().ForEach(tag => work |= tag);
+                    return work;
+                })()
                 };
             
-
+    
             BackstoryDatabase.AddBackstory(story);
             //Log.Message("created story: " + this.defName);
         }

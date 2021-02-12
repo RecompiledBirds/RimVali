@@ -20,6 +20,7 @@ namespace AvaliMod
         public Dictionary<string, ColorSet> oldColors = new Dictionary<string, ColorSet>();
         public List<string> colorKey = new List<string>();
         public List<ColorSet> colorValue = new List<ColorSet>();
+
         public override void CompExposeData()
         {
             Scribe_Collections.Look<string,ColorSet>(ref oldColors, "colors", LookMode.Value, LookMode.Deep, ref colorKey, ref colorValue);
@@ -28,6 +29,7 @@ namespace AvaliMod
                 oldColors = new Dictionary<string, ColorSet>();
             }
         }
+
         public override void CompPostPostAdd(DamageInfo? dinfo)
 
         {
@@ -35,14 +37,9 @@ namespace AvaliMod
             if(pawn.def is RimValiRaceDef def)
             {
                 colorComp colorComp= pawn.GetComp<colorComp>();
-                bool hasFound = false;
                 foreach(string set in colorComp.colors.Keys)
-                {
-                    if (hasFound)
-                    {
-                        break;
-                    }
-                    if (Props.targetsSpecifcSet == true && Props.setsToChange.Contains(set))
+                { 
+                    if (Props.targetsSpecifcSets == true && Props.setsToChange.Contains(set))
                     {
                         if (colorComp.colors[set].dyeable)
                         {
@@ -63,7 +60,7 @@ namespace AvaliMod
                             }
                         }
                     }
-                    else if(Props.targetsSpecifcSet != true)
+                    else if(Props.targetsSpecifcSets != true)
                     {
                         if (colorComp.colors[set].dyeable)
                         {
@@ -88,8 +85,8 @@ namespace AvaliMod
                 PawnRenderer render = new PawnRenderer(pawn);
                 render.graphics.ResolveAllGraphics();
             }
-            //base.CompPostPostAdd(dinfo);
         }
+
         public override void CompPostPostRemoved()
         {
             Pawn pawn = this.parent.pawn;
@@ -108,7 +105,7 @@ namespace AvaliMod
         public bool changesSecondColor = true;
         public bool changesThirdColor = true;
 
-        public bool targetsSpecifcSet = false;
+        public bool targetsSpecifcSets = false;
         public List<string> setsToChange;
 
         public DyeCompProps()

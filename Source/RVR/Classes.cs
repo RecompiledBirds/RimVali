@@ -82,10 +82,7 @@ namespace AvaliMod
 
         //Bodytypes
         public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
-        //Are these whitelists?
-        public bool researchProjectDefsIsWhiteList = false;
-        public bool thoughtDefsIsWhiteList = false;
-        public bool traitsIsWhiteList = false;
+
 
         public bool canOnlyUseApprovedApparel = false;
         //Whitelists
@@ -94,7 +91,18 @@ namespace AvaliMod
         public List<ThingDef> buildablesWhitelist = new List<ThingDef>();
 
         //Mod lists
+
+        //-Apparel
         public List<string> modContentRestrictionsApparelWhiteList = new List<string>();
+        public List<string> modContentRestrictionsApparelList = new List<string>();
+        //-Research
+        public List<string> modResearchRestrictionsList = new List<string>();
+        public List<string> modResearchRestrictionsWhiteList = new List<string>();
+        //-Traits
+        public List<string> modTraitRestrictions = new List<string>();
+        public List<string> modDisabledTraits = new List<string>();
+        //-Buildings
+        public List<string> modBuildingRestrictions = new List<string>();
     }
 
     public class Main
@@ -170,9 +178,17 @@ namespace AvaliMod
         public Dictionary<string, ColorSet> colors = new Dictionary<string, ColorSet>();
         public List<string> colorKey = new List<string>();
         public List<ColorSet> colorValue = new List<ColorSet>();
+
+
+        public Dictionary<string, int> renderableDefIndexes = new Dictionary<string, int>();
+        public List<string> renderableKeys = new List<string>();
+        public List<int> index = new List<int>();
+
         public override void PostExposeData()
         {
             Scribe_Collections.Look(ref colors, "colors", LookMode.Value, LookMode.Deep, ref colorKey, ref colorValue);
+            Scribe_Collections.Look(ref renderableDefIndexes, "renderables", LookMode.Value, LookMode.Deep, ref renderableKeys, ref index);
+           
         }
     }
     public class colorCompProps : CompProperties
