@@ -619,4 +619,47 @@
      </researchPrerequisites>
   </RecipeDef>
 
+
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveAeroTungstenFiber</defName>
+    <label>Weave aero tungsten fiber</label>
+    <description>Weave aero tungsten fiber.</description>
+    <jobString>Weaving Aero-Tungsten fiber.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AeroTungstenCarbide</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbonFiber</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Hyperweave</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroTungstenFiber>25</AvaliAeroTungstenFiber>
+    </products>
+    <researchPrerequisites>
+       <li>AvaliAeroTungstenFiber</li>
+     </researchPrerequisites>
+  </RecipeDef>
 </Defs>
