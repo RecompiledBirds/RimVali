@@ -74,14 +74,20 @@
       <HintPath>Refs\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="AlienPartGenerator.BodyAddon.cs" />
     <None Include="AlienPartGenerator.cs" />
     <None Include="BackstoryDef.cs" />
     <Compile Include="CodeFile1.cs" />
     <None Include="ColorGenerators.cs" />
     <None Include="HarmonyPatches.cs" />
+    <Compile Include="HarmonyPatches\Class1.cs" />
+    <Compile Include="ThingComps\Aeriel\AERIALSYSTEM.cs" />
     <Compile Include="ModScanner.cs" />
     <Compile Include="DeathWorker.cs" />
     <Compile Include="HediffStuff\AddHediff.cs" />
@@ -121,10 +127,14 @@
     <Compile Include="Graphic\BaseContent.cs" />
     <Compile Include="Graphic\GraphicUtility.cs" />
     <Compile Include="RVR\Classes.cs" />
-    <Compile Include="RVR\CodeFile1.cs" />
+    <Compile Include="RVR\Backstories.cs" />
+    <Compile Include="RVR\DyeComp.cs" />
+    <Compile Include="RVR\FactionResearchRestriction.cs" />
     <Compile Include="RVR\patches.cs" />
     <Compile Include="RVR\RenderDef.cs" />
     <Compile Include="RVR\ThingDef.cs" />
+    <Compile Include="ThingComps\Aeriel\CodeFile1.cs" />
+    <Compile Include="ThingComps\Aeriel\CodeFile2.cs" />
     <Compile Include="ThingComps\EggLaying\Comp.cs" />
     <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />
