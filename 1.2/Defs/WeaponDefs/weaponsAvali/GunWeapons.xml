@@ -38,7 +38,7 @@
       <effectWorking>Smith</effectWorking>
       <soundWorking>Recipe_Smith</soundWorking>
       <recipeUsers>
-        <li>TableMachining</li>
+        <li>AvaliNanoForge</li>
       </recipeUsers>
       <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
@@ -58,8 +58,8 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>11</damageAmountBase>
       <stoppingPower>2</stoppingPower>
-      <speed>65</speed>
-      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <speed>150</speed>
+      <armorPenetrationBase>0.2</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -81,9 +81,9 @@
       <WorkToMake>500</WorkToMake>
       <Mass>1.5</Mass>
       <AccuracyTouch>0.9</AccuracyTouch>
-      <AccuracyShort>0.7</AccuracyShort>
-      <AccuracyMedium>0.8</AccuracyMedium>
-      <AccuracyLong>0.4</AccuracyLong>
+      <AccuracyShort>0.8</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.6</AccuracyLong>
       <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
@@ -92,7 +92,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliPistolBullet</defaultProjectile>
         <warmupTime>0.3</warmupTime>
-        <range>25.9</range>
+        <range>15</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
@@ -143,7 +143,7 @@
     <projectile>
       <damageDef>Bullet</damageDef>
       <damageAmountBase>12</damageAmountBase>
-      <speed>50</speed>
+      <speed>150</speed>
       <armorPenetrationBase>0.5</armorPenetrationBase>
     </projectile>
   </ThingDef>
@@ -231,7 +231,7 @@
     <projectile>
       <damageDef>Bullet</damageDef>
       <damageAmountBase>15</damageAmountBase>
-      <speed>80</speed>
+      <speed>170</speed>
       <armorPenetrationBase>0.5</armorPenetrationBase>
     </projectile>
   </ThingDef>
@@ -315,9 +315,12 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>30</damageAmountBase>
-      <speed>100</speed>
-      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <damageAmountBase>35</damageAmountBase>
+      <speed>200</speed>
+      <!-- 500% -->
+      <stoppingPower>5</stoppingPower>
+      <!-- 200% -->
+      <armorPenetrationBase>2</armorPenetrationBase>
     </projectile>
   </ThingDef>
     <!-- Sniper rifle -->
@@ -335,10 +338,10 @@
     <statBases>
       <WorkToMake>34000</WorkToMake>
       <Mass>5.5</Mass>
-      <AccuracyTouch>0.6</AccuracyTouch>
-      <AccuracyShort>0.7</AccuracyShort>
-      <AccuracyMedium>0.8</AccuracyMedium>
-      <AccuracyLong>0.9</AccuracyLong>
+      <AccuracyTouch>0.5</AccuracyTouch>
+      <AccuracyShort>0.8</AccuracyShort>
+      <AccuracyMedium>0.9</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
       <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
     </statBases>
     <costList>
@@ -351,8 +354,8 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>AvaliRifleBullet</defaultProjectile>
-        <warmupTime>5</warmupTime>
+        <defaultProjectile>AvaliSniperBullet</defaultProjectile>
+        <warmupTime>2</warmupTime>
         <range>55</range>
         <soundCast>Shot_SniperRifle</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
@@ -400,9 +403,9 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>13</damageAmountBase>
-      <speed>50</speed>
-      <armorPenetrationBase>0.3</armorPenetrationBase>
+      <damageAmountBase>25</damageAmountBase>
+      <speed>150</speed>
+      <armorPenetrationBase>0.7</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -411,7 +414,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliShotgun</defName>
     <label>Avali Shotgun</label>
-    <description>An avali shotgun. Unlike classic avali technologies, this weapon does NOT use rail technology to fire, and is much closer to a human gun than the others.</description>
+    <description>An avali shotgun. Like all avali weapons, it is based off railgun technology, allowing for long range at the cost of short range accuracy.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Shotgun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -422,10 +425,10 @@
       <WorkToMake>34000</WorkToMake>
       <Mass>5.5</Mass>
       <AccuracyTouch>0.56</AccuracyTouch>
-      <AccuracyShort>0.66</AccuracyShort>
+      <AccuracyShort>0.8</AccuracyShort>
       <AccuracyMedium>0.75</AccuracyMedium>
       <AccuracyLong>0.8</AccuracyLong>
-      <RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>100</Steel>
@@ -438,9 +441,9 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliShotgunBullet</defaultProjectile>
         <warmupTime>1.9</warmupTime>
-        <range>25</range>
+        <range>30</range>
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-        <burstShotCount>3</burstShotCount>
+        <burstShotCount>9</burstShotCount>
         <soundCast>Shot_Shotgun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
