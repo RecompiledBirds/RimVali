@@ -8,8 +8,12 @@
   
   <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
     <defName>EarLL</defName>
-    <tex>avali/Ears/Male/LowerLeft/MaleLowerLeft</tex>
-    <femaleTex>avali/Ears/Female/LowerLeft/FemaleLowerLeft</femaleTex>
+    <textures>
+        <li>
+          <tex>avali/Ears/Male/LowerLeft/MaleLowerLeft</tex>
+          <femaleTex>avali/Ears/Female/LowerLeft/FemaleLowerLeft</femaleTex>
+       </li>
+    </textures>
     <bodyPart>left lower ear</bodyPart>
     <backstoryTextures>
       <li>
@@ -41,8 +45,12 @@
   
   <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
     <defName>EarLR</defName>
-    <tex>avali/Ears/Male/LowerRight/MaleLowerRight</tex>
-    <femaleTex>avali/Ears/Female/LowerRight/FemaleLowerRight</femaleTex>
+    <textures>
+        <li>
+          <tex>avali/Ears/Male/LowerRight/MaleLowerRight</tex>
+          <femaleTex>avali/Ears/Female/LowerRight/FemaleLowerRight</femaleTex>
+        </li>
+    </textures>
     <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
@@ -74,8 +82,12 @@
   
   <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
     <defName>EarUR</defName>
-    <tex>avali/Ears/Male/UpperRight/MaleUpperRight</tex>
-    <femaleTex>avali/Ears/Female/UpperRight/FemaleUpperRight</femaleTex>
+    <textures>
+        <li>
+          <tex>avali/Ears/Male/UpperRight/MaleUpperRight</tex>
+          <femaleTex>avali/Ears/Female/UpperRight/FemaleUpperRight</femaleTex>
+        </li>
+    </textures>
     <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
@@ -107,8 +119,12 @@
   
     <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
     <defName>EarUL</defName>
-    <tex>avali/Ears/Male/UpperLeft/MaleUpperLeft</tex>
-    <femaleTex>avali/Ears/Female/UpperLeft/FemaleUpperLeft</femaleTex>
+    <textures>
+        <li>
+          <tex>avali/Ears/Male/UpperLeft/MaleUpperLeft</tex>
+          <femaleTex>avali/Ears/Female/UpperLeft/FemaleUpperLeft</femaleTex>
+        </li>
+    </textures>
     <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
@@ -142,7 +158,11 @@
     <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
       <defName>EyeL</defName>
       <useColorSet>Eye</useColorSet>
-      <tex>avali/Eyes/EyeL</tex>
+      <textures>
+        <li>
+          <tex>avali/Eyes/EyeL</tex>
+        </li>
+      </textures>
       <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
@@ -177,7 +197,11 @@
   <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
       <defName>EyeR</defName>
       <useColorSet>Eye</useColorSet>
-      <tex>avali/Eyes/EyeR</tex>
+      <textures>
+        <li>
+          <tex>avali/Eyes/EyeR</tex>
+        </li>
+      </textures>        
       <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
@@ -211,7 +235,11 @@
   
   <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
       <defName>AvaliMouth</defName>
-      <tex>avali/Mouth/Mouth</tex>
+      <textures>
+        <li>
+          <tex>avali/Mouth/Mouth</tex>
+        </li>
+      </textures>
         <bodyPart>head</bodyPart>
         <west>
        <position>(-0.1,0.4)</position>
@@ -230,7 +258,7 @@
     </north>
     <south>
        <position>(0,0.4)</position>
-      <layer>0.3247589</layer>
+      <layer>0.031</layer>
       <size>0.8</size>
     </south>
   </AvaliMod.RenderableDef>
@@ -242,9 +270,13 @@
         <tex>avali/Unique/Eimilian/tailskirt/Emil</tex>
       </li>
     </backstoryTextures>
-    <tex>avali/Tail/Tailskirt/Male/MaleTailskirt</tex>
     <showsInBed>false</showsInBed>
-    <femaleTex>avali/Tail/Tailskirt/Female/FemaleTailskirt</femaleTex>
+    <textures>
+       <li>
+        <tex>avali/Tail/Tailskirt/Male/MaleTailskirt</tex>
+        <femaleTex>avali/Tail/Tailskirt/Female/FemaleTailskirt</femaleTex>
+      </li>
+    </textures>
     <bodyPart>avali Tail</bodyPart>
     <east>
       <position>(-0.13,-0.15)</position>
@@ -276,9 +308,14 @@
         <tex>avali/Unique/Eimilian/Tail/EimilTail</tex>
       </li>
     </backstoryTextures>
-    <tex>avali/Tail/Male/MaleTail</tex>
     <showsInBed>false</showsInBed>
-    <femaleTex>avali/Tail/Female/FemaleTail</femaleTex>
+    
+    <textures>
+      <li>
+        <tex>avali/Tail/Male/MaleTail</tex>
+        <femaleTex>avali/Tail/Female/FemaleTail</femaleTex>
+      </li>
+    </textures>
     <bodyPart>avali Tail</bodyPart>
     <east>
      <position>(-0.41,0.12)</position>
@@ -304,8 +341,12 @@
   
   <AvaliMod.RenderableDef  ParentName="BaseAvaliPart">
      <defName>Head</defName>
-     <tex>avali/Heads/Male/MaleHead</tex>
-     <femaleTex>avali/Heads/Female/FemaleHead</femaleTex>
+     <textures>
+       <li>
+         <tex>avali/Heads/Male/MaleHead</tex>
+         <femaleTex>avali/Heads/Female/FemaleHead</femaleTex>
+       </li>
+     </textures>
      <bodyPart>head</bodyPart>
      <backstoryTextures>
       <li>
@@ -337,8 +378,12 @@
   
   <AvaliMod.RenderableDef  ParentName="BaseAvaliPart">
      <defName>Body</defName>
-     <tex>avali/Body/Male/MaleBody</tex>
-     <femaleTex>avali/Body/Female/FemaleBody</femaleTex>
+     <textures>
+        <li>
+         <tex>avali/Body/Male/MaleBody</tex>
+         <femaleTex>avali/Body/Female/FemaleBody</femaleTex>
+        </li>
+     </textures>
      <bodyPart>Torso</bodyPart>
      <showsInBed>false</showsInBed>
      <backstoryTextures>
@@ -443,6 +488,29 @@
         <li>Avali</li>
       </bodyTypeDefs>
     </mainSettings>
+    
+    
+    <butcherAndHarvestThoughts>
+      <butcherThoughts>
+        <li>
+          <race>RimVali</race>
+          <butcheredPawnThought>ButcheredAvali</butcheredPawnThought>
+          <knowButcheredPawn>KnowButcheredAvaliCorpse</knowButcheredPawn>
+        </li>
+      </butcherThoughts>
+      <harvestedThoughts>
+        <li>
+          <race>RimVali</race>
+        </li>
+      </harvestedThoughts>
+      
+      <!-- Do we really care if another race has had their organs harvested or been butchered? -->
+      <careAboutUndefinedRaces>false</careAboutUndefinedRaces>
+    </butcherAndHarvestThoughts>
+    
+    
+    
+    
     <raceInsertion>
       <!-- globalChance and chance stack! -->
       <!--A global chance of 100 and 50 = 50, but a global chance of 50 and a chance of 50 = 25  -->
@@ -693,6 +761,10 @@
               <replacementThought>MyParentLost</replacementThought>
             </li>
             <li>
+              <thoughtToReplace>SleptInBarracks</thoughtToReplace>
+              <replacementThought>AvaliSharedBedRoom</replacementThought>
+            </li>
+            <li>
               <thoughtToReplace>SleptInBedroom</thoughtToReplace>
               <replacementThought>AvaliSleptAlone</replacementThought>
             </li>
@@ -708,16 +780,10 @@
     
     
     <restrictions>
-      <equippables>
-        <li>AvaliTDW</li>
-      </equippables>
-      <buildables>
-        <li>AvaliNanoForge</li>
-        <li>AvaliResearchBench</li>
-        <li>AvaliNanoLoom</li>
-        <li>AvaliBasicTurret</li>
-        <li>AvaliWall</li>
-      </buildables>
+      <disabledTraits>
+        <li>BodyPurist</li>
+        <li>Transhumanist</li>
+      </disabledTraits>
       <thoughtBlacklist>
         <li>EnvironmentDark</li>
         <li>Naked</li>
@@ -731,37 +797,27 @@
             
         <li>ObservedLayingCorpse</li>
       </thoughtBlacklist>
-      <consumables>
-      </consumables>
-      <researchProjectDefs>
-                <li>BasicRimValiTech</li>
-                <li>TungstenProcessingBasic</li>
-                <li>BasicAvaliBionics</li>
-                <li>ResearchNanoForge</li>
-                <li>ResearchNanoLoom</li>
-                <li>AvaliAdvancedMelee</li>
-                <li>AvaliAdvancedGuns</li>
-                <li>AvaliBasicWeapons</li>
-                <li>NanoCarbonResearch</li>
-                <li>NanoFibreResearch</li>
-                <li>AeroWeaveResearch</li>
-                <li>AvaliAeroTungsten</li>
-                <li>AvaliFighting</li>
-                <li>AdvancedAvaliBionics</li>
-                <li>AvaliEliteCooling</li>
-                <li>AvaliAdvCooling</li>
-                <li>BasicAvaliImplants</li>
-      </researchProjectDefs>
+
       <modContentRestrictionsApparelWhiteList>
         <li>ludeon.rimworld</li>
       </modContentRestrictionsApparelWhiteList>
-      <traits>
-        <li>AvaliFireAfraid</li>
-        <li>AvaliNormal</li>
-        <li>AvaliRare</li>
-        <li>AvaliRareFireAfraid</li>
-        <li>AvaliBionicCareless</li>
-      </traits>
+
+      <modContentRestrictionsApparelList>
+        <li>nezitheavali.rimvali</li>
+      </modContentRestrictionsApparelList>
+
+      <modResearchRestrictionsList>
+         <li>nezitheavali.rimvali</li>
+      </modResearchRestrictionsList>
+      
+      <modTraitRestrictions>
+        <li>nezitheavali.rimvali</li>
+      </modTraitRestrictions>
+
+      <modBuildingRestrictions>
+         <li>nezitheavali.rimvali</li>
+      </modBuildingRestrictions>
+
       <bedDefs>
         <li>AvalipillowsThree</li>
         <li>AvalipillowsTwo</li>
@@ -792,7 +848,6 @@
 			      <ShootingAccuracyPawn>6</ShootingAccuracyPawn>
 						<Mass>45</Mass>
             <RestRateMultiplier>1.25</RestRateMultiplier>
-            <restFallFactor>1.5</restFallFactor>
         </statBases>
         <tools>
             <li>
