@@ -369,7 +369,7 @@ namespace AvaliMod
             }
             return true;
         }
-        public static int PawnOfRaceCount(Faction faction, ThingDef race) => PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction).Where(x => x.Faction == faction).Count();
+        public static int PawnOfRaceCount(Faction faction, ThingDef race) => PawnsOfRaceInFaction(race, faction).Count();
 
         public static IEnumerable<Pawn> PawnsOfRaceInFaction(ThingDef race, Faction faction) => PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction).Where(x=>IsOfRace(x,race));
 
