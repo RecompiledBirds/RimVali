@@ -11,11 +11,11 @@ namespace AvaliMod
             PackComp packComp = pawn.TryGetComp<PackComp>();
 
             
-            if (packComp.ticksSinceLastInpack == 0 && (RimValiUtility.GetPackWithoutSelf(pawn) == null || RimValiUtility.GetPackWithoutSelf(pawn).size < 2))
+            if (packComp.ticksSinceLastInpack == 0 && (RimValiUtility.GetPackWithoutSelf(pawn) == null || RimValiUtility.GetPackWithoutSelf(pawn).pawns.Count < 2))
             {
                 packComp.ticksSinceLastInpack = Find.TickManager.TicksGame;
             }
-            else if (RimValiUtility.GetPackWithoutSelf(pawn) != null && RimValiUtility.GetPackWithoutSelf(pawn).size > 1)
+            else if (RimValiUtility.GetPackWithoutSelf(pawn) != null && RimValiUtility.GetPackWithoutSelf(pawn).pawns.Count > 1)
             {
                 packComp.ticksSinceLastInpack = 0;
             }

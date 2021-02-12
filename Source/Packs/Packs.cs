@@ -11,7 +11,6 @@ namespace AvaliMod
 
         public string name = "NoName";
         public List<Pawn> pawns = new List<Pawn>();
-        public int size = 1;
         public Faction faction = null;
         public List<DeathDate> deathDates = new List<DeathDate>();
         public Date creationDate = new Date();
@@ -22,61 +21,60 @@ namespace AvaliMod
             Scribe_Values.Look(ref name, "packName", "NoName", true);
             Scribe_References.Look<Faction>(ref faction, "faction", false);
             Scribe_Collections.Look<DeathDate>(ref deathDates, "deathDates", LookMode.Deep, Array.Empty<object>());
-            Scribe_Deep.Look<Date>(ref creationDate, "cDate", new Date());
+            Scribe_Deep.Look<Date>(ref creationDate, "cDate");
         }
 
         public AvaliPack()
         {
-
         }
         public AvaliPack(Faction faction)
         {
             this.faction = faction;
         }
-     
+        
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public string GetUniqueLoadID()
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         {
-            return "pack_" +this.GetHashCode().ToString();
+            return "pack_" + this.GetHashCode().ToString();
         }
+        
 
     }
     public class Date : Thing, ILoadReferenceable, IExposable
     {
-        public int day;
-        public Quadrum quadrum;
+        public long date = 0;
+        public int day = 0;
+        public int ticks = 0;
+        public Quadrum quadrum = Quadrum.Undefined;
         public Date()
         {
-            try
-            {
-                this.day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
-                this.quadrum = GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
-            }
-            catch (Exception e)
-            {
-                Log.ErrorOnce("Failure while creating date:" +e.Message, 1);
-            }
+            try { this.GetCurrentDate(); }
+            catch { Log.Message("Not on a map yet!"); }
+        }
 
+        public void GetCurrentDate(bool forSaving = false)
+        {
+            this.day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
+            this.quadrum = GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
+            this.ticks = GenTicks.TicksGame;
+            
         }
 
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public string GetUniqueLoadID()
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         {
-            return "date_" + this.GetHashCode().ToString();
+            return "date_" + GetHashCode().ToString()+ticks.ToString();
         }
+        
         public override void ExposeData()
         {
-            try
-            {
-                Scribe_Values.Look(ref day, "Day", this.day, true);
-                Scribe_Values.Look(ref quadrum, "Quadrum", this.quadrum, true);
-            }catch(Exception e)
-            {
-                Log.ErrorOnce(e.Message,1);
-            }
+            Scribe_Values.Look<int>(ref ticks, "ticks", this.ticks, true);
+            Scribe_Values.Look<int>(ref day, "Day", this.day, true);
+            Scribe_Values.Look<Quadrum>(ref quadrum, "Quadrum", this.quadrum, true);
         }
+        
 
         public override string ToString()
         {
@@ -90,7 +88,7 @@ namespace AvaliMod
         {
             this.day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
             this.quadrum = GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
-            this.deadPawn = pawn;
+            if (pawn != null) { this.deadPawn = pawn; }
         }
 
         public override void ExposeData()

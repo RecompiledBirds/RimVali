@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AvaliMod
 {
-    public class AvaliPackDriver : MapComponent
+    public class AvaliPackDriver : GameComponent//WorldComponent//MapComponent//
     {
         private RimValiModSettings settings = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>();
         private readonly bool enableDebug = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableDebugMode;
@@ -19,17 +20,74 @@ namespace AvaliMod
         private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
         private readonly Dictionary<string, bool> otherRaces = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enabledRaces;
         private bool HasStarted = false;
-        public static List<AvaliPack> packs = new List<AvaliPack>();
+        public List<AvaliPack> packs = new List<AvaliPack>();
         private int onTick = 0;
-        public static Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
-        public static List<Pawn> pawns = new List<Pawn>();
-        public static List<bool> bools = new List<bool>();
-        public AvaliPackDriver(Map map)
-            : base(map)
-        {
+        public Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
+        public List<Pawn> pawns = new List<Pawn>();
+        public List<bool> bools = new List<bool>();
 
-        }
+        //public AvaliPackDriver(Map map) : base(map) { }
+
+        //public AvaliPackDriver(World world) : base(world) { }
+
+        public AvaliPackDriver(Game game) { }//: base(game) { }
+
         List<ThingDef> racesInPacks = new List<ThingDef>();
+
+        public override void StartedNewGame()
+        {
+            packs = new List<AvaliPack>();
+            racesInPacks.Add(AvaliDefs.RimVali);
+            if (checkOtherRaces)
+            {
+                foreach (ThingDef race in RimValiDefChecks.potentialPackRaces)
+                {
+                    racesInPacks.Add(race);
+                }
+            }
+            if (allowAllRaces)
+            {
+                foreach (ThingDef race in RimValiDefChecks.potentialRaces)
+                {
+                    if (otherRaces.TryGetValue(race.defName) == true)
+                    {
+                        racesInPacks.Add(race);
+                        if (enableDebug)
+                        {
+                            Log.Message("Adding race: " + race.defName + " to racesInPacks.");
+                        }
+                    }
+                }
+            }
+        }
+
+        public override void LoadedGame()
+        {
+           
+            racesInPacks.Add(AvaliDefs.RimVali);
+            if (checkOtherRaces)
+            {
+                foreach (ThingDef race in RimValiDefChecks.potentialPackRaces)
+                {
+                    racesInPacks.Add(race);
+                }
+            }
+            if (allowAllRaces)
+            {
+                foreach (ThingDef race in RimValiDefChecks.potentialRaces)
+                {
+                    if (otherRaces.TryGetValue(race.defName) == true)
+                    {
+                        racesInPacks.Add(race);
+                        if (enableDebug)
+                        {
+                            Log.Message("Adding race: " + race.defName + " to racesInPacks.");
+                        }
+                    }
+                }
+            }
+            base.LoadedGame();
+        }
         public void LoadAll()
         {
             packs = new List<AvaliPack>();
@@ -61,11 +119,10 @@ namespace AvaliMod
                 HasStarted = true;
             }
         }
-
+        
         public override void ExposeData()
         {
-
-            if (pawnsHaveHadPacks.EnumerableNullOrEmpty() ==false)
+            if (pawnsHaveHadPacks.EnumerableNullOrEmpty() == false)
             {
                 foreach (Pawn pawn in pawnsHaveHadPacks.Keys)
                 {
@@ -73,15 +130,31 @@ namespace AvaliMod
                     bools.Add(pawnsHaveHadPacks[pawn]);
                 }
             }
+            //Scribe_Collections.Look<AvaliPack>(ref packs, "packs", LookMode.Deep);
+            //Scribe_Collections.Look<Pawn, bool>(ref pawnsHaveHadPacks, "pawnsHasHadPacks", LookMode.Reference, LookMode.Undefined, ref pawns, ref bools);
+            Scribe_Collections.Look<Pawn, bool>(ref pawnsHaveHadPacks, "pawnsHasHadPacks", LookMode.Reference, LookMode.Undefined, ref pawns, ref bools);
             Scribe_Collections.Look<AvaliPack>(ref packs, "packs", LookMode.Deep);
 
-            Scribe_Collections.Look<Pawn, bool>(ref pawnsHaveHadPacks, "pawnsHasHadPacks", LookMode.Reference, LookMode.Undefined, ref pawns, ref bools);
-          
+
             if (pawnsHaveHadPacks == null)
             {
                 pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
-            } 
-
+            }
+            if (packs == null)
+            {
+                Log.Message("packs was null");
+                packs = new List<AvaliPack>();
+            }
+            if (pawns == null)
+            {
+                Log.Message("pawns was null");
+                pawns = new List<Pawn>();
+            }
+            if (bools == null)
+            {
+                Log.Message("bools was null");
+                bools = new List<bool>();
+            }
             base.ExposeData();
         }
         public void UpdatePacks()
@@ -113,11 +186,13 @@ namespace AvaliMod
             }
         }
 
-        public override void MapComponentTick()
+        //public override void MapComponentTick()
+        //public override void WorldComponentTick()
+        public override void GameComponentTick()
         {
             if (!HasStarted)
             {
-                LoadAll();
+                //LoadAll();
             }
             if (onTick == 0)
             {
@@ -135,8 +210,7 @@ namespace AvaliMod
                         */
                         Task packTask = new Task(UpdatePacks);
                         packTask.Start();
-                        Task[] tasks = { packTask };
-                        Task.WaitAll(packTask);
+                        packTask.Wait();
                     }
                     else
                     {

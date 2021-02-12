@@ -41,6 +41,7 @@ namespace AvaliMod
 
         public void UpdatePawns(Map map)
         {
+            AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
             IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => x.def == AvaliDefs.RimVali);
             IEnumerable<AvaliPack> packs = AvaliPackDriver.packs;
             foreach (Pawn pawn in pawns)
@@ -71,7 +72,7 @@ namespace AvaliMod
                     foreach (Pawn packmate in pawnPack.pawns)
                     {
                         Thought_Memory thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
-                        if (!(packmate == pawn))
+                        if (!(packmate == pawn) && packmate != null && pawn != null)
                         {
                             bool bubble;
                             if (!thought_Memory2.TryMergeWithExistingMemory(out bubble))
@@ -93,6 +94,7 @@ namespace AvaliMod
 
         public override void MapComponentTick()
         {
+            AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
             if (mapCompOn && !(AvaliPackDriver.packs == null) && AvaliPackDriver.packs.Count > 0)
             {
                 if (onTick == 120)
