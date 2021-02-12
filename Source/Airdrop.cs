@@ -7,6 +7,17 @@ using RimWorld.Planet;
 
 namespace AvaliMod
 {
+    [StaticConstructorOnStartup]
+    public static class AirdropResearchManager
+    {
+        static AirdropResearchManager()
+        {
+            foreach(ResearchProjectDef def in DefDatabase<ResearchProjectDef>.AllDefs.Where(proj => proj.requiredResearchFacilities.Contains(AvaliDefs.AvaliNexus)))
+            {
+                def.requiredResearchFacilities.Remove(AvaliDefs.AvaliNexus);
+            }
+        }
+    }
     public class AirdropAlert : Alert
     {
         public override AlertReport GetReport()
@@ -49,8 +60,10 @@ namespace AvaliMod
         {
             Map map = Current.Game.CurrentMap;
             GenDate.DayOfYear(ticks, Find.WorldGrid.LongLatOf(map.Tile).x);
-            List<Thing> thingList = new List<Thing>();
-            thingList.Add(ThingMaker.MakeThing(AvaliDefs.AvaliNexus));
+            List<Thing> thingList = new List<Thing>
+            {
+                ThingMaker.MakeThing(AvaliDefs.AvaliNexus)
+            };
             Scribe_Values.Look(ref hasDropped, "hasDropped", false);
             Map target = map;
             List<Faction> newFactions = new List<Faction>();
@@ -85,7 +98,7 @@ namespace AvaliMod
             }
         }
 
-        private bool getReady()
+        private bool GetReady()
         {
             Map map = Current.Game.CurrentMap;
             if (RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq && !hasDropped && map.IsPlayerHome)
@@ -106,7 +119,7 @@ namespace AvaliMod
             {
                 if (airdrops)
                 {
-                    if (getReady() && !hasDropped)
+                    if (GetReady() && !hasDropped)
                     {
                         
                         timeToDrop--;
