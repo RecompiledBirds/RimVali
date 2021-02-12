@@ -20,7 +20,7 @@ namespace AvaliMod
 
                     Log.Message(module.name);
                     RimValiUtility.modulesFound = RimValiUtility.modulesFound + module.name + "\n";
-
+                    AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
                 }
             }
         }

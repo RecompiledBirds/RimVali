@@ -7,6 +7,7 @@ namespace AvaliMod
     // Token: 0x020000DC RID: 220
     public class DeathActionWorker_Test : DeathActionWorker
     {
+        AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
         private readonly bool enableDebug = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableDebugMode;
         public override void PawnDied(Corpse corpse)
         {
@@ -31,7 +32,7 @@ namespace AvaliMod
                             {
                                 Log.Message("The pawn had a pack");
                             }
-                            DeathDate deathDate = new DeathDate();
+                            DeathDate deathDate = new DeathDate(pawn);
                             Log.Message(GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x).ToString());
                             deathDate.day = GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x);
                             if(corpse.InnerPawn != null && enableDebug)
@@ -45,10 +46,10 @@ namespace AvaliMod
                                 Log.Message(deathDate.day.ToString());
                             }
                             pack.deathDates.Add(deathDate);
-                            pack.size--;
+                            //pack.size--;
                             if (enableDebug)
                             {
-                                Log.Message(pack.size.ToString());
+                                Log.Message(pack.pawns.Count.ToString());
                             }
                             foreach(Pawn packmate in pack.pawns)
                             {

@@ -3,29 +3,51 @@ using System;
 using System.Collections.Generic;
 using Verse;
 using System.Linq;
+using RimWorld.Planet;
+
 namespace AvaliMod
 {
-    public class AirDropHandler : MapComponent
+    public class AirdropAlert : Alert
+    {
+        public override AlertReport GetReport()
+        {
+            defaultLabel = "AirdropInStart".Translate() + " " + (AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).ToString() + " " + "AirdropInEnd".Translate();
+            if (AirDropHandler.hasMessaged && !AirDropHandler.hasDropped)
+            {
+                return AlertReport.Active;
+            }
+            else
+            {
+                return AlertReport.Inactive;
+            }
+        }
+    }
+    public class AirDropHandler : WorldComponent
     {
         private readonly bool airdrops = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableAirdrops;
-        private System.Random random = new System.Random();
+        private readonly int avaliReq = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().avaliRequiredForDrop;
         private int ticks = 0;
-        private bool hasStarted = false;
-        public AirDropHandler(Map map)
-            : base(map)
-        {
-
+        public static int timeToDrop;
+        public static int ticksInAnHour = 25;
+        public static bool hasMessaged;
+        public AirDropHandler(World world) : base(world) {
+            timeToDrop = 0;
+            hasMessaged = false;
+            hasDropped = false; 
         }
-       
+
         public static bool hasDropped = false;
         
         public override void ExposeData()
         {
+            Scribe_Values.Look(ref timeToDrop, "timeToDrop", 0);
             Scribe_Values.Look(ref hasDropped, "hasDropped", false);
+            Scribe_Values.Look(ref hasMessaged, "hasMessaged", false);
             base.ExposeData();
         }
         private void SendDrop()
         {
+            Map map = Current.Game.CurrentMap;
             GenDate.DayOfYear(ticks, Find.WorldGrid.LongLatOf(map.Tile).x);
             List<Thing> thingList = new List<Thing>();
             thingList.Add(ThingMaker.MakeThing(AvaliDefs.AvaliNexus));
@@ -33,7 +55,7 @@ namespace AvaliMod
             Map target = map;
             List<Faction> newFactions = new List<Faction>();
             IntVec3 intVec3 = DropCellFinder.TradeDropSpot(target);
-            if (RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= 5 && !hasDropped && map.IsPlayerHome)
+            if (map.IsPlayerHome)
             {
                 hasDropped = true;
                 foreach(Faction faction in Find.FactionManager.AllFactions.Where(x => x.def == AvaliDefs.AvaliFaction))
@@ -42,21 +64,60 @@ namespace AvaliMod
                     newFactions.Add(faction);
                 }
                 DropPodUtility.DropThingsNear(intVec3, target, (IEnumerable<Thing>)thingList);
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliMod.AvaliDefs.IlluminateAirdrop,newFactions[random.Next(newFactions.Count)]);
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliMod.AvaliDefs.IlluminateAirdrop);
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
+            else
+            {
+                SetupDrop();
+            }
         }
-         
-        public override void MapComponentTick()
+
+        private void SetupDrop()
+        {
+            if (!hasMessaged)
+            {
+                timeToDrop = UnityEngine.Random.Range(1 * ticksInAnHour, 48 * ticksInAnHour);
+
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("AirdropSendMsg".Translate(), "IlluminateAirdropSendStart".Translate() + " " + (timeToDrop / ticksInAnHour).ToString() + " " + "IlluminateAirdropSendEnd".Translate(), AvaliMod.AvaliDefs.IlluminateAirdrop);
+                Find.LetterStack.ReceiveLetter(choiceLetter, null);
+                hasMessaged = true;
+            }
+        }
+
+        private bool getReady()
+        {
+            Map map = Current.Game.CurrentMap;
+            if (RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq && !hasDropped && map.IsPlayerHome)
+            {
+                if (!hasDropped)
+                {
+                    SetupDrop();
+                    
+                }
+                return true;
+            }
+            return false;
+        }
+        public override void WorldComponentTick()
         {
             ticks++;
             if (ticks == 120)
             {
                 if (airdrops)
                 {
-                    SendDrop();
-                    ticks = 0;
+                    if (getReady() && !hasDropped)
+                    {
+                        
+                        timeToDrop--;
+                    }
+                    Map map = Current.Game.CurrentMap;
+                    if (timeToDrop <= 0 && RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq && !hasDropped && map.IsPlayerHome)
+                    {
+                        SendDrop();
+                    }
                 }
+                ticks = 0;
             }
         }
     }

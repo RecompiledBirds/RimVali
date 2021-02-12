@@ -43,6 +43,9 @@ namespace AvaliMod
         public static ResearchProjectDef AvaliAdvancedMelee;
         public static ResearchProjectDef AeroWeaveResearch;
         public static ResearchProjectDef AvaliAeroTungsten;
+        //Job defs
+
+        public static JobDef refuelAeriel;
 
     }
 }
