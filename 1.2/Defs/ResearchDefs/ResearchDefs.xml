@@ -21,7 +21,7 @@
     <researchViewX>0.00</researchViewX>
   <researchViewY>0.25</researchViewY>
     <prerequisites>
-      <li>MicroelectronicsBasics</li>
+      <li>Electricity</li>
     </prerequisites>
    </ResearchProjectDef>
    
@@ -60,6 +60,88 @@
 		</prerequisites>
   </ResearchProjectDef>
   
+  <!-- Basic apparel -->
+ <ResearchProjectDef ParentName="BaseAvaliResearch">
+    <defName>AvaliBasicApparel</defName>
+    <label>Traditional Avali Apparel</label>
+    <description>Traditional avali apparel.</description>
+    <baseCost>100</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>2.00</researchViewX>
+  <researchViewY>2.65</researchViewY>
+
+
+
+    <prerequisites>
+      <li>ResearchNanoLoom</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+  
+   <ResearchProjectDef ParentName="BaseAvaliResearch">
+    <defName>AvaliThermalWraps</defName>
+    <label>Thermal Wraps</label>
+    <description>These wraps help keep your avali safe in the worst of temperatures. Works especially well if material is bad insulator.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>3.00</researchViewX>
+  <researchViewY>2.65</researchViewY>
+
+
+
+    <prerequisites>
+      <li>AvaliBasicApparel</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+     <ResearchProjectDef ParentName="BaseAvaliResearch">
+    <defName>AvaliBasicTechGear</defName>
+    <label>Common exploration gear</label>
+    <description>This gear is commonly found on explorers, helping them survive dangerous and unsafe locations.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>3.00</researchViewX>
+  <researchViewY>3.65</researchViewY>
+
+
+
+    <prerequisites>
+      <li>AvaliBasicApparel</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  
+     <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+    <defName>AvaliCombatArmor</defName>
+    <label>Combat armor</label>
+    <description>This armor is made for combat, featuring heavy protection at the cost of speed and weight. (SOS2 EVA compatible)</description>
+    <baseCost>4000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>4.00</researchViewX>
+  <researchViewY>3.65</researchViewY>
+
+
+
+    <prerequisites>
+      <li>AvaliBasicTechGear</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+       <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+    <defName>AvaliSpecOpsArmor</defName>
+    <label>Spec Ops armor</label>
+    <description>The avali spec ops armor is a high-end, top of the line avali armor, featuring the latest avali technologies and advances.  (SOS2 EVA compatible)</description>
+    <baseCost>7000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>5.00</researchViewX>
+  <researchViewY>3.65</researchViewY>
+
+
+
+    <prerequisites>
+      <li>AvaliCombatArmor</li>
+    </prerequisites>
+  </ResearchProjectDef>
   
    <!-- Basic weapons -->
   <ResearchProjectDef ParentName="BaseAvaliResearch">
@@ -91,10 +173,50 @@
     </prerequisites>
   </ResearchProjectDef>
   
+  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+    <defName>AIMSRes</defName>
+    <label>AIMS (Avali Intelligent Mortar System)</label>
+    <description>An advanced, more powerful mortar system. The AIMS mortar can fire shells designed for it, and has much better accuaracy than a regular mortar.</description>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+    <prerequisites>
+      <li>AvaliTurrets</li>
+    </prerequisites>
+    <baseCost>3500</baseCost>
+    <techLevel>Spacer</techLevel>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+    <defName>AERIELRES</defName>
+    <label>AERIEL System</label>
+    <description>A highly advanced automated mortar system, fully capable of automatically selecting targets and lauching projectiles.</description>
+    <researchViewX>6.00</researchViewX>
+  <researchViewY>1.00</researchViewY>
+    <prerequisites>
+      <li>AIMSRes</li>
+    </prerequisites>
+    <baseCost>10000</baseCost>
+    <techLevel>Spacer</techLevel>
+  </ResearchProjectDef>
+  
+  
+    <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+    <defName>AvaliTurrets</defName>
+    <label>Advanced Avali turrets</label>
+    <description>These railgun-based turrets are designed to be used at longer ranges then their human counterparts.</description>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+    <prerequisites>
+      <li>AvaliAdvancedGuns</li>
+    </prerequisites>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+  </ResearchProjectDef>
+  
   <!-- "Advanced" melee weapons -->
   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
     <defName>AvaliAdvancedMelee</defName>
-    <description>Slightly better than a "pokey stick", as some avali have called previous weapons, these are more likely to be less "pokey" and more "stabny".</description>
+    <description>Slightly better than a "pokey stick", as some avali have called previous weapons, these are more likely to be less "pokey" and more "staby".</description>
     <label>Advanced Avali Melee weapons</label>
     <baseCost>2000</baseCost>
     <techLevel>Ultra</techLevel>
@@ -171,7 +293,7 @@
      <defName>AvaliAeroTungsten</defName>
      <label>Aero-Tungsten Carbide</label>
      <description>Aero-Tungsten Carbide, a supermaterial mainly forged from both tungsten and carbon, with other materials mixed in to strengthen the mixture.</description>
-     <baseCost>2000</baseCost>
+     <baseCost>4500</baseCost>
      <techLevel>Ultra</techLevel>
     <researchViewX>3.00</researchViewX>
   <researchViewY>1.75</researchViewY>
@@ -179,7 +301,19 @@
 			<li>TungstenProcessingBasic</li>
 		</prerequisites>
    </ResearchProjectDef>
-
+   
+  <ResearchProjectDef  ParentName="BaseAdvAvaliResearch">
+     <defName>AvaliAeroTungstenFiber</defName>
+     <label>Aero-Tungsten Fiber</label>
+     <description>A strong cloth-like material, made from aero-tungsten carbide and nano carbon fiber.</description>
+     <baseCost>2000</baseCost>
+     <techLevel>Ultra</techLevel>
+    <researchViewX>4.00</researchViewX>
+  <researchViewY>1.75</researchViewY>
+     <prerequisites>
+			<li>AvaliAeroTungsten</li>
+		</prerequisites>
+   </ResearchProjectDef>
 
     <!-- Bionics -->
        <ResearchProjectDef ParentName="BaseAvaliResearch">
@@ -225,8 +359,9 @@
      <description>Research the blueprints to one of the most advanced TCA augments ever designed.</description>
      <baseCost>1500</baseCost>
      <techLevel>Spacer</techLevel>
-     <researchViewX>4.00</researchViewX>
+      <researchViewX>3.00</researchViewX>
   <researchViewY>4.75</researchViewY>
+
      <prerequisites>
 			<li>AvaliAdvCooling</li>
 		</prerequisites>
@@ -253,7 +388,7 @@
      <baseCost>2500</baseCost>
      <techLevel>Spacer</techLevel>
      <researchViewX>2.00</researchViewX>
-  <researchViewY>3.45</researchViewY>
+  <researchViewY>3.50</researchViewY>
      <prerequisites>
        <li>AdvancedAvaliBionics</li>
      </prerequisites>
@@ -265,8 +400,9 @@
      <description>Swarms of mini drones, assisting the user in various tasks.</description>
      <baseCost>2500</baseCost>
      <techLevel>Spacer</techLevel>
-      <researchViewX>4.00</researchViewX>
-  <researchViewY>4.40</researchViewY>
+      <researchViewX>2.00</researchViewX>
+  <researchViewY>4.20</researchViewY>
+
      <prerequisites>
        <li>AdvancedAvaliBionics</li>
      </prerequisites>
