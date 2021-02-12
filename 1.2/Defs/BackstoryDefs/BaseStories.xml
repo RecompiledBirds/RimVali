@@ -1,25 +1,1022 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
-
-  <AvaliMod.RVRBackstory>
-    <defName>TestStory</defName>
-    <storyDesc>test</storyDesc>
-    <title>test</title>
+  <AvaliMod.RVRBackstory Name="HoloValiBase">
+    <defName>AvaliHologram</defName>
+    <title>Holo-vali</title>
+    <shortTitle>Holo-vali</shortTitle>
+    <storyDesc>[PAWN_nameDef] was a soldier, until they were shot while on a regular patrol through the edge of Illuminate territory.\n The wound was fatal, however [PAWN_pronoun] agreed to be uploaded into a computer system, to "continue" living, to some degree.\n As a result, [PAWN_nameDef] has become very smart, but is unable to do many physicial tasks.
+    </storyDesc>
+    <enabledWorkTypes>
+      <li>Intellectual</li>
+      <li>Social</li>
+      <li>Commoner</li>
+    </enabledWorkTypes>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-    <canSpawnFemale>false</canSpawnFemale>
+    <colorGenOverrides>
+      <li>
+          <name>Skin</name>
+          <isGendered>true</isGendered>
+          <colorGenerator>
+          <firstColor Class="ColorGenerator_Options">
+                <options>
+                  <li>
+                    <weight>10</weight>
+                    <min>RGBA(200, 200, 200,150)</min>
+                    <max>RGBA(255, 255, 255,210)</max>
+                  </li>
+                  <li>
+                    <weight>2</weight>
+                    <min>RGBA(220, 220, 220,150)</min>
+                    <max>RGBA(240, 240, 240,210)</max>
+                  </li>
+                  <li>
+                    <weight>5</weight>
+                      <min>RGBA(40, 40, 40, 150)</min>
+                     <max>RGBA(60, 60, 60, 210)</max>
+                  </li>
+                </options>
+              </firstColor>
+              <secondColor Class="ColorGenerator_Options">
+                <options>
+                   <li>
+                     <weight>10</weight>
+                     <min>RGBA(50, 50, 50,150)</min>
+                     <max>RGBA(200, 200, 200,210)</max>
+                   </li>
+                   <li>
+                     <weight>2</weight>
+                     <min>RGBA(40, 40, 40, 150)</min>
+                     <max>RGBA(60, 60, 60, 210)</max>
+                   </li>
+                  </options>
+              </secondColor>
+              <thirdColor Class="ColorGenerator_Options">
+                <options>
+                   <li>
+                     <weight>10</weight>
+                     <min>RGBA(50, 50, 50,150)</min>
+                     <max>RGBA(200, 200, 200,210)</max>
+                   </li>
+                   <li>
+                     <weight>2</weight>
+                     <min>RGBA(40, 40, 40,150)</min>
+                     <max>RGBA(60, 60, 60,210)</max>
+                   </li>
+                  </options>
+              </thirdColor>
+             </colorGenerator>
+              <colorGeneratorFemale>
+                <firstColor Class="ColorGenerator_Options">
+                  <options>
+                    <li>
+                      <weight>10</weight>
+                      <min>RGBA(185, 185, 185,150)</min>
+                      <max>RGBA(215, 215, 215,210)</max>
+                    </li>
+                    <li>
+                      <weight>2</weight>
+                      <min>RGBA(220, 220, 220,150)</min>
+                      <max>RGBA(240, 240, 240,210)</max>
+                    </li>
+                    <li>
+                      <weight>1</weight>
+                      <min>RGBA(40, 40, 40, 150)</min>
+                       <max>RGBA(60, 60, 60, 210)</max>
+                    </li>
+                   </options>
+                </firstColor>
+                <secondColor Class="ColorGenerator_Options">
+                <options>
+                    <li>
+                      <weight>10</weight>
+                      <min>RGBA(185, 185, 185,150)</min>
+                      <max>RGBA(215, 215, 215,210)</max>
+                    </li>
+                    <li>
+                      <weight>2</weight>
+                      <min>RGBA(220, 220, 220,150)</min>
+                      <max>RGBA(240, 240, 240,210)</max>
+                    </li>
+                    <li>
+                      <weight>1</weight>
+                      <min>RGBA(40, 40, 40, 150)</min>
+                       <max>RGBA(60, 60, 60, 210)</max>
+                    </li>
+                   </options>
+                </secondColor>
+                <thirdColor Class="ColorGenerator_Options">
+                 <options>
+                    <li>
+                      <weight>10</weight>
+                      <min>(185, 185, 185)</min>
+                      <max>(215, 215, 215)</max>
+                    </li>
+                    <li>
+                      <weight>2</weight>
+                      <min>RGBA(220, 220, 220,150)</min>
+                      <max>RGBA(240, 240, 240,210)</max>
+                    </li>
+                    <li>
+                      <weight>1</weight>
+                      <min>RGBA(40, 40, 40, 150)</min>
+                       <max>RGBA(60, 60, 60, 210)</max>
+                    </li>
+                   </options>
+                </thirdColor>
+             </colorGeneratorFemale>
+        </li>
+        <li>
+          <name>Eye</name>
+          <isDyeable>false</isDyeable>
+          <colorGenerator>
+          <firstColor Class="ColorGenerator_Options">
+                <options>
+                  <li>
+                    <weight>10</weight>
+                    <min>RGBA(0, 0, 0,200)</min>
+                    <max>RGBA(255, 255, 255,240)</max>
+                  </li>
+                </options>
+              </firstColor>
+              <secondColor Class="ColorGenerator_Options">
+                <options>
+                   <li>
+                     <weight>10</weight>
+                     <min>RGBA(50, 50, 50,200)</min>
+                     <max>RGBA(200, 200, 200,240)</max>
+                   </li>
+                   <li>
+                     <weight>2</weight>
+                     <min>RGBA(40, 40, 40, 200)</min>
+                     <max>RGBA(60, 60, 60, 240)</max>
+                   </li>
+                  </options>
+              </secondColor>
+              <thirdColor Class="ColorGenerator_Options">
+                <options>
+                   <li>
+                     <weight>10</weight>
+                     <min>RGBA(50, 50, 50,200)</min>
+                     <max>RGBA(200, 200, 200,240)</max>
+                   </li>
+                   <li>
+                     <weight>2</weight>
+                     <min>RGBA(40, 40, 40,200)</min>
+                     <max>RGBA(60, 60, 60,240)</max>
+                   </li>
+                  </options>
+              </thirdColor>
+             </colorGenerator>
+        </li>
+    </colorGenOverrides>
     <skillGains>
       <li>
-        <skill>Shooting</skill>
+        <skill>Intellectual</skill>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+
+  <AvaliMod.RVRBackstory>
+  <defName>AvaliNomad</defName>
+    <title>Space Nomad</title>
+    <shortTitle>Nomad</shortTitle>
+    <storyDesc>[PAWN_nameDef] has traveled far across space, with [PAWN_possessive] pack. [PAWN_pronoun] has learned several different skills, although [PAWN_nameDef] never really got to study any single skill for too long, partially due to the fact they were always moving. [PAWN_nameDef]'s pack also never attended a proper school, and was taught by other avali travelling with them.
+    </storyDesc>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Medicine</skill>
+        <amount>2</amount>
+      </li>
+      <li>
+        <skill>Construction</skill>
+        <amount>1</amount>
+      </li>
+      <li>
+        <skill>Plants</skill>
         <amount>2</amount>
       </li>
     </skillGains>
   </AvaliMod.RVRBackstory>
 
 
- 
+<AvaliMod.RVRBackstory Name="MaleBase" Abstract = "true">
+    <canSpawnFemale>false</canSpawnFemale>
+  </AvaliMod.RVRBackstory>
+  <AvaliMod.RVRBackstory Name="FemaleBase" Abstract = "true">
+    <canSpawnMale>false</canSpawnMale>
+  </AvaliMod.RVRBackstory>
+	
+    <AvaliMod.RVRBackstory>
+    <defName>AvaliWarchild</defName>
+    <title>War Hatchling</title>
+    <shortTitle>War Hatchling</shortTitle>
+    <storyDesc>When [PAWN_nameDef] was just a mere hatchling, [PAWN_possessive] colony was raided by an opposing pack. Luckily, they never found little [PAWN_nameDef], who was hid away before the attack. Only a few days later, [PAWN_pronoun] was found by explorers, who luckily decided to take [PAWN_nameDef] back home with them. [PAWN_nameDef] lived a relatively normal life afterwards, not even made aware of [PAWN_possessive] past until adulthood.</storyDesc>
+    <backstorySlot>Childhood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+  </AvaliMod.RVRBackstory>
+	
+<AvaliMod.RVRBackstory>
+    <defName>AvaliSoldierChild</defName>
+    <title>Child Soldier</title>
+    <shortTitle>Child Soldier</shortTitle>
+    <storyDesc>From an extremely young age, [PAWN_nameDef] was taught how to fight. [PAWN_possessive] pack was extremely militaristic in nature, and believed in honor codes. [PAWN_nameDef] was drilled from an extremely young age, in harsh conditions, and harsh tests.</storyDesc>
+    <backstorySlot>Childhood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	    <skillGains>
+      <li>
+        <skill>Shooting</skill>
+        <amount>2</amount>
+      </li>
+      <li>
+        <skill>Medicine</skill>
+        <amount>1</amount>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <amount>1</amount>
+      </li>
+      <li>
+	      <skill>Social</skill>
+	      <amount>-1</amount>
+		    </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
   
+	<AvaliMod.RVRBackstory>
+    <defName>AvaliLaborChild</defName>
+    <title>Child Laborer</title>
+    <shortTitle>Child Laborer</shortTitle>
+    <storyDesc>[PAWN_nameDef] was born into a ethically questionable situation. Well, "questionable" is an understatement. Their family was part of a shady illuminate business, and [PAWN_nameDef] suffered the same fate as their family; working in awful conditions, for little pay, even as a youngling. They can work really well, but they are socially underdeveloped.</storyDesc>
+    <backstorySlot>Childhood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	    <skillGains>
+      <li>
+        <skill>Construction</skill>
+        <amount>2</amount>
+      </li>
+      <li>
+        <skill>Crafting</skill>
+        <amount>1</amount>
+      </li>
+      <li>
+	      <skill>Social</skill>
+	      <amount>-1</amount>
+		    </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+		
+		
+	<AvaliMod.RVRBackstory>
+    <defName>AvaliBlessedChild</defName>
+    <title>Chosen One</title>
+    <shortTitle>Chosen One</shortTitle>
+    <storyDesc>[PAWN_nameDef] was excitedly raised by [PAWN_possessive] pack, they believed [PAWN_nameDef] would be destined to be big for their pack, their beliefs stating that being born on that day would bring great prestige. As such, [PAWN_nameDef] was treated to many things that most Avali younglings never had.</storyDesc>
+    <backstorySlot>Childhood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	    <skillGains>
+      <li>
+        <skill>Intellectual</skill>
+        <amount>2</amount>
+      </li>
+      <li>
+        <skill>Crafting</skill>
+        <amount>1</amount>
+      </li>
+      <li>
+	      <skill>Social</skill>
+	      <amount>2</amount>
+		    </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+		<AvaliMod.RVRBackstory>
+    <defName>AvaliLateHatch</defName>
+    <title>Late Hatch</title>
+    <shortTitle>Late Hatch</shortTitle>
+    <storyDesc>[PAWN_nameDef] for some reason hatched way later then the rest of their kit. They grew up behind everyone else and didn't fit in with the rest.</storyDesc>
+    <backstorySlot>Childhood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	    <skillGains>
+      <li>
+        <skill>Social</skill>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+	    <maleChance>10</maleChance>
+	<femaleChance>10</femaleChance>
+  </AvaliMod.RVRBackstory>
+		
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliSolider</defName>
+    <title>Illuminate Solider</title>
+    <shortTitle>Solider</shortTitle>
+    <storyDesc>[PAWN_nameDef] was a solider for the Illuminate. [PAWN_pronoun] was taught many combat tatics, as well as basic first aid.</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Shooting</skill>
+        <amount>3</amount>
+      </li>
+      <li>
+        <skill>Medicine</skill>
+        <amount>2</amount>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliFarmer</defName>
+    <title>Farmer</title>
+    <shortTitle>Farmer</shortTitle>
+    <storyDesc>On Avalon, [PAWN_nameDef] was a farmer. [PAWN_pronoun] mainly worked with the few plants/microorganisms, due to the conditions on avalon.</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Plants</skill>
+        <amount>3</amount>
+      </li>
+      <li>
+        <skill>Animals</skill>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliResearcher</defName>
+    <title>Illuminate Researcher</title>
+    <shortTitle>Researcher</shortTitle>
+    <storyDesc>[PAWN_nameDef] was a researcher for the Illuminate. Even now, they still are, occasionally reporting their scientific findings back to the Illuminate, when [PAWN_pronoun] can.</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Intellectual</skill>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliBuilder</defName>
+    <title>Builder</title>
+    <shortTitle>Builder</shortTitle>
+    <storyDesc>[PAWN_nameDef] learned to construct permanent buildings, and helped with the construction of more permanent settlements on avalon. Now, they are being sent to help construct buildings on other planets.</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Construction</skill>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliExplorer</defName>
+    <title>Pioneer</title>
+    <shortTitle>Explorer</shortTitle>
+    <storyDesc>[PAWN_nameDef] was an inter-planetary explorer back on Avalon, tasked with charting the artic landscape of the planet. [PAWN_nameDef] usually worked alone, and as such didn't have much social interaction, besides reporting their findings. Still, they learned many invaluable survival skills.</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Plants</skill>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <skill>Animals</skill>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <skill>Mining</skill>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <skill>Intellectual</skill>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <skill>Social</skill>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Nerves</def>
+		<degree>1</degree>
+	   </li>
+	</forcedTraits>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliDiplomat</defName>
+    <title>Diplomat</title>
+    <shortTitle>Diplomat</shortTitle>
+    <storyDesc>[PAWN_nameDef] performed diplomatic duties back on Avalon, trying [PAWN_possessive] best to resolve tensions between tribes. [PAWN_nameDef] has always aimed to resolve conflict without fighting, and as such, lacks greatly in combat areas. But who needs bullets, when you have words as sharp as steel?</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Social</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Intellectual</skill>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <skill>Shooting</skill>
+        <amount>-3</amount>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Kind</def>
+	   </li>
+	</forcedTraits>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliLoner</defName>
+    <title>Loner</title>
+    <shortTitle>Loner</shortTitle>
+    <storyDesc>[PAWN_nameDef] had a rough early adulthood. They were framed for a murder in [PAWN_possessive] pack back on Avalon, despite [PAWN_possessive] having no connection. The colony's leaders stated otherwise. [PAWN_nameDef] was banished from the pack, left alone to the worst parts of the Avalon tundra. Of course, the issue wasn't so much surviving, but the crippling loneliness, and the lack of food. Mirraciously, [PAWN_nameDef] found another pack after years of being alone, and slowly accustomed back to normal life. Being in complete isolation for years made it extremely hard to return to socializing, plus [PAWN_pronoun] didn't learn much technology-wise in the Avalon tundra.
+	
+	[PAWN_nameDef] swears to find the true murderer one day.</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	 <disabledWorkTypes>
+      <li>Social</li>
+    </disabledWorkTypes>
+    <skillGains>
+	  <li>
+        <skill>Intellectual</skill>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <skill>Shooting</skill>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Plants</skill>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <skill>Animals</skill>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+	</AvaliMod.RVRBackstory>
+	
+	<AvaliMod.RVRBackstory>
+    <defName>AvaliSpy</defName>
+    <title>Illuminate Spy</title>
+    <shortTitle>Spy</shortTitle>
+    <storyDesc>[PAWN_nameDef] enlisted at a young age to join the Illuminate. Years and years of propaganda clearly did their job, and [PAWN_nameDef] quickly climbed the ranks of the Illuminate spy program. [PAWN_nameDef] lives to serve the Illuminate, the Illuminate serves to grant livelihood to [PAWN_nameDef].
+	
+	If [PAWN_nameDef] wants something out of someone, [PAWN_pronoun] will get it, no matter the cost. It's not torture, it's coersion after all! [PAWN_nameDef] can play many roles, and can hold [PAWN_possessive] own in many situations. 
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	 <disabledWorkTypes>
+      <li>Caring</li>
+    </disabledWorkTypes>
+    <skillGains>
+    <li>
+      <skill>Plants</skill>
+      <amount>-1</amount>
+    </li>
+    <li>
+      <skill>Animals</skill>
+      <amount>-5</amount>
+    </li>
+	  <li>
+        <skill>Shooting</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Social</skill>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <skill>Crafting</skill>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Bloodlust</def>
+	   </li>
+	</forcedTraits>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliThief</defName>
+    <title>Thief</title>
+    <shortTitle>Thief</shortTitle>
+    <storyDesc>[PAWN_nameDef] made [PAWN_possessive] living back on Avalon by petty thievery, shoplifting, and running black market goods. However, even those endeavours started to prove ineffective in fufilling [PAWN_nameDef]'s crave for possessions, so they then stepped up to muggings, kidnappings, ransom, robberies, and many more goodies.
+	
+	After a few years, [PAWN_nameDef] was caught, and placed into an Avali prisoner program. [PAWN_nameDef] is now being sent to a foreign planet for some kind of expedition, but [PAWN_pronoun] was too busy pickpocketing the instructor to really be listening.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	 <disabledWorkTypes>
+      <li>Caring</li>
+	  <li>Crafting</li>
+	  <li>Cooking</li>
+    </disabledWorkTypes>
+    <skillGains>
+	  <li>
+        <skill>Shooting</skill>
+        <amount>7</amount>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <skill>Social</skill>
+        <amount>6</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Greedy</def>
+	   </li>
+	</forcedTraits>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliTinkerer</defName>
+    <title>Tinkerer</title>
+    <shortTitle>Tinkerer</shortTitle>
+    <storyDesc>[PAWN_nameDef] never really worked for anyone in particular, finding [PAWN_possessive] lifestyle in making, restoring, improving, changing, destroying, and designing countless odd machines. At home, [PAWN_pronoun] was disregarded for the bizarre creations [PAWN_pronoun] made, dismissed as being "absolutely impractical" and "having less worth then a wet dishrag." Nonetheless, [PAWN_nameDef] continued to hone their trade, developing many odd trinkets, even if [PAWN_nameDef] couldn't do [PAWN_possessive] dream designs such as "A giant robotic centipede with machine guns attached to it" or "A portable device that can generate tornadoes on command".
+
+	But, this isn't Avalon anymore. Maybe [PAWN_nameDef]'s creations will finally be recognized for what they are worth on this new world?
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Intellectual</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Crafting</skill>
+        <amount>7</amount>
+      </li>
+	  <li>
+        <skill>Artistic</skill>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliCaveMedic</defName>
+    <title>Miner Medic</title>
+    <shortTitle>Miner Medic</shortTitle>
+    <storyDesc>On Avalon, mining is a crucial part of the economy, many basic Avali resources are based on precious rocks and metals found deep in caves or mountains. It also so happens that mining is an extremely dangerous job, and some people let the glowy rocks down below get to their heads; and that is not just a metaphor.
+	
+	[PAWN_nameDef]'s job entails digging into collapsed mining areas, and rescuing whoever is still alive. Sadly, it seems giant boulders usually beat Avali, but [PAWN_nameDef] has seen and dealt with quite a few different emergency situations, and is always ready for the next idiot who doesn't understand basic gravity.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Mining</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Medicine</skill>
+        <amount>7</amount>
+      </li>
+	  <li>
+        <skill>Construction</skill>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    
+    
+    <hasButcherThoughtOverrides>true</hasButcherThoughtOverrides>
+      <butcherAndHarvestThoughtOverrides>
+        <butcherThoughts>
+          <li>
+            <race>RimVali</race>
+            <butcheredPawnThought>PackMateDied</butcheredPawnThought>
+            <knowButcheredPawn>PackMateDied</knowButcheredPawn>
+          </li>
+        </butcherThoughts>
+      </butcherAndHarvestThoughtOverrides>
+  </AvaliMod.RVRBackstory>
+  
+   <AvaliMod.RVRBackstory>
+    <defName>AvaliBionicDesigner</defName>
+    <title>Bionic Designer</title>
+    <shortTitle>Bionic Designer</shortTitle>
+    <storyDesc>[PAWN_nameDef] has been designing robotic replacements for body parts ever since a member of [PAWN_possessive] pack lost an arm, and [PAWN_pronoun] spent weeks trying different things to replace their arm. After weeks of jabbing new devices into the packmate's shoulder, one suddenly came to life, punching [PAWN_nameDef] square in the face. [PAWN_nameDef] has since then avoided actually installing the parts; they just wanna make them.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Crafting</skill>
+        <amount>8</amount>
+      </li>
+	  <li>
+        <skill>Intellectual</skill>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <skill>Medicine</skill>
+        <amount>-5</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliSheriff</defName>
+    <title>Sheriff</title>
+    <shortTitle>Sheriff</shortTitle>
+    <storyDesc>[PAWN_nameDef] was the single Sheriff of [PAWN_possessive] pack back on Avalon. Being a smaller, more tribal pack, they worked mostly alone. [PAWN_nameDef] was often completely swamped with tasks, because even though the pack was fairly small (to Avali standards, anyway), [PAWN_nameDef] still had many tasks to do. [PAWN_pronoun] could never seem to get a break. One day, after another "lost my PDA in the snow" report, [PAWN_nameDef] snapped, leaving the town and taking all [PAWN_possessive] gear with [PAWN_objective]. Soon, [PAWN_nameDef] heard of a new oppurtunity to get off of Avalon with a small group, and quickly enlisted. They want to be the authority to a pack they truly respect.</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	<disabledWorkTypes>
+      <li>Hauling</li>
+	  <li>Cleaning</li>
+	  <li>ManualDumb</li>
+    </disabledWorkTypes>
+    <skillGains>
+	  <li>
+        <skill>Shooting</skill>
+        <amount>8</amount>
+      </li>
+	  <li>
+        <skill>Social</skill>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliTrained</defName>
+    <title>Devoted Colonist</title>
+    <shortTitle>Devoted Colonist</shortTitle>
+    <storyDesc>[PAWN_nameDef] wanted to join the colonising program, every since they were a hatchling. They dedicated their entire life to picking up all the skills neccesary to survive, wanting to be the best possible choice. Sadly, [PAWN_pronoun] was called out to duty years before [PAWN_pronoun] anticipated, having been able to only pick up bare minimums. I guess there is no better way to learn then doing it yourself, for real, right?</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Construction</skill>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <skill>Medicine</skill>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <skill>Cooking</skill>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <skill>Mining</skill>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <skill>Plants</skill>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>NaturalMood</def>
+		<degree>1</degree>
+	   </li>
+	</forcedTraits>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliCultist</defName>
+    <title>Cultist</title>
+    <shortTitle>Cultist</shortTitle>
+    <storyDesc>[PAWN_nameDef] is part of an extremely strange cult that believes that all plants are the work of some ancient evil, and they all must be destroyed or they will corrupt the world. Somehow, [PAWN_pronoun] snuck [PAWN_objective]selves onto the colony program. They probably aren't fit for this new environment, but there is no going back now. [PAWN_nameDef] will not fight fires, believing that fires are the cleansing graces of their deity.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	<disabledWorkTypes>
+      <li>Social</li>
+	  <li>Firefighting</li>
+	  <li>PlantWork</li>
+    </disabledWorkTypes>
+    <skillGains>
+	  <li>
+        <skill>Artistic</skill>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <skill>Mining</skill>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <skill>Construction</skill>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Pyromaniac</def>
+	   </li>
+	   <li>
+	    <def>PsychicSensitivity</def>
+		<degree>-2</degree>
+	   </li>
+	</forcedTraits>
+	<maleChance>5</maleChance>
+	<femaleChance>5</femaleChance>
+  </AvaliMod.RVRBackstory>
+  
+   <AvaliMod.RVRBackstory>
+    <defName>AvaliBerserker</defName>
+    <title>Berserker</title>
+    <shortTitle>Berserker</shortTitle>
+    <storyDesc>[PAWN_nameDef] strong. [PAWN_nameDef] no need smart, no need talk, no need friend. Fight is friend. [PAWN_nameDef] must hurt others.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+
+    <skillGains>
+	  <li>
+        <skill>Melee</skill>
+        <amount>14</amount>
+      </li>
+	  <li>
+        <skill>Mining</skill>
+        <amount>12</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Brawler</def>
+	   </li>
+	   <li>
+	    <def>Psychopath</def>
+	   </li>
+	</forcedTraits>
+	<maleChance>1</maleChance>
+	<femaleChance>0</femaleChance>
+  </AvaliMod.RVRBackstory>
+
+ <AvaliMod.RVRBackstory>
+    <defName>AvaliFactoryWorker</defName>
+    <title>Factory Worker</title>
+    <shortTitle>Worker</shortTitle>
+    <storyDesc>[PAWN_nameDef] spent most of [PAWN_possessive] life working in factories in Avalon, mostly working on refining metals and assembly line production. Bizarrely, [PAWN_pronoun] loved it, and do not mind doing basic, repetitive tasks, day after day, for measly paychecks. How cool! </storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Crafting</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Construction</skill>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Industriousness</def>
+		<degree>2</degree>
+	   </li>
+	</forcedTraits>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliModel</defName>
+    <title>Avali Model</title>
+    <shortTitle>Model</shortTitle>
+    <storyDesc>[PAWN_nameDef] was just born absolutely stunning, and everyone agrees. [PAWN_nameDef] spent most of their life as an Avali model, taking constant photoshoots, featuring in movies, varying in... theme. However, this life grew boring to [PAWN_objective]. Being so high up in the Avali society, [PAWN_pronoun] heard about the colony program before anyone else. However, the colony program wouldn't allow many high-class Avali such as [PAWN_objective]self.
+	
+	So, [PAWN_nameDef] tired of [PAWN_possessive] life as a celebrity, allowed [PAWN_objective]self into the program by sneaking onto a ship as it was leaving. Will they be able to live without the same glamour?
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+	<disabledWorkTypes>
+      <li>Violent</li>
+	  <li>Firefighting</li>
+    </disabledWorkTypes>
+    <skillGains>
+	  <li>
+        <skill>Crafting</skill>
+        <amount>6</amount>
+      </li>
+	  <li>
+        <skill>Social</skill>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <skill>Artistic</skill>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+	<forcedTraits>
+	   <li>
+	    <def>Beauty</def>
+		<degree>2</degree>
+	   </li>
+	   <li>
+	    <def>Nerves</def>
+		<degree>-1</degree>
+	   </li>
+	</forcedTraits>
+  </AvaliMod.RVRBackstory>
+  
+   <AvaliMod.RVRBackstory>
+    <defName>AvaliBurger</defName>
+    <title>Food Cart Owner</title>
+    <shortTitle>Foodcart Owner</shortTitle>
+    <storyDesc>[PAWN_nameDef] made a living running [PAWN_possessive] own food cart, simply grilling hamburgers and selling them to passerby in city squares. However, Avali cities just don't have the population/economy to make this a liveable practice, and [PAWN_nameDef] turned to other options out of desperation for money. Now they are a colonist ready to land on a largely unknown, extremely dangerous, extremely vital planet. [PAWN_nameDef] wonders if they should have stuck with the "AvaliBurger" cart.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Cooking</skill>
+        <amount>6</amount>
+      </li>
+	  <li>
+        <skill>Crafting</skill>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <skill>Artistic</skill>
+        <amount>-3</amount>
+      </li>
+	  	  <li>
+        <skill>Animals</skill>
+        <amount>-4</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+    <AvaliMod.RVRBackstory>
+    <defName>AvaliAnimalScientist</defName>
+    <title>Animal Scientist</title>
+    <shortTitle>Scientist</shortTitle>
+    <storyDesc>[PAWN_nameDef] always had a fascination with animals, and was always curious as to what was possible with them. [PAWN_nameDef] nearly had developed a module that would allow Avali to speak with animals using common brain signals, however, all of [PAWN_nameDef]'s work was destroyed in a freak accident in [PAWN_possessive] lab, and [PAWN_pronoun] was forced to relocate [PAWN_possessive] studies elsewhere.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Animals</skill>
+        <amount>6</amount>
+      </li>
+	  <li>
+        <skill>Crafting</skill>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <skill>Intellectual</skill>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <amount>-3</amount>
+      </li>
+	  <li>
+        <skill>Shooting</skill>
+        <amount>-4</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+  
+  <AvaliMod.RVRBackstory>
+    <defName>AvaliPalaceDesigner</defName>
+    <title>Illuminate Architect</title>
+    <shortTitle>Architect</shortTitle>
+    <storyDesc>[PAWN_nameDef] singlehandedly designed nearly every major Avalon landmark, being the Illuminate's go-to architectural designer, noted for [PAWN_possessive] beautiful yet realistic and functional designs.
+	</storyDesc>
+    <backstorySlot>Adulthood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+	  <li>
+        <skill>Construction</skill>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <skill>Artistic</skill>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
+
+  
+
+  
+  <AvaliMod.RVRBackstory Name = "BaseLostEgg">
+    <defName>AvaliLostEgg</defName>
+    <title>Lost egg</title>
+    <storyDesc>[PAWN_nameDef]'s egg was accidentally lost during a move between nurseries, after an incident caused the nursery the egg was in to no longer be structurally sound, and therefore a risk to the eggs. [PAWN_pronoun] was luckily found by another pack while [PAWN_pronoun] was young, and was able to join them, but sometimes [PAWN_nameDef] wonders if [PAWN_possessive] pack is still out there, maybe looking for [PAWN_objective]. </storyDesc>
+    <backstorySlot>Childhood</backstorySlot>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Social</skill>
+        <amount>-4</amount>
+      </li>
+      <li>
+        <skill>Shooting</skill>
+        <amount>2</amount>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <amount>1</amount>
+      </li>
+      <li>
+        <skill>Construction</skill>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+  </AvaliMod.RVRBackstory>
 </Defs>

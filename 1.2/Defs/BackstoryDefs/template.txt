@@ -1,0 +1,101 @@
+<AvaliMod.RVRBackstory>
+    <defName>The internal name of the backstory- used for code reference, should be unique</defName>
+    <title></title>
+    <shortTitle>not required. gives rw an alternative short title.</shortTitle>
+    <femaleTitle>not required. gives rw a female title</femaleTitle>
+    <shortFemaleTitle>not required, same as femaleTitle + shortTitle</shortFemaleTitle>
+    
+    <storyDesc> A description of a backstory/the writing part. Can use [PAWN_nameDef], [PAWN_pronoun],[PAWN_possessive], and  [PAWN_objective].</storyDesc>
+    
+    <canSpawnMale></canSpawnMale> <!-- True/False, defaults to true -->
+    <canSpawnFemale></canSpawnFemale> <!-- True/False, defaults to true -->
+    
+   <bodyDefOverride></bodyDefOverride> <!-- Probably not needed for most avali stories -->
+   <bodyType></bodyType> <!-- Not needed for avali -->
+
+    
+    <globalChance></globalChance> <!-- Integer, defaults to 100 -->
+    <femaleChance></femaleChance> <!-- Integer, defaults to 100 -->
+    <maleChance></maleChance> <!-- Integer, defaults to 100 -->
+    
+    <!-- note: -->
+     <!-- A globalChance of 50 + a maleChance of 50 = a chance of 25 for males, same for femaleChance + globalChance. -->
+
+    
+    <backstorySlot></backstorySlot> <!-- Adulthood/Childhood, defaults to Adulthood -->
+    
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    
+    <!-- Skill Defs provided by vanilla rimworld: -->
+    <!-- Shooting -->
+    <!-- Melee -->
+    <!-- Construction -->
+    <!-- Mining -->
+    <!-- Cooking -->
+    <!-- Plants -->
+    <!-- Animals -->
+    <!-- Crafting -->
+    <!-- Artistic -->
+    <!-- Medicine -->
+    <!-- Social -->
+    <!-- Intellectual -->
+
+    
+    <skillGains>
+      <li>
+        <skill>SkillDefName</skill>
+        <amount></amount> <!-- Integer or negative number, to reduce skill -->
+      </li>
+    </skillGains>
+    
+    <!-- Forces a trait to spawn with the story -->
+    <forcedTraits>
+      <li>
+        <def>TraitDefName</def>
+        <degree></degree> <!-- Integer -->
+      </li>
+    </forcedTraits>
+    
+    
+    
+    <!-- WorkTypes/Tags: -->
+    <!-- AllWork -->
+    <!-- Animals -->
+    <!-- Artistic -->
+    <!-- Caring --> 
+    <!-- Cleaning -->
+    <!-- Commoner -->
+    <!-- Cooking -->
+    <!-- Crafting -->
+    <!-- Firefighting -->
+    <!-- Hauling -->
+    <!-- Hunting -->
+    <!-- Intellectual -->
+    <!-- ManualDumb -->
+    <!-- ManualSkilled -->
+    <!-- Mining -->
+    <!-- None -->
+    <!-- PlantWork -->
+    <!-- Social -->
+    <!-- Violent -->
+
+    <disabledWorkTypes></disabledWorkTypes>
+    <!-- disabledWorkTypes is a blacklist, anything in it is disabled -->
+
+    <enabledWorkTypes></enabledWorkTypes>
+    <!-- enabledWorkTypes is a whitelist, anything NOT in that will be disabled -->
+
+    
+    
+    <linkedStoryIdentifier></linkedStoryIdentifier> <!--Not required. links it to another story in the other backstory slot. -->
+    <colorGenOverrides>
+    
+    <!-- Ask, or check Holo-vali or Race file for example of colorgen -->
+    <!-- Overrides the race's color generation. -->
+
+    
+    </colorGenOverrides>
+
+  </AvaliMod.RVRBackstory>
