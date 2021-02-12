@@ -99,43 +99,10 @@ namespace AvaliMod
             this.damageData.ResolveReferencesSpecial();
         }
 
-        public Vector3 DrawOffsetForRot(Rot4 rot)
-        {
-            switch (rot.AsInt)
-            {
-                case 0:
-                    return this.drawOffsetNorth ?? this.drawOffset;
-                case 1:
-                    return this.drawOffsetEast ?? this.drawOffset;
-                case 2:
-                    return this.drawOffsetSouth ?? this.drawOffset;
-                case 3:
-                    return this.drawOffsetWest ?? this.drawOffset;
-                default:
-                    return this.drawOffset;
-            }
-        }
 
         public AvaliGraphic GraphicColoredFor(Thing t)
         {
             return t.DrawColor.IndistinguishableFrom(this.Graphic.Color) && t.DrawColorTwo.IndistinguishableFrom(this.Graphic.ColorTwo) ? this.Graphic : this.Graphic.GetColoredVersion(this.Graphic.Shader, t.DrawColor, t.DrawColorTwo, t.DrawColorTwo);
-        }
-
-        internal IEnumerable<string> ConfigErrors(ThingDef thingDef)
-        {
-            if (this.graphicClass == (System.Type)null)
-                yield return "graphicClass is null";
-            if (this.texPath.NullOrEmpty())
-                yield return "texPath is null or empty";
-            if (thingDef != null)
-            {
-                if (thingDef.drawerType == DrawerType.RealtimeOnly && this.Linked)
-                    yield return "does not add to map mesh but has a link drawer. Link drawers can only work on the map mesh.";
-                if (!thingDef.rotatable && (this.drawOffsetNorth.HasValue || this.drawOffsetEast.HasValue || (this.drawOffsetSouth.HasValue || this.drawOffsetWest.HasValue)))
-                    yield return "not rotatable but has rotational draw offset(s).";
-            }
-            if ((this.shaderType == ShaderTypeDefOf.Cutout || this.shaderType == ShaderTypeDefOf.CutoutComplex) && thingDef.mote != null && ((double)thingDef.mote.fadeInTime > 0.0 || (double)thingDef.mote.fadeOutTime > 0.0))
-                yield return "mote fades but uses cutout shader type. It will abruptly disappear when opacity falls under the cutout threshold.";
         }
     }
 }

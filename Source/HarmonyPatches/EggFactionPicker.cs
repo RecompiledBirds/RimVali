@@ -3,10 +3,11 @@ using RimWorld;
 using Verse;
 namespace AvaliMod
 {
-    [HarmonyPatch(typeof(CompHatcher), "Hatch")]
+    [HarmonyPatch(typeof(CompHatcher),"Hatch")]
     class EggPatch
     {
-        static void Postfix(CompHatcher __instance)
+        [HarmonyPostfix]
+        static void HatchPatch(CompHatcher __instance)
         {
             if (__instance.hatcheeParent == null & __instance.Props.hatcherPawn.RaceProps.body.defName == "RimValiBody")
                 __instance.hatcheeFaction = Faction.OfPlayer;

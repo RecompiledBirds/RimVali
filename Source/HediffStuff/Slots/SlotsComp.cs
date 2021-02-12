@@ -42,6 +42,9 @@ namespace AvaliMod
                 return (SlotPropsHediff)this.props;
             }
         }
+        private System.Random random = new System.Random();
+        private int onTick;
+        private bool hasStarted = false;
         public override string CompTipStringExtra
         {
             get {
@@ -61,7 +64,7 @@ namespace AvaliMod
                 return returnString;
             }
         }
-        public override void CompPostTick(ref float severityAdjustment)
+        public void check()
         {
             if (!LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableSlots)
             {
@@ -72,24 +75,25 @@ namespace AvaliMod
             {
                 return;
             }
+            
             List<Hediff> hediffsToUse = pawn.health.hediffSet.hediffs.Where<Hediff>(x => x.TryGetComp<SlotCompHediff>() != null).ToList();
-            foreach(Hediff hediff in hediffsToUse)
+            foreach (Hediff hediff in hediffsToUse)
             {
                 SlotCompHediff slotComp = hediff.TryGetComp<SlotCompHediff>();
                 SlotCompThing thingComp = pawn.TryGetComp<SlotCompThing>();
-                if(thingComp == null)
+                if (thingComp == null)
                 {
                     return;
                 }
                 if (slotComp != null)
                 {
-                    foreach(Slot slot in thingComp.Props.slots)
+                    foreach (Slot slot in thingComp.Props.slots)
                     {
                         foreach (string slotused in slotComp.Props.slotsUsed)
                         {
 
 
-                            if (slotused == slot.name && slot.curSize == slot.size+1)
+                            if (slotused == slot.name && slot.curSize == slot.size + 1)
                             {
                                 try
                                 {
@@ -97,8 +101,12 @@ namespace AvaliMod
                                     pawn.health.RemoveHediff(hediffToRemove);
                                     GenSpawn.Spawn(hediffToRemove.def.spawnThingOnRemoved, pawn.Position, pawn.Map, WipeMode.VanishOrMoveAside);
                                 }
-                                catch {
-                                    Log.Message("Tried to remove, but something went wrong!");
+                                catch
+                                {
+                                    if (LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableDebugMode)
+                                    {
+                                        Log.Message("Tried to remove, but something went wrong!");
+                                    }
                                 }
                             }
                             else if (slotused == slot.name)
@@ -108,13 +116,30 @@ namespace AvaliMod
                                     slot.curSize++;
                                     hasAdded = true;
                                 }
-                                
+
                             }
                         }
                     }
-                    
+
                 }
-                 
+
+            }
+        }
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            if (!hasStarted)
+            {
+                onTick = random.Next(0, 59);
+                hasStarted = true;
+            }
+            if (onTick == 60)
+            {
+                check();
+                onTick = 0;
+            }
+            else
+            {
+                onTick++;
             }
         }
 

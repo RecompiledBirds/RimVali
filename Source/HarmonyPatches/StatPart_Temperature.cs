@@ -10,7 +10,8 @@ namespace AvaliMod
     [HarmonyPatch(typeof(StatPart_WorkTableTemperature), "Applies", new Type[] { typeof(ThingDef), typeof(Map), typeof(IntVec3) })]
     public static class StatPart_WorkTableTemperature_Applies
     {
-        public static void Postfix(ThingDef tDef, Map map, IntVec3 c, ref bool __result)
+        [HarmonyPatch]
+        public static void tempPatch(ThingDef tDef, Map map, IntVec3 c, ref bool __result)
         {
             if (__result) //The original method is gonna apply the patch, so decide whether to change that result to "no, don't apply the stat".
             {

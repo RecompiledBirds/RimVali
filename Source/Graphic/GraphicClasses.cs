@@ -65,7 +65,7 @@ namespace AvaliMod
             return this.SubGraphicFor(thing).MatSingleFor(thing);
         }
 
-        public override void DrawWorker(
+       /* public override void DrawWorker(
           Vector3 loc,
           Rot4 rot,
           ThingDef thingDef,
@@ -74,7 +74,7 @@ namespace AvaliMod
         {
             this.SubGraphicFor(thing).DrawWorker(loc, rot, thingDef, thing, extraRotation);
         }
-
+       */
         public AvaliGraphic SubGraphicFor(Thing thing)
         {
             StuffAppearanceDef smooth = StuffAppearanceDefOf.Smooth;
@@ -110,7 +110,7 @@ namespace AvaliMod
             }
         }
 
-        public override void DrawWorker(
+     /*   public override void DrawWorker(
           Vector3 loc,
           Rot4 rot,
           ThingDef thingDef,
@@ -137,7 +137,7 @@ namespace AvaliMod
             }
             Rand.PopState();
         }
-
+        */
         public override string ToString()
         {
             return "Scatter(subGraphic[0]=" + this.subGraphics[0].ToString() + ", count=" + (object)this.subGraphics.Length + ")";
@@ -378,6 +378,7 @@ namespace AvaliMod
 
     public class AvaliGraphic_Multi : AvaliGraphic
     {
+        
         private Material[] mats = new Material[4];
         private bool westFlipped;
         private bool eastFlipped;
@@ -454,7 +455,7 @@ namespace AvaliMod
                 return this.eastFlipped;
             }
         }
-
+        
         public override bool ShouldDrawRotated
         {
             get
@@ -464,7 +465,7 @@ namespace AvaliMod
                 return this.MatEast == this.MatNorth || this.MatWest == this.MatNorth;
             }
         }
-
+        
         public override float DrawRotatedExtraAngleOffset
         {
             get
@@ -472,7 +473,7 @@ namespace AvaliMod
                 return this.drawRotatedExtraAngleOffset;
             }
         }
-
+        
         public override void Init(AvaliGraphicRequest req)
         {
             this.data = req.graphicData;
@@ -620,7 +621,7 @@ namespace AvaliMod
                 Log.ErrorOnce("Cannot use Graphic_Random.GetColoredVersion with a non-white colorTwo.", 9910251, false);
             return AvaliGraphicDatabase.Get < AvaliGraphic_Random>(this.path, newShader, this.drawSize, newColor, Color.white, Color.white,this.data);
         }
-
+        /*
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
             return thing == null ? this.MatSingle : this.MatSingleFor(thing);
@@ -640,7 +641,7 @@ namespace AvaliMod
         {
             (thing == null ? this.subGraphics[0] : this.SubGraphicFor(thing)).DrawWorker(loc, rot, thingDef, thing, extraRotation);
         }
-
+        */
         public AvaliGraphic SubGraphicFor(Thing thing)
         {
             return thing == null ? this.subGraphics[0] : this.subGraphics[thing.thingIDNumber % this.subGraphics.Length];
@@ -671,6 +672,7 @@ namespace AvaliMod
             }
         }
 
+        /*
         public override void DrawWorker(
           Vector3 loc,
           Rot4 rot,
@@ -718,7 +720,7 @@ namespace AvaliMod
                 Graphics.DrawMesh(MeshPool.plane10, matrix, subGraphic.MatSingle, 0);
             }
         }
-
+        */
         public override string ToString()
         {
             return "Flicker(subGraphic[0]=" + this.subGraphics[0].ToString() + ", count=" + (object)this.subGraphics.Length + ")";
@@ -727,13 +729,7 @@ namespace AvaliMod
 
     public class AvaliGraphic_StackCount : AvaliGraphic_Collection
     {
-        public override Material MatSingle
-        {
-            get
-            {
-                return this.subGraphics[this.subGraphics.Length - 1].MatSingle;
-            }
-        }
+        
 
         public override AvaliGraphic GetColoredVersion(
           Shader newShader,
@@ -745,7 +741,7 @@ namespace AvaliMod
             return AvaliGraphicDatabase.Get<AvaliGraphic_StackCount>(this.path, newShader, this.drawSize, newColor, newColorTwo, newColorThree
                 ,this.data);
         }
-
+        /*
         public override Material MatAt(Rot4 rot, Thing thing = null)
         {
             return thing == null ? this.MatSingle : this.MatSingleFor(thing);
@@ -770,7 +766,7 @@ namespace AvaliMod
         {
             (thing == null ? this.subGraphics[0] : this.SubGraphicFor(thing)).DrawWorker(loc, rot, thingDef, thing, extraRotation);
         }
-
+        */
         public AvaliGraphic SubGraphicForStackCount(int stackCount, ThingDef def)
         {
             switch (this.subGraphics.Length)
