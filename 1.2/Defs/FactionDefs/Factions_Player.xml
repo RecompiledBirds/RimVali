@@ -24,10 +24,10 @@
 			<li>Tribal</li>
 		</hairTags>
 		<apparelStuffFilter>
-			<thingDefs>
-				<li>Cloth</li>
-			</thingDefs>
-		</apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+      </thingDefs>
+    </apparelStuffFilter>
 		<colorSpectrum>
 				<li>(1, 0.52, 0.05)</li>
 		</colorSpectrum>
