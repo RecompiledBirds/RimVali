@@ -26,7 +26,7 @@ namespace AvaliMod
             this.comps.Add(new colorCompProps());
             base.ResolveReferences();
         }
-        public bool replaceThought(ref ThoughtDef thought, bool log = false)
+        public bool ReplaceThought(ref ThoughtDef thought, bool log = false)
         {
             //Log.Message(replaceableThoughts.Count.ToString());
             //Log.Message("checking thought list..", true);

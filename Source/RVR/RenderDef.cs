@@ -8,22 +8,22 @@ using System;
 
 namespace AvaliMod
 {
-    public class baseTex
+    public class BaseTex
     {
         public string tex;
         public string femaleTex;
     }
 
-    public class hediffTex : baseTex
+    public class HediffTex : BaseTex
     {
         public HediffDef hediff;
     }
-    public class backstoryTex : baseTex
+    public class BackstoryTex : BaseTex
     {
         public string backstoryTitle;
     }
 
-    public class hediffStoryTex : baseTex
+    public class HediffStoryTex : BaseTex
     {
         public string backstoryTitle;
         public HediffDef hediffDef;
@@ -53,7 +53,7 @@ namespace AvaliMod
             //Now we hope Tynan never changes backstories. Ever. Or else this thing breaks.
         }
 
-        public int getMyIndex(Pawn pawn)
+        public int GetMyIndex(Pawn pawn)
         {
             if(pawn.def is RimValiRaceDef)
             {
@@ -87,7 +87,7 @@ namespace AvaliMod
                 adulthood = pawn.story.adulthood;
             }
             Backstory childhood = pawn.story.childhood;
-            foreach (backstoryTex backstoryTex in backstoryTextures)
+            foreach (BackstoryTex backstoryTex in backstoryTextures)
             {
                 //Log.Message(backstoryTex.backstoryTitle);
                 if ((adulthood != null && StoryIsName(adulthood, backstoryTex.backstoryTitle)) || StoryIsName(childhood, backstoryTex.backstoryTitle))
@@ -100,7 +100,7 @@ namespace AvaliMod
                     path = backstoryTex.tex;
                 }
             }
-            foreach (hediffTex hediffTex in hediffTextures)
+            foreach (HediffTex hediffTex in hediffTextures)
             {
                 foreach (BodyPartRecord bodyPartRecord in pawn.def.race.body.AllParts)
                 {
@@ -121,7 +121,7 @@ namespace AvaliMod
 
             }
 
-            foreach (hediffStoryTex hediffStoryTex in hediffStoryTextures)
+            foreach (HediffStoryTex hediffStoryTex in hediffStoryTextures)
             {
                 if ((adulthood != null && StoryIsName(adulthood, hediffStoryTex.backstoryTitle)) || StoryIsName(childhood, hediffStoryTex.backstoryTitle))
                 {
@@ -156,7 +156,7 @@ namespace AvaliMod
 
         }
 
-        public List<baseTex> textures;
+        public List<BaseTex> textures;
         public string bodyPart = null;
 
         public RenderableDef linkIndexWithDef;
@@ -169,9 +169,9 @@ namespace AvaliMod
         public BodyPartGraphicPos south = new BodyPartGraphicPos();
         public BodyPartGraphicPos west;
 
-        List<backstoryTex> backstoryTextures = new List<backstoryTex>();
-        List<hediffTex> hediffTextures = new List<hediffTex>();
-        List<hediffStoryTex> hediffStoryTextures = new List<hediffStoryTex>();
+        public List<BackstoryTex> backstoryTextures = new List<BackstoryTex>();
+        public List<HediffTex> hediffTextures = new List<HediffTex>();
+        public List<HediffStoryTex> hediffStoryTextures = new List<HediffStoryTex>();
         public bool CanShowPortrait(Pawn pawn)
         {
             if (bodyPart == null)
