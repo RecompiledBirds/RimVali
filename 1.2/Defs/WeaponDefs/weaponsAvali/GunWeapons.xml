@@ -67,7 +67,7 @@
   <ThingDef ParentName="AvaliMakeableGun">
     <defName>AvaliPistol</defName>
     <label>Avali Pistol</label>
-    <description>A common avali pistol. Unlike most human pistols, this gun uses rail technology to fire its bullets.</description>
+    <description>A common avali pistol. Unlike most human pistols, this gun uses coilgun technology to fire its bullets.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Pistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -153,7 +153,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliSMG</defName>
     <label>Avali SMG</label>
-    <description>A railgun based SMG. Works best at long range, like most avali weapons do.</description>
+    <description>A coilgun based SMG. Works best at long range, like most avali weapons do.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/SMG</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -241,7 +241,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliRifle</defName>
     <label>Avali Rifle</label>
-    <description>A classic railgun weapon, the rifle. Good for taking out enemies at a distance.</description>
+    <description>A classic coilgun weapon, the rifle. Good for taking out enemies at a distance.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Rifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -414,7 +414,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliShotgun</defName>
     <label>Avali Shotgun</label>
-    <description>An avali shotgun. Like all avali weapons, it is based off railgun technology, allowing for long range at the cost of short range accuracy.</description>
+    <description>An avali shotgun. Like almost all avali weapons, it is based off coilgun technology, allowing for long range at the cost of short range accuracy.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Shotgun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
