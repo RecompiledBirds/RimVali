@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <StatDef>
+    <defName>HealthIncreasePercent</defName>
+    <label>Part health impact</label>
+    <description>How much the part health is increased/decreased by a bionic.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showIfUndefined>false</showIfUndefined>
+    <displayPriorityInCategory>4510</displayPriorityInCategory>
+  </StatDef>
+  
+   <StatDef>
+    <defName>HealthIncreaseAdd</defName>
+    <label>Part health impact</label>
+    <description>How much the part health is increased/decreased by a bionic.</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showIfUndefined>false</showIfUndefined>
+    <displayPriorityInCategory>4510</displayPriorityInCategory>
+  </StatDef>
+</Defs>
