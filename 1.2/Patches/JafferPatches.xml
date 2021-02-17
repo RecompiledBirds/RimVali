@@ -11,9 +11,9 @@
         <li Class="PatchOperationReplace">
            <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Avali"]</xpath>
     <value>
-      <RVHAR.ThingDef_AlienRace ParentName="BaseFullAvali">
+      <AvaliMod.RimValiRaceDef ParentName="BaseFullAvali">
         <defName>Alien_Avali</defName>
-      </RVHAR.ThingDef_AlienRace>
+      </AvaliMod.RimValiRaceDef>
     </value>
         </li>
          
