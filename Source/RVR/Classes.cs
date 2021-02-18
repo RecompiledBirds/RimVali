@@ -30,7 +30,7 @@ namespace AvaliMod
         public ThoughtDef myOrganHarvested = ThoughtDefOf.MyOrganHarvested;
     }
 
-    public class graphics
+    public class raceColors
     {
         public string skinColorSet;
 
@@ -108,7 +108,7 @@ namespace AvaliMod
     public class Main
     {
         public restrictions restrictions= new restrictions();
-        public graphics graphics = new graphics();
+        
 
         public List<BodyTypeDef> bodyTypeDefs = new List<BodyTypeDef>();
     }

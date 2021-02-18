@@ -8,8 +8,8 @@ namespace AvaliMod
 {
     public class RimValiRaceDef : ThingDef
     {
-        public List<RenderableDef> bodyPartGraphics = new List<RenderableDef>();
-        public graphics graphics = new graphics();
+        public List<RenderableDef> renderableDefs = new List<RenderableDef>();
+        public raceColors graphics = new raceColors();
         public bool hasHair = false;
         public restrictions restrictions = new restrictions();
         public Main mainSettings = new Main();
@@ -51,7 +51,7 @@ namespace AvaliMod
             {
                 colorComp colorcomp = pawn.TryGetComp<colorComp>();
                 
-                foreach (RenderableDef renderableDef in bodyPartGraphics)
+                foreach (RenderableDef renderableDef in renderableDefs)
                 {
                     if (!colorcomp.renderableDefIndexes.ContainsKey(renderableDef.defName))
                     {

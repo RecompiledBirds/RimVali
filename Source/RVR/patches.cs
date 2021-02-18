@@ -13,6 +13,7 @@ namespace AvaliMod
     [StaticConstructorOnStartup]
     public static class Restrictions
     {
+        //We use the same method HAR uses for handling restrictions for compatiblity stuff.
         //Normal restrictions
         public static Dictionary<ThingDef, List<ThingDef>> equipmentRestrictions = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<ThingDef, List<ThingDef>> consumableRestrictions = new Dictionary<ThingDef, List<ThingDef>>();
@@ -31,6 +32,9 @@ namespace AvaliMod
         //Whitelists
         public static Dictionary<ThingDef, List<ThingDef>> buildingWhitelists = new Dictionary<ThingDef, List<ThingDef>>();
         public static Dictionary<ThingDef, List<ThingDef>> equipabblbleWhiteLists = new Dictionary<ThingDef, List<ThingDef>>();
+
+
+        public static Dictionary<BodyTypeDef, List<ThingDef>> bodyTypes = new Dictionary<BodyTypeDef, List<ThingDef>>();
 
         //Faction restrictions
         public static Dictionary<ResearchProjectDef, List<FactionDef>> factionResearchRestrictions = new Dictionary<ResearchProjectDef, List<FactionDef>>();
@@ -414,7 +418,7 @@ namespace AvaliMod
                     {
                         if (thing.IsApparel)
                         {
-                            if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing, valiRaceDef) || !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing, valiRaceDef))
+                            if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing, valiRaceDef) && !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing, valiRaceDef))
                             {
                                 apparel.Add(pair);
                             }
@@ -973,36 +977,15 @@ namespace AvaliMod
             {
                 //This is an automatic check to see if we can put the head position here.
                 //no human required
-                if (rimValiRaceDef.bodyPartGraphics.Where(x => x.defName.ToLower() == "head").Count() > 0)
+                if (rimValiRaceDef.renderableDefs.Where(x => x.defName.ToLower() == "head").Count() > 0)
                 {
 
                     Vector2 offset = new Vector2(0, 0);
-                    if (rimValiRaceDef.graphics.headOffsets != null)
-                    {
-                        if (rotation == Rot4.South)
-                        {
-                            offset = rimValiRaceDef.graphics.headOffsets.south;
-                        }
-                        else if (rotation == Rot4.East)
-                        {
-                            offset = rimValiRaceDef.graphics.headOffsets.east;
-                        }
-                        else if (rotation == Rot4.North)
-                        {
-                            offset = rimValiRaceDef.graphics.headOffsets.north;
-                        } else if (rotation == Rot4.West)
-                        {
-                            offset = rimValiRaceDef.graphics.headOffsets.west;
-                        }
-                    }
-                    RenderableDef headDef = rimValiRaceDef.bodyPartGraphics.First(x => x.defName.ToLower() == "head");
+
+                    RenderableDef headDef = rimValiRaceDef.renderableDefs.First(x => x.defName.ToLower() == "head");
                     __instance.graphics.headGraphic.drawSize = headDef.south.size;
                     Vector3 pos = new Vector3(0, 0, 0);
                     pos.y = __result.y;
-                    if (rimValiRaceDef.graphics.headSize == null)
-                    {
-                        rimValiRaceDef.graphics.headSize = headDef.south.size;
-                    }
                     if (headDef.west == null)
                     {
                         headDef.west = headDef.east;
@@ -1058,7 +1041,7 @@ namespace AvaliMod
             {
                 try
                 {
-
+                    Debug.Log(pawn.def.defName);
                     pawn.story.crownType = CrownType.Average;
                     if ((pawn.story.adulthood != null && DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == p2.story.adulthood.identifier).Count() > 0))
                     {
@@ -1069,10 +1052,9 @@ namespace AvaliMod
                     if (DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == p2.story.childhood.identifier).Count() > 0){
                         RVRBackstory story = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == p2.story.childhood.identifier).FirstOrDefault();
                         SetBody(story, ref pawn);
-                        
+                        return;
                     }
-                    pawn.story.bodyType = rimValiRace.mainSettings.bodyTypeDefs[UnityEngine.Random.Range(0, rimValiRace.mainSettings.bodyTypeDefs.Count - 1)];
-
+                    
                 }
                 catch (Exception e)
                 {
@@ -1080,12 +1062,6 @@ namespace AvaliMod
                     Log.Message("Trying again...");
                     Patch(ref pawn);
                 }
-            }
-            else
-            {
-                List<BodyTypeDef> bodyTypesAvailible = new List<BodyTypeDef>();
-                bodyTypesAvailible.AddRange(DefDatabase<BodyTypeDef>.AllDefsListForReading.Where(x => !Restrictions.bodyTypeRestrictions.ContainsKey(x)));
-                pawn.story.bodyType = bodyTypesAvailible.RandomElement();
             }
         }
     }
@@ -1196,7 +1172,7 @@ namespace AvaliMod
             Pawn pawn = __instance.pawn;
             if (pawn.def is RimValiRaceDef rimvaliRaceDef)
             {
-                graphics graphics = rimvaliRaceDef.graphics;
+                raceColors graphics = rimvaliRaceDef.graphics;
                 colorComp colorComp = pawn.TryGetComp<colorComp>();
 
                 if (colorComp.colors == null || colorComp.colors.Count() == 0)
@@ -1295,7 +1271,7 @@ namespace AvaliMod
                     Pawn pawn = apparel.Wearer;
                     if (!((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
                     {
-                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / def.bodyPartGraphics.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
                         rec = new ApparelGraphicRecord(graphic, apparel);
                     }
                 }
@@ -1307,7 +1283,7 @@ namespace AvaliMod
 
                         if (!((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
                         {
-                            Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / defTwo.bodyPartGraphics.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
+                            Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / defTwo.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
                             rec = new ApparelGraphicRecord(graphic, apparel);
                         }
                     }
@@ -1373,8 +1349,9 @@ namespace AvaliMod
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
 
-                foreach (RenderableDef renderable in rimValiRaceDef.bodyPartGraphics)
+                foreach (RenderableDef renderable in rimValiRaceDef.renderableDefs)
                 {
+                    
                     if (renderable.CanShow(pawn))
                     {
                         colorComp colorComp = pawn.TryGetComp<colorComp>();
@@ -1410,7 +1387,7 @@ namespace AvaliMod
                         }
                         if (renderable.useColorSet != null)
                         {
-                            graphics graphics = rimValiRaceDef.graphics;
+                            raceColors graphics = rimValiRaceDef.graphics;
                             List<Colors> colors = graphics.colorSets;
                             TriColor_ColorGenerators generators = colors.First<Colors>(x => x.name == graphics.skinColorSet).colorGenerator;
                             /*Color color1 = generators.firstColor.NewRandomizedColor();
@@ -1452,7 +1429,7 @@ namespace AvaliMod
             if (pawn.def is RimValiRaceDef rimValiRaceDef)
             {
 
-                foreach (RenderableDef renderable in rimValiRaceDef.bodyPartGraphics)
+                foreach (RenderableDef renderable in rimValiRaceDef.renderableDefs)
                 {
                     if (renderable.CanShowPortrait(pawn))
                     {
@@ -1489,7 +1466,7 @@ namespace AvaliMod
                         }
                         if (renderable.useColorSet != null)
                         {
-                            graphics graphics = rimValiRaceDef.graphics;
+                            raceColors graphics = rimValiRaceDef.graphics;
                             List<Colors> colors = graphics.colorSets;
                             TriColor_ColorGenerators generators = colors.First<Colors>(x => x.name == graphics.skinColorSet).colorGenerator;
                             /*Color color1 = generators.firstColor.NewRandomizedColor();
@@ -1552,8 +1529,12 @@ namespace AvaliMod
                     }
 
                 }
-                
-                RenderPatchTwo.RenderBodyParts(portrait, angle, rootLoc, __instance, __instance.graphics.pawn.Rotation);
+                Rot4 rot = __instance.graphics.pawn.Rotation;
+                if (__instance.graphics.pawn.InBed())
+                {
+                    rot = __instance.LayingFacing();
+                }
+                RenderBodyParts(portrait, angle, rootLoc, __instance, rot);
                 if (__instance.graphics.pawn.Spawned && !__instance.graphics.pawn.Dead)
                 {
                     __instance.graphics.pawn.stances.StanceTrackerDraw();
