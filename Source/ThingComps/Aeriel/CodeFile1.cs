@@ -3,9 +3,128 @@ using Verse;
 using System;
 using Verse.AI;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace AvaliMod
 {
+	public class AERIALChangable : CompProperties
+	{
+		public int maxShellCount = 6;
+		// Token: 0x0600550E RID: 21774 RVA: 0x0003AF21 File Offset: 0x00039121
+		public AERIALChangable()
+		{
+			this.compClass = typeof(AERIALChangeableProjectile);
+		}
+	}
+	// Token: 0x020017AB RID: 6059
+	public class AERIALChangeableProjectile : ThingComp, IStoreSettingsParent
+	{
+		// Token: 0x170014BB RID: 5307
+		// (get) Token: 0x060085F8 RID: 34296 RVA: 0x00059C88 File Offset: 0x00057E88
+		public AERIALChangable Props
+		{
+			get
+			{
+				return (AERIALChangable)this.props;
+			}
+		}
+
+
+
+		// Token: 0x170014BD RID: 5309
+		// (get) Token: 0x060085FA RID: 34298 RVA: 0x00059CA8 File Offset: 0x00057EA8
+		public ThingDef Projectile
+		{
+			get
+			{
+				if (!this.Loaded)
+				{
+					return null;
+				}
+				return loadedShells[loadedShells.Count-1].projectileWhenLoaded;
+			}
+		}
+
+		// Token: 0x170014BE RID: 5310
+		// (get) Token: 0x060085FB RID: 34299 RVA: 0x00059CBF File Offset: 0x00057EBF
+		public bool Loaded
+		{
+			get
+			{
+				return loadedShells.Count>0;
+			}
+		}
+
+		public bool StorageTabVisible
+		{
+			get
+			{
+				return true;
+			}
+		}
+
+		public override void PostExposeData()
+		{
+			//Scribe_Defs.Look<ThingDef>(ref this.loadedShell, "loadedShell");
+			Scribe_Values.Look<int>(ref this.loadedCount, "loadedCount", 0, false);
+			Scribe_Deep.Look<StorageSettings>(ref this.allowedShellsSettings, "allowedShellsSettings", Array.Empty<object>());
+		}
+
+		public override void Initialize(CompProperties props)
+		{
+			base.Initialize(props);
+			this.allowedShellsSettings = new StorageSettings(this);
+			if (this.parent.def.building.defaultStorageSettings != null)
+			{
+				this.allowedShellsSettings.CopyFrom(this.parent.def.building.defaultStorageSettings);
+			}
+		}
+
+		// Token: 0x060085FF RID: 34303 RVA: 0x00059D03 File Offset: 0x00057F03
+		public virtual void Notify_ProjectileLaunched()
+		{
+			if (this.loadedCount > 0)
+			{
+				this.loadedCount--;
+			}
+			if (this.loadedCount <= 0)
+			{
+				this.loadedShells[loadedShells.Count-1] = null;
+			}
+		}
+
+		
+		public List<ThingDef> loadedShells= new List<ThingDef>();
+		public void NewLoadShell(ThingDef shell, int count)
+        {
+			loadedShells.Add(shell);
+        }
+
+		public Thing NewRemoveShell()
+        {
+			Thing thing = ThingMaker.MakeThing(loadedShells[loadedShells.Count-1], null);
+			thing.stackCount = 1;
+			loadedShells.RemoveAt(loadedShells.Count - 1);
+			return thing;
+		}
+		// Token: 0x06008602 RID: 34306 RVA: 0x00059D71 File Offset: 0x00057F71
+		public StorageSettings GetStoreSettings()
+		{
+			return this.allowedShellsSettings;
+		}
+
+		// Token: 0x06008603 RID: 34307 RVA: 0x00059D79 File Offset: 0x00057F79
+		public StorageSettings GetParentStoreSettings()
+		{
+			return this.parent.def.building.fixedStorageSettings;
+		}
+
+		// Token: 0x04005666 RID: 22118
+		public int loadedCount;
+
+		// Token: 0x04005667 RID: 22119
+		public StorageSettings allowedShellsSettings;
+	}
 	public class AerielProps : CompProperties
 	{
 		// Token: 0x06005547 RID: 21831 RVA: 0x0003B191 File Offset: 0x00039391
@@ -53,12 +172,12 @@ namespace AvaliMod
 			{
 				return false;
 			}
-			CompChangeableProjectile compChangeableProjectile = building_TurretGun.gun.TryGetComp<CompChangeableProjectile>();
-			return compChangeableProjectile != null && !compChangeableProjectile.Loaded;
+			AERIALChangeableProjectile compChangeableProjectile = building_TurretGun.gun.TryGetComp<AERIALChangeableProjectile>();
+			return compChangeableProjectile != null && !(compChangeableProjectile.loadedShells.Count>=compChangeableProjectile.Props.maxShellCount);
 		}
 		public static Thing findAmmo(Pawn pawn, AERIALSYSTEM aeriel)
 		{
-			StorageSettings allowed = pawn.IsColonist ? aeriel.gun.TryGetComp<CompChangeableProjectile>().allowedShellsSettings : null;
+			StorageSettings allowed = pawn.IsColonist ? aeriel.gun.TryGetComp<AERIALChangeableProjectile>().allowedShellsSettings : null;
 			Predicate<Thing> validator = (Thing t) => !t.IsForbidden(pawn) && pawn.CanReserve(t, 10, 1, null, false) && (allowed == null || allowed.AllowedToAccept(t));
 			return GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.Shell), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false), 40f, validator, null, 0, -1, false, RegionType.Set_Passable, false);
 
@@ -107,7 +226,7 @@ namespace AvaliMod
 					Pawn actor = loadIfNeeded.actor;
 					AERIALSYSTEM building_TurretGun = ((Building)actor.CurJob.targetA.Thing) as AERIALSYSTEM;
 
-					building_TurretGun.gun.TryGetComp<CompChangeableProjectile>().LoadShell(actor.CurJob.targetB.Thing.def, 1);
+					building_TurretGun.gun.TryGetComp<AERIALChangeableProjectile>().NewLoadShell(actor.CurJob.targetB.Thing.def, 1);
 					actor.carryTracker.innerContainer.ClearAndDestroyContents(DestroyMode.Vanish);
 				}
 			};

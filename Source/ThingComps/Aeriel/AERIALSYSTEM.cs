@@ -44,6 +44,7 @@ namespace AvaliMod
 		{
 			get
 			{
+				
 				return this.GunCompEq.PrimaryVerb;
 			}
 		}
@@ -110,7 +111,7 @@ namespace AvaliMod
 				{
 					return false;
 				}
-				CompChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<CompChangeableProjectile>();
+				AERIALChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<AERIALChangeableProjectile>();
 				return compChangeableProjectile != null && compChangeableProjectile.Loaded;
 			}
 		}
@@ -215,8 +216,8 @@ namespace AvaliMod
 			base.Tick();
 			if (this.CanExtractShell && this.MannedByColonist)
 			{
-				CompChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<CompChangeableProjectile>();
-				if (!compChangeableProjectile.allowedShellsSettings.AllowedToAccept(compChangeableProjectile.LoadedShell))
+				AERIALChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<AERIALChangeableProjectile>();
+				if (!compChangeableProjectile.allowedShellsSettings.AllowedToAccept(compChangeableProjectile.loadedShells[compChangeableProjectile.loadedShells.Count-1]))
 				{
 					this.ExtractShell();
 				}
@@ -278,41 +279,7 @@ namespace AvaliMod
 			}
 		}
 
-		
-		private IAttackTargetSearcher TargSearcher()
-		{
-			if (this.mannableComp != null && this.mannableComp.MannedNow)
-			{
-				return this.mannableComp.ManningPawn;
-			}
-			return this;
-		}
 
-
-		private bool IsValidTarget(Thing t)
-		{
-			Pawn pawn = t as Pawn;
-			if (pawn != null)
-			{
-				if (this.AttackVerb.ProjectileFliesOverhead())
-				{
-					RoofDef roofDef = base.Map.roofGrid.RoofAt(t.Position);
-					if (roofDef != null && roofDef.isThickRoof)
-					{
-						return false;
-					}
-				}
-				if (this.mannableComp == null)
-				{
-					return !GenAI.MachinesLike(base.Faction, pawn);
-				}
-				if (pawn.RaceProps.Animal && pawn.Faction == Faction.OfPlayer)
-				{
-					return false;
-				}
-			}
-			return true;
-		}
 
 
 
@@ -338,12 +305,12 @@ namespace AvaliMod
 			{
 				stringBuilder.AppendLine("CanFireIn".Translate() + ": " + this.burstCooldownTicksLeft.ToStringSecondsFromTicks());
 			}
-			CompChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<CompChangeableProjectile>();
+			AERIALChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<AERIALChangeableProjectile>();
 			if (compChangeableProjectile != null)
 			{
 				if (compChangeableProjectile.Loaded)
 				{
-					stringBuilder.AppendLine("ShellLoaded".Translate(compChangeableProjectile.LoadedShell.LabelCap, compChangeableProjectile.LoadedShell));
+					stringBuilder.AppendLine("ShellLoaded".Translate(compChangeableProjectile.loadedShells[compChangeableProjectile.loadedShells.Count - 1].LabelCap, compChangeableProjectile.loadedShells[compChangeableProjectile.loadedShells.Count - 1]));
 				}
 				else
 				{
@@ -406,22 +373,22 @@ namespace AvaliMod
 			IEnumerator<Gizmo> enumerator = null;
 			if (this.CanExtractShell)
 			{
-				CompChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<CompChangeableProjectile>();
+				AERIALChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<AERIALChangeableProjectile>();
 				yield return new Command_Action
 				{
 					defaultLabel = "CommandExtractShell".Translate(),
 					defaultDesc = "CommandExtractShellDesc".Translate(),
-					icon = compChangeableProjectile.LoadedShell.uiIcon,
-					iconAngle = compChangeableProjectile.LoadedShell.uiIconAngle,
-					iconOffset = compChangeableProjectile.LoadedShell.uiIconOffset,
-					iconDrawScale = GenUI.IconDrawScale(compChangeableProjectile.LoadedShell),
+					icon = compChangeableProjectile.loadedShells[compChangeableProjectile.loadedShells.Count - 1].uiIcon,
+					iconAngle = compChangeableProjectile.loadedShells[compChangeableProjectile.loadedShells.Count-1].uiIconAngle,
+					iconOffset = compChangeableProjectile.loadedShells[compChangeableProjectile.loadedShells.Count - 1].uiIconOffset,
+					iconDrawScale = GenUI.IconDrawScale(compChangeableProjectile.loadedShells[compChangeableProjectile.loadedShells.Count - 1]),
 					action = delegate ()  
 					{
 						this.ExtractShell();
 					}
 				};
 			}
-			CompChangeableProjectile compChangeableProjectile2 = this.gun.TryGetComp<CompChangeableProjectile>();
+			AERIALChangeableProjectile compChangeableProjectile2 = this.gun.TryGetComp<AERIALChangeableProjectile>();
 			if (compChangeableProjectile2 != null)
 			{
 				StorageSettings storeSettings = compChangeableProjectile2.GetStoreSettings();
@@ -489,7 +456,7 @@ namespace AvaliMod
 		// Token: 0x06007DD9 RID: 32217 RVA: 0x00258AB0 File Offset: 0x00256CB0
 		private void ExtractShell()
 		{
-			GenPlace.TryPlaceThing(this.gun.TryGetComp<CompChangeableProjectile>().RemoveShell(), base.Position, base.Map, ThingPlaceMode.Near, null, null, default(Rot4));
+			GenPlace.TryPlaceThing(this.gun.TryGetComp<AERIALChangeableProjectile>().NewRemoveShell(), base.Position, base.Map, ThingPlaceMode.Near, null, null, default);
 		}
 
 		// Token: 0x06007DDA RID: 32218 RVA: 0x00054930 File Offset: 0x00052B30
