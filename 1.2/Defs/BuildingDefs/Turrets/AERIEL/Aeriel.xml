@@ -18,16 +18,14 @@
     </inspectorTabs>
     <comps Inherit = "False">
       <li Class="CompProperties_Forbiddable"/>
-      <li Class="AvaliMod.AERIALCompReloadableProps">
-        <maxShells>6</maxShells>
-      </li>
+      
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
         <explosiveRadius>4.9</explosiveRadius>
         <explosiveDamageType>Bomb</explosiveDamageType>
       </li>
-     <li Class="AvaliMod.AerielProps">
-     </li>
+     <li Class="AvaliMod.AerielProps"/>
+  
     </comps>
     <designationHotKey>Misc4</designationHotKey>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -65,7 +63,7 @@
     </weaponTags>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>AvaliMod.AERIALLaunch</verbClass>
         <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
         <warmupTime>4.0</warmupTime>
         <forcedMissRadius>0.5</forcedMissRadius>
@@ -81,7 +79,9 @@
       </li>
     </verbs>
     <comps>
-      <li Class="CompProperties_ChangeableProjectile" />
+      <li Class="AvaliMod.AERIALChangable">
+        <maxShellCount>6</maxShellCount>
+      </li>
     </comps>
     <building>
       <fixedStorageSettings>
