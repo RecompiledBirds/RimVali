@@ -17,6 +17,8 @@
   
   <PacksNum>The maximum number of avali in a pack.\n5 is usually recommended.</PacksNum>
   
+  <PackOpinionReq>Opinion required</PackOpinionReq>
+  
   <MultithreadingCheck>Multithreading enabled:</MultithreadingCheck>
   
   <MultiThreadingDesc>Enable/disable pack multithreading. [WARNING: RESTARTS THE GAME.]\nIt is recommended to have this enabled, as it reduces lag greatly. May cause issues with Dub's performance anaylzer.</MultiThreadingDesc>
@@ -27,8 +29,8 @@
   
   <MaxPackSize>Maximum pack size: </MaxPackSize>
   
-  g<RacesInPacks>Races in packs:</RacesInPacks>
-  
+  <RacesInPacks>Races in packs:</RacesInPacks>
+ 
   <!-- Gameplay -->
   <GameplayLabel>Gameplay Settings</GameplayLabel>
   <CanHaveEggs>Avali can have eggs:</CanHaveEggs>
@@ -37,6 +39,8 @@
   <ShowTextLabel>Ocasionally, avali will display little bits of text. This may lag lower-end computers or games with more colonists, so you can disable it here.</ShowTextLabel>
   <AirdropsText>Airdrops enabled:</AirdropsText>
   <AirdropsLabel>Enables/disables the Illuminate airdrop event. \nThis event adds the "Illuminate Nexus Connection".</AirdropsLabel>
+  <AvaliForDropReq>Avali required for airdrop: </AvaliForDropReq>
+  <HPScaler>HP Scale: </HPScaler>
   
   <!-- Stability warn -->
   <StableSettings>Stable.</StableSettings>
@@ -50,9 +54,19 @@
   
     
   <!-- Events -->
+  <!-- Letters -->
+
   <IlluminateFactionName>Illuminate colony</IlluminateFactionName>
   <IlluminateAirdrop>Illuminate airdrop</IlluminateAirdrop>
   <AirdropEventDesc>An Illuminate airdrop has landed nearby!</AirdropEventDesc>
+  <IlluminateAirdropSendStart>An Illuminate airdrop is en route! It will land in: </IlluminateAirdropSendStart>
+  <IlluminateAirdropSendEnd>hours! Be prepared!</IlluminateAirdropSendEnd>
+  <AirdropSendMsg>Airdrop en route</AirdropSendMsg>
+  
+  <!-- Alerts -->
+  <AirdropInStart>Airdrop arrives in:</AirdropInStart>
+  <AirdropInEnd>hours!</AirdropInEnd>
+  
   
   <!-- Slots -->
   <SlotsEnabled>Bionic slots:</SlotsEnabled>
@@ -66,4 +80,8 @@
   <CannotWear>can't wear this</CannotWear>
   <CannotBuild>can't build this</CannotBuild>
   <CannotEat>can't eat this</CannotEat>
+  
+  
+  <!-- Jobs -->
+  <RefuelThing>Refuel {1_labelShort}</RefuelThing>
 </LanguageData>
