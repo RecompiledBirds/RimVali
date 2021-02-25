@@ -10,7 +10,8 @@ namespace AvaliMod
         public string organDefName = "any";
         public ThingDef race;
        
-        public ThoughtDef thought;
+        public ThoughtDef colonistThought;
+        public ThoughtDef guestThought;
     }
     public class raceButcherThought
     {

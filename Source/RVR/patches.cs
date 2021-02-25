@@ -309,11 +309,12 @@ namespace AvaliMod
                             {
                                 if (entry.isSlave && Rand.Range(0, 100) < entry.chance)
                                 {
-                                    PawnKindDef newDef = DefDatabase<PawnKindDef>.GetNamedSilentFail(entry.pawnkind.defName);
-                                    if (newDef != null)
+                                   
+                                    if (entry.pawnkind != null)
                                     {
-                                        pawnKindDef = newDef;
+                                        pawnKindDef = entry.pawnkind;
                                         request.KindDef = pawnKindDef;
+                                        request.ForceBodyType = race.bodyTypes[UnityEngine.Random.Range(0, race.bodyTypes.Count - 1)];
                                     }
                                     break;
                                 }
@@ -325,11 +326,12 @@ namespace AvaliMod
                             {
                                 if (entry.isVillager && Rand.Range(0, 100) < entry.chance)
                                 {
-                                    PawnKindDef newDef = DefDatabase<PawnKindDef>.GetNamedSilentFail(entry.pawnkind.defName);
-                                    if (newDef != null)
+                                    
+                                    if (entry.pawnkind != null)
                                     {
-                                        pawnKindDef = newDef;
+                                        pawnKindDef = entry.pawnkind;
                                         request.KindDef = pawnKindDef;
+                                        request.ForceBodyType = race.bodyTypes[UnityEngine.Random.Range(0, race.bodyTypes.Count - 1)];
                                     }
                                     break;
                                 }
@@ -341,11 +343,11 @@ namespace AvaliMod
                             {
                                 if (entry.isRefugee && Rand.Range(0, 100) < entry.chance)
                                 {
-                                    PawnKindDef newDef = DefDatabase<PawnKindDef>.GetNamedSilentFail(entry.pawnkind.defName);
-                                    if (newDef != null)
+                                    if (entry.pawnkind != null)
                                     {
-                                        pawnKindDef = newDef;
+                                        pawnKindDef = entry.pawnkind;
                                         request.KindDef = pawnKindDef;
+                                        request.ForceBodyType = race.bodyTypes[UnityEngine.Random.Range(0, race.bodyTypes.Count - 1)];
                                     }
                                     break;
                                 }
@@ -357,18 +359,17 @@ namespace AvaliMod
                             {
                                 if (entry.isWanderer && Rand.Range(0, 100) < entry.chance)
                                 {
-                                    PawnKindDef newDef = DefDatabase<PawnKindDef>.GetNamedSilentFail(entry.pawnkind.defName);
-                                    if (newDef != null)
+                                    if (entry.pawnkind != null)
                                     {
-                                        pawnKindDef = newDef;
+                                        pawnKindDef = entry.pawnkind;
                                         request.KindDef = pawnKindDef;
+                                        request.ForceBodyType = race.bodyTypes[UnityEngine.Random.Range(0, race.bodyTypes.Count - 1)];
+                                        
                                     }
                                     break;
                                 }
                             }
                         }
-
-
                     }
                 }
             }
@@ -406,8 +407,7 @@ namespace AvaliMod
             foreach (ThingStuffPair pair in apparelInfo.GetValue<List<ThingStuffPair>>().ListFullCopy())
             {
                 ThingDef thing = pair.thing;
-                ApparelPatch.CanWear(thing, pawn);
-                if (ApparelPatch.CanWear(thing, pawn))
+                if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing, pawn.def) && !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing, pawn.def))
                 {
                     apparel.Add(pair);
                 }
@@ -418,7 +418,7 @@ namespace AvaliMod
                     {
                         if (thing.IsApparel)
                         {
-                            if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing, valiRaceDef) && !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing, valiRaceDef))
+                            if (!ApparelPatch.CanWear(thing, pawn))
                             {
                                 apparel.Add(pair);
                             }
@@ -457,36 +457,7 @@ namespace AvaliMod
     [HarmonyPatch(typeof(ThoughtUtility), "GiveThoughtsForPawnOrganHarvested")]
     public static class OrganPatch
     {
-        static void ThoughtAdder(Pawn pawn, Pawn victim, bool guest = false)
-        {
-            if (pawn.def is RimValiRaceDef def)
-            {
-                foreach (raceOrganHarvestThought rOHT in def.butcherAndHarvestThoughts.harvestedThoughts)
-                {
-                    if (rOHT.race == victim.def)
-                    {
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(rOHT.thought);
-                        return;
-                    }
-                }
-                if (def.butcherAndHarvestThoughts.careAboutUndefinedRaces)
-                {
-                    if (!guest) {
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowColonistOrganHarvested);
-                        return;
-                    }
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowGuestOrganHarvested);
-                    return;
-                }
-            }
-            if (!guest)
-            {
-                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowColonistOrganHarvested);
-                return;
-            }
-            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowGuestOrganHarvested);
-        }
-
+  
 
 
         [HarmonyPostfix]
@@ -496,35 +467,55 @@ namespace AvaliMod
             {
                 return;
             }
-            ThoughtDef def = null;
-            bool isGuest;
-            if (victim.IsColonist)
+            if (victim.def is RimValiRaceDef raceDef)
             {
-                isGuest = false;
+                victim.needs.mood.thoughts.memories.TryGainMemory(raceDef.butcherAndHarvestThoughts.myOrganHarvested, null);
             }
-            else if (victim.HostFaction == Faction.OfPlayer) {
-                isGuest = true;
+            else
+            {
+                victim.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.MyOrganHarvested, null);
             }
-            foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
+            foreach (Pawn pawn in victim.Map.mapPawns.AllPawnsSpawned)
             {
                 if (pawn.needs.mood != null)
                 {
-                    if (pawn == victim)
+                    if (pawn != victim)
                     {
                         if (pawn.def is RimValiRaceDef rDef)
                         {
-                            pawn.needs.mood.thoughts.memories.TryGainMemory(rDef.butcherAndHarvestThoughts.myOrganHarvested, null);
-                        }
-                        else
-                        {
-                            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.MyOrganHarvested, null);
-                        }
-                    } else if (def != null)
-                    {
-                        if (pawn.def is RimValiRaceDef rDef)
-                        {
-
-
+                            foreach (raceOrganHarvestThought thoughts in rDef.butcherAndHarvestThoughts.harvestedThoughts)
+                            {
+                                if (victim.def == thoughts.race)
+                                {
+                                    if (victim.IsColonist && (thoughts.colonistThought != null))
+                                    {
+                                        pawn.needs.mood.thoughts.memories.TryGainMemory(thoughts.colonistThought);
+                                    }
+                                    else if (!victim.IsColonist && thoughts.guestThought != null)
+                                    {
+                                        pawn.needs.mood.thoughts.memories.TryGainMemory(thoughts.guestThought);
+                                    }
+                                    else if (thoughts.colonistThought != null)
+                                    {
+                                        pawn.needs.mood.thoughts.memories.TryGainMemory(thoughts.colonistThought);
+                                    }
+                                    else
+                                    {
+                                        Log.Error("Undefined thought in " + rDef.defName + " butcherAndHarvestThoughts/harvestedThoughts!");
+                                    }
+                                }
+                                else if (rDef.butcherAndHarvestThoughts.careAboutUndefinedRaces)
+                                {
+                                    if (victim.IsColonist)
+                                    {
+                                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowColonistOrganHarvested);
+                                    }
+                                    else
+                                    {
+                                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowGuestOrganHarvested);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -593,21 +584,19 @@ namespace AvaliMod
     public static class ButcherPatch
     {
         //Gets the thought for butchering.
-        static void ButcheredThoughAdder(Pawn pawn, Pawn butchered, bool butcher = true)
+            static void ButcheredThoughAdder(Pawn pawn, Pawn butchered, bool butcher = true)
         {
             try
             {
                 //Backstories
-                if (/*!DefDatabase<RVRBackstory>.AllDefs.Where(x => x.hasButcherThoughtOverrides == true && x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).EnumerableNullOrEmpty()*/ true)
+                if (!DefDatabase<RVRBackstory>.AllDefs.Where(x => x.hasButcherThoughtOverrides == true && (x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier)).EnumerableNullOrEmpty())
                 {
-                    butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
 
-                    butcherAndHarvestThoughts = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).First().butcherAndHarvestThoughtOverrides;
+                    butcherAndHarvestThoughts butcherAndHarvestThoughts = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).First().butcherAndHarvestThoughtOverrides;
                     try
                     {
                         foreach (raceButcherThought rBT in butcherAndHarvestThoughts.butcherThoughts)
                         {
-                            try { Log.Message(butchered.def.defName); } catch { Log.Message("hey!"); }
                             if (rBT.race == butchered.def)
                             {
 
@@ -616,33 +605,37 @@ namespace AvaliMod
                                     pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
                                     return;
                                 }
+                                else
+                                {
+                                    pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
+                                    return;
+                                }
                             }
-                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
-                            return;
                         }
                     }
-                    catch
+                    catch(Exception e)
                     {
-                        Log.Message("hey");
+                        Log.Error(e.Message);
                     }
-
+                
                     if (butcherAndHarvestThoughts.careAboutUndefinedRaces)
                     {
                         if (butcher)
                         {
                             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
+                            return;
                         }
                         else
                         {
                             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+                            return;
                         }
                     }
-                    return;
                 }
             }
             catch (Exception e)
             {
-                Log.Message(e.Message);
+                Log.Error(e.Message);
             }
 
 
@@ -711,9 +704,10 @@ namespace AvaliMod
             }
             foreach (Pawn targetPawn in butcher.Map.mapPawns.SpawnedPawnsInFaction(butcher.Faction))
             {
-                if (targetPawn.def is RimValiRaceDef rVRDef)
+                if (targetPawn != butcher)
                 {
-                    ButcheredThoughAdder(butcher, deadPawn, false);
+                    ButcheredThoughAdder(targetPawn, deadPawn, false);
+                    Log.Message(targetPawn.Name.ToStringFull);
                 }
             }
 
@@ -1095,9 +1089,9 @@ namespace AvaliMod
         public static bool CanWear(ThingDef def, Pawn pawn)
         {
            
-            return !Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, def, pawn.def) && !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, def, pawn.def);
+            return Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, def, pawn.def, false) || Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, def, pawn.def, false);
         }
-
+        [HarmonyPostfix]
         public static void equipable(ref bool __result, Thing thing, Pawn pawn, ref string cantReason)
         {
             if (!CanWear(thing.def,pawn))
@@ -1112,7 +1106,7 @@ namespace AvaliMod
             {
                 if (valiRaceDef.restrictions.canOnlyUseApprovedApparel)
                 {
-                    if (thing.def.IsApparel)
+                    if (thing.def.IsApparel && !thing.def.IsWeapon)
                     {
 
                        if(CanWear(thing.def, pawn))
@@ -1165,7 +1159,6 @@ namespace AvaliMod
     [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics")]
     public static class ResolvePatch
     {
-
         [HarmonyPrefix]
         public static bool ResolveGraphics(PawnGraphicSet __instance)
         {
@@ -1318,12 +1311,16 @@ namespace AvaliMod
         {
             try
             {
+                
                 Pawn pawn = __instance.graphics.pawn;
                 Vector3 zero = Vector3.zero;
-                if (pawn.def is RimValiRaceDef rimValiRaceDef)
+                if (pawn.def is RimValiRaceDef rimValiRaceDef && !pawn.Dead)
                 {
-                    RenderPatchTwo.RenderBodyParts(true, zero, __instance, Rot4.South);
+                    RenderPatchTwo.RenderBodyParts(true ,zero, __instance, Rot4.South);
                     
+                }else if(pawn.def is RimValiRaceDef rDef)
+                {
+                    RenderPatchTwo.RenderBodyParts(true,90 ,new Vector3(-0.2f,0,-0.2f), __instance, Rot4.South);
                 }
             }
             catch(Exception error)
@@ -1482,6 +1479,10 @@ namespace AvaliMod
                                 color2 = colorComp.colors[colorSetToUse].colorTwo;
                                 color3 = colorComp.colors[colorSetToUse].colorThree;
                             }
+                            else
+                            {
+                                Log.Error(renderable.defName + " could not fiind color set: " + colorSetToUse);
+                            }
 
                             AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn, renderable.GetMyIndex(pawn)), ContentFinder<Texture2D>.Get(renderable.texPath(pawn, renderable.GetMyIndex(pawn)) + "south", false) == null ? AvaliShaderDatabase.Tricolor : AvaliShaderDatabase.Tricolor, size, color1, color2, color3);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), offset + vector.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, Quaternion.identity)) * 2f * 57.29578f),
@@ -1504,10 +1505,12 @@ namespace AvaliMod
             PawnGraphicSet graphics = __instance.graphics;
             if (__instance.graphics.pawn.def is RimValiRaceDef && !portrait)
             {
+                Rot4 rot = __instance.graphics.pawn.Rotation;
+                angle = __instance.BodyAngle();
                 if (__instance.graphics.pawn.GetPosture() != PawnPosture.Standing)
                 {
-                    angle = __instance.BodyAngle();
-                    __instance.LayingFacing();
+
+                    rot =__instance.LayingFacing();
                     Building_Bed building_Bed = __instance.graphics.pawn.CurrentBed();
                     if (building_Bed != null && __instance.graphics.pawn.RaceProps.Humanlike)
                     {
@@ -1528,11 +1531,6 @@ namespace AvaliMod
                         rootLoc.y = AltitudeLayer.LayingPawn.AltitudeFor() + 0.009183673f;
                     }
 
-                }
-                Rot4 rot = __instance.graphics.pawn.Rotation;
-                if (__instance.graphics.pawn.InBed())
-                {
-                    rot = __instance.LayingFacing();
                 }
                 RenderBodyParts(portrait, angle, rootLoc, __instance, rot);
                 if (__instance.graphics.pawn.Spawned && !__instance.graphics.pawn.Dead)
