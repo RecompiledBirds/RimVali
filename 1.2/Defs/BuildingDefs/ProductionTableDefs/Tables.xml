@@ -249,6 +249,9 @@
       <li>WeaveNanoFiberTwo</li>
       <li>WeaveNanoFiberThree</li>
       <li>WeaveAeroTungstenFiber</li>
+      <li>WeaveNanoCarbonFiberThree</li>
+      <li>WeaveNanoCarbonFiberTwo</li>
+      <li>WeaveNanoCarbonFiber</li>
     </recipes>
     <stuffCategories>
       <li>Metallic</li>
