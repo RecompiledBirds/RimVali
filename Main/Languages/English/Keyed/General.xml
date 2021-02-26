@@ -7,17 +7,23 @@
   <PackNameLabel>Pack name</PackNameLabel>
   <NoPack>This pawn is not in a pack.</NoPack>
   <!-- Settings -->
-  
+  <goBack>Go back</goBack>
+  <MultiThreadWarnLabel>Multithreading warning!</MultiThreadWarnLabel>
+  <MultiThreadWarnDesc>To enable this, we must restart your game. SAVE YOUR PROGRESS ON ANY CURRENT GAMES.</MultiThreadWarnDesc>
+  <MultiThreadYes>Yes, I understand</MultiThreadYes>
+  <MultiThreadNo>Wait! Go back!</MultiThreadNo>
   <!-- Pack settings -->
   <PackLabel>Pack settings</PackLabel>
-  
+  <PackLossStageOneSetting>Days for stage one pack loss to set in: </PackLossStageOneSetting>
+  <PackLossStageTwoSetting>Days for stage two pack loss to set in: </PackLossStageTwoSetting>
+  <PackLossStageThreeSetting>Days for stage three pack loss to set in: </PackLossStageThreeSetting>
   <PackLossCheck>Pack loss enabled:</PackLossCheck>
   
   <PackLossDesc>Enable/disable pack loss.\n Pack loss is a time-based effect if an avali does not have a pack. Recommended for a "full" experience.</PackLossDesc>
   
   <PacksNum>The maximum number of avali in a pack.\n5 is usually recommended.</PacksNum>
   
-  <PackOpinionReq>Opinion required</PackOpinionReq>
+  <PackOpinionReq>Opinion required to join pack</PackOpinionReq>
   
   <MultithreadingCheck>Multithreading enabled:</MultithreadingCheck>
   
