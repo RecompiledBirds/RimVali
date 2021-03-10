@@ -22,7 +22,7 @@ namespace AvaliMod
 		public virtual AvaliPack GetPack(Pawn pawn)
 		{
 			AvaliPack pack = null;
-			pack = RimValiUtility.GetPack(pawn);
+			pack = pawn.GetPack();
 			return pack;
 		}
 		public virtual string GetPackName(Rect rect, AvaliPack pack)

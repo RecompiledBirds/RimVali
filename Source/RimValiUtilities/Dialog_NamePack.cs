@@ -22,7 +22,7 @@ namespace AvaliMod
         public Dialog_NamePack(Pawn pawn)
         {
             this.pawn = pawn;
-            this.curPackName = RimValiUtility.GetPack(pawn).name;
+            this.curPackName = pawn.GetPack().name;
             this.forcePause = true;
             this.absorbInputAroundWindow = true;
             this.closeOnClickedOutside = true;
@@ -50,9 +50,9 @@ namespace AvaliMod
             {
                 if (string.IsNullOrEmpty(this.curPackName))
                 {
-                    this.curPackName = RimValiUtility.GetPack(pawn).name;
+                    this.curPackName = pawn.GetPack().name;
                 }
-                RimValiUtility.GetPack(pawn).name = this.curPackName;
+                pawn.GetPack().name = this.curPackName;
                 Find.WindowStack.TryRemove(this, true);
             }
         }

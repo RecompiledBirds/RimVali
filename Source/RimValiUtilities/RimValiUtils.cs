@@ -10,7 +10,7 @@ namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Nesuni 0.0.7 ";
+        public static string build = "Ki 0.0.8";
         public static string modulesFound = "Modules:\n";
 
 
@@ -81,7 +81,7 @@ namespace AvaliMod
         }
 
 
-        public static Dictionary<Trait, int> Traits(Pawn pawn)
+        public static Dictionary<Trait, int> Traits(this Pawn pawn)
         {
             IEnumerable<Trait> traits = pawn.story.traits.allTraits;
             Dictionary<Trait, int> traitDataToReturn = new Dictionary<Trait, int>();
@@ -93,47 +93,12 @@ namespace AvaliMod
         }
 
 
-        /*public static bool CheckIfBedRoomHasPackmates(Pawn pawn, PawnRelationDef relationDef)
-        {
-            // liQdComment - Needs to be changed to non-relation
-            int packmatesFound = 0;
-            Room room = pawn.GetRoom();
-            if (!pawn.Awake())
-            {
-                if (room.ContainedBeds.Count() > 0)
-                {
-                    IEnumerable<Building_Bed> beds = room.ContainedBeds;
-                    foreach (Building_Bed bed in beds)
-                    {
-                        if (bed.OwnersForReading != null)
-                        {
-                            IEnumerable<Pawn> owners = bed.OwnersForReading;
-                            foreach (Pawn other in owners)
-                            {
-                                if (other.relations.DirectRelationExists(relationDef, pawn))
-                                {
-                                    packmatesFound += 1;
-                                }
-                            }
-                        }
-                    }
-                }
-                if (packmatesFound > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return false;
-        }*/
-        public static bool PackInBedroom(Pawn pawn)
+     
+        public static bool PackInBedroom(this Pawn pawn)
         {
             int packmatesInRoom = 0;
             Room room = pawn.GetRoom();
-            AvaliPack avaliPack = GetPackWithoutSelf(pawn);
+            AvaliPack avaliPack = pawn.GetPackWithoutSelf();
             if (room.ContainedBeds.Count() > 0)
             {
                 IEnumerable<Building_Bed> beds = room.ContainedBeds;
@@ -166,7 +131,7 @@ namespace AvaliMod
         }
 
 
-        public static bool CheckIfPackmatesInRoom(Pawn pawn) => ((Func<bool>)delegate
+        public static bool CheckIfPackmatesInRoom(this Pawn pawn) => ((Func<bool>)delegate
         {
             Room room = pawn.GetRoom();
             if (room != null && pawn.Position.Roofed(pawn.Map))
@@ -188,7 +153,7 @@ namespace AvaliMod
        
 
 
-        public static int GetPackSize(Pawn pawn) =>  GetPack(pawn) != null ? GetPack(pawn).pawns.Count(): 0;
+        public static int GetPackSize(Pawn pawn) => pawn.GetPack() != null ? pawn.GetPack().pawns.Count(): 0;
         public static IEnumerable<Pawn> AllPawnsOfRaceOnMap(List<ThingDef> races, Map map) => map.mapPawns.AllPawns.Where(x => races.Contains(x.def));
 
         public static IEnumerable<Pawn> AllPawnsOfRaceOnMap(ThingDef race, Map map) => map.mapPawns.AllPawns.Where(x => x.def == race);
@@ -285,7 +250,7 @@ namespace AvaliMod
                     }
                     if (pack.pawns.Count < packLimit)
                     {
-                        AvaliPackDriver.packs.Remove(GetPack(pawn));
+                        AvaliPackDriver.packs.Remove(pawn.GetPack());
                         if (JoinPack(pawn, pack) != null)
                         {
                             break;
@@ -339,11 +304,12 @@ namespace AvaliMod
             else
             {
                 Log.Message("Pawn was in Dict");
-                if(GetPackAvgOP(pack, pawn) > LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq)
+                if(GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq)
                 {
                     pack.pawns.Add(pawn);
                     return pack;
                 }
+                Log.Message(GetPackAvgOP(pack, pawn).ToString() + pawn.Name.ToString());
             }
             return null;
         }
@@ -363,7 +329,7 @@ namespace AvaliMod
             }
             return PawnPack;
         }
-        public static AvaliPack GetPack(Pawn pawn) => pawn != null && Current.Game.GetComponent<AvaliPackDriver>() != null && !Current.Game.GetComponent<AvaliPackDriver>().packs.NullOrEmpty() ? ((Func<AvaliPack>)delegate
+        public static AvaliPack GetPack(this Pawn pawn) => pawn != null && Current.Game.GetComponent<AvaliPackDriver>() != null && !Current.Game.GetComponent<AvaliPackDriver>().packs.NullOrEmpty() ? ((Func<AvaliPack>)delegate
       {
           foreach (AvaliPack pack in Current.Game.GetComponent<AvaliPackDriver>().packs)
           {
@@ -372,11 +338,12 @@ namespace AvaliMod
                   return pack;
               }
           }
+       
           return null;
       })() : null;
        
 
-        public static AvaliPack GetPackWithoutSelf(Pawn pawn)
+        public static AvaliPack GetPackWithoutSelf(this Pawn pawn)
         {
             AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
             if (pawn == null)
