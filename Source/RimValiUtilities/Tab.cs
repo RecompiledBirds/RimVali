@@ -22,7 +22,7 @@ namespace AvaliMod
 		public virtual AvaliPack GetPack(Pawn pawn)
 		{
 			AvaliPack pack = null;
-			pack = RimValiUtility.GetPack(pawn);
+			pack = pawn.GetPack();
 			return pack;
 		}
 		public virtual string GetPackName(Rect rect, AvaliPack pack)
@@ -48,7 +48,7 @@ namespace AvaliMod
 
 			pack = this.GetPack(pawn);
 
-			if (!(pack == null) && pack.size > 1)
+			if (!(pack == null) && pack.pawns.Count > 1)
 			{
 				string members = "Packmates".Translate();
 				int onItem = 0;
@@ -76,7 +76,7 @@ namespace AvaliMod
 				rectPosY += 20f;
 
 				Rect PackMemberCountRect = new Rect(outRect.xMax - 40f, rectPosY, 40f, 30f);
-				string packcount = pack.size.ToString() + "/" + maxSize.ToString();
+				string packcount = pack.pawns.Count.ToString() + "/" + maxSize.ToString();
 				Widgets.Label(PackMemberCountRect, packcount);
 
 				Rect PackMemberListRect = new Rect(outRect.xMin, rectPosY, 500f, outRect.height);
@@ -103,7 +103,7 @@ namespace AvaliMod
 			{
 				Widgets.Label(rect, "NoPack".Translate());
 				//Log.Message("Pack list size: " + AvaliPackDriver.packs.Count);						
-				Widgets.EndScrollView();
+				//Widgets.EndScrollView();
 			}
 			//Widgets.Label(rect, "test");
 			Widgets.EndScrollView();

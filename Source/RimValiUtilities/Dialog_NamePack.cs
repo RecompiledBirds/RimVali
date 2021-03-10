@@ -22,7 +22,7 @@ namespace AvaliMod
         public Dialog_NamePack(Pawn pawn)
         {
             this.pawn = pawn;
-            this.curPackName = RimValiUtility.GetPack(pawn).name;
+            this.curPackName = pawn.GetPack().name;
             this.forcePause = true;
             this.absorbInputAroundWindow = true;
             this.closeOnClickedOutside = true;
@@ -38,7 +38,7 @@ namespace AvaliMod
                 Event.current.Use();
             }
             Text.Font = GameFont.Medium;
-            string text = "Pack name: ";
+            string text = "PackNameLabel".Translate() +": ";
             Widgets.Label(new Rect(15f, 15f, 500f, 50f), text);
             Text.Font = GameFont.Small;
             string text2 = Widgets.TextField(new Rect(15f, 50f, inRect.width / 2f - 20f, 35f), this.curPackName);
@@ -50,9 +50,9 @@ namespace AvaliMod
             {
                 if (string.IsNullOrEmpty(this.curPackName))
                 {
-                    this.curPackName = RimValiUtility.GetPack(pawn).name;
+                    this.curPackName = pawn.GetPack().name;
                 }
-                RimValiUtility.GetPack(pawn).name = this.curPackName;
+                pawn.GetPack().name = this.curPackName;
                 Find.WindowStack.TryRemove(this, true);
             }
         }
