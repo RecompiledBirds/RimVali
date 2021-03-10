@@ -7,22 +7,37 @@ using RimWorld.Planet;
 
 namespace AvaliMod
 {
+    public class FactionResearchManager
+    {
+
+    }
     [StaticConstructorOnStartup]
     public static class AirdropResearchManager
     {
         static AirdropResearchManager()
         {
-            foreach(ResearchProjectDef def in DefDatabase<ResearchProjectDef>.AllDefs.Where(proj => proj.requiredResearchFacilities.Contains(AvaliDefs.AvaliNexus)))
+            if (!LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableAirdrops)
             {
-                def.requiredResearchFacilities.Remove(AvaliDefs.AvaliNexus);
-            }
+                try
+                {
+                    foreach (ResearchProjectDef def in DefDatabase<ResearchProjectDef>.AllDefs.Where(proj => proj.requiredResearchFacilities.Contains(AvaliDefs.AvaliNexus)))
+                    {
+                        def.requiredResearchFacilities.Remove(AvaliDefs.AvaliNexus);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Log.Message(e.Message);
+                }
+            } 
         }
     }
     public class AirdropAlert : Alert
     {
         public override AlertReport GetReport()
         {
-            defaultLabel = "AirdropInStart".Translate() + " " + (AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).ToString() + " " + "AirdropInEnd".Translate();
+            
+            defaultLabel = "IlluminateAirdropSend".Translate((AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).Named("TIME"))/* "AirdropInStart".Translate() + " " + (AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).ToString() + " " + "AirdropInEnd".Translate()*/;
             if (AirDropHandler.hasMessaged && !AirDropHandler.hasDropped)
             {
                 return AlertReport.Active;
