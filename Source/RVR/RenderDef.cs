@@ -69,7 +69,10 @@ namespace AvaliMod
             return 0;
         }
 
-
+        public string texPath(Pawn pawn)
+        {
+            return texPath(pawn, GetMyIndex(pawn));
+        }
         public string texPath(Pawn pawn, int index)
         {
             

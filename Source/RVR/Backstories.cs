@@ -33,6 +33,7 @@ namespace AvaliMod {
         public bool canSpawnMale = true;
         public bool canSpawnFemale = true;
 
+        public bool shuffable = true;
         //These stack!
         //A global chance of 50 and a female chance of 50 would be 25 for female pawns.
         public int femaleChance = 100;
@@ -151,7 +152,8 @@ namespace AvaliMod {
                     && (!(disabledWorkTypes.Contains(WorkTags.AllWork)) && !(tag == WorkTags.AllWork))
                     ).ToList().ForEach(tag => work |= tag);
                     return work;
-                })()
+                })(),
+                shuffleable = this.shuffable
                 };
             
     

@@ -23,6 +23,7 @@ namespace AvaliMod
     {
         public ResearchProjectDef researchProj;
         public FactionDef factionDef;
+        public bool isHackable = false;
     }
 
 }
