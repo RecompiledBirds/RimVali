@@ -14,16 +14,16 @@
   <MultiThreadNo>Wait! Go back!</MultiThreadNo>
   <!-- Pack settings -->
   <PackLabel>Pack settings</PackLabel>
-  <PackLossStageOneSetting>Days for stage one pack loss to set in: </PackLossStageOneSetting>
-  <PackLossStageTwoSetting>Days for stage two pack loss to set in: </PackLossStageTwoSetting>
-  <PackLossStageThreeSetting>Days for stage three pack loss to set in: </PackLossStageThreeSetting>
+  <PackLossStageOneSetting>Days for stage one pack loss to set in: {TIME}</PackLossStageOneSetting>
+  <PackLossStageTwoSetting>Days for stage two pack loss to set in: {TIME}</PackLossStageTwoSetting>
+  <PackLossStageThreeSetting>Days for stage three pack loss to set in: {TIME}</PackLossStageThreeSetting>
   <PackLossCheck>Pack loss enabled:</PackLossCheck>
   
   <PackLossDesc>Enable/disable pack loss.\n Pack loss is a time-based effect if an avali does not have a pack. Recommended for a "full" experience.</PackLossDesc>
   
   <PacksNum>The maximum number of avali in a pack.\n5 is usually recommended.</PacksNum>
   
-  <PackOpinionReq>Opinion required to join pack</PackOpinionReq>
+  <PackOpinionReq>Opinion required to join pack: {COUNT}</PackOpinionReq>
   
   <MultithreadingCheck>Multithreading enabled:</MultithreadingCheck>
   
@@ -33,10 +33,9 @@
   
   <PacksDesc>Enable/disable packs. These give boosts to your pawns! Recommended for a "full" experience.</PacksDesc>
   
-  <MaxPackSize>Maximum pack size: </MaxPackSize>
+  <MaxPackSize>Maximum pack size: {COUNT}</MaxPackSize>
   
-  <RacesInPacks>Races in packs:</RacesInPacks>
- 
+
   <!-- Gameplay -->
   <GameplayLabel>Gameplay Settings</GameplayLabel>
   <CanHaveEggs>Avali can have eggs:</CanHaveEggs>
@@ -45,8 +44,8 @@
   <ShowTextLabel>Ocasionally, avali will display little bits of text. This may lag lower-end computers or games with more colonists, so you can disable it here.</ShowTextLabel>
   <AirdropsText>Airdrops enabled:</AirdropsText>
   <AirdropsLabel>Enables/disables the Illuminate airdrop event. \nThis event adds the "Illuminate Nexus Connection".</AirdropsLabel>
-  <AvaliForDropReq>Avali required for airdrop: </AvaliForDropReq>
-  <HPScaler>HP Scale: </HPScaler>
+  <AvaliForDropReq>Avali required for airdrop: {COUNT} </AvaliForDropReq>
+  <HPScaler>HP Scale: {SCALE}</HPScaler>
   
   <!-- Stability warn -->
   <StableSettings>Stable.</StableSettings>
@@ -56,7 +55,7 @@
   <!-- Debug -->
   <DebugLabel>Debug and advanced settings</DebugLabel>
   <ToggleDebug>Toggle debug mode</ToggleDebug>
-  <RVBuild>RimVali build: </RVBuild>
+  <RVBuild>RimVali build: {BUILD}</RVBuild>
   
     
   <!-- Events -->
@@ -65,13 +64,8 @@
   <IlluminateFactionName>Illuminate colony</IlluminateFactionName>
   <IlluminateAirdrop>Illuminate airdrop</IlluminateAirdrop>
   <AirdropEventDesc>An Illuminate airdrop has landed nearby!</AirdropEventDesc>
-  <IlluminateAirdropSendStart>An Illuminate airdrop is en route! It will land in: </IlluminateAirdropSendStart>
-  <IlluminateAirdropSendEnd>hours! Be prepared!</IlluminateAirdropSendEnd>
+  <IlluminateAirdropSend>An Illuminate airdrop is en route! It will land in: {TIME} hours! Be prepared!</IlluminateAirdropSend>
   <AirdropSendMsg>Airdrop en route</AirdropSendMsg>
-  
-  <!-- Alerts -->
-  <AirdropInStart>Airdrop arrives in:</AirdropInStart>
-  <AirdropInEnd>hours!</AirdropInEnd>
   
   
   <!-- Slots -->
@@ -83,9 +77,9 @@
   <SlotsUsed>Slots used</SlotsUsed>
   
   <!-- RVR -->
-  <CannotWear>can't wear this</CannotWear>
-  <CannotBuild>can't build this</CannotBuild>
-  <CannotEat>can't eat this</CannotEat>
+  <CannotWear>{RACE} can't wear this</CannotWear>
+  <CannotBuild>{RACE} can't build this</CannotBuild>
+  <CannotEat>{RACE} can't eat this</CannotEat>
   
   
   <!-- Jobs -->
