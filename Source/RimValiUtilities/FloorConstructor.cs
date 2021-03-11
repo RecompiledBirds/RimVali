@@ -35,7 +35,7 @@ namespace AvaliMod
                     materials.Add(tDef.defName);
                 }
                 //Sets up some basic stuff
-                //shortHash  & defName are the very important
+                //shortHash  & defName are very important
                 TerrainDef output = new TerrainDef()
                 {
                     color = tDef.GetColorForStuff(tDef),
