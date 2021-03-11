@@ -67,6 +67,7 @@ namespace AvaliMod
                 var bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
                 //This copies some of the varibles from the floor we are duplicating over
                 //We don't want it to touch the fields we've already set, so I keep a list here to help.
+                //I couldn't be bothered to manually type each varible out, and this will also get any private varibles that might be needed.
                 List<String> avoidFields = new List<string>() { "color", "defname", "label", "debugrandomid", "index", "shorthash", "costlist", "uiiconcolor", "designatordropdown" };
                 foreach (FieldInfo field in def.GetType().GetFields(bindingFlags).Where(f => !avoidFields.Contains(f.Name.ToLower())))
                 {
