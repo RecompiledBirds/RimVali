@@ -20,6 +20,12 @@ namespace AvaliMod
         public static List<string> materials = new List<string>();
         public static List<TerrainDef> floorsMade = new List<TerrainDef>();
         public static StringBuilder builder = new StringBuilder();
+
+        /// <summary>
+        /// Creates all versions of a floor from a material; it's on the label
+        /// </summary>
+        /// <param name="def">The terrain def we are "duplicating"</param>
+        /// <param name="name">The NAME of the category we want to duplicate.</param>
         public static void CreateAllVersions(TerrainDef def, string name)
         {
             foreach (ThingDef tDef in DefDatabase<ThingDef>.AllDefs.Where(d => d.stuffProps != null && !d.stuffProps.categories.NullOrEmpty() && d.stuffProps.categories.Any(cat => cat.defName == name)))
