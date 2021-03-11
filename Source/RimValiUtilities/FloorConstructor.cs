@@ -35,7 +35,7 @@ namespace AvaliMod
                     materials.Add(tDef.defName);
                 }
                 //Sets up some basic stuff
-                //shortHash  & defName are very important
+                //shortHash  & defName are the very important
                 TerrainDef output = new TerrainDef()
                 {
                     color = tDef.GetColorForStuff(tDef),
@@ -66,6 +66,7 @@ namespace AvaliMod
 
                 var bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
                 //This copies some of the varibles from the floor we are duplicating over
+                //We don't want it to touch the fields we've already set, so I keep a list here to help.
                 List<String> avoidFields = new List<string>() { "color", "defname", "label", "debugrandomid", "index", "shorthash", "costlist", "uiiconcolor", "designatordropdown" };
                 foreach (FieldInfo field in def.GetType().GetFields(bindingFlags).Where(f => !avoidFields.Contains(f.Name.ToLower())))
                 {
@@ -78,6 +79,7 @@ namespace AvaliMod
                 List<string> toRemove = new List<string>();
                 foreach (string str in output.tags)
                 {
+                    //This looks for a DesignationCategoryDef with a defname that matches the string between AddDesCat_ and [ENDDESNAME]
                     if (str.Contains("AddDesCat_"))
                     {
                         string cS = string.Copy(str);
@@ -87,6 +89,7 @@ namespace AvaliMod
                             output.designationCategory = DefDatabase<DesignationCategoryDef>.AllDefs.Where(cat => cat.defName == res).ToList()[0];
                         }
                     }
+                    //This looks for a DesignationCategoryDef with a defname that matches the string between AddDesDropDown_ and [ENDDNAME]
                     if (str.Contains("AddDesDropDown_"))
                     {
                         string cS = string.Copy(str);
@@ -96,6 +99,7 @@ namespace AvaliMod
                             output.designatorDropdown = DefDatabase<DesignatorDropdownGroupDef>.AllDefs.Where(cat => cat.defName == res).ToList()[0];
                         }
                     }
+                    //This removes the tag from clones.
                     if (str.EndsWith("RemoveFromClones"))
                     {
                         toRemove.Add(str);
@@ -105,6 +109,7 @@ namespace AvaliMod
                 {
                     output.tags.Remove(str);
                 }
+                //This makes sure everything is setup how it should be
                 output.PostLoad();
                 output.ResolveReferences();
                 builder.AppendLine("---------------------------------------------");
@@ -124,7 +129,8 @@ namespace AvaliMod
             {
                 workOn.Add(def);
             }
-            foreach (TerrainDef def in workOn)
+            //Tells us to clone a terrain
+            foreach (TerrainDef def in DefDatabase<TerrainDef>.AllDefs)
             {
 
                 if (!def.tags.NullOrEmpty())
@@ -137,6 +143,7 @@ namespace AvaliMod
                             string s = tags[a];
                             try
                             {
+                                //Gets the category name between cloneMaterial_ and [ENDCATNAME]
                                 string cS = string.Copy(s);
                                 string res = cS.Substring(cS.IndexOf("cloneMaterial_") + "_cloneMaterial".Length, (cS.IndexOf("[ENDCATNAME]") - ("[ENDCATNAME]".Length + 2)) - cS.IndexOf("cloneMaterial_"));
                                 CreateAllVersions(def, res);
@@ -147,10 +154,10 @@ namespace AvaliMod
                             }
                         }
                     }
-                    
+
                 }
             }
-            List<TerrainDef> toRemove = new List<TerrainDef>();
+            //Ensures we are adding to the DefDatabase. Just a saftey check.
             foreach (TerrainDef def in floorsMade)
             {
                 if (!DefDatabase<TerrainDef>.AllDefs.Contains(def))
@@ -160,6 +167,10 @@ namespace AvaliMod
             }
             Log.Message($"{builder}");
             Log.Message("Updating architect menu..");
+
+            //Reloads all these so they pick up the new floors.
+            //Yes, it's a bit slow. 
+            //Idea: Gather a list of which DesignationCategoryDefs and DesignatorDropdownGroupDefs need to be "refreshed"
             foreach (DesignationCategoryDef def in DefDatabase<DesignationCategoryDef>.AllDefs)
             {
                 def.PostLoad();
@@ -172,6 +183,7 @@ namespace AvaliMod
                 def.ResolveReferences();
 
             }
+            //We need to do this or RW has a fit
             WealthWatcher.ResetStaticData();
             Log.Message($"[RimVali] Built  {floorsMade.Count} floors from {materials.Count} materials.");
         }
