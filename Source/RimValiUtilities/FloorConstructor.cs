@@ -17,14 +17,17 @@ namespace AvaliMod
     [StaticConstructorOnStartup]
     public static class FloorConstructor
     {
+        public static List<string> materials = new List<string>();
         public static List<TerrainDef> floorsMade = new List<TerrainDef>();
         public static StringBuilder builder = new StringBuilder();
         public static void CreateAllVersions(TerrainDef def, string name)
         {
             foreach (ThingDef tDef in DefDatabase<ThingDef>.AllDefs.Where(d => d.stuffProps != null && !d.stuffProps.categories.NullOrEmpty() && d.stuffProps.categories.Any(cat => cat.defName == name)))
             {
-
-              
+                if (!materials.Contains(tDef.defName))
+                {
+                    materials.Add(tDef.defName);
+                }
                 //Sets up some basic stuff
                 //shortHash  & defName are the very important
                 TerrainDef output = new TerrainDef()
@@ -172,7 +175,8 @@ namespace AvaliMod
                 def.ResolveReferences();
 
             }
-            Log.Message($"Built  {floorsMade.Count} floors.");
+            WealthWatcher.ResetStaticData();
+            Log.Message($"[RimVali] Built  {floorsMade.Count} floors from {materials.Count} materials.");
         }
     }
 }
