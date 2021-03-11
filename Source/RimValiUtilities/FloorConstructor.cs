@@ -71,16 +71,7 @@ namespace AvaliMod
                 {
                     foreach (FieldInfo f2 in output.GetType().GetFields(bindingFlags).Where(f => f.Name == field.Name))
                     {
-
-                        //Sometimes we can't set a field.. not sure if there's a way to check that
-                        try
-                        {
-                            f2.SetValue(output, field.GetValue(def));
-                        }
-                        catch
-                        {
-
-                        }
+                        f2.SetValue(output, field.GetValue(def));
                     }
                 }
                 
