@@ -20,6 +20,7 @@ namespace AvaliMod
         private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
         private readonly Dictionary<string, bool> otherRaces = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enabledRaces;
         private bool HasStarted = false;
+        public bool ThreadIsActive;
         public List<AvaliPack> packs = new List<AvaliPack>();
         private int onTick = 0;
         public Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
@@ -30,7 +31,9 @@ namespace AvaliMod
 
         //public AvaliPackDriver(World world) : base(world) { }
 
-        public AvaliPackDriver(Game game) { }//: base(game) { }
+        public AvaliPackDriver(Game game) {
+            StartedNewGame();
+        }//: base(game) { }
 
         List<ThingDef> racesInPacks = new List<ThingDef>();
 
@@ -86,8 +89,44 @@ namespace AvaliMod
                     }
                 }
             }
+            ConvertAvaliContinued();
             base.LoadedGame();
         }
+        public Pawn ConPawn(Pawn pawn)
+        {
+
+            Thing newSpawn = GenSpawn.Spawn(AvaliDefs.RimVali, pawn.Position, pawn.Map);
+            Pawn newPawn = newSpawn as Pawn;
+            newPawn.skills = pawn.skills;
+            newPawn.relations = pawn.relations;
+            newPawn.Name = pawn.Name;
+            newPawn.needs = pawn.needs;
+            newPawn.health = pawn.health;
+            newPawn.inventory = pawn.inventory;
+            newPawn.interactions = pawn.interactions;
+            newPawn.kindDef = pawn.kindDef;
+            newPawn.story = pawn.story;
+            pawn.Destroy();
+            return newPawn;
+        }
+        public void ConvertAvaliContinued()
+        {
+            try
+            {
+                foreach (Pawn pawn in PawnsFinder.All_AliveOrDead.Where(p => p.def.defName == "Avali"))
+                {
+                    Pawn nPawn = ConPawn(pawn);
+                    RimValiRaceDef def = nPawn.def as RimValiRaceDef;
+                    def.GenGraphics(nPawn);
+                    
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
         public void LoadAll()
         {
             packs = new List<AvaliPack>();
@@ -122,7 +161,7 @@ namespace AvaliMod
         
         public override void ExposeData()
         {
-            if (pawnsHaveHadPacks.EnumerableNullOrEmpty() == false)
+            if (!pawnsHaveHadPacks.EnumerableNullOrEmpty())
             {
                 foreach (Pawn pawn in pawnsHaveHadPacks.Keys)
                 {
@@ -142,85 +181,65 @@ namespace AvaliMod
             }
             if (packs == null)
             {
-                Log.Message("packs was null");
                 packs = new List<AvaliPack>();
             }
             if (pawns == null)
             {
-                Log.Message("pawns was null");
                 pawns = new List<Pawn>();
             }
             if (bools == null)
             {
-                Log.Message("bools was null");
                 bools = new List<bool>();
             }
             base.ExposeData();
         }
         public void UpdatePacks()
         {
-            if (enableDebug && multiThreaded)
+            lock (packs)
             {
-                //Log.Message("Thread started.");
-            }
-            IEnumerable<Pawn> pawnsInWorld = RimValiUtility.AllPawnsOfRaceInWorld(racesInPacks).Where<Pawn>(x => RimValiUtility.GetPackSize(x) < maxSize);
-            foreach (Pawn pawn in pawnsInWorld)
-            {
-//Log.Message(pawn.Faction.Name);
-                //Log.Message(pawn.Name.ToString() + " updatePacks()");
-                PackComp comp = pawn.TryGetComp<PackComp>();
-                if (!(comp == null))
+                if (enableDebug && multiThreaded)
                 {
-                    //Pull the comp info from the pawn
-                    SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
-                    //Tells us that this pawn has had a pack
-                    if (enableDebug)
-                    {
-                        //Log.Message("Attempting to make pack.. [Base pack]");
- 
-                    }
-                    //Makes the pack.
-                    //Log.Message("EiPackHandlerFromPackDriverMapComp started.");
-                    packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
+                    //Log.Message("Thread started.");
                 }
-            }
-        }
-
-        //public override void MapComponentTick()
-        //public override void WorldComponentTick()
-        public override void GameComponentTick()
-        {
-            if (!HasStarted)
-            {
-                //LoadAll();
-            }
-            if (onTick == 0)
-            {
-                if (packsEnabled)
+                IEnumerable<Pawn> pawnsInWorld = RimValiUtility.AllPawnsOfRaceInWorld(racesInPacks).Where<Pawn>(x => RimValiUtility.GetPackSize(x) < maxSize);
+                foreach (Pawn pawn in pawnsInWorld)
                 {
-                    if (multiThreaded)
+                    //Log.Message(pawn.Faction.Name);
+                    //Log.Message(pawn.Name.ToString() + " updatePacks()");
+                    PackComp comp = pawn.TryGetComp<PackComp>();
+                    if (!(comp == null))
                     {
+                        //Pull the comp info from the pawn
+                        SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
+                        //Tells us that this pawn has had a pack
                         if (enableDebug)
                         {
-                            //Log.Message("Attempting to make new thread.");
+                            //Log.Message("Attempting to make pack.. [Base pack]");
+
                         }
-                        /*ThreadStart packThreadRef = new ThreadStart(UpdatePacks);
-                        Thread packThread = new Thread(packThreadRef);
-                        packThread.Start();
-                        */
-                        Task packTask = new Task(UpdatePacks);
-                        packTask.Start();
-                        packTask.Wait();
+                        //Makes the pack.
+                        //Log.Message("EiPackHandlerFromPackDriverMapComp started.");
+                        packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
                     }
-                    else
-                    {
-                        UpdatePacks();
-                    }
-                   /* Log.Message(packs.Count.ToString());
-                    if (packs.Count > 0)
-                    {
-                        Log.Message(packs[0].name);
-                    }*/
+                }
+            }
+            ThreadIsActive = false;
+        }
+
+        public override void GameComponentTick()
+        {
+
+            if (onTick == 0 && packsEnabled)
+            {
+                if (multiThreaded && !ThreadIsActive)
+                {
+                    ThreadIsActive = true;
+                    Task packTask = new Task(UpdatePacks);
+                    packTask.Start();
+                }
+                else
+                {
+                    UpdatePacks();
                 }
                 onTick = 120;
             }
@@ -229,6 +248,69 @@ namespace AvaliMod
                 onTick--;
             }
         }
+    }
 
+    public class Converter : WorldComponent
+    {
+        public Converter(World world) : base(world)
+        {
+        }
+        public void ConPawn(Pawn pawn, ThingDef def)
+        {
+            Pawn newPawn = PawnGenerator.GeneratePawn(pawn.kindDef, pawn.Faction);
+            newPawn.def = def;
+            newPawn.skills = pawn.skills;
+            newPawn.relations = pawn.relations;
+            newPawn.Name = pawn.Name;
+            newPawn.needs = pawn.needs;
+            newPawn.health = pawn.health;
+            newPawn.inventory = pawn.inventory;
+            newPawn.interactions = pawn.interactions;
+            newPawn.story = pawn.story;
+            try
+            {
+                
+                GenSpawn.Spawn(newPawn, pawn.Position, pawn.Map);
+                RimValiRaceDef d = newPawn.def as RimValiRaceDef;
+                d.GenGraphics(newPawn);
+                //pawn.Destroy();
+            }
+            catch(Exception e)
+            {
+                Log.Error(e.Message);
+            }
+            
+        }
+        public void ConvertAvaliContinued()
+        {
+            try
+            {
+                foreach (Pawn pawn in PawnsFinder.AllMaps.Where(p => p.def.defName == "Avali"))
+                {
+                    Log.Message("test world comp");
+                    if (pawn != null)
+                    {
+                        ConPawn(pawn, AvaliMod.AvaliDefs.RimVali);
+                    }
+                    Log.Message("test2");
+                    
+
+                }
+            }
+            catch(Exception e)
+            {
+                Log.Message(e.Message);
+            }
+        }
+        private bool started;
+        public override void WorldComponentTick()
+        {
+            if (!started)
+            {
+                started = true;
+                ConvertAvaliContinued();
+            }
+            base.WorldComponentTick();
+        }
     }
 }
