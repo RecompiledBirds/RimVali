@@ -5,19 +5,23 @@ namespace AvaliMod
 {
     public class PackLossThoughtWorker : ThoughtWorker
     {
+        int stageOne = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().stageOneDaysPackloss;
+        int stageTwo = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().stageTwoDaysPackloss;
+        int stageThree = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().stageThreeDaysPackloss;
+        int dayLen = 60000;
         public void UpdatePackLoss(Pawn pawn)
         {
             AvaliThoughtDriver thoughtComp = pawn.TryGetComp<AvaliThoughtDriver>();
             PackComp packComp = pawn.TryGetComp<PackComp>();
 
             
-            if (packComp.ticksSinceLastInpack == 0 && (RimValiUtility.GetPackWithoutSelf(pawn) == null || RimValiUtility.GetPackWithoutSelf(pawn).pawns.Count < 2))
+            if (packComp.ticksSinceLastInpack == 0 && (pawn.GetPackWithoutSelf() == null || pawn.GetPackWithoutSelf().pawns.Count < 2))
             {
-                packComp.ticksSinceLastInpack = Find.TickManager.TicksGame;
+                packComp.inPack= false;
             }
-            else if (RimValiUtility.GetPackWithoutSelf(pawn) != null && RimValiUtility.GetPackWithoutSelf(pawn).pawns.Count > 1)
+            else if (pawn.GetPackWithoutSelf() != null && pawn.GetPackWithoutSelf().pawns.Count > 1)
             {
-                packComp.ticksSinceLastInpack = 0;
+                packComp.inPack =true;
             }
         }
         protected override ThoughtState CurrentStateInternal(Pawn p)
@@ -41,21 +45,21 @@ namespace AvaliMod
             }
             if (packComp == null)
             {
-                return ThoughtState.Inactive;
+                return ThoughtState.Inactive; 
             }
             UpdatePackLoss(p);
-            int timeAlone = Find.TickManager.TicksGame - packComp.ticksSinceLastInpack;
-            if (timeAlone == Find.TickManager.TicksGame)
+            int timeAlone = packComp.ticksSinceLastInpack;
+            if (timeAlone == Find.TickManager.TicksGame || timeAlone == 0)
             { return ThoughtState.Inactive; }
-            if (timeAlone >= 240000)
+            if (timeAlone >= dayLen*stageThree)
             {
                 return ThoughtState.ActiveAtStage(2);
             }
-            if (timeAlone >= 120000)
+            if (timeAlone >= dayLen*stageTwo)
             {
                 return ThoughtState.ActiveAtStage(1);
             }
-            if (timeAlone >= 60000)
+            if (timeAlone >= dayLen*stageOne)
             {
                 return ThoughtState.ActiveAtStage(0);
             }

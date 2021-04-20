@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using System.Threading;
+using RimWorld.Planet;
+
 namespace AvaliMod
 {
     public class AvaliUpdater : MapComponent
@@ -58,7 +60,7 @@ namespace AvaliMod
                     }
                     AvaliPack pawnPack = null;
                     //This errors out when pawns dont have a pack, in rare cases. That is bad. This stops it from doing that.
-                    try { pawnPack = RimValiUtility.GetPack(pawn); }
+                    try { pawnPack = pawn.GetPack(); }
                     catch
                     {
                         return;

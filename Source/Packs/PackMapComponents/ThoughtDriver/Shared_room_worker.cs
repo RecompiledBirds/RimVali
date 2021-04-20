@@ -13,7 +13,7 @@ namespace AvaliMod
             {
                 if (pawn.Awake())
                 {
-                    if (RimValiUtility.CheckIfPackmatesInRoom(pawn))
+                    if (pawn.CheckIfPackmatesInRoom())
                     {
                         return ThoughtState.ActiveDefault;
                     }

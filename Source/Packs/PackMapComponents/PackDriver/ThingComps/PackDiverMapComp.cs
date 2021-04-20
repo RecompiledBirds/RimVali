@@ -197,28 +197,12 @@ namespace AvaliMod
         {
             lock (packs)
             {
-                if (enableDebug && multiThreaded)
-                {
-                    //Log.Message("Thread started.");
-                }
-                IEnumerable<Pawn> pawnsInWorld = RimValiUtility.AllPawnsOfRaceInWorld(racesInPacks).Where<Pawn>(x => RimValiUtility.GetPackSize(x) < maxSize);
+                IEnumerable<Pawn> pawnsInWorld = RimValiUtility.AllPawnsOfRaceInWorld(racesInPacks).Where<Pawn>(x => RimValiUtility.GetPackSize(x) < maxSize && x.Spawned);
                 foreach (Pawn pawn in pawnsInWorld)
                 {
-                    //Log.Message(pawn.Faction.Name);
-                    //Log.Message(pawn.Name.ToString() + " updatePacks()");
                     PackComp comp = pawn.TryGetComp<PackComp>();
                     if (!(comp == null))
                     {
-                        //Pull the comp info from the pawn
-                        SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
-                        //Tells us that this pawn has had a pack
-                        if (enableDebug)
-                        {
-                            //Log.Message("Attempting to make pack.. [Base pack]");
-
-                        }
-                        //Makes the pack.
-                        //Log.Message("EiPackHandlerFromPackDriverMapComp started.");
                         packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
                     }
                 }
