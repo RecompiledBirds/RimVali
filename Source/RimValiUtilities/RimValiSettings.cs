@@ -20,7 +20,6 @@ namespace AvaliMod
         public bool enableAirdrops;
         public bool mapCompOn;
         public bool avaliLayEggs;
-        public bool enableSlots;
         public float healthScale;
         public int avaliRequiredForDrop;
         public int stageOneDaysPackloss;
@@ -41,7 +40,6 @@ namespace AvaliMod
             mapCompOn = true;
             textEnabled = true;
             enableAirdrops = true;
-            enableSlots = true;
             checkOtherRaces = true;
             packsEnabled = true;
             avaliRequiredForDrop = 5;
@@ -63,7 +61,6 @@ namespace AvaliMod
             Scribe_Values.Look(ref avaliLayEggs, "avaliLayEggs", false, true);
             Scribe_Values.Look(ref enableDebugMode, "debugModeOn", false, true);
             Scribe_Values.Look(ref mapCompOn, "mapCompOn", true, true);
-            Scribe_Values.Look(ref enableSlots, "enableSlots", true, true);
             Scribe_Values.Look(ref textEnabled, "textEnabled", true, true);
             Scribe_Values.Look(ref packOpReq, "packOpReq", 30, true);
             Scribe_Values.Look(ref stageOneDaysPackloss, "stageOneDaysPackloss", 1, true);
@@ -161,7 +158,7 @@ namespace AvaliMod
                 listing_Standard.Begin(rect);
                 Backbutton(listing_Standard);
                 listing_Standard.CheckboxLabeled("CanHaveEggs".Translate(), ref settings.avaliLayEggs, "EggsDesc".Translate());
-                listing_Standard.CheckboxLabeled("SlotsEnabled".Translate(), ref settings.enableSlots, "SlotsLabel".Translate());
+
                 listing_Standard.CheckboxLabeled("ShowText".Translate(), ref settings.textEnabled, "ShowTextLabel".Translate());
                 listing_Standard.CheckboxLabeled("AirdropsText".Translate(), ref settings.enableAirdrops, "AirdropsLabel".Translate());
                 listing_Standard.Label("AvaliForDropReq".Translate(settings.avaliRequiredForDrop.Named("COUNT")));
@@ -192,13 +189,7 @@ namespace AvaliMod
                 Modulefinder.startup();
                 listing_Standard.Label("Debug settings");
                 listing_Standard.GapLine(10);
-                bool debugButton = listing_Standard.ButtonText("ToggleDebug".Translate());
-                if (debugButton)
-                {
-
-                    settings.enableDebugMode = !settings.enableDebugMode;
-                    debugButton = !debugButton;
-                }
+                listing_Standard.CheckboxLabeled("ToggleDebug".Translate(), ref settings.enableDebugMode);
                 listing_Standard.Label("RVBuild".Translate(RimValiUtility.build.Named("BUILD")));
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
                 listing_Standard.Label(RimValiUtility.modulesFound);

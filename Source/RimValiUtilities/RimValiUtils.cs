@@ -5,6 +5,7 @@ using UnityEngine;
 using System.IO;
 using Verse;
 using System;
+using System.Reflection;
 
 namespace AvaliMod
 {
@@ -32,6 +33,29 @@ namespace AvaliMod
                             highestSkillLevel = skill.Level;
                             highestSkill = skill;
                         }
+                    }
+                }
+
+            }
+            return highestSkill;
+        }
+
+        
+
+        public static SkillRecord GetHighestSkillOfpack(AvaliPack pack, List<SkillDef> avoidSkills)
+        {
+            int highestSkillLevel = 0;
+            SkillRecord highestSkill = null;
+            foreach (Pawn pawn in pack.pawns)
+            {
+
+                List<SkillRecord> list = new List<SkillRecord>();
+                foreach (SkillRecord skillRecord in pawn.skills.skills.Where(SkillRec=>!avoidSkills.Contains(SkillRec.def)))
+                {
+                    if(skillRecord.Level > highestSkillLevel)
+                    {
+                        highestSkillLevel = skillRecord.Level;
+                        highestSkill = skillRecord;
                     }
                 }
 
@@ -129,8 +153,27 @@ namespace AvaliMod
                 return false;
             }
         }
+        public static MethodInfo GetMethod<T>(string methodName,BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
+        {
+            return typeof(T).GetMethod(methodName, flags);
+        }
+        public static void InvokeMethod<T>(string name,T obj , object[] parameters, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
+        {
+            GetMethod<T>(name, flags)?.Invoke(obj, parameters);
+        }
+        public static void InvokeMethod<T>(string name, T obj, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic)
+        {
+            GetMethod<T>(name, flags)?.Invoke(obj, new object[1]);
+        }
+        public static T GetVar<T>(string fieldName, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic, object obj = null)
+        {
+            return (T)typeof(T).GetField(fieldName, flags).GetValue(obj);
+        }
 
-
+        public static T GetProp<T>(string propName, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic, object obj = null)
+        {
+            return (T)typeof(T).GetProperty(propName, flags).GetValue(obj);
+        }
         public static bool CheckIfPackmatesInRoom(this Pawn pawn) => ((Func<bool>)delegate
         {
             Room room = pawn.GetRoom();
@@ -172,21 +215,7 @@ namespace AvaliMod
         public static IEnumerable<Pawn> CheckAllPawnsInMapAndFaction(Map map, Faction faction) => PawnsFinder.AllMaps_SpawnedPawnsInFaction(faction).Where(x => x.Map == map);
 
 
-        /*
-        public static IEnumerable<Pawn> GetPackPawns(Pawn pawn, PawnRelationDef relationDef)
-        {
-            List<Pawn> packmates = new List<Pawn>();
-            IEnumerable<Pawn> pawns = pawn.relations.RelatedPawns.ToList<Pawn>();
-            foreach (Pawn packmate in pawns)
-            {
-                if (packmate.relations.DirectRelationExists(relationDef, pawn))
-                {
-                    packmates.Add(packmate);
-                }
-            }
-            return packmates;
-        }
-        */
+
         public static bool IsOfRace(Pawn pawn, ThingDef race) => pawn.def.defName == race.defName;
 
 
@@ -224,11 +253,14 @@ namespace AvaliMod
         public static List<AvaliPack> EiPackHandler(List<AvaliPack> packs, Pawn pawn, IEnumerable<ThingDef> racesInPacks, int packLimit)
         {
             AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
-            void createPack()
+            void createPack(string reason = null)
             {
                 AvaliPack newPack = EiCreatePack(pawn);
                 if (!AvaliPackDriver.packs.Contains(newPack)) { packs.Add(newPack); }
-                Log.Message("Number of packs: " + packs.Count);
+                if(reason != null)
+                {
+                    Log.Message($"Creating pack for reason: {reason}");
+                }
             }
 
             //We only want to run this if there are packs, otherwise we'll automatically make a "base" pack.
@@ -242,33 +274,44 @@ namespace AvaliMod
                 IEnumerable<AvaliPack> packsToUse = packs.Where<AvaliPack>(x => x.faction == pawn.Faction && x.pawns.Any(p=>p.Map==pawn.Map));
                 if (packsToUse.Count() <= 0)
                 {
-                    createPack();
+                    createPack("packs is less than or equal to zero");
                 }
-                AvaliPack pack = packs.Find(x => x.pawns.Contains(pawn));
-                //This checks if a pack only has one pawn or if it is null.
-                if ((pack != null && !pack.pawns.NullOrEmpty() && pack.pawns.Count == 1) || pack ==null)
+                AvaliPack pack = pawn.GetPack();
+                //This checks if a pack only has one pawn or if it is null, and also if we can join a random pack.
+                if (((pack != null && !pack.pawns.NullOrEmpty() && pack.pawns.Count == 1) || pack ==null) && packsToUse.Any(p=>p != pack && p.pawns.Count < packLimit))
                 {
-                    AvaliPack pack2 = packsToUse.ToList().Find(p => p.pawns.Count < packLimit);
-                    if (pack2 != null)
+                    AvaliPack pack2 = packsToUse.Where(p => p.pawns.Count < packLimit).RandomElement();
+                    if (pack2 != null && pack2.pawns.Count < packLimit)
                     {
                         //If we did have a previous pack, just remove it. It's not needed anymore.
                         if (pack != null)
                         {
                             AvaliPackDriver.packs.Remove(pack);
                         }
-                        pack2 = JoinPack(pawn, pack2);
+                        JoinPack(pawn, ref pack2);
                     }
                 }
-                else
+                //If we get here, we'll create a new pack.
+                else if(!(pack != null && !pack.pawns.NullOrEmpty() && !(pack.pawns.Count == 1)))
                 {
-                    createPack();
+                    createPack("No pack for pawn");
+                    Log.Message((!(pack != null && !pack.pawns.NullOrEmpty() && !(pack.pawns.Count == 1))).ToString());
                 }
 
             }
             else
             {
-                createPack();
+                createPack("No packs in list");
             }
+            //Avoids pawns with double packs
+            pawn.CleanupPacks();
+            //Does pack boosts
+            foreach(AvaliPack pack in AvaliPackDriver.packs.Where(p => p.pawns.Count > 1))
+            {
+                Log.Message("Updating pack hediffs");
+                pack.UpdateHediffForAllMembers();
+            }
+            //This automatically updates if a pawn can join a pack without opinion and pack loss.
             pawn.UpdatePackAvailibilty();
             return packs;
         }
@@ -284,32 +327,26 @@ namespace AvaliMod
             return Queryable.Average(opinions.AsQueryable());
         }
 
-        public static AvaliPack JoinPack(Pawn pawn, AvaliPack pack)
+        public static AvaliPack JoinPack(Pawn pawn, ref AvaliPack pack)
         {
             Date date = new Date();
             AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
 
 
-            if (!AvaliPackDriver.pawnsHaveHadPacks.ContainsKey(pawn) || !AvaliPackDriver.pawnsHaveHadPacks[pawn])
+            if (!AvaliPackDriver.pawnsHaveHadPacks.ContainsKey(pawn) || !AvaliPackDriver.pawnsHaveHadPacks[pawn] && date.ToString() == pack.creationDate.ToString())
             {
-                if (date.ToString() == pack.creationDate.ToString())
-                {
-                    pack.pawns.Add(pawn);
-                    return pack;
-                }
-
+                pack.pawns.Add(pawn);
+                return pack;
             }
             else
             {
-                Log.Message("Pawn was in Dict");
-                if(GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq)
+                if (GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq)
                 {
                     pack.pawns.Add(pawn);
                     return pack;
                 }
-                Log.Message(GetPackAvgOP(pack, pawn).ToString() + pawn.Name.ToString());
             }
-            return null;
+            return pack;
         }
         public static AvaliPack EiCreatePack(Pawn pawn)
         {
@@ -320,7 +357,14 @@ namespace AvaliMod
             PawnPack.pawns.Add(pawn);
             return PawnPack;
         }
-      
+      public static void CleanupPacks(this Pawn pawn)
+        {
+            AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
+            while(AvaliPackDriver.packs.Where(p => p.pawns.Contains(pawn)).Count() > 1)
+            {
+                AvaliPackDriver.packs.Remove(AvaliPackDriver.packs.Where(p => p.pawns.Contains(pawn)).Last());
+            }
+        }
         public static void UpdatePackAvailibilty(this Pawn pawn)
         {
             if (pawn.GetPack() != null && pawn.GetPack().pawns.Count >= 2)
