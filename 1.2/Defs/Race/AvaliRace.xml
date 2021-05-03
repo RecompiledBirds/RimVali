@@ -436,20 +436,7 @@
                   <li>PackReplacementAI</li>
               </packLossPreventers>
             </li>
-            <li Class="AvaliMod.SlotPropsThingDef">
-              <slots>
-                <li>
-                  <name>Temperature</name>
-                </li>
-                <li>
-                  <name>Torso</name>
-                  <size>2</size>
-                </li>
-                <li>
-                  <name>Brain</name>
-                </li>
-              </slots>
-            </li>
+         
             <li Class="AvaliMod.PackProps">
               <racesInPacks>
                 <li>RimVali</li>
@@ -457,14 +444,6 @@
               <aloneThought>AvaliPackLoss</aloneThought>
               <togetherThought>AvaliPackmateThought</togetherThought>
               <deathThought>PackMateDied</deathThought>
-              <packGenChanceOverAge>
-                <points>
-                  <li>(0,1)</li>
-                  <li>(5,0.2)</li>
-                  <li>(8,0)</li>
-                </points>
-                
-              </packGenChanceOverAge>
               
             </li>
             
@@ -484,9 +463,6 @@
         <label>Avali</label>
         <description>Cute, fluffy raptors with highly advanced tech. The primary in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
 		<mainSettings>
-      <bodyTypeDefs>
-        <li>Avali</li>
-      </bodyTypeDefs>
     </mainSettings>
     
     
@@ -508,7 +484,9 @@
       <careAboutUndefinedRaces>false</careAboutUndefinedRaces>
     </butcherAndHarvestThoughts>
     
-    
+    <bodyTypes>
+        <li>Avali</li>
+     </bodyTypes>
     
     
     <raceInsertion>
@@ -699,7 +677,7 @@
     </graphics>
     <hasHair>false</hasHair>
     
-    <bodyPartGraphics>
+    <renderableDefs>
       
       <li>Head</li>
       <li>Body</li>
@@ -717,7 +695,7 @@
       <li>TailMain</li>
       <li>TailSkirt</li>
       
-    </bodyPartGraphics>
+    </renderableDefs>
     
     <replaceableThoughts>
       <li>
@@ -800,6 +778,7 @@
 
       <modContentRestrictionsApparelWhiteList>
         <li>ludeon.rimworld</li>
+        <li>ludeon.rimworld.royalty</li>
       </modContentRestrictionsApparelWhiteList>
 
       <modContentRestrictionsApparelList>
@@ -822,7 +801,9 @@
         <li>AvalipillowsThree</li>
         <li>AvalipillowsTwo</li>
         <li>AvalipillowsOne</li>
+        <li>AvaliPillowBed</li>
         <li>AvaliBed</li>
+        <li>AvaliHammock</li>
       </bedDefs>
       <bodyTypes>
         <li>Avali</li>
