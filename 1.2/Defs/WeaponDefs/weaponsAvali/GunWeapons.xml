@@ -56,18 +56,18 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>11</damageAmountBase>
-      <stoppingPower>2</stoppingPower>
+      <damageAmountBase>8</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
       <speed>150</speed>
-      <armorPenetrationBase>0.2</armorPenetrationBase>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
   <!-- Pistol -->
   <ThingDef ParentName="AvaliMakeableGun">
     <defName>AvaliPistol</defName>
-    <label>Avali Pistol</label>
-    <description>A common avali pistol. Unlike most human pistols, this gun uses coilgun technology to fire its bullets.</description>
+    <label>Illuminate Pistol</label>
+    <description>A common Illuminate pistol. Unlike most human pistols, this gun uses coilgun technology to fire its bullets.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Pistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -80,11 +80,11 @@
     <statBases>
       <WorkToMake>500</WorkToMake>
       <Mass>1.5</Mass>
-      <AccuracyTouch>0.9</AccuracyTouch>
-      <AccuracyShort>0.8</AccuracyShort>
-      <AccuracyMedium>0.7</AccuracyMedium>
-      <AccuracyLong>0.6</AccuracyLong>
-      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.89</AccuracyShort>
+      <AccuracyMedium>0.63</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
       <li>
@@ -92,10 +92,12 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliPistolBullet</defaultProjectile>
         <warmupTime>0.3</warmupTime>
-        <range>15</range>
+        <range>30</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+        <burstShotCount>2</burstShotCount>
       </li>
     </verbs>
     <tools>
@@ -144,7 +146,7 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>12</damageAmountBase>
       <speed>150</speed>
-      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -152,8 +154,8 @@
   
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliSMG</defName>
-    <label>Avali SMG</label>
-    <description>A coilgun based SMG. Works best at long range, like most avali weapons do.</description>
+    <label>Illuminate SMG</label>
+    <description>A coilgun based SMG. It works best at medium-short ranges.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/SMG</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -163,11 +165,11 @@
     <statBases>
       <WorkToMake>34000</WorkToMake>
       <Mass>4.5</Mass>
-      <AccuracyTouch>0.40</AccuracyTouch>
-      <AccuracyShort>0.5</AccuracyShort>
-      <AccuracyMedium>0.6</AccuracyMedium>
-      <AccuracyLong>0.7</AccuracyLong>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.86</AccuracyShort>
+      <AccuracyMedium>0.72</AccuracyMedium>
+      <AccuracyLong>0.6</AccuracyLong>
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>150</Steel>
@@ -182,8 +184,103 @@
         <defaultProjectile>AvaliSMGBullet</defaultProjectile>
         <warmupTime>1.8</warmupTime>
         <range>30.4</range>
-        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
-        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  
+  
+  
+  
+  
+  <!-- Minigun bullet -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>AvaliMinigunBullet</defName>
+    <label>Avali minigun bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <speed>150</speed>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <!-- Minigun -->
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>AvaliMinigun</defName>
+    <label>Illuminate minigun</label>
+    <description>An Illuminate minigun. Unlike most Illuminate technologies, it is not coilgun based.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Vali_Illuminate_Minigun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>34000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.36</AccuracyTouch>
+      <AccuracyShort>0.43</AccuracyShort>
+      <AccuracyMedium>0.44</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>2.50</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <AvaliTungstenPowder>15</AvaliTungstenPowder>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>AvaliMinigunBullet</defaultProjectile>
+        <warmupTime>1.8</warmupTime>
+        <range>35</range>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>20</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
@@ -230,7 +327,8 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>15</damageAmountBase>
+      <damageAmountBase>13</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
       <speed>170</speed>
       <armorPenetrationBase>0.5</armorPenetrationBase>
     </projectile>
@@ -240,8 +338,8 @@
   
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliRifle</defName>
-    <label>Avali Rifle</label>
-    <description>A classic coilgun weapon, the rifle. Good for taking out enemies at a distance.</description>
+    <label>Illuminate Rifle</label>
+    <description>A coilgun good for hunting, taking enemies out at some range, and things like that.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Rifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -251,10 +349,10 @@
     <statBases>
       <WorkToMake>34000</WorkToMake>
       <Mass>5.5</Mass>
-      <AccuracyTouch>0.3</AccuracyTouch>
-      <AccuracyShort>0.7</AccuracyShort>
-      <AccuracyMedium>0.8</AccuracyMedium>
-      <AccuracyLong>0.6</AccuracyLong>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.84</AccuracyShort>
+      <AccuracyMedium>0.92</AccuracyMedium>
+      <AccuracyLong>0.79</AccuracyLong>
       <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
     </statBases>
     <costList>
@@ -271,6 +369,8 @@
         <range>40.5</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>2</burstShotCount>
         <muzzleFlashScale>0</muzzleFlashScale>
       </li>
     </verbs>
@@ -315,20 +415,20 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>35</damageAmountBase>
+      <damageAmountBase>70</damageAmountBase>
       <speed>200</speed>
-      <!-- 500% -->
-      <stoppingPower>5</stoppingPower>
-      <!-- 200% -->
-      <armorPenetrationBase>2</armorPenetrationBase>
+      
+      <stoppingPower>3</stoppingPower>
+      
+      <armorPenetrationBase>1</armorPenetrationBase>
     </projectile>
   </ThingDef>
     <!-- Sniper rifle -->
 
     <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliSniperRifle</defName>
-    <label>Avali Sniper Rifle</label>
-    <description>A weapon, perfect for picking off enemies at a distance</description>
+    <label>Illuminate Sniper Rifle</label>
+    <description>A weapon perfect for picking off enemies at a distance.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/SniperRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -338,11 +438,11 @@
     <statBases>
       <WorkToMake>34000</WorkToMake>
       <Mass>5.5</Mass>
-      <AccuracyTouch>0.5</AccuracyTouch>
-      <AccuracyShort>0.8</AccuracyShort>
-      <AccuracyMedium>0.9</AccuracyMedium>
+      <AccuracyTouch>0.6</AccuracyTouch>
+      <AccuracyShort>0.92</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
       <AccuracyLong>1</AccuracyLong>
-      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>100</Steel>
@@ -364,6 +464,7 @@
     </verbs>
     <weaponTags>
       <li>AvaliWeapons</li>
+      <li>AvaliSniper</li>
     </weaponTags>
     <tools>
       <li>
@@ -403,9 +504,10 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>25</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <damageAmountBase>22</damageAmountBase>
       <speed>150</speed>
-      <armorPenetrationBase>0.7</armorPenetrationBase>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -413,8 +515,8 @@
   
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliShotgun</defName>
-    <label>Avali Shotgun</label>
-    <description>An avali shotgun. Like almost all avali weapons, it is based off coilgun technology, allowing for long range at the cost of short range accuracy.</description>
+    <label>Illuminate Shotgun</label>
+    <description>An Illuminate shotgun. Like almost all Illuminate weapons, it is based off coilgun technology, allowing for long range at the cost of short range accuracy.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Shotgun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -424,11 +526,11 @@
     <statBases>
       <WorkToMake>34000</WorkToMake>
       <Mass>5.5</Mass>
-      <AccuracyTouch>0.56</AccuracyTouch>
-      <AccuracyShort>0.8</AccuracyShort>
-      <AccuracyMedium>0.75</AccuracyMedium>
-      <AccuracyLong>0.8</AccuracyLong>
-      <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+      <AccuracyTouch>0.78</AccuracyTouch>
+      <AccuracyShort>0.97</AccuracyShort>
+      <AccuracyMedium>0.85</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>100</Steel>
@@ -443,7 +545,7 @@
         <warmupTime>1.9</warmupTime>
         <range>30</range>
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-        <burstShotCount>9</burstShotCount>
+        <burstShotCount>4</burstShotCount>
         <soundCast>Shot_Shotgun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
@@ -477,5 +579,96 @@
         <Crafting>2</Crafting>
       </skillRequirements>
     </recipeMaker>
+  </ThingDef>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>IlluminateRocketLauncher</defName>
+    <label>Illuminate rocket launcher</label>
+    <description>An Illuminate rocket launcher.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/RocketLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>7</Mass>
+      <RangedWeapon_Cooldown>4.7</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <weaponTags>
+      <li>AvaliRocketeerWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>SingleUseWeapon</li>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>AvaliRocketLauncherRocket</defaultProjectile>
+        <forcedMissRadius>0.5</forcedMissRadius>
+        <warmupTime>4.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
+        <range>40</range>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11.7</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+      <li Class="CompProperties_BiocodableWeapon"/>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>AvaliRocketLauncherRocket</defName>
+    <label>rocket</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/Rocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>3.9</explosionRadius>
+      <speed>50</speed>
+    </projectile>
   </ThingDef>
 </Defs>
