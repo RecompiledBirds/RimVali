@@ -241,7 +241,7 @@ namespace AvaliMod
 
 
         public static bool FactionHasRace(ThingDef race, Faction faction) => PawnOfRaceCount(faction, race) > 0;
-
+        
         /// <summary>
         /// Handles the job of managing pack related functions, such as creating packs for a pawn, making a pawn join packs, etc.
         /// </summary>
@@ -259,7 +259,10 @@ namespace AvaliMod
                 if (!AvaliPackDriver.packs.Contains(newPack)) { packs.Add(newPack); }
                 if(reason != null)
                 {
-                    Log.Message($"Creating pack for reason: {reason}");
+                    if (RimValiMod.settings.enableDebugMode)
+                    {
+                        Log.Message($"Creating pack for reason: {reason}");
+                    }
                 }
             }
 
@@ -295,7 +298,10 @@ namespace AvaliMod
                 else if(!(pack != null && !pack.pawns.NullOrEmpty() && !(pack.pawns.Count == 1)))
                 {
                     createPack("No pack for pawn");
-                    Log.Message((!(pack != null && !pack.pawns.NullOrEmpty() && !(pack.pawns.Count == 1))).ToString());
+                    if (RimValiMod.settings.enableDebugMode)
+                    {
+                        Log.Message((!(pack != null && !pack.pawns.NullOrEmpty() && !(pack.pawns.Count == 1))).ToString());
+                    }
                 }
 
             }
@@ -308,7 +314,10 @@ namespace AvaliMod
             //Does pack boosts
             foreach(AvaliPack pack in AvaliPackDriver.packs.Where(p => p.pawns.Count > 1))
             {
-                Log.Message("Updating pack hediffs");
+                if (RimValiMod.settings.enableDebugMode)
+                {
+                    Log.Message("Updating pack hediffs");
+                }
                 pack.UpdateHediffForAllMembers();
             }
             //This automatically updates if a pawn can join a pack without opinion and pack loss.
@@ -353,7 +362,10 @@ namespace AvaliMod
             AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
             AvaliPack PawnPack = new AvaliPack(pawn.Faction);
             PawnPack.name = pawn.Name.ToStringShort + "'s pack";
-            Log.Message("Creating pack: " + PawnPack.name);
+            if (RimValiMod.settings.enableDebugMode)
+            {
+                Log.Message("Creating pack: " + PawnPack.name);
+            }
             PawnPack.pawns.Add(pawn);
             return PawnPack;
         }
@@ -396,12 +408,18 @@ namespace AvaliMod
             AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
             if (pawn == null)
             {
-                Log.Error("Pawn check is null!");
+                if (RimValiMod.settings.enableDebugMode)
+                {
+                    Log.Error("Pawn check is null!");
+                }
                 return null;
             }
             if (AvaliPackDriver.packs == null || AvaliPackDriver.packs.Count == 0)
             {
-                Log.Message("No packs");
+                if (RimValiMod.settings.enableDebugMode)
+                {
+                    Log.Message("No packs");
+                }
                 return null;
             }
             //We really should be getting here

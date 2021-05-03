@@ -25,7 +25,7 @@ namespace AvaliMod
         public int stageOneDaysPackloss;
         public int stageTwoDaysPackloss;
         public int stageThreeDaysPackloss;
-
+        public int hackChance;
         public Dictionary<string, bool> enabledRaces = new Dictionary<string, bool>();
 
 
@@ -46,6 +46,7 @@ namespace AvaliMod
             stageOneDaysPackloss = 1;
             stageTwoDaysPackloss = 2;
             stageThreeDaysPackloss = 3;
+            hackChance = 30;
         }
         public override void ExposeData()
         {
@@ -66,6 +67,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref stageOneDaysPackloss, "stageOneDaysPackloss", 1, true);
             Scribe_Values.Look(ref stageTwoDaysPackloss, "stageTwoDaysPackloss", 2, true);
             Scribe_Values.Look(ref stageThreeDaysPackloss, "stageThreeDaysPackloss", 3, true);
+            Scribe_Values.Look(ref hackChance, "hackChance", 30, true);
             Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces", LookMode.Undefined, LookMode.Undefined);
             base.ExposeData();
         }
@@ -180,6 +182,8 @@ namespace AvaliMod
                     settings.stageThreeDaysPackloss = settings.stageTwoDaysPackloss;
                 }
                 settings.stageThreeDaysPackloss = (int)listing_Standard.Slider(settings.stageThreeDaysPackloss, settings.stageTwoDaysPackloss, 100);
+                listing_Standard.Label($"Chance to hack Illuminate tech as Independent Worlds: {settings.hackChance}");
+                settings.hackChance = (int)listing_Standard.Slider(settings.hackChance, 0, 100);
             }
             
             //Debug

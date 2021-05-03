@@ -156,7 +156,10 @@ namespace AvaliMod
                     {
                         output.tags.Remove(str);
                     }
-                    ThingDef thing = new ThingDef()
+                    //How vanilla RW sets up some stuff
+
+                    //Blueprint
+                    ThingDef thingDef= new ThingDef()
                     {
                         category = ThingCategory.Ethereal,
                         label = "Unspecified blueprint",
@@ -170,38 +173,58 @@ namespace AvaliMod
                          },
                         drawerType = DrawerType.MapMeshAndRealTime
                     };
-                    ThingDef blueprintDef = new ThingDef
-                    {
-                        category = ThingCategory.Ethereal,
-                        altitudeLayer = AltitudeLayer.Blueprint,
-                        useHitPoints = false,
-                        selectable = true,
-                        seeThroughFog = true,
-                        comps =
-                        {
-                            new CompProperties_Forbiddable()
-                        },
-                        drawerType = DrawerType.MapMeshAndRealTime,
-                        thingClass = typeof(Blueprint_Build),
-                        defName = ThingDefGenerator_Buildings.BlueprintDefNamePrefix + output.defName,
-                        label = output.label + "BlueprintLabelExtra".Translate(),
-                        graphicData = new GraphicData
-                        {
-                            shaderType = ShaderTypeDefOf.MetaOverlay,
-                            texPath = "Things/Special/TerrainBlueprint",
-                            graphicClass = typeof(Graphic_Single),
-                        },
+                    thingDef.thingClass = typeof(Blueprint_Build);
+                    thingDef.defName = ThingDefGenerator_Buildings.BlueprintDefNamePrefix + output.defName;
+                    thingDef.label = output.label + "BlueprintLabelExtra".Translate();
+                    thingDef.entityDefToBuild = output;
+                    thingDef.graphicData = new GraphicData();
+                    thingDef.graphicData.shaderType = ShaderTypeDefOf.MetaOverlay;
+                    thingDef.graphicData.texPath = "Things/Special/TerrainBlueprint";
+                    thingDef.graphicData.graphicClass = typeof(Graphic_Single);
+                    thingDef.constructionSkillPrerequisite = output.constructionSkillPrerequisite;
+                    thingDef.artisticSkillPrerequisite = output.artisticSkillPrerequisite;
+                    thingDef.clearBuildingArea = false;
+                    thingDef.modContentPack = output.modContentPack;
+                    output.blueprintDef = thingDef;
 
-                        constructionSkillPrerequisite = output.constructionSkillPrerequisite,
-                        artisticSkillPrerequisite = output.artisticSkillPrerequisite,
-                        clearBuildingArea = false,
-                        modContentPack = output.modContentPack,
-                        entityDefToBuild = output,
-                        blueprintDef = thing,
+                    //Framedef
+                    ThingDef frameDef = new ThingDef()
+                    {
+                        isFrameInt = true,
+                        category = ThingCategory.Building,
+                        label = "Unspecified building frame",
+                        thingClass = typeof(Frame),
+                        altitudeLayer = AltitudeLayer.Building,
+                        useHitPoints = true,
+                        selectable = true,
+                        building = new BuildingProperties(),
+                        comps =
+                         {
+                             new CompProperties_Forbiddable()
+                         },
+                        scatterableOnMapGen = false,
+                        leaveResourcesWhenKilled = true
                     };
-                    blueprintDef.PostLoad();
-                    blueprintDef.ResolveReferences();
-                    output.blueprintDef = blueprintDef;
+                    frameDef.building.artificialForMeditationPurposes = false;
+                    frameDef.defName = ThingDefGenerator_Buildings.BuildingFrameDefNamePrefix + output.defName;
+                    frameDef.label = output.label + "FrameLabelExtra".Translate();
+                    frameDef.entityDefToBuild = output;
+                    frameDef.useHitPoints = false;
+                    frameDef.fillPercent = 0f;
+                    frameDef.description = "Terrain building in progress.";
+                    frameDef.passability = Traversability.Standable;
+                    frameDef.selectable = true;
+                    frameDef.constructEffect = output.constructEffect;
+                    frameDef.building.isEdifice = false;
+                    frameDef.constructionSkillPrerequisite = output.constructionSkillPrerequisite;
+                    frameDef.artisticSkillPrerequisite = output.artisticSkillPrerequisite;
+                    frameDef.clearBuildingArea = false;
+                    frameDef.modContentPack = output.modContentPack;
+                    frameDef.category = ThingCategory.Ethereal;
+                    frameDef.entityDefToBuild = output;
+                    output.frameDef = frameDef;
+
+
                     //This makes sure everything is setup how it should be
                     output.PostLoad();
                     output.ResolveReferences();
@@ -247,7 +270,6 @@ namespace AvaliMod
                     Log.Message(def.tags.Any(str => str.Contains("removeFromResearch")).ToString());
                     if (def.tags.Any(str => str.Contains("removeFromResearch")))
                     {
-                        Log.Message("test");
                         List<string> tags = def.tags.Where(x => x.Contains("removeFromResearch_") && !x.NullOrEmpty()).ToList();
                         for (int a = 0; a < tags.Count; a++)
                         {
@@ -286,6 +308,8 @@ namespace AvaliMod
 
             Log.Message($"[RimVali/FloorConstructor] {builder}");
             Log.Message("[RimVali/FloorConstructor] Updating architect menu..");
+
+            //Updates/refreshes menus
             foreach (DesignationCategoryDef def in toUpdateDesignationCatDefs)
             {
                 def.PostLoad();
