@@ -2,6 +2,8 @@
 <Defs>
   <AvaliMod.RimValiRaceDef ParentName="BaseFullAvali">
     <defName>IWAvaliRace</defName>
+    <corpseToUse>Corpse_RimVali</corpseToUse>
+    <meatToUse>Meat_RimVali</meatToUse>
     <statBases>
             <MarketValue>1500</MarketValue>
             <MoveSpeed>4.5</MoveSpeed>

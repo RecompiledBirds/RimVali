@@ -473,6 +473,11 @@
           <butcheredPawnThought>ButcheredAvali</butcheredPawnThought>
           <knowButcheredPawn>KnowButcheredAvaliCorpse</knowButcheredPawn>
         </li>
+        <li>
+          <race>IWAvaliRace</race>
+          <butcheredPawnThought>ButcheredAvali</butcheredPawnThought>
+          <knowButcheredPawn>KnowButcheredAvaliCorpse</knowButcheredPawn>
+        </li>
       </butcherThoughts>
       <harvestedThoughts>
         <li>
