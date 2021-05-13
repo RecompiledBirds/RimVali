@@ -43,8 +43,9 @@ namespace AvaliMod
 
         public void UpdatePawns(Map map)
         {
+            
             AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
-            IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => x.def == AvaliDefs.RimVali);
+            IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => AvaliPackDriver.racesInPacks.Contains(x.def));
             IEnumerable<AvaliPack> packs = AvaliPackDriver.packs;
             foreach (Pawn pawn in pawns)
             {

@@ -8,9 +8,36 @@ using System.Linq;
 using System;
 using Verse.AI;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace AvaliMod
 {
+    #region Research restriction patch
+
+    [HarmonyPatch(typeof(WorkGiver_Researcher), "ShouldSkip")]
+    public class ResearchPatch
+    {
+        [HarmonyPostfix]
+        static void Research(Pawn pawn, ref bool __result)
+        {
+            //Log.Message("test");
+            if (Find.ResearchManager.currentProj != null)
+            {
+                // Log.Message($"Is blacklisted: {(Restrictions.factionResearchBlacklist.ContainsKey(pawn.Faction.def) && Restrictions.factionResearchBlacklist[pawn.Faction.def].Any(res => res.proj == Find.ResearchManager.currentProj))}");
+                if (!Restrictions.checkRestrictions(Restrictions.researchRestrictions, Find.ResearchManager.currentProj, pawn.def) || (Restrictions.factionResearchRestrictions.ContainsKey(pawn.Faction.def) && !Restrictions.factionResearchRestrictions[pawn.Faction.def].Any(res => res.proj == Find.ResearchManager.currentProj)) || (Restrictions.factionResearchBlacklist.ContainsKey(pawn.Faction.def) && Restrictions.factionResearchBlacklist[pawn.Faction.def].Any(res => res.proj == Find.ResearchManager.currentProj)))
+                {
+                    HackingGameComp hackingGameComp = Current.Game.World.GetComponent<HackingGameComp>();
+                    if (hackingGameComp != null && !hackingGameComp.hackProjects.EnumerableNullOrEmpty() && !(hackingGameComp.hackProjects.ContainsKey(Find.ResearchManager.currentProj) || hackingGameComp.hackProjects[Find.ResearchManager.currentProj] == false))
+                    {
+
+                        __result = false;
+                    }
+                }
+                __result = true && __result;
+            }
+        }
+    }
+    #endregion
     #region Restrictions
     #region FactionResearch
     public class FacRes
@@ -49,7 +76,7 @@ namespace AvaliMod
         public static Dictionary<ThingDef, List<ThingDef>> equipabblbleWhiteLists = new Dictionary<ThingDef, List<ThingDef>>();
 
 
-        public static Dictionary<BodyTypeDef, List<ThingDef>> bodyTypes = new Dictionary<BodyTypeDef, List<ThingDef>>();
+        public static Dictionary<ThingDef, List<BodyTypeDef>> bodyDefs = new Dictionary<ThingDef, List<BodyTypeDef>>();
 
         //Faction restrictions
         public static Dictionary<FactionDef, List<FacRes>> factionResearchRestrictions = new Dictionary<FactionDef, List<FacRes>>();
@@ -113,6 +140,7 @@ namespace AvaliMod
         #region Assemble restrictions
         static Restrictions()
         {
+            
             Log.Message("[RVR]: Setting up race restrictions.");
             foreach (RimValiRaceDef raceDef in RimValiDefChecks.races)
             {
@@ -246,6 +274,10 @@ namespace AvaliMod
                             AddRestriction(ref buildingRestrictions, def, raceDef.defName);
                         }
                     }
+                }
+                foreach(BodyTypeDef bDef in raceDef.bodyTypes)
+                {
+                    AddRestriction(ref bodyDefs, raceDef, bDef);
                 }
                 if (raceDef.useHumanRecipes)
                 {
@@ -618,96 +650,102 @@ namespace AvaliMod
         //Gets the thought for butchering.
         static void ButcheredThoughAdder(Pawn pawn, Pawn butchered, bool butcher = true)
         {
-            try
+            if (butchered.RaceProps.Humanlike)
             {
-                //Backstories
-                if (!DefDatabase<RVRBackstory>.AllDefs.Where(x => x.hasButcherThoughtOverrides == true && (x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier)).EnumerableNullOrEmpty())
+                #region stories
+                try
                 {
-
-                    butcherAndHarvestThoughts butcherAndHarvestThoughts = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).First().butcherAndHarvestThoughtOverrides;
-                    try
+                    //Backstories
+                    if (!DefDatabase<RVRBackstory>.AllDefs.Where(x => x.hasButcherThoughtOverrides == true && (x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier)).EnumerableNullOrEmpty())
                     {
-                        foreach (raceButcherThought rBT in butcherAndHarvestThoughts.butcherThoughts)
-                        {
-                            if (rBT.race == butchered.def)
-                            {
 
-                                if (butcher)
+                        butcherAndHarvestThoughts butcherAndHarvestThoughts = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).First().butcherAndHarvestThoughtOverrides;
+                        try
+                        {
+                            foreach (raceButcherThought rBT in butcherAndHarvestThoughts.butcherThoughts)
+                            {
+                                if (rBT.race == butchered.def)
                                 {
-                                    pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
-                                    return;
-                                }
-                                else
-                                {
-                                    pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
-                                    return;
+
+                                    if (butcher)
+                                    {
+                                        pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
+                                        return;
+                                    }
                                 }
                             }
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.Error(e.Message);
-                    }
+                        catch (Exception e)
+                        {
+                            Log.Error(e.Message);
+                        }
 
-                    if (butcherAndHarvestThoughts.careAboutUndefinedRaces)
+                        if (butcherAndHarvestThoughts.careAboutUndefinedRaces)
+                        {
+                            if (butcher)
+                            {
+                                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
+                                return;
+                            }
+                            else
+                            {
+                                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+                                return;
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e.Message);
+                }
+                #endregion
+                #region races
+                #region RVR races
+                //Races
+                if (pawn.def is RimValiRaceDef def)
+                {
+                    foreach (raceButcherThought rBT in def.butcherAndHarvestThoughts.butcherThoughts)
+                    {
+                        if (rBT.race == butchered.def)
+                        {
+
+                            if (butcher)
+                            {
+                                pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
+                                return;
+                            }
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
+                            return;
+                        }
+                    }
+                    if (def.butcherAndHarvestThoughts.careAboutUndefinedRaces)
                     {
                         if (butcher)
                         {
                             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
                             return;
                         }
-                        else
-                        {
-                            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
-                            return;
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.Message);
-            }
 
-
-            //Races
-            if (pawn.def is RimValiRaceDef def)
-            {
-                foreach (raceButcherThought rBT in def.butcherAndHarvestThoughts.butcherThoughts)
-                {
-                    if (rBT.race == butchered.def)
-                    {
-
-                        if (butcher)
-                        {
-                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
-                            return;
-                        }
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
                         return;
                     }
                 }
-                if (def.butcherAndHarvestThoughts.careAboutUndefinedRaces)
+                #endregion 
+                //If the pawn is not from RVR.
+                if (butcher)
                 {
-                    if (butcher)
-                    {
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
-                        return;
-                    }
-
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
                     return;
                 }
+                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
+                #endregion
             }
-
-            //If the pawn is not from RVR.
-            if (butcher)
-            {
-                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
-                return;
-            }
-            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
         }
 
 
@@ -753,6 +791,7 @@ namespace AvaliMod
     }
     #endregion
     #region Backstory patch
+    
     [HarmonyPatch(typeof(PawnBioAndNameGenerator), "FillBackstorySlotShuffled")]
     public class storyPatch
     {
@@ -1000,6 +1039,7 @@ namespace AvaliMod
     [HarmonyPatch(typeof(PawnRenderer), "BaseHeadOffsetAt")]
     public static class HeadPatch
     {
+       
         [HarmonyPostfix]
         public static void setPos(ref Vector3 __result, Rot4 rotation, PawnRenderer __instance)
         {
@@ -1009,44 +1049,8 @@ namespace AvaliMod
             {
                 //This is an automatic check to see if we can put the head position here.
                 //no human required
-                if (rimValiRaceDef.renderableDefs.Where(x => x.defName.ToLower() == "head").Count() > 0)
-                {
-
-                    Vector2 offset = new Vector2(0, 0);
-
-                    RenderableDef headDef = rimValiRaceDef.renderableDefs.First(x => x.defName.ToLower() == "head");
-                    __instance.graphics.headGraphic.drawSize = headDef.south.size;
-                    Vector3 pos = new Vector3(0, 0, 0);
-                    pos.y = __result.y;
-                    if (headDef.west == null)
-                    {
-                        headDef.west = headDef.east;
-                    }
-                    if (pawn.Rotation == Rot4.South)
-                    {
-                        pos.x = headDef.south.position.x + offset.x;
-                        pos.z = headDef.south.position.y + offset.y;
-
-                    }
-                    else if (pawn.Rotation == Rot4.North)
-                    {
-                        pos.x = headDef.north.position.x + offset.x;
-                        pos.z = headDef.north.position.y + offset.y;
-                    }
-                    else if (pawn.Rotation == Rot4.East)
-                    {
-                        pos.x = headDef.east.position.x + offset.x;
-                        pos.z = headDef.east.position.y + offset.y;
-                    }
-                    else
-                    {
-                        pos.x = headDef.west.position.x + offset.x;
-                        pos.z = headDef.west.position.y + offset.y;
-                    }
-                    //Log.Message(pos.ToString());
-                    __result = __result + pos;
-                }
-
+                rimValiRaceDef.HeadOffsetPawn(__instance, ref __result);
+                
             }
         }
     }
@@ -1103,6 +1107,31 @@ namespace AvaliMod
                     Patch(ref pawn);
                 }
             }
+            else
+            {
+                if (pawn.def.GetType().Name != "ThingDef_AlienRace")
+                {
+                    List<BodyTypeDef> getAllAvalibleBodyTypes = new List<BodyTypeDef>();
+                    //getAllAvalibleBodyTypes.AddRange((IEnumerable<BodyTypeDef>)Restrictions.bodyTypeRestrictions.Where(x => x.Value.Contains(p2.def)));
+                    if (Restrictions.bodyDefs.ContainsKey(p2.def))
+                    {
+                        getAllAvalibleBodyTypes.AddRange(Restrictions.bodyDefs[p2.def]);
+                    }
+                    if (getAllAvalibleBodyTypes.NullOrEmpty())
+                    {
+                        getAllAvalibleBodyTypes.AddRange(new List<BodyTypeDef> { BodyTypeDefOf.Fat, BodyTypeDefOf.Hulk, BodyTypeDefOf.Thin });
+                    }
+                    if (pawn.gender == Gender.Female)
+                    {
+                        getAllAvalibleBodyTypes.Add(BodyTypeDefOf.Female);
+                    }
+                    else
+                    {
+                        getAllAvalibleBodyTypes.Add(BodyTypeDefOf.Male);
+                    }
+                    pawn.story.bodyType = getAllAvalibleBodyTypes.RandomElement();
+                }
+            }
         }
     }
     #endregion
@@ -1116,7 +1145,8 @@ namespace AvaliMod
         [HarmonyPostfix]
         public static void edible(ref bool __result, RaceProperties __instance, ThingDef t)
         {
-            ThingDef pawn = DefDatabase<ThingDef>.AllDefs.Where<ThingDef>(x => x.race != null && x.race == __instance).First();
+
+            ThingDef pawn = __instance.AnyPawnKind.race;
             if (!Restrictions.checkRestrictions(Restrictions.consumableRestrictions, t, pawn) && !Restrictions.checkRestrictions(Restrictions.consumableRestrictionsWhiteList, t, pawn))
             {
                 JobFailReason.Is(pawn.label + " " + "CannotEat".Translate(pawn.label.Named("RACE")));
@@ -1152,7 +1182,7 @@ namespace AvaliMod
             {
 
                 __result = false;
-                cantReason = pawn.def.label + " " + "CannotWear".Translate(pawn.Label.Named("RACE"));
+                cantReason = pawn.def.label + " " + "CannotWear".Translate(pawn.def.label.Named("RACE"));
 
             }
 
@@ -1171,7 +1201,7 @@ namespace AvaliMod
                         {
 
                             __result = false;
-                            cantReason = pawn.def.label + " " + "CannotWear".Translate(pawn.Label.Named("RACE"));
+                            cantReason = pawn.def.label + " " + "CannotWear".Translate(pawn.def.label.Named("RACE"));
                         }
                     }
                 }
@@ -1193,7 +1223,7 @@ namespace AvaliMod
             {
 
                 __result = false;
-                JobFailReason.Is(p.def.label + " " + "CannotBuild".Translate(p.Label.Named("RACE")));
+                JobFailReason.Is(p.def.label + " " + "CannotBuild".Translate(p.def.label.Named("RACE")));
                 return;
             }
 
@@ -1304,13 +1334,13 @@ namespace AvaliMod
 
             if (bodyType != AvaliMod.AvaliDefs.Avali && bodyType != AvaliMod.AvaliDefs.Avali)
                 return;
-            if (apparel.def.apparel.LastLayer == ApparelLayerDefOf.Overhead)
+            if (apparel.def.apparel.layers.Any(d => d == ApparelLayerDefOf.Overhead))
             {
                 string path = apparel.def.apparel.wornGraphicPath + "_" + bodyType.defName;
                 if (apparel.Wearer.def is RimValiRaceDef def)
                 {
                     Pawn pawn = apparel.Wearer;
-                    if (!((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
+                    if ((ContentFinder<Texture2D>.Get(path + "_north", false) != null) && (ContentFinder<Texture2D>.Get(path + "_east", false) != null) && (ContentFinder<Texture2D>.Get(path + "_south", false) != null))
                     {
                         Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
                         rec = new ApparelGraphicRecord(graphic, apparel);
@@ -1322,7 +1352,7 @@ namespace AvaliMod
                     {
                         Pawn pawn = apparel.Wearer;
 
-                        if (!((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
+                        if ((ContentFinder<Texture2D>.Get(path + "_north", false) != null) && (ContentFinder<Texture2D>.Get(path + "_east", false) != null) && (ContentFinder<Texture2D>.Get(path + "_south", false) != null))
                         {
                             Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / defTwo.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
                             rec = new ApparelGraphicRecord(graphic, apparel);
@@ -1330,7 +1360,7 @@ namespace AvaliMod
                     }
                     else
                     {
-                        if (!((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (UnityEngine.Object)null) && !((UnityEngine.Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
+                        if ((ContentFinder<Texture2D>.Get(path + "_north", false) != null) && !(ContentFinder<Texture2D>.Get(path + "_east", false) == null) && !(ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
                         {
                             Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
                             rec = new ApparelGraphicRecord(graphic, apparel);
@@ -1341,7 +1371,7 @@ namespace AvaliMod
             else if (!apparel.def.apparel.wornGraphicPath.NullOrEmpty())
             {
                 string str = apparel.def.apparel.wornGraphicPath + "_" + bodyType.defName;
-                if ((UnityEngine.Object)ContentFinder<Texture2D>.Get(str + "_north", false) == (UnityEngine.Object)null || (UnityEngine.Object)ContentFinder<Texture2D>.Get(str + "_east", false) == (UnityEngine.Object)null || (UnityEngine.Object)ContentFinder<Texture2D>.Get(str + "_south", false) == (UnityEngine.Object)null)
+                if (ContentFinder<Texture2D>.Get(str + "_north", false) == null || ContentFinder<Texture2D>.Get(str + "_east", false) == null || ContentFinder<Texture2D>.Get(str + "_south", false) == null)
                 {
                     Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(apparel.def.apparel.wornGraphicPath, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
                     rec = new ApparelGraphicRecord(graphic, apparel);
@@ -1358,9 +1388,22 @@ namespace AvaliMod
         [HarmonyPostfix]
         static void Portrait(PawnRenderer __instance)
         {
+            Vector3 zero = Vector3.zero;
+            float angle;
+            if (__instance.graphics.pawn.Dead || __instance.graphics.pawn.Downed)
+            {
+                angle = 85f;
+                zero.x -= 0.18f;
+                zero.z -= 0.18f;
+            }
+            else
+            {
+                angle = 0f;
+            }
             try
             {
 
+                
                 Pawn pawn = __instance.graphics.pawn;
                 if (pawn.def is RimValiRaceDef rimValiRaceDef && !pawn.Dead && !pawn.Downed)
                 {
@@ -1368,7 +1411,7 @@ namespace AvaliMod
 
                 } else if (pawn.def is RimValiRaceDef rDef)
                 {
-                    RenderPatchTwo.RenderBodyParts(true, 90, new Vector3(-0.2f, 0, -0.2f), __instance, Rot4.South);
+                    RenderPatchTwo.RenderBodyParts(true, angle, new Vector3(-0.2f, 0, -0.2f), __instance, Rot4.South);
                 }
             }
             catch (Exception error)
@@ -1376,6 +1419,9 @@ namespace AvaliMod
                 //Achivement get! How did we get here?
                 Log.Error("Something has gone terribly wrong! Error: \n" + error.Message);
             }
+            object[] p = new object[] { zero, angle, true, Rot4.South, Rot4.South, RimValiUtility.GetProp<Rot4>("CurRotDrawMode", obj: __instance), true, !__instance.graphics.pawn.health.hediffSet.HasHead, __instance.graphics.pawn.IsInvisible() };
+            RimValiUtility.InvokeMethod("RenderPawnInternal",__instance,p);
+            //__instance.RenderPawnInternal(zero, angle, true, Rot4.South, Rot4.South, RimValiUtility.GetProp<Rot4>("CurRotDrawMode",obj: __instance), true, !__instance.graphics.pawn.health.hediffSet.HasHead, __instance.graphics.pawn.IsInvisible());
         }
     }
     #endregion
@@ -1387,6 +1433,7 @@ namespace AvaliMod
     [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal", new[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) })]
     static class RenderPatchTwo
     {
+        public static Dictionary<Pawn, PawnRenderer> renders = new Dictionary<Pawn, PawnRenderer>();
         public static void RenderBodyParts(bool portrait, float angle, Vector3 vector, PawnRenderer pawnRenderer, Rot4 rotation)
         {
             Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.up);
@@ -1454,7 +1501,7 @@ namespace AvaliMod
                             }
 
                             AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), AvaliShaderDatabase.Tricolor, size, color1, color2, color3);
-                            GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), vector + offset.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, quaternion)) *114.59156f),
+                            GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), vector + offset.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, quaternion)) * 114.59156f),
                             quaternion, graphic.MatAt(rotation), portrait);
                         }
                         else
@@ -1553,211 +1600,168 @@ namespace AvaliMod
         [HarmonyPostfix]
         static void RenderPawnInternal(Vector3 rootLoc, float angle, bool renderBody, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, bool portrait, bool headStump, bool invisible, PawnRenderer __instance)
         {
-            Pawn pawn = __instance.graphics.pawn;
-            PawnGraphicSet graphics = __instance.graphics;
-            if (__instance.graphics.pawn.def is RimValiRaceDef && !portrait)
-            {
-                Rot4 rot = __instance.graphics.pawn.Rotation;
-                angle = __instance.BodyAngle();
-                Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.up);
-                if (__instance.graphics.pawn.GetPosture() != PawnPosture.Standing)
-                {
-
-                    rot = __instance.LayingFacing();
-                    Building_Bed building_Bed = __instance.graphics.pawn.CurrentBed();
-                    if (building_Bed != null && __instance.graphics.pawn.RaceProps.Humanlike)
-                    {
-                        renderBody = building_Bed.def.building.bed_showSleeperBody;
-                        AltitudeLayer altLayer = (AltitudeLayer)Mathf.Max((int)building_Bed.def.altitudeLayer, 17);
-                        Vector3 vector2;
-                        Vector3 a3 = vector2 = __instance.graphics.pawn.Position.ToVector3ShiftedWithAltitude(altLayer);
-                        vector2.y += 0.024489796f;
-                        Rot4 rotation = building_Bed.Rotation;
-                        rotation.AsInt += 2;
-                        float d = -__instance.BaseHeadOffsetAt(Rot4.South).z;
-                        Vector3 a2 = rotation.FacingCell.ToVector3();
-                        rootLoc = a3 + a2 * d;
-                        rootLoc.y += 0.009183673f;
-                    }
-                    else if (!__instance.graphics.pawn.Dead && __instance.graphics.pawn.CarriedBy == null)
-                    {
-                        rootLoc.y = AltitudeLayer.LayingPawn.AltitudeFor() + 0.009183673f;
-                    }
-
-                }
-                RenderBodyParts(portrait, angle, rootLoc, __instance, rot);
-                if (__instance.graphics.pawn.Spawned && !__instance.graphics.pawn.Dead)
-                {
-                    __instance.graphics.pawn.stances.StanceTrackerDraw();
-                    __instance.graphics.pawn.pather.PatherDraw();
-                }
-                Vector3 vector = rootLoc;
-                Vector3 a = rootLoc;
-                if (bodyFacing != Rot4.North)
-                {
-                    a.y += 0.024489796f;
-                    vector.y += 0.021428572f;
-                }
-                else
-                {
-                    a.y += 0.021428572f;
-                    vector.y += 0.024489796f;
-                }
-                List<ApparelGraphicRecord> apparelGraphics = __instance.graphics.apparelGraphics;
-                if (__instance.graphics.headGraphic != null && !portrait)
-                {
-                    Vector3 b = quaternion * __instance.BaseHeadOffsetAt(headFacing);
-                    Material material = __instance.graphics.HeadMatAt_NewTemp(headFacing, bodyDrawType, headStump, portrait);
-                    if (material != null)
-                    {
-                        GenDraw.DrawMeshNowOrLater(MeshPool.humanlikeHeadSet.MeshAt(headFacing), a + b, quaternion, material, portrait);
-                    }
-                    Vector3 loc2 = rootLoc + b;
-                    loc2.y += 0.030612245f;
-                    bool flag = false;
-                    if (!portrait || !Prefs.HatsOnlyOnMap)
-                    {
-                        Mesh mesh2 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
-                        for (int j = 0; j < apparelGraphics.Count; j++)
-                        {
-                            if (apparelGraphics[j].sourceApparel.def.apparel.LastLayer == ApparelLayerDefOf.Overhead)
-                            {
-                                if (!apparelGraphics[j].sourceApparel.def.apparel.hatRenderedFrontOfFace)
-                                {
-                                    flag = true;
-                                    Material material2 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
-                                    material2 = OverrideMaterialIfNeeded_NewTemp(material2, __instance.graphics.pawn,__instance ,portrait);
-                                    GenDraw.DrawMeshNowOrLater(mesh2, loc2, quaternion, material2, portrait);
-                                }
-                                else
-                                {
-                                    Material material3 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
-                                    material3 = OverrideMaterialIfNeeded_NewTemp(material3, __instance.graphics.pawn,__instance ,portrait);
-                                    Vector3 loc3 = rootLoc + b;
-                                    loc3.y += ((bodyFacing == Rot4.North) ? 0.0030612245f : 0.03367347f);
-                                    GenDraw.DrawMeshNowOrLater(mesh2, loc3, quaternion, material3, portrait);
-                                }
-                            }
-                        }
-                    }
-                    if (!flag && bodyDrawType != RotDrawMode.Dessicated && !headStump)
-                    {
-                        Mesh mesh3 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
-                        Material mat2 = __instance.graphics.HairMatAt_NewTemp(headFacing, portrait);
-                        GenDraw.DrawMeshNowOrLater(mesh3, loc2, quaternion, mat2, portrait);
-                    }
-                }
-                else if (__instance.graphics.headGraphic != null && portrait)
-                {
-                    Vector3 b = quaternion * southHeadOffset(__instance);
-                    Material material = __instance.graphics.HeadMatAt_NewTemp(headFacing, bodyDrawType, headStump, portrait);
-                    if (material != null)
-                    {
-                        GenDraw.DrawMeshNowOrLater(MeshPool.humanlikeHeadSet.MeshAt(headFacing), a + b, quaternion, material, portrait);
-                    }
-                    Vector3 loc2 = rootLoc + b;
-                    loc2.y += 0.030612245f;
-                    bool flag = false;
-                    if (!Prefs.HatsOnlyOnMap)
-                    {
-                        Mesh mesh2 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
-                        for (int j = 0; j < apparelGraphics.Count; j++)
-                        {
-                            if (apparelGraphics[j].sourceApparel.def.apparel.LastLayer == ApparelLayerDefOf.Overhead)
-                            {
-                                if (!apparelGraphics[j].sourceApparel.def.apparel.hatRenderedFrontOfFace)
-                                {
-                                    flag = true;
-                                    Material material2 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
-                                    material2 = OverrideMaterialIfNeeded_NewTemp(material2, __instance.graphics.pawn, __instance, portrait);
-                                    GenDraw.DrawMeshNowOrLater(mesh2, loc2, quaternion, material2, portrait);
-                                }
-                                else
-                                {
-                                    Material material3 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
-                                    material3 = OverrideMaterialIfNeeded_NewTemp(material3, __instance.graphics.pawn, __instance, portrait);
-                                    Vector3 loc3 = rootLoc + b;
-                                    loc3.y += ((bodyFacing == Rot4.North) ? 0.0030612245f : 0.03367347f);
-                                    GenDraw.DrawMeshNowOrLater(mesh2, loc3, quaternion, material3, portrait);
-                                }
-                            }
-                        }
-                    }
-                    if (!flag && bodyDrawType != RotDrawMode.Dessicated && !headStump)
-                    {
-                        Mesh mesh3 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
-                        Material mat2 = __instance.graphics.HairMatAt_NewTemp(headFacing, portrait);
-                        GenDraw.DrawMeshNowOrLater(mesh3, loc2, quaternion, mat2, portrait);
-                    }
-                }
-            }
             
+            void Render()
+            {
+                Pawn pawn = __instance.graphics.pawn;
+                PawnGraphicSet graphics = __instance.graphics;
+                if (!renders.ContainsKey(pawn))
+                {
+                    renders.Add(pawn, __instance);
+                }
+                if (__instance.graphics.pawn.def is RimValiRaceDef && !portrait)
+                {
+                    Rot4 rot = __instance.graphics.pawn.Rotation;
+                    // angle = pawn.Graphic.DrawRotatedExtraAngleOffset;
+                    //angle = pawn.Position.AngleFlat;
+                    angle = __instance.BodyAngle();
+                    Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.up);
+                    if (__instance.graphics.pawn.GetPosture() != PawnPosture.Standing)
+                    {
+
+                        rot = __instance.LayingFacing();
+                        Building_Bed building_Bed = __instance.graphics.pawn.CurrentBed();
+                        if (building_Bed != null && __instance.graphics.pawn.RaceProps.Humanlike)
+                        {
+                            renderBody = building_Bed.def.building.bed_showSleeperBody;
+                            AltitudeLayer altLayer = (AltitudeLayer)Mathf.Max((int)building_Bed.def.altitudeLayer, 17);
+                            Vector3 vector2;
+                            Vector3 a3 = vector2 = __instance.graphics.pawn.Position.ToVector3ShiftedWithAltitude(altLayer);
+                            vector2.y += 0.024489796f;
+                            Rot4 rotation = building_Bed.Rotation;
+                            rotation.AsInt += 2;
+                            float d = -__instance.BaseHeadOffsetAt(Rot4.South).z;
+                            Vector3 a2 = rotation.FacingCell.ToVector3();
+                            rootLoc = a3 + a2 * d;
+                            rootLoc.y += 0.009183673f;
+                        }
+                        else if (!__instance.graphics.pawn.Dead && __instance.graphics.pawn.CarriedBy == null)
+                        {
+                            rootLoc.y = AltitudeLayer.LayingPawn.AltitudeFor() + 0.009183673f;
+                        }
+
+                    }
+                    RenderBodyParts(portrait, angle, rootLoc, __instance, rot);
+
+
+
+                    if (__instance.graphics.pawn.Spawned && !__instance.graphics.pawn.Dead)
+                    {
+                        __instance.graphics.pawn.stances.StanceTrackerDraw();
+                        __instance.graphics.pawn.pather.PatherDraw();
+                    }
+                    Vector3 vector = rootLoc;
+                    Vector3 a = rootLoc;
+                    if (bodyFacing != Rot4.North)
+                    {
+                        a.y += 0.024489796f;
+                        vector.y += 0.021428572f;
+                    }
+                    else
+                    {
+                        a.y += 0.021428572f;
+                        vector.y += 0.024489796f;
+                    }
+                    List<ApparelGraphicRecord> apparelGraphics = __instance.graphics.apparelGraphics;
+                    if (__instance.graphics.headGraphic != null && !portrait)
+                    {
+                        Vector3 b = quaternion * __instance.BaseHeadOffsetAt(headFacing);
+                        Material material = __instance.graphics.HeadMatAt_NewTemp(headFacing, bodyDrawType, headStump, portrait);
+                        if (material != null)
+                        {
+                            GenDraw.DrawMeshNowOrLater(MeshPool.humanlikeHeadSet.MeshAt(headFacing), a + b, quaternion, material, portrait);
+                        }
+                        Vector3 loc2 = rootLoc + b;
+                        loc2.y += 0.030612245f;
+                        bool flag = false;
+                        if (!portrait || !Prefs.HatsOnlyOnMap)
+                        {
+                            Mesh mesh2 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
+                            for (int j = 0; j < apparelGraphics.Count; j++)
+                            {
+                                if (apparelGraphics[j].sourceApparel.def.apparel.LastLayer == ApparelLayerDefOf.Overhead)
+                                {
+                                    if (!apparelGraphics[j].sourceApparel.def.apparel.hatRenderedFrontOfFace)
+                                    {
+                                        flag = true;
+                                        Material material2 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
+                                        material2 = OverrideMaterialIfNeeded_NewTemp(material2, __instance.graphics.pawn, __instance, portrait);
+                                        GenDraw.DrawMeshNowOrLater(mesh2, loc2, quaternion, material2, portrait);
+                                    }
+                                    else
+                                    {
+                                        Material material3 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
+                                        material3 = OverrideMaterialIfNeeded_NewTemp(material3, __instance.graphics.pawn, __instance, portrait);
+                                        Vector3 loc3 = rootLoc + b;
+                                        loc3.y += ((bodyFacing == Rot4.North) ? 0.0030612245f : 0.03367347f);
+                                        GenDraw.DrawMeshNowOrLater(mesh2, loc3, quaternion, material3, portrait);
+                                    }
+                                }
+                            }
+                        }
+                        if (!flag && bodyDrawType != RotDrawMode.Dessicated && !headStump)
+                        {
+                            Mesh mesh3 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
+                            Material mat2 = __instance.graphics.HairMatAt_NewTemp(headFacing, portrait);
+                            GenDraw.DrawMeshNowOrLater(mesh3, loc2, quaternion, mat2, portrait);
+                        }
+                    }
+                    else if (__instance.graphics.headGraphic != null && portrait)
+                    {
+                        Vector3 b = quaternion * southHeadOffset(__instance);
+                        Material material = __instance.graphics.HeadMatAt_NewTemp(headFacing, bodyDrawType, headStump, portrait);
+                        if (material != null)
+                        {
+                            GenDraw.DrawMeshNowOrLater(MeshPool.humanlikeHeadSet.MeshAt(headFacing), a + b, quaternion, material, portrait);
+                        }
+                        Vector3 loc2 = rootLoc + b;
+                        loc2.y += 0.030612245f;
+                        bool flag = false;
+                        if (!Prefs.HatsOnlyOnMap)
+                        {
+                            Mesh mesh2 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
+                            for (int j = 0; j < apparelGraphics.Count; j++)
+                            {
+                                if (apparelGraphics[j].sourceApparel.def.apparel.LastLayer == ApparelLayerDefOf.Overhead)
+                                {
+                                    if (!apparelGraphics[j].sourceApparel.def.apparel.hatRenderedFrontOfFace)
+                                    {
+                                        flag = true;
+                                        Material material2 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
+                                        material2 = OverrideMaterialIfNeeded_NewTemp(material2, __instance.graphics.pawn, __instance, portrait);
+                                        GenDraw.DrawMeshNowOrLater(mesh2, loc2, quaternion, material2, portrait);
+                                    }
+                                    else
+                                    {
+                                        Material material3 = apparelGraphics[j].graphic.MatAt(bodyFacing, null);
+                                        material3 = OverrideMaterialIfNeeded_NewTemp(material3, __instance.graphics.pawn, __instance, portrait);
+                                        Vector3 loc3 = rootLoc + b;
+                                        loc3.y += ((bodyFacing == Rot4.North) ? 0.0030612245f : 0.03367347f);
+                                        GenDraw.DrawMeshNowOrLater(mesh2, loc3, quaternion, material3, portrait);
+                                    }
+                                }
+                            }
+                        }
+                        if (!flag && bodyDrawType != RotDrawMode.Dessicated && !headStump)
+                        {
+                            Mesh mesh3 = __instance.graphics.HairMeshSet.MeshAt(headFacing);
+                            Material mat2 = __instance.graphics.HairMatAt_NewTemp(headFacing, portrait);
+                            GenDraw.DrawMeshNowOrLater(mesh3, loc2, quaternion, mat2, portrait);
+                        }
+                    }
+                }
+                
+            }
+            Render();
         }
-        static Material OverrideMaterialIfNeeded_NewTemp(Material original, Pawn pawn,PawnRenderer instance ,bool portrait = false)
+        static Material OverrideMaterialIfNeeded_NewTemp(Material original, Pawn pawn, PawnRenderer instance, bool portrait = false)
         {
             Material baseMat = (!portrait && pawn.IsInvisible()) ? InvisibilityMatPool.GetInvisibleMat(original) : original;
             return instance.graphics.flasher.GetDamagedMat(baseMat);
         }
-    }
-    #endregion
-    #region Research restriction patch
-    [HarmonyPatch(typeof(WorkGiver_Researcher), "ShouldSkip")]
-    public class ResearchPatch
-    {
-        [HarmonyPatch]
-        static void Research(Pawn pawn, ref bool __result)
-        {
-            if (Find.ResearchManager.currentProj != null)
-            {
-                if (Restrictions.factionResearchRestrictions.ContainsKey(Faction.OfPlayer.def) && !Restrictions.factionResearchRestrictions[Faction.OfPlayer.def].Any(res=>res.proj==Find.ResearchManager.currentProj))
-                {
-                    __result = false;
-                    return;
-                }
-                if (Restrictions.factionResearchBlacklist.ContainsKey(Faction.OfPlayer.def) && Restrictions.factionResearchBlacklist[Faction.OfPlayer.def].Any(res => res.proj == Find.ResearchManager.currentProj))
-                {
-                    __result = false;
-                    return;
-                }
-                if (!Restrictions.checkRestrictions(Restrictions.researchRestrictions, Find.ResearchManager.currentProj, pawn.def)) {
-                    __result = false;
-                }
-                else
-                {
-                    __result = true && __result;
-                }
-            }
-        }
+
     }
     #endregion
     
-    [HarmonyPatch(typeof(WealthWatcher), "CalculateWealthFloors")]
-    public static class WealthWatcherPatch
-    {
-        static Map map;
-        static float[] cachedTerrainMarketValue;
-        [HarmonyPrefix]
-        public static bool Patch(WealthWatcher __instance, ref float __result)
-        {
-            var bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
-            Map map = (Map)__instance.GetType().GetFields(bindingFlags).Where(f => f.Name == "map").First().GetValue(__instance);
-            float[] cachedTerrainMarketValue = (float[])__instance.GetType().GetFields(bindingFlags).Where(f => f.Name == "cachedTerrainMarketValue").First().GetValue(__instance);
-            TerrainDef[] topGrid = map.terrainGrid.topGrid;
-            bool[] fogGrid = map.fogGrid.fogGrid;
-            IntVec3 size = map.Size;
-            float num = 0f;
-            int i = 0;
-            int num2 = size.x * size.z;
-            while (i < num2)
-            {
-                if (!fogGrid[i])
-                {
-                    num += cachedTerrainMarketValue[(int)topGrid[i].index];
-                }
-                i++;
-            }
-            __result= num;
-            return true;
-        }
-    }
+  
 }

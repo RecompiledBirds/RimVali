@@ -44,7 +44,7 @@ namespace AvaliMod
 		{
 			get
 			{
-				
+
 				return this.GunCompEq.PrimaryVerb;
 			}
 		}
@@ -87,7 +87,7 @@ namespace AvaliMod
 		{
 			get
 			{
-				return this.def.building.IsMortar;
+				return true ;
 			}
 		}
 
@@ -142,7 +142,7 @@ namespace AvaliMod
 			this.top = new TurretTop(this);
 		}
 
-  
+
 		// Token: 0x06007DC9 RID: 32201 RVA: 0x0005485B File Offset: 0x00052A5B
 		public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
 		{
@@ -175,7 +175,6 @@ namespace AvaliMod
 		{
 			return base.ClaimableBy(by) && (this.mannableComp == null || this.mannableComp.ManningPawn == null) && (!this.Active || this.mannableComp != null) && (((this.dormantComp == null || this.dormantComp.Awake) && (this.initiatableComp == null || this.initiatableComp.Initiated)) || (this.powerComp != null && !this.powerComp.PowerOn));
 		}
-
 		public override void OrderAttack(LocalTargetInfo targ)
 		{
 			if (!targ.IsValid)
@@ -224,6 +223,7 @@ namespace AvaliMod
 			}
 			if (this.forcedTarget.IsValid && !this.CanSetForcedTarget)
 			{
+				Log.Message("targ reset");
 				this.ResetForcedTarget();
 			}
 			if (!this.CanToggleHoldFire)
@@ -232,6 +232,7 @@ namespace AvaliMod
 			}
 			if (this.forcedTarget.ThingDestroyed)
 			{
+				Log.Message("targ destroyed");
 				this.ResetForcedTarget();
 			}
 			if (this.Active  && !this.stunner.Stunned && base.Spawned)
@@ -241,9 +242,11 @@ namespace AvaliMod
 				{
 					if (this.WarmingUp)
 					{
+						Log.Message("warming up");
 						this.burstWarmupTicksLeft--;
 						if (this.burstWarmupTicksLeft == 0)
 						{
+							Log.Message("beginburst");
 							this.BeginBurst();
 						}
 					}
@@ -254,6 +257,7 @@ namespace AvaliMod
 							this.burstCooldownTicksLeft--;
 							if (this.IsMortar)
 							{
+								Log.Message("isMortar");
 								if (this.progressBarEffecter == null)
 								{
 									this.progressBarEffecter = EffecterDefOf.ProgressBar.Spawn();
@@ -266,7 +270,8 @@ namespace AvaliMod
 						}
 						if (this.burstCooldownTicksLeft <= 0 && this.IsHashIntervalTick(10))
 						{
-							this.TryStartShootSomething(true);
+							Log.Message("trystartshootsomething");
+							this.TryStartShootSomethingAERIAL(true);
 						}
 					}
 					this.top.TurretTopTick();
@@ -275,6 +280,7 @@ namespace AvaliMod
 			}
 			else
 			{
+				Log.Message("resetcurrenttarget");
 				this.ResetCurrentTarget();
 			}
 		}
@@ -282,7 +288,50 @@ namespace AvaliMod
 
 
 
-
+		protected void TryStartShootSomethingAERIAL(bool canBeginBurstImmediately)
+		{
+			if (this.progressBarEffecter != null)
+			{
+				this.progressBarEffecter.Cleanup();
+				this.progressBarEffecter = null;
+			}
+			if (!base.Spawned || (this.holdFire && this.CanToggleHoldFire) || (this.AttackVerb.ProjectileFliesOverhead() && base.Map.roofGrid.Roofed(base.Position)) || !this.AttackVerb.Available())
+			{
+				//Log.Message($"reset targ. \n SPAWNED: {base.Spawned} \n HOLDING FIRE: {holdFire && CanToggleHoldFire}\n ROOFED: {AttackVerb.ProjectileFliesOverhead() && base.Map.roofGrid.Roofed(base.Position)} \n VERB AVALIBLE: {AttackVerb.Available()}");
+				this.ResetCurrentTarget();
+				return;
+			}
+			bool isValid = this.currentTargetInt.IsValid;
+			if (this.forcedTarget.IsValid)
+			{
+				this.currentTargetInt = this.forcedTarget;
+			}
+			else
+			{
+				this.currentTargetInt = this.TryFindNewTarget();
+			}
+			if (currentTargetInt.IsValid)		{
+				SoundDefOf.TurretAcquireTarget.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
+			}
+			if (!this.currentTargetInt.IsValid)
+			{
+				Log.Message("reset targ, invalid");
+				this.ResetCurrentTarget();
+				return;
+			}
+			if (this.def.building.turretBurstWarmupTime > 0f)
+			{
+				this.burstWarmupTicksLeft = this.def.building.turretBurstWarmupTime.SecondsToTicks();
+				return;
+			}
+			if (canBeginBurstImmediately)
+			{
+				Log.Message("beginBurst");
+				this.BeginBurst();
+				return;
+			}
+			this.burstWarmupTicksLeft = 1;
+		}
 
 		// Token: 0x06007DD5 RID: 32213 RVA: 0x002587E8 File Offset: 0x002569E8
 		public override string GetInspectString()
@@ -411,6 +460,9 @@ namespace AvaliMod
 				{
 					command_VerbTarget.Disable("CannotFire".Translate() + ": " + "Roofed".Translate().CapitalizeFirst());
 				}
+				
+				//testing something
+				//this.forcedTarget = command_VerbTarget.verb.CurrentTarget;
 				yield return command_VerbTarget;
 			}
 			if (this.forcedTarget.IsValid)
@@ -451,6 +503,7 @@ namespace AvaliMod
 				};
 			}
 			yield break;
+			yield break; 
 		}
 
 		// Token: 0x06007DD9 RID: 32217 RVA: 0x00258AB0 File Offset: 0x00256CB0

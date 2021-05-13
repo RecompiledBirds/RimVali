@@ -14,6 +14,7 @@ namespace AvaliMod
 		{
 			get
 			{
+			
 				if (base.EquipmentSource != null)
 				{
 					AERIALChangeableProjectile comp = base.EquipmentSource.GetComp<AERIALChangeableProjectile>();

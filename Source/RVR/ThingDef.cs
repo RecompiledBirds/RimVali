@@ -20,9 +20,34 @@ namespace AvaliMod
         public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
 
         public butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
-
+        public ThingDef corpseToUse = null;
+        public ThingDef meatToUse = null;
         public override void ResolveReferences()
         {
+           
+            if (corpseToUse != null) {
+                race.corpseDef.statBases = new List<StatModifier>() { };
+                
+                race.corpseDef.alwaysHaulable = false;
+                race.corpseDef.ingestible.preferability = FoodPreferability.NeverForNutrition;
+                race.corpseDef.category = ThingCategory.None;
+                race.corpseDef.ResolveReferences();
+
+                race.corpseDef = corpseToUse;
+                
+            }
+            if(meatToUse != null)
+            {
+                race.meatDef.statBases = new List<StatModifier>() { };
+                
+                race.meatDef.alwaysHaulable = false;
+                race.meatDef.ingestible.preferability = FoodPreferability.NeverForNutrition;
+                race.meatDef.category = ThingCategory.None;
+                race.meatDef.ResolveReferences();
+
+                race.meatDef = meatToUse;
+            }
+            Log.Message(race.meatDef.defName);
             this.comps.Add(new colorCompProps());
             base.ResolveReferences();
         }
@@ -43,6 +68,102 @@ namespace AvaliMod
 
             }
             return false;
+        }
+
+
+        public void HeadOffsetPawn(Rot4 rot,Pawn pawn ,ref Vector3 __result)
+        {
+
+            if (pawn.def is RimValiRaceDef rimValiRaceDef)
+            {
+                //This is an automatic check to see if we can put the head position here.
+                //no human required
+                if (rimValiRaceDef.renderableDefs.Where(x => x.defName.ToLower() == "head").Count() > 0)
+                {
+
+                    Vector2 offset = new Vector2(0, 0);
+
+                    RenderableDef headDef = rimValiRaceDef.renderableDefs.First(x => x.defName.ToLower() == "head");
+                    Vector3 pos = new Vector3(0, 0, 0);
+                    pos.y = __result.y;
+                    if (headDef.west == null)
+                    {
+                        headDef.west = headDef.east;
+                    }
+                    if (rot == Rot4.South)
+                    {
+                        pos.x = headDef.south.position.x + offset.x;
+                        pos.z = headDef.south.position.y + offset.y;
+
+                    }
+                    else if (rot == Rot4.North)
+                    {
+                        pos.x = headDef.north.position.x + offset.x;
+                        pos.z = headDef.north.position.y + offset.y;
+                    }
+                    else if (rot == Rot4.East)
+                    {
+                        pos.x = headDef.east.position.x + offset.x;
+                        pos.z = headDef.east.position.y + offset.y;
+                    }
+                    else
+                    {
+                        pos.x = headDef.west.position.x + offset.x;
+                        pos.z = headDef.west.position.y + offset.y;
+                    }
+                    //Log.Message(pos.ToString());
+                    __result = __result + pos;
+                }
+
+            }
+        }
+        public void HeadOffsetPawn(PawnRenderer __instance, ref Vector3 __result)
+        {
+            Pawn pawn = __instance.graphics.pawn;
+            PawnGraphicSet set = __instance.graphics;
+            if (pawn.def is RimValiRaceDef rimValiRaceDef)
+            {
+                //This is an automatic check to see if we can put the head position here.
+                //no human required
+                if (rimValiRaceDef.renderableDefs.Where(x => x.defName.ToLower() == "head").Count() > 0)
+                {
+
+                    Vector2 offset = new Vector2(0, 0);
+
+                    RenderableDef headDef = rimValiRaceDef.renderableDefs.First(x => x.defName.ToLower() == "head");
+                    __instance.graphics.headGraphic.drawSize = headDef.south.size;
+                    Vector3 pos = new Vector3(0, 0, 0);
+                    pos.y = __result.y;
+                    if (headDef.west == null)
+                    {
+                        headDef.west = headDef.east;
+                    }
+                    if (pawn.Rotation == Rot4.South)
+                    {
+                        pos.x = headDef.south.position.x + offset.x;
+                        pos.z = headDef.south.position.y + offset.y;
+
+                    }
+                    else if (pawn.Rotation == Rot4.North)
+                    {
+                        pos.x = headDef.north.position.x + offset.x;
+                        pos.z = headDef.north.position.y + offset.y;
+                    }
+                    else if (pawn.Rotation == Rot4.East)
+                    {
+                        pos.x = headDef.east.position.x + offset.x;
+                        pos.z = headDef.east.position.y + offset.y;
+                    }
+                    else
+                    {
+                        pos.x = headDef.west.position.x + offset.x;
+                        pos.z = headDef.west.position.y + offset.y;
+                    }
+                    //Log.Message(pos.ToString());
+                    __result = __result + pos;
+                }
+
+            }
         }
         public void GenGraphics(Pawn pawn)
         {

@@ -63,7 +63,10 @@ namespace AvaliMod
         public void UpdateHediffForAllMembers()
         {
             AvaliPackSkillDef def = GetPackSkillDef();
-            Log.Message($"Def is: {def.defName}");
+            if (RimValiMod.settings.enableDebugMode)
+            {
+                Log.Message($"Def is: {def.defName}");
+            }
             if (def != null && def.hediffEffectApplied != null)
             {
                 foreach (Pawn pawn in pawns.Where(p => !p.Dead))
@@ -71,12 +74,18 @@ namespace AvaliMod
                     if (!pawn.health.hediffSet.HasHediff(def.hediffEffectApplied))
                     {
                         pawn.health.AddHediff(def.hediffEffectApplied);
-                        Log.Message($"Added def: {def.hediffEffectApplied.defName}");
+                        if (RimValiMod.settings.enableDebugMode)
+                        {
+                            Log.Message($"Added def: {def.hediffEffectApplied.defName}");
+                        }
                     }
 
                     foreach (HediffDef hDef in DefDatabase<HediffDef>.AllDefs.Where(h=> h != def.hediffEffectApplied && DefDatabase<AvaliPackSkillDef>.AllDefs.Any(APSD=>APSD != def && APSD.hediffEffectApplied == h && pawn.health.hediffSet.HasHediff(APSD.hediffEffectApplied)))){
                         pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(hDef));
-                        Log.Message($"Removed def: {hDef.defName}");
+                        if (RimValiMod.settings.enableDebugMode)
+                        {
+                            Log.Message($"Removed def: {hDef.defName}");
+                        }
                     }
                 }
                 

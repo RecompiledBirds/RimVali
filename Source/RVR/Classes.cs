@@ -188,7 +188,7 @@ namespace AvaliMod
         public override void PostExposeData()
         {
             Scribe_Collections.Look(ref colors, "colors", LookMode.Value, LookMode.Deep, ref colorKey, ref colorValue);
-            Scribe_Collections.Look(ref renderableDefIndexes, "renderables", LookMode.Value, LookMode.Deep, ref renderableKeys, ref index);
+            Scribe_Collections.Look(ref renderableDefIndexes, "renderables", LookMode.Value, LookMode.Value, ref renderableKeys, ref index);
            
         }
     }

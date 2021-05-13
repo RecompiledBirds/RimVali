@@ -35,12 +35,15 @@ namespace AvaliMod
             StartedNewGame();
         }//: base(game) { }
 
-        List<ThingDef> racesInPacks = new List<ThingDef>();
+        public List<ThingDef> racesInPacks = new List<ThingDef>();
 
         public override void StartedNewGame()
         {
             packs = new List<AvaliPack>();
-            racesInPacks.Add(AvaliDefs.RimVali);
+            foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x => x.HasComp(typeof(PackComp))))
+            {
+                racesInPacks.Add(def);
+            }
             if (checkOtherRaces)
             {
                 foreach (ThingDef race in RimValiDefChecks.potentialPackRaces)
@@ -66,8 +69,11 @@ namespace AvaliMod
 
         public override void LoadedGame()
         {
-           
-            racesInPacks.Add(AvaliDefs.RimVali);
+
+            foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x => x.HasComp(typeof(PackComp))))
+            {
+                racesInPacks.Add(def);
+            }
             if (checkOtherRaces)
             {
                 foreach (ThingDef race in RimValiDefChecks.potentialPackRaces)
@@ -132,8 +138,11 @@ namespace AvaliMod
             packs = new List<AvaliPack>();
             if (!HasStarted)
             {
-                
-                racesInPacks.Add(AvaliDefs.RimVali);
+                foreach(ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x => x.HasComp(typeof(PackComp))))
+                {
+                    racesInPacks.Add(def);
+                }
+                //racesInPacks.Add(AvaliDefs.RimVali);
                 if (checkOtherRaces)
                 {
                     foreach(ThingDef race in RimValiDefChecks.potentialPackRaces)

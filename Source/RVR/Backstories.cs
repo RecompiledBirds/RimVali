@@ -77,7 +77,7 @@ namespace AvaliMod {
             }
             else
             {
-                if(linkedStoryIdentifier !=null &&! (pawn.story.adulthood.identifier == linkedStoryIdentifier))
+                if(linkedStoryIdentifier !=null && (pawn.story.adulthood != null && (pawn.story.adulthood.identifier) != linkedStoryIdentifier))
                 {
                     //Log.Message("Story can't spawn: linked story not avalible");
                     return false;

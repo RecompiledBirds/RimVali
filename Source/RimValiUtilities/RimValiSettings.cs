@@ -72,7 +72,7 @@ namespace AvaliMod
             base.ExposeData();
         }
     }
-
+    
     public class RimValiMod : Mod
     {
         public int windowToShow;
