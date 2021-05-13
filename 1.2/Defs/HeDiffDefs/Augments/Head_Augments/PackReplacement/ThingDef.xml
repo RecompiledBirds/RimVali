@@ -7,7 +7,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
-    <label>Positive enforcement augment</label>
+    <label>Pack replacement AI</label>
     <description>This augment prevents pack loss by simulating pack members, even if the pawn does not have any</description>
     <descriptionHyperlinks><RecipeDef>InstallPackReplacementAI</RecipeDef></descriptionHyperlinks>
     <costList>

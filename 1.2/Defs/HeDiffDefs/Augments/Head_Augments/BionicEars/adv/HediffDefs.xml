@@ -11,14 +11,5 @@
       <partEfficiency>1.5</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
-    <stages>
-      <li>
-        <statOffsets>
-          <EarorRating_Sharp>1.0</EarorRating_Sharp>
-          <EarorRating_Blunt>1.0</EarorRating_Blunt>
-          <MaxHitPoints>15</MaxHitPoints>
-        </statOffsets>
-      </li>
-    </stages>
   </HediffDef>
 </Defs>

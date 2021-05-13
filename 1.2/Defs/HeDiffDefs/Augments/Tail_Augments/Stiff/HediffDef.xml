@@ -14,8 +14,8 @@
     <stages>
       <li>
         <statOffsets>
-          <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
-          <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
           <MaxHitPoints>20</MaxHitPoints>
         </statOffsets>
         <capMods>
@@ -40,13 +40,6 @@
             <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
           </li>
         </tools>      
-      </li>
-      <li Class="AvaliMod.ConflictsWithProps">
-        <conflictingHediffs>
-          <li>AvaliAdvancedBionicTail</li>
-          <li>AvaliBasicBionicTail</li>
-        </conflictingHediffs>
-        <showConflicts>true</showConflicts>
       </li>
     </comps>
   </HediffDef>

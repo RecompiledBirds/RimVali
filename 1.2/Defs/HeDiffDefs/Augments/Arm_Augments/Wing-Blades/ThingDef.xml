@@ -8,8 +8,8 @@
       <drawSize>0.85</drawSize>
     </graphicData>
     <label>Wing blades</label>
-    <description>Installed on Avali who don't expect to use their wings to fly, mild adjustments in the user's joints change the position and shape of the fourth digits in the both the hand and feet increasing the practical use of both. Other avali might find this a bit freaky, however...</description>
-    <descriptionHyperlinks><RecipeDef>InstallTetradactylyUtilitizer</RecipeDef></descriptionHyperlinks>
+    <description>These wing replacements turn the wings into weapons, allowing them to be used as a weapon.</description>
+    <descriptionHyperlinks><RecipeDef>InstallWingBlades</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>2</Plasteel>
       <AvaliAerogel>2</AvaliAerogel>

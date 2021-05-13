@@ -4,22 +4,21 @@
     <defName>VocalReplacements</defName>
     <label>Vocal replacements</label>
     <labelNoun>a vocal replacement</labelNoun>
-    <description>This augment assists the user in targeting, allowing for faster aim times and somewhat higher accuracy.</description>
+    <description>Vocal cord replacements. These make the user sound better, giving them a social gain.</description>
     <spawnThingOnRemoved>VocalReplacements</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>1</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
+     <stages>
+      <li>
+        <statFactors>
+          <SocialImpact>0.2</SocialImpact>
+        </statFactors>
+      </li>
+    </stages>
     <comps>
-      <li Class="AvaliMod.ConflictsWithProps">
-          <conflictingHediffs>
-            <li>PackReplacementAI</li>
-            <li>PositiveE</li>
-            <li>SocialEnhancer</li>
-          </conflictingHediffs>
-          <showConflicts>true</showConflicts>
-        </li>
     </comps>
   </HediffDef>
 </Defs>

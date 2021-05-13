@@ -15,11 +15,6 @@
       </li>
     </stages>
     <comps>
-     <li Class="AvaliMod.SlotPropsHediff">
-        <slotsUsed>
-          <li>Torso</li>
-        </slotsUsed>
-      </li>
     </comps>
   </HediffDef>
 </Defs>

@@ -8,12 +8,11 @@
       <drawSize>0.85</drawSize>
     </graphicData>
     <label>Vocal replacements</label>
-    <description>This augment assists the user in targeting, allowing for faster aim times and somewhat higher accuracy.</description>
-    <descriptionHyperlinks><RecipeDef>InstallTC</RecipeDef></descriptionHyperlinks>
+   <description>Vocal cord replacements. These make the user sound better, giving them a social gain.</description>
+    <descriptionHyperlinks><RecipeDef>InstallVocalReplacements</RecipeDef></descriptionHyperlinks>
     <costList>
-      <TechprofSubpersonaCore>1</TechprofSubpersonaCore>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <Steel>15</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>5</Steel>
       <AvaliTungsten>10</AvaliTungsten>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>

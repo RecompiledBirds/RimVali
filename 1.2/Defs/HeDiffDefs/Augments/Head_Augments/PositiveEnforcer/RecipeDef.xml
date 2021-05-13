@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <RecipeDef ParentName="SurgeryInstallImplantBase">
     <defName>InstallPE</defName>
     <label>Install positive enforcement augment</label>
     <description>Install a positive enforcement augment.</description>

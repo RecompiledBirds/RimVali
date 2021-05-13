@@ -13,9 +13,11 @@
     </addedPartProps>
     <stages>
       <li>
-        <opinionOfOthersFactor>0.2</opinionOfOthersFactor>
+        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
         <forgetMemoryThoughtMtbDays>0.2</forgetMemoryThoughtMtbDays>
       </li>
     </stages>
+    <comps>
+    </comps>
   </HediffDef>
 </Defs>

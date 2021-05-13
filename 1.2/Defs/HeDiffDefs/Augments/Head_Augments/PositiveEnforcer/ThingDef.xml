@@ -9,11 +9,12 @@
     </graphicData>
     <label>Positive enforcement augment</label>
     <description>This augment manipulates the brain of the avali it is installed on, raising their opinion of others. However, they may become more forgetful.</description>
-    <descriptionHyperlinks><RecipeDef>InstallTailStiffeningAugment</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>InstallPE</RecipeDef></descriptionHyperlinks>
     <costList>
       <Plasteel>5</Plasteel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <Steel>10</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <Gold>2</Gold>
+      <Steel>14</Steel>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
