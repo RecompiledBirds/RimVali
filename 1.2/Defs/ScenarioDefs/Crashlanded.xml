@@ -99,8 +99,7 @@
 			</li>
 			<li Class="ScenPart_GameStartDialog">
 				<def>GameStartDialog</def>
-				<text>You've been sent by the Illuminate to colonise this distant rimworld.
-        We all wish you the best of luck out on the rim! A orbital drone will keep an eye on your progress.
+				<text>You've been sent by the Illuminate to colonise this distant rimworld. After the journey here, you've finally made it. There will be new dangers for you to face, but we trust that you will be able to survive.
         </text>
 				<textKey>GameStartDialog</textKey>
 				<closeSound>GameStartSting</closeSound>

@@ -80,7 +80,7 @@
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>2.5</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -164,9 +164,9 @@
     </costList>
     
     <recipeMaker>
-      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>6</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -253,7 +253,7 @@
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>4</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -340,9 +340,9 @@
     </costList>
     
     <recipeMaker>
-      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>12</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -428,9 +428,9 @@
     </costList>
     
     <recipeMaker>
-      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>10</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -515,9 +515,9 @@
     </costList>
     
     <recipeMaker>
-      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>11</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -601,9 +601,9 @@
     </costList>
     
     <recipeMaker>
-      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>7</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -687,9 +687,9 @@
     </costList>
     
     <recipeMaker>
-      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>9</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
@@ -778,7 +778,7 @@
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>3</Crafting>
       </skillRequirements>
     </recipeMaker>
   </ThingDef>

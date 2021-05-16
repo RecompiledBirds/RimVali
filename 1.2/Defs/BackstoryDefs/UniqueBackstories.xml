@@ -247,7 +247,7 @@
     </skillGains>
   </AvaliMod.RVRBackstory>
   
-<AvaliMod.RVRBackstory ParentName = "MaleBase">
+   <AvaliMod.RVRBackstory ParentName = "MaleBase">
     <defName>NezaiStoryAdult</defName>
     <title>Nezai</title>
     <shortTitle>Nezai</shortTitle>
