@@ -3,6 +3,8 @@ using Verse;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System;
+
 namespace AvaliMod
 {
     public class AvaliPackDriver : MapComponent
@@ -16,7 +18,7 @@ namespace AvaliMod
         private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
         private readonly Dictionary<string, bool> otherRaces = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enabledRaces;
         private bool HasStarted = false;
-        public List<AvaliPack> packs;
+        public static List<AvaliPack> packs = new List<AvaliPack>();
         private int onTick = 0;
         private int onOtherTick = 0;
         public Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>(new PawnEqaulityComparer());
@@ -54,52 +56,9 @@ namespace AvaliMod
 
         public override void ExposeData()
         {
-            Scribe_Values.Look<List<AvaliPack>>(ref packs, "packs", new List<AvaliPack>(), true);
+            Scribe_Collections.Look<AvaliPack>(ref packs, "packs", LookMode.Deep, Array.Empty<object>());
             base.ExposeData();
         }
-
-
-        public void MakeNewPacks()
-        {
-            if (enableDebug && multiThreaded)
-            {
-                Log.Message("Thread started.");
-            }
-            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map).Where<Pawn>(x => RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < maxSize);
-            foreach (Pawn pawn in pawnsOnMap)
-            {
-                PackComp comp = pawn.TryGetComp<PackComp>();
-                if (!(comp == null))
-                {
-                    //Pull the comp info from the pawn
-                    PawnRelationDef relationDef = comp.Props.relation;
-                    SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
-                    //Tells us that this pawn has had a pack
-                    if (enableDebug)
-                    {
-                        Log.Message("Attempting to make pack.. [New/added pack]");
-                    }
-                    //Makes the pack.
-                    foreach (Pawn packmate in pawnsOnMap)
-                    {
-                        //RimValiUtility.KeoBuildMakeBasePack(pawn, relationDef, racesInPacks, maxSize);
-                        RimValiUtility.EiBuildMakeBasePack(pawn, relationDef, racesInPacks, maxSize, packs);
-                        if (RimValiUtility.GetPackSize(pawn, relationDef) <= 0)
-                        {
-                            RimValiUtility.EiBuildMakeBasePack(pawn, relationDef, racesInPacks, maxSize, packs);
-                        }
-                        else
-                        {
-                            RimValiUtility.EiBuildMakeBasePack(pawn, relationDef, racesInPacks, maxSize, packs);
-                        }
-        if (RimValiUtility.GetPackSize(pawn, relationDef) == maxSize)
-        {
-            break;
-        }
-    }
-}
-}
-}
 
         public void UpdatePacks()
         {
@@ -110,12 +69,11 @@ namespace AvaliMod
             IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map).Where<Pawn>(x => RimValiUtility.GetPackSize(x, x.TryGetComp<PackComp>().Props.relation) < maxSize);
             foreach (Pawn pawn in pawnsOnMap)
             {
-               
+                //Log.Message(pawn.Name.ToString() + " updatePacks()");
                 PackComp comp = pawn.TryGetComp<PackComp>();
                 if (!(comp == null))
                 {
                     //Pull the comp info from the pawn
-                    PawnRelationDef relationDef = comp.Props.relation;
                     SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
                     //Tells us that this pawn has had a pack
                     if (enableDebug)
@@ -124,7 +82,7 @@ namespace AvaliMod
  
                     }
                     //Makes the pack.
-                    RimValiUtility.EiBuildMakeBasePack(pawn, relationDef, racesInPacks, maxSize, packs);
+                    packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
                 }
             }
         }
@@ -135,32 +93,7 @@ namespace AvaliMod
             {
                 LoadAll();
             }
-            if (onTick == 120)
-            {
-                if (packsEnabled)
-                {
-                    if (multiThreaded)
-                    {
-                        if (enableDebug)
-                        {
-                            Log.Message("Attempting to make new thread.");
-                        }
-                        ThreadStart packThreadRef = new ThreadStart(MakeNewPacks);
-                        Thread packThread = new Thread(packThreadRef);
-                        packThread.Start();
-                    }
-                    else
-                    {
-                        MakeNewPacks();
-                    }
-                }
-                onTick = 0;
-            }
-            else
-            {
-                onTick += 1;
-            }
-            if(onOtherTick == 180)
+            if (onTick == 0)
             {
                 if (packsEnabled)
                 {
@@ -174,12 +107,21 @@ namespace AvaliMod
                         Thread packThread = new Thread(packThreadRef);
                         packThread.Start();
                     }
+                    else
+                    {
+                        UpdatePacks();
+                    }
+                   /* Log.Message(packs.Count.ToString());
+                    if (packs.Count > 0)
+                    {
+                        Log.Message(packs[0].name);
+                    }*/
                 }
-                onOtherTick = 0;
+                onTick = 120;
             }
             else
             {
-                onOtherTick += 1;
+                onTick--;
             }
         }
 

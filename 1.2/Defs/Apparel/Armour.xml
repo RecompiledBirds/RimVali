@@ -5,6 +5,10 @@
     <defName>AvaliSpecOpsArmor</defName>
      <thingCategories>
       <li>AvaliArmor</li>
+<<<<<<< HEAD
+=======
+      <li>Apparel</li>
+>>>>>>> beta
     </thingCategories>     
     <label>Avali spec ops armor</label>
     <description>A combat suit. [placeholder]</description>
@@ -30,13 +34,22 @@
     <generateCommonality>2</generateCommonality>
     <statBases>
       <WorkToMake>21000</WorkToMake>
+<<<<<<< HEAD
       <MaxHitPoints>150</MaxHitPoints>
+=======
+      <MaxHitPoints>10000</MaxHitPoints>
+>>>>>>> beta
       <Mass>1.5</Mass>
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
       <ArmorRating_Sharp>2.06</ArmorRating_Sharp>
+<<<<<<< HEAD
       <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
       <ArmorRating_Heat>1</ArmorRating_Heat>
+=======
+      <ArmorRating_Blunt>2.6</ArmorRating_Blunt>
+      <ArmorRating_Heat>2.1</ArmorRating_Heat>
+>>>>>>> beta
     </statBases>
     
     <equippedStatOffsets>
@@ -56,10 +69,23 @@
     </costList>
     <apparel>
       <bodyPartGroups>
+<<<<<<< HEAD
         <li>FullHead</li>
       </bodyPartGroups>
       <tags>
         <li>Avali</li>
+=======
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <tags>
+        <li>Avali</li>
+        <li>AvaliArmor</li>
+        <li>AvaliSpecOps</li>
+>>>>>>> beta
       </tags>
       <wornGraphicPath>avali/Things/Apparel/SpecOps/spec_ops</wornGraphicPath>
       <layers>
@@ -103,6 +129,10 @@
     <defName>AvaliSpecOpsHelm</defName>
       <thingCategories>
       <li>AvaliHelmets</li>
+<<<<<<< HEAD
+=======
+      <li>Apparel</li>
+>>>>>>> beta
     </thingCategories>
     <label>Avali spec ops helmet</label>
     <description>An avali spec ops helmet. [placeholder]</description>
@@ -128,7 +158,11 @@
     <generateCommonality>2</generateCommonality>
     <statBases>
       <WorkToMake>21000</WorkToMake>
+<<<<<<< HEAD
       <MaxHitPoints>150</MaxHitPoints>
+=======
+      <MaxHitPoints>10000</MaxHitPoints>
+>>>>>>> beta
       <Mass>1.5</Mass>
       <Flammability>0.02</Flammability>
       <ArmorRating_Sharp>1.06</ArmorRating_Sharp>
@@ -155,6 +189,11 @@
     <apparel>
       <tags>
         <li>Avali</li>
+<<<<<<< HEAD
+=======
+        <li>AvaliArmor</li>
+        <li>AvaliSpecOps</li>
+>>>>>>> beta
       </tags>
       <bodyPartGroups>
         <li>FullHead</li>
@@ -206,6 +245,10 @@
     <label>Avali scout helmet</label>
      <thingCategories>
       <li>AvaliHelmets</li>
+<<<<<<< HEAD
+=======
+      <li>Apparel</li>
+>>>>>>> beta
     </thingCategories>
     <description>An avali scout helmet. [placeholder]</description>
     <techLevel>Spacer</techLevel>
@@ -253,6 +296,11 @@
     <apparel>
       <tags>
         <li>Avali</li>
+<<<<<<< HEAD
+=======
+        <li>AvaliArmor</li>
+        <li>AvaliScout</li>
+>>>>>>> beta
       </tags>
       <bodyPartGroups>
         <li>FullHead</li>
@@ -297,6 +345,10 @@
     <defName>AvaliCombatHelmet</defName>
       <thingCategories>
       <li>AvaliHelmets</li>
+<<<<<<< HEAD
+=======
+      <li>Apparel</li>
+>>>>>>> beta
     </thingCategories>
     <label>Avali combat helmet</label>
     <description>An avali combat helmet. [placeholder]</description>
@@ -348,6 +400,10 @@
     <tags>
       <li>EVA</li>
       <li>Avali</li>
+<<<<<<< HEAD
+=======
+      <li>AvaliArmor</li>
+>>>>>>> beta
     </tags>
       <bodyPartGroups>
         <li>FullHead</li>
@@ -392,6 +448,10 @@
     <defName>AvaliCombatArmor</defName>
      <thingCategories>
       <li>AvaliArmor</li>
+<<<<<<< HEAD
+=======
+      <li>Apparel</li>
+>>>>>>> beta
     </thingCategories>
     <label>Avali combat armor</label>
     <description>A combat suit. [placeholder]</description>
@@ -422,17 +482,27 @@
       <Mass>1.5</Mass>
       <Flammability>0.02</Flammability>
       <ArmorRating_Sharp>1.56</ArmorRating_Sharp>
+<<<<<<< HEAD
       <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
       <ArmorRating_Heat>0.74</ArmorRating_Heat>
       <Insulation_Cold>4</Insulation_Cold>
       <Insulation_Heat>2</Insulation_Heat>
+=======
+      <ArmorRating_Blunt>1.02</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.02</ArmorRating_Heat>
+      <Insulation_Cold>-14</Insulation_Cold>
+      <Insulation_Heat>12</Insulation_Heat>
+>>>>>>> beta
       <EquipDelay>4</EquipDelay>
     </statBases>
     
     <equippedStatOffsets>
         <ToxicSensitivity>-0.3</ToxicSensitivity>
+<<<<<<< HEAD
         <ComfyTemperatureMin>-4</ComfyTemperatureMin>
           <ComfyTemperatureMax>4</ComfyTemperatureMax>
+=======
+>>>>>>> beta
           <MoveSpeed>-0.5</MoveSpeed>
           <SocialImpact>-0.5</SocialImpact>
     </equippedStatOffsets>
@@ -445,9 +515,20 @@
     <tags>
       <li>EVA</li>
       <li>Avali</li>
+<<<<<<< HEAD
     </tags>
       <bodyPartGroups>
         <li>FullHead</li>
+=======
+      <li>AvaliArmor</li>
+    </tags>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+>>>>>>> beta
       </bodyPartGroups>
       <wornGraphicPath>avali/Things/Apparel/combat/combat_armor</wornGraphicPath>
       <layers>
@@ -495,6 +576,10 @@
     <label>Avali scout armor</label>
      <thingCategories>
       <li>AvaliArmor</li>
+<<<<<<< HEAD
+=======
+      <li>Apparel</li>
+>>>>>>> beta
     </thingCategories>     
     <description>A combat suit. [placeholder]</description>
     <techLevel>Spacer</techLevel>
@@ -542,7 +627,15 @@
     </costList>
     <apparel>
       <bodyPartGroups>
+<<<<<<< HEAD
         <li>FullHead</li>
+=======
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+>>>>>>> beta
       </bodyPartGroups>
       <wornGraphicPath>avali/Things/Apparel/scout/armor_scout</wornGraphicPath>
       <layers>
@@ -552,6 +645,14 @@
       <defaultOutfitTags>
         <li>Soldier</li>
       </defaultOutfitTags>
+<<<<<<< HEAD
+=======
+      <tags>
+        <li>Avali</li>
+        <li>AvaliArmor</li>
+        <li>AvaliScout</li>
+      </tags>
+>>>>>>> beta
       <useDeflectMetalEffect>true</useDeflectMetalEffect>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">

@@ -26,7 +26,7 @@ namespace AvaliMod
         }
 
 
-        private void GetPawnRelations(Pawn pawn)
+       /* private void GetPawnRelations(Pawn pawn)
         {
             IEnumerable<Pawn> relatedPawnList = pawn.relations.RelatedPawns;
             foreach(Pawn relatedPawn in relatedPawnList)
@@ -60,7 +60,7 @@ namespace AvaliMod
             PawnGenerationRequest newPawnGenerationRequest = new PawnGenerationRequest(pawnKind, Faction.OfPlayer);
             Pawn newPawn = PawnGenerator.GeneratePawn(newPawnGenerationRequest);
             TransferPawnRelations(pawn, newPawn);
-        }
+        }*/
 
         public override void CompTick()
         {

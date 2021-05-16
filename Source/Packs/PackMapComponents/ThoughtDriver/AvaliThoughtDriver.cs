@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using System.Threading;
+using RimWorld.Planet;
+
 namespace AvaliMod
 {
     public class AvaliUpdater : MapComponent
@@ -11,43 +13,39 @@ namespace AvaliMod
         private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
         private readonly bool mapCompOn = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().mapCompOn;
         private int onTick;
+        private List<Pawn> pawnsHaveBeenSold = new List<Pawn>();
+        private List<Pawn> pawnsAreMissing = new List<Pawn>();
         public AvaliUpdater(Map map)
             : base(map)
         {
 
         }
-
-        public void UpdateSharedRoomThought(Pawn pawn)
+        public override void ExposeData()
         {
-            if (pawn.Awake())
+            Scribe_Collections.Look<Pawn>(ref pawnsHaveBeenSold, "soldPawns", LookMode.Reference);
+            Scribe_Collections.Look<Pawn>(ref pawnsAreMissing, "missingPawns", LookMode.Reference);
+        }
+
+        public bool CheckIfLost(Pawn pawn)
+        {
+            TaleManager manager = new TaleManager();
+          
+            if (pawnsAreMissing.Count > 0 && pawn.IsKidnapped() && !pawnsAreMissing.Contains(pawn))
             {
-                AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-                if (RimValiUtility.CheckIfPackmatesInRoom(pawn))
-                {
-                    RimValiUtility.AddThought(pawn, avaliThoughtDriver.Props.inSameRoomThought);
-                }
-                else
-                {
-                    RimValiUtility.RemoveThought(pawn, avaliThoughtDriver.Props.inSameRoomThought);
-                }
+                pawnsAreMissing.Add(pawn);
+                return true;
             }
             else
             {
-                AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-                if (RimValiUtility.PackInBedroom(pawn))
-                {
-                    RimValiUtility.AddThought(pawn, avaliThoughtDriver.Props.sharedBedroomThought);
-                }
-                else
-                {
-                    RimValiUtility.AddThought(pawn, avaliThoughtDriver.Props.sleptApartThought);
-                }
+                return false;
             }
         }
 
         public void UpdatePawns(Map map)
         {
-            IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => x.def == AvaliDefs.RimVali);
+            
+            AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
+            IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => AvaliPackDriver.racesInPacks.Contains(x.def));
             IEnumerable<AvaliPack> packs = AvaliPackDriver.packs;
             foreach (Pawn pawn in pawns)
             {
@@ -63,7 +61,7 @@ namespace AvaliMod
                     }
                     AvaliPack pawnPack = null;
                     //This errors out when pawns dont have a pack, in rare cases. That is bad. This stops it from doing that.
-                    try { pawnPack = RimValiUtility.GetPack(pawn); }
+                    try { pawnPack = pawn.GetPack(); }
                     catch
                     {
                         return;
@@ -77,7 +75,7 @@ namespace AvaliMod
                     foreach (Pawn packmate in pawnPack.pawns)
                     {
                         Thought_Memory thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
-                        if (!(packmate == pawn))
+                        if (!(packmate == pawn) && packmate != null && pawn != null)
                         {
                             bool bubble;
                             if (!thought_Memory2.TryMergeWithExistingMemory(out bubble))
@@ -87,7 +85,6 @@ namespace AvaliMod
                             }
                         }
                     }
-                    UpdateSharedRoomThought(pawn);
                 }
             }
         }
@@ -100,6 +97,7 @@ namespace AvaliMod
 
         public override void MapComponentTick()
         {
+            AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
             if (mapCompOn && !(AvaliPackDriver.packs == null) && AvaliPackDriver.packs.Count > 0)
             {
                 if (onTick == 120)

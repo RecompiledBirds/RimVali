@@ -74,9 +74,29 @@ namespace AvaliMod
         {
             get
             {
-                return RimvaliPotentialPackRaces.potentialPackRaces.ToList<ThingDef>();
+                return RimValiDefChecks.potentialPackRaces.ToList<ThingDef>();
             }
         }
+        public bool inPack = false;
         public int ticksSinceLastInpack = 0;
+        public int timeAlone;
+        public int ticks;
+        public override void CompTick()
+        {
+            if (!inPack)
+            {
+                ticksSinceLastInpack++;
+            }
+            else
+            {
+                ticksSinceLastInpack = 0;
+            }
+        }
+        public override void PostExposeData()
+        {
+            Scribe_Values.Look(ref timeAlone, "timeAlone", 0);
+            Scribe_Values.Look(ref ticksSinceLastInpack, "ticksSinceLastInPack", 0);
+            base.PostExposeData();
+        }
     }
 }

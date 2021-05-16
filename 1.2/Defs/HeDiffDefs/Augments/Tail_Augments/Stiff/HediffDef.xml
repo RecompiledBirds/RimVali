@@ -41,13 +41,6 @@
           </li>
         </tools>      
       </li>
-      <li Class="AvaliMod.ConflictsWithProps">
-        <conflictingHediffs>
-          <li>AvaliAdvancedBionicTail</li>
-          <li>AvaliBasicBionicTail</li>
-        </conflictingHediffs>
-        <showConflicts>true</showConflicts>
-      </li>
     </comps>
   </HediffDef>
 </Defs>

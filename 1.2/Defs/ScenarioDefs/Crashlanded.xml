@@ -7,7 +7,7 @@
   <description>A colony, sent by the Illuminate. But not even the other Illuminate colonies will neccessarily like you..</description>
 	<scenario>
 		<summary>Similar to the classic rimworld experience, but with avali.</summary>
-		<description>Your pack has been sent by the Illuminate to colonize this planet. Everything is going as planned... so far. You'll start with a small amount of resources, but scans indicate this planet is resource-plenty.</description>
+		<description>Your pack has been sent by the Illuminate to colonize this planet. Everything is going as planned... so far. You'll start with a small amount of resources, but scans indicate this planet is resource-plenty. Good luck!</description>
 		<playerFaction>
 			<def>PlayerFaction</def>
 			<factionDef>RimValiPlayerColony</factionDef>
@@ -24,7 +24,7 @@
 			</li>
 			<li Class="ScenPart_ForcedHediff">
 				<def>ForcedHediff</def>
-				<chance>0.5</chance>
+				<chance>0.2</chance>
 				<context>PlayerStarter</context>
 				<hideOffMap>True</hideOffMap>
 				<hediff>CryptosleepSickness</hediff>
@@ -52,7 +52,7 @@
 			</li>
 			<li Class="ScenPart_StartingThing_Defined">
 				<def>StartingThing_Defined</def>
-				<thingDef>Gun_BoltActionRifle</thingDef>
+				<thingDef>AvaliRifle</thingDef>
 			</li>
 			<li Class="ScenPart_StartingThing_Defined">
 				<def>StartingThing_Defined</def>
@@ -67,11 +67,6 @@
 				<thingDef>Apparel_AdvancedHelmet</thingDef>
 				<stuff>Plasteel</stuff>
 			</li>
-			<li Class="ScenPart_StartingAnimal">
-				<def>StartingAnimal</def>
-				<count>1</count>
-				<bondToRandomPlayerPawnChance>1</bondToRandomPlayerPawnChance>
-			</li>
 			<li Class="ScenPart_ScatterThingsNearPlayerStart">
 				<def>ScatterThingsNearPlayerStart</def>
 				<thingDef>Steel</thingDef>
@@ -84,13 +79,18 @@
 			</li>
 			<li Class="ScenPart_ScatterThingsAnywhere">
 				<def>ScatterThingsAnywhere</def>
-				<thingDef>ShipChunk</thingDef>
-				<count>3</count>
-			</li>
-			<li Class="ScenPart_ScatterThingsAnywhere">
-				<def>ScatterThingsAnywhere</def>
 				<thingDef>Steel</thingDef>
 				<count>720</count>
+			</li>
+      <li Class="ScenPart_ScatterThingsAnywhere">
+				<def>ScatterThingsAnywhere</def>
+				<thingDef>AvaliAerogel</thingDef>
+				<count>254</count>
+			</li>
+      <li Class="ScenPart_ScatterThingsAnywhere">
+				<def>ScatterThingsAnywhere</def>
+				<thingDef>AvaliNanoFiber</thingDef>
+				<count>300</count>
 			</li>
 			<li Class="ScenPart_ScatterThingsAnywhere">
 				<def>ScatterThingsAnywhere</def>
@@ -100,8 +100,7 @@
 			<li Class="ScenPart_GameStartDialog">
 				<def>GameStartDialog</def>
 				<text>You've been sent by the Illuminate to colonise this distant rimworld.
-        If everything goes well, you'll become fully functional colony, important to further colonization of the planet.
-        If not, you'll probably die.
+        We all wish you the best of luck out on the rim! A orbital drone will keep an eye on your progress.
         </text>
 				<textKey>GameStartDialog</textKey>
 				<closeSound>GameStartSting</closeSound>

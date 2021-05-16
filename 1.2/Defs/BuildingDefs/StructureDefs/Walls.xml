@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef ParentName="BuildingBase" Name="Wall">
+  <ThingDef ParentName="BuildingBase">
     <defName>AvaliWall</defName>
     <label>tent wall</label>
     <description>An impassable wall. Capable of holding up a roof.</description>

@@ -5,8 +5,4 @@
     <label>Avali [main]</label>
   </ResearchTabDef>
   
-  <ResearchTabDef>
-    <defName>AvaliBionics</defName>
-    <label>Avali [bionics]</label>
-  </ResearchTabDef>
 </Defs>

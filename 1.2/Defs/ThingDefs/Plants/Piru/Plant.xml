@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BaseAvaliPlant">
+    <defName>PiruColony</defName>
+    <label>Piru</label>
+    <description>A piru colony.</description>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>avali/Things/Plants/Piru/PiruPlantFull</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <dieIfLeafless>true</dieIfLeafless>
+      <maxMeshCount>4</maxMeshCount>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>PiruFlour</harvestedThingDef>
+      <harvestYield>6</harvestYield>
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
+      <immatureGraphicPath>avali/Things/Plants/Piru/PiruPlant</immatureGraphicPath>
+      <topWindExposure>0.1</topWindExposure>
+      <growDays>3</growDays>
+      <visualSizeRange>0.3~0.8</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+    </plant>
+  </ThingDef>
+</Defs>

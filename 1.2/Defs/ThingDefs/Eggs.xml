@@ -31,7 +31,7 @@
     </statBases>
     <comps>
       <li Class="CompProperties_Hatcher">
-        <hatcherDaystoHatch>0.0</hatcherDaystoHatch>
+        <hatcherDaystoHatch>32.0</hatcherDaystoHatch>
         <hatcherPawn>RimValiEggColonist</hatcherPawn>
       </li>
       <li Class="CompProperties_Rottable">

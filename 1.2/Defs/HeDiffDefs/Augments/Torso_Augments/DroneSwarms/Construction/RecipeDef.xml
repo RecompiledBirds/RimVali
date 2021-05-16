@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallDC</defName>
+    <label>Install micro drone swarm (contruction)</label>
+    <description>Install micro drone swarm (contruction).</description>
+    <descriptionHyperlinks><ThingDef>DroneConstruction</ThingDef></descriptionHyperlinks>
+    <jobString>Installing micro drone swarm (contruction).</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DroneConstruction</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DroneConstruction</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Ribcage</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DroneConstruction</addsHediff>
+  </RecipeDef>
+</Defs>

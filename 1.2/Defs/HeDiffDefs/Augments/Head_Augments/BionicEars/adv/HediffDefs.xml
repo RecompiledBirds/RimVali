@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>AvaliAdvancedBionicEar</defName>
+    <label>Advanced bionic Ear</label>
+    <labelNoun>a advanced bionic Ear</labelNoun>
+    <description>A advanced bionic avali Ear.</description>
+    <spawnThingOnRemoved>AvaliAdvancedBionicEar</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.5</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+</Defs>

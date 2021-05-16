@@ -14,6 +14,9 @@
   
   <ThoughtDef>
     <defName>AvaliAteEgg</defName>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
     <durationDays>1</durationDays>
     <stages>
       <li>
@@ -25,13 +28,13 @@
   </ThoughtDef>
   
   <ThoughtDef>
-    <defName>AvaliAteHumamlikeDirect</defName>
+    <defName>AvaliAteHumanlikeDirect</defName>
     <durationDays>1</durationDays>
     <stages>
       <li>
         <label>Ate humanlike</label>
         <description>It probably would have tasted better cooked.</description>
-        <baseMoodEffect>-3</baseMoodEffect>
+        <baseMoodEffect>-1</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -43,7 +46,7 @@
       <li>
         <label>Ate humanlike as ingredient</label>
         <description>It tasted ok, I suppose.</description>
-        <baseMoodEffect>-1</baseMoodEffect>
+        <baseMoodEffect>1</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -54,8 +57,8 @@
     <stages>
       <li>
         <label>Butchered humanlike</label>
-        <description>I butchered a sentient creature</description>
-        <baseMoodEffect>-4</baseMoodEffect>
+        <description>I butchered a sentient creature.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -66,7 +69,7 @@
       <li>
         <label>A humanlike was butchered</label>
         <description>A sentient creature was butchered.</description>
-        <baseMoodEffect>-4</baseMoodEffect>
+        <baseMoodEffect>-1</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

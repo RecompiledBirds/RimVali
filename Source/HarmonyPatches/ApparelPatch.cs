@@ -21,7 +21,7 @@ namespace AvaliMod
                 string path = apparel.def.apparel.wornGraphicPath + "_" + bodyType.defName;
                 if (!((Object)ContentFinder<Texture2D>.Get(path + "_north", false) == (Object)null) && !((Object)ContentFinder<Texture2D>.Get(path + "_east", false) == (Object)null) && !((Object)ContentFinder<Texture2D>.Get(path + "_south", false) == (Object)null))
                 {
-                    Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
+                    AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(path, AvaliShaderDatabase.Tricolor, apparel.def.graphicData.drawSize, apparel.DrawColor);
                     rec = new ApparelGraphicRecord(graphic, apparel);
                 }
             }
@@ -30,7 +30,7 @@ namespace AvaliMod
                 string str = apparel.def.apparel.wornGraphicPath + "_" + bodyType.defName;
                 if ((Object)ContentFinder<Texture2D>.Get(str + "_north", false) == (Object)null || (Object)ContentFinder<Texture2D>.Get(str + "_east", false) == (Object)null || (Object)ContentFinder<Texture2D>.Get(str + "_south", false) == (Object)null)
                 {
-                    Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(apparel.def.apparel.wornGraphicPath, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
+                    AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(apparel.def.apparel.wornGraphicPath, AvaliShaderDatabase.Tricolor, apparel.def.graphicData.drawSize, apparel.DrawColor);
                     rec = new ApparelGraphicRecord(graphic, apparel);
                 }
             }

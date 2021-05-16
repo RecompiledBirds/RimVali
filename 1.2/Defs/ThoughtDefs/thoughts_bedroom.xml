@@ -75,7 +75,7 @@
       </li>
       <li>
         <label>dull barrack</label>
-        <description>I had to sleep in a dull barrac, but I didn't feel alone.</description>
+        <description>I had to sleep in a dull barrack, but I didn't feel alone.</description>
         <baseMoodEffect>1</baseMoodEffect>
       </li>
       <li>
@@ -123,8 +123,11 @@
   
   <ThoughtDef>
     <defName>AvaliSharingRoom</defName>
-    <durationDays>1</durationDays>
-  <stackLimit>1</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <workerClass>AvaliMod.Shared_workRoom</workerClass>
+    <stackLimit>1</stackLimit>
     <stages>
       <li>
         <label>With pack</label>

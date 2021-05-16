@@ -12,12 +12,15 @@
     </thingCategories>
     <label>Avali Nano-Printing Forge</label>
     <description>The Avali Nano-Printing Forge is a 3D printer, like most Avali crafting utilities. It works with immense heat, and nanotechnologies able to rearrange the structure and molecues of the items put in. Caution: Do not stick fingers, toes, feet, hands, tails, or other limbs inside, even if the device appears to be powered off.</description>
-    <size>(2,1)</size>
+    <size>(3,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
     <recipes>
+    
+      <li>MakeBFGSabot</li>
+    
       <li>RimValiPowderTungsten</li>
       <li>RimValiPowderTungstenTwo</li>
       <li>RimValiPowderTungstenThree</li>
@@ -50,7 +53,7 @@
       <texPath>avali/buildings/production/nanoforge</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(2,1.8)</drawSize>
+      <drawSize>(3,2)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -94,7 +97,7 @@
   </ThingDef>
 
   <!-- Research bench -->
-
+	
 
   <ThingDef ParentName="BenchBase">
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -148,6 +151,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>MultiAnalyzer</li>
+		  <li>AvaliNexus</li>
         </linkableFacilities>
       </li>
       <li Class="CompProperties_Breakdownable"/>
@@ -167,6 +171,60 @@
     <researchPrerequisites>
       <li>BasicRimValiTech</li>
     </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>AvaliNexus</defName>
+    <label>Illuminate Nexus Connection</label>
+    <description>This device can be used to access higher levels of tech, thanks to its connection to te nexus.</description>
+    <graphicData>
+      <texPath>avali/buildings/production/sync_crystal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+     <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+		<li Class="CompProperties_Glower">
+			<glowRadius>8</glowRadius>
+			<glowColor>(236, 166, 245)</glowColor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.1</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
   
   <!-- Nano-loom -->
@@ -190,7 +248,10 @@
       <li>WeaveNanoFiber</li>
       <li>WeaveNanoFiberTwo</li>
       <li>WeaveNanoFiberThree</li>
-      
+      <li>WeaveAeroTungstenFiber</li>
+      <li>WeaveNanoCarbonFiberThree</li>
+      <li>WeaveNanoCarbonFiberTwo</li>
+      <li>WeaveNanoCarbonFiber</li>
     </recipes>
     <stuffCategories>
       <li>Metallic</li>
@@ -202,7 +263,7 @@
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
      <researchPrerequisites>
-       <li>ResearchNanoForge</li>
+       <li>ResearchNanoLoom</li>
      </researchPrerequisites>
     <graphicData>
       <texPath>avali/buildings/production/loom/loom</texPath>

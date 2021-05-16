@@ -6,7 +6,7 @@ namespace AvaliMod
 {
     public class ShowTextComp : HediffComp
     {
-        private Random random = new Random();
+        private readonly Random random = new Random();
         public ShowTextPropsV3 Props
         {
             get

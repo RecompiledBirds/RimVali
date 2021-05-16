@@ -17,7 +17,7 @@
         <statOffsets>
           <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-          <MaxHitPoints>5</MaxHitPoints>
+          <HealthIncreasePercent>5</HealthIncreasePercent>
         </statOffsets>
       </li>
     </stages>

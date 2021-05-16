@@ -20,13 +20,12 @@ namespace AvaliMod
         public bool enableAirdrops;
         public bool mapCompOn;
         public bool avaliLayEggs;
-        public bool enableSlots;
         public float healthScale;
         public int avaliRequiredForDrop;
         public int stageOneDaysPackloss;
         public int stageTwoDaysPackloss;
         public int stageThreeDaysPackloss;
-
+        public int hackChance;
         public Dictionary<string, bool> enabledRaces = new Dictionary<string, bool>();
 
 
@@ -41,13 +40,13 @@ namespace AvaliMod
             mapCompOn = true;
             textEnabled = true;
             enableAirdrops = true;
-            enableSlots = true;
             checkOtherRaces = true;
             packsEnabled = true;
             avaliRequiredForDrop = 5;
             stageOneDaysPackloss = 1;
             stageTwoDaysPackloss = 2;
             stageThreeDaysPackloss = 3;
+            hackChance = 30;
         }
         public override void ExposeData()
         {
@@ -63,17 +62,17 @@ namespace AvaliMod
             Scribe_Values.Look(ref avaliLayEggs, "avaliLayEggs", false, true);
             Scribe_Values.Look(ref enableDebugMode, "debugModeOn", false, true);
             Scribe_Values.Look(ref mapCompOn, "mapCompOn", true, true);
-            Scribe_Values.Look(ref enableSlots, "enableSlots", true, true);
             Scribe_Values.Look(ref textEnabled, "textEnabled", true, true);
             Scribe_Values.Look(ref packOpReq, "packOpReq", 30, true);
             Scribe_Values.Look(ref stageOneDaysPackloss, "stageOneDaysPackloss", 1, true);
             Scribe_Values.Look(ref stageTwoDaysPackloss, "stageTwoDaysPackloss", 2, true);
             Scribe_Values.Look(ref stageThreeDaysPackloss, "stageThreeDaysPackloss", 3, true);
+            Scribe_Values.Look(ref hackChance, "hackChance", 30, true);
             Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces", LookMode.Undefined, LookMode.Undefined);
             base.ExposeData();
         }
     }
-
+    
     public class RimValiMod : Mod
     {
         public int windowToShow;
@@ -161,7 +160,7 @@ namespace AvaliMod
                 listing_Standard.Begin(rect);
                 Backbutton(listing_Standard);
                 listing_Standard.CheckboxLabeled("CanHaveEggs".Translate(), ref settings.avaliLayEggs, "EggsDesc".Translate());
-                listing_Standard.CheckboxLabeled("SlotsEnabled".Translate(), ref settings.enableSlots, "SlotsLabel".Translate());
+
                 listing_Standard.CheckboxLabeled("ShowText".Translate(), ref settings.textEnabled, "ShowTextLabel".Translate());
                 listing_Standard.CheckboxLabeled("AirdropsText".Translate(), ref settings.enableAirdrops, "AirdropsLabel".Translate());
                 listing_Standard.Label("AvaliForDropReq".Translate(settings.avaliRequiredForDrop.Named("COUNT")));
@@ -183,6 +182,8 @@ namespace AvaliMod
                     settings.stageThreeDaysPackloss = settings.stageTwoDaysPackloss;
                 }
                 settings.stageThreeDaysPackloss = (int)listing_Standard.Slider(settings.stageThreeDaysPackloss, settings.stageTwoDaysPackloss, 100);
+                listing_Standard.Label("ChanceToHackTech".Translate(settings.hackChance.Named("CHANCE")));
+                settings.hackChance = (int)listing_Standard.Slider(settings.hackChance, 0, 100);
             }
             
             //Debug
@@ -192,13 +193,7 @@ namespace AvaliMod
                 Modulefinder.startup();
                 listing_Standard.Label("Debug settings");
                 listing_Standard.GapLine(10);
-                bool debugButton = listing_Standard.ButtonText("ToggleDebug".Translate());
-                if (debugButton)
-                {
-
-                    settings.enableDebugMode = !settings.enableDebugMode;
-                    debugButton = !debugButton;
-                }
+                listing_Standard.CheckboxLabeled("ToggleDebug".Translate(), ref settings.enableDebugMode);
                 listing_Standard.Label("RVBuild".Translate(RimValiUtility.build.Named("BUILD")));
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
                 listing_Standard.Label(RimValiUtility.modulesFound);

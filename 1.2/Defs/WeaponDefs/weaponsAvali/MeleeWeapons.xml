@@ -37,7 +37,7 @@
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <statBases>
-      <WorkToMake>1400</WorkToMake>
+      <WorkToMake>3000</WorkToMake>
       <Mass>0.6</Mass>
     </statBases>
     <equippedAngleOffset>-65</equippedAngleOffset>
@@ -59,7 +59,138 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedMelee</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
   </ThingDef>
+  
+  
+  
+  
+   
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Axe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliAxe</defName>
+    <label>Avali Axe</label>
+    <description>An axe similar to the viroblade, complete with a self-regenerating blade.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>10</AvaliAerogel>
+      <Steel>15</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali axe Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Axe Blade</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>5.2</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedMelee</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Knife</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliKnife</defName>
+    <label>Avali knife</label>
+    <description>A minature viroblade. Good for cutting food and enemies!</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>5</AvaliAerogel>
+      <Steel>5</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali knife Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Knife Blade</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>2.2</power>
+        <cooldownTime>0.2</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>1</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  
   
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
@@ -110,8 +241,11 @@
     <recipeMaker>
       <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
       <skillRequirements>
-        <Crafting>2</Crafting>
+        <Crafting>4</Crafting>
       </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
     </recipeMaker>
   </ThingDef>
   
@@ -170,5 +304,14 @@
         <cooldownTime>2.5</cooldownTime>
       </li>
     </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedMelee</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
   </ThingDef>
 </Defs>

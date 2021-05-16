@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThoughtDef>
+    <nullifyingTraits>
+      <li>Cannibal</li>
+    </nullifyingTraits>
     <defName>AvaliAteAvaliDirect</defName>
     <showBubble>true</showBubble>
     <icon>Things/Mote/ThoughtSymbol/Food</icon>
     <durationDays>1</durationDays>
-    <nullifyingTraits>
-      <li>Cannibal</li>
-    </nullifyingTraits>
     <stages>
       <li>
         <label>Ate avali</label>
         <description>I had to eat the flesh of another avali..</description>
         <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+  <ThoughtDef>
+    <defName>AvaliAteAvaliMeatDirectCannibal</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1</durationDays>
+    <requiredTraits>
+      <li>Cannibal</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>raw cannibalism</label>
+        <description>I ate the meat of another avali, raw, like an animal. It was ok, I suppose.</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>AvaliAteAvaliMeatAsIngredientCannibal</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>1</durationDays>
+    <requiredTraits>
+      <li>Cannibal</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>cooked cannibalism</label>
+        <description>I ate a meal made from the meat of another avali. It was ok, but I think it might've tasted better raw.</description>
+        <baseMoodEffect>15</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

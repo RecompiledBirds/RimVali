@@ -20,6 +20,7 @@
   <BodyPartDef>
     <defName>RimValiEar</defName>
     <label>ear</label>
+    <pawnGeneratorCanAmputate>true</pawnGeneratorCanAmputate>
     <hitPoints>12</hitPoints>
     <frostbiteVulnerability>6</frostbiteVulnerability>
     <skinCovered>true</skinCovered>

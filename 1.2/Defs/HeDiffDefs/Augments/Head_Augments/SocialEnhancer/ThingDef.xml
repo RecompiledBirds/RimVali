@@ -9,11 +9,12 @@
     </graphicData>
     <label>Social capability enhancer</label>
     <description>A augment designed to increase the capabilties of the avali it is installed on.</description>
-    <descriptionHyperlinks><RecipeDef>InstallTailStiffeningAugment</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>InstallSC</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Plasteel>5</Plasteel>
+      <Plasteel>10</Plasteel>
+      <TechprofSubpersonaCore>1</TechprofSubpersonaCore>
       <ComponentIndustrial>5</ComponentIndustrial>
-      <Steel>10</Steel>
+      <Steel>15</Steel>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>

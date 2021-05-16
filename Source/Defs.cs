@@ -12,11 +12,13 @@ namespace AvaliMod
         //ThingDefs
         public static ThingDef AvaliNanoForge;
         public static ThingDef AvaliNanoLoom;
-        public static ThingDef RimVali;
         public static ThingDef AvaliAerogel;
         public static ThingDef AvaliResearchBench;
         public static ThingDef AvaliNexus;
 
+        //Race defs
+        public static RimValiRaceDef RimVali;
+        public static RimValiRaceDef IWAvaliRace;
 
         //Stat defs
         public static StatDef ExplodeBombRadius;
@@ -43,6 +45,11 @@ namespace AvaliMod
         public static ResearchProjectDef AvaliAdvancedMelee;
         public static ResearchProjectDef AeroWeaveResearch;
         public static ResearchProjectDef AvaliAeroTungsten;
+        //Job defs
 
+        public static JobDef refuelAeriel;
+
+        public static ThoughtDef KnowButcheredHumanlikeCorpse;
+        public static ThoughtDef ButcheredHumanlikeCorpse;
     }
 }

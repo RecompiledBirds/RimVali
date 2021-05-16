@@ -41,7 +41,6 @@
     <stuffProps>
       <stuffAdjective>Ferrogel</stuffAdjective>
       <categories>
-        <li>AerogelCategory</li>
         <li>Metallic</li>
       </categories>
       <commonality>0.5</commonality>

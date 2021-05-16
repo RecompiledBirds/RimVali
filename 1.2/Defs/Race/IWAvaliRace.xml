@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AvaliMod.RimValiRaceDef ParentName="BaseFullAvali">
+    <defName>IWAvaliRace</defName>
+    <corpseToUse>Corpse_RimVali</corpseToUse>
+    <meatToUse>Meat_RimVali</meatToUse>
+    <statBases>
+            <MarketValue>1500</MarketValue>
+            <MoveSpeed>4.5</MoveSpeed>
+            <Flammability>200</Flammability>
+            <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+            <ComfyTemperatureMax>25</ComfyTemperatureMax>
+            <LeatherAmount>5</LeatherAmount>
+            <ResearchSpeed>0.7</ResearchSpeed>
+            <MiningSpeed>1</MiningSpeed>
+            <SocialImpact>0.8</SocialImpact>
+		      	<ConstructionSpeed>1</ConstructionSpeed>
+			      <AnimalGatherSpeed>0.6</AnimalGatherSpeed>
+			      <AnimalGatherYield>0.6</AnimalGatherYield>
+			      <ImmunityGainSpeed>2</ImmunityGainSpeed>
+            <PsychicSensitivity>0.7</PsychicSensitivity>
+			      <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+						<Mass>65</Mass>
+            <RestRateMultiplier>1.25</RestRateMultiplier>
+        </statBases>
+        <tools>
+            <li>
+				<label>teeth</label>
+				<capacities>
+				<li>Bite</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.6</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+            </li>
+            <li>
+				<label>Left Talons</label>
+				<capacities>
+				<li>Scratch</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+				<extraMeleeDamages>
+					<li>
+					<def>Stun</def>
+					<amount>4</amount>
+				</li>
+				</extraMeleeDamages>
+				</surpriseAttack>
+            </li>
+            <li>
+				<label>Right Talons</label>
+				<capacities>
+				<li>Scratch</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+				<extraMeleeDamages>
+					<li>
+					<def>Stun</def>
+					<amount>4</amount>
+				</li>
+				</extraMeleeDamages>
+				</surpriseAttack>
+            </li>
+        </tools>
+    <race>
+      <baseBodySize>0.9</baseBodySize>
+			<baseHungerRate>0.6</baseHungerRate>
+    </race>
+  </AvaliMod.RimValiRaceDef>
+
+</Defs>

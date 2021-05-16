@@ -16,6 +16,7 @@ namespace AvaliMod
         public bool useHumanRecipes = true;
         public RVRRaceInsertion raceInsertion = new RVRRaceInsertion();
         public List<ReplaceableThoughts> replaceableThoughts = new List<ReplaceableThoughts>();
+<<<<<<< HEAD
 
         public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
 
@@ -23,6 +24,40 @@ namespace AvaliMod
 
         public override void ResolveReferences()
         {
+=======
+        public cannibalismThoughts cannibalismThoughts = new cannibalismThoughts();
+        public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
+
+        public butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
+        public ThingDef corpseToUse = null;
+        public ThingDef meatToUse = null;
+        public override void ResolveReferences()
+        {
+           
+            if (corpseToUse != null) {
+                race.corpseDef.statBases = new List<StatModifier>() { };
+                
+                race.corpseDef.alwaysHaulable = false;
+                race.corpseDef.ingestible.preferability = FoodPreferability.NeverForNutrition;
+                race.corpseDef.category = ThingCategory.None;
+                race.corpseDef.ResolveReferences();
+
+                race.corpseDef = corpseToUse;
+                
+            }
+            if(meatToUse != null)
+            {
+                race.meatDef.statBases = new List<StatModifier>() { };
+                
+                race.meatDef.alwaysHaulable = false;
+                race.meatDef.ingestible.preferability = FoodPreferability.NeverForNutrition;
+                race.meatDef.category = ThingCategory.None;
+                race.meatDef.ResolveReferences();
+
+                race.meatDef = meatToUse;
+            }
+            Log.Message(race.meatDef.defName);
+>>>>>>> beta
             this.comps.Add(new colorCompProps());
             base.ResolveReferences();
         }
@@ -44,8 +79,47 @@ namespace AvaliMod
             }
             return false;
         }
+<<<<<<< HEAD
 
 
+=======
+        public ThoughtDef getEatenThought(ThingDef race, bool raw = true, bool cannibal = false)
+        {
+            if (cannibalismThoughts.thoughts.Any(x => x.race == race))
+            {
+                if (raw)
+                {
+                    if (cannibal)
+                    {
+                        return cannibalismThoughts.thoughts.First(x => x.race == race).ateRawCannibal;
+                    }
+                    return cannibalismThoughts.thoughts.First(x => x.race == race).ateRaw;
+                }
+                else
+                {
+                    if (cannibal)
+                    {
+                        return cannibalismThoughts.thoughts.First(x => x.race == race).ateCookedCannibal;
+                    }
+                    return cannibalismThoughts.thoughts.First(x => x.race == race).ateCooked;
+                }
+            }
+            return null;
+        }
+        public List<ThingDef> getAllCannibalThoughtRaces()
+        {
+            List<ThingDef> result = new List<ThingDef>();
+            foreach (cannibalsimThought cannibalismThought in cannibalismThoughts.thoughts)
+            {
+                result.Add(cannibalismThought.race);
+            }
+            if (cannibalismThoughts.careAbountUndefinedRaces)
+            {
+                result.AddRange(DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.race.Humanlike));
+            }
+            return result;
+        }
+>>>>>>> beta
         public void HeadOffsetPawn(Rot4 rot,Pawn pawn ,ref Vector3 __result)
         {
 

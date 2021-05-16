@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <!-- Unique name for refrences in the code. -->
+    <defName>BFGAmmo</defName>
+    <!-- In-game name. -->
+    <label>BFG Sabot</label>
+    <stackLimit>30</stackLimit>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <description>Ammunition for the BFG Railgun.</description>
+    <graphicData>
+      <texPath>avali/buildings/turrets/BFG/BFG_sabot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MarketValue>2</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>0.1</Flammability>
+      <DeteriorationRate>0.2</DeteriorationRate>
+      <StuffPower_Insulation_Cold>5</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>15</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>1.1</SharpDamageMultiplier>
+      <BluntDamageMultiplier>0.5</BluntDamageMultiplier>
+    </statBases>
+    <thingCategories>
+      <li>AvaliResources</li>
+    </thingCategories>
+  </ThingDef>
+  
+  
+   <RecipeDef>
+    <defName>MakeBFGSabot</defName>
+    <label>Forge BFG sabots</label>
+    <description>Forge BFG Sabots from tungsten.</description>
+    <jobString>Forging BFG sabots</jobString>
+    <workAmount>150</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+        </li>
+        <li>
+          <filter>
+            <thingDefs>
+              <li>AvaliTungstenPowder</li>
+            </thingDefs>
+          </filter>
+          <count>10</count>
+        </li>
+    </ingredients>
+    <products>
+      <BFGAmmo>5</BFGAmmo>
+    </products>
+  </RecipeDef>
+  
+</Defs>

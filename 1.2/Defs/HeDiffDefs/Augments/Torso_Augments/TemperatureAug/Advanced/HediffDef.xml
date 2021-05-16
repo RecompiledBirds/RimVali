@@ -15,13 +15,6 @@
       </li>
     </stages>
     <comps>
-      <li Class="AvaliMod.ConflictsWithProps">
-          <conflictingHediffs>
-            <li>AvaliTemperatureImplantElite</li>
-            <li>AvaliTemperatureImplantBasic</li>
-          </conflictingHediffs>
-          <showConflicts>true</showConflicts>
-        </li>
     </comps>
   </HediffDef>
 </Defs>

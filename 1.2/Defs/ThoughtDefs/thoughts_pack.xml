@@ -2,6 +2,9 @@
 <Defs>
   <ThoughtDef>
     <defName>AvaliPackLoss</defName>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
     <validWhileDespawned>true</validWhileDespawned>
     <workerClass>AvaliMod.PackLossThoughtWorker</workerClass>
     <stackLimit>1</stackLimit>
@@ -25,6 +28,9 @@
   </ThoughtDef>
   
   <ThoughtDef>
+  <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
     <defName>SharedRoomWithPack</defName>
     <stackLimit>1</stackLimit>
     <durationDays>0.5</durationDays>
@@ -38,6 +44,9 @@
   </ThoughtDef>
   
    <ThoughtDef>
+   <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
     <defName>BedroomWithoutPack</defName>
     <stackLimit>1</stackLimit>
     <durationDays>0.5</durationDays>

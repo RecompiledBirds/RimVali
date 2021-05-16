@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>WingBlades</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/arm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Wing blades</label>
+    <description>These wing replacements turn the wings into weapons, allowing them to be used as a weapon.</description>
+    <descriptionHyperlinks><RecipeDef>InstallWingBlades</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>2</Plasteel>
+      <AvaliAerogel>2</AvaliAerogel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <AvaliTungstenPowder>5</AvaliTungstenPowder>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliBionics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

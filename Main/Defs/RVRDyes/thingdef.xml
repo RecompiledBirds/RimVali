@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="DrugBase">
+    <defName>RVRDye</defName>
+    <label>Dye</label>
+    <description>A dye.</description>
+
+    <tradeability>Sellable</tradeability>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Drug/Ambrosia</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>15</MarketValue>
+      <Mass>0.1</Mass>
+      <DeteriorationRate>4</DeteriorationRate>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <baseIngestTicks>80</baseIngestTicks>
+      <chairSearchRadius>4</chairSearchRadius>
+      <preferability>DesperateOnly</preferability>
+      <tasteThought></tasteThought>
+      <foodType>VegetableOrFruit</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.5</joy>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RVRDye</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li Class="CompProperties_Drug">
+        <chemical>Dye</chemical>
+        <addictiveness>0.0</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>30</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ChemicalDef>
+    <defName>Dye</defName>
+    <label>Dye</label>
+    <addictionHediff>RVRDye</addictionHediff>
+    <toleranceHediff>AmbrosiaTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.0</onGeneratedAddictedToleranceChance>
+  </ChemicalDef>
+</Defs>

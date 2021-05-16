@@ -2,17 +2,25 @@
 <Defs>
   <ThingCategoryDef>
     <defName>AvaliResources</defName>
-    <label>Avali resources</label>
+    <label>Avali items</label>
     <parent>Root</parent>
     <resourceReadoutRoot>true</resourceReadoutRoot>
     <iconPath>avali/Things/Aerogel/BaseAerogel/Aerogel/Aerogel_a</iconPath>
   </ThingCategoryDef>
-  <StuffCategoryDef>
-    <defName>AerogelCategory</defName>
-    <label>Aerogel</label>
-  </StuffCategoryDef>
-  <StuffCategoryDef>
-    <defName>RawTungsten</defName>
-    <label>Tungsten</label>
-  </StuffCategoryDef>
+  
+  <ThingCategoryDef>
+    <defName>AerielShells</defName>
+    <label>A.E.R.I.E.L Rockets</label>
+    <parent>AvaliResources</parent>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+    <iconPath>avali/Things/Aerogel/BaseAerogel/Aerogel/Aerogel_a</iconPath>
+  </ThingCategoryDef>
+  
+    <ThingCategoryDef>
+    <defName>AimsShells</defName>
+    <label>AIMS Shells</label>
+    <parent>AvaliResources</parent>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+    <iconPath>avali/Things/Aerogel/BaseAerogel/Aerogel/Aerogel_a</iconPath>
+  </ThingCategoryDef>
 </Defs>
