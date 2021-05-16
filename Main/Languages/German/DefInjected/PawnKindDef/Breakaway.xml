@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <IWTechAvaliVillager.label>Avali villager</IWTechAvaliVillager.label> -->
+  <IWTechAvaliVillager.label>Avali Bewohner</IWTechAvaliVillager.label>
+  <!-- <IWTechAvaliVillager.labelPlural>Avali villagers</IWTechAvaliVillager.labelPlural> -->
+  <IWTechAvaliVillager.labelPlural>Avali Bewohner</IWTechAvaliVillager.labelPlural>
+  <!-- <IWTechAvaliVillager.labelMale>male Avali villager</IWTechAvaliVillager.labelMale> -->
+  <IWTechAvaliVillager.labelMale>männlicher Avali Bewohner</IWTechAvaliVillager.labelMale>
+  <!-- <IWTechAvaliVillager.labelMalePlural>male Avali villagers</IWTechAvaliVillager.labelMalePlural> -->
+  <IWTechAvaliVillager.labelMalePlural>männliche Avali Bewohner</IWTechAvaliVillager.labelMalePlural>
+  <!-- <IWTechAvaliVillager.labelFemale>female Avali villager</IWTechAvaliVillager.labelFemale> -->
+  <IWTechAvaliVillager.labelFemale>weibliche Avali Bewohnerin</IWTechAvaliVillager.labelFemale>
+  <!-- <IWTechAvaliVillager.labelFemalePlural>female Avali villagers</IWTechAvaliVillager.labelFemalePlural> -->
+  <IWTechAvaliVillager.labelFemalePlural>weibliche Avali Bewohnerinnen</IWTechAvaliVillager.labelFemalePlural>
+
+
+  <!-- <IWAvaliSoldier.label>Avali Soldier</IWAvaliSoldier.label> -->
+  <IWAvaliSoldier.label>Avali Soldat</IWAvaliSoldier.label>
+  <!-- <IWAvaliSoldier.labelPlural>Avali Soldiers</IWAvaliSoldier.labelPlural> -->
+  <IWAvaliSoldier.labelPlural>Avali Soldaten</IWAvaliSoldier.labelPlural>
+  <!-- <IWAvaliSoldier.labelMale>male Avali Soldier</IWAvaliSoldier.labelMale> -->
+  <IWAvaliSoldier.labelMale>männlicher Avali Soldat</IWAvaliSoldier.labelMale>
+  <!-- <IWAvaliSoldier.labelMalePlural>male Avali Soldiers</IWAvaliSoldier.labelMalePlural> -->
+  <IWAvaliSoldier.labelMalePlural>männliche Avali Soldaten</IWAvaliSoldier.labelMalePlural>
+  <!-- <IWAvaliSoldier.labelFemale>female Avali Soldier</IWAvaliSoldier.labelFemale> -->
+  <IWAvaliSoldier.labelFemale>weibliche Avali Soldatin</IWAvaliSoldier.labelFemale>
+  <!-- <IWAvaliSoldier.labelFemalePlural>female Avali Soldiers</IWAvaliSoldier.labelFemalePlural> -->
+  <IWAvaliSoldier.labelFemalePlural>weibliche Avali Soldatinnen</IWAvaliSoldier.labelFemalePlural>
+
+
+  <!-- <IWTechAvaliLeader.label>Avali Pack Leader</IWTechAvaliLeader.label> -->
+  <IWTechAvaliLeader.label>Avali Rudelführer</IWTechAvaliLeader.label>
+  <!-- <IWTechAvaliLeader.labelPlural>Avali Pack Leaders</IWTechAvaliLeader.labelPlural> -->
+  <IWTechAvaliLeader.labelPlural>Avali Rudelführer</IWTechAvaliLeader.labelPlural>
+  <!-- <IWTechAvaliLeader.labelMale>male Avali Pack Leader</IWTechAvaliLeader.labelMale> -->
+  <IWTechAvaliLeader.labelMale>männlicher Avali Rudelführer</IWTechAvaliLeader.labelMale>
+  <!-- <IWTechAvaliLeader.labelMalePlural>male Avali Pack Leaders</IWTechAvaliLeader.labelMalePlural> -->
+  <IWTechAvaliLeader.labelMalePlural>männliche Avali Rudelführer</IWTechAvaliLeader.labelMalePlural>
+  <!-- <IWTechAvaliLeader.labelFemale>female Avali Pack Leader</IWTechAvaliLeader.labelFemale> -->
+  <IWTechAvaliLeader.labelFemale>weibliche Avali Rudelführerin</IWTechAvaliLeader.labelFemale>
+  <!-- <IWTechAvaliLeader.labelFemalePlural>female Avali Pack Leaders</IWTechAvaliLeader.labelFemalePlural> -->
+  <IWTechAvaliLeader.labelFemalePlural>weibliche Avali Rudelführerinnen</IWTechAvaliLeader.labelFemalePlural>
+</LanguageData>

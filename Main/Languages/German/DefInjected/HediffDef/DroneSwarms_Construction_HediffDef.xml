@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <DroneConstruction.label>Micro drone swarm (Construction)</DroneConstruction.label> -->
+  <DroneConstruction.label>Mikro-Drohnenschwarm (Konstruktion)</DroneConstruction.label>
+  <!-- <DroneConstruction.description>This augment produces a swarm of micro-drones, dedicated to assisting in one singular task. In this case, it's construction.</DroneConstruction.description> -->
+  <DroneConstruction.description>Dieses Augment produziert einen Schwarm von Mikro-Drohnen, dazu bestimmt bei einzelnen Aufgaben (Konstruktion) Unterstützung zu gewährleisten.</DroneConstruction.description>
+</LanguageData>

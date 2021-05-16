@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <IWTribalAvaliVillager.label>Tribal avali villager</IWTribalAvaliVillager.label> -->
+  <IWTribalAvaliVillager.label>Avali Stammesangehöriger</IWTribalAvaliVillager.label>
+  <!-- <IWTribalAvaliVillager.labelPlural>Tribal avali villagers</IWTribalAvaliVillager.labelPlural> -->
+  <IWTribalAvaliVillager.labelPlural>Avali Stammesangehörige</IWTribalAvaliVillager.labelPlural>
+  <!-- <IWTribalAvaliVillager.labelMale>male Tribal avali villager</IWTribalAvaliVillager.labelMale> -->
+  <IWTribalAvaliVillager.labelMale>männlicher Avali Stammesangehöriger</IWTribalAvaliVillager.labelMale>
+  <!-- <IWTribalAvaliVillager.labelMalePlural>male Tribal avali villagers</IWTribalAvaliVillager.labelMalePlural> -->
+  <IWTribalAvaliVillager.labelMalePlural>männliche Avali Stammesangehörige</IWTribalAvaliVillager.labelMalePlural>
+  <!-- <IWTribalAvaliVillager.labelFemale>female Tribal avali villager</IWTribalAvaliVillager.labelFemale> -->
+  <IWTribalAvaliVillager.labelFemale>weibliche Avali Stammesangehörige</IWTribalAvaliVillager.labelFemale>
+  <!-- <IWTribalAvaliVillager.labelFemalePlural>female Tribal avali villagers</IWTribalAvaliVillager.labelFemalePlural> -->
+  <IWTribalAvaliVillager.labelFemalePlural>weibliche Avali Stammesangehörige</IWTribalAvaliVillager.labelFemalePlural>
+
+
+  <!-- <IWTribeLeader.label>Avali tribe Leader</IWTribeLeader.label> -->
+  <IWTribeLeader.label>Avali Stammesanführer</IWTribeLeader.label>
+  <!-- <IWTribeLeader.labelPlural>Avali tribe Leaders</IWTribeLeader.labelPlural> -->
+  <IWTribeLeader.labelPlural>Avali Stammesanführer</IWTribeLeader.labelPlural>
+  <!-- <IWTribeLeader.labelMale>male Avali tribe Leader</IWTribeLeader.labelMale> -->
+  <IWTribeLeader.labelMale>männlicher Avali Stammesanführer</IWTribeLeader.labelMale>
+  <!-- <IWTribeLeader.labelMalePlural>male Avali tribe Leaders</IWTribeLeader.labelMalePlural> -->
+  <IWTribeLeader.labelMalePlural>männliche Avali Stammesanführer</IWTribeLeader.labelMalePlural>
+  <!-- <IWTribeLeader.labelFemale>female Avali tribe Leader</IWTribeLeader.labelFemale> -->
+  <IWTribeLeader.labelFemale>weibliche Avali Stammesanführerin</IWTribeLeader.labelFemale>
+  <!-- <IWTribeLeader.labelFemalePlural>female Avali tribe Leaders</IWTribeLeader.labelFemalePlural> -->
+  <IWTribeLeader.labelFemalePlural>weibliche Avali Stammesanführerinnen</IWTribeLeader.labelFemalePlural>
+
+
+  <!-- <IWTribalAvaliWarrior.label>Tribal avali warrior</IWTribalAvaliWarrior.label> -->
+  <IWTribalAvaliWarrior.label>Avali Stammeskämpfer</IWTribalAvaliWarrior.label>
+  <!-- <IWTribalAvaliWarrior.labelPlural>Tribal avali warriors</IWTribalAvaliWarrior.labelPlural> -->
+  <IWTribalAvaliWarrior.labelPlural>Avali Stammeskämpfer</IWTribalAvaliWarrior.labelPlural>
+  <!-- <IWTribalAvaliWarrior.labelMale>male Tribal avali warrior</IWTribalAvaliWarrior.labelMale> -->
+  <IWTribalAvaliWarrior.labelMale>männlicher Avali Stammeskämpfer</IWTribalAvaliWarrior.labelMale>
+  <!-- <IWTribalAvaliWarrior.labelMalePlural>male Tribal avali warriors</IWTribalAvaliWarrior.labelMalePlural> -->
+  <IWTribalAvaliWarrior.labelMalePlural>männliche Avali Stammeskämpfer</IWTribalAvaliWarrior.labelMalePlural>
+  <!-- <IWTribalAvaliWarrior.labelFemale>female Tribal avali warrior</IWTribalAvaliWarrior.labelFemale> -->
+  <IWTribalAvaliWarrior.labelFemale>weibliche Avali Stammeskämpferin</IWTribalAvaliWarrior.labelFemale>
+  <!-- <IWTribalAvaliWarrior.labelFemalePlural>female Tribal avali warriors</IWTribalAvaliWarrior.labelFemalePlural> -->
+  <IWTribalAvaliWarrior.labelFemalePlural>weibliche Avali Stammeskämpferinnen</IWTribalAvaliWarrior.labelFemalePlural>
+</LanguageData>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <KiriPlant.label>Kiri</KiriPlant.label> -->
+  <KiriPlant.label>Kiri</KiriPlant.label>
+  <!-- <KiriPlant.description>A kiri plant.</KiriPlant.description> -->
+  <KiriPlant.description>Eine Kiri-Pflanze.</KiriPlant.description>
+
+  <!-- <NakatiOvoid.label>Nakati Ovoid</NakatiOvoid.label> -->
+  <NakatiOvoid.label>Nakati Ovoid</NakatiOvoid.label>
+  <!-- <NakatiOvoid.description>A nakati ovoid.</NakatiOvoid.description> -->
+  <NakatiOvoid.description>Eine Nakati-Ovoid.</NakatiOvoid.description>
+
+  <!-- <PiruColony.label>Piru</PiruColony.label> -->
+  <PiruColony.label>Piru</PiruColony.label>
+  <!-- <PiruColony.description>A piru colony.</PiruColony.description> -->
+  <PiruColony.description>Eine Piru-Kolonie.</PiruColony.description>
+</LanguageData>

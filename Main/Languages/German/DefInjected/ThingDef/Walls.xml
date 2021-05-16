@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliWall.label>tent wall</AvaliWall.label> -->
+  <AvaliWall.label>Zeltwand</AvaliWall.label>
+  <!-- <AvaliWall.description>An impassable wall. Capable of holding up a roof.</AvaliWall.description> -->
+  <AvaliWall.description>Eine unpassierbare Wand. Kann ein Dach halten.</AvaliWall.description>
+  <!-- <Blueprint_AvaliWall.label>tent wall (blueprint)</Blueprint_AvaliWall.label> -->
+  <Blueprint_AvaliWall.label>Zeltwand (Entwurf)</Blueprint_AvaliWall.label>
+  <!-- <Frame_AvaliWall.label>Zeltwand (building)</Frame_AvaliWall.label> -->
+  <Frame_AvaliWall.label>Zeltwand (Bau)</Frame_AvaliWall.label>
+  <!-- <Frame_AvaliWall.description>An impassable wall. Capable of holding up a roof.</Frame_AvaliWall.description> -->
+  <Frame_AvaliWall.description>Eine unpassierbare Wand. Kann ein Dach halten.</Frame_AvaliWall.description>
+</LanguageData>

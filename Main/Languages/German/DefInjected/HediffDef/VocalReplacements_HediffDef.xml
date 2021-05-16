@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <VocalReplacements.label>Vocal replacements</VocalReplacements.label> -->
+  <VocalReplacements.label>Stimmersatz</VocalReplacements.label>
+  <!-- <VocalReplacements.description>Vocal cord replacements. These make the user sound better, giving them a social gain.</VocalReplacements.description> -->
+  <VocalReplacements.description>Stimmband-Erneuerung. Lässt die Stimme des Benutzers besser klingen, was ihm einen sozialen Vorteil gibt.</VocalReplacements.description>
+  <!-- <VocalReplacements.labelNoun>a vocal replacement</VocalReplacements.labelNoun> -->
+  <VocalReplacements.labelNoun>ein Stimmersatz</VocalReplacements.labelNoun>
+</LanguageData>

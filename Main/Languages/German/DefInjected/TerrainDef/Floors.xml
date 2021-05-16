@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <TungstenTile.label>Tungsten tile</TungstenTile.label> -->
+  <TungstenTile.label>Wolframkachel</TungstenTile.label>
+  <!-- <TungstenTile.description>Tungsten tiles, with a nice shine to them.</TungstenTile.description> -->
+  <TungstenTile.description>Wolframkachel, mit einem schönen Glanz.</TungstenTile.description>
+
+  <!-- <AvaliRoomPattern.label>{0} "room" pattern floor</AvaliRoomPattern.label> -->
+  <AvaliRoomPattern.label>{0} Boden mit Raummuster</AvaliRoomPattern.label>
+  <!-- <AvaliRoomPattern.description>This floor is often described as looking like a bunch of tiny cubicles/rooms.</AvaliRoomPattern.description> -->
+  <AvaliRoomPattern.description>Beim Anblick dieser Bodenfläche denkt man oft an einen Haufen winziger Räume.</AvaliRoomPattern.description>
+
+  <!-- <AvaliFlower.label>{0} flower floor</AvaliFlower.label> -->
+  <AvaliFlower.label>{0} Blumenboden</AvaliFlower.label>
+  <!-- <AvaliFlower.description>A floor, woven of cloth into a flower.</AvaliFlower.description> -->
+  <AvaliFlower.description>Eine Bodenfläche, welche mit Stoff zu einem Blumenmuster gewebt wurde.</AvaliFlower.description>
+
+  <!-- <AvaliChaosPattern.label>{0} "chaos" floor</AvaliChaosPattern.label> -->
+  <AvaliChaosPattern.label>{0} Boden mit Chaosmuster</AvaliChaosPattern.label>
+  <!-- <AvaliChaosPattern.description>A stone floor made in a somewhat chaotic pattern.</AvaliChaosPattern.description> -->
+  <AvaliChaosPattern.description>Ein Steinboden mit einem sehr chaotischen Muster.</AvaliChaosPattern.description>
+
+  <!-- <AvaliDiamondFloor.label>{0} diamond floor</AvaliDiamondFloor.label> -->
+  <AvaliDiamondFloor.label>{0} Diamantkachelboden</AvaliDiamondFloor.label>
+  <!-- <AvaliDiamondFloor.description>A floor made in a diamond pattern.</AvaliDiamondFloor.description> -->
+  <AvaliDiamondFloor.description>Eine Kachel mit Rautenmuster.</AvaliDiamondFloor.description>
+
+  <!-- <AvaliScrapFloor.label>{0} scrap floor</AvaliScrapFloor.label> -->
+  <AvaliScrapFloor.label>{0} Schrottboden</AvaliScrapFloor.label>
+  <!-- <AvaliScrapFloor.description>A floor made of metal bits and pieces.</AvaliScrapFloor.description> -->
+  <AvaliScrapFloor.description>Ein Boden aus Metallteilen.</AvaliScrapFloor.description>
+
+  <!-- <AvaliShingleFloor.label>{0} shingle floor</AvaliShingleFloor.label> -->
+  <AvaliShingleFloor.label>{0} Schindelboden</AvaliShingleFloor.label>
+  <!-- <AvaliShingleFloor.description>A floor made of stone shingles.</AvaliShingleFloor.description> -->
+  <AvaliShingleFloor.description>Ein Boden aus Schindeln.</AvaliShingleFloor.description>
+
+  <!-- <AvaliWeaveFloor.label>{0} weave floor</AvaliWeaveFloor.label> -->
+  <AvaliWeaveFloor.label>{0} gewebter Boden</AvaliWeaveFloor.label>
+  <!-- <AvaliWeaveFloor.description>A floor, woven of cloth.</AvaliWeaveFloor.description> -->
+  <AvaliWeaveFloor.description>Eine aus Stoff gewebte Bodenfläche.</AvaliWeaveFloor.description>
+
+  <!-- <AeroTungstenTile.label>Aero-Tungsten Carbide tile</AeroTungstenTile.label> -->
+  <AeroTungstenTile.label>Aero-Wolfsramcarbid-Kachel</AeroTungstenTile.label>
+  <!-- <AeroTungstenTile.description>A metallic, white tile. It looks quite nice.</AeroTungstenTile.description> -->
+  <AeroTungstenTile.description>Eine metallisch, weiße Kachel. Sieht gut aus.</AeroTungstenTile.description>
+
+  <!-- <AerogellTile.label>Ferrogel tile</AerogellTile.label> -->
+  <AerogellTile.label>Ferrogelkachel</AerogellTile.label>
+  <!-- <AerogellTile.description>A bright orange tile made from ferrogel.</AerogellTile.description> -->
+  <AerogellTile.description>Eine leuchtend orange Kachel aus Ferrogel.</AerogellTile.description>
+</LanguageData>

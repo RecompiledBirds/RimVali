@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallTetradactylyUtilitizer.label>Install Tetradactyly Utilitizer</InstallTetradactylyUtilitizer.label> -->
+  <InstallTetradactylyUtilitizer.label>Tetradaktylie-Erweiterung implantieren</InstallTetradactylyUtilitizer.label>
+  <!-- <InstallTetradactylyUtilitizer.description>Install a Tetradactyly Utilitizer.</InstallTetradactylyUtilitizer.description> -->
+  <InstallTetradactylyUtilitizer.description>Implantiere eine Tetradaktylie-Erweiterung.</InstallTetradactylyUtilitizer.description>
+  <!-- <InstallTetradactylyUtilitizer.jobString>Installing Tetradactyly Utilitizer.</InstallTetradactylyUtilitizer.jobString> -->
+  <InstallTetradactylyUtilitizer.jobString>Implantiert eine Tetradaktylie-Erweiterung.</InstallTetradactylyUtilitizer.jobString>
+</LanguageData>

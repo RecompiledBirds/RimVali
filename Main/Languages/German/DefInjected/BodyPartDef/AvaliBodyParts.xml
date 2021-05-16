@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <RimValiTorso.label>torso</RimValiTorso.label> -->
+  <RimValiTorso.label>Oberkörper</RimValiTorso.label>
+  
+  <!-- <RimValiShoulder.label>shoulder</RimValiShoulder.label> -->
+  <RimValiShoulder.label>Schulter</RimValiShoulder.label>
+  
+  <!-- <RimValiEar.label>ear</RimValiEar.label> -->
+  <RimValiEar.label>Ohr</RimValiEar.label>
+  
+  <!-- <RimValiHand.label>hand</RimValiHand.label> -->
+  <RimValiHand.label>Hand</RimValiHand.label>
+  
+  <!-- <RimValiFinger.label>finger</RimValiFinger.label> -->
+  <RimValiFinger.label>Finger</RimValiFinger.label>
+  
+  <!-- <Talon.label>Talon</Talon.label> -->
+  <Talon.label>Kralle</Talon.label>
+  
+  <!-- <RimValiLeg.label>leg</RimValiLeg.label> -->
+  <RimValiLeg.label>Bein</RimValiLeg.label>
+  
+  <!-- <RimValiArmFeathers.label>Arm feathers</RimValiArmFeathers.label> -->
+  <RimValiArmFeathers.label>Armfedern</RimValiArmFeathers.label>
+  
+  <!-- <RimValiTail.label>Tail</RimValiTail.label> -->
+  <RimValiTail.label>Schweif</RimValiTail.label>
+</LanguageData>

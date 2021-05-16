@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallVenomTeeth.label>Install venmous teeth augment</InstallVenomTeeth.label> -->
+  <InstallVenomTeeth.label>Giftzähne implantieren</InstallVenomTeeth.label>
+  <!-- <InstallVenomTeeth.description>Install a venmous teeth augment.</InstallVenomTeeth.description> -->
+  <InstallVenomTeeth.description>Implantiere Giftzähne.</InstallVenomTeeth.description>
+  <!-- <InstallVenomTeeth.jobString>Installing venmous teeth augment.</InstallVenomTeeth.jobString> -->
+  <InstallVenomTeeth.jobString>Implantiert Giftzähne.</InstallVenomTeeth.jobString>
+</LanguageData>

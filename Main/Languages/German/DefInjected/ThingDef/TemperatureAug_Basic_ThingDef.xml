@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliBasicTempControl.label>Basic Temperature Control Augment [TCA]</AvaliBasicTempControl.label> -->
+  <AvaliBasicTempControl.label>Einfaches Temperaturkontroll-Augment [T.C.A]</AvaliBasicTempControl.label>
+  <!-- <AvaliBasicTempControl.description>This augment, sometimes refered to as a T.C.A, has the ability to assist in regulating the body temperature of Avali.</AvaliBasicTempControl.description> -->
+  <AvaliBasicTempControl.description>Dieses Augment, auch T.C.A (Temperature Control Augment) genannt, unterstützt die Regulierung der Körpertemperatur eines Avali.</AvaliBasicTempControl.description>
+</LanguageData>

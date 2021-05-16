@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliFireAfraid.degreeDatas.0.label>Avali (Transavalist/Fears fire)</AvaliFireAfraid.degreeDatas.0.label> -->
+  <AvaliFireAfraid.degreeDatas.0.label>Avali (Transavalist/Fürchtet Feuer)</AvaliFireAfraid.degreeDatas.0.label>
+  <!-- <AvaliFireAfraid.degreeDatas.0.description>[PAWN_nameDef] is an avali who fears fire and will not fight it, due to their natural fear of heat. They also like bionic body parts.</AvaliFireAfraid.degreeDatas.0.description> -->
+  <AvaliFireAfraid.degreeDatas.0.description>[PAWN_nameDef] wird Feuer, aufgrund [PAWN_possessive] natürlichen Angst davor, nicht bekämpfen. [PAWN_pronoun] hätte aber gern ein paar bionische Körperteile.</AvaliFireAfraid.degreeDatas.0.description>
+
+  <!-- <AvaliNormal.degreeDatas.0.label>Avali (Transavalist)</AvaliNormal.degreeDatas.0.label> -->
+  <AvaliNormal.degreeDatas.0.label>Avali (Transavalist)</AvaliNormal.degreeDatas.0.label>
+  <!-- <AvaliNormal.degreeDatas.0.description>[PAWN_nameDef] is an avali who will fight fire, and also would like a bionic body part. Or two. Or three. Or four.</AvaliNormal.degreeDatas.0.description> -->
+  <AvaliNormal.degreeDatas.0.description>[PAWN_nameDef] wird entgegen ihrer Natur Feuer bekämpfen. Und hätte auch gern ein bionisches Körperteil. Oder Zwei. Oder Drei. Oder Vier.</AvaliNormal.degreeDatas.0.description>
+
+  <!-- <AvaliRare.degreeDatas.0.label>Avali (Purist)</AvaliRare.degreeDatas.0.label> -->
+  <AvaliRare.degreeDatas.0.label>Avali (Purist)</AvaliRare.degreeDatas.0.label>
+  <!-- <AvaliRare.degreeDatas.0.description>Unlike most avali, [PAWN_nameDef] doesn't like bionic enhancements. Odd, right? The other avali think so too.</AvaliRare.degreeDatas.0.description> -->
+  <AvaliRare.degreeDatas.0.description>Im Gegensatz zu anderen Avali mag [PAWN_nameDef] keine bionischen Erweiterungen. Merkwürdig, oder? Zumindest werden das die meisten anderen Avali denken.</AvaliRare.degreeDatas.0.description>
+
+  <!-- <AvaliRareFireAfraid.degreeDatas.0.label>Avali (Purist/fears fire)</AvaliRareFireAfraid.degreeDatas.0.label> -->
+  <AvaliRareFireAfraid.degreeDatas.0.label>Avali (Purist/Fürchtet Feuer)</AvaliRareFireAfraid.degreeDatas.0.label>
+  <!-- <AvaliRareFireAfraid.degreeDatas.0.description>[PAWN_nameDef] has a fear of fire and bionic body parts, for some reason. I wonder if the other avali talk behind their back.</AvaliRareFireAfraid.degreeDatas.0.description> -->
+  <AvaliRareFireAfraid.degreeDatas.0.description>[PAWN_nameDef] fürchtet das Feuer, hält sich aus irgendeinem Grund aber auch von Bionik fern. Wie andere Avali wohl darüber reden?</AvaliRareFireAfraid.degreeDatas.0.description>
+
+  <!-- <AvaliBionicCareless.degreeDatas.0.label>Avali</AvaliBionicCareless.degreeDatas.0.label> -->
+  <AvaliBionicCareless.degreeDatas.0.label>Avali</AvaliBionicCareless.degreeDatas.0.label>
+  <!-- <AvaliBionicCareless.degreeDatas.0.description>[PAWN_nameDef] does not care if they have bionic body parts or not. They just want to be a happy avali.</AvaliBionicCareless.degreeDatas.0.description> -->
+  <AvaliBionicCareless.degreeDatas.0.description>[PAWN_nameDef] ist ein Avali, das sich keine großen Gedanken über Bionik macht. [PAWN_pronoun] kann mit und ohne bionische Körperteile glücklich werden.</AvaliBionicCareless.degreeDatas.0.description>
+</LanguageData>

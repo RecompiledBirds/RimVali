@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallAvaliTemperatureImplantBasic.label>Install basic Temperature Control Augment [TCA]</InstallAvaliTemperatureImplantBasic.label> -->
+  <InstallAvaliTemperatureImplantBasic.label>Einfaches T.C.A implantieren</InstallAvaliTemperatureImplantBasic.label>
+  <!-- <InstallAvaliTemperatureImplantBasic.description>Install basic Temperature Control Augment [TCA].</InstallAvaliTemperatureImplantBasic.description> -->
+  <InstallAvaliTemperatureImplantBasic.description>Implantiere ein einfaches T.C.A.</InstallAvaliTemperatureImplantBasic.description>
+  <!-- <InstallAvaliTemperatureImplantBasic.jobString>Installing basic Temperature Control Augment [TCA].</InstallAvaliTemperatureImplantBasic.jobString> -->
+  <InstallAvaliTemperatureImplantBasic.jobString>Implantiert ein einfaches T.C.A.</InstallAvaliTemperatureImplantBasic.jobString>
+</LanguageData>

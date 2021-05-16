@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <ScrapTile.label>Scrap floor</ScrapTile.label> -->
+  <ScrapTile.label>Schrottboden</ScrapTile.label>
+  <!-- <ShingleFloors.label>Shingle floor</ShingleFloors.label> -->
+  <ShingleFloors.label>Schindelboden</ShingleFloors.label>
+  <!-- <WeaveFloors.label>Shingle floor</WeaveFloors.label> -->
+  <WeaveFloors.label>Gewebter Boden</WeaveFloors.label>
+  <!-- <DiamondFloors.label>Diamond floor</DiamondFloors.label> -->
+  <DiamondFloors.label>Diamantkachelboden</DiamondFloors.label>
+  <!-- <ChaosFloor.label>Chaos floor</ChaosFloor.label> -->
+  <ChaosFloor.label>Boden mit Chaosmuster</ChaosFloor.label>
+  <!-- <FlowerFloor.label>Flower floor</FlowerFloor.label> -->
+  <FlowerFloor.label>Blumenboden</FlowerFloor.label>
+  <!-- <RoomFloor.label>"Room" pattern floor</RoomFloor.label> -->
+  <RoomFloor.label>Boden mit Raummuster</RoomFloor.label>
+</LanguageData>

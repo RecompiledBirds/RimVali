@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliBasicTurret.label>Avali turret</AvaliBasicTurret.label> -->
+  <AvaliBasicTurret.label>Avali Geschützturm</AvaliBasicTurret.label>
+  <!-- <AvaliBasicTurret.description>A lightweight railgun turret, designed for long range combat. It is somewhat less durrable than its human-built counterparts, but has great long range accuracy.</AvaliBasicTurret.description> -->
+  <AvaliBasicTurret.description>Ein leichtgewichtiger Railgun-Geschützturm, entwickelt für Fernangriffe. Es ist etwas geringere Haltbarkeit als sein von Menschen gebautes Gegenstück, ist aber bei großen Entfernungen sehr Präzise.</AvaliBasicTurret.description>
+  <!-- <AvaliBasicTurret.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</AvaliBasicTurret.comps.CompRefuelable.fuelGizmoLabel> -->
+  <AvaliBasicTurret.comps.CompRefuelable.fuelGizmoLabel>Haltbarkeit des Laufs</AvaliBasicTurret.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- <AvaliBasicTurret.comps.CompRefuelable.fuelLabel>Shots until barrel change</AvaliBasicTurret.comps.CompRefuelable.fuelLabel> -->
+  <AvaliBasicTurret.comps.CompRefuelable.fuelLabel>Schüsse bis Laufwechsel</AvaliBasicTurret.comps.CompRefuelable.fuelLabel>
+  <!-- <AvaliBasicTurret.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new barrel</AvaliBasicTurret.comps.CompRefuelable.outOfFuelMessage> -->
+  <AvaliBasicTurret.comps.CompRefuelable.outOfFuelMessage>Kann nicht schießen: Braucht neuen Lauf</AvaliBasicTurret.comps.CompRefuelable.outOfFuelMessage>
+
+  <!-- <AvaliBasicTurretBullet.label>AvaliTurretBullet</AvaliBasicTurretBullet.label> -->
+  <AvaliBasicTurretBullet.label>Avali Geschützturmprojektil</AvaliBasicTurretBullet.label>
+
+  <!-- <AvaliBasicTurretGun.label>Basic avali turret gun</AvaliBasicTurretGun.label> -->
+  <AvaliBasicTurretGun.label>Einfacher Avali Turret-Revolver</AvaliBasicTurretGun.label>
+  <!-- <AvaliBasicTurretGun.description>A automatic railgun, made to be mounted to an avali turret.</AvaliBasicTurretGun.description> -->
+  <AvaliBasicTurretGun.description>Eine automatische Railgun, zur Befestigung an einem Avali Geschützturm.</AvaliBasicTurretGun.description>
+  <!-- <AvaliBasicTurretGun.verbs.Verb_Shoot.label>Basic avali turret gun</AvaliBasicTurretGun.verbs.Verb_Shoot.label> -->
+  <AvaliBasicTurretGun.verbs.Verb_Shoot.label>Einfacher Avali Turret-Revolver</AvaliBasicTurretGun.verbs.Verb_Shoot.label>
+
+  <!-- <AvaliMiniGunTurret.label>Avali turret</AvaliMiniGunTurret.label> -->
+  <AvaliMiniGunTurret.label>Avali Minigun-Geschützturm</AvaliMiniGunTurret.label>
+  <!-- <AvaliMiniGunTurret.description>A heavy turret, with two avali miniguns onboard. Due to also being a railgun of avali design, it performs best at long range.</AvaliMiniGunTurret.description> -->
+  <AvaliMiniGunTurret.description>Ein schwerer Geschützturm, ausgestattet mit zwei Miniguns. Da es sich hier ebenfalls um eine Railgun im Avali-Design handelt, erzielt es die beste Leistung auf große Entfernung.</AvaliMiniGunTurret.description>
+  <!-- <AvaliMiniGunTurret.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</AvaliMiniGunTurret.comps.CompRefuelable.fuelGizmoLabel> -->
+  <AvaliMiniGunTurret.comps.CompRefuelable.fuelGizmoLabel>Haltbarkeit des Laufs</AvaliMiniGunTurret.comps.CompRefuelable.fuelGizmoLabel>
+  <!-- <AvaliMiniGunTurret.comps.CompRefuelable.fuelLabel>Shots until barrel change</AvaliMiniGunTurret.comps.CompRefuelable.fuelLabel> -->
+  <AvaliMiniGunTurret.comps.CompRefuelable.fuelLabel>Schüsse bis Laufwechsel</AvaliMiniGunTurret.comps.CompRefuelable.fuelLabel>
+  <!-- <AvaliMiniGunTurret.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new barrel</AvaliMiniGunTurret.comps.CompRefuelable.outOfFuelMessage> -->
+  <AvaliMiniGunTurret.comps.CompRefuelable.outOfFuelMessage>Kann nicht schießen: Braucht neuen Lauf</AvaliMiniGunTurret.comps.CompRefuelable.outOfFuelMessage>
+
+  <!-- <AvaliMiniGunTurretBullet.label>AvaliTurretBullet</AvaliMiniGunTurretBullet.label> -->
+  <AvaliMiniGunTurretBullet.label>Avali Minigun-Geschützturmprojektil</AvaliMiniGunTurretBullet.label>
+
+  <!-- <AvaliMiniGunTurretGun.label>Basic avali turret gun</AvaliMiniGunTurretGun.label> -->
+  <AvaliMiniGunTurretGun.label>Einfacher Avali Minigun-Turret-Revolver</AvaliMiniGunTurretGun.label>
+  <!-- <AvaliMiniGunTurretGun.description>A automatic railgun, made to be mounted to an avali turret.</AvaliMiniGunTurretGun.description> -->
+  <AvaliMiniGunTurretGun.description>Eine automatische Railgun, zur Befestigung an einem Avali Minigun-Geschützturm.</AvaliMiniGunTurretGun.description>
+  <!-- <AvaliMiniGunTurretGun.verbs.Verb_Shoot.label>Basic avali turret gun</AvaliMiniGunTurretGun.verbs.Verb_Shoot.label> -->
+  <AvaliMiniGunTurretGun.verbs.Verb_Shoot.label>Einfacher Avali Minigun-Turret-Revolver</AvaliMiniGunTurretGun.verbs.Verb_Shoot.label>
+</LanguageData>

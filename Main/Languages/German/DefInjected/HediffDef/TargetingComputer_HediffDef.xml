@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <TargetingComputer.label>Targeting computer</TargetingComputer.label> -->
+  <TargetingComputer.label>Zielsuch-Assistent</TargetingComputer.label>
+  <!-- <TargetingComputer.description>This augment assists the user in targeting, allowing for faster aim times and somewhat higher accuracy.</TargetingComputer.description> -->
+  <TargetingComputer.description>Dieses Augment unterstützt den Benutzer bei der Zielerfassung und ermöglicht dadurch eine geringere Zielzeit und etwas höhere Genauigkeit.</TargetingComputer.description>
+  <!-- <TargetingComputer.labelNoun>a targeting computer</TargetingComputer.labelNoun> -->
+  <TargetingComputer.labelNoun>ein Zielsuch-Assistent</TargetingComputer.labelNoun>
+</LanguageData>

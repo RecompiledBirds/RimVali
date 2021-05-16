@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliHammock.label>Avali hammock</AvaliHammock.label> -->
+  <AvaliHammock.label>Avali Hängematte</AvaliHammock.label>
+  <!-- <AvaliHammock.description>This hammock is suspended between two polls, and just the right size for an avali!</AvaliHammock.description> -->
+  <AvaliHammock.description>Diese Hängematte ist zwischen zwei Stangen aufgehängt und hat genau die richtige Größe für einen Avali!</AvaliHammock.description>
+
+  <!-- <AvaliBed.label>Avali bed</AvaliBed.label> -->
+  <AvaliBed.label>Avali Bett</AvaliBed.label>
+  <!-- <AvaliBed.description>A cozy mattress and sheets on a frame for resting. Perfectly sized for an avali</AvaliBed.description> -->
+  <AvaliBed.description>Eine gemütliche Matratze und Laken auf einem Rahmen zum Ausruhen. Hat die perfekte Größe für einen Avali.</AvaliBed.description>
+</LanguageData>

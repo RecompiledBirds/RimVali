@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <RimValiPlayerColony.label>Illuminate Colony</RimValiPlayerColony.label> -->
+  <RimValiPlayerColony.label>Illuminate Kolonie</RimValiPlayerColony.label>
+  <!-- <RimValiPlayerColony.description>A colony of avali sent by the illuminate.</RimValiPlayerColony.description> -->
+  <RimValiPlayerColony.description>Eine von den Illuminate gesendete Avali-Kolonie.</RimValiPlayerColony.description>
+  <!-- <RimValiPlayerColony.pawnsPlural>avali colonists</RimValiPlayerColony.pawnsPlural> -->
+  <RimValiPlayerColony.pawnsPlural>Avali Kolonisten</RimValiPlayerColony.pawnsPlural>
+  <!-- <RimValiPlayerColony.pawnSingular>Avali colonist</RimValiPlayerColony.pawnSingular> -->
+  <RimValiPlayerColony.pawnSingular>Avali Kolonist</RimValiPlayerColony.pawnSingular>
+
+  <!-- RitualNeo -->
+
+  <!-- <NeoPlayerColony.label>Neo's faction</NeoPlayerColony.label> -->
+  <NeoPlayerColony.label>Neo's Fraktion</NeoPlayerColony.label>
+  <!-- <NeoPlayerColony.description>A colony, formed by a streamer who ended up here somehow.</NeoPlayerColony.description> -->
+  <NeoPlayerColony.description>Eine Kolonie, geformt von einem Streamer, der irgendwie hier gelandet ist.</NeoPlayerColony.description>
+  <!-- <NeoPlayerColony.pawnsPlural>avali colonists</NeoPlayerColony.pawnsPlural> -->
+  <NeoPlayerColony.pawnsPlural>Avali Kolonisten</NeoPlayerColony.pawnsPlural>
+  <!-- <NeoPlayerColony.pawnSingular>Avali colonist</NeoPlayerColony.pawnSingular> -->
+  <NeoPlayerColony.pawnSingular>Avali Kolonist</NeoPlayerColony.pawnSingular>
+
+  <!-- Eimilian -->
+
+  <!-- <EimilPlayerColony.label>Eimilians's pack</EimilPlayerColony.label> -->
+  <EimilPlayerColony.label>Eimilians's Rudel</EimilPlayerColony.label>
+  <!-- <EimilPlayerColony.description>A pack of avali, lead by Eimilian.</EimilPlayerColony.description> -->
+  <EimilPlayerColony.description>Ein Rudel Avali, angeführt von Eimilian</EimilPlayerColony.description>
+  <!-- <EimilPlayerColony.pawnsPlural>avali colonists</EimilPlayerColony.pawnsPlural> -->
+  <EimilPlayerColony.pawnsPlural>Avali Kolonisten</EimilPlayerColony.pawnsPlural>
+  <!-- <EimilPlayerColony.pawnSingular>Avali colonist</EimilPlayerColony.pawnSingular> -->
+  <EimilPlayerColony.pawnSingular>Avali Kolonist</EimilPlayerColony.pawnSingular>
+</LanguageData>

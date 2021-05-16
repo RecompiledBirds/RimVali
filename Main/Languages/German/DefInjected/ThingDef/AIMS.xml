@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliAIMS.label>AIMS</AvaliAIMS.label> -->
+  <AvaliAIMS.label>AIMS</AvaliAIMS.label>
+  <!-- <AvaliAIMS.description>AIMS is an improved mortar system, designed for accuracy.</AvaliAIMS.description> -->
+  <AvaliAIMS.description>AIMS ist ein verbessertes, auf Genauigkeit ausgelegtes Mörsersystem.</AvaliAIMS.description>
+
+  <!-- <AIMSLauncher.label>AIMS</AIMSLauncher.label> -->
+  <AIMSLauncher.label>AIMS</AIMSLauncher.label>
+  <!-- <AIMSLauncher.description>AIMS launch system.</AIMSLauncher.description> -->
+  <AIMSLauncher.description>AIMS Startsystem.</AIMSLauncher.description>
+  <!-- <AIMSLauncher.verbs.Verb_Shoot.label>AIMS</AIMSLauncher.verbs.Verb_Shoot.label> -->
+  <AIMSLauncher.verbs.Verb_Shoot.label>AIMS</AIMSLauncher.verbs.Verb_Shoot.label>
+</LanguageData>

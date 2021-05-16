@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <RimValiInstallPegTail.label>install avali peg tail</RimValiInstallPegTail.label> -->
+  <RimValiInstallPegTail.label>Avali Ringelschwanz implantieren</RimValiInstallPegTail.label>
+  <!-- <RimValiInstallPegTail.description>Install an avali peg tail.</RimValiInstallPegTail.description> -->
+  <RimValiInstallPegTail.description>Implantiere einen Avali Ringelschwanz.</RimValiInstallPegTail.description>
+  <!-- <RimValiInstallPegTail.jobString>Installing peg tail.</RimValiInstallPegTail.jobString> -->
+  <RimValiInstallPegTail.jobString>Implantiert einen Avali Ringelschwanz.</RimValiInstallPegTail.jobString>
+
+  <!-- <RimValiAddClothFeathers.label>sew cloth feathers</RimValiAddClothFeathers.label> -->
+  <RimValiAddClothFeathers.label>Stofffedern annähen</RimValiAddClothFeathers.label>
+  <!-- <RimValiAddClothFeathers.description>sew cloth feathers onto a arm.</RimValiAddClothFeathers.description> -->
+  <RimValiAddClothFeathers.description>Nähe Stofffedern an einen Arm.</RimValiAddClothFeathers.description>
+  <!-- <RimValiAddClothFeathers.jobString>Sewing cloth feathers.</RimValiAddClothFeathers.jobString> -->
+  <RimValiAddClothFeathers.jobString>Näht Stofffedern an einen Arm.</RimValiAddClothFeathers.jobString>
+</LanguageData>

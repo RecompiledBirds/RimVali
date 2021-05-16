@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <DroneMining.label>Micro drone swarm (Mining)</DroneMining.label> -->
+  <DroneMining.label>Mikro-Drohnenschwarm (Bergbau)</DroneMining.label>
+  <!-- <DroneMining.description>This augment produces a swarm of micro-drones, dedicated to assisting in one singular task. In this case, it's mining.</DroneMining.description> -->
+  <DroneMining.description>Dieses Augment produziert einen Schwarm von Mikro-Drohnen, dazu bestimmt bei einzelnen Aufgaben (Bergbau) Unterstützung zu gewährleisten.</DroneMining.description>
+</LanguageData>

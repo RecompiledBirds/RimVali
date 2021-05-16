@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <VenomTeeth.label>Venomous Teeth augment</VenomTeeth.label> -->
+  <VenomTeeth.label>Giftzähne</VenomTeeth.label>
+  <!-- <VenomTeeth.description>This augment allows the avali it's installed on to inject a amount of venom when they bite a target. However, talking and eating become harder, as they must avoid triggering the mechanism.</VenomTeeth.description> -->
+  <VenomTeeth.description>Giftzähne setzen beim Biss eine gewisse Menge Gift frei. Allerdings ist der Auslöser des Mechanismus etwas fragil, wodurch die Sprech- und Essfähigkeit eines Avali eingeschränkt sind.</VenomTeeth.description>
+</LanguageData>

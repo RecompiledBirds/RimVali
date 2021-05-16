@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <IWPlayerColony.label>Independent worlds tribe</IWPlayerColony.label> -->
+  <IWPlayerColony.label>Stamm von den Unabhängigen Welten</IWPlayerColony.label>
+  <!-- <IWPlayerColony.description>A tribe of avali from the independent worlds.</IWPlayerColony.description> -->
+  <IWPlayerColony.description>Ein Avali-Stamm von den Unabhängigen Welten.</IWPlayerColony.description>
+  <!-- <IWPlayerColony.pawnsPlural>avali</IWPlayerColony.pawnsPlural> -->
+  <IWPlayerColony.pawnsPlural>Avali</IWPlayerColony.pawnsPlural>
+  <!-- <IWPlayerColony.pawnSingular>Avali</IWPlayerColony.pawnSingular>  -->
+  <IWPlayerColony.pawnSingular>Avali</IWPlayerColony.pawnSingular> 
+</LanguageData>

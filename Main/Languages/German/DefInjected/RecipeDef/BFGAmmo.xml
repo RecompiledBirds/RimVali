@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <MakeBFGSabot.label>Forge BFG sabots</MakeBFGSabot.label> -->
+  <MakeBFGSabot.label>BFG Sabots schmieden</MakeBFGSabot.label>
+  <!-- <MakeBFGSabot.description>Forge BFG Sabots from tungsten.</MakeBFGSabot.description> -->
+  <MakeBFGSabot.description>Schmiede BFG Sabots aus Tungsten.</MakeBFGSabot.description>
+  <!-- <MakeBFGSabot.jobString>Forging BFG sabots</MakeBFGSabot.jobString> -->
+  <MakeBFGSabot.jobString>Schmiedet BFG Sabots.</MakeBFGSabot.jobString>
+</LanguageData>

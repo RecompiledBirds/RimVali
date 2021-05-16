@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <RawKiri.label>Kiri fruits</RawKiri.label> -->
+  <RawKiri.label>Kiri Früchte</RawKiri.label>
+  <!-- <RawKiri.description>Kiri fruits.</RawKiri.description> -->
+  <RawKiri.description>Kiri Früchte.</RawKiri.description>
+
+  <!-- <NakatiBark.label>Nakati bark</NakatiBark.label> -->
+  <NakatiBark.label>Nakati-Rinde</NakatiBark.label>
+  <!-- <NakatiBark.description>Nakati bark.</NakatiBark.description> -->
+  <NakatiBark.description>Nakati-Rinde.</NakatiBark.description>
+
+  <!-- <PiruFlour.label>Piru flour</PiruFlour.label> -->
+  <PiruFlour.label>Piru-Mehl</PiruFlour.label>
+  <!-- <PiruFlour.description>Piru flour.</PiruFlour.description> -->
+  <PiruFlour.description>Piru-Mehl.</PiruFlour.description>
+</LanguageData>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliIndepenentWorldsTribal.label>Independent Worlds Avali Pack (Tribal)</AvaliIndepenentWorldsTribal.label> -->
+  <AvaliIndepenentWorldsTribal.label>Avali-Rudel von den Unabhängigen Welten (Stamm)</AvaliIndepenentWorldsTribal.label>
+  <!-- <AvaliIndepenentWorldsTribal.description>A pack of tribal independent worlds avali.</AvaliIndepenentWorldsTribal.description> -->
+  <AvaliIndepenentWorldsTribal.description>Ein als Stamm organisiertes Rudel Avali von den Unabhängigen Welten.</AvaliIndepenentWorldsTribal.description>
+  <!-- <AvaliIndepenentWorldsTribal.pawnsPlural>Avali</AvaliIndepenentWorldsTribal.pawnsPlural> -->
+  <AvaliIndepenentWorldsTribal.pawnsPlural>Avali</AvaliIndepenentWorldsTribal.pawnsPlural>
+  <!-- <AvaliIndepenentWorldsTribal.leaderTitle>Pack Leader</AvaliIndepenentWorldsTribal.leaderTitle> -->
+  <AvaliIndepenentWorldsTribal.leaderTitle>Rudelführer</AvaliIndepenentWorldsTribal.leaderTitle>
+  <!-- <AvaliIndepenentWorldsTribal.pawnSingular>Avali</AvaliIndepenentWorldsTribal.pawnSingular>  -->
+  <AvaliIndepenentWorldsTribal.pawnSingular>Avali</AvaliIndepenentWorldsTribal.pawnSingular> 
+
+
+  <!-- <AvaliIndepenentWorldsIlluminate.label>Independent Worlds Avali Pack (Illuminate break-off)</AvaliIndepenentWorldsIlluminate.label> -->
+  <AvaliIndepenentWorldsIlluminate.label>Avali-Rudel von den Unabhängigen Welten (von den Illuminate abgespalten)</AvaliIndepenentWorldsIlluminate.label>
+  <!-- <AvaliIndepenentWorldsIlluminate.description>A small faction of avali that has managed to break away from the illuminate.</AvaliIndepenentWorldsIlluminate.description> -->
+  <AvaliIndepenentWorldsIlluminate.description>Eine kleine Fraktion Avali, die es geschafft haben sich von den Illuminate loszusagen.</AvaliIndepenentWorldsIlluminate.description>
+  <!-- <AvaliIndepenentWorldsIlluminate.pawnsPlural>Avali</AvaliIndepenentWorldsIlluminate.pawnsPlural> -->
+  <AvaliIndepenentWorldsIlluminate.pawnsPlural>Avali</AvaliIndepenentWorldsIlluminate.pawnsPlural>
+  <!-- <AvaliIndepenentWorldsIlluminate.leaderTitle>Pack Leader</AvaliIndepenentWorldsIlluminate.leaderTitle> -->
+  <AvaliIndepenentWorldsIlluminate.leaderTitle>Rudelführer</AvaliIndepenentWorldsIlluminate.leaderTitle>
+  <!-- <AvaliIndepenentWorldsIlluminate.pawnSingular>Avali</AvaliIndepenentWorldsIlluminate.pawnSingular>  -->
+  <AvaliIndepenentWorldsIlluminate.pawnSingular>Avali</AvaliIndepenentWorldsIlluminate.pawnSingular> 
+</LanguageData>

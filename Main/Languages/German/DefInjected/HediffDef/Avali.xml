@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliBiologyControl.label>Biology control hediff</AvaliBiologyControl.label> -->
+  <AvaliBiologyControl.label>Biokontrollsteuerung</AvaliBiologyControl.label>
+  <!-- <AvaliBiologyControl.description>Control</AvaliBiologyControl.description> -->
+  <AvaliBiologyControl.description>Steuerung</AvaliBiologyControl.description>
+  <!-- <AvaliBiologyControl.comps.1.showText.0.textToShow>chirp</AvaliBiologyControl.comps.1.showText.0.textToShow> -->
+  <AvaliBiologyControl.comps.1.showText.0.textToShow>zwitscher</AvaliBiologyControl.comps.1.showText.0.textToShow>
+  <!-- <AvaliBiologyControl.comps.1.showText.1.textToShow>squeak</AvaliBiologyControl.comps.1.showText.1.textToShow> -->
+  <AvaliBiologyControl.comps.1.showText.1.textToShow>quietsch</AvaliBiologyControl.comps.1.showText.1.textToShow>
+  <!-- <AvaliBiologyControl.comps.1.showText.2.textToShow>peep</AvaliBiologyControl.comps.1.showText.2.textToShow> -->
+  <AvaliBiologyControl.comps.1.showText.2.textToShow>piep</AvaliBiologyControl.comps.1.showText.2.textToShow>
+  
+  <!-- <AmmoniaBurn.label>Ammonia Burn</AmmoniaBurn.label> -->
+  <AmmoniaBurn.label>Ammoniak Verbrennung</AmmoniaBurn.label>
+  <!-- <AmmoniaBurn.description>A "burn" caused by exposure to ammonia.</AmmoniaBurn.description> -->
+  <AmmoniaBurn.description>Eine "Verbrennung", ausgelöst durch den Kontakt mit Ammoniak.</AmmoniaBurn.description>
+  <!-- <AmmoniaBurn.comps.0.labelTendedWell>bandaged</AmmoniaBurn.comps.0.labelTendedWell> -->
+  <AmmoniaBurn.comps.0.labelTendedWell>bandagiert</AmmoniaBurn.comps.0.labelTendedWell>
+  <!-- <AmmoniaBurn.comps.0.labelTendedWellInner>tended</AmmoniaBurn.comps.0.labelTendedWellInner> -->
+  <AmmoniaBurn.comps.0.labelSolidTendedWell>behandelt</AmmoniaBurn.comps.0.labelSolidTendedWell>
+  <!-- <AmmoniaBurn.comps.2.permanentLabel>ammonia burn scar</AmmoniaBurn.comps.2.permanentLabel> -->
+  <AmmoniaBurn.comps.2.permanentLabel>Brandnarbe durch Ammoniak</AmmoniaBurn.comps.2.permanentLabel>
+  <!-- <AmmoniaBurn.injuryProps.destroyedLabel>Burned off (ammonia)</AmmoniaBurn.injuryProps.destroyedLabel> -->
+  <AmmoniaBurn.injuryProps.destroyedLabel>verbrannt (Ammoniak)</AmmoniaBurn.injuryProps.destroyedLabel>
+  <!-- <AmmoniaBurn.injuryProps.destroyedOutLabel>Burned out (ammonia)</AmmoniaBurn.injuryProps.destroyedOutLabel> -->
+  <AmmoniaBurn.injuryProps.destroyedOutLabel>herausgebrannt (Ammoniak)</AmmoniaBurn.injuryProps.destroyedOutLabel>
+  <!-- <AmmoniaBurn.labelNounPretty>{0} in the {1}</AmmoniaBurn.labelNounPretty> -->
+  <AmmoniaBurn.labelNounPretty>eine Verbrennung (Ammoniak) am Körperteil '{1}'</AmmoniaBurn.labelNounPretty>
+  
+  <!-- <AmmoniaPoisoning.label>Ammonia poisoning</AmmoniaPoisoning.label> -->
+  <AmmoniaPoisoning.label>Ammoniakvergiftung</AmmoniaPoisoning.label>
+  <!-- <AmmoniaPoisoning.description>Ammonia in the blood stream. Ammonia is toxic to most, if not all earth-like organisms, and can cause several health issues.</AmmoniaPoisoning.description> -->
+  <AmmoniaPoisoning.description>Ammoniak im Blutkreislauf. Ammoniak ist giftig für die meisten, wenn nicht für alle, erdähnlichen Organismen und kann mehrere ernsthafte, gesundheitliche Schäden verursachen.</AmmoniaPoisoning.description>
+  <!-- <AmmoniaPoisoning.stages.0.label>Initial poisoning</AmmoniaPoisoning.stages.0.label> -->
+  <AmmoniaPoisoning.stages.0.label>Beginnend</AmmoniaPoisoning.stages.0.label>
+  <!-- <AmmoniaPoisoning.stages.1.label>Initial</AmmoniaPoisoning.stages.1.label> -->
+  <AmmoniaPoisoning.stages.1.label>Beginnend</AmmoniaPoisoning.stages.1.label>
+  <!-- <AmmoniaPoisoning.stages.2.label>Minor</AmmoniaPoisoning.stages.2.label> -->
+  <AmmoniaPoisoning.stages.2.label>Leicht</AmmoniaPoisoning.stages.2.label>
+  <!-- <AmmoniaPoisoning.stages.3.label>Moderate</AmmoniaPoisoning.stages.3.label> -->
+  <AmmoniaPoisoning.stages.3.label>Mittel</AmmoniaPoisoning.stages.3.label>
+  <!-- <AmmoniaPoisoning.stages.4.label>Serious</AmmoniaPoisoning.stages.4.label> -->
+  <AmmoniaPoisoning.stages.4.label>Schwer</AmmoniaPoisoning.stages.4.label>
+  <!-- <AmmoniaPoisoning.stages.5.label>Extreme</AmmoniaPoisoning.stages.5.label> -->
+  <AmmoniaPoisoning.stages.5.label>Extrem</AmmoniaPoisoning.stages.5.label>
+</LanguageData>

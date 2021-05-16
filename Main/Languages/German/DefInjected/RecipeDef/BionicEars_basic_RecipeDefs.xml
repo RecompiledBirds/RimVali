@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallAvaliBasicBionicEar.label>Install basic bionic Ear</InstallAvaliBasicBionicEar.label> -->
+  <InstallAvaliBasicBionicEar.label>Einfaches bionisches Ohr implantieren</InstallAvaliBasicBionicEar.label>
+  <!-- <InstallAvaliBasicBionicEar.description>Install a basic bionic Ear.</InstallAvaliBasicBionicEar.description> -->
+  <InstallAvaliBasicBionicEar.description>Implantiere ein einfaches bionisches Ohr.</InstallAvaliBasicBionicEar.description>
+  <!-- <InstallAvaliBasicBionicEar.jobString>Installing basic bionic Ear.</InstallAvaliBasicBionicEar.jobString> -->
+  <InstallAvaliBasicBionicEar.jobString>Implantiert ein einfaches bionisches Ohr.</InstallAvaliBasicBionicEar.jobString>
+</LanguageData>

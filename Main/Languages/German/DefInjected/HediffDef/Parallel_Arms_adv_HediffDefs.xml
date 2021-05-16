@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <ParallelArm.label>Parallel arms</ParallelArm.label> -->
+  <ParallelArm.label>Parallele Arme</ParallelArm.label>
+  <!-- <ParallelArm.description>A set of parallel arms. Great for fine details, but more fragile.</ParallelArm.description> -->
+  <ParallelArm.description>Ein Paar paralleler Arme. Praktisch für Feinarbeiten, aber sehr empfindlich.</ParallelArm.description>
+  <!-- <ParallelArm.labelNoun>a set of parallel arms</ParallelArm.labelNoun> -->
+  <ParallelArm.labelNoun>ein Paar paralleler Arme</ParallelArm.labelNoun>
+</LanguageData>

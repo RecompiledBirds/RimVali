@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliAteAvaliDirect.stages.0.label>Ate avali</AvaliAteAvaliDirect.stages.0.label> -->
+  <AvaliAteAvaliDirect.stages.0.label>Avali gegessen (roh)</AvaliAteAvaliDirect.stages.0.label>
+  <!-- <AvaliAteAvaliDirect.stages.0.description>I had to eat the flesh of another avali..</AvaliAteAvaliDirect.stages.0.description> -->
+  <AvaliAteAvaliDirect.stages.0.description>Ich habe das Fleisch eines anderen Avali gegessen, roh, wie ein Tier. Das ist ein Alptraum.</AvaliAteAvaliDirect.stages.0.description>
+
+  <!-- <AvaliAteAvaliAsIngredient.stages.0.label>Ate cooked avali</AvaliAteAvaliAsIngredient.stages.0.label> -->
+  <AvaliAteAvaliAsIngredient.stages.0.label>Avali gegessen (gekocht)</AvaliAteAvaliAsIngredient.stages.0.label>
+  <!-- <AvaliAteAvaliAsIngredient.stages.0.description>I had to eat the cooked flesh of another avali..</AvaliAteAvaliAsIngredient.stages.0.description> -->
+  <AvaliAteAvaliAsIngredient.stages.0.description>Ich habe eine Mahlzeit mit dem Fleisch eines Avali als Zutat gegessen. Das ist so furchtbar.</AvaliAteAvaliAsIngredient.stages.0.description>
+
+  <!-- <KnowButcheredAvaliCorpse.stages.0.label>We butchered an avali</KnowButcheredAvaliCorpse.stages.0.label> -->
+  <KnowButcheredAvaliCorpse.stages.0.label>wir haben einen Avali geschlachtet</KnowButcheredAvaliCorpse.stages.0.label>
+  <!-- <KnowButcheredAvaliCorpse.stages.0.description>We butchered an avali, as if they were some kind of primitive animal. We're more than that!!</KnowButcheredAvaliCorpse.stages.0.description> -->
+  <KnowButcheredAvaliCorpse.stages.0.description>Wir haben ein Avali geschlachtet, als wäre es ein primitives Tier. Wir sind viel mehr als das!!</KnowButcheredAvaliCorpse.stages.0.description>
+
+  <!-- <ButcheredAvali.stages.0.label>I butchered an avali</ButcheredAvali.stages.0.label> -->
+  <ButcheredAvali.stages.0.label>Avali geschlachtet</ButcheredAvali.stages.0.label>
+  <!-- <ButcheredAvali.stages.0.description>I had to butcher one of my own kind up.. like they were some kind of animal. I feel terrible.</ButcheredAvali.stages.0.description> -->
+  <ButcheredAvali.stages.0.description>Ich habe jemanden meiner eigenen Art geschlachtet.. als wäre es ein Tier. Ich fühle mich furchtbar.</ButcheredAvali.stages.0.description>
+</LanguageData>

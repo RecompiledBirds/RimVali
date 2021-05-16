@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <IWAvaliScenario.label>Independent worlds tribe</IWAvaliScenario.label> -->
+  <IWAvaliScenario.label>Stamm von den Unabhängigen Welten</IWAvaliScenario.label>
+  <!-- <IWAvaliScenario.description>A small tribe of avali</IWAvaliScenario.description> -->
+  <IWAvaliScenario.description>Ein kleiner Stamm Avali</IWAvaliScenario.description>
+  <!-- <IWAvaliScenario.scenario.name>Independent worlds tribe</IWAvaliScenario.scenario.name> -->
+  <IWAvaliScenario.scenario.name>Stamm von den Unabhängigen Welten</IWAvaliScenario.scenario.name>
+  <!-- <IWAvaliScenario.scenario.summary>Similar to the classic rimworld experience, but with avali.</IWAvaliScenario.scenario.summary> -->
+  <IWAvaliScenario.scenario.summary>Vergleichbar mit der klassischen Rimworld Version, hier mit Avali.</IWAvaliScenario.scenario.summary>
+  <!-- <IWAvaliScenario.scenario.description>After a series of raids forced your pack to flee, you find yourself here..</IWAvaliScenario.scenario.description> -->
+  <IWAvaliScenario.scenario.description>Nachdem eine Reihe von Überfällen dein Rudel zur Flucht gezwungen hat, befindet ihr euch nun hier..</IWAvaliScenario.scenario.description>
+  <!-- <IWAvaliScenario.scenario.parts.10.text>After a series of raids forced your pack to flee your home, you find yourself here.. will you survive? -->
+  <IWAvaliScenario.scenario.parts.10.text>Nachdem eine Reihe von Überfällen dein Rudel zur Flucht gezwungen hat, befindet ihr euch nun hier.. Werdet ihr überleben?
+  </IWAvaliScenario.scenario.parts.10.text>
+</LanguageData>

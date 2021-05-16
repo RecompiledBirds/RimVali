@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallDM.label>Install micro drone swarm (mining)</InstallDM.label> -->
+  <InstallDM.label>Mikro-Drohnenschwarm (Bergbau) implantieren</InstallDM.label>
+  <!-- <InstallDM.description>Install micro drone swarm (mining).</InstallDM.description> -->
+  <InstallDM.description>Implantiere einen Mikro-Drohnenschwarm (Bergbau).</InstallDM.description>
+  <!-- <InstallDM.jobString>Installing micro drone swarm (mining).</InstallDM.jobString> -->
+  <InstallDM.jobString>Implantiert einen Mikro-Drohnenschwarm (Bergbau).</InstallDM.jobString>
+</LanguageData>

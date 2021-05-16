@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallAvaliASR.label>Install autophagic system rewrite</InstallAvaliASR.label> -->
+  <InstallAvaliASR.label>Autophagic System Rewrite implantieren</InstallAvaliASR.label>
+  <!-- <InstallAvaliASR.description>Install autophagic system rewrite.</InstallAvaliASR.description> -->
+  <InstallAvaliASR.description>Implantiere Autophagic System Rewrite.</InstallAvaliASR.description>
+  <!-- <InstallAvaliASR.jobString>Installing autophagic system rewrite.</InstallAvaliASR.jobString> -->
+  <InstallAvaliASR.jobString>Implantiert Autophagic System Rewrite.</InstallAvaliASR.jobString>
+</LanguageData>

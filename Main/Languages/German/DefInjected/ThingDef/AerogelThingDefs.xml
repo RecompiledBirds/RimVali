@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliAerogel.label>Ferrogel</AvaliAerogel.label> -->
+  <AvaliAerogel.label>Ferrogel</AvaliAerogel.label>
+  <!-- <AvaliAerogel.description>Often mistranslated to aerogel, ferrogel is the base building block of many avali technologies. It's been made in neat, stackable pucks for easy storage.</AvaliAerogel.description> -->
+  <AvaliAerogel.description>Ferrogel, oft auch als Aerogel bezeichnet, ist der Hauptbestandteil der meisten Avali-Technologien. Zugeschnitten zu praktischen, stapelparen Barren - für einfachere Lagerung.</AvaliAerogel.description>
+  <!-- <AvaliAerogel.stuffProps.stuffAdjective>Ferrogel</AvaliAerogel.stuffProps.stuffAdjective> -->
+  <AvaliAerogel.stuffProps.stuffAdjective>Ferrogel</AvaliAerogel.stuffProps.stuffAdjective>
+</LanguageData>

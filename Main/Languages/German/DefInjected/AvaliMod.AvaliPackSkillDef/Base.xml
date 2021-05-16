@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <MilitaryRangedPack.specialityLabel>Military pack</MilitaryRangedPack.specialityLabel> -->
+  <MilitaryRangedPack.specialityLabel>Militärisches Rudel</MilitaryRangedPack.specialityLabel>
+  <!-- <MilitaryRangedPack.effectList.0>Aim time: -20%</MilitaryRangedPack.effectList.0> -->
+  <MilitaryRangedPack.effectList.0>Zielzeit: -20%</MilitaryRangedPack.effectList.0>
+  <!-- <MilitaryRangedPack.effectList.1>Shooting accuracy: +50%</MilitaryRangedPack.effectList.1> -->
+  <MilitaryRangedPack.effectList.1>Zielgenauigkeit: +50%</MilitaryRangedPack.effectList.1>
+  <!-- <MilitaryRangedPack.effectList.2>Melee hit chance: +10%</MilitaryRangedPack.effectList.2> -->
+  <MilitaryRangedPack.effectList.2>Nahkampf Trefferchance: +10%</MilitaryRangedPack.effectList.2>
+</LanguageData>

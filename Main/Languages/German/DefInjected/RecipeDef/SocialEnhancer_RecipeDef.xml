@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallSC.label>Install social capability enhancer</InstallSC.label> -->
+  <InstallSC.label>Sozialitäts-Verstärker implantieren</InstallSC.label>
+  <!-- <InstallSC.description>Install a social capability enhancer.</InstallSC.description> -->
+  <InstallSC.description>Implantiere einen Sozialitäts-Verstärker.</InstallSC.description>
+  <!-- <InstallSC.jobString>Installing social capability enhancer.</InstallSC.jobString> -->
+  <InstallSC.jobString>Implantiert einen Sozialitäts-Verstärker.</InstallSC.jobString>
+</LanguageData>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliNanoCarbon.label>Refined Carbon</AvaliNanoCarbon.label> -->
+  <AvaliNanoCarbon.label>Raffinierter Kohlenstoff</AvaliNanoCarbon.label>
+  <!-- <AvaliNanoCarbon.description>A type of avali fabric, stored in neat, stackable pucks (similar to &lt;color=#0099ff&gt;aerogel&lt;/color&gt;).</AvaliNanoCarbon.description> -->
+  <AvaliNanoCarbon.description>Ein für Avali spezialisiertes raffiniertes Kohlenstoff-Gewebe, zugeschnitten zu praktischen, stapelparen Barren (ähnlich wie &lt;color=#0099ff&gt;Ferrogel&lt;/color&gt;).</AvaliNanoCarbon.description>
+  <!-- <AvaliNanoCarbon.stuffProps.stuffAdjective>Avali nano-carbon</AvaliNanoCarbon.stuffProps.stuffAdjective> -->
+  <AvaliNanoCarbon.stuffProps.stuffAdjective>Avali Kohlenstoff</AvaliNanoCarbon.stuffProps.stuffAdjective>
+
+  <!-- <AvaliNanoFiber.label>Nanofiber</AvaliNanoFiber.label> -->
+  <AvaliNanoFiber.label>Nanotuch</AvaliNanoFiber.label>
+  <!-- <AvaliNanoFiber.description>Avali nanofiber is very important. They use it in clothing, their tents, and more! It's fairly strong too, for a cloth-like material</AvaliNanoFiber.description> -->
+  <AvaliNanoFiber.description>Nanotuch ist für Avali sehr wichtig, da es für nahezu alles verwendet wird; Kleidung, Zelte und vieles mehr! Dafür, dass es nur Stoff ist, ist es sehr robust.</AvaliNanoFiber.description>  <!-- <AvaliNanoFiber.stuffProps.stuffAdjective>Avali nanofiber</AvaliNanoFiber.stuffProps.stuffAdjective> -->
+  <AvaliNanoFiber.stuffProps.stuffAdjective>Avali Nanotuch</AvaliNanoFiber.stuffProps.stuffAdjective>
+
+  <!-- <AvaliAeroweave.label>Ferroweave</AvaliAeroweave.label> -->
+  <AvaliAeroweave.label>Ferroseide</AvaliAeroweave.label>
+  <!-- <AvaliAeroweave.description>Avali aeroweave. It's a terrible at conducting heat, which makes it an amazing insulator for clothing and such.</AvaliAeroweave.description> -->
+  <AvaliAeroweave.description>Avali Ferroseide ist ein sehr schlechter Wärmeleiter, was es zu einem hervorragenden Isolator für Kleidung macht.</AvaliAeroweave.description>
+  <!-- <AvaliAeroweave.stuffProps.stuffAdjective>Aeroweave</AvaliAeroweave.stuffProps.stuffAdjective> -->
+  <AvaliAeroweave.stuffProps.stuffAdjective>Ferroseide</AvaliAeroweave.stuffProps.stuffAdjective>
+
+  <!-- <AvaliNanoCarbonFiber.label>Nano-Carbon fiber</AvaliNanoCarbonFiber.label> -->
+  <AvaliNanoCarbonFiber.label>Nano-Kohlenstofffaser</AvaliNanoCarbonFiber.label>
+  <!-- <AvaliNanoCarbonFiber.description>A special type of nano fiber, with carbon woven in. This version is more resistant to damage like bullets, but is stiff, slowing the wearer.</AvaliNanoCarbonFiber.description> -->
+  <AvaliNanoCarbonFiber.description>Eine spezielle Art von Nanofaser mit eingewebtem Kohlenstoff. Es ist widerstandsfähiger gegen Schüsse, aber steif und verlangsamt den Träger.</AvaliNanoCarbonFiber.description>
+  <!-- <AvaliNanoCarbonFiber.stuffProps.stuffAdjective>Nano-carbon fiber</AvaliNanoCarbonFiber.stuffProps.stuffAdjective> -->
+  <AvaliNanoCarbonFiber.stuffProps.stuffAdjective>Nano-Kohlenstofffaser</AvaliNanoCarbonFiber.stuffProps.stuffAdjective>
+
+  <!-- <AvaliAeroTungstenFiber.label>Tungsten-aero fiber</AvaliAeroTungstenFiber.label> -->
+  <AvaliAeroTungstenFiber.label>Ferro-Wolframcarbid-Fasern</AvaliAeroTungstenFiber.label>
+  <!-- <AvaliAeroTungstenFiber.description>Tungsten-Aero fiber is a strong, resilient material made from a combination of aero tungsten carbide, and nano carbon fiber.</AvaliAeroTungstenFiber.description> -->
+  <AvaliAeroTungstenFiber.description>Ferro-Wolframcarbid-Faser ist ein starkes, elastisches Material, das aus einer Kombination von Ferro-Wolframcarbid und Nano-Kohlenstofffaser hergestellt wird.</AvaliAeroTungstenFiber.description>
+  <!-- <AvaliAeroTungstenFiber.stuffProps.stuffAdjective>Tungsten-aero fiber</AvaliAeroTungstenFiber.stuffProps.stuffAdjective> -->
+  <AvaliAeroTungstenFiber.stuffProps.stuffAdjective>Ferro-Wolframcarbid-Fasern</AvaliAeroTungstenFiber.stuffProps.stuffAdjective>
+</LanguageData>

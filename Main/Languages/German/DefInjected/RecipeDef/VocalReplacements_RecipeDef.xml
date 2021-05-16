@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallVocalReplacements.label>Install vocal replacements</InstallVocalReplacements.label> -->
+  <InstallVocalReplacements.label>Stimmersatz implantieren</InstallVocalReplacements.label>
+  <!-- <InstallVocalReplacements.description>Install a vocal replacements.</InstallVocalReplacements.description> -->
+  <InstallVocalReplacements.description>Implantiere einen Stimmersatz.</InstallVocalReplacements.description>
+  <!-- <InstallVocalReplacements.jobString>Installing vocal replacements.</InstallVocalReplacements.jobString> -->
+  <InstallVocalReplacements.jobString>Implantiert einen Stimmersatz.</InstallVocalReplacements.jobString>
+</LanguageData>

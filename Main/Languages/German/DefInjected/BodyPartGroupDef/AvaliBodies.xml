@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <LeftLeg.label>left leg</LeftLeg.label> -->
+  <LeftLeg.label>linkes Bein</LeftLeg.label>
+  
+  <!-- <RightLeg.label>right leg</RightLeg.label> -->
+  <RightLeg.label>rechtes Bein</RightLeg.label>
+  
+  <!-- <Pelvis.label>pelvis</Pelvis.label> -->
+  <Pelvis.label>Becken</Pelvis.label>
+</LanguageData>

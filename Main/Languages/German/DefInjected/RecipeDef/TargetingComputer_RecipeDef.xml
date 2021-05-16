@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallTC.label>Install Targeting computer</InstallTC.label> -->
+  <InstallTC.label>Zielsuch-Assistent implantieren</InstallTC.label>
+  <!-- <InstallTC.description>Install a targeting computer.</InstallTC.description> -->
+  <InstallTC.description>Implantiere einen Zielsuch-Assistenten.</InstallTC.description>
+  <!-- <InstallTC.jobString>Installing targeting computer.</InstallTC.jobString> -->
+  <InstallTC.jobString>Implantiert einen Zielsuch-Assistenten.</InstallTC.jobString>
+</LanguageData>

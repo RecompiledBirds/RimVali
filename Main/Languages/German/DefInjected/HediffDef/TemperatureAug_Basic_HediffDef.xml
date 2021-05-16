@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliTemperatureImplantBasic.label>Basic T.C.A</AvaliTemperatureImplantBasic.label> -->
+  <AvaliTemperatureImplantBasic.label>Einfaches Temperaturkontroll-Augment [T.C.A]</AvaliTemperatureImplantBasic.label>
+  <!-- <AvaliTemperatureImplantBasic.description>This augment, sometimes refered to as a T.C.A (short for Temperature Control Augment), has the ability to assist in regulating the body temperature of Avali.</AvaliTemperatureImplantBasic.description> -->
+  <AvaliTemperatureImplantBasic.description>Dieses Augment, auch T.C.A (Temperature Control Augment) genannt, unterstützt die Regulierung der Körpertemperatur eines Avali.</AvaliTemperatureImplantBasic.description>
+</LanguageData>

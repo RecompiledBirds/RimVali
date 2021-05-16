@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallAvaliBasicBionicArm.label>Install basic bionic arm</InstallAvaliBasicBionicArm.label> -->
+  <InstallAvaliBasicBionicArm.label>Einfachen bionischen Arm implantieren</InstallAvaliBasicBionicArm.label>
+  <!-- <InstallAvaliBasicBionicArm.description>Install a basic bionic arm.</InstallAvaliBasicBionicArm.description> -->
+  <InstallAvaliBasicBionicArm.description>Implantiere einfachen bionischen Arm.</InstallAvaliBasicBionicArm.description>
+  <!-- <InstallAvaliBasicBionicArm.jobString>Installing basic bionic arm.</InstallAvaliBasicBionicArm.jobString> -->
+  <InstallAvaliBasicBionicArm.jobString>Implantiert einfachen bionischen Arm.</InstallAvaliBasicBionicArm.jobString>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <ArtistCredits.title>The artists, who made the amazing textures:</ArtistCredits.title> -->
+  <ArtistCredits.title>Die Künstler, die diese großartigen Texturen erstellt haben:</ArtistCredits.title>
+  <!-- <ProgrammerCredits.title>Programmers, who wrote the stuff that makes the mod:</ProgrammerCredits.title> -->
+  <ProgrammerCredits.title>Programmierer, die den Code für diese Mod geschrieben haben:</ProgrammerCredits.title>
+  <!-- <TesterCredits.title>The testers, who put up with all the bugs:</TesterCredits.title> -->
+  <TesterCredits.title>Die Tester, die die ganzen Bugs ertragen haben:</TesterCredits.title>
+  <!-- <ContributorCredits.title>Contributors</ContributorCredits.title> -->
+  <ContributorCredits.title>Mitwirkende</ContributorCredits.title>
+</LanguageData>

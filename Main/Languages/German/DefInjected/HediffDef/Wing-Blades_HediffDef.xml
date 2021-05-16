@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <WingBlades.label>Wing blades</WingBlades.label> -->
+  <WingBlades.label>Flügelklingen</WingBlades.label>
+  <!-- <WingBlades.description>These wing replacements turn the wings into weapons, allowing them to be used as a weapon.</WingBlades.description> -->
+  <WingBlades.description>Dieser Flügelersatz ersetzt die Flügel durch Klingen, die im Kampf eingesetzt werden können.</WingBlades.description>
+  <!-- <WingBlades.comps.0.tools.0.label>Wing-blades</WingBlades.comps.0.tools.0.label> -->
+  <WingBlades.comps.0.tools.0.label>Flügelklingen</WingBlades.comps.0.tools.0.label>
+  <!-- <WingBlades.labelNoun>Wing blades</WingBlades.labelNoun> -->
+  <WingBlades.labelNoun>Flügelklingen</WingBlades.labelNoun>
+</LanguageData>

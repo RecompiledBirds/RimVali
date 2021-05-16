@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <RimValiBasicConcept.label>Avali</RimValiBasicConcept.label> -->
+  <RimValiBasicConcept.label>Avali</RimValiBasicConcept.label>
+  <!-- <RimValiBasicConcept.helpText>Hi! It appears at least 1 avali is in your colony. Avali can do avali-related research, build avali-only buidlings, and use any avali related items. But, Avali need to be kept cold, and are normally weaker than humans. But their tech makes them dangerous.</RimValiBasicConcept.helpText> -->
+  <RimValiBasicConcept.helpText>Hallo! Es scheint so, als hättest du mindestens 1 Avali in deiner Kolonie. Avali betreiben ihre eigene Forschung, bauen einzigartige Gebäude und verwenden spezielle Objekte. Allerdings brauchen Avali die Kälte und sind normalerweise schwächer als Menschen. Jedoch können sie durch ihre Technologie sehr gefährlich werden.</RimValiBasicConcept.helpText>
+</LanguageData>

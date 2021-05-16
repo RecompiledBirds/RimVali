@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliPillowBed.label>avali bed</AvaliPillowBed.label> -->
+  <AvaliPillowBed.label>Avali Bett</AvaliPillowBed.label>
+  <!-- <AvaliPillowBed.description>A soft cussion made for Avali to sleep on, it's a little too small for most other species.</AvaliPillowBed.description> -->
+  <AvaliPillowBed.description>Ein weiches Kissen, auf dem Avali schlafen können, für die meisten anderen Arten aber zu klein ist.</AvaliPillowBed.description>
+
+  <!-- <AvalipillowsOne.label>small pile of pillows</AvalipillowsOne.label> -->
+  <AvalipillowsOne.label>kleiner Kissenhaufen</AvalipillowsOne.label>
+  <!-- <AvalipillowsOne.description>a clump of pillows all piled together, enough for two Avali to sleep together.</AvalipillowsOne.description> -->
+  <AvalipillowsOne.description>Ein zusammengeschobener Haufen Kissen, genug Platz zum Schlafen für 2 Avali.</AvalipillowsOne.description>
+
+  <!-- <AvalipillowsTwo.label>pile of pillows</AvalipillowsTwo.label> -->
+  <AvalipillowsTwo.label>Kissenhaufen</AvalipillowsTwo.label>
+  <!-- <AvalipillowsTwo.description>a clump of pillows all piled together, enough for a small pack of Avali to sleep together.</AvalipillowsTwo.description> -->
+  <AvalipillowsTwo.description>Ein zusammengeschobener Haufen Kissen, groß genug, dass eine kleine Gruppe Avali darauf schlafen kann.</AvalipillowsTwo.description>
+
+  <!-- <AvalipillowsThree.label>large pile of pillows</AvalipillowsThree.label> -->
+  <AvalipillowsThree.label>großer Kissenhaufen</AvalipillowsThree.label>
+  <!-- <AvalipillowsThree.description>a clump of pillows all piled together, enough for a whole pack of Avali to sleep together.</AvalipillowsThree.description> -->
+  <AvalipillowsThree.description>Ein zusammengeschobener Haufen Kissen, groß genug, dass ein ganzes Rudel Avali darauf schlafen kann.</AvalipillowsThree.description>
+</LanguageData>
