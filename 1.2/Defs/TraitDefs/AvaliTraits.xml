@@ -10,7 +10,7 @@
     <commonality>90</commonality>
     <degreeDatas>
       <li>
-        <label>Avali</label>
+        <label>Avali (Transavalist/Fears fire)</label>
         <description>[PAWN_nameDef] is an avali who fears fire and will not fight it, due to their natural fear of heat. They also like bionic body parts.</description>
       </li>
     </degreeDatas>
@@ -26,7 +26,7 @@
     <commonality>100</commonality>
     <degreeDatas>
       <li>
-        <label>Avali</label>
+        <label>Avali (Transavalist)</label>
         <description>[PAWN_nameDef] is an avali who will fight fire, and also would like a bionic body part. Or two. Or three. Or four.</description>
       </li>
     </degreeDatas>
@@ -42,7 +42,7 @@
     <commonality>10</commonality>
     <degreeDatas>
       <li>
-        <label>Avali</label>
+        <label>Avali (Purist)</label>
         <description>Unlike most avali, [PAWN_nameDef] doesn't like bionic enhancements. Odd, right? The other avali think so too.</description>
       </li>
     </degreeDatas>
@@ -58,7 +58,7 @@
     <commonality>10</commonality>
     <degreeDatas>
       <li>
-        <label>Avali</label>
+        <label>Avali (Purist/fears fire)</label>
         <description>[PAWN_nameDef] has a fear of fire and bionic body parts, for some reason. I wonder if the other avali talk behind their back.</description>
       </li>
     </degreeDatas>

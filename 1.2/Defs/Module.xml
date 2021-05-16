@@ -5,407 +5,78 @@
     <name>RimVali: Far from avalon</name>
   </AvaliMod.ModuleDef>
   
-  <AvaliMod.RenderableDef Name="BaseAvaliPart" Abstract="True">
-    <useColorSet>Test</useColorSet>
-  </AvaliMod.RenderableDef>
+  <AvaliMod.CreditDef>
+    <defName>ArtistCredits</defName>
+    <title>The artists, who made the amazing textures:</title>
+    <names>
+      <li>Zentimental (@Zentimental_ on twitter)</li>
+      <li>Todd The Avali (@ToddHusky on twitter)</li>
+    </names>
+  </AvaliMod.CreditDef>
+  
+  <AvaliMod.CreditDef>
+    <defName>ProgrammerCredits</defName>
+    <title>Programmers, who wrote the stuff that makes the mod:</title>
+    <names>
+      <li>LiQd</li>
+      <li>Nesi (@Nesi_The_Avali on twitter)</li>
+    </names>
+  </AvaliMod.CreditDef>
+  
+    <AvaliMod.CreditDef>
+    <defName>TesterCredits</defName>
+    <title>The testers, who put up with all the bugs:</title>
+    <names>
+      <li>Altair</li>
+      <li>Aipi avali (@AipiTheAvali on twitter)</li>
+      <li>Ammery</li>
+      <li>Axyl</li>
+      <li>Anarchy (@AnarchyAvali on twitter)</li>
+      <li>Ciraus</li>
+      <li>CliffracerX</li>
+      <li>CoastalCookie</li>
+      <li>CrossFire</li>
+      <li>Chaotic</li>
+      <li>Cobalt</li>
+      <li>Cyasi</li>
+      <li>Caketaco (@Caketacowo on twitter)</li>
+      <li>Diamond_</li>
+      <li>Dwaggy</li>
+      <li>Danny (@DannyAvali on twitter/twitch)</li>
+      <li>Ei'Kuni</li>
+      <li>Eilani</li>
+       <li>Featherduster</li>
+      <li>Halycon</li>
+      <li>Happysammon</li>
+       <li>Jaffer Roshak (@JafferRoshak on twitter)</li>
+      <li>Ketz</li>
+       <li>K'braid (@Braiden_Krahn on twitter)</li>
+      <li>Lucia the Warmongering Avali</li>
+      <li>miniusAreas</li>
+      <li>Nicolain08</li>
+      <li>Nova_</li>
+      <li>Rvell</li>
+      <li>RitualNeo (@RitualNeo on twitter/twitch)</li>
+      <li>Shibi_Cherry</li>
+      <li>SlowVelcrow</li>
+      <li>SlowRandomOwl</li>
+      <li>Sypher</li>
+       <li>SoulblazerRP/Eimilian (@SoulblazerRP on twitter/youtube)</li>
+      <li>TheHopelessThrumbo</li>
+      <li>V Aƚԋҽɾσɳ</li>
+      <li>Xavier (Dusty)</li>
+      <li>ZukoTheAvali</li>
+    </names>
+  </AvaliMod.CreditDef>
   
   
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-    <defName>EarLL</defName>
-    <texPath>avali/Ears/Male/LowerLeft/MaleLowerLeft</texPath>
-    <linkedBodyPart>head</linkedBodyPart>
-    <east>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </east>
-    <north>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </north>
-    <south>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </south>
-  </AvaliMod.RenderableDef>
-  
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-    <defName>EarLR</defName>
-    <texPath>avali/Ears/Male/LowerRight/MaleLowerRight</texPath>
-    <linkedBodyPart>head</linkedBodyPart>
-    <east>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </east>
-    <north>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </north>
-    <south>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </south>
-  </AvaliMod.RenderableDef>
-  
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-    <defName>EarUR</defName>
-    <texPath>avali/Ears/Male/UpperRight/MaleUpperRight</texPath>
-    <linkedBodyPart>head</linkedBodyPart>
-        
-  </AvaliMod.RenderableDef>
-  
-    <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-    <defName>EarUL</defName>
-    <texPath>avali/Ears/Male/UpperLeft/MaleUpperLeft</texPath>
-    <linkedBodyPart>head</linkedBodyPart>
-    <east>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </east>
-    <north>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </north>
-    <south>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </south>
-  </AvaliMod.RenderableDef>
-    
-    
-    <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-      <defName>EyeL</defName>
-      <texPath>avali/Eyes/EyeL</texPath>
-        <linkedBodyPart>head</linkedBodyPart>
-        <east>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </east>
-    <north>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </north>
-    <south>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </south>
-  </AvaliMod.RenderableDef>
-  
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-      <defName>EyeR</defName>
-      <texPath>avali/Eyes/EyeR</texPath>
-        <linkedBodyPart>head</linkedBodyPart>
-  </AvaliMod.RenderableDef>
-  
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-      <defName>AvaliMouth</defName>
-      <texPath>avali/Mouth/Mouth</texPath>
-        <linkedBodyPart>head</linkedBodyPart>
-        <east>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </east>
-    <north>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </north>
-    <south>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </south>
-  </AvaliMod.RenderableDef>
-  
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-    <defName>TailSkirt</defName>
-    <texPath>avali/Tail/Tailskirt/Male/MaleTailskirt</texPath>
-    <linkedBodyPart>tail</linkedBodyPart>
-    <east>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </east>
-    <north>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </north>
-    <south>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </south>
-  </AvaliMod.RenderableDef>
-  
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
-    <defName>TailMain</defName>
-    <texPath>avali/Tail/Male/MaleTail</texPath>
-    <linkedBodyPart>tail</linkedBodyPart>
-    <east>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </east>
-    <north>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </north>
-    <south>
-      <position>(0,0)</position>
-      <layer>1</layer>
-    </south>
-  </AvaliMod.RenderableDef>
-  
-  
-  <AvaliMod.RimValiRaceDef ParentName="BasePawn">
-   
-    <label>Avali</label>
-    <defName>RimValiTwo</defName>
-    <description>This is a test pawn built using RVR [RimValiRaces, not Humanoid Alien Races].</description>
-    <mainSettings>
-      <bodyTypeDefs>
-        <li>Avali</li>
-      </bodyTypeDefs>
-    </mainSettings>
-    <graphics>
-      <skinColorSet>Test</skinColorSet>
-    
-      <bodyTex>avali/Body/Male/MaleBody</bodyTex>
-      <headTex>avali/Heads/Male/MaleHead</headTex>
-      <headSize>(0.5, 0.5)</headSize>
-      <colorSets>
-        <li>
-          <name>Test</name>
-          <colorGenerator>
-          <firstColor Class="ColorGenerator_Options">
-                <options>
-                  <li>
-                    <weight>10</weight>
-                    <min>RGBA(200, 200, 200, 255)</min>
-                    <max>RGBA(255, 255, 255, 255)</max>
-                  </li>
-                  <li>
-                    <weight>2</weight>
-                    <min>RGBA(220, 220, 220, 255)</min>
-                    <max>RGBA(240, 240, 240, 255)</max>
-                  </li>
-                </options>
-              </firstColor>
-              <secondColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>RGBA(50, 50, 50, 255)</min>
-                     <max>RGBA(200, 200, 200, 255)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>RGBA(40, 40, 40, 255)</min>
-                     <max>RGBA(60, 60, 60, 255)</max>
-                   </li>
-                  </options>
-              </secondColor>
-              <thirdColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>RGBA(50, 50, 50, 255)</min>
-                     <max>RGBA(200, 200, 200, 255)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>RGBA(40, 40, 40, 255)</min>
-                     <max>RGBA(60, 60, 60, 255)</max>
-                   </li>
-                  </options>
-              </thirdColor>
-             </colorGenerator>
-        </li>
-      </colorSets>
-    </graphics>
-    <hasHair>false</hasHair>
-    <bodyPartGraphics>
-      
-      <li>EarLL</li>
-      <li>EarLR</li>
-      <li>EarUR</li>
-      <li>EarUL</li>
-      
-      <li>EyeL</li>
-      <li>EyeR</li>
-      
-      <li>AvaliMouth</li>
-      
-      <li>TailMain</li>
-      <li>TailSkirt</li>
-      
-    </bodyPartGraphics>
-    <restrictions>
-      <equippables>
-        <li>AvaliTDW</li>
-      </equippables>
-    </restrictions>
-    <statBases>
-            <MarketValue>1500</MarketValue>
-            <MoveSpeed>8.5</MoveSpeed>
-            <Flammability>200</Flammability>
-            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>15</ComfyTemperatureMax>
-            <LeatherAmount>5</LeatherAmount>
-            <ResearchSpeed>1.5</ResearchSpeed>
-            <MiningSpeed>0.8</MiningSpeed>
-            <SocialImpact>1.5</SocialImpact>
-		      	<ConstructionSpeed>0.8</ConstructionSpeed>
-			      <AnimalGatherSpeed>0.3</AnimalGatherSpeed>
-			      <AnimalGatherYield>0.3</AnimalGatherYield>
-			      <ImmunityGainSpeed>1.15</ImmunityGainSpeed>
-            <PsychicSensitivity>1.5</PsychicSensitivity>
-			      <ShootingAccuracyPawn>6</ShootingAccuracyPawn>
-						<Mass>45</Mass>
-            <RestRateMultiplier>1.25</RestRateMultiplier>
-            <restFallFactor>1.5</restFallFactor>
-        </statBases>
-        <tools>
-            <li>
-				<label>teeth</label>
-				<capacities>
-				<li>Bite</li>
-				</capacities>
-				<power>2</power>
-				<cooldownTime>1.6</cooldownTime>
-				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
-            </li>
-            <li>
-				<label>Left Talons</label>
-				<capacities>
-				<li>Scratch</li>
-				</capacities>
-				<power>3</power>
-				<cooldownTime>1.45</cooldownTime>
-				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-				<surpriseAttack>
-				<extraMeleeDamages>
-					<li>
-					<def>Stun</def>
-					<amount>4</amount>
-				</li>
-				</extraMeleeDamages>
-				</surpriseAttack>
-            </li>
-            <li>
-				<label>Right Talons</label>
-				<capacities>
-				<li>Scratch</li>
-				</capacities>
-				<power>3</power>
-				<cooldownTime>1.45</cooldownTime>
-				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-				<surpriseAttack>
-				<extraMeleeDamages>
-					<li>
-					<def>Stun</def>
-					<amount>4</amount>
-				</li>
-				</extraMeleeDamages>
-				</surpriseAttack>
-            </li>
-        </tools>
-    <race>
-            <thinkTreeMain>Humanlike</thinkTreeMain>
-            <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
-            <intelligence>Humanlike</intelligence>
-            <makesFootprints>true</makesFootprints>
-            <lifeExpectancy>100</lifeExpectancy>
-            <deathActionWorkerClass>AvaliMod.DeathActionWorker_Test</deathActionWorkerClass>
-			      <leatherDef>Leather_RimVali</leatherDef>
-			      <nameGenerator>AvaliPersonNamer</nameGenerator>
-            <body>RimValiBody</body>
-            <baseBodySize>0.6</baseBodySize>
-			      <baseHungerRate>0.6</baseHungerRate>
-            <baseHealthScale>1.3</baseHealthScale>
-            <meatColor>(238,203,242)</meatColor>
-            <bloodDef>AvaliBlood</bloodDef>
-            <fleshType>AvaliFlesh</fleshType>
-            <foodType>OmnivoreHuman</foodType>
-			<gestationPeriodDays>30</gestationPeriodDays>
-			<litterSizeCurve>
-				<points>
-				<li>(0.5, 0)</li>
-				<li>(1, 1)</li>
-				<li>(1.01, 0.01)</li>
-				<li>(2, 0)</li>
-				</points>
-			</litterSizeCurve>
-            <lifeStageAges>
-                <li>
-                    <def>HumanlikeBaby</def>
-                    <minAge>0</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeToddler</def>
-                    <minAge>2.5</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeChild</def>
-                    <minAge>6</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeTeenager</def>
-                    <minAge>14</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeAdult</def>
-                    <minAge>20</minAge>
-                </li>
-            </lifeStageAges>
-            <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
-            <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
-            <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
-            <specialShadowData>
-                <volume>(0.3, 0.8, 0.4)</volume>
-                <offset>(0,0,-0.3)</offset>
-            </specialShadowData>
-            <ageGenerationCurve>
-                <points>
-                    <li>(14,0)</li>
-                    <li>(20,100)</li>
-                    <li>(35,90)</li>
-                    <li>(50,30)</li>
-                    <li>(70,8)</li>
-                    <li>(85,3)</li>
-                    <li>(100,1)</li>
-                    <li>(120,0)</li>
-                </points>
-            </ageGenerationCurve>
-           <hediffGiverSets>
-             <li>OrganicStandard</li>
-             <li>AvaliBio</li>
-           </hediffGiverSets>
-        </race>
-  </AvaliMod.RimValiRaceDef>
-  
-  <PawnKindDef Abstract = "True" Name="BaseAvaliTwo">
-    <race>RimValiTwo</race>
-    <combatPower>10</combatPower>
-    <baseRecruitDifficulty>0.8</baseRecruitDifficulty>
-    <isFighter>false</isFighter>
-    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
-  <forceNormalGearQuality>true</forceNormalGearQuality>
-  </PawnKindDef>
-  <!-- Normal -->
-
-  <PawnKindDef ParentName="BaseAvaliTwo">
-    <defName>TestAvali</defName>
-    <label>Test</label>
-    <defaultFactionType>RimValiPlayerColony</defaultFactionType>
-    <chemicalAddictionChance>0.02</chemicalAddictionChance>
-    <apparelTags>
-      <li>Spacer</li>
-    </apparelTags>
-    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
-    <techHediffsMoney>
-      <min>0</min>
-      <max>600</max>
-    </techHediffsMoney>
-    <techHediffsTags>
-      <li>BasicAvali</li>
-    </techHediffsTags>
-    <techHediffsChance>0.65</techHediffsChance>
-    <apparelMoney>180~400</apparelMoney>
-    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
-  </PawnKindDef>
+   <AvaliMod.CreditDef>
+     <defName>ContributorCredits</defName>
+     <title>Contributors</title>
+     <names>
+       <li>DimasW</li>
+       <li>Danny</li>
+       <li>K'braid</li>
+     </names>
+   </AvaliMod.CreditDef>
 </Defs>

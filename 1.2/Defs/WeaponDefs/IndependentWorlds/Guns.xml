@@ -526,7 +526,7 @@
 
   
    <ThingDef ParentName="BaseBullet">
-    <defName>IWAngryTubeBullet</defName>
+    <defName>IWSMGBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
@@ -542,7 +542,7 @@
   </ThingDef>
   
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>IWAngryTube</defName>
+    <defName>IWSMG</defName>
     <label>Independent Worlds sub-machine gun</label>
     <description>An Independent Worlds avali sub-machine gun.</description>
     <graphicData>
@@ -567,7 +567,7 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>IWAngryTubeBullet</defaultProjectile>
+        <defaultProjectile>IWSMGBullet</defaultProjectile>
          <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
         <burstShotCount>8</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>

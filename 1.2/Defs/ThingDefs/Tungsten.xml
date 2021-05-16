@@ -18,6 +18,12 @@
     <alwaysHaulable>true</alwaysHaulable>
     <drawGUIOverlay>true</drawGUIOverlay>
     <rotatable>false</rotatable>
+    <deepCommonality>1</deepCommonality>
+    <deepCountPerPortion>9</deepCountPerPortion>
+     <deepLumpSizeRange>
+      <min>10</min>
+      <max>35</max>
+    </deepLumpSizeRange>
     <description>Tungsten. A reddish-grayish ore. Avali commonly use it, especially in their rail weapons, as a bullet/projectile. However, it can't be used in this form.</description>
     <descriptionHyperlinks><ThingDef>AvaliTungstenPowder</ThingDef></descriptionHyperlinks>
     <graphicData>
@@ -97,11 +103,6 @@
         <MarketValue>.35</MarketValue>
         <WorkToMake>4.5</WorkToMake>
         <WorkToBuild>4.5</WorkToBuild>
-        <MeleeWeapon_CooldownMultiplier>1.7</MeleeWeapon_CooldownMultiplier>
-        <SharpDamageMultiplier>1.7</SharpDamageMultiplier>
-        <StuffPower_Armor_Sharp>1.85</StuffPower_Armor_Sharp>
-        <StuffPower_Armor_Blunt>1.3</StuffPower_Armor_Blunt>
-        <BluntDamageMultiplier>2</BluntDamageMultiplier>
         <StuffPower_Insulation_Cold>1</StuffPower_Insulation_Cold>
         <StuffPower_Insulation_Heat>10</StuffPower_Insulation_Heat>
       </statFactors>
@@ -163,16 +164,15 @@
       <statBases>
         <MarketValue>20</MarketValue>
         <Mass>1.5</Mass>
-        <WorkToMake>5.2</WorkToMake>
-        <WorkToBuild>5.2</WorkToBuild>
         <MaxHitPoints>0.8</MaxHitPoints>
-        <SharpDamageMultiplier>2.7</SharpDamageMultiplier>
-        <StuffPower_Armor_Sharp>2.35</StuffPower_Armor_Sharp>
-        <StuffPower_Armor_Blunt>2.55</StuffPower_Armor_Blunt>
-        <BluntDamageMultiplier>2.45</BluntDamageMultiplier>
+          <MeleeWeapon_CooldownMultiplier>1</MeleeWeapon_CooldownMultiplier>
+          <SharpDamageMultiplier>2.7</SharpDamageMultiplier>
+          <StuffPower_Armor_Sharp>2.35</StuffPower_Armor_Sharp>
+          <StuffPower_Armor_Blunt>2.55</StuffPower_Armor_Blunt>
+          <BluntDamageMultiplier>2.45</BluntDamageMultiplier>
         <StuffPower_Insulation_Cold>11</StuffPower_Insulation_Cold>
         <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
-        <MeleeWeapon_CooldownMultiplier>1</MeleeWeapon_CooldownMultiplier>
+        
       </statBases>
       <thingCategories>
         <li>AvaliResources</li>
@@ -195,11 +195,6 @@
           <MarketValue>0.6</MarketValue>
           <WorkToMake>5.2</WorkToMake>
           <WorkToBuild>5.2</WorkToBuild>
-          <MeleeWeapon_CooldownMultiplier>1</MeleeWeapon_CooldownMultiplier>
-          <SharpDamageMultiplier>2.7</SharpDamageMultiplier>
-          <StuffPower_Armor_Sharp>2.35</StuffPower_Armor_Sharp>
-          <StuffPower_Armor_Blunt>2.55</StuffPower_Armor_Blunt>
-          <BluntDamageMultiplier>2.45</BluntDamageMultiplier>
         </statFactors>
         <statOffsets>
           <Beauty>4</Beauty>
