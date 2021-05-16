@@ -8,7 +8,7 @@
     </graphicData>
     <defName>Aerial</defName>
     <label>AERIAL System</label>
-    <description>AERIAL is a high accuracy rocket system.</description>
+    <description>AERIAL is a high accuracy rocket system, that can hold up to six rockets, and fire two at once.</description>
     
     <researchPrerequisites>
       <li>AERIELRES</li>
@@ -33,7 +33,7 @@
         <li>Artillery_MannedMortar</li>
       </buildingTags>
     </building>
-  <uiIconPath>avali/buildings/turrets/AERIAL/AERIAL_TURRET_BASE_3X3</uiIconPath>
+  <uiIconPath>avali/buildings/turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
   <uiIconScale>0.9</uiIconScale>
   
   </ThingDef>
@@ -49,8 +49,8 @@
   
     <ThingDef ParentName="BaseArtilleryWeapon">
     <defName>AerialLauncher</defName>
-    <label>AIMS</label>
-    <description>AIMS launch system.</description>
+    <label>AERIAL</label>
+    <description>AERIAL launch system.</description>
     <graphicData>
       <texPath>avali/buildings/turrets/AERIAL/AERIAL_TURRET</texPath>
       <drawSize>(3,3)</drawSize>

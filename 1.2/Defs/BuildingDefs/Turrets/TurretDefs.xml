@@ -17,7 +17,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/buildings/turrets/basic_turret_base</uiIconPath>
+    <uiIconPath>avali/buildings/turrets/turret_image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -159,7 +159,7 @@
    <ThingDef ParentName="BuildingBase">
     <defName>AvaliMiniGunTurret</defName>
     <size>(2,2)</size>
-    <label>Avali turret</label>
+    <label>Avali minigun turret</label>
     <description>A heavy turret, with two avali miniguns onboard. Due to also being a railgun of avali design, it performs best at long range.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
@@ -174,7 +174,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/buildings/turrets/Avali_Turret_Base_2x2</uiIconPath>
+    <uiIconPath>avali/buildings/turrets/Brrrt_image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
