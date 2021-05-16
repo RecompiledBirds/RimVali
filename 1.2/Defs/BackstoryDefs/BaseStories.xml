@@ -184,7 +184,7 @@
   <defName>AvaliNomad</defName>
     <title>Space Nomad</title>
     <shortTitle>Nomad</shortTitle>
-    <storyDesc>[PAWN_nameDef] has traveled far across space, with [PAWN_possessive] pack. [PAWN_pronoun] has learned several different skills, although [PAWN_nameDef] never really got to study any single skill for too long, partially due to the fact they were always moving. [PAWN_nameDef]'s pack also never attended a proper school, and was taught by other avali travelling with them.
+    <storyDesc>[PAWN_nameDef] travelled far and wide across the galaxy accompanying [PAWN_possessive] nomadic pack. In [PAWN_possessive] Travels, [PAWN_pronoun] learnt a variety of skills, honing them through the guidance of [PAWN_possessive] pack members, but the lack of a formal education meant that [PAWN_nameDef] never mastered [PAWN_objective] talents.
     </storyDesc>
     <spawnInCategories>
       <li>RimValiBackstories</li>

@@ -7,6 +7,8 @@
     
     <storyDesc> A description of a backstory/the writing part. Can use [PAWN_nameDef], [PAWN_pronoun],[PAWN_possessive], and  [PAWN_objective].</storyDesc>
     
+    <shuffable></suffable> <!--True/False, defaults to True. Mostly should be left that way. -->
+
     <canSpawnMale></canSpawnMale> <!-- True/False, defaults to true -->
     <canSpawnFemale></canSpawnFemale> <!-- True/False, defaults to true -->
     
@@ -51,6 +53,7 @@
     </skillGains>
     
     <!-- Forces a trait to spawn with the story -->
+    <!-- I didn't include a list of traits here, but feel free to ask and I'll make one. It would just take too much space to put here.-->
     <forcedTraits>
       <li>
         <def>TraitDefName</def>

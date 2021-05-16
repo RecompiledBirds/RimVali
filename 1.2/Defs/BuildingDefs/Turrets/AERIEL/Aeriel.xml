@@ -10,12 +10,9 @@
     <label>AERIAL System</label>
     <description>AERIAL is a high accuracy rocket system.</description>
     
-       <researchPrerequisites>
+    <researchPrerequisites>
       <li>AERIELRES</li>
     </researchPrerequisites>
-    <inspectorTabs>
-      <li>ITab_Shells</li>
-    </inspectorTabs>
     <comps Inherit = "False">
       <li Class="CompProperties_Forbiddable"/>
       
@@ -75,6 +72,9 @@
         <muzzleFlashScale>0</muzzleFlashScale>
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>true</canTargetBuildings>
+          <canTargetItems>true</canTargetItems>
         </targetParams>
       </li>
     </verbs>
@@ -87,14 +87,14 @@
       <fixedStorageSettings>
         <filter>
           <categories>
-            <li>AimsShells</li>
+            <li>AerielShells</li>
           </categories>
         </filter>
       </fixedStorageSettings>
       <defaultStorageSettings>
         <filter>
           <categories>
-            <li>AimsShells</li>
+            <li>AerielShells</li>
           </categories>
           <disallowedThingDefs>
             <li>Shell_Firefoam</li>

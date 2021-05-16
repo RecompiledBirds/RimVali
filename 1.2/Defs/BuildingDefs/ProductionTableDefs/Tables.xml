@@ -12,7 +12,7 @@
     </thingCategories>
     <label>Avali Nano-Printing Forge</label>
     <description>The Avali Nano-Printing Forge is a 3D printer, like most Avali crafting utilities. It works with immense heat, and nanotechnologies able to rearrange the structure and molecues of the items put in. Caution: Do not stick fingers, toes, feet, hands, tails, or other limbs inside, even if the device appears to be powered off.</description>
-    <size>(2,1)</size>
+    <size>(3,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
@@ -53,7 +53,7 @@
       <texPath>avali/buildings/production/nanoforge</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
-      <drawSize>(2,1.8)</drawSize>
+      <drawSize>(3,2)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -263,7 +263,7 @@
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
      <researchPrerequisites>
-       <li>ResearchNanoForge</li>
+       <li>ResearchNanoLoom</li>
      </researchPrerequisites>
     <graphicData>
       <texPath>avali/buildings/production/loom/loom</texPath>

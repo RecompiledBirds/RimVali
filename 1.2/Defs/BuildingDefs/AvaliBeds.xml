@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="FurnitureWithQualityBase">
-    <defName>AvaliBed</defName>
+    <defName>AvaliPillowBed</defName>
     <thingClass>Building_Bed</thingClass>
     <label>avali bed</label>
     <description>A soft cussion made for Avali to sleep on, it's a little too small for most other species.</description>
@@ -96,10 +96,10 @@
     </building>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>
-      <MaxHitPoints>140</MaxHitPoints>
+      <MaxHitPoints>190</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <WorkToBuild>400</WorkToBuild>
-      <Mass>5</Mass>
+      <Mass>5.4</Mass>
       <Comfort>0.75</Comfort>
       <Beauty>2</Beauty>
       <BedRestEffectiveness>1</BedRestEffectiveness>
@@ -158,10 +158,10 @@
     </building>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>
-      <MaxHitPoints>140</MaxHitPoints>
+      <MaxHitPoints>200</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <WorkToBuild>400</WorkToBuild>
-      <Mass>5</Mass>
+      <Mass>6.5</Mass>
       <Comfort>0.75</Comfort>
       <Beauty>2</Beauty>
       <BedRestEffectiveness>1</BedRestEffectiveness>
@@ -220,10 +220,10 @@
     </building>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>
-      <MaxHitPoints>140</MaxHitPoints>
+      <MaxHitPoints>250</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <WorkToBuild>400</WorkToBuild>
-      <Mass>5</Mass>
+      <Mass>8</Mass>
       <Comfort>0.75</Comfort>
       <Beauty>2</Beauty>
       <BedRestEffectiveness>1</BedRestEffectiveness>
