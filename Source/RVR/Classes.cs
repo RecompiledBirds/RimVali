@@ -22,8 +22,6 @@ namespace AvaliMod
         public ThoughtDef ateCookedThought;
     }
 
-<<<<<<< HEAD
-=======
     public class cannibalsimThought
     {
         public ThingDef race;
@@ -42,7 +40,6 @@ namespace AvaliMod
         public bool careAbountUndefinedRaces = true;
     }
 
->>>>>>> beta
     public class butcherAndHarvestThoughts
     {
         public List<raceButcherThought> butcherThoughts;

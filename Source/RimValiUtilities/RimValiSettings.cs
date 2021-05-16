@@ -139,7 +139,7 @@ namespace AvaliMod
             //Pack settings
             if(windowToShow == 1)
             {
-                listing_Standard.Begin(TopLeft);
+                listing_Standard.Begin(rect);
                 Backbutton(listing_Standard);
                 listing_Standard.CheckboxLabeled("PackLossCheck".Translate(), ref settings.packLossEnabled, "PackLossDesc".Translate());
                 bool threading = listing_Standard.ButtonText("MultithreadingCheck".Translate() +" "+((Func<string>) delegate { if (settings.packMultiThreading) { return "Y"; } else { return "N"; }; })());

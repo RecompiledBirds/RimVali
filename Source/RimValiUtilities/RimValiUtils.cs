@@ -11,7 +11,7 @@ namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Ki 0.0.8";
+        public static string build = "Kesuni 1.0.0";
         public static string modulesFound = "Modules:\n";
 
 
@@ -169,18 +169,7 @@ namespace AvaliMod
         {
             return (T)typeof(T).GetField(fieldName, flags).GetValue(obj);
         }
-        public static void  SetVar<T,V>(string fieldName, V val, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic, object obj = null)
-        {
-            Type type = typeof(T).GetType();
-            if (type.GetField(fieldName, flags).FieldType == typeof(V))
-            {
-                type.GetField(fieldName, flags).SetValue(obj, val);
-            }
-            else
-            {
-                Log.Error($"Tried to set value of field {fieldName}, but field type ({type.GetField(fieldName, flags).FieldType}) is not {val.GetType()}!");
-            }
-        }
+
         public static T GetProp<T>(string propName, BindingFlags flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic, object obj = null)
         {
             return (T)typeof(T).GetProperty(propName, flags).GetValue(obj);

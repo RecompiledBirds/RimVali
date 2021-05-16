@@ -55,7 +55,7 @@ namespace AvaliMod
 
         public void SendMessage(ResearchProjectDef def)
         {
-            ChoiceLetter choiceLetter = LetterMaker.MakeLetter("test", $"Research unlocked: {def.label}", AvaliMod.AvaliDefs.IlluminateAirdrop);
+            ChoiceLetter choiceLetter = LetterMaker.MakeLetter("HackedProject".Translate(def.label.Named("PROJECT")), "UnlockedResearch".Translate(def.label.Named("PROJECT")), AvaliMod.AvaliDefs.IlluminateAirdrop);
             Find.LetterStack.ReceiveLetter(choiceLetter, null);
         }
 

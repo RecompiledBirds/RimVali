@@ -16,15 +16,6 @@ namespace AvaliMod
         public bool useHumanRecipes = true;
         public RVRRaceInsertion raceInsertion = new RVRRaceInsertion();
         public List<ReplaceableThoughts> replaceableThoughts = new List<ReplaceableThoughts>();
-<<<<<<< HEAD
-
-        public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
-
-        public butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
-
-        public override void ResolveReferences()
-        {
-=======
         public cannibalismThoughts cannibalismThoughts = new cannibalismThoughts();
         public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
 
@@ -56,8 +47,7 @@ namespace AvaliMod
 
                 race.meatDef = meatToUse;
             }
-            Log.Message(race.meatDef.defName);
->>>>>>> beta
+           
             this.comps.Add(new colorCompProps());
             base.ResolveReferences();
         }
@@ -79,10 +69,6 @@ namespace AvaliMod
             }
             return false;
         }
-<<<<<<< HEAD
-
-
-=======
         public ThoughtDef getEatenThought(ThingDef race, bool raw = true, bool cannibal = false)
         {
             if (cannibalismThoughts.thoughts.Any(x => x.race == race))
@@ -119,7 +105,6 @@ namespace AvaliMod
             }
             return result;
         }
->>>>>>> beta
         public void HeadOffsetPawn(Rot4 rot,Pawn pawn ,ref Vector3 __result)
         {
 
