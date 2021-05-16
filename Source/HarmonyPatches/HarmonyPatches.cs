@@ -17,7 +17,7 @@ namespace AvaliMod
         {
             
             Harmony rimValiHarmony = new Harmony("RimVali.patches");
-            Log.Message("Started patches. [RimVali]", false);
+            Log.Message("[RimVali] Started patches.", false);
             try {
 
                 rimValiHarmony.PatchAll();
@@ -31,13 +31,13 @@ namespace AvaliMod
                 rimValiHarmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPortrait"), null, new HarmonyMethod(typeof(RenderPatch), "Portrait"));*/
                 
                 int methodsPatched = rimValiHarmony.GetPatchedMethods().EnumerableCount();
-                Log.Message("Patches completed. " + methodsPatched.ToString() + " methods patched. [RimVali]");
+                Log.Message("[RimVali] Patches completed. " + methodsPatched.ToString() + " methods patched. [RimVali]");
                 
             }
             catch (Exception error)
             {
-                Log.Message("A patch has failed! Patches completed: " + rimValiHarmony.GetPatchedMethods().EnumerableCount().ToString());
-                Log.Message(error.ToString());
+                Log.Warning("[RimVali] A patch has failed! Patches completed: " + rimValiHarmony.GetPatchedMethods().EnumerableCount().ToString());
+                Log.Error(error.ToString());
 
             }
             
