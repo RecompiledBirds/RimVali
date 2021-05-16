@@ -83,10 +83,13 @@
       <li>AddDesCat_Floors[ENDDESNAME]</li>
       <!-- [Command tag]: Tells the C# to add a dropdown. it searches for a dropdown with a defName RoomFloor, in this case. -->
       <li>AddDesDropDown_RoomFloor[ENDDNAME]</li>
+      <!-- Tells C# to remove the research from the parent -->
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
       <!-- [Command tag:] Tells the C# we want to make a clone for every metal material. It searches for everything with the Metallic category. -->
-      <li>cloneMaterial_Metallic[ENDCATNAME]_RemoveFromClones</li>
+      <li>cloneMaterial_Metallic[ENDCATNAME]_RFC</li>
      <!-- [Command tag:] Tells the C# we want to make a clone for every stone material. It searches for everything with the Stony category. -->
-      <li>cloneMaterial_Stony[ENDCATNAME]_RemoveFromClones</li>
+     <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
+      <li>cloneMaterial_Stony[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
@@ -117,10 +120,13 @@
       <li>FineFloor</li>
       <li>AddDesCat_Floors[ENDDESNAME]</li>
       <li>AddDesDropDown_FlowerFloor[ENDDNAME]</li>
-      <li>cloneMaterial_Fabric[ENDCATNAME]_RemoveFromClones</li>
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
+      <li>cloneMaterial_Fabric[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
+  
+  
    <TerrainDef Name="AvaliFloorBase" Abstract="True">
     <layerable>true</layerable>
     <affordances>
@@ -161,7 +167,8 @@
       <li>FineFloor</li>
       <li>AddDesCat_Floors[ENDDESNAME]</li>
       <li>AddDesDropDown_ChaosFloor[ENDDNAME]</li>
-      <li>cloneMaterial_Stony[ENDCATNAME]_RemoveFromClones</li>
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
+      <li>cloneMaterial_Stony[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
@@ -197,8 +204,9 @@
       <li>FineFloor</li>
       <li>AddDesCat_Floors[ENDDESNAME]</li>
       <li>AddDesDropDown_DiamondFloors[ENDDNAME]</li>
-      <li>cloneMaterial_Metallic[ENDCATNAME]_RemoveFromClones</li>
-      <li>cloneMaterial_Stony[ENDCATNAME]_RemoveFromClones</li>
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
+      <li>cloneMaterial_Metallic[ENDCATNAME]_RFC</li>
+      <li>cloneMaterial_Stony[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
@@ -228,8 +236,9 @@
     <tags>
       <li>FineFloor</li>
       <li>AddDesCat_Floors[ENDDESNAME]</li>
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
       <li>AddDesDropDown_ScrapTile[ENDDNAME]</li>
-      <li>cloneMaterial_Metallic[ENDCATNAME]_RemoveFromClones</li>
+      <li>cloneMaterial_Metallic[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
@@ -262,7 +271,8 @@
       <li>FineFloor</li>
       <li>AddDesCat_Floors[ENDDESNAME]</li>
       <li>AddDesDropDown_ShingleFloors[ENDDNAME]</li>
-      <li>cloneMaterial_Stony[ENDCATNAME]_RemoveFromClones</li>
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
+      <li>cloneMaterial_Stony[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
@@ -294,7 +304,8 @@
       <li>FineFloor</li>
       <li>AddDesCat_Floors[ENDDESNAME]</li>
       <li>AddDesDropDown_WeaveFloors[ENDDNAME]</li>
-      <li>cloneMaterial_Fabric[ENDCATNAME]_RemoveFromClones</li>
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
+      <li>cloneMaterial_Fabric[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>

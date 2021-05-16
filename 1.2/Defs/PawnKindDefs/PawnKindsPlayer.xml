@@ -16,18 +16,20 @@
     <defaultFactionType>RimValiPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
     <apparelTags>
+      <li>Avali</li>
       <li>Spacer</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <techHediffsMoney>
       <min>0</min>
-      <max>600</max>
+      <max>1000</max>
     </techHediffsMoney>
     <techHediffsTags>
       <li>BasicAvali</li>
+      <li>Advanced</li>
     </techHediffsTags>
     <techHediffsChance>0.65</techHediffsChance>
-    <apparelMoney>180~400</apparelMoney>
+    <apparelMoney>180~700</apparelMoney>
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
   </PawnKindDef>
   

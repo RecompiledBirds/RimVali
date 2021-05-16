@@ -227,7 +227,7 @@
       <li>AvaliBasicWeapons</li>
     </prerequisites>
   </ResearchProjectDef>
-  
+
   
    <!-- Nano-loom -->
   <ResearchProjectDef>
@@ -236,8 +236,8 @@
     <description>Another important workbench, Avali use this for all their weaving needs.</description>
     <baseCost>150</baseCost>
     <techLevel>Industrial</techLevel>
-    <researchViewX>1.00</researchViewX>
-  <researchViewY>0.25</researchViewY>
+   <researchViewX>1.00</researchViewX>
+  <researchViewY>1.45</researchViewY>
     <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
     <tab>RimValiResearch</tab>
     <prerequisites>

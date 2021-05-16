@@ -760,7 +760,25 @@
               <replacementThought>AvaliSnowy</replacementThought>
             </li>
     </replaceableThoughts>
-    
+    <cannibalismThoughts>
+      <thoughts>
+          <li>
+            <race>RimVali</race>
+            <ateCooked>AvaliAteAvaliAsIngredient</ateCooked>
+            <ateRaw>AvaliAteAvaliDirect</ateRaw>
+            <ateCookedCannibal>AvaliAteAvaliMeatAsIngredientCannibal</ateCookedCannibal>
+            <ateRawCannibal>AvaliAteAvaliMeatDirectCannibal</ateRawCannibal>
+          </li>
+          <li>
+            <race>IWAvaliRace</race>
+            <ateCooked>AvaliAteAvaliAsIngredient</ateCooked>
+            <ateRaw>AvaliAteAvaliDirect</ateRaw>
+            <ateCookedCannibal>AvaliAteAvaliMeatAsIngredientCannibal</ateCookedCannibal>
+            <ateRawCannibal>AvaliAteAvaliMeatDirectCannibal</ateRawCannibal>
+          </li>
+      </thoughts>
+      <careAbountUndefinedRaces>false</careAbountUndefinedRaces>
+    </cannibalismThoughts>
     
     <restrictions>
       <disabledTraits>
@@ -771,14 +789,14 @@
         <li>EnvironmentDark</li>
         <li>Naked</li>
 
-        <li>AteHumanlikeMeatDirect</li>
-        <li>AteHumanlikeMeatDirectCannibal</li>
-
-        <li>AteHumanlikeMeatAsIngredientCannibal</li>
             
         <li>SleepDisturbed</li>
             
         <li>ObservedLayingCorpse</li>
+        
+                
+        <li>ButcheredHumanlikeCorpse</li>
+        <li>KnowButcheredHumanlikeCorpse</li>
       </thoughtBlacklist>
 
       <modContentRestrictionsApparelWhiteList>
