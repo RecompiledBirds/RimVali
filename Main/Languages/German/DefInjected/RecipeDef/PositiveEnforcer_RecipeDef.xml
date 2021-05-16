@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallPE.label>Install positive enforcement augment</InstallPE.label> -->
+  <InstallPE.label>Positiver Verstärker implantieren</InstallPE.label>
+  <!-- <InstallPE.description>Install a positive enforcement augment.</InstallPE.description> -->
+  <InstallPE.description>Implantiere einen positiven Verstärker.</InstallPE.description>
+  <!-- <InstallPE.jobString>Installing positive enforcement augment.</InstallPE.jobString> -->
+  <InstallPE.jobString>Implantiert einen positiven Verstärker.</InstallPE.jobString>
+</LanguageData>

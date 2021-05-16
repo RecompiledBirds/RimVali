@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliVillager.label>Avali Colonist</AvaliVillager.label> -->
+  <AvaliVillager.label>Avali Kolonist</AvaliVillager.label>
+  <!-- <AvaliVillager.labelPlural>Avali Colonists</AvaliVillager.labelPlural> -->
+  <AvaliVillager.labelPlural>Avali Kolonisten</AvaliVillager.labelPlural>
+  <!-- <AvaliVillager.labelMale>male Avali Colonist</AvaliVillager.labelMale> -->
+  <AvaliVillager.labelMale>männlicher Avali Kolonist</AvaliVillager.labelMale>
+  <!-- <AvaliVillager.labelMalePlural>male Avali Colonists</AvaliVillager.labelMalePlural> -->
+  <AvaliVillager.labelMalePlural>männliche Avali Kolonisten</AvaliVillager.labelMalePlural>
+  <!-- <AvaliVillager.labelFemale>female Avali Colonist</AvaliVillager.labelFemale> -->
+  <AvaliVillager.labelFemale>weibliche Avali Kolonistin</AvaliVillager.labelFemale>
+  <!-- <AvaliVillager.labelFemalePlural>female Avali Colonists</AvaliVillager.labelFemalePlural> -->
+  <AvaliVillager.labelFemalePlural>weibliche Avali Kolonistinnen</AvaliVillager.labelFemalePlural>
+
+  <!-- <AvaliTownCouncilman.label>Avali Pack Leader</AvaliTownCouncilman.label> -->
+  <AvaliTownCouncilman.label>Avali Rudelführer</AvaliTownCouncilman.label>
+  <!-- <AvaliTownCouncilman.labelPlural>Avali Pack Leaders</AvaliTownCouncilman.labelPlural> -->
+  <AvaliTownCouncilman.labelPlural>Avali Rudelführer</AvaliTownCouncilman.labelPlural>
+  <!-- <AvaliTownCouncilman.labelMale>male Avali Pack Leader</AvaliTownCouncilman.labelMale> -->
+  <AvaliTownCouncilman.labelMale>männlicher Avali Rudelführer</AvaliTownCouncilman.labelMale>
+  <!-- <AvaliTownCouncilman.labelMalePlural>male Avali Pack Leaders</AvaliTownCouncilman.labelMalePlural> -->
+  <AvaliTownCouncilman.labelMalePlural>männliche Avali Rudelführer</AvaliTownCouncilman.labelMalePlural>
+  <!-- <AvaliTownCouncilman.labelFemale>female Avali Pack Leader</AvaliTownCouncilman.labelFemale> -->
+  <AvaliTownCouncilman.labelFemale>weibliche Avali Rudelführerin</AvaliTownCouncilman.labelFemale>
+  <!-- <AvaliTownCouncilman.labelFemalePlural>female Avali Pack Leaders</AvaliTownCouncilman.labelFemalePlural> -->
+  <AvaliTownCouncilman.labelFemalePlural>weibliche Avali Rudelführerinnen</AvaliTownCouncilman.labelFemalePlural>
+
+  <!-- <AvaliTrader.label>Pack Trader</AvaliTrader.label> -->
+  <AvaliTrader.label>Rudelhändler</AvaliTrader.label>
+  <!-- <AvaliTrader.labelPlural>Pack Traders</AvaliTrader.labelPlural> -->
+  <AvaliTrader.labelPlural>Rudelhändler</AvaliTrader.labelPlural>
+  <!-- <AvaliTrader.labelMale>male Pack Trader</AvaliTrader.labelMale> -->
+  <AvaliTrader.labelMale>männlicher Rudelhändler</AvaliTrader.labelMale>
+  <!-- <AvaliTrader.labelMalePlural>male Pack Traders</AvaliTrader.labelMalePlural> -->
+  <AvaliTrader.labelMalePlural>männliche Rudelhändler</AvaliTrader.labelMalePlural>
+  <!-- <AvaliTrader.labelFemale>female Pack Trader</AvaliTrader.labelFemale> -->
+  <AvaliTrader.labelFemale>weibliche Rudelhändlerin</AvaliTrader.labelFemale>
+  <!-- <AvaliTrader.labelFemalePlural>female Pack Traders</AvaliTrader.labelFemalePlural> -->
+  <AvaliTrader.labelFemalePlural>weibliche Rudelhändlerinnen</AvaliTrader.labelFemalePlural>
+
+  <!-- <NeziSoliderAvali.label>Avali Soilder</NeziSoliderAvali.label> -->
+  <NeziSoliderAvali.label>Avali Soldat</NeziSoliderAvali.label>
+  <!-- <NeziSoliderAvali.labelPlural>Avali Soilders</NeziSoliderAvali.labelPlural> -->
+  <NeziSoliderAvali.labelPlural>Avali Soldaten</NeziSoliderAvali.labelPlural>
+  <!-- <NeziSoliderAvali.labelMale>male Avali Soilder</NeziSoliderAvali.labelMale> -->
+  <NeziSoliderAvali.labelMale>männlicher Avali Soldat</NeziSoliderAvali.labelMale>
+  <!-- <NeziSoliderAvali.labelMalePlural>male Avali Soilders</NeziSoliderAvali.labelMalePlural> -->
+  <NeziSoliderAvali.labelMalePlural>männliche Avali Soldaten</NeziSoliderAvali.labelMalePlural>
+  <!-- <NeziSoliderAvali.labelFemale>female Avali Soilder</NeziSoliderAvali.labelFemale> -->
+  <NeziSoliderAvali.labelFemale>weibliche Avali Soldatin</NeziSoliderAvali.labelFemale>
+  <!-- <NeziSoliderAvali.labelFemalePlural>female Avali Soilders</NeziSoliderAvali.labelFemalePlural> -->
+  <NeziSoliderAvali.labelFemalePlural>weibliche Avali Soldatinnen</NeziSoliderAvali.labelFemalePlural>
+
+  <!-- <AvaliRocketeer.label>Avali Solider</AvaliRocketeer.label> -->
+  <AvaliRocketeer.label>Avali Raketenwerfer</AvaliRocketeer.label>
+  <!-- <AvaliRocketeer.labelPlural>Avali Soliders</AvaliRocketeer.labelPlural> -->
+  <AvaliRocketeer.labelPlural>Avali Raketenwerfer</AvaliRocketeer.labelPlural>
+  <!-- <AvaliRocketeer.labelMale>male Avali Solider</AvaliRocketeer.labelMale> -->
+  <AvaliRocketeer.labelMale>männlicher Avali Raketenwerfer</AvaliRocketeer.labelMale>
+  <!-- <AvaliRocketeer.labelMalePlural>male Avali Soliders</AvaliRocketeer.labelMalePlural> -->
+  <AvaliRocketeer.labelMalePlural>männliche Avali Raketenwerfer</AvaliRocketeer.labelMalePlural>
+  <!-- <AvaliRocketeer.labelFemale>female Avali Solider</AvaliRocketeer.labelFemale> -->
+  <AvaliRocketeer.labelFemale>weibliche Avali Raketenwerferin</AvaliRocketeer.labelFemale>
+  <!-- <AvaliRocketeer.labelFemalePlural>female Avali Soliders</AvaliRocketeer.labelFemalePlural> -->
+  <AvaliRocketeer.labelFemalePlural>weibliche Avali Raketenwerferinnen</AvaliRocketeer.labelFemalePlural>
+
+  <!-- <AvaliTownGuard.label>Avali Soldier</AvaliTownGuard.label> -->
+  <AvaliTownGuard.label>Avali Wächter</AvaliTownGuard.label>
+  <!-- <AvaliTownGuard.labelPlural>Avali Soldiers</AvaliTownGuard.labelPlural> -->
+  <AvaliTownGuard.labelPlural>Avali Wächter</AvaliTownGuard.labelPlural>
+  <!-- <AvaliTownGuard.labelMale>male Avali Soldier</AvaliTownGuard.labelMale> -->
+  <AvaliTownGuard.labelMale>männlicher Avali Wächter</AvaliTownGuard.labelMale>
+  <!-- <AvaliTownGuard.labelMalePlural>male Avali Soldiers</AvaliTownGuard.labelMalePlural> -->
+  <AvaliTownGuard.labelMalePlural>männliche Avali Wächter</AvaliTownGuard.labelMalePlural>
+  <!-- <AvaliTownGuard.labelFemale>female Avali Soldier</AvaliTownGuard.labelFemale> -->
+  <AvaliTownGuard.labelFemale>weibliche Avali Wächterin</AvaliTownGuard.labelFemale>
+  <!-- <AvaliTownGuard.labelFemalePlural>female Avali Soldiers</AvaliTownGuard.labelFemalePlural> -->
+  <AvaliTownGuard.labelFemalePlural>weibliche Avali Wächterinnen</AvaliTownGuard.labelFemalePlural>
+
+  <!-- <AvaliSniper.label>Avali Sniper</AvaliSniper.label> -->
+  <AvaliSniper.label>Avali Sniper</AvaliSniper.label>
+  <!-- <AvaliSniper.labelPlural>Avali Snipers</AvaliSniper.labelPlural> -->
+  <AvaliSniper.labelPlural>Avali Snipers</AvaliSniper.labelPlural>
+  <!-- <AvaliSniper.labelMale>male Avali Sniper</AvaliSniper.labelMale> -->
+  <AvaliSniper.labelMale>männlicher Avali Sniper</AvaliSniper.labelMale>
+  <!-- <AvaliSniper.labelMalePlural>male Avali Snipers</AvaliSniper.labelMalePlural> -->
+  <AvaliSniper.labelMalePlural>männliche Avali Snipers</AvaliSniper.labelMalePlural>
+  <!-- <AvaliSniper.labelFemale>female Avali Sniper</AvaliSniper.labelFemale> -->
+  <AvaliSniper.labelFemale>weibliche Avali Sniper</AvaliSniper.labelFemale>
+  <!-- <AvaliSniper.labelFemalePlural>female Avali Snipers</AvaliSniper.labelFemalePlural> -->
+  <AvaliSniper.labelFemalePlural>weibliche Avali Sniper</AvaliSniper.labelFemalePlural>
+
+  <!-- <AvaliMelee.label>Avali Fighter</AvaliMelee.label> -->
+  <AvaliMelee.label>Avali Kämpfer</AvaliMelee.label>
+  <!-- <AvaliMelee.labelPlural>Avali Fighters</AvaliMelee.labelPlural> -->
+  <AvaliMelee.labelPlural>Avali Kämpfer</AvaliMelee.labelPlural>
+  <!-- <AvaliMelee.labelMale>male Avali Fighter</AvaliMelee.labelMale> -->
+  <AvaliMelee.labelMale>männlicher Avali Kämpfer</AvaliMelee.labelMale>
+  <!-- <AvaliMelee.labelMalePlural>male Avali Fighters</AvaliMelee.labelMalePlural> -->
+  <AvaliMelee.labelMalePlural>männliche Avali Kämpfer</AvaliMelee.labelMalePlural>
+  <!-- <AvaliMelee.labelFemale>female Avali Fighter</AvaliMelee.labelFemale> -->
+  <AvaliMelee.labelFemale>weibliche Avali Kämpferin</AvaliMelee.labelFemale>
+  <!-- <AvaliMelee.labelFemalePlural>female Avali Fighters</AvaliMelee.labelFemalePlural> -->
+  <AvaliMelee.labelFemalePlural>weibliche Avali Kämpferinnen</AvaliMelee.labelFemalePlural>
+
+  <!-- <NeziEnhancedSoliderAvali.label>Enhanced Avali Soilder</NeziEnhancedSoliderAvali.label> -->
+  <NeziEnhancedSoliderAvali.label>Verbesserter Avali Soldat</NeziEnhancedSoliderAvali.label>
+  <!-- <NeziEnhancedSoliderAvali.labelPlural>Enhanced Avali Soilders</NeziEnhancedSoliderAvali.labelPlural> -->
+  <NeziEnhancedSoliderAvali.labelPlural>Verbesserte Avali Soldaten</NeziEnhancedSoliderAvali.labelPlural>
+  <!-- <NeziEnhancedSoliderAvali.labelMale>male Enhanced Avali Soilder</NeziEnhancedSoliderAvali.labelMale> -->
+  <NeziEnhancedSoliderAvali.labelMale>männlicher verbesserter Avali Soldat</NeziEnhancedSoliderAvali.labelMale>
+  <!-- <NeziEnhancedSoliderAvali.labelMalePlural>male Enhanced Avali Soilders</NeziEnhancedSoliderAvali.labelMalePlural> -->
+  <NeziEnhancedSoliderAvali.labelMalePlural>männliche verbesserte Avali Soldaten</NeziEnhancedSoliderAvali.labelMalePlural>
+  <!-- <NeziEnhancedSoliderAvali.labelFemale>female Enhanced Avali Soilder</NeziEnhancedSoliderAvali.labelFemale> -->
+  <NeziEnhancedSoliderAvali.labelFemale>weibliche verbesserte Avali Soldatin</NeziEnhancedSoliderAvali.labelFemale>
+  <!-- <NeziEnhancedSoliderAvali.labelFemalePlural>female Enhanced Avali Soilders</NeziEnhancedSoliderAvali.labelFemalePlural> -->
+  <NeziEnhancedSoliderAvali.labelFemalePlural>weibliche verbesserte Avali Soldatinnen</NeziEnhancedSoliderAvali.labelFemalePlural>
+</LanguageData>

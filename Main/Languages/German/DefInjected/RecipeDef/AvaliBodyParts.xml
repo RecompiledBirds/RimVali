@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallNaturalAvaliTail.label>install avali tail</InstallNaturalAvaliTail.label> -->
+  <InstallNaturalAvaliTail.label>Avali Schweif implantieren</InstallNaturalAvaliTail.label>
+  <!-- <InstallNaturalAvaliTail.description>Install a biological tail.</InstallNaturalAvaliTail.description> -->
+  <InstallNaturalAvaliTail.description>Implantiere einen biologischen Schweif.</InstallNaturalAvaliTail.description>
+  <!-- <InstallNaturalAvaliTail.jobString>Installing tail.</InstallNaturalAvaliTail.jobString> -->
+  <InstallNaturalAvaliTail.jobString>Implantiert Schweif.</InstallNaturalAvaliTail.jobString>
+</LanguageData>

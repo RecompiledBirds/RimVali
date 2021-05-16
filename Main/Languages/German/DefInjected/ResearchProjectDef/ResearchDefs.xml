@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <BasicRimValiTech.label>Basic Avali Tech</BasicRimValiTech.label> -->
+  <BasicRimValiTech.label>Einfache Avali Technologie</BasicRimValiTech.label>
+  <!-- <BasicRimValiTech.description>Basic avali technologies, such as weapons printing. Although, it seems further research will be needed to do more useful tasks with them...</BasicRimValiTech.description> -->
+  <BasicRimValiTech.description>Grundlegende Avali Technologien, wie etwa druckbare Waffen. Für mehr Verwendungsmöglichkeiten scheint jedoch weitere Forschung notwendig zu sein..</BasicRimValiTech.description>
+
+  <!-- Tungsten -->
+
+  <!-- <TungstenProcessingBasic.label>Basic Tungsten Processing</TungstenProcessingBasic.label> -->
+  <TungstenProcessingBasic.label>Grundlegende Wolfram Verarbeitung</TungstenProcessingBasic.label>
+  <!-- <TungstenProcessingBasic.description>Basic Tungsten processing- you probably wont find much use for this resource right now, but tungsten is great later on.</TungstenProcessingBasic.description> -->
+  <TungstenProcessingBasic.description>Einfache Verarbeitung von Wolfram - zu Beginn wirst du vermutlich kaum Verwendung für diese Ressource haben, später jedoch wird Wolfram einen großen Nutzen haben.</TungstenProcessingBasic.description>
+
+  <!-- Nano-forge -->
+
+  <!-- <ResearchNanoForge.label>Nano-forge</ResearchNanoForge.label> -->
+  <ResearchNanoForge.label>Nanodruck-Schmiede</ResearchNanoForge.label>
+  <!-- <ResearchNanoForge.description>One of the most important workbenches, this workbench is where tungsten can be processed and weapons made.</ResearchNanoForge.description> -->
+  <ResearchNanoForge.description>Eine der wichtigsten Fabrikatoren, da hier Wolfram weiterverarbeitet wird und Waffen hergestellt werden können.</ResearchNanoForge.description>
+
+  <!-- Basic apparel -->
+
+  <!-- <AvaliBasicApparel.label>Traditional Avali Apparel</AvaliBasicApparel.label> -->
+  <AvaliBasicApparel.label>Traditionelle Avali Kleidung</AvaliBasicApparel.label>
+  <!-- <AvaliBasicApparel.description>Traditional avali apparel.</AvaliBasicApparel.description> -->
+  <AvaliBasicApparel.description>Traditionelle Avali Kleidung.</AvaliBasicApparel.description>
+
+  <!-- <AvaliThermalWraps.label>Thermal Wraps</AvaliThermalWraps.label> -->
+  <AvaliThermalWraps.label>Thermisches Wickeltuch</AvaliThermalWraps.label>
+  <!-- <AvaliThermalWraps.description>These wraps help keep your avali safe in the worst of temperatures. Works especially well if material is bad insulator.</AvaliThermalWraps.description> -->
+  <AvaliThermalWraps.description>Diese Wickeltücher helfen Avali in den schlimmsten Umgebungen zu überleben. Funktioniert besonders gut, wenn das Material ein schlechter Isolator ist.</AvaliThermalWraps.description>
+
+  <!-- <AvaliBasicTechGear.label>Common exploration gear</AvaliBasicTechGear.label> -->
+  <AvaliBasicTechGear.label>Späher-Montur</AvaliBasicTechGear.label>
+  <!-- <AvaliBasicTechGear.description>This gear is commonly found on explorers, helping them survive dangerous and unsafe locations.</AvaliBasicTechGear.description> -->
+  <AvaliBasicTechGear.description>Diese Montur findet sich häufig bei Erkundern, die gefährliche und unsichere Umgebungen durchqueren müssen.</AvaliBasicTechGear.description>
+
+  <!-- <AvaliCombatArmor.label>Combat armor</AvaliCombatArmor.label> -->
+  <AvaliCombatArmor.label>Kampfausrüstung</AvaliCombatArmor.label>
+  <!-- <AvaliCombatArmor.description>This armor is made for combat, featuring heavy protection at the cost of speed and weight. (SOS2 EVA compatible)</AvaliCombatArmor.description> -->
+  <AvaliCombatArmor.description>Diese Rüstung wurde für den Kampf erstellt und bietet massiven Schutz auf Kosten von Geschwindigkeit und Gewicht. (SOS2 EVA kompatibel)</AvaliCombatArmor.description>
+
+  <!-- <AvaliSpecOpsArmor.label>Spec Ops armor</AvaliSpecOpsArmor.label> -->
+  <AvaliSpecOpsArmor.label>Ausrüstung für Spezialeinheiten</AvaliSpecOpsArmor.label>
+  <!-- <AvaliSpecOpsArmor.description>The avali spec ops armor is a high-end, top of the line avali armor, featuring the latest avali technologies and advances.  (SOS2 EVA compatible)</AvaliSpecOpsArmor.description> -->
+  <AvaliSpecOpsArmor.description>Diese hochwertige und fortschrittliche Avali Spezial-Kampfmontur bietet den besten Schutz und allerneueste Avali Technologien. (SOS2 EVA kompatibel)</AvaliSpecOpsArmor.description>
+
+  <!-- Basic weapons -->
+
+  <!-- <AvaliBasicWeapons.label>Basic Avali Weaponry</AvaliBasicWeapons.label> -->
+  <AvaliBasicWeapons.label>Grundlegende Avali-Waffen</AvaliBasicWeapons.label>
+  <!-- <AvaliBasicWeapons.description>A few basic weapons. Nothing too special about them.</AvaliBasicWeapons.description> -->
+  <AvaliBasicWeapons.description>Ein paar einfache Waffen. Nichts wirklich besonderes daran.</AvaliBasicWeapons.description>
+
+  <!-- "Advanced" guns -->
+
+  <!-- <AvaliAdvancedGuns.label>Advanced Avali Guns</AvaliAdvancedGuns.label> -->
+  <AvaliAdvancedGuns.label>Fortschrittliche Avali-Fernkampfwaffen</AvaliAdvancedGuns.label>
+  <!-- <AvaliAdvancedGuns.description>The avali version of their human counterparts, these weapons are designed to be used at long range.</AvaliAdvancedGuns.description> -->
+  <AvaliAdvancedGuns.description>Im Gegensatz zu ihren von Menschen verwendeten Gegenstücken, wurden diese Fernkampfwaffen für besonders große Distanzen konstruiert.</AvaliAdvancedGuns.description>
+
+  <!-- <AIMSRes.label>AIMS (Avali Intelligent Mortar System)</AIMSRes.label> -->
+  <AIMSRes.label>AIMS (Avali Intelligent Mortar System)</AIMSRes.label>
+  <!-- <AIMSRes.description>An advanced, more powerful mortar system. The AIMS mortar can fire shells designed for it, and has much better accuaracy than a regular mortar.</AIMSRes.description> -->
+  <AIMSRes.description>Ein fortschrittlicher, leistungsfähigerer Mörser. Der AIMS-Mörser kann spezielle Projektile abfeuern und hat eine deutlich höhere Genauigkeit als ein normaler Mörser.</AIMSRes.description>
+
+  <!-- <AERIELRES.label>AERIEL System</AERIELRES.label> -->
+  <AERIELRES.label>AERIEL System</AERIELRES.label>
+  <!-- <AERIELRES.description>A highly advanced automated mortar system, fully capable of automatically selecting targets and lauching projectiles.</AERIELRES.description> -->
+  <AERIELRES.description>Ein hochmoderner und vollautomatisierter Mörser, dazu in der Lage, Ziele automatisch auszuwählen und Projektile abzufeuern.</AERIELRES.description>
+
+  <!-- <AvaliTurrets.label>Advanced Avali turrets</AvaliTurrets.label> -->
+  <AvaliTurrets.label>Fortschrittlicher Avali-Geschützturm</AvaliTurrets.label>
+  <!-- <AvaliTurrets.description>These railgun-based turrets are designed to be used at longer ranges then their human counterparts.</AvaliTurrets.description> -->
+  <AvaliTurrets.description>Diese, mit Railguns bestückten, Geschütztürme erzielen eine höhere Reichweite, als ihre von Menschen geschaffenen Gegenstücke.</AvaliTurrets.description>
+
+  <!-- "Advanced" melee weapons -->
+
+  <!-- <AvaliAdvancedMelee.label>Advanced Avali Melee weapons</AvaliAdvancedMelee.label> -->
+  <AvaliAdvancedMelee.label>Fortschrittliche Avali-Nahkampfwaffen</AvaliAdvancedMelee.label>
+  <!-- <AvaliAdvancedMelee.description>Slightly better than a "pokey stick", as some avali have called previous weapons, these are more likely to be less "pokey" and more "staby".</AvaliAdvancedMelee.description> -->
+  <AvaliAdvancedMelee.description>Besser als die "Stöcker", wie einige Avali weniger fortschrittliche Waffen nennen, können diese Waffen ziemlich gut Schaden austeilen. </AvaliAdvancedMelee.description>
+
+  <!-- Nano-loom -->
+
+  <!-- <ResearchNanoLoom.label>Nano-loom</ResearchNanoLoom.label> -->
+  <ResearchNanoLoom.label>Nanodruck-Webmaschine</ResearchNanoLoom.label>
+  <!-- <ResearchNanoLoom.description>Another important workbench, Avali use this for all their weaving needs.</ResearchNanoLoom.description> -->
+  <ResearchNanoLoom.description>Avali verwenden diesen wichtigen Fabrikator, um alle benötigten Stoffe und Fasern herzustellen.</ResearchNanoLoom.description>
+
+  <!-- Nano-carbon -->
+
+  <!-- <NanoCarbonResearch.label>Nano-carbon</NanoCarbonResearch.label> -->
+  <NanoCarbonResearch.label>Kohlenstoff</NanoCarbonResearch.label>
+  <!-- <NanoCarbonResearch.description>Nano-carbon, while mostly useless by itself, can be used with nanofiber to create better, stronger cloth-like materials.</NanoCarbonResearch.description> -->
+  <NanoCarbonResearch.description>Kohlenstoff ist für sich genommen für Avali nutzlos. Kann zusammen mit Nanotuch zur Herstellung von besseren und stärkeren Materialien verwendet werden.</NanoCarbonResearch.description>
+
+  <!-- NanoFiber -->
+
+  <!-- <NanoFibreResearch.label>Nanofibre</NanoFibreResearch.label> -->
+  <NanoFibreResearch.label>Nanotuch</NanoFibreResearch.label>
+  <!-- <NanoFibreResearch.description>A key element in the creation of most avali cloth-like materials, nanofibre is a good resource to have on hand. It can be used with other materials to create better insulation, or more protective cloth.</NanoFibreResearch.description> -->
+  <NanoFibreResearch.description>Nanotuch gilt als eines der wichtigsten Materialien in der Avali-Kleiderherstellung. Es wird, in Kombination mit anderen Materialien, für besser isolierte oder schütztende Kleidung verwendet.</NanoFibreResearch.description>
+
+  <!-- Aeroweave -->
+
+  <!-- <AeroWeaveResearch.label>Ferroweave</AeroWeaveResearch.label> -->
+  <AeroWeaveResearch.label>Ferroseide</AeroWeaveResearch.label>
+  <!-- <AeroWeaveResearch.description>Aero weave is a very insulated cloth, making it perfect for assisting in surviving those hot conditions.</AeroWeaveResearch.description> -->
+  <AeroWeaveResearch.description>Ferroseide ist bekannt für seine isolierenden Eigenschaften und eignet sich hervorragend für Kleidung, die Avali verwenden, um in heißen Umgebungen zu überleben.</AeroWeaveResearch.description>
+
+  <!-- Aero-tungsten -->
+
+  <!-- <AvaliAeroTungsten.label>Aero-Tungsten Carbide</AvaliAeroTungsten.label> -->
+  <AvaliAeroTungsten.label>Ferro-Wolframcarbid</AvaliAeroTungsten.label>
+  <!-- <AvaliAeroTungsten.description>Aero-Tungsten Carbide, a supermaterial mainly forged from both tungsten and carbon, with other materials mixed in to strengthen the mixture.</AvaliAeroTungsten.description> -->
+  <AvaliAeroTungsten.description>Ferro-Wolframcarbid wird hauptsächtlich aus Wolfram, Kohlenstoff und anderen Materialien geschmiedet und ist ein sehr starkes und vielseitiges Material.</AvaliAeroTungsten.description>
+
+  <!-- <AvaliAeroTungstenFiber.label>Aero-Tungsten Fiber</AvaliAeroTungstenFiber.label> -->
+  <AvaliAeroTungstenFiber.label>Ferro-Wolframcarbid-Fasern</AvaliAeroTungstenFiber.label>
+  <!-- <AvaliAeroTungstenFiber.description>A strong cloth-like material, made from aero-tungsten carbide and nano carbon fiber.</AvaliAeroTungstenFiber.description> -->
+  <AvaliAeroTungstenFiber.description>Ein starkes, tuchähnliches Material aus Ferro-Wolframcarbid und Nano-Kohlenstoffasern.</AvaliAeroTungstenFiber.description>
+
+  <!-- Bionics -->
+
+  <!-- <BasicAvaliBionics.label>Basic Bionics</BasicAvaliBionics.label> -->
+  <BasicAvaliBionics.label>Einfache Bionik</BasicAvaliBionics.label>
+  <!-- <BasicAvaliBionics.description>Create basic bionics to help avoid your avali getting their arms blown off.</BasicAvaliBionics.description> -->
+  <BasicAvaliBionics.description>Erstelle grundlegende Bionik. Entweder als Ersatz, oder um mehr Schaden zu verkraften.</BasicAvaliBionics.description>
+
+  <!-- <BasicAvaliImplants.label>Basic Implants</BasicAvaliImplants.label> -->
+  <BasicAvaliImplants.label>Grundlegende Implantate</BasicAvaliImplants.label>
+  <!-- <BasicAvaliImplants.description>Design basic implants, capable of assisting with simple body functions and such.</BasicAvaliImplants.description> -->
+  <BasicAvaliImplants.description>Erstelle einfache Implantate, fähig, grundlegende Körperfunktionen zu unterstützen.</BasicAvaliImplants.description>
+
+  <!-- <AvaliAdvCooling.label>Better cooling</AvaliAdvCooling.label> -->
+  <AvaliAdvCooling.label>Bessere Kühlung</AvaliAdvCooling.label>
+  <!-- <AvaliAdvCooling.description>Get the blueprints to a better TCA, meant to help survive harsher conditions.</AvaliAdvCooling.description> -->
+  <AvaliAdvCooling.description>Erschaffe bessere Kühl-Implantate, um auch schwierigere Umstände zu überleben.</AvaliAdvCooling.description>
+
+  <!-- <AvaliEliteCooling.label>Elite cooling</AvaliEliteCooling.label> -->
+  <AvaliEliteCooling.label>Elite Kühlung</AvaliEliteCooling.label>
+  <!-- <AvaliEliteCooling.description>Research the blueprints to one of the most advanced TCA augments ever designed.</AvaliEliteCooling.description> -->
+  <AvaliEliteCooling.description>Erforsche dies, um Zugriff zu den besten Kühl-Implantaten zu erhalten die je konstruiert wurden.</AvaliEliteCooling.description>
+
+  <!-- <AdvancedAvaliBionics.label>Advanced Bionics</AdvancedAvaliBionics.label> -->
+  <AdvancedAvaliBionics.label>Fortschrittliche Bionik</AdvancedAvaliBionics.label>
+  <!-- <AdvancedAvaliBionics.description>Better, faster, stronger bionics.. but still not the best.</AdvancedAvaliBionics.description> -->
+  <AdvancedAvaliBionics.description>Bessere, schnellere, stärkere Bionik.. Aber immernoch nicht die Beste.</AdvancedAvaliBionics.description>
+
+  <!-- <AvaliFighting.label>Basic weapon augments</AvaliFighting.label> -->
+  <AvaliFighting.label>Einfache Waffen-Augmente</AvaliFighting.label>
+  <!-- <AvaliFighting.description>Weaponised augments. These make the user much more dangerous.</AvaliFighting.description> -->
+  <AvaliFighting.description>Augmente, um den Körper zu einer lebenden Waffe umzufunktionieren, die den Benutzer viel gefährlicher machen.</AvaliFighting.description>
+
+  <!-- <MicroDrones.label>Micro-drones</MicroDrones.label> -->
+  <MicroDrones.label>Mikro-Drohnen</MicroDrones.label>
+  <!-- <MicroDrones.description>Swarms of mini drones, assisting the user in various tasks.</MicroDrones.description> -->
+  <MicroDrones.description>Schwärme von Mini-Drohnen, die bei den benutzer bei verschiedenen Aufgaben unterstützen.</MicroDrones.description>
+</LanguageData>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliScythe.label>Avali Scythe</AvaliScythe.label> -->
+  <AvaliScythe.label>Avali-Sichel</AvaliScythe.label>
+  <!-- <AvaliScythe.description>A high tech scythe, complete with a built-in 3D function that keeps the blade from breaking.</AvaliScythe.description> -->
+  <AvaliScythe.description>Eine High-Tech-Sense mit integrierter 3D-Technologie, die verhindert, dass sich die Klinge abnutzt.</AvaliScythe.description>
+  <!-- <AvaliScythe.tools.0.label>Avali Scythe Handle</AvaliScythe.tools.0.label> -->
+  <AvaliScythe.tools.0.label>Griff</AvaliScythe.tools.0.label>
+  <!-- <AvaliScythe.tools.1.label>Avali Scythe Blade</AvaliScythe.tools.1.label> -->
+  <AvaliScythe.tools.1.label>Klinge</AvaliScythe.tools.1.label>
+
+  <!-- <AvaliAxe.label>Avali Axe</AvaliAxe.label> -->
+  <AvaliAxe.label>Avali-Axt</AvaliAxe.label>
+  <!-- <AvaliAxe.description>An axe similar to the viroblade, complete with a self-regenerating blade.</AvaliAxe.description> -->
+  <AvaliAxe.description>Eine Axt, die wie eine Viroklinge mit einer sich selbst regenerierenden Klinge ausgestattet ist.</AvaliAxe.description>
+  <!-- <AvaliAxe.tools.0.label>Avali axe Handle</AvaliAxe.tools.0.label> -->
+  <AvaliAxe.tools.0.label>Griff</AvaliAxe.tools.0.label>
+  <!-- <AvaliAxe.tools.1.label>Avali Axe Blade</AvaliAxe.tools.1.label> -->
+  <AvaliAxe.tools.1.label>Klinge</AvaliAxe.tools.1.label>
+
+  <!-- <AvaliKnife.label>Avali knife</AvaliKnife.label> -->
+  <AvaliKnife.label>Avali-Messer</AvaliKnife.label>
+  <!-- <AvaliKnife.description>A minature viroblade. Good for cutting food and enemies!</AvaliKnife.description> -->
+  <AvaliKnife.description>Eine Miniatur-Viroklinge. Gut zum Schneiden von Lebensmitteln und Feinden!</AvaliKnife.description>
+  <!-- <AvaliKnife.tools.0.label>Avali knife Handle</AvaliKnife.tools.0.label> -->
+  <AvaliKnife.tools.0.label>Griff</AvaliKnife.tools.0.label>
+  <!-- <AvaliKnife.tools.1.label>Avali Knife Blade</AvaliKnife.tools.1.label> -->
+  <AvaliKnife.tools.1.label>Klinge</AvaliKnife.tools.1.label>
+
+  <!-- <AvaliSpear.label>Avali Spear</AvaliSpear.label> -->
+  <AvaliSpear.label>Avali-Speer</AvaliSpear.label>
+  <!-- <AvaliSpear.description>An avali spear. The handle has a built in 3D printer for the blade, using aerogel.</AvaliSpear.description> -->
+  <AvaliSpear.description>Ein Avali-Speer. Der Griff verfügt über einen eingebauten 3D-Drucker für die Ferrogel-Klinge.</AvaliSpear.description>
+  <!-- <AvaliSpear.tools.0.label>Avali Spear Handle</AvaliSpear.tools.0.label> -->
+  <AvaliSpear.tools.0.label>Griff</AvaliSpear.tools.0.label>
+  <!-- <AvaliSpear.tools.1.label>Avali Spear Blade</AvaliSpear.tools.1.label> -->
+  <AvaliSpear.tools.1.label>Klinge</AvaliSpear.tools.1.label>
+
+  <!-- <AvaliViroblade.label>Avali Viroblade</AvaliViroblade.label> -->
+  <AvaliViroblade.label>Avali-Viroklinge</AvaliViroblade.label>
+  <!-- <AvaliViroblade.description>The most well known/"classic" Avali weapon, the viroblade is seen many places. Some variants of it are called a "singing" blade, named for the noise they make.</AvaliViroblade.description> -->
+  <AvaliViroblade.description>Die bekannteste Avali-Waffe, die Viroklinge, ist überall verbreitet. Einige Varianten werden auch "singende Klinge" genannt, benannt nach dem Geräusch, das sie machen, wenn man sie schwingt.</AvaliViroblade.description>
+  <!-- <AvaliViroblade.tools.0.label>Avali Viroblade Handle</AvaliViroblade.tools.0.label> -->
+  <AvaliViroblade.tools.0.label>Griff</AvaliViroblade.tools.0.label>
+  <!-- <AvaliViroblade.tools.1.label>Avali Viroblade guard</AvaliViroblade.tools.1.label> -->
+  <AvaliViroblade.tools.1.label>Klingenschutz</AvaliViroblade.tools.1.label>
+  <!-- <AvaliViroblade.tools.2.label>Avali Viroblade</AvaliViroblade.tools.2.label> -->
+  <AvaliViroblade.tools.2.label>Avali-Viroklinge</AvaliViroblade.tools.2.label>
+</LanguageData>
+  

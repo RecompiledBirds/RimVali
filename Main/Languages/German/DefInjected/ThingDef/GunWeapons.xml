@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Pistol bullet -->
+
+  <!-- <AvaliPistolBullet.label>Avali Bullet</AvaliPistolBullet.label> -->
+  <AvaliPistolBullet.label>Avali-Pistolenkugel</AvaliPistolBullet.label>
+  <!-- <AvaliPistol.verbs.Verb_Shoot.label>Avali Pistol</AvaliPistol.verbs.Verb_Shoot.label> -->
+  <AvaliPistol.verbs.Verb_Shoot.label>Avali-Pistole</AvaliPistol.verbs.Verb_Shoot.label>
+
+  <!-- Pistol -->
+
+  <!-- <AvaliPistol.label>Avali Pistol</AvaliPistol.label> -->
+  <AvaliPistol.label>Avali-Pistole</AvaliPistol.label>
+  <!-- <AvaliPistol.description>A common avali pistol. Unlike most human pistols, this gun uses coilgun technology to fire its bullets.</AvaliPistol.description> -->
+  <AvaliPistol.description>Eine gewöhnliche Avali-Pistole. Im Gegensatz zu den meisten von Menschen erstellten Pistolen verwendet diese Waffe Coilgun-Technologie, um ihre Kugeln abzufeuern.</AvaliPistol.description>
+  <!-- <AvaliPistol.tools.0.label>grip</AvaliPistol.tools.0.label> -->
+  <AvaliPistol.tools.0.label>Griff</AvaliPistol.tools.0.label>
+  <!-- <AvaliPistol.tools.1.label>barrel</AvaliPistol.tools.1.label> -->
+  <AvaliPistol.tools.1.label>Lauf</AvaliPistol.tools.1.label>
+
+  <!-- SMG bullet -->
+
+  <!-- <AvaliSMGBullet.label>Avali MP bullet</AvaliSMGBullet.label> -->
+  <AvaliSMGBullet.label>Avali-MP-Kugel</AvaliSMGBullet.label>
+
+  <!-- SMG -->
+
+  <!-- <AvaliSMG.label>Avali SMG</AvaliSMG.label> -->
+  <AvaliSMG.label>Avali-MP</AvaliSMG.label>
+  <!-- <AvaliSMG.description>A coilgun based SMG. Works best at long range, like most avali weapons do.</AvaliSMG.description> -->
+  <AvaliSMG.description>Eine Coilgun basierte MP. Funktioniert am besten bei großer Entfernung, wie bei den meisten anderen Avali Fernkampfwaffen.</AvaliSMG.description>
+  <!-- <AvaliSMG.tools.0.label>stock</AvaliSMG.tools.0.label> -->
+  <AvaliSMG.tools.0.label>Schaft</AvaliSMG.tools.0.label>
+  <!-- <AvaliSMG.tools.1.label>barrel</AvaliSMG.tools.1.label> -->
+  <AvaliSMG.tools.1.label>Lauf</AvaliSMG.tools.1.label>
+  <!-- <AvaliSMG.verbs.Verb_Shoot.label>Avali SMG</AvaliSMG.verbs.Verb_Shoot.label> -->
+  <AvaliSMG.verbs.Verb_Shoot.label>Avali-MP</AvaliSMG.verbs.Verb_Shoot.label>
+
+  <!-- Minigun bullet -->
+
+  <!-- <AvaliMinigunBullet.label>Avali minigun bullet</AvaliMinigunBullet.label> -->
+  <AvaliMinigunBullet.label>Avali-Minigun-Geschoss</AvaliMinigunBullet.label>
+
+  <!-- Minigun -->
+
+  <!-- <AvaliMinigun.label>Avali minigun</AvaliMinigun.label> -->
+  <AvaliMinigun.label>Avali-Minigun</AvaliMinigun.label>
+  <!-- <AvaliMinigun.description>An avali minigun. Unlike most Illuminate technologies, it is not coilgun based.</AvaliMinigun.description> -->
+  <AvaliMinigun.description>Eine Minigun von den Avali. Im Gegensatz zu den meisten Waffen der Illuminate, basiert diese Waffe nicht auf Coilgun-Technologie.</AvaliMinigun.description>
+  <!-- <AvaliMinigun.tools.0.label>stock</AvaliMinigun.tools.0.label> -->
+  <AvaliMinigun.tools.0.label>Schaft</AvaliMinigun.tools.0.label>
+  <!-- <AvaliMinigun.tools.1.label>barrel</AvaliMinigun.tools.1.label> -->
+  <AvaliMinigun.tools.1.label>Lauf</AvaliMinigun.tools.1.label>
+
+  <!-- Rife bullet -->
+
+  <!-- <AvaliRifleBullet.label>Avali Rifle bullet</AvaliRifleBullet.label> -->
+  <AvaliRifleBullet.label>Avali-Gewehrkugel</AvaliRifleBullet.label>
+
+  <!-- Rifle -->
+
+  <!-- <AvaliRifle.label>Avali Rifle</AvaliRifle.label> -->
+  <AvaliRifle.label>Avali-Gewehr</AvaliRifle.label>
+  <!-- <AvaliRifle.description>A classic coilgun weapon, the rifle. Good for taking out enemies at a distance.</AvaliRifle.description> -->
+  <AvaliRifle.description>Das Gewehr - eine klassische Coilgun-Waffe. Gut, um Feinde mit größerem Abstand zu treffen.</AvaliRifle.description>
+  <!-- <AvaliRifle.tools.0.label>stock</AvaliRifle.tools.0.label> -->
+  <AvaliRifle.tools.0.label>Schaft</AvaliRifle.tools.0.label>
+  <!-- <AvaliRifle.tools.1.label>barrel</AvaliRifle.tools.1.label> -->
+  <AvaliRifle.tools.1.label>Lauf</AvaliRifle.tools.1.label>
+  <!-- <AvaliRifle.verbs.Verb_Shoot.label>Avali Rifle</AvaliRifle.verbs.Verb_Shoot.label> -->
+  <AvaliRifle.verbs.Verb_Shoot.label>Avali-Gewehr</AvaliRifle.verbs.Verb_Shoot.label>
+
+  <!-- Sniper Rife bullet -->
+
+  <!-- <AvaliSniperBullet.label>Avali Sniper Rifle bullet</AvaliSniperBullet.label> -->
+  <AvaliSniperBullet.label>Avali-Präzisionsgewehrkugel</AvaliSniperBullet.label>
+
+  <!-- Sniper rifle -->
+
+  <!-- <AvaliSniperRifle.label>Avali Sniper Rifle</AvaliSniperRifle.label> -->
+  <AvaliSniperRifle.label>Avali-Präzisionsgewehr</AvaliSniperRifle.label>
+  <!-- <AvaliSniperRifle.description>A weapon, perfect for picking off enemies at a distance</AvaliSniperRifle.description> -->
+  <AvaliSniperRifle.description>Eine Waffe, die sich perfekt dafür eignet, Feinde aus großer Entfernung zu treffen.</AvaliSniperRifle.description>
+  <!-- <AvaliSniperRifle.tools.0.label>stock</AvaliSniperRifle.tools.0.label> -->
+  <AvaliSniperRifle.tools.0.label>Schaft</AvaliSniperRifle.tools.0.label>
+  <!-- <AvaliSniperRifle.tools.1.label>barrel</AvaliSniperRifle.tools.1.label> -->
+  <AvaliSniperRifle.tools.1.label>Lauf</AvaliSniperRifle.tools.1.label>
+  <!-- <AvaliSniperRifle.verbs.Verb_Shoot.label>Avali Sniper Rifle</AvaliSniperRifle.verbs.Verb_Shoot.label> -->
+  <AvaliSniperRifle.verbs.Verb_Shoot.label>Avali-Präzisionsgewehr</AvaliSniperRifle.verbs.Verb_Shoot.label>
+
+  <!-- Shotgun bullet -->
+
+  <!-- <AvaliShotgunBullet.label>Avali Shotgun bullet</AvaliShotgunBullet.label> -->
+  <AvaliShotgunBullet.label>Avali-Schrotflintenmunition</AvaliShotgunBullet.label>
+
+  <!-- Shotgun -->
+
+  <!-- <AvaliShotgun.label>Avali Shotgun</AvaliShotgun.label> -->
+  <AvaliShotgun.label>Avali-Schrotflinte</AvaliShotgun.label>
+  <!-- <AvaliShotgun.description>An avali shotgun. Like almost all avali weapons, it is based off coilgun technology, allowing for long range at the cost of short range accuracy.</AvaliShotgun.description> -->
+  <AvaliShotgun.description>Eine Schrotflinte nach Avali-Bauart. Wie fast alle Avali-Waffen verwendet auch diese Fernkampfwaffe Coilgun-Technologie, was ihr Langstreckenschüsse erlaubt, auf Kosten der Kurzstreckengenauigkeit.</AvaliShotgun.description>
+  <!-- <AvaliShotgun.tools.0.label>stock</AvaliShotgun.tools.0.label> -->
+  <AvaliShotgun.tools.0.label>Schaft</AvaliShotgun.tools.0.label>
+  <!-- <AvaliShotgun.tools.1.label>barrel</AvaliShotgun.tools.1.label> -->
+  <AvaliShotgun.tools.1.label>Lauf</AvaliShotgun.tools.1.label>
+  <!-- <AvaliShotgun.verbs.Verb_Shoot.label>Avali Shotgun</AvaliShotgun.verbs.Verb_Shoot.label> -->
+  <AvaliShotgun.verbs.Verb_Shoot.label>Avali-Schrotflinte</AvaliShotgun.verbs.Verb_Shoot.label>
+
+  <!-- Rocket Launcher -->
+
+  <!-- <IlluminateRocketLauncher.label>Avali rocket launcher</IlluminateRocketLauncher.label> -->
+  <IlluminateRocketLauncher.label>Avali-Raketenwerfer</IlluminateRocketLauncher.label>
+  <!-- <IlluminateRocketLauncher.description>An avali rocket launcher.</IlluminateRocketLauncher.description> -->
+  <IlluminateRocketLauncher.description>Ein Raketenwerfer von den Avali.</IlluminateRocketLauncher.description>
+  <!-- <IlluminateRocketLauncher.tools.0.label>barrel</IlluminateRocketLauncher.tools.0.label> -->
+  <IlluminateRocketLauncher.tools.0.label>Lauf</IlluminateRocketLauncher.tools.0.label>
+
+  <!-- Launcher Rocket -->
+
+  <!-- <AvaliRocketLauncherRocket.label>rocket</AvaliRocketLauncherRocket.label> -->
+  <AvaliRocketLauncherRocket.label>Rakete</AvaliRocketLauncherRocket.label>
+</LanguageData>

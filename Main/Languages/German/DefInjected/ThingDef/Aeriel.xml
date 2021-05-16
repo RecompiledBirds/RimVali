@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <Aerial.label>AERIAL System</Aerial.label> -->
+  <Aerial.label>AERIAL System</Aerial.label>
+  <!-- <Aerial.description>AERIAL is a high accuracy rocket system.</Aerial.description> -->
+  <Aerial.description>AERIAL ist ein Hochpräzisions-Raketensystem.</Aerial.description>
+
+  <!-- <AerialLauncher.label>AIMS</AerialLauncher.label> -->
+  <AerialLauncher.label>AIMS</AerialLauncher.label>
+  <!-- <AerialLauncher.description>AIMS launch system.</AerialLauncher.description> -->
+  <AerialLauncher.description>AIMS Startsystem.</AerialLauncher.description>
+  <!-- <AerialLauncher.verbs.Verb_Shoot.label>AIMS</AerialLauncher.verbs.Verb_Shoot.label> -->
+  <AerialLauncher.verbs.Verb_Shoot.label>AIMS</AerialLauncher.verbs.Verb_Shoot.label>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliBasicBionicArm.label>Basic bionic arm</AvaliBasicBionicArm.label> -->
+  <AvaliBasicBionicArm.label>Einfacher bionischer Arm</AvaliBasicBionicArm.label>
+  <!-- <AvaliBasicBionicArm.description>A baisc bionic avali arm.</AvaliBasicBionicArm.description> -->
+  <AvaliBasicBionicArm.description>Ein einfacher bionischer Arm.</AvaliBasicBionicArm.description>
+  <!-- <AvaliBasicBionicArm.labelNoun>a basic bionic arm</AvaliBasicBionicArm.labelNoun> -->
+  <AvaliBasicBionicArm.labelNoun>ein einfacher bionischer Arm</AvaliBasicBionicArm.labelNoun>
+</LanguageData>

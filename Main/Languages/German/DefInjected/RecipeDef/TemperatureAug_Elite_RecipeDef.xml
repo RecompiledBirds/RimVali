@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallAvaliTemperatureImplantElite.label>Install Elite Temperature Control Augment [TCA]</InstallAvaliTemperatureImplantElite.label> -->
+  <InstallAvaliTemperatureImplantElite.label>Elite T.C.A implantieren</InstallAvaliTemperatureImplantElite.label>
+  <!-- <InstallAvaliTemperatureImplantElite.description>Install Elite Temperature Control Augment [TCA].</InstallAvaliTemperatureImplantElite.description> -->
+  <InstallAvaliTemperatureImplantElite.description>Implantiere ein Elite T.C.A.</InstallAvaliTemperatureImplantElite.description>
+  <!-- <InstallAvaliTemperatureImplantElite.jobString>Installing Elite Temperature Control Augment [TCA].</InstallAvaliTemperatureImplantElite.jobString> -->
+  <InstallAvaliTemperatureImplantElite.jobString>Implantiert ein Elite T.C.A.</InstallAvaliTemperatureImplantElite.jobString>
+</LanguageData>

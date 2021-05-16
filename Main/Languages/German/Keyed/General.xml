@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- Pack tab -->
+
+  <!-- <PackTab>Pack</PackTab> -->
+  <PackTab>Rudel</PackTab>
+  <!-- <Packmates>Packmates: </Packmates> -->
+  <Packmates>Rudelmitglieder: </Packmates>
+  <!-- <PackNameLabel>Pack name: {PACKNAME}</PackNameLabel> -->
+  <PackNameLabel>Name des Rudels:{PACKNAME}</PackNameLabel>
+  <!-- <NoPack>This pawn is not in a pack.</NoPack> -->
+  <NoPack>Dieses Mitglied ist nicht in einem Rudel.</NoPack>
+  <!-- <PackSpeciality>Pack speciality: {SPECIALITY}</PackSpeciality> -->
+  <PackSpeciality>Art des Rudels: {SPECIALITY}</PackSpeciality>
+  <!-- <PackEffects>Effects:</PackEffects> -->
+  <PackEffects>Effekte:</PackEffects>
+  
+  <!-- Settings -->
+
+  <!-- <goBack>Go back</goBack> -->
+  <goBack>Zurück</goBack>
+  <!-- <MultiThreadWarnLabel>Multithreading warning!</MultiThreadWarnLabel> -->
+  <MultiThreadWarnLabel>Multithreading Warnung!</MultiThreadWarnLabel>
+  <!-- <MultiThreadWarnDesc>To enable this, we must restart your game. SAVE YOUR PROGRESS ON ANY CURRENT GAMES.</MultiThreadWarnDesc> -->
+  <MultiThreadWarnDesc>Wir müssen dein Spiel neu starten, damit diese Änderungen wirksam werden. SICHERE DEINEN FORTSCHRITT AUF ALLEN LAUFENDEN SPIELSTÄNDEN.</MultiThreadWarnDesc>
+  <!-- <MultiThreadYes>Yes, I understand</MultiThreadYes> -->
+  <MultiThreadYes>Ja, ich habe verstanden.</MultiThreadYes>
+  <!-- <MultiThreadNo>Wait! Go back!</MultiThreadNo> -->
+  <MultiThreadNo>Warte! Zurück!</MultiThreadNo>
+  
+  <!-- Pack settings -->
+
+  <!-- <PackLabel>Pack settings</PackLabel> -->
+  <PackLabel>Rudeleinstellungen</PackLabel>
+  <!-- <PackLossStageOneSetting>Days for stage one pack loss to set in: {TIME}</PackLossStageOneSetting> -->
+  <PackLossStageOneSetting>Tage, bis der Packverlust der ersten Stufe eintritt: {TIME}</PackLossStageOneSetting>
+  <!-- <PackLossStageTwoSetting>Days for stage two pack loss to set in: {TIME}</PackLossStageTwoSetting> -->
+  <PackLossStageTwoSetting>Tage, bis der Packverlust der zweiten Stufe eintritt: {TIME}</PackLossStageTwoSetting>
+  <!-- <PackLossStageThreeSetting>Days for stage three pack loss to set in: {TIME}</PackLossStageThreeSetting> -->
+  <PackLossStageThreeSetting>Tage, bis der Packverlust der dritten Stufe eintritt: {TIME}</PackLossStageThreeSetting>
+  <!-- <PackLossCheck>Pack loss enabled:</PackLossCheck> -->
+  <PackLossCheck>Verlust des Rudels aktivieren:</PackLossCheck>
+  <!-- <PackLossDesc>Enable/disable pack loss.\n Pack loss is a time-based effect if an avali does not have a pack. Recommended for a "full" experience.</PackLossDesc> -->
+  <PackLossDesc>Aktiviere/Deaktiviere Verlust des Rudels.\n Rudelverlust bezeichnet einen zeitbasierten Effekt, wenn ein Avali in keinem Rudel ist. Für ein "volles" Erlebnis empfohlen.</PackLossDesc>
+  <!-- <PacksNum>The maximum number of avali in a pack.\n5 is usually recommended.</PacksNum> -->
+  <PacksNum>Die maximale Anzahl von Avalis in einem Rudel.\n5 sind empfohlen.</PacksNum>
+  <!-- <PackOpinionReq>Opinion required to join pack: {COUNT}</PackOpinionReq> -->
+  <PackOpinionReq>Meinung erforderlich, um Rudel beizutreten: {COUNT}</PackOpinionReq>
+  <!-- <MultithreadingCheck>Multithreading enabled:</MultithreadingCheck> -->
+  <MultithreadingCheck>Multithreading aktiviert:</MultithreadingCheck>
+  <!-- <MultiThreadingDesc>Enable/disable pack multithreading. [WARNING: RESTARTS THE GAME.]\nIt is recommended to have this enabled, as it reduces lag greatly. May cause issues with Dub's performance anaylzer.</MultiThreadingDesc> -->
+  <MultiThreadingDesc>Aktiviere/Deaktiviere Multithreading. [ACHTUNG: STARTET DAS SPIEL NEU.]\nEs wird empfohlen dies zu aktivieren, da dadurch Lags deutlich reduziert werden. Kann zu Konflikten mit "Dub's performance anaylzer" führen.</MultiThreadingDesc>
+  <!-- <PacksCheck>Packs enabled:</PacksCheck> -->
+  <PacksCheck>Rudel aktivieren:</PacksCheck>
+  <!-- <PacksDesc>Enable/disable packs. These give boosts to your pawns! Recommended for a "full" experience.</PacksDesc> -->
+  <PacksDesc>Aktiviere/Deaktiviere Rudel. Gibt deinen Rudelmitgliedern Boosts! Für ein "volles" Erlebnis empfohlen.</PacksDesc>
+  <!-- <MaxPackSize>Maximum pack size: {COUNT}</MaxPackSize> -->
+  <MaxPackSize>Maximale Rudelgröße: {COUNT}</MaxPackSize>
+  
+  <!-- Gameplay -->
+
+  <!-- <GameplayLabel>Gameplay Settings</GameplayLabel> -->
+  <GameplayLabel>Gameplay Einstellungen</GameplayLabel>
+  <!-- <CanHaveEggs>Avali can have eggs:</CanHaveEggs> -->
+  <CanHaveEggs>Avalis können Eier legen:</CanHaveEggs>
+  <!-- <EggsDesc>Enable/disable eggs. In case you wanted that.</EggsDesc> -->
+  <EggsDesc>Aktiviere/Deaktiviere Eier. Für den Fall, dass du das willst.</EggsDesc>
+  <!-- <ShowText>Display text (chirp, peep, etc):</ShowText> -->
+  <ShowText>Text anzeigen (Zwitschern, Piep, etc):</ShowText>
+  <!-- <ShowTextLabel>Ocasionally, avali will display little bits of text. This may lag lower-end computers or games with more colonists, so you can disable it here.</ShowTextLabel> -->
+  <ShowTextLabel>Gelegentlich werden Avalis Bruchstücke von Text anzeigen. Dies kann bei low-end Computern oder Spielen mit mehr Kolonisten zu Lags führen. Deaktiviere es hier, wenn es zu Problemen kommt.</ShowTextLabel>
+  <!-- <AirdropsText>Airdrops enabled:</AirdropsText> -->
+  <AirdropsText>Luftkapseln aktivieren:</AirdropsText>
+  <!-- <AirdropsLabel>Enables/disables the Illuminate airdrop event. \nThis event adds the "Illuminate Nexus Connection".</AirdropsLabel> -->
+  <AirdropsLabel>Aktiviert/Deaktiviert das Illuminate Luftkapsel-Event. \nDieses Event fügt die "Illuminate Nexus Verbindung" hinzu.</AirdropsLabel>
+  <!-- <AvaliForDropReq>Avali required for airdrop: {COUNT}</AvaliForDropReq> -->
+  <AvaliForDropReq>Benötigte Avali für Luftkapsel: {COUNT}</AvaliForDropReq>
+  <!-- <HPScaler>HP Scale: {SCALE}</HPScaler> -->
+  <HPScaler>HP Skalierung: {SCALE}</HPScaler>
+  
+  <!-- Stability warn -->
+
+  <!-- <StableSettings>Stable.</StableSettings> -->
+  <StableSettings>Stabil.</StableSettings>
+  <!-- <PotentialIssuesSettings>Potential issues may occur.</PotentialIssuesSettings> -->
+  <PotentialIssuesSettings>Konflikte könnten möglicherweise auftreten.</PotentialIssuesSettings>
+  <!-- <UnstableSettings>Unstable.</UnstableSettings> -->
+  <UnstableSettings>Nicht Stabil.</UnstableSettings>
+  
+  <!-- Debug -->
+
+  <!-- <DebugLabel>Debug and advanced settings</DebugLabel> -->
+  <DebugLabel>Debug- und erweiterte Einstellungen.</DebugLabel>
+  <!-- <ToggleDebug>Toggle debug mode</ToggleDebug> -->
+  <ToggleDebug>Debug Modus umschalten</ToggleDebug>
+  <!-- <RVBuild>RimVali build: {BUILD}</RVBuild> -->
+  <RVBuild>RimVali build: {BUILD}</RVBuild>
+  
+  <!-- Letters -->
+
+  <!-- <IlluminateFactionName>Illuminate colony</IlluminateFactionName> -->
+  <IlluminateFactionName>Illuminate-Kolonie</IlluminateFactionName>
+  <!-- <IlluminateAirdrop>Illuminate airdrop</IlluminateAirdrop> -->
+  <IlluminateAirdrop>Illuminate-Luftkapsel</IlluminateAirdrop>
+  <!-- <AirdropEventDesc>An Illuminate airdrop has landed nearby!</AirdropEventDesc> -->
+  <AirdropEventDesc>Eine Illuminate-Luftkapsel ist in der Nähe gelandet!</AirdropEventDesc>
+  <!-- <IlluminateAirdropSend>An Illuminate airdrop is en route! It will land in: {TIME} hours! Be prepared!</IlluminateAirdropSend> -->
+  <IlluminateAirdropSend>Eine Illuminate-Luftkapsel ist auf dem Weg! Es wird in {TIME} Stunden landen! Sei darauf vorbereitet!</IlluminateAirdropSend>
+  <!-- <AirdropSendMsg>Airdrop en route</AirdropSendMsg> -->
+  <AirdropSendMsg>Luftkapsel ist auf dem Weg!</AirdropSendMsg>
+  
+  <!-- RVR -->
+
+  <!-- <CannotWear>{RACE} can't wear this</CannotWear> -->
+  <CannotWear>{RACE} kann dies nicht tragen</CannotWear>
+  <!-- <CannotBuild>{RACE} can't build this</CannotBuild> -->
+  <CannotBuild>{RACE} kann dies nicht bauen</CannotBuild>
+  <!-- <CannotEat>{RACE} can't eat this</CannotEat> -->
+  <CannotEat>{RACE} kann das nicht essen</CannotEat>
+  
+  <!-- Jobs -->
+  <!-- <RefuelThing>Refuel {1_labelShort}</RefuelThing> -->
+  <RefuelThing>Betanke {1_labelShort}</RefuelThing>
+</LanguageData>

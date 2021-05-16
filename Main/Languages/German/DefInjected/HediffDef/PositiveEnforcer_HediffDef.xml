@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <PositiveE.label>Positive enforcement augment</PositiveE.label> -->
+  <PositiveE.label>Positiver Verstärker</PositiveE.label>
+  <!-- <PositiveE.description>This augment manipulates the brain of the avali it is installed on, raising their opinion of others. However, they may become more forgetful.</PositiveE.description> -->
+  <PositiveE.description>Dieses Augment manipuliert das Gehirn des Avali und verstärkt die positive Meinung anderen gegenüber. Träger dieses Augments werden jedoch vergesslicher.</PositiveE.description>
+  <!-- <PositiveE.labelNoun>a positive enforcement augment</PositiveE.labelNoun> -->
+  <PositiveE.labelNoun>ein Augment mit einem Positiven Verstärker</PositiveE.labelNoun>
+</LanguageData>

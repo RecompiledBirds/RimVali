@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <DronePlants.label>Micro drone swarm (Plants)</DronePlants.label> -->
+  <DronePlants.label>Mikro-Drohnenschwarm (Landwirtschaft)</DronePlants.label>
+  <!-- <DronePlants.description>This augment produces a swarm of micro-drones, dedicated to assisting in one singular task. In this case, it's farming.</DronePlants.description> -->
+  <DronePlants.description>Dieses Augment produziert einen Schwarm von Mikro-Drohnen, dazu bestimmt bei einzelnen Aufgaben (Landwirtschaft) Unterstützung zu gewährleisten.</DronePlants.description>
+</LanguageData>

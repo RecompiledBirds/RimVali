@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AmmoniaBite.label>ammonia bite</AmmoniaBite.label> -->
+  <AmmoniaBite.label>Ammoniak-Biss</AmmoniaBite.label>
+  <!-- <AmmoniaBite.deathMessage>{0} has been killed.</AmmoniaBite.deathMessage> -->
+  <AmmoniaBite.deathMessage>{0} wurde getötet.</AmmoniaBite.deathMessage>
+</LanguageData>

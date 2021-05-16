@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Normal -->
+
+  <!-- <RimValiColonist.label>Colonist</RimValiColonist.label> -->
+  <RimValiColonist.label>Kolonist</RimValiColonist.label>
+  <!-- <RimValiColonist.labelPlural>Colonists</RimValiColonist.labelPlural> -->
+  <RimValiColonist.labelPlural>Kolonisten</RimValiColonist.labelPlural>
+  <!-- <RimValiColonist.labelMale>male Colonist</RimValiColonist.labelMale> -->
+  <RimValiColonist.labelMale>männlicher Kolonist</RimValiColonist.labelMale>
+  <!-- <RimValiColonist.labelMalePlural>male Colonists</RimValiColonist.labelMalePlural> -->
+  <RimValiColonist.labelMalePlural>männliche Kolonisten</RimValiColonist.labelMalePlural>
+  <!-- <RimValiColonist.labelFemale>female Colonist</RimValiColonist.labelFemale> -->
+  <RimValiColonist.labelFemale>weibliche Kolonistin</RimValiColonist.labelFemale>
+  <!-- <RimValiColonist.labelFemalePlural>female Colonists</RimValiColonist.labelFemalePlural> -->
+  <RimValiColonist.labelFemalePlural>weibliche Kolonistinnen</RimValiColonist.labelFemalePlural>
+
+  <!-- <RimValiEggColonist.label>Colonist</RimValiEggColonist.label> -->
+  <RimValiEggColonist.label>Kolonist</RimValiEggColonist.label>
+  <!-- <RimValiEggColonist.labelPlural>Colonists</RimValiEggColonist.labelPlural> -->
+  <RimValiEggColonist.labelPlural>Kolonisten</RimValiEggColonist.labelPlural>
+  <!-- <RimValiEggColonist.labelMale>male Colonist</RimValiEggColonist.labelMale> -->
+  <RimValiEggColonist.labelMale>männlicher Kolonist</RimValiEggColonist.labelMale>
+  <!-- <RimValiEggColonist.labelMalePlural>male Colonists</RimValiEggColonist.labelMalePlural> -->
+  <RimValiEggColonist.labelMalePlural>männliche Kolonisten</RimValiEggColonist.labelMalePlural>
+  <!-- <RimValiEggColonist.labelFemale>female Colonist</RimValiEggColonist.labelFemale> -->
+  <RimValiEggColonist.labelFemale>weibliche Kolonistin</RimValiEggColonist.labelFemale>
+  <!-- <RimValiEggColonist.labelFemalePlural>female Colonists</RimValiEggColonist.labelFemalePlural> -->
+  <RimValiEggColonist.labelFemalePlural>weibliche Kolonistinnen</RimValiEggColonist.labelFemalePlural>
+
+  <!-- <RimValiCrashedColonist.label>Colonist</RimValiCrashedColonist.label> -->
+  <RimValiCrashedColonist.label>Kolonist</RimValiCrashedColonist.label>
+  <!-- <RimValiCrashedColonist.labelPlural>Colonists</RimValiCrashedColonist.labelPlural> -->
+  <RimValiCrashedColonist.labelPlural>Kolonisten</RimValiCrashedColonist.labelPlural>
+  <!-- <RimValiCrashedColonist.labelMale>male Colonist</RimValiCrashedColonist.labelMale> -->
+  <RimValiCrashedColonist.labelMale>männlicher Kolonist</RimValiCrashedColonist.labelMale>
+  <!-- <RimValiCrashedColonist.labelMalePlural>male Colonists</RimValiCrashedColonist.labelMalePlural> -->
+  <RimValiCrashedColonist.labelMalePlural>männliche Kolonisten</RimValiCrashedColonist.labelMalePlural>
+  <!-- <RimValiCrashedColonist.labelFemale>female Colonist</RimValiCrashedColonist.labelFemale> -->
+  <RimValiCrashedColonist.labelFemale>weibliche Kolonistin</RimValiCrashedColonist.labelFemale>
+  <!-- <RimValiCrashedColonist.labelFemalePlural>female Colonists</RimValiCrashedColonist.labelFemalePlural> -->
+  <RimValiCrashedColonist.labelFemalePlural>weibliche Kolonistinnen</RimValiCrashedColonist.labelFemalePlural>
+
+  <!-- RitualNeo -->
+
+  <!-- <RitualNeo.label>RitualNeo</RitualNeo.label> -->
+  <RitualNeo.label>RitualNeo</RitualNeo.label>
+  <!-- <RitualNeo.labelPlural>RitualNeos</RitualNeo.labelPlural> -->
+  <RitualNeo.labelPlural>RitualNeos</RitualNeo.labelPlural>
+  <!-- <RitualNeo.labelMale>male RitualNeo</RitualNeo.labelMale> -->
+  <RitualNeo.labelMale>männlicher RitualNeo</RitualNeo.labelMale>
+  <!-- <RitualNeo.labelMalePlural>male RitualNeos</RitualNeo.labelMalePlural> -->
+  <RitualNeo.labelMalePlural>männliche RitualNeos</RitualNeo.labelMalePlural>
+  <!-- <RitualNeo.labelFemale>female RitualNeo</RitualNeo.labelFemale> -->
+  <RitualNeo.labelFemale>weibliche RitualNeo</RitualNeo.labelFemale>
+  <!-- <RitualNeo.labelFemalePlural>female RitualNeos</RitualNeo.labelFemalePlural> -->
+  <RitualNeo.labelFemalePlural>weibliche RitualNeos</RitualNeo.labelFemalePlural>
+
+  <!-- Eimilian -->
+
+  <!-- <Eimilian.label>Eimilian</Eimilian.label> -->
+  <Eimilian.label>Eimilian</Eimilian.label>
+  <!-- <Eimilian.labelPlural>Eimilians</Eimilian.labelPlural> -->
+  <Eimilian.labelPlural>Eimilians</Eimilian.labelPlural>
+  <!-- <Eimilian.labelMale>male Eimilian</Eimilian.labelMale> -->
+  <Eimilian.labelMale>männlicher Eimilian</Eimilian.labelMale>
+  <!-- <Eimilian.labelMalePlural>male Eimilians</Eimilian.labelMalePlural> -->
+  <Eimilian.labelMalePlural>männliche Eimilians</Eimilian.labelMalePlural>
+  <!-- <Eimilian.labelFemale>female Eimilian</Eimilian.labelFemale> -->
+  <Eimilian.labelFemale>weibliche Eimilian</Eimilian.labelFemale>
+  <!-- <Eimilian.labelFemalePlural>female Eimilians</Eimilian.labelFemalePlural> -->
+  <Eimilian.labelFemalePlural>weibliche Eimilians</Eimilian.labelFemalePlural>
+</LanguageData>

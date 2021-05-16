@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <HealthIncreasePercent.label>Part health impact</HealthIncreasePercent.label> -->
+  <HealthIncreasePercent.label>Auswirkungen auf die Robustheit des Körperteils</HealthIncreasePercent.label>
+  <!-- <HealthIncreasePercent.description>How much the part health is increased/decreased by a bionic.</HealthIncreasePercent.description> -->
+  <HealthIncreasePercent.description>Wie sehr die Bionik die Robustheit des Körperteils erhöht/verringert.</HealthIncreasePercent.description>
+  
+  <!-- <HealthIncreaseAdd.label>Part health impact</HealthIncreaseAdd.label> -->
+  <HealthIncreaseAdd.label>Auswirkungen auf die Robustheit des Körperteils</HealthIncreaseAdd.label>
+  <!-- <HealthIncreaseAdd.description>How much the part health is increased/decreased by a bionic.</HealthIncreaseAdd.description> -->
+  <HealthIncreaseAdd.description>Wie sehr die Bionik die Robustheit des Körperteils erhöht/verringert.</HealthIncreaseAdd.description>
+
+  <!-- <ExplodeBombRadius.label>Explosion [Bomb] radius</ExplodeBombRadius.label> -->
+  <ExplodeBombRadius.label>Explosionsradius [Bombe]</ExplodeBombRadius.label>
+  <!-- <ExplodeBombRadius.description>The area affected when this detonates.</ExplodeBombRadius.description> -->
+  <ExplodeBombRadius.description>Der Bereich, der von der Explosion betroffen ist.</ExplodeBombRadius.description>
+
+  <!-- <ExplodeFireRadius.label>Explosion [Fire] radius</ExplodeFireRadius.label> -->
+  <ExplodeFireRadius.label>Explosionsradius [Feuer]</ExplodeFireRadius.label>
+  <!-- <ExplodeFireRadius.description>The area affected when this detonates.</ExplodeFireRadius.description> -->
+  <ExplodeFireRadius.description>Der Bereich, der von der Explosion betroffen ist.</ExplodeFireRadius.description>
+
+  <!-- <ExplodeEMPRadius.label>Explosion [EMP] radius</ExplodeEMPRadius.label> -->
+  <ExplodeEMPRadius.label>Explosionsradius [EMP]</ExplodeEMPRadius.label>
+  <!-- <ExplodeEMPRadius.description>The area affected when this detonates.</ExplodeEMPRadius.description> -->
+  <ExplodeEMPRadius.description>Der Bereich, der von der Explosion betroffen ist.</ExplodeEMPRadius.description>
+
+  <!-- <KillOnExplosion.label>Kills pawn on explosion</KillOnExplosion.label> -->
+  <KillOnExplosion.label>Tötet bei Explosion</KillOnExplosion.label>
+  <!-- <KillOnExplosion.description>If this apparel has is GUARANTEED to kill the pawn when exploding [0 = no, 1 = yes].</KillOnExplosion.description> -->
+  <KillOnExplosion.description>Tötet GARANTIERT bei Explosion [0 = nein, 1 = ja].</KillOnExplosion.description>
+</LanguageData>

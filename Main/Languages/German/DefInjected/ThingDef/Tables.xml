@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Nano-Forge -->
+
+  <!-- <AvaliNanoForge.label>Avali Nano-Printing Forge</AvaliNanoForge.label> -->
+  <AvaliNanoForge.label>Avali Nanodruck-Schmiede</AvaliNanoForge.label>
+  <!-- <AvaliNanoForge.description>The Avali Nano-Printing Forge is a 3D printer, like most Avali crafting utilities. It works with immense heat, and nanotechnologies able to rearrange the structure and molecues of the items put in. Caution: Do not stick fingers, toes, feet, hands, tails, or other limbs inside, even if the device appears to be powered off.</AvaliNanoForge.description> -->
+  <AvaliNanoForge.description>Die Nanodruck-Schmiede ist ein 3D-Nanodrucker, wie die meisten Produktionsmaschinen der Avali. Durch enorme Hitze und Nanotechnologie wird die molekulare Struktur eines jeden Gegenstandes neu angeordnet, um dadurch das gewünschte Produkt zu erhalten. Achtung: Bitte halten Sie keine Finger, Krallen, Füße, Hände, Schweif oder sonstige Gließmaßen hinein, selbst wenn das Gerät ausgeschalten zu sein scheint.</AvaliNanoForge.description>
+
+  <!-- Research bench -->
+
+  <!-- <AvaliResearchBench.label>Avali Research bench</AvaliResearchBench.label> -->
+  <AvaliResearchBench.label>Avali Forschungstisch</AvaliResearchBench.label>
+  <!-- <AvaliResearchBench.description>An avali research bench. Most avali would dimiss this kind of tech as simple, and somewhat bulky, while the humans just stare at the hologram it projects. You'll learn to make better versions later on, most likely, but this is a start. You'll need it to research avali tech.</AvaliResearchBench.description> -->
+  <AvaliResearchBench.description>Ein Forschungstisch der Avali. Die meisten Avali würden den Forschungstisch als sehr einfach und klobig bezeichnen, während die meisten Menschen von der Technik und den Hologrammen überwältigt wären. Du wirst später etwas besseres brauchen, um die fortgeschrittenen Technologien der Avali erforschen zu können, aber erstmal ist das besser als nichts.</AvaliResearchBench.description>
+
+  <!-- <AvaliNexus.label>Illuminate Nexus Connection</AvaliNexus.label> -->
+  <AvaliNexus.label>Illuminate Nexus-Verbindung</AvaliNexus.label>
+  <!-- <AvaliNexus.description>This device can be used to access higher levels of tech, thanks to its connection to te nexus.</AvaliNexus.description> -->
+  <AvaliNexus.description>Dieses Gerät ermöglicht, dank seiner Verbindung zum Nexus, den Zugriff auf höhere Technologien.</AvaliNexus.description>
+
+  <!-- Nano-loom -->
+
+  <!-- <AvaliNanoLoom.label>Avali Nano-Printing Loom</AvaliNanoLoom.label> -->
+  <AvaliNanoLoom.label>Avali Nanodruck-Webmaschine</AvaliNanoLoom.label>
+  <!-- <AvaliNanoLoom.description>The Avali Nano-loom is a highly important piece of equipment. Without it, Avali wouldn't be able to make any of their advanced cloth materials, which are used in other things..</AvaliNanoLoom.description> -->
+  <AvaliNanoLoom.description>Die Nanodruck-Webmaschine ist ein sehr wichtiges Utensil. Ohne diesen 3D-Nanodrucker könnten die Avali kaum die fortschrittlichen Stoffe herstellen, die für viele Zwecke verwendet werden..</AvaliNanoLoom.description>
+</LanguageData>

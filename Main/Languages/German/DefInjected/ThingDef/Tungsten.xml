@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliTungsten.label>Raw Tungsten</AvaliTungsten.label> -->
+  <AvaliTungsten.label>Unverarbeitetes Wolfram</AvaliTungsten.label>
+  <!-- <AvaliTungsten.description>Tungsten. A reddish-grayish ore. Avali commonly use it, especially in their rail weapons, as a bullet/projectile. However, it can't be used in this form.</AvaliTungsten.description> -->
+  <AvaliTungsten.description>Wolfram, ein rötlich-graues Erz. Avali verwenden es häufig, insbesondere in ihren Railgun-Waffen als Projektil. Es kann jedoch in dieser Form nicht verwendet werden.</AvaliTungsten.description>
+
+  <!-- <AvaliTungstenPowder.label>Tungsten</AvaliTungstenPowder.label> -->
+  <AvaliTungstenPowder.label>Wolfram</AvaliTungstenPowder.label>
+  <!-- <AvaliTungstenPowder.description>Crushed tungsten; it's ready for the heat and pressure treatment to mold it now.</AvaliTungstenPowder.description> -->
+  <AvaliTungstenPowder.description>Zerkleinertes Wolfram; es ist nun bereit, mittels Hitze- und Druckverfahren geformt zu werden.</AvaliTungstenPowder.description>
+  <!-- <AvaliTungstenPowder.stuffProps.stuffAdjective>Tungsten</AvaliTungstenPowder.stuffProps.stuffAdjective> -->
+  <AvaliTungstenPowder.stuffProps.stuffAdjective>Wolfram</AvaliTungstenPowder.stuffProps.stuffAdjective>
+
+  <!-- <TungstenOre.label>Compacted Tungsten Alloy</TungstenOre.label> -->
+  <TungstenOre.label>Kompakte Wolframlegierung</TungstenOre.label>
+  <!-- <TungstenOre.description>The remains of some ancient, collapsed structure. Rich in tungsten.</TungstenOre.description> -->
+  <TungstenOre.description>Die Überreste einer alten, zerstörten Struktur. Reich an Wolfram.</TungstenOre.description>
+
+  <!-- <AeroTungstenCarbide.label>Aero-Tungsten Carbide</AeroTungstenCarbide.label> -->
+  <AeroTungstenCarbide.label>Ferro-Wolframcarbid</AeroTungstenCarbide.label>
+  <!-- <AeroTungstenCarbide.description>A supermaterial. This material is a hybrid of tungsten and aerogel, to make one of the strongest resources avali have ever made.</AeroTungstenCarbide.description> -->
+  <AeroTungstenCarbide.description>Dieses Supermaterial ist ein Hybrid aus Wolfram und Ferrogel, um eine der stärksten Materialien zu bilden, die die Avali herstellen können.</AeroTungstenCarbide.description>
+  <!-- <AeroTungstenCarbide.stuffProps.stuffAdjective>Aero-Tungsten Carbide</AeroTungstenCarbide.stuffProps.stuffAdjective> -->
+  <AeroTungstenCarbide.stuffProps.stuffAdjective>Ferro-Wolframcarbid</AeroTungstenCarbide.stuffProps.stuffAdjective>
+</LanguageData>

@@ -1022,7 +1022,10 @@
       
       <!-- Brain -->
       <li>InstallPE</li>
-
+      
+      <!-- Royalty -->
+      <li>CureBloodRot</li>
+      <li>CureAbasia</li>
 		</recipes>
 	</AvaliMod.RimValiRaceDef>
   

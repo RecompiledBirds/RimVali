@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallWingBlades.label>Install wing blades</InstallWingBlades.label> -->
+  <InstallWingBlades.label>Flügelklingen implantieren</InstallWingBlades.label>
+  <!-- <InstallWingBlades.description>Install wing blades.</InstallWingBlades.description> -->
+  <InstallWingBlades.description>Implantiere Flügelklingen.</InstallWingBlades.description>
+  <!-- <InstallWingBlades.jobString>Installing Wing blades.</InstallWingBlades.jobString> -->
+  <InstallWingBlades.jobString>Implantiert Flügelklingen.</InstallWingBlades.jobString>
+</LanguageData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <RimValiClothFeathers.label>Cloth arm feathers</RimValiClothFeathers.label> -->
+  <RimValiClothFeathers.label>Stoff-Armfedern</RimValiClothFeathers.label>
+  <!-- <RimValiClothFeathers.description>Cloth arm feathers. A simple, easy replacement.</RimValiClothFeathers.description> -->
+  <RimValiClothFeathers.description>Stoff-Armfedern. Ein sehr einfacher Ersatz.</RimValiClothFeathers.description>
+
+  <!-- <RimValiPegTail.label>Avali peg tail</RimValiPegTail.label> -->
+  <RimValiPegTail.label>Avali Ringelschwanz</RimValiPegTail.label>
+  <!-- <RimValiPegTail.description>A peg tail. The avali see it as a.. "interesting" replacement choice.</RimValiPegTail.description> -->
+  <RimValiPegTail.description>Ein Ringelschwanz. Für Avali ist dieser Ersatz eine eher.. "interessante" Wahl.</RimValiPegTail.description>
+</LanguageData>

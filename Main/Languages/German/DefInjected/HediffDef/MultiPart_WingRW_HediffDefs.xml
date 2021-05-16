@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <WingRework.label>Wing Rework</WingRework.label> -->
+  <WingRework.label>Verbesserte Flügel</WingRework.label>
+  <!-- <WingRework.description>This bionic makes the wings larger. By itself, this won't do much. But with another bionic, it might allow leaping into the air and gliding.</WingRework.description> -->
+  <WingRework.description>Diese Bionik vergrößert die Flügel. Für sich alleine wird das nicht viel bringen, aber in Kombination mit anderer Bionik könnte man damit von überall durch die Luft gleiten.</WingRework.description>
+  <!-- <WingRework.comps.0.stringForHediffsLeft>Other bionics needed: </WingRework.comps.0.stringForHediffsLeft> -->
+  <WingRework.comps.0.stringForHediffsLeft>Weitere benötigte Bionik: </WingRework.comps.0.stringForHediffsLeft>
+
+  <!-- <SpringLegs.label>Spring legs</SpringLegs.label> -->
+  <SpringLegs.label>Sprungbeine</SpringLegs.label>
+  <!-- <SpringLegs.description>A spring-loaded bionic leg, capable of allowing the user to jump higher. If only they had a way to glide...</SpringLegs.description> -->
+  <SpringLegs.description>Ein bionisches Bein, welches durch spezielle Sprungfedern sehr große Sprünge erlaubt. Wenn man jetzt nur die Flügel anpassen könnte, um zu gleiten...</SpringLegs.description>
+  <!-- <SpringLegs.comps.0.stringForHediffsLeft>Other bionics needed: </SpringLegs.comps.0.stringForHediffsLeft> -->
+  <SpringLegs.comps.0.stringForHediffsLeft>Weitere benötigte Bionik: </SpringLegs.comps.0.stringForHediffsLeft>
+
+  <!-- <WingJump.label>WingJump</WingJump.label> -->
+  <WingJump.label>WingJump</WingJump.label>
+  <!-- <WingJump.description>test</WingJump.description> -->
+  <WingJump.description>test</WingJump.description>
+</LanguageData>

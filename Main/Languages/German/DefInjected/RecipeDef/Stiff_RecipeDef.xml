@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallTailStiffeningAugment.label>Install tail stiffening augment</InstallTailStiffeningAugment.label> -->
+  <InstallTailStiffeningAugment.label>Schweifverstärker-Augment implantieren</InstallTailStiffeningAugment.label>
+  <!-- <InstallTailStiffeningAugment.description>Install a tail stiffening augment.</InstallTailStiffeningAugment.description> -->
+  <InstallTailStiffeningAugment.description>Implantiere ein Schweifverstärker-Augment.</InstallTailStiffeningAugment.description>
+  <!-- <InstallTailStiffeningAugment.jobString>Installing tail stiffening augment.</InstallTailStiffeningAugment.jobString> -->
+  <InstallTailStiffeningAugment.jobString>Implantiert ein Schweifverstärker-Augment.</InstallTailStiffeningAugment.jobString>
+</LanguageData>

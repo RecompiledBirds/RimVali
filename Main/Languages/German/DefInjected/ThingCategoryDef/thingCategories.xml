@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliResources.label>Avali items</AvaliResources.label> -->
+  <AvaliResources.label>Avali Gegenstände</AvaliResources.label>
+  
+  <!-- <AerielShells.label>A.E.R.I.E.L Shells</AerielShells.label> -->
+  <AerielShells.label>A.E.R.I.E.L Granaten</AerielShells.label>
+  
+  <!-- <AimsShells.label>AIMS Shells</AimsShells.label> -->
+  <AimsShells.label>AIMS Granaten</AimsShells.label>
+</LanguageData>

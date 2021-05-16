@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AIMSHE.label>AIMS HE shell</AIMSHE.label> -->
+  <AIMSHE.label>AIMS HE Granate</AIMSHE.label>
+  <!-- <AIMSHE.description>A shell filled with high explosives. Can be fired from an AIMS system.</AIMSHE.description> -->
+  <AIMSHE.description>Eine Granate mit hochexplosiven Substanzen. Kann von einem AIMS-System abgefeuert werden.</AIMSHE.description>
+
+  <!-- <AIMS_HE_SHELL.label>high-explosive shell</AIMS_HE_SHELL.label> -->
+  <AIMS_HE_SHELL.label>hochexplosive Granate</AIMS_HE_SHELL.label>
+</LanguageData>

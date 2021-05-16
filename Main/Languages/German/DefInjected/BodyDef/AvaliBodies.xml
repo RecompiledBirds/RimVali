@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <RimValiBody.label>Avali</RimValiBody.label> -->
+  <RimValiBody.label>Avali</RimValiBody.label>
+
+  <!-- <RimValiBody.corePart.parts.6.customLabel>left avali lung</RimValiBody.corePart.parts.6.customLabel> -->
+  <RimValiBody.corePart.parts.6.customLabel>linke Avali Lunge</RimValiBody.corePart.parts.6.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.7.customLabel>right avali lung</RimValiBody.corePart.parts.7.customLabel> -->
+  <RimValiBody.corePart.parts.7.customLabel>rechte Avali Lunge</RimValiBody.corePart.parts.7.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.8.customLabel>left kidney</RimValiBody.corePart.parts.8.customLabel> -->
+  <RimValiBody.corePart.parts.8.customLabel>linke Niere</RimValiBody.corePart.parts.8.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.9.customLabel>right kidney</RimValiBody.corePart.parts.9.customLabel> -->
+  <RimValiBody.corePart.parts.9.customLabel>rechte Niere</RimValiBody.corePart.parts.9.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.11.parts.0.parts.0.customLabel>left upper ear</RimValiBody.corePart.parts.11.parts.0.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.11.parts.0.parts.0.customLabel>linkes oberes Ohr</RimValiBody.corePart.parts.11.parts.0.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.11.parts.0.parts.1.customLabel>right upper ear</RimValiBody.corePart.parts.11.parts.0.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.11.parts.0.parts.1.customLabel>rechtes oberes Ohr</RimValiBody.corePart.parts.11.parts.0.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.11.parts.0.parts.2.customLabel>right lower ear</RimValiBody.corePart.parts.11.parts.0.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.11.parts.0.parts.2.customLabel>rechtes lower Ohr</RimValiBody.corePart.parts.11.parts.0.parts.2.customLabel>
+  <!-- <RimValiBody.corePart.parts.11.parts.0.parts.3.customLabel>left lower ear</RimValiBody.corePart.parts.11.parts.0.parts.3.customLabel> -->
+  <RimValiBody.corePart.parts.11.parts.0.parts.3.customLabel>linkes lower Ohr</RimValiBody.corePart.parts.11.parts.0.parts.3.customLabel>
+  <!-- <RimValiBody.corePart.parts.11.parts.0.parts.5.customLabel>left eye</RimValiBody.corePart.parts.11.parts.0.parts.5.customLabel> -->
+  <RimValiBody.corePart.parts.11.parts.0.parts.5.customLabel>linkes Auge</RimValiBody.corePart.parts.11.parts.0.parts.5.customLabel>
+  <!-- <RimValiBody.corePart.parts.11.parts.0.parts.6.customLabel>right eye</RimValiBody.corePart.parts.11.parts.0.parts.6.customLabel> -->
+  <RimValiBody.corePart.parts.11.parts.0.parts.6.customLabel>rechtes Auge</RimValiBody.corePart.parts.11.parts.0.parts.6.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.12.customLabel>left shoulder</RimValiBody.corePart.parts.12.customLabel> -->
+  <RimValiBody.corePart.parts.12.customLabel>linke Schulter</RimValiBody.corePart.parts.12.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.0.customLabel>left clavicle</RimValiBody.corePart.parts.12.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.0.customLabel>linkes Schlüsselbein</RimValiBody.corePart.parts.12.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.customLabel>left arm</RimValiBody.corePart.parts.12.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.customLabel>linker Arm</RimValiBody.corePart.parts.12.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.parts.0.customLabel>left arm feathers</RimValiBody.corePart.parts.12.parts.1.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.parts.0.customLabel>linke Armfedern</RimValiBody.corePart.parts.12.parts.1.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.parts.1.customLabel>left humerus</RimValiBody.corePart.parts.12.parts.1.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.parts.1.customLabel>linker Oberarmknochen</RimValiBody.corePart.parts.12.parts.1.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.parts.2.customLabel>left radius</RimValiBody.corePart.parts.12.parts.1.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.parts.2.customLabel>linke Speiche</RimValiBody.corePart.parts.12.parts.1.parts.2.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.parts.3.customLabel>left hand</RimValiBody.corePart.parts.12.parts.1.parts.3.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.parts.3.customLabel>linke Hand</RimValiBody.corePart.parts.12.parts.1.parts.3.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.parts.3.parts.0.customLabel>left finger</RimValiBody.corePart.parts.12.parts.1.parts.3.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.parts.3.parts.0.customLabel>linker Finger</RimValiBody.corePart.parts.12.parts.1.parts.3.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.parts.3.parts.1.customLabel>middle finger</RimValiBody.corePart.parts.12.parts.1.parts.3.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.parts.3.parts.1.customLabel>mittlerer Finger</RimValiBody.corePart.parts.12.parts.1.parts.3.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.12.parts.1.parts.3.parts.2.customLabel>right finger</RimValiBody.corePart.parts.12.parts.1.parts.3.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.12.parts.1.parts.3.parts.2.customLabel>rechter Finger</RimValiBody.corePart.parts.12.parts.1.parts.3.parts.2.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.13.customLabel>right shoulder</RimValiBody.corePart.parts.13.customLabel> -->
+  <RimValiBody.corePart.parts.13.customLabel>linke Schulter</RimValiBody.corePart.parts.13.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.0.customLabel>right clavicle</RimValiBody.corePart.parts.13.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.0.customLabel>linkes Schlüsselbein</RimValiBody.corePart.parts.13.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.customLabel>right arm</RimValiBody.corePart.parts.13.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.customLabel>linker Arm</RimValiBody.corePart.parts.13.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.parts.0.customLabel>right arm feathers</RimValiBody.corePart.parts.13.parts.1.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.parts.0.customLabel>linke Armfedern</RimValiBody.corePart.parts.13.parts.1.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.parts.1.customLabel>right humerus</RimValiBody.corePart.parts.13.parts.1.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.parts.1.customLabel>linker Oberarmknochen</RimValiBody.corePart.parts.13.parts.1.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.parts.2.customLabel>right radius</RimValiBody.corePart.parts.13.parts.1.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.parts.2.customLabel>linke Speiche</RimValiBody.corePart.parts.13.parts.1.parts.2.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.parts.3.customLabel>right hand</RimValiBody.corePart.parts.13.parts.1.parts.3.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.parts.3.customLabel>linke Hand</RimValiBody.corePart.parts.13.parts.1.parts.3.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.parts.3.parts.0.customLabel>left finger</RimValiBody.corePart.parts.13.parts.1.parts.3.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.parts.3.parts.0.customLabel>linker Finger</RimValiBody.corePart.parts.13.parts.1.parts.3.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.parts.3.parts.1.customLabel>middle finger</RimValiBody.corePart.parts.13.parts.1.parts.3.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.parts.3.parts.1.customLabel>mittlerer Finger</RimValiBody.corePart.parts.13.parts.1.parts.3.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.13.parts.1.parts.3.parts.2.customLabel>right finger</RimValiBody.corePart.parts.13.parts.1.parts.3.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.13.parts.1.parts.3.parts.2.customLabel>rechter Finger</RimValiBody.corePart.parts.13.parts.1.parts.3.parts.2.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.15.customLabel>avali Tail</RimValiBody.corePart.parts.15.customLabel> -->
+  <RimValiBody.corePart.parts.15.customLabel>Avali Schweif</RimValiBody.corePart.parts.15.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.16.customLabel>left leg</RimValiBody.corePart.parts.16.customLabel> -->
+  <RimValiBody.corePart.parts.16.customLabel>linkes Bein</RimValiBody.corePart.parts.16.customLabel>
+  <!-- <RimValiBody.corePart.parts.16.parts.0.customLabel>left femur</RimValiBody.corePart.parts.16.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.16.parts.0.customLabel>linker Oberschenkel</RimValiBody.corePart.parts.16.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.16.parts.1.customLabel>left tibia</RimValiBody.corePart.parts.16.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.16.parts.1.customLabel>left Schienbein</RimValiBody.corePart.parts.16.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.16.parts.2.customLabel>left foot</RimValiBody.corePart.parts.16.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.16.parts.2.customLabel>left Fuß</RimValiBody.corePart.parts.16.parts.2.customLabel>
+  <!-- <RimValiBody.corePart.parts.16.parts.2.parts.0.customLabel>left talon</RimValiBody.corePart.parts.16.parts.2.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.16.parts.2.parts.0.customLabel>linke Kralle</RimValiBody.corePart.parts.16.parts.2.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.16.parts.2.parts.1.customLabel>middle talon</RimValiBody.corePart.parts.16.parts.2.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.16.parts.2.parts.1.customLabel>mittlere Kralle</RimValiBody.corePart.parts.16.parts.2.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.16.parts.2.parts.2.customLabel>right talon</RimValiBody.corePart.parts.16.parts.2.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.16.parts.2.parts.2.customLabel>rechte Kralle</RimValiBody.corePart.parts.16.parts.2.parts.2.customLabel>
+  
+  <!-- <RimValiBody.corePart.parts.17.customLabel>right leg</RimValiBody.corePart.parts.17.customLabel> -->
+  <RimValiBody.corePart.parts.17.customLabel>rechtes Bein</RimValiBody.corePart.parts.17.customLabel>
+  <!-- <RimValiBody.corePart.parts.17.parts.0.customLabel>right femur</RimValiBody.corePart.parts.17.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.17.parts.0.customLabel>rechter Oberschenkel</RimValiBody.corePart.parts.17.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.17.parts.1.customLabel>right tibia</RimValiBody.corePart.parts.17.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.17.parts.1.customLabel>rechtes Schienbein</RimValiBody.corePart.parts.17.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.17.parts.2.customLabel>right foot</RimValiBody.corePart.parts.17.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.17.parts.2.customLabel>rechter Fuß</RimValiBody.corePart.parts.17.parts.2.customLabel>
+  <!-- <RimValiBody.corePart.parts.17.parts.2.parts.0.customLabel>left talon</RimValiBody.corePart.parts.17.parts.2.parts.0.customLabel> -->
+  <RimValiBody.corePart.parts.17.parts.2.parts.0.customLabel>linke Kralle</RimValiBody.corePart.parts.17.parts.2.parts.0.customLabel>
+  <!-- <RimValiBody.corePart.parts.17.parts.2.parts.1.customLabel>middle talon</RimValiBody.corePart.parts.17.parts.2.parts.1.customLabel> -->
+  <RimValiBody.corePart.parts.17.parts.2.parts.1.customLabel>mittlere Kralle</RimValiBody.corePart.parts.17.parts.2.parts.1.customLabel>
+  <!-- <RimValiBody.corePart.parts.17.parts.2.parts.2.customLabel>right talon</RimValiBody.corePart.parts.17.parts.2.parts.2.customLabel> -->
+  <RimValiBody.corePart.parts.17.parts.2.parts.2.customLabel>rechte Kralle</RimValiBody.corePart.parts.17.parts.2.parts.2.customLabel>
+</LanguageData>

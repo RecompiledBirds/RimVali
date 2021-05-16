@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AvaliFaction.label>Avali Pack</AvaliFaction.label> -->
+  <AvaliFaction.label>Avali-Rudel</AvaliFaction.label>
+  <!-- <AvaliFaction.description>A pack of avali.</AvaliFaction.description> -->
+  <AvaliFaction.description>Ein Rudel Avali.</AvaliFaction.description>
+  <!-- <AvaliFaction.pawnsPlural>Avali</AvaliFaction.pawnsPlural> -->
+  <AvaliFaction.pawnsPlural>Avali</AvaliFaction.pawnsPlural>
+  <!-- <AvaliFaction.leaderTitle>Pack Leader</AvaliFaction.leaderTitle> -->
+  <AvaliFaction.leaderTitle>Rudelführer</AvaliFaction.leaderTitle>
+  <!-- <AvaliFaction.pawnSingular>Avali</AvaliFaction.pawnSingular>  -->
+  <AvaliFaction.pawnSingular>Avali</AvaliFaction.pawnSingular> 
+</LanguageData>

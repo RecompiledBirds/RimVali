@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AIMSINC.label>AIMS incendiary shell</AIMSINC.label> -->
+  <AIMSINC.label>AIMS Brandgranate</AIMSINC.label>
+  <!-- <AIMSINC.description>A shell filled with highly flammable materials. Can be fired from an AIMS system.</AIMSINC.description> -->
+  <AIMSINC.description>Eine Granate mit hochentzündlichen Substanzen. Kann von einem AIMS-System abgefeuert werden.</AIMSINC.description>
+
+  <!-- <AIMS_INC_SHELL.label>high-explosive shell</AIMS_INC_SHELL.label> -->
+  <AIMS_INC_SHELL.label>hochexplosive Granate</AIMS_INC_SHELL.label>
+</LanguageData>

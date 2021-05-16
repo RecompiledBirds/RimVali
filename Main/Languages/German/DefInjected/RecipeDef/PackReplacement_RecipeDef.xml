@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallPackReplacementAI.label>Install pack replacement chip</InstallPackReplacementAI.label> -->
+  <InstallPackReplacementAI.label>Rudelersatz-AI implantieren</InstallPackReplacementAI.label>
+  <!-- <InstallPackReplacementAI.description>Install apack replacement chip</InstallPackReplacementAI.description> -->
+  <InstallPackReplacementAI.description>Implantiere eine Rudelersatz-AI.</InstallPackReplacementAI.description>
+  <!-- <InstallPackReplacementAI.jobString>Installingpack replacement chip</InstallPackReplacementAI.jobString> -->
+  <InstallPackReplacementAI.jobString>Implantiert eine Rudelersatz-AI.</InstallPackReplacementAI.jobString>
+</LanguageData>

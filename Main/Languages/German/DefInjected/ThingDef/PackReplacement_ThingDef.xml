@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <PackReplacementAI.label>Pack replacement AI</PackReplacementAI.label> -->
+  <PackReplacementAI.label>Rudelersatz-AI</PackReplacementAI.label>
+  <!-- <PackReplacementAI.description>This augment prevents pack loss by simulating pack members, even if the pawn does not have any</PackReplacementAI.description> -->
+  <PackReplacementAI.description>Dieses Augment verhindert die Folgen eines Rudelverlusts. Fehlende Rudelmitglieder werden simuliert, selbst wenn es kein Rudel gibt.</PackReplacementAI.description>
+</LanguageData>
