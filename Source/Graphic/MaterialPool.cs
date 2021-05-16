@@ -7,76 +7,8 @@ namespace AvaliMod
 	// Token: 0x02000476 RID: 1142
 	public static class AvaliMaterialPool
 	{
-		// Token: 0x06001CDD RID: 7389 RVA: 0x0001A0BF File Offset: 0x000182BF
-		public static Material MatFrom(string texPath, bool reportFailure)
-		{
-			if (texPath == null || texPath == "null")
-			{
-				return null;
-			}
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(ContentFinder<Texture2D>.Get(texPath, reportFailure)));
-		}
+		
 
-		// Token: 0x06001CDE RID: 7390 RVA: 0x0001A0E4 File Offset: 0x000182E4
-		public static Material MatFrom(string texPath)
-		{
-			if (texPath == null || texPath == "null")
-			{
-				return null;
-			}
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(ContentFinder<Texture2D>.Get(texPath, true)));
-		}
-
-		// Token: 0x06001CDF RID: 7391 RVA: 0x0001A109 File Offset: 0x00018309
-		public static Material MatFrom(Texture2D srcTex)
-		{
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(srcTex));
-		}
-
-		// Token: 0x06001CE0 RID: 7392 RVA: 0x0001A116 File Offset: 0x00018316
-		public static Material MatFrom(Texture2D srcTex, Shader shader, Color color)
-		{
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(srcTex, shader, color));
-		}
-
-		// Token: 0x06001CE1 RID: 7393 RVA: 0x000F2034 File Offset: 0x000F0234
-		public static Material MatFrom(Texture2D srcTex, Shader shader, Color color, int renderQueue)
-		{
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(srcTex, shader, color)
-			{
-				renderQueue = renderQueue
-			});
-		}
-
-		// Token: 0x06001CE2 RID: 7394 RVA: 0x0001A125 File Offset: 0x00018325
-		public static Material MatFrom(string texPath, Shader shader)
-		{
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(ContentFinder<Texture2D>.Get(texPath, true), shader));
-		}
-
-		// Token: 0x06001CE3 RID: 7395 RVA: 0x000F205C File Offset: 0x000F025C
-		public static Material MatFrom(string texPath, Shader shader, int renderQueue)
-		{
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(ContentFinder<Texture2D>.Get(texPath, true), shader)
-			{
-				renderQueue = renderQueue
-			});
-		}
-
-		// Token: 0x06001CE4 RID: 7396 RVA: 0x0001A139 File Offset: 0x00018339
-		public static Material MatFrom(string texPath, Shader shader, Color color)
-		{
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(ContentFinder<Texture2D>.Get(texPath, true), shader, color));
-		}
-
-		// Token: 0x06001CE5 RID: 7397 RVA: 0x000F2088 File Offset: 0x000F0288
-		public static Material MatFrom(string texPath, Shader shader, Color color, int renderQueue)
-		{
-			return AvaliMaterialPool.MatFrom(new AvaliMaterialRequest(ContentFinder<Texture2D>.Get(texPath, true), shader, color)
-			{
-				renderQueue = renderQueue
-			});
-		}
 
 		// Token: 0x06001CE6 RID: 7398 RVA: 0x000F20B4 File Offset: 0x000F02B4
 		public static Material MatFrom(AvaliMaterialRequest req)
@@ -104,9 +36,11 @@ namespace AvaliMod
 				req.maskTex = null;
 			}
 			*/
+#pragma warning disable CS1717 // Assignment made to same variable
 			req.color = req.color;
 			req.colorTwo = req.colorTwo;
 			req.colorThree = req.colorThree;
+#pragma warning restore CS1717
 			Material material;
 			if (!AvaliMaterialPool.matDictionary.TryGetValue(req, out material))
 			{

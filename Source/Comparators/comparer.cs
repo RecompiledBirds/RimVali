@@ -3,6 +3,7 @@ using Verse;
 using System.Collections.Generic;
 namespace AvaliMod
 {
+
     public class PawnEqaulityComparer : IEqualityComparer<Pawn>
     {
         public bool Equals(Pawn x, Pawn y)
