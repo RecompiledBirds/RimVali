@@ -7,7 +7,7 @@
     <label>Avali traditional wear</label>
     <description>Traditional avali clothing. It's lightweight, and comfortable. It also has some chimes on it, which the avali like.</description>
     <recipeMaker>
-        <researchPrerequisite>AvaliBasicApparel</researchPrerequisite>
+        <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
@@ -165,8 +165,7 @@
     <description>An avali headress. [placeholder]</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
-      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-      <researchPrerequisite>AvaliBasicApparel</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>1</Crafting>
       </skillRequirements>
@@ -307,8 +306,7 @@
     <description>An avali cloak. [placeholder]</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
-      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-     <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
+     <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>3</Crafting>
       </skillRequirements>
@@ -383,7 +381,7 @@
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
