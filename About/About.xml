@@ -8,94 +8,48 @@
   </supportedVersions>
 	<packageId>NeziTheAvali.RimVali</packageId>
 	<description>
-[WIP]
-[Please dont add this to a save you care about until it’s done.]
-Yes, another Avali mod.
+Welcome!
 
-This particular mod is designed to focus more on the tech-y side of Avali, especially features like augmentation and such. It has (or will/is planned to have, at time of writing (Date: 8/3/20)) the following:
-
-==============================================================
-
--Avali
-
--> Probably the reason you came here, these little fluffy raptors may not be much by themselves, but they’re not to be messed with in packs. Avali prefer to sleep in barracks, rather than indivual bedrooms, and will receive a negative thought if they sleep alone. They prefer colder temperatures, and will easily get heatstroke in hotter temperatures without augmentation. You can tell their gender based on the markings. (Also, you might notice the markings are their own colour. This is WIP.) You can also buy eggs from traders, if you feel you don’t have enough Avali. Keep the eggs cold though!
-
-==============================================================
-
--Research
-
--> Avali have their own research. To get most of it, you’ll need an Avali and an Avali research bench. From there you’ll be able to research their tech, materials, augments, etc.
-
-==============================================================
-
--Weapons
-
--> Avali ranged weaponry is rail-based. No muzzle flash, and long range. These weapons tend to be more accurate long range, and shouldn’t be used at close range.
-
--> Avali melee weapons, such as the viroblade.
-
-==============================================================
-
--Resources
-
-->Tungsten. Used in Avali weaponry and some structure building, tungsten is very strong. However, it is also quite expensive to build with.
-
--> Aerogel (“Ferrogel”, due to the fact you use steel). A orange building resource, slightly stronger than steel and somewhat pretty.
-
--> Nanofiber. A fiber made of cloth, woven at a nano-loom. Somewhat stronger and better for deflecting bullets.
-
--> Aeroweave. A great insulator, Aeroweave will help survive those hot temperatures.
-
--> Aero-Tungsten carbide. A supermaterial, mainly constructed of Tungsten and Aerogel.
-
-==============================================================
-
--Buildings
-
--> Nano-Forge. Here, Tungsten is processed and weapons are made.
-
--> Nano-Loom. Used for weaving, the nano-loom is essential in making Avali cloth materials.
-
--> Research bench. The Avali research bench is needed to research Avali technologies.
-
-==============================================================
-
--Cybernetics
-
--> Basic and advanced bionics. Avali are fairly weak at the start, so some basic bionics should help solve that issue. The bionics are more durable, and slightly better than their biological counterparts. The advanced bionics are for later in the game, and are better than their biological counterparts in almost every way.
-
--> Augments. Avali are known to have at least a small amount of augments that aren’t always visible, like a temperature regulation system to help them out in the hotter temperatures. These augments can provide boosts to different stats, such as manipulation, limb health, and more. However, not all augments work together, and some have their downsides. So be careful when building your crazy avali war-cyborg or whatever you do.
-
-==============================================================
-
--RimThemes
-
--> Comes with 1 theme, when RimThemes is loaded.
-
-==============================================================
-
-Discord: https://discord.gg/RpCM3RU
+Welcome to RimVali: Far From Avalon! This mod is designed to be a large-scale avali mod, adding new mechanics, items, weapons, research, factions, materials, and so much more.
+After spending a year and a half in development, it's finally here.
 
 
-Avali are by RyuujinZERO.
+Features
 
-==============================================================
+Avali!
+The avali are the core of this mod. Without them, nothing would exist. These cute, fluffy space raptors are weak- yet still dangerous, fast, and smart. Some avali tribes who have been living here longer then the new colonies sent by the Illuminate have adapted to the conditions on this harsh planet, and become stronger, but slower.
 
-This mod IS compatible with Jaffer’s avali mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1034393407
-Backstories, weapons, etc (excluding apparel) from this mod are all useable by Jaffer’s Avali. The reverse also applies (Avali from this mod can use content from Jaffer’s)
+Scenarios
+When starting as an avali faction, you get two starting scenarios. Both offer unique play-styles, advantages, and disadvantages.
 
-This mod may be compatible with “Avali Continued”, HOWEVER compatibly WILL NOT be supported, at this time.
+Packs
+RimVali features a highly customisable pack system (just check the settings panel, or XML files if you're a modder!), giving avali unique boosts based on the highest skills in the pack.
 
-This mod uses MoHar: https://steamcommunity.com/sharedfiles/filedetails/?id=2057001924
+Being without a pack also will bring about pack-loss, so take care not to get your packmates killed, yeah?
 
-==============================================================
+Augments/Bionics
+We have over 20 augments (and maybe more planned?), each providing some boost, whether it be body part health, efficiency, or something else.
 
-In regards to patches and addons:
-Feel free to create addons/patches for this. I wouldn’t try to stop you, even if I didn’t like it. (I see it as free help, tbh.) Obviously I can’t provide support for every mod in the world myself (I wish I could), or something everyone wants.
 
-I’m also usually pretty happy to help with those apparel patches. (The code part)
+Weapons
+We have about 17 new guns, and 4 new melee weapons introduced in this mod. You'll find both the Illuminate and Independent Worlds have unique weaponry, such as the well known viroblade (Illuminate), modifications of stolen human technologies (Independent worlds), and more.
 
-==============================================================
+There also are 3 new turrets, and 2 new mortars with their own shells.
+
+Materials
+A small variety of materials have been added. You'll be familiar with the orange "Ferrogel" (also known as Aerogel), but what about tungsten, or aero-tungsten carbide fiber?
+
+Apparel
+The avali have their own selection of casual and combat apparel, alongside an custom textures for most vanilla and royalty armor.
+
+And these are just a few things... I could list a lot, but we don't want to be here all day, do we?
+
+Credits:
+
+-Zentimental,Todd, and Aipi, for the amazing textures.
+-LiQd, for helping me (Nesi) out a ton with the C#, and putting up with my constant questions.
+-Cyasi, for the German translations of the mod
+-Avali are by RyuujinZERO.
 	</description>
   <incompatibleWith>
     <li>Erisss.Ksisa.Avali</li>
