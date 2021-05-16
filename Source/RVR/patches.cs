@@ -445,47 +445,23 @@ namespace AvaliMod
     [HarmonyPatch(typeof(PawnApparelGenerator), "GenerateStartingApparelFor")]
     public class apparelPatch
     {
-        [HarmonyPriority(100000)]
-        [HarmonyPostfix]
-        public static void GenerateStartingApparelForPostfix() =>
-            Traverse.Create(typeof(PawnApparelGenerator)).Field(name: "allApparelPairs").GetValue<List<ThingStuffPair>>().AddRange(apparel);
-
-        private static HashSet<ThingStuffPair> apparel;
-        [HarmonyPriority(100000)]
         [HarmonyPrefix]
         public static void GenerateStartingApparelForPrefix(Pawn pawn)
         {
             Traverse apparelInfo = Traverse.Create(typeof(PawnApparelGenerator)).Field(name: "allApparelPairs");
-
-            apparel = new HashSet<ThingStuffPair>();
-
             foreach (ThingStuffPair pair in apparelInfo.GetValue<List<ThingStuffPair>>().ListFullCopy())
             {
                 ThingDef thing = pair.thing;
                 if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, thing, pawn.def) && !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, thing, pawn.def))
                 {
-                    apparel.Add(pair);
+                    apparelInfo.GetValue<List<ThingStuffPair>>().Remove(pair);
                 }
 
-                if (pawn.def is RimValiRaceDef valiRaceDef)
+                if (pawn.def is RimValiRaceDef valiRaceDef && valiRaceDef.restrictions.canOnlyUseApprovedApparel && thing.IsApparel && !ApparelPatch.CanWearHeavyRestricted(thing, pawn))
                 {
-                    if (valiRaceDef.restrictions.canOnlyUseApprovedApparel)
-                    {
-                        if (thing.IsApparel)
-                        {
-                            if (!ApparelPatch.CanWearHeavyRestricted(thing, pawn))
-                            {
-                                apparel.Add(pair);
-                            }
-                        }
-                    }
+                    apparelInfo.GetValue<List<ThingStuffPair>>().Remove(pair);
                 }
-            }
-            foreach (ThingStuffPair pair in apparel)
-            {
-                apparelInfo.GetValue<List<ThingStuffPair>>().Remove(pair);
-
-            }
+            } 
         }
     }
     #endregion
@@ -643,6 +619,68 @@ namespace AvaliMod
         }
     }
     #endregion
+    #region Cannibalism patch
+    [HarmonyPatch(typeof(FoodUtility), "ThoughtsFromIngesting")]
+    public static class IngestingPatch
+    {
+        [HarmonyPostfix]
+        public static void Patch(Pawn ingester, Thing foodSource, ThingDef foodDef, ref List<ThoughtDef> __result)
+        {
+            bool cannibal = ingester.story.traits.HasTrait(TraitDefOf.Cannibal);
+            CompIngredients ingredients = foodSource.TryGetComp<CompIngredients>();
+
+            #region raw
+            if (ingester.def is RimValiRaceDef def && FoodUtility.IsHumanlikeMeat(foodDef))
+            {
+                if (def.getAllCannibalThoughtRaces().Contains(foodDef.ingestible.sourceDef))
+                {
+
+
+                    __result.Replace(cannibal ? ThoughtDefOf.AteHumanlikeMeatDirectCannibal : ThoughtDefOf.AteHumanlikeMeatDirect, def.getEatenThought(ingredients.ingredients.First(x => def.getAllCannibalThoughtRaces().Contains(x.ingestible.sourceDef)), false, cannibal));
+                }
+                else
+                {
+                    if (!def.cannibalismThoughts.careAbountUndefinedRaces)
+                    {
+
+
+                        __result.Remove(cannibal ? ThoughtDefOf.AteHumanlikeMeatDirectCannibal : ThoughtDefOf.AteHumanlikeMeatDirect);
+
+                    }
+                }
+            }
+            #endregion
+            if (ingredients == null)
+            {
+                return;
+            }
+            #region cooked
+            if (ingester.def is RimValiRaceDef rDef)
+            {
+                if (ingredients.ingredients != null && ingredients.ingredients.Any(f => FoodUtility.IsHumanlikeMeat(f)))
+                {
+
+                    if (ingredients.ingredients.Any(fS => fS.ingestible != null && fS.ingestible.sourceDef != null && rDef.getAllCannibalThoughtRaces().Contains(fS.ingestible.sourceDef)))
+                    {
+
+
+                        __result.Replace(cannibal ? ThoughtDefOf.AteHumanlikeMeatAsIngredientCannibal : ThoughtDefOf.AteHumanlikeMeatAsIngredient , rDef.getEatenThought(ingredients.ingredients.First(x => rDef.getAllCannibalThoughtRaces().Contains(x.ingestible.sourceDef)), false, cannibal));
+                    }
+                    else
+                    {
+                        if (!rDef.cannibalismThoughts.careAbountUndefinedRaces)
+                        {
+
+                            __result.Remove(cannibal ? ThoughtDefOf.AteHumanlikeMeatAsIngredientCannibal : ThoughtDefOf.AteHumanlikeMeatAsIngredient );
+
+                        }
+                    }
+                }
+            }
+            #endregion cooked
+        }
+    }
+    #endregion
     #region Butcher patch
     [HarmonyPatch(typeof(Corpse), "ButcherProducts")]
     public static class ButcherPatch
@@ -652,6 +690,7 @@ namespace AvaliMod
         {
             if (butchered.RaceProps.Humanlike)
             {
+                Log.Message("0");
                 #region stories
                 try
                 {
@@ -662,23 +701,21 @@ namespace AvaliMod
                         butcherAndHarvestThoughts butcherAndHarvestThoughts = DefDatabase<RVRBackstory>.AllDefs.Where(x => x.defName == pawn.story.adulthood.identifier || x.defName == pawn.story.childhood.identifier).First().butcherAndHarvestThoughtOverrides;
                         try
                         {
-                            foreach (raceButcherThought rBT in butcherAndHarvestThoughts.butcherThoughts)
+                            if (butcherAndHarvestThoughts.butcherThoughts.Any(x => x.race == butchered.def))
                             {
-                                if (rBT.race == butchered.def)
+                                raceButcherThought rBT = butcherAndHarvestThoughts.butcherThoughts.Find(x=>x.race==butchered.def);
+                                if (butcher)
                                 {
-
-                                    if (butcher)
-                                    {
-                                        pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
-                                        return;
-                                    }
-                                    else
-                                    {
-                                        pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
-                                        return;
-                                    }
+                                    pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
+                                    return;
+                                }
+                                else
+                                {
+                                    pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
+                                    return;
                                 }
                             }
+                            
                         }
                         catch (Exception e)
                         {
@@ -710,40 +747,50 @@ namespace AvaliMod
                 //Races
                 if (pawn.def is RimValiRaceDef def)
                 {
-                    foreach (raceButcherThought rBT in def.butcherAndHarvestThoughts.butcherThoughts)
+                    Log.Message("1 rDef");
+                    butcherAndHarvestThoughts butcherAndHarvestThoughts = def.butcherAndHarvestThoughts;
+                    if (butcherAndHarvestThoughts.butcherThoughts.Any(x => x.race == butchered.def))
                     {
-                        if (rBT.race == butchered.def)
+                        raceButcherThought rBT = butcherAndHarvestThoughts.butcherThoughts.Find(x => x.race == butchered.def);
+                        if (butcher)
                         {
-
-                            if (butcher)
-                            {
-                                pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
-                                return;
-                            }
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.butcheredPawnThought);
+                            return;
+                        }
+                        else
+                        {
                             pawn.needs.mood.thoughts.memories.TryGainMemory(rBT.knowButcheredPawn);
                             return;
                         }
                     }
                     if (def.butcherAndHarvestThoughts.careAboutUndefinedRaces)
                     {
+                        Log.Message("2 rDef");
                         if (butcher)
                         {
                             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
                             return;
                         }
-
+                        Log.Message("3 rDef");
                         pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
                         return;
                     }
                 }
                 #endregion 
+                Log.Message("1 otherDef");
                 //If the pawn is not from RVR.
-                if (butcher)
+                if (!(pawn.def is RimValiRaceDef))
                 {
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.ButcheredHumanlikeCorpse);
-                    return;
+                    if (butcher)
+                    {
+                        Log.Message("2 otherDef");
+                        //why tf isn't this happening?? the log.message happens
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(AvaliDefs.ButcheredHumanlikeCorpse, null);
+                        return;
+                    }
+                    Log.Message("3 otherDef");
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(AvaliDefs.KnowButcheredHumanlikeCorpse, null);
                 }
-                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.KnowButcheredHumanlikeCorpse);
                 #endregion
             }
         }
@@ -763,21 +810,29 @@ namespace AvaliMod
 
 
             __result = deadPawn.ButcherProducts(butcher, efficiency);
-
+            /*
             if (!(deadPawn.def is RimValiRaceDef))
             {
                 return false;
             }
+            */
+            bool butcheredThought = false;
             if (butcher.def is RimValiRaceDef def)
             {
-                ButcheredThoughAdder(butcher, deadPawn);
+                ButcheredThoughAdder(butcher, deadPawn, true);
+                butcheredThought = true;
             }
             foreach (Pawn targetPawn in butcher.Map.mapPawns.SpawnedPawnsInFaction(butcher.Faction))
             {
                 if (targetPawn != butcher)
                 {
-                    ButcheredThoughAdder(targetPawn, deadPawn, false);
                     Log.Message(targetPawn.Name.ToStringFull);
+                    ButcheredThoughAdder(targetPawn, deadPawn, false);
+                    
+                }else if (!butcheredThought)
+                {
+                    Log.Message($"Butcher: {targetPawn.Name.ToStringFull}");
+                    ButcheredThoughAdder(targetPawn, deadPawn);
                 }
             }
 
@@ -992,6 +1047,7 @@ namespace AvaliMod
             return true;
         }
     }
+
 
     [HarmonyPatch(typeof(SituationalThoughtHandler), "TryCreateThought")]
     public static class ThoughtReplacerPatchSituational {
@@ -1326,52 +1382,35 @@ namespace AvaliMod
     public static class Avali_ApparelGraphicRecordGetter_TryGetGraphicApparel_AvaliSpecificHat_Patch
     {
         [HarmonyPostfix]
-        public static void Avali_SpecificHatPatch(
-          ref Apparel apparel,
-          ref BodyTypeDef bodyType,
-          ref ApparelGraphicRecord rec)
+        public static void Patch(ref Apparel apparel, ref BodyTypeDef bodyType, ref ApparelGraphicRecord rec)
         {
-
-            if (bodyType != AvaliMod.AvaliDefs.Avali && bodyType != AvaliMod.AvaliDefs.Avali)
-                return;
+            Pawn pawn = apparel.Wearer;
             if (apparel.def.apparel.layers.Any(d => d == ApparelLayerDefOf.Overhead))
             {
-                string path = apparel.def.apparel.wornGraphicPath + "_" + bodyType.defName;
-                if (apparel.Wearer.def is RimValiRaceDef def)
-                {
-                    Pawn pawn = apparel.Wearer;
-                    if ((ContentFinder<Texture2D>.Get(path + "_north", false) != null) && (ContentFinder<Texture2D>.Get(path + "_east", false) != null) && (ContentFinder<Texture2D>.Get(path + "_south", false) != null))
-                    {
-                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
-                        rec = new ApparelGraphicRecord(graphic, apparel);
-                    }
-                }
-                else
-                {
-                    if (apparel.Wearer.def is RimValiRaceDef defTwo)
-                    {
-                        Pawn pawn = apparel.Wearer;
+                if (bodyType != AvaliMod.AvaliDefs.Avali && bodyType != AvaliMod.AvaliDefs.Avali)
+                    return;
 
-                        if ((ContentFinder<Texture2D>.Get(path + "_north", false) != null) && (ContentFinder<Texture2D>.Get(path + "_east", false) != null) && (ContentFinder<Texture2D>.Get(path + "_south", false) != null))
-                        {
-                            Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / defTwo.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
-                            rec = new ApparelGraphicRecord(graphic, apparel);
-                        }
-                    }
-                    else
+                string path = $"{apparel.def.apparel.wornGraphicPath}_{bodyType.defName}";
+                if (pawn.def is RimValiRaceDef def && (ContentFinder<Texture2D>.Get($"{path}_north", false) != null) && (ContentFinder<Texture2D>.Get($"{path}_east", false) != null) && (ContentFinder<Texture2D>.Get($"{path}_south", false) != null))
+                {
+
+                    Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize / def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
+                    rec = new ApparelGraphicRecord(graphic, apparel);
+                }
+                else if(!(pawn.def is RimValiRaceDef))
+                {
+
+                    if ((ContentFinder<Texture2D>.Get($"{path}_north", false) != null) && (ContentFinder<Texture2D>.Get($"{path}_east", false) != null) && (ContentFinder<Texture2D>.Get($"{path}_south", false) != null))
                     {
-                        if ((ContentFinder<Texture2D>.Get(path + "_north", false) != null) && !(ContentFinder<Texture2D>.Get(path + "_east", false) == null) && !(ContentFinder<Texture2D>.Get(path + "_south", false) == (UnityEngine.Object)null))
-                        {
-                            Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
-                            rec = new ApparelGraphicRecord(graphic, apparel);
-                        }
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
+                        rec = new ApparelGraphicRecord(graphic, apparel);
                     }
                 }
             }
             else if (!apparel.def.apparel.wornGraphicPath.NullOrEmpty())
             {
-                string str = apparel.def.apparel.wornGraphicPath + "_" + bodyType.defName;
-                if (ContentFinder<Texture2D>.Get(str + "_north", false) == null || ContentFinder<Texture2D>.Get(str + "_east", false) == null || ContentFinder<Texture2D>.Get(str + "_south", false) == null)
+                string str = $"{apparel.def.apparel.wornGraphicPath}_{bodyType.defName}";
+                if (ContentFinder<Texture2D>.Get($"{str}_north", false) == null || ContentFinder<Texture2D>.Get($"{str}_east", false) == null || ContentFinder<Texture2D>.Get($"{str}_south", false) == null)
                 {
                     Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(apparel.def.apparel.wornGraphicPath, ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
                     rec = new ApparelGraphicRecord(graphic, apparel);

@@ -22,6 +22,24 @@ namespace AvaliMod
         public ThoughtDef ateCookedThought;
     }
 
+    public class cannibalsimThought
+    {
+        public ThingDef race;
+        public ThoughtDef ateCooked = ThoughtDefOf.AteHumanlikeMeatAsIngredient;
+        public ThoughtDef ateRaw = ThoughtDefOf.AteHumanlikeMeatDirect;
+        public ThoughtDef ateCorpse = ThoughtDefOf.AteCorpse;
+
+        public ThoughtDef ateCookedCannibal = ThoughtDefOf.AteHumanlikeMeatAsIngredientCannibal;
+        public ThoughtDef ateRawCannibal = ThoughtDefOf.AteHumanlikeMeatDirectCannibal;
+
+        
+    }
+    public class cannibalismThoughts
+    {
+        public List<cannibalsimThought> thoughts = new List<cannibalsimThought>();
+        public bool careAbountUndefinedRaces = true;
+    }
+
     public class butcherAndHarvestThoughts
     {
         public List<raceButcherThought> butcherThoughts;

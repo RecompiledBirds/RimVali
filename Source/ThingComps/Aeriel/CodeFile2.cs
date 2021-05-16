@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -53,7 +54,9 @@ namespace AvaliMod
 			int max = GenRadial.NumCellsInRadius(num);
 			int num2 = Rand.Range(0, max);
 			IntVec3 c = this.currentTarget.Cell + GenRadial.RadialPattern[num2];
-			Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, shootLine.Source, this.caster.Map, WipeMode.Vanish);
+			
+
+			
 			this.ThrowDebugText("ToRadius");
 			this.ThrowDebugText("Rad\nDest", c);
 			ProjectileHitFlags projectileHitFlags = ProjectileHitFlags.NonTargetWorld;
@@ -65,7 +68,25 @@ namespace AvaliMod
 			{
 				projectileHitFlags &= ~ProjectileHitFlags.NonTargetPawns;
 			}
+			IntVec3 pos = shootLine.Source;
+			pos.x += 20;
+			pos.z += 20;
+			Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, pos, this.caster.Map, WipeMode.Vanish);
 			projectile2.Launch(launcher, drawPos, c, this.currentTarget, projectileHitFlags, equipment, null);
+			comp.loadedShells.RemoveAt(comp.loadedShells.Count - 1);
+
+            if (!comp.loadedShells.NullOrEmpty())
+            {
+				pos = shootLine.Source;
+				pos.z -= 20;
+				pos.x -= 20;
+				projectile = Projectile;
+				projectile2 = (Projectile)GenSpawn.Spawn(projectile, pos, this.caster.Map, WipeMode.Vanish);
+				projectile2.Launch(launcher, drawPos, c, this.currentTarget, projectileHitFlags, equipment, null);
+				comp.loadedShells.RemoveAt(comp.loadedShells.Count - 1);
+			}
+
+			Log.Message($"{comp.loadedShells.Count}");
 			return true;
 		}
 		protected bool oldShotCast()

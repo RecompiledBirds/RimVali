@@ -68,6 +68,11 @@ namespace AvaliMod
 			//Scribe_Defs.Look<ThingDef>(ref this.loadedShell, "loadedShell");
 			Scribe_Values.Look<int>(ref this.loadedCount, "loadedCount", 0, false);
 			Scribe_Deep.Look<StorageSettings>(ref this.allowedShellsSettings, "allowedShellsSettings", Array.Empty<object>());
+			Scribe_Collections.Look(ref this.loadedShells, "loadedShells");
+			if(loadedShells == null)
+            {
+				loadedShells = new List<ThingDef>();
+            }
 		}
 
 		public override void Initialize(CompProperties props)

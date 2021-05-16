@@ -182,7 +182,7 @@ namespace AvaliMod
                     settings.stageThreeDaysPackloss = settings.stageTwoDaysPackloss;
                 }
                 settings.stageThreeDaysPackloss = (int)listing_Standard.Slider(settings.stageThreeDaysPackloss, settings.stageTwoDaysPackloss, 100);
-                listing_Standard.Label($"Chance to hack Illuminate tech as Independent Worlds: {settings.hackChance}");
+                listing_Standard.Label("ChanceToHackTech".Translate(settings.hackChance.Named("CHANCE")));
                 settings.hackChance = (int)listing_Standard.Slider(settings.hackChance, 0, 100);
             }
             

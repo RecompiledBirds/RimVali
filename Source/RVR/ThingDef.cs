@@ -16,7 +16,7 @@ namespace AvaliMod
         public bool useHumanRecipes = true;
         public RVRRaceInsertion raceInsertion = new RVRRaceInsertion();
         public List<ReplaceableThoughts> replaceableThoughts = new List<ReplaceableThoughts>();
-
+        public cannibalismThoughts cannibalismThoughts = new cannibalismThoughts();
         public List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>();
 
         public butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
@@ -69,8 +69,42 @@ namespace AvaliMod
             }
             return false;
         }
-
-
+        public ThoughtDef getEatenThought(ThingDef race, bool raw = true, bool cannibal = false)
+        {
+            if (cannibalismThoughts.thoughts.Any(x => x.race == race))
+            {
+                if (raw)
+                {
+                    if (cannibal)
+                    {
+                        return cannibalismThoughts.thoughts.First(x => x.race == race).ateRawCannibal;
+                    }
+                    return cannibalismThoughts.thoughts.First(x => x.race == race).ateRaw;
+                }
+                else
+                {
+                    if (cannibal)
+                    {
+                        return cannibalismThoughts.thoughts.First(x => x.race == race).ateCookedCannibal;
+                    }
+                    return cannibalismThoughts.thoughts.First(x => x.race == race).ateCooked;
+                }
+            }
+            return null;
+        }
+        public List<ThingDef> getAllCannibalThoughtRaces()
+        {
+            List<ThingDef> result = new List<ThingDef>();
+            foreach (cannibalsimThought cannibalismThought in cannibalismThoughts.thoughts)
+            {
+                result.Add(cannibalismThought.race);
+            }
+            if (cannibalismThoughts.careAbountUndefinedRaces)
+            {
+                result.AddRange(DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.race.Humanlike));
+            }
+            return result;
+        }
         public void HeadOffsetPawn(Rot4 rot,Pawn pawn ,ref Vector3 __result)
         {
 

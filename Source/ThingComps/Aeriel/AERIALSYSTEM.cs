@@ -158,6 +158,7 @@ namespace AvaliMod
 
 		public override void ExposeData()
 		{
+
 			base.ExposeData();
 			Scribe_Values.Look<int>(ref this.burstCooldownTicksLeft, "burstCooldownTicksLeft", 0, false);
 			Scribe_Values.Look<int>(ref this.burstWarmupTicksLeft, "burstWarmupTicksLeft", 0, false);
@@ -169,6 +170,7 @@ namespace AvaliMod
 			{
 				this.UpdateGunVerbs();
 			}
+
 		}
 
 		public override bool ClaimableBy(Faction by)
@@ -200,7 +202,10 @@ namespace AvaliMod
 				this.forcedTarget = targ;
 				if (this.burstCooldownTicksLeft <= 0)
 				{
-					this.TryStartShootSomething(false);
+					this.TryStartShootSomethingAERIAL(false);
+
+					
+
 				}
 			}
 			if (this.holdFire)
@@ -212,7 +217,6 @@ namespace AvaliMod
 
 		public override void Tick()
 		{
-			base.Tick();
 			if (this.CanExtractShell && this.MannedByColonist)
 			{
 				AERIALChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<AERIALChangeableProjectile>();
@@ -223,7 +227,6 @@ namespace AvaliMod
 			}
 			if (this.forcedTarget.IsValid && !this.CanSetForcedTarget)
 			{
-				Log.Message("targ reset");
 				this.ResetForcedTarget();
 			}
 			if (!this.CanToggleHoldFire)
@@ -232,7 +235,6 @@ namespace AvaliMod
 			}
 			if (this.forcedTarget.ThingDestroyed)
 			{
-				Log.Message("targ destroyed");
 				this.ResetForcedTarget();
 			}
 			if (this.Active  && !this.stunner.Stunned && base.Spawned)
@@ -242,11 +244,9 @@ namespace AvaliMod
 				{
 					if (this.WarmingUp)
 					{
-						Log.Message("warming up");
 						this.burstWarmupTicksLeft--;
 						if (this.burstWarmupTicksLeft == 0)
 						{
-							Log.Message("beginburst");
 							this.BeginBurst();
 						}
 					}
@@ -257,7 +257,6 @@ namespace AvaliMod
 							this.burstCooldownTicksLeft--;
 							if (this.IsMortar)
 							{
-								Log.Message("isMortar");
 								if (this.progressBarEffecter == null)
 								{
 									this.progressBarEffecter = EffecterDefOf.ProgressBar.Spawn();
@@ -297,39 +296,48 @@ namespace AvaliMod
 			}
 			if (!base.Spawned || (this.holdFire && this.CanToggleHoldFire) || (this.AttackVerb.ProjectileFliesOverhead() && base.Map.roofGrid.Roofed(base.Position)) || !this.AttackVerb.Available())
 			{
-				//Log.Message($"reset targ. \n SPAWNED: {base.Spawned} \n HOLDING FIRE: {holdFire && CanToggleHoldFire}\n ROOFED: {AttackVerb.ProjectileFliesOverhead() && base.Map.roofGrid.Roofed(base.Position)} \n VERB AVALIBLE: {AttackVerb.Available()}");
+				//Log.Message($"reset current targ. \n SPAWNED: {base.Spawned} \n HOLDING FIRE: {holdFire && CanToggleHoldFire}\n ROOFED: {AttackVerb.ProjectileFliesOverhead() && base.Map.roofGrid.Roofed(base.Position)} \n VERB AVALIBLE: {AttackVerb.Available()}");
 				this.ResetCurrentTarget();
 				return;
 			}
+			//Log.Message($"Is forced targ valid: {forcedTarget.IsValid}");
 			bool isValid = this.currentTargetInt.IsValid;
 			if (this.forcedTarget.IsValid)
 			{
+				//Log.Message("forced target is valid");
 				this.currentTargetInt = this.forcedTarget;
 			}
 			else
 			{
+				//Log.Message("trying to find new target");
 				this.currentTargetInt = this.TryFindNewTarget();
 			}
 			if (currentTargetInt.IsValid)		{
+				//Log.Message("current target is valid");
 				SoundDefOf.TurretAcquireTarget.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
 			}
 			if (!this.currentTargetInt.IsValid)
 			{
-				Log.Message("reset targ, invalid");
+				//Log.Message("reset current target, invalid");
 				this.ResetCurrentTarget();
 				return;
 			}
+
 			if (this.def.building.turretBurstWarmupTime > 0f)
 			{
 				this.burstWarmupTicksLeft = this.def.building.turretBurstWarmupTime.SecondsToTicks();
 				return;
 			}
+			
 			if (canBeginBurstImmediately)
 			{
-				Log.Message("beginBurst");
+				//Log.Message("beginBurst");
 				this.BeginBurst();
+				
 				return;
 			}
+			this.gun.TryGetComp<AERIALChangeableProjectile>().loadedShells.RemoveAt(gun.TryGetComp<AERIALChangeableProjectile>().loadedShells.Count - 1);
+			Log.Message($"{gun.TryGetComp<AERIALChangeableProjectile>().loadedShells.Count}");
 			this.burstWarmupTicksLeft = 1;
 		}
 
@@ -337,7 +345,8 @@ namespace AvaliMod
 		public override string GetInspectString()
 		{
 			StringBuilder stringBuilder = new StringBuilder();
-			string inspectString = base.GetInspectString();
+			string inspectString = "";
+			AERIALChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<AERIALChangeableProjectile>();
 			if (!inspectString.NullOrEmpty())
 			{
 				stringBuilder.AppendLine(inspectString);
@@ -346,6 +355,7 @@ namespace AvaliMod
 			{
 				stringBuilder.AppendLine("MinimumRange".Translate() + ": " + this.AttackVerb.verbProps.minRange.ToString("F0"));
 			}
+			stringBuilder.AppendLine("AERIALShellSpaceLeft".Translate($"{compChangeableProjectile.loadedShells.Count}/{compChangeableProjectile.Props.maxShellCount}".Named("SPACE")));
 			if (base.Spawned && this.IsMortarOrProjectileFliesOverhead && base.Position.Roofed(base.Map))
 			{
 				stringBuilder.AppendLine("CannotFire".Translate() + ": " + "Roofed".Translate().CapitalizeFirst());
@@ -354,7 +364,7 @@ namespace AvaliMod
 			{
 				stringBuilder.AppendLine("CanFireIn".Translate() + ": " + this.burstCooldownTicksLeft.ToStringSecondsFromTicks());
 			}
-			AERIALChangeableProjectile compChangeableProjectile = this.gun.TryGetComp<AERIALChangeableProjectile>();
+			
 			if (compChangeableProjectile != null)
 			{
 				if (compChangeableProjectile.Loaded)
@@ -376,41 +386,7 @@ namespace AvaliMod
 			base.Draw();
 		}
 
-		// Token: 0x06007DD7 RID: 32215 RVA: 0x00258980 File Offset: 0x00256B80
-		public override void DrawExtraSelectionOverlays()
-		{
-			float range = this.AttackVerb.verbProps.range;
-			if (range < 90f)
-			{
-				GenDraw.DrawRadiusRing(base.Position, range);
-			}
-			float num = this.AttackVerb.verbProps.EffectiveMinRange(true);
-			if (num < 90f && num > 0.1f)
-			{
-				GenDraw.DrawRadiusRing(base.Position, num);
-			}
-			if (this.WarmingUp)
-			{
-				int degreesWide = (int)((float)this.burstWarmupTicksLeft * 0.5f);
-				GenDraw.DrawAimPie(this, this.CurrentTarget, degreesWide, (float)this.def.size.x * 0.5f);
-			}
-			if (this.forcedTarget.IsValid && (!this.forcedTarget.HasThing || this.forcedTarget.Thing.Spawned))
-			{
-				Vector3 vector;
-				if (this.forcedTarget.HasThing)
-				{
-					vector = this.forcedTarget.Thing.TrueCenter();
-				}
-				else
-				{
-					vector = this.forcedTarget.Cell.ToVector3Shifted();
-				}
-				Vector3 a = this.TrueCenter();
-				vector.y = AltitudeLayer.MetaOverlays.AltitudeFor();
-				a.y = vector.y;
-				GenDraw.DrawLineBetween(a, vector, Building_TurretGun.ForcedTargetLineMat);
-			}
-		}
+		
 
 		// Token: 0x06007DD8 RID: 32216 RVA: 0x00054920 File Offset: 0x00052B20
 		public override IEnumerable<Gizmo> GetGizmos()
@@ -461,8 +437,6 @@ namespace AvaliMod
 					command_VerbTarget.Disable("CannotFire".Translate() + ": " + "Roofed".Translate().CapitalizeFirst());
 				}
 				
-				//testing something
-				//this.forcedTarget = command_VerbTarget.verb.CurrentTarget;
 				yield return command_VerbTarget;
 			}
 			if (this.forcedTarget.IsValid)
