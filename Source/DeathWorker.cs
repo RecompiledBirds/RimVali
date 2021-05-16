@@ -15,8 +15,9 @@ namespace AvaliMod
             {
                 Log.Message("Death detected");
             }
-            if (corpse.InnerPawn.def.race == AvaliDefs.RimVali.race)
+            if (corpse.InnerPawn.def.HasComp(typeof(PackComp)))
             {
+               
                 if (!(AvaliPackDriver.packs == null) && AvaliPackDriver.packs.Count > 0)
                 {
                     if (enableDebug)
@@ -39,6 +40,7 @@ namespace AvaliMod
                             {
                                 Log.Message("Pawn is not null");
                             }
+                            
                             deathDate.deadPawn = pawn;
                             if (enableDebug)
                             {
@@ -53,12 +55,14 @@ namespace AvaliMod
                             }
                             foreach(Pawn packmate in pack.pawns)
                             {
-                                if(!(pawn == packmate) && !pawn.Dead)
+                                Log.Message("On: "+ packmate.Name.ToString());
+                                if((pawn != packmate) && !packmate.Dead)
                                 {
+                                    Log.Message(packmate.Name.ToString() + " is not dead, adding thought");
                                     PackComp comp = packmate.TryGetComp<PackComp>();
                                     if(comp.Props.deathThought != null)
                                     {
-                                        packmate.needs.mood.thoughts.memories.TryGainMemory(comp.Props.deathThought);
+                                        packmate.needs.mood.thoughts.memories.TryGainMemory(comp.Props.deathThought, pawn);
                                     }
                                 }
                             }
