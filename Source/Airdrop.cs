@@ -107,7 +107,11 @@ namespace AvaliMod
             {
                 timeToDrop = UnityEngine.Random.Range(1 * ticksInAnHour, 48 * ticksInAnHour);
 
+<<<<<<< HEAD
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("AirdropSendMsg".Translate(), "IlluminateAirdropSendStart".Translate() + " " + (timeToDrop / ticksInAnHour).ToString() + " " + "IlluminateAirdropSendEnd".Translate(), AvaliMod.AvaliDefs.IlluminateAirdrop);
+=======
                 ChoiceLetter choiceLetter = LetterMaker.MakeLetter("AirdropSendMsg".Translate(), "IlluminateAirdropSend".Translate((AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).Named("TIME")), AvaliMod.AvaliDefs.IlluminateAirdrop);
+>>>>>>> beta
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
                 hasMessaged = true;
             }

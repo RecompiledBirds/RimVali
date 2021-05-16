@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
+<<<<<<< HEAD
+=======
 using Verse.AI;
+>>>>>>> beta
 using Verse;
 
 namespace AvaliMod
@@ -18,6 +21,10 @@ namespace AvaliMod
     [StaticConstructorOnStartup]
     public static class FloorConstructor
     {
+<<<<<<< HEAD
+        public static List<TerrainDef> floorsMade = new List<TerrainDef>();
+        public static StringBuilder builder = new StringBuilder();
+=======
         public static List<DesignationCategoryDef> toUpdateDesignationCatDefs = new List<DesignationCategoryDef>();
         public static List<DesignatorDropdownGroupDef> toUpdateDropdownDesDefs = new List<DesignatorDropdownGroupDef>();
         public static List<string> materials = new List<string>();
@@ -29,10 +36,101 @@ namespace AvaliMod
         /// </summary>
         /// <param name="def">The terrain def we are "duplicating"</param>
         /// <param name="name">The NAME of the category we want to duplicate.</param>
+>>>>>>> beta
         public static void CreateAllVersions(TerrainDef def, string name)
         {
             foreach (ThingDef tDef in DefDatabase<ThingDef>.AllDefs.Where(d => d.stuffProps != null && !d.stuffProps.categories.NullOrEmpty() && d.stuffProps.categories.Any(cat => cat.defName == name)))
             {
+<<<<<<< HEAD
+
+              
+                //Sets up some basic stuff
+                //shortHash  & defName are the very important
+                TerrainDef output = new TerrainDef()
+                {
+                    color = tDef.GetColorForStuff(tDef),
+                    uiIconColor = tDef.GetColorForStuff(tDef),
+                    defName = $"{def.defName}_{tDef.defName}",
+                    label = String.Format(def.label, tDef.label),
+                    debugRandomId = (ushort)$"{def.defName}_{tDef.defName}".GetHashCode(),
+                    index = (ushort)$"{def.defName}_{tDef.defName}".GetHashCode(),
+                    shortHash = (ushort)$"{def.defName}_{tDef.defName}".GetHashCode(),
+                    costList = ((Func<List<ThingDefCountClass>>)delegate
+                    {
+                        List<ThingDefCountClass> costList = new List<ThingDefCountClass>();
+                        int amount = 0;
+                        foreach (ThingDefCountClass thingDefCountClass in def.costList)
+                        {
+                            amount += thingDefCountClass.count;
+                        }
+                        costList.Add(new ThingDefCountClass()
+                        {
+                            thingDef = tDef,
+                            count = amount
+                        });
+                        return costList;
+                    })(),
+                    designationCategory = def.designationCategory,
+                    designatorDropdown = def.designatorDropdown
+                };
+
+                var bindingFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+                //This copies some of the varibles from the floor we are duplicating over
+                List<String> avoidFields = new List<string>() { "color", "defname", "label", "debugrandomid", "index", "shorthash", "costlist", "uiiconcolor", "designatordropdown" };
+                foreach (FieldInfo field in def.GetType().GetFields(bindingFlags).Where(f => !avoidFields.Contains(f.Name.ToLower())))
+                {
+                    foreach (FieldInfo f2 in output.GetType().GetFields(bindingFlags).Where(f => f.Name == field.Name))
+                    {
+
+                        //Sometimes we can't set a field.. not sure if there's a way to check that
+                        try
+                        {
+                            f2.SetValue(output, field.GetValue(def));
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                
+                List<string> toRemove = new List<string>();
+                foreach (string str in output.tags)
+                {
+                    if (str.Contains("AddDesCat_"))
+                    {
+                        string cS = string.Copy(str);
+                        string res = cS.Substring(cS.IndexOf("AddDesCat_") + "AddDesCat_".Length, (cS.IndexOf("[ENDDESNAME]") - ("[ENDDESNAME]".Length - 2)) - cS.IndexOf("AddDesCat_"));
+                        if (DefDatabase<DesignationCategoryDef>.AllDefs.Any(cat => cat.defName == res))
+                        {
+                            output.designationCategory = DefDatabase<DesignationCategoryDef>.AllDefs.Where(cat => cat.defName == res).ToList()[0];
+                        }
+                    }
+                    if (str.Contains("AddDesDropDown_"))
+                    {
+                        string cS = string.Copy(str);
+                        string res = cS.Substring(cS.IndexOf("AddDesDropDown_") + "AddDesDropDown_".Length, (cS.IndexOf("[ENDDNAME]") - ("[ENDDNAME]".Length+5)) - cS.IndexOf("AddDesDropDown_"));
+                        if (DefDatabase<DesignatorDropdownGroupDef>.AllDefs.Any(cat => cat.defName == res))
+                        {
+                            output.designatorDropdown = DefDatabase<DesignatorDropdownGroupDef>.AllDefs.Where(cat => cat.defName == res).ToList()[0];
+                        }
+                    }
+                    if (str.EndsWith("RemoveFromClones"))
+                    {
+                        toRemove.Add(str);
+                    }
+                }
+                foreach (string str in toRemove)
+                {
+                    output.tags.Remove(str);
+                }
+                output.PostLoad();
+                output.ResolveReferences();
+                builder.AppendLine("---------------------------------------------");
+                builder.AppendLine($"Generated {output.label}\n Mat color: { tDef.stuffProps.color.ToString()},\n Floor color: {output.color} \n UI Icon color: {output.uiIconColor}");
+                floorsMade.Add(output);
+
+=======
                 if (!materials.Contains(tDef.defName))
                 {
                     materials.Add(tDef.defName);
@@ -232,6 +330,7 @@ namespace AvaliMod
                     builder.AppendLine($"[RimVali/FloorConstructor] Generated {output.label}\n Mat color: { tDef.stuffProps.color.ToString()},\n Floor color: {output.color} \n UI Icon color: {output.uiIconColor}");
                     floorsMade.Add(output);
                 }
+>>>>>>> beta
             }
         }
 
@@ -241,11 +340,21 @@ namespace AvaliMod
 
 
             List<TerrainDef> workOn = new List<TerrainDef>();
+<<<<<<< HEAD
+            foreach (TerrainDef def in DefDatabase<TerrainDef>.AllDefs)
+            {
+                workOn.Add(def);
+            }
+            foreach (TerrainDef def in workOn)
+            {
+
+=======
             workOn.AddRange(DefDatabase<TerrainDef>.AllDefs);
             //Tells us to clone a terrain
             foreach (TerrainDef def in DefDatabase<TerrainDef>.AllDefs)
             {
                 bool hasDoneTask = false;
+>>>>>>> beta
                 if (!def.tags.NullOrEmpty())
                 {
                     if (def.tags.Any(str => str.Contains("cloneMaterial")))
@@ -256,7 +365,10 @@ namespace AvaliMod
                             string s = tags[a];
                             try
                             {
+<<<<<<< HEAD
+=======
                                 //Gets the category name between cloneMaterial_ and [ENDCATNAME]
+>>>>>>> beta
                                 string cS = string.Copy(s);
                                 string res = cS.Substring(cS.IndexOf("cloneMaterial_") + "_cloneMaterial".Length, (cS.IndexOf("[ENDCATNAME]") - ("[ENDCATNAME]".Length + 2)) - cS.IndexOf("cloneMaterial_"));
                                 CreateAllVersions(def, res);
@@ -267,6 +379,12 @@ namespace AvaliMod
                             }
                         }
                     }
+<<<<<<< HEAD
+                    
+                }
+            }
+            List<TerrainDef> toRemove = new List<TerrainDef>();
+=======
                     Log.Message(def.tags.Any(str => str.Contains("removeFromResearch")).ToString());
                     if (def.tags.Any(str => str.Contains("removeFromResearch")))
                     {
@@ -298,6 +416,7 @@ namespace AvaliMod
                 }
             }
             //Ensures we are adding to the DefDatabase. Just a saftey check.
+>>>>>>> beta
             foreach (TerrainDef def in floorsMade)
             {
                 if (!DefDatabase<TerrainDef>.AllDefs.Contains(def))
@@ -305,17 +424,32 @@ namespace AvaliMod
                     DefDatabase<TerrainDef>.Add(def);
                 }
             }
+<<<<<<< HEAD
+            Log.Message($"{builder}");
+            Log.Message("Updating architect menu..");
+            foreach (DesignationCategoryDef def in DefDatabase<DesignationCategoryDef>.AllDefs)
+=======
 
             Log.Message($"[RimVali/FloorConstructor] {builder}");
             Log.Message("[RimVali/FloorConstructor] Updating architect menu..");
 
             //Updates/refreshes menus
             foreach (DesignationCategoryDef def in toUpdateDesignationCatDefs)
+>>>>>>> beta
             {
                 def.PostLoad();
                 def.ResolveReferences();
 
             }
+<<<<<<< HEAD
+            foreach (DesignatorDropdownGroupDef def in DefDatabase<DesignatorDropdownGroupDef>.AllDefs)
+            {
+                def.PostLoad();
+                def.ResolveReferences();
+
+            }
+            Log.Message($"Built  {floorsMade.Count} floors.");
+=======
            
             foreach (DesignatorDropdownGroupDef def in toUpdateDropdownDesDefs)
             {
@@ -328,6 +462,7 @@ namespace AvaliMod
             WealthWatcher.ResetStaticData();
            
             Log.Message($"[RimVali/FloorConstructor] Built  {floorsMade.Count} floors from {materials.Count} materials.");
+>>>>>>> beta
         }
     }
 }

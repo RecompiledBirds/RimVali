@@ -1,6 +1,35 @@
 ﻿using RimWorld;
 using Verse;
 using System.Collections.Generic;
+<<<<<<< HEAD
+
+namespace AvaliMod
+{
+    public class AvaliPack : Thing, ILoadReferenceable, IExposable
+    {
+
+        public string name = "NoName";
+        public List<Pawn> pawns = new List<Pawn>();
+        public int size = 1;
+        public Faction faction = null;
+        public List<DeathDate> deathDates = new List<DeathDate>();
+        public Date creationDate;
+
+
+        public void ExposeData()
+        {
+            Scribe_Collections.Look<Pawn>(ref pawns, "pawns", LookMode.Reference);
+            Scribe_Values.Look(ref name, "packName", "NoName", true);
+            Scribe_Values.Look(ref size, "size", 1, true);
+            Scribe_References.Look<Faction>(ref faction, "faction", false);
+            Scribe_Collections.Look<DeathDate>(ref deathDates, "deathDates", LookMode.Reference, true);
+            Scribe_Values.Look(ref creationDate, "creationDate", null, true);
+        }
+        public string GetUniqueLoadID()
+        {
+            return "pack_" +this.name.GetHashCode().ToString();
+        }
+=======
 using System;
 using System.Linq;
 
@@ -141,10 +170,15 @@ namespace AvaliMod
             return "pack_" + this.GetHashCode().ToString();
         }
         
+>>>>>>> beta
 
     }
     public class Date : Thing, ILoadReferenceable, IExposable
     {
+<<<<<<< HEAD
+        public int day;
+        public Quadrum quadrum;
+=======
         public long date = 0;
         public int day = 0;
         public int ticks = 0;
@@ -182,10 +216,13 @@ namespace AvaliMod
         {
             return day.ToString() + quadrum.ToString();
         }
+>>>>>>> beta
     }
     public class DeathDate : Date
     {
         public Pawn deadPawn;
+<<<<<<< HEAD
+=======
         public DeathDate(Pawn pawn)
         {
             this.day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
@@ -198,5 +235,6 @@ namespace AvaliMod
             Scribe_References.Look(ref deadPawn, "dPawn", false);
             base.ExposeData();
         }
+>>>>>>> beta
     }
 }

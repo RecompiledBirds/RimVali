@@ -14,8 +14,8 @@
     <stages>
       <li>
         <statOffsets>
-          <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-          <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+          <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
           <MaxHitPoints>20</MaxHitPoints>
         </statOffsets>
         <capMods>

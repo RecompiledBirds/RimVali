@@ -1,15 +1,25 @@
 ﻿using RimWorld;
+<<<<<<< HEAD
+=======
 using RimWorld.Planet;
+>>>>>>> beta
 using Verse;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System;
+<<<<<<< HEAD
+
+namespace AvaliMod
+{
+    public class AvaliPackDriver : MapComponent
+=======
 using System.Threading.Tasks;
 
 namespace AvaliMod
 {
     public class AvaliPackDriver : GameComponent//WorldComponent//MapComponent//
+>>>>>>> beta
     {
         private RimValiModSettings settings = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>();
         private readonly bool enableDebug = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableDebugMode;
@@ -20,6 +30,17 @@ namespace AvaliMod
         private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
         private readonly Dictionary<string, bool> otherRaces = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enabledRaces;
         private bool HasStarted = false;
+<<<<<<< HEAD
+        public static List<AvaliPack> packs = new List<AvaliPack>();
+        private int onTick = 0;
+        public Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>(new PawnEqaulityComparer());
+        public AvaliPackDriver(Map map)
+            : base(map)
+        {
+
+        }
+        List<ThingDef> racesInPacks = new List<ThingDef>();
+=======
         public bool ThreadIsActive;
         public List<AvaliPack> packs = new List<AvaliPack>();
         private int onTick = 0;
@@ -133,11 +154,19 @@ namespace AvaliMod
             }
         }
 
+>>>>>>> beta
         public void LoadAll()
         {
             packs = new List<AvaliPack>();
             if (!HasStarted)
             {
+<<<<<<< HEAD
+                
+                racesInPacks.Add(AvaliDefs.RimVali);
+                if (checkOtherRaces)
+                {
+                    foreach(ThingDef race in RimvaliPotentialPackRaces.potentialPackRaces)
+=======
                 foreach(ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x => x.HasComp(typeof(PackComp))))
                 {
                     racesInPacks.Add(def);
@@ -146,27 +175,102 @@ namespace AvaliMod
                 if (checkOtherRaces)
                 {
                     foreach(ThingDef race in RimValiDefChecks.potentialPackRaces)
+>>>>>>> beta
                     {
                         racesInPacks.Add(race);
                     }
                 }
                 if (allowAllRaces)
                 {
+<<<<<<< HEAD
+                    foreach(ThingDef race in RimvaliPotentialPackRaces.potentialRaces)
+=======
                     foreach(ThingDef race in RimValiDefChecks.potentialRaces)
+>>>>>>> beta
                     {
                         if(otherRaces.TryGetValue(race.defName) == true)
                         {
                             racesInPacks.Add(race);
+<<<<<<< HEAD
+=======
                             if (enableDebug)
                             {
                                 Log.Message("Adding race: " + race.defName + " to racesInPacks.");
                             }
+>>>>>>> beta
                         }
                     }
                 }
                 HasStarted = true;
             }
         }
+<<<<<<< HEAD
+
+        public override void ExposeData()
+        {
+            Scribe_Collections.Look<AvaliPack>(ref packs, "packs", LookMode.Deep, Array.Empty<object>());
+            base.ExposeData();
+        }
+
+        public void UpdatePacks()
+        {
+            if (enableDebug && multiThreaded)
+            {
+                //Log.Message("Thread started.");
+            }
+            IEnumerable<Pawn> pawnsOnMap = RimValiUtility.AllPawnsOfRaceInWorld(AvaliDefs.RimVali).Where<Pawn>(x => RimValiUtility.GetPackSize(x) < maxSize);
+            foreach (Pawn pawn in pawnsOnMap)
+            {
+//Log.Message(pawn.Faction.Name);
+                //Log.Message(pawn.Name.ToString() + " updatePacks()");
+                PackComp comp = pawn.TryGetComp<PackComp>();
+                if (!(comp == null))
+                {
+                    //Pull the comp info from the pawn
+                    SimpleCurve ageCurve = comp.Props.packGenChanceOverAge;
+                    //Tells us that this pawn has had a pack
+                    if (enableDebug)
+                    {
+                        //Log.Message("Attempting to make pack.. [Base pack]");
+ 
+                    }
+                    //Makes the pack.
+                    //Log.Message("EiPackHandlerFromPackDriverMapComp started.");
+                    packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
+                }
+            }
+        }
+
+        public override void MapComponentTick()
+        {
+            if (!HasStarted)
+            {
+                LoadAll();
+            }
+            if (onTick == 0)
+            {
+                if (packsEnabled)
+                {
+                    if (multiThreaded)
+                    {
+                        if (enableDebug)
+                        {
+                            //Log.Message("Attempting to make new thread.");
+                        }
+                        ThreadStart packThreadRef = new ThreadStart(UpdatePacks);
+                        Thread packThread = new Thread(packThreadRef);
+                        packThread.Start();
+                    }
+                    else
+                    {
+                        UpdatePacks();
+                    }
+                   /* Log.Message(packs.Count.ToString());
+                    if (packs.Count > 0)
+                    {
+                        Log.Message(packs[0].name);
+                    }*/
+=======
         
         public override void ExposeData()
         {
@@ -233,6 +337,7 @@ namespace AvaliMod
                 else
                 {
                     UpdatePacks();
+>>>>>>> beta
                 }
                 onTick = 120;
             }
@@ -241,6 +346,9 @@ namespace AvaliMod
                 onTick--;
             }
         }
+<<<<<<< HEAD
+
+=======
     }
 
     public class Converter : WorldComponent
@@ -305,5 +413,6 @@ namespace AvaliMod
             }
             base.WorldComponentTick();
         }
+>>>>>>> beta
     }
 }
