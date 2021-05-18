@@ -175,7 +175,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliNexus</defName>
     <label>Illuminate Nexus Connection</label>
-    <description>This device can be used to access higher levels of tech, thanks to its connection to te nexus.</description>
+    <description>This device can be used to access higher levels of tech, thanks to its connection to the nexus.</description>
     <graphicData>
       <texPath>avali/buildings/production/sync_crystal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
