@@ -47,7 +47,7 @@
     <defName>ResearchNanoForge</defName>
     <label>Nano-forge</label>
     <description>One of the most important workbenches, this workbench is where tungsten can be processed and weapons made.</description>
-    <baseCost>150</baseCost>
+    <baseCost>400</baseCost>
     <techLevel>Industrial</techLevel>
 <researchViewX>1.00</researchViewX>
   <researchViewY>0.65</researchViewY>

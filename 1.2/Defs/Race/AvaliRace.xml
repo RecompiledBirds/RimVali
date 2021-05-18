@@ -4,8 +4,7 @@
    <AvaliMod.RenderableDef Name="BaseAvaliPart" Abstract="True">
     <useColorSet>Skin</useColorSet>
   </AvaliMod.RenderableDef>
-  
-  
+
   <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
     <defName>EarLL</defName>
     <textures>
@@ -744,14 +743,6 @@
               <replacementThought>MyParentLost</replacementThought>
             </li>
             <li>
-              <thoughtToReplace>SleptInBarracks</thoughtToReplace>
-              <replacementThought>AvaliSharedBedRoom</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>SleptInBedroom</thoughtToReplace>
-              <replacementThought>AvaliSleptAlone</replacementThought>
-            </li>
-            <li>
               <thoughtToReplace>MyFatherLost</thoughtToReplace>
               <replacementThought>MyParentLost</replacementThought>
             </li>
@@ -789,12 +780,14 @@
         <li>EnvironmentDark</li>
         <li>Naked</li>
 
+        <li>SleptInBedroom</li> 
+        <li>SleptInBarracks</li>    
             
         <li>SleepDisturbed</li>
-            
+        <li>SharedBed</li>    
         <li>ObservedLayingCorpse</li>
         
-                
+           
         <li>ButcheredHumanlikeCorpse</li>
         <li>KnowButcheredHumanlikeCorpse</li>
       </thoughtBlacklist>
