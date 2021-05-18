@@ -43,8 +43,7 @@
     <costStuffCount>150</costStuffCount>
     <costList>
       <Steel>100</Steel>
-      <ComponentSpacer>2</ComponentSpacer>
-      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
      <researchPrerequisites>
        <li>ResearchNanoForge</li>
