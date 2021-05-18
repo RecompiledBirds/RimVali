@@ -4,8 +4,10 @@
 
   <PackTab>Pack</PackTab>
   <Packmates>Packmates: </Packmates>
-  <PackNameLabel>Pack name</PackNameLabel>
+  <PackNameLabel>Pack name: {PACKNAME}</PackNameLabel>
   <NoPack>This pawn is not in a pack.</NoPack>
+  <PackSpeciality>Pack speciality: {SPECIALITY}</PackSpeciality>
+  <PackEffects>Effects:</PackEffects>
   <!-- Settings -->
   <goBack>Go back</goBack>
   <MultiThreadWarnLabel>Multithreading warning!</MultiThreadWarnLabel>
@@ -46,7 +48,7 @@
   <AirdropsLabel>Enables/disables the Illuminate airdrop event. \nThis event adds the "Illuminate Nexus Connection".</AirdropsLabel>
   <AvaliForDropReq>Avali required for airdrop: {COUNT} </AvaliForDropReq>
   <HPScaler>HP Scale: {SCALE}</HPScaler>
-  
+  <ChanceToHackTech>Chance to hack tech: {CHANCE}</ChanceToHackTech>
   <!-- Stability warn -->
   <StableSettings>Stable.</StableSettings>
   <PotentialIssuesSettings>Potential issues may occur.</PotentialIssuesSettings>
@@ -58,7 +60,6 @@
   <RVBuild>RimVali build: {BUILD}</RVBuild>
   
     
-  <!-- Events -->
   <!-- Letters -->
 
   <IlluminateFactionName>Illuminate colony</IlluminateFactionName>
@@ -66,15 +67,8 @@
   <AirdropEventDesc>An Illuminate airdrop has landed nearby!</AirdropEventDesc>
   <IlluminateAirdropSend>An Illuminate airdrop is en route! It will land in: {TIME} hours! Be prepared!</IlluminateAirdropSend>
   <AirdropSendMsg>Airdrop en route</AirdropSendMsg>
-  
-  
-  <!-- Slots -->
-  <SlotsEnabled>Bionic slots:</SlotsEnabled>
-  <SlotsLabel>Enables/Disables RimVali's bionic slots. \nThese mostly exist to help balance out the bionics in the mod. If you dont't like them, turn them off!</SlotsLabel>
-  
-  
-  <!-- Slots in game -->
-  <SlotsUsed>Slots used</SlotsUsed>
+  <HackedProject>Hacked project: {PROJECT}</HackedProject>
+ <UnlockedResearch>Tech now researchable: {PROJECT}</UnlockedResearch>
   
   <!-- RVR -->
   <CannotWear>{RACE} can't wear this</CannotWear>
@@ -84,4 +78,9 @@
   
   <!-- Jobs -->
   <RefuelThing>Refuel {1_labelShort}</RefuelThing>
+  
+  
+  <!-- AERIAL -->
+  <AERIALShellSpaceLeft>Space used: {SPACE}</AERIALShellSpaceLeft>
+  <AERIALShellCapSetting>Aerial shell cap: {CAP}</AERIALShellCapSetting>
 </LanguageData>
