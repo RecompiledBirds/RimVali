@@ -2,13 +2,13 @@
 <LanguageData>
   <!-- <Aerial.label>AERIAL System</Aerial.label> -->
   <Aerial.label>AERIAL System</Aerial.label>
-  <!-- <Aerial.description>AERIAL is a high accuracy rocket system.</Aerial.description> -->
-  <Aerial.description>AERIAL ist ein Hochpräzisions-Raketensystem.</Aerial.description>
+  <!-- <Aerial.description>AERIAL is a high accuracy rocket system, that can hold up to six rockets, and fire two at once..</Aerial.description> -->
+  <Aerial.description>AERIAL ist ein Hochpräzisions-Raketensystem, welches bis zu sechs Raketen halten und zwei auf einmal abfeuern kann.</Aerial.description>
 
-  <!-- <AerialLauncher.label>AIMS</AerialLauncher.label> -->
-  <AerialLauncher.label>AIMS</AerialLauncher.label>
-  <!-- <AerialLauncher.description>AIMS launch system.</AerialLauncher.description> -->
-  <AerialLauncher.description>AIMS Startsystem.</AerialLauncher.description>
-  <!-- <AerialLauncher.verbs.Verb_Shoot.label>AIMS</AerialLauncher.verbs.Verb_Shoot.label> -->
-  <AerialLauncher.verbs.Verb_Shoot.label>AIMS</AerialLauncher.verbs.Verb_Shoot.label>
+  <!-- <AerialLauncher.label>AERIAL</AerialLauncher.label> -->
+  <AerialLauncher.label>AERIAL</AerialLauncher.label>
+  <!-- <AerialLauncher.description>AERIAL launch system.</AerialLauncher.description> -->
+  <AerialLauncher.description>AERIAL Startsystem.</AerialLauncher.description>
+  <!-- <AerialLauncher.verbs.Verb_Shoot.label>AERIAL</AerialLauncher.verbs.Verb_Shoot.label> -->
+  <AerialLauncher.verbs.Verb_Shoot.label>AERIAL</AerialLauncher.verbs.Verb_Shoot.label>
 </LanguageData>

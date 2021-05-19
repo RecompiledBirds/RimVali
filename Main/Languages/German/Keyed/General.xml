@@ -7,7 +7,7 @@
   <!-- <Packmates>Packmates: </Packmates> -->
   <Packmates>Rudelmitglieder: </Packmates>
   <!-- <PackNameLabel>Pack name: {PACKNAME}</PackNameLabel> -->
-  <PackNameLabel>Name des Rudels:{PACKNAME}</PackNameLabel>
+  <PackNameLabel>Name des Rudels: {PACKNAME}</PackNameLabel>
   <!-- <NoPack>This pawn is not in a pack.</NoPack> -->
   <NoPack>Dieses Mitglied ist nicht in einem Rudel.</NoPack>
   <!-- <PackSpeciality>Pack speciality: {SPECIALITY}</PackSpeciality> -->
@@ -77,6 +77,8 @@
   <AvaliForDropReq>Benötigte Avali für Luftkapsel: {COUNT}</AvaliForDropReq>
   <!-- <HPScaler>HP Scale: {SCALE}</HPScaler> -->
   <HPScaler>HP Skalierung: {SCALE}</HPScaler>
+  <!-- <ChanceToHackTech>Chance to hack tech: {CHANCE}</ChanceToHackTech> -->
+  <ChanceToHackTech>Chance, Tech zu hacken: {CHANCE}</ChanceToHackTech>
   
   <!-- Stability warn -->
 
@@ -108,17 +110,28 @@
   <IlluminateAirdropSend>Eine Illuminate-Luftkapsel ist auf dem Weg! Es wird in {TIME} Stunden landen! Sei darauf vorbereitet!</IlluminateAirdropSend>
   <!-- <AirdropSendMsg>Airdrop en route</AirdropSendMsg> -->
   <AirdropSendMsg>Luftkapsel ist auf dem Weg!</AirdropSendMsg>
+  <!-- <HackedProject>Hacked project: {PROJECT}</HackedProject> -->
+  <HackedProject>Erfolgreich gehacktes Projekt: {PROJECT}</HackedProject>
+  <!-- <UnlockedResearch>Tech now researchable: {PROJECT}</UnlockedResearch> -->
+  <UnlockedResearch>Tech jetzt erforschbar: {PROJECT}</UnlockedResearch>
   
   <!-- RVR -->
 
-  <!-- <CannotWear>{RACE} can't wear this</CannotWear> -->
-  <CannotWear>{RACE} kann dies nicht tragen</CannotWear>
-  <!-- <CannotBuild>{RACE} can't build this</CannotBuild> -->
-  <CannotBuild>{RACE} kann dies nicht bauen</CannotBuild>
-  <!-- <CannotEat>{RACE} can't eat this</CannotEat> -->
-  <CannotEat>{RACE} kann das nicht essen</CannotEat>
+  <!-- <CannotWearRVR>{RACE} can't wear this</CannotWearRVR> -->
+  <CannotWearRVR>{RACE} kann dies nicht tragen</CannotWearRVR>
+  <!-- <CannotBuildRVR>{RACE} can't build this</CannotBuildRVR> -->
+  <CannotBuildRVR>{RACE} kann dies nicht bauen</CannotBuildRVR>
+  <!-- <CannotEatRVR>{RACE} can't eat this</CannotEatRVR> -->
+  <CannotEatRVR>{RACE} kann das nicht essen</CannotEatRVR>
   
   <!-- Jobs -->
   <!-- <RefuelThing>Refuel {1_labelShort}</RefuelThing> -->
   <RefuelThing>Betanke {1_labelShort}</RefuelThing>
+
+  <!-- AERIAL -->
+  <!-- <AERIALShellSpaceLeft>Space used: {SPACE}</AERIALShellSpaceLeft> -->
+  <AERIALShellSpaceLeft>Genutzter Platz: {SPACE}</AERIALShellSpaceLeft>
+  <!-- <AERIALShellCapSetting>Aerial shell cap: {CAP}</AERIALShellCapSetting> -->
+  <AERIALShellCapSetting>Aerial Granaten Maximum: {CAP}</AERIALShellCapSetting>
+
 </LanguageData>

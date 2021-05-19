@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AERIAL_HE.label>AERIAL HE rocket</AERIAL_HE.label> -->
+  <AERIAL_HE.label>AERIAL-HE-Rakete</AERIAL_HE.label>
+  <!-- <AERIAL_HE.description>A highly explosive rocket, launched from an AERIAL system.</AERIAL_HE.description> -->
+  <AERIAL_HE.description>Eine hochexplosive Rakete, abgefeuert von einem AERIAL-System.</AERIAL_HE.description>
+
+  <!-- <AERIAL_HE_SHELL.label>high-explosive shell</AERIAL_HE_SHELL.label> -->
+  <AERIAL_HE_SHELL.label>hochexplosive Granate</AERIAL_HE_SHELL.label>
+</LanguageData>

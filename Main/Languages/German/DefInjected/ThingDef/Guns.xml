@@ -6,7 +6,7 @@
   <IWPistolBullet.label>Avali-Pistolenkugel</IWPistolBullet.label>
 
   <!-- <IWPistol.label>Independent Worlds Pistol</IWPistol.label> -->
-  <IWPistol.label>Unabhängige Welten-Pistole</IWPistol.label>
+  <IWPistol.label>Pistole (Unabhängige Welten)</IWPistol.label>
   <!-- <IWPistol.description>An Independent Worlds avali pistol. It's designed for an avali to use.</IWPistol.description> -->
   <IWPistol.description>Eine Pistole der Avali von den Unabhängigen Welten. Es ist für Avali konzipiert.</IWPistol.description>
   <!-- <IWPistol.tools.0.label>grip</IWPistol.tools.0.label> -->
@@ -19,10 +19,10 @@
   <!-- <IWSemiAutoBullet.label>Avali bullet</IWSemiAutoBullet.label> -->
   <IWSemiAutoBullet.label>Avali-Halbautomatik-Kugel</IWSemiAutoBullet.label>
 
-  <!-- <IWSemiAuto.label>Independent Worlds semi-auto gun</IWSemiAuto.label> -->
-  <IWSemiAuto.label>Unabhängige Welten-Halbautomatische</IWSemiAuto.label>
-  <!-- <IWSemiAuto.description>An Independent Worlds avali semi-auto gun. It's designed for an avali to use, and offers a better fire rate then most Independent Worlds weapons.</IWSemiAuto.description> -->
-  <IWSemiAuto.description>Eine halbautomatische Waffe der Avali von den Unabhängigen Welten. Es ist für Avali konzipiert und verfügt über eine höhere Feuerrate, als andere Waffen von den Unabhängigen Welten.</IWSemiAuto.description>
+  <!-- <IWSemiAuto.label>Independent Worlds semi-auto rifle</IWSemiAuto.label> -->
+  <IWSemiAuto.label>Halbautomatisches Gewehr (Unabhängige Welten)</IWSemiAuto.label>
+  <!-- <IWSemiAuto.description>An Independent Worlds avali semi-auto rifle. It's designed for an avali to use, and offers a better fire rate then most Independent Worlds weapons.</IWSemiAuto.description> -->
+  <IWSemiAuto.description>Ein halbautomatisches Gewehr der Avali von den Unabhängigen Welten. Es ist für Avali konzipiert und verfügt über eine höhere Feuerrate, als andere Waffen von den Unabhängigen Welten.</IWSemiAuto.description>
   <!-- <IWSemiAuto.tools.0.label>grip</IWSemiAuto.tools.0.label> -->
   <IWSemiAuto.tools.0.label>Griff</IWSemiAuto.tools.0.label>
   <!-- <IWSemiAuto.tools.1.label>barrel</IWSemiAuto.tools.1.label> -->
@@ -34,7 +34,7 @@
   <IWRifleBullet.label>Avali-Gewehrkugel</IWRifleBullet.label>
 
   <!-- <IWRifle.label>Independent Worlds rifle</IWRifle.label> -->
-  <IWRifle.label>Unabhängige Welten-Gewehr</IWRifle.label>
+  <IWRifle.label>Gewehr (Unabhängige Welten)</IWRifle.label>
   <!-- <IWRifle.description>An Independent Worlds avali rifle.</IWRifle.description> -->
   <IWRifle.description>Ein Gewehr der Avali von den Unabhängigen Welten.</IWRifle.description>
   <!-- <IWRifle.tools.0.label>grip</IWRifle.tools.0.label> -->
@@ -45,12 +45,12 @@
   <!-- Assault Rifle -->
 
   <!-- <IWAssaultRifleBullet.label>Avali bullet</IWAssaultRifleBullet.label> -->
-  <IWAssaultRifleBullet.label>Avali-Sturmgewehrkugel</IWAssaultRifleBullet.label>
+  <IWAssaultRifleBullet.label>Avali-Gefechtsgewehrkugel</IWAssaultRifleBullet.label>
 
-  <!-- <IWAssaultRifle.label>Independent Worlds assault rifle</IWAssaultRifle.label> -->
-  <IWAssaultRifle.label>Unabhängige Welten-Sturmgewehr</IWAssaultRifle.label>
-  <!-- <IWAssaultRifle.description>An Independent Worlds avali assualt rifle.</IWAssaultRifle.description> -->
-  <IWAssaultRifle.description>Ein Sturmgewehr der Avali von den Unabhängigen Welten.</IWAssaultRifle.description>
+  <!-- <IWAssaultRifle.label>Independent Worlds battle rifle</IWAssaultRifle.label> -->
+  <IWAssaultRifle.label>Gefechtsgewehr (Unabhängige Welten)</IWAssaultRifle.label>
+  <!-- <IWAssaultRifle.description>An Independent Worlds avali battle rifle.</IWAssaultRifle.description> -->
+  <IWAssaultRifle.description>Ein Gefechtsgewehr der Avali von den Unabhängigen Welten.</IWAssaultRifle.description>
   <!-- <IWAssaultRifle.tools.0.label>grip</IWAssaultRifle.tools.0.label> -->
   <IWAssaultRifle.tools.0.label>Griff</IWAssaultRifle.tools.0.label>
   <!-- <IWAssaultRifle.tools.1.label>barrel</IWAssaultRifle.tools.1.label> -->
@@ -61,8 +61,8 @@
   <!-- <IWMGBullet.label>Avali bullet</IWMGBullet.label> -->
   <IWMGBullet.label>Avali-Maschinengewehrkugel</IWMGBullet.label>
 
-  <!-- <IWMachineGun.label>Independent Worlds machine gun</IWMachineGun.label> -->
-  <IWMachineGun.label>Unabhängige Welten-Maschinengewehr</IWMachineGun.label>
+  <!-- <IWMachineGun.label>Independent Worlds light machine gun</IWMachineGun.label> -->
+  <IWMachineGun.label>Leichtes Maschinengewehr (Unabhängige Welten)</IWMachineGun.label>
   <!-- <IWMachineGun.description>An Independent Worlds avali machine gun.</IWMachineGun.description> -->
   <IWMachineGun.description>Ein Maschinengewehr der Avali von den Unabhängigen Welten.</IWMachineGun.description>
   <!-- <IWMachineGun.tools.0.label>grip</IWMachineGun.tools.0.label> -->
@@ -76,7 +76,7 @@
   <IWGPMGBullet.label>Avali-Universalmaschinengewehrkugel</IWGPMGBullet.label>
 
   <!-- <IW_GPMG.label>Independent Worlds machine gun</IW_GPMG.label> -->
-  <IW_GPMG.label>Unabhängige Welten-Universalmaschinengewehr</IW_GPMG.label>
+  <IW_GPMG.label>Universalmaschinengewehr (Unabhängige Welten)</IW_GPMG.label>
   <!-- <IW_GPMG.description>An Independent Worlds avali general purpose machine gun.</IW_GPMG.description> -->
   <IW_GPMG.description>Ein Universalmaschinengewehr der Avali von den Unabhängigen Welten.</IW_GPMG.description>
   <!-- <IW_GPMG.tools.0.label>grip</IW_GPMG.tools.0.label> -->
@@ -86,17 +86,17 @@
 
   <!-- Vali_Primative_AngryTube.png -->
 
-  <!-- <IWAngryTubeBullet.label>Avali bullet</IWAngryTubeBullet.label> -->
-  <IWAngryTubeBullet.label>Avali Maschinenpistolenkugel</IWAngryTubeBullet.label>
+  <!-- <IWSMGBullet.label>Avali bullet</IWSMGBullet.label> -->
+  <IWSMGBullet.label>Avali Maschinenpistolenkugel</IWSMGBullet.label>
 
-  <!-- <IWAngryTube.label>Independent Worlds sub-machine gun</IWAngryTube.label> -->
-  <IWAngryTube.label>Unabhängige Welten-Maschinenpistole</IWAngryTube.label>
-  <!-- <IWAngryTube.description>An Independent Worlds avali sub-machine gun.</IWAngryTube.description> -->
-  <IWAngryTube.description>Eine Maschinenpistole der Avali von den Unabhängigen Welten.</IWAngryTube.description>
-  <!-- <IWAngryTube.tools.0.label>grip</IWAngryTube.tools.0.label> -->
-  <IWAngryTube.tools.0.label>Griff</IWAngryTube.tools.0.label>
-  <!-- <IWAngryTube.tools.1.label>barrel</IWAngryTube.tools.1.label> -->
-  <IWAngryTube.tools.1.label>Lauf</IWAngryTube.tools.1.label>
+  <!-- <IWSMG.label>Independent Worlds sub-machine gun</IWSMG.label> -->
+  <IWSMG.label>Maschinenpistole (Unabhängige Welten)</IWSMG.label>
+  <!-- <IWSMG.description>An Independent Worlds avali sub-machine gun.</IWSMG.description> -->
+  <IWSMG.description>Eine Maschinenpistole der Avali von den Unabhängigen Welten.</IWSMG.description>
+  <!-- <IWSMG.tools.0.label>grip</IWSMG.tools.0.label> -->
+  <IWSMG.tools.0.label>Griff</IWSMG.tools.0.label>
+  <!-- <IWSMG.tools.1.label>barrel</IWSMG.tools.1.label> -->
+  <IWSMG.tools.1.label>Lauf</IWSMG.tools.1.label>
 
   <!-- Railrifle/sniper -->
 
@@ -104,7 +104,7 @@
   <IWRailRifleBullet.label>Avali-Schienengewehrkugel</IWRailRifleBullet.label>
 
   <!-- <IWRailRifle.label>Independent Worlds rail rifle</IWRailRifle.label> -->
-  <IWRailRifle.label>Unabhängige Welten-Schienengewehr</IWRailRifle.label>
+  <IWRailRifle.label>Schienengewehr (Unabhängige Welten)</IWRailRifle.label>
   <!-- <IWRailRifle.description>An Independent Worlds avali rail rifle.</IWRailRifle.description> -->
   <IWRailRifle.description>Ein Schienengewehr der Avali von den Unabhängigen Welten.</IWRailRifle.description>
   <!-- <IWRailRifle.tools.0.label>grip</IWRailRifle.tools.0.label> -->
@@ -118,7 +118,7 @@
   <IWRevolverBullet.label>Avali-Revolverkugel</IWRevolverBullet.label>
 
   <!-- <IWRevolver.label>Independent Worlds revolver</IWRevolver.label> -->
-  <IWRevolver.label>Unabhängige Welten-Revolver</IWRevolver.label>
+  <IWRevolver.label>Revolver (Unabhängige Welten)</IWRevolver.label>
   <!-- <IWRevolver.description>An Independent Worlds avali revolver.</IWRevolver.description> -->
   <IWRevolver.description>Ein Revolver der Avali von den Unabhängigen Welten.</IWRevolver.description>
   <!-- <IWRevolver.tools.0.label>grip</IWRevolver.tools.0.label> -->
