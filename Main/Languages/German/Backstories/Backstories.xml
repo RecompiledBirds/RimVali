@@ -44,7 +44,7 @@
     <titleFemale></titleFemale>
     <titleShort>Kriegsgeboren</titleShort>
     <titleShortFemale></titleShortFemale>
-    <desc>[PAWN_nameDef] war gerade erst geschlüpft, als [PAWN_possessive]e Kolonie von einem feindlichen Rudel überfallen wurde. Glücklicherweise fand [PAWN_pronoun] niemand, da [PAWN_pronoun] sich kurz vor dem Angriff rechtzeitig verstecken konnte. Nur ein paar Tage später wurde [PAWN_pronoun] von Spähern gefunden, die sich entschlossen [PAWN_nameDef] mit sich nach Hause zu nehmen. Danach erlebte [PAWN_nameDef] eine relativ normale Kindheit, [PAWN_possessive]e Erinnerungen an den Überfall durch das traumatische Erlebnis bis ins Erwachsenenalter verdrängt.</desc>
+    <desc>[PAWN_nameDef] war gerade erst geschlüpft, als [PAWN_possessive]e Kolonie von einem feindlichen Rudel überfallen wurde. Da [PAWN_pronoun] sich kurz vor dem Angriff rechtzeitig verstecken konnte, wurde [PAWN_pronoun] glücklicherweise nicht entdeckt. Nur ein paar Tage später wurde [PAWN_pronoun] von Spähern gefunden, die sich dazu entschlossen [PAWN_nameDef] mit sich nach Hause zu nehmen. Danach erlebte [PAWN_nameDef] eine relativ normale Kindheit, [PAWN_possessive]e Erinnerungen an den Überfall durch das traumatische Erlebnis hat [PAWN_pronoun] bis ins Erwachsenenalter verdrängt.</desc>
   </AvaliWarchild>
 
   <!-- <AvaliSoldierChild>
@@ -488,7 +488,7 @@
     <titleFemale></titleFemale>
     <titleShort>Verlorenes Ei</titleShort>
     <titleShortFemale></titleShortFemale>
-    <desc>[PAWN_nameDef]'s Ei ging bei einem Umzug des Horts verloren, nachdem ein Vorfall zu einer strukturellen Instabilität geführt hatte, wodurch für die Eier ein Risiko entstand. Glücklicherweise wurde [PAWN_pronoun] in jungen jahren von einem anderen Rudel gefunden [PAWN_pronoun] und aufgenommen, aber manchmal fragt [PAWN_nameDef] sich ob [PAWN_possessive] ursprüngliches Rudel noch irgendwo dort draußen ist und vielleicht sogar immernoch nach [PAWN_objective] sucht.</desc>
+    <desc>[PAWN_nameDef]'s Ei ging bei einem Umzug des Horts verloren, nachdem ein Vorfall zu einer strukturellen Instabilität geführt hatte, wodurch für die Eier ein Risiko entstand. Glücklicherweise wurde [PAWN_pronoun] in jungen jahren von einem anderen Rudel gefunden und aufgenommen, aber manchmal fragt [PAWN_pronoun] sich ob [PAWN_possessive] ursprüngliches Rudel noch irgendwo dort draußen ist und vielleicht sogar immernoch nach [PAWN_nameDef] sucht.</desc>
   </AvaliLostEgg>
 
 
