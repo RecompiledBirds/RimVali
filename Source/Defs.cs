@@ -15,6 +15,7 @@ namespace AvaliMod
         public static ThingDef AvaliAerogel;
         public static ThingDef AvaliResearchBench;
         public static ThingDef AvaliNexus;
+        public static ThingDef Aerial;
 
         //Race defs
         public static RimValiRaceDef RimVali;
@@ -25,9 +26,25 @@ namespace AvaliMod
         public static StatDef ExplodeFireRadius;
         public static StatDef ExplodeEMPRadius;
         public static StatDef KillOnExplosion;
-
-
-
+        //Some vanilla incidents
+        public static IncidentDef Flashstorm;
+        public static IncidentDef ShortCircuit;
+        public static IncidentDef HeatWave;
+        public static IncidentDef CropBlight;
+        public static IncidentDef Alphabeavers;
+        public static IncidentDef PsychicDrone;
+        public static IncidentDef WildManWandersIn;
+        public static IncidentDef HerdMigration;
+        public static IncidentDef MeteoriteImpact;
+        public static IncidentDef RansomDemand;
+        public static IncidentDef ThrumboPasses;
+        public static IncidentDef SelfTame;
+        public static IncidentDef ResourcePodCrash;
+        public static IncidentDef AmbrosiaSprout;
+        public static IncidentDef FarmAnimalsWanderIn;
+        public static IncidentDef WandererJoin;
+        public static IncidentDef RefugeePodCrash;
+        public static IncidentDef VolcanicWinter;
 
         //HediffDefs
         public static HediffDef TestHediffOne;
@@ -51,5 +68,7 @@ namespace AvaliMod
 
         public static ThoughtDef KnowButcheredHumanlikeCorpse;
         public static ThoughtDef ButcheredHumanlikeCorpse;
+        public static ThoughtDef AvaliSharedBedRoom;
+        public static ThoughtDef AvaliSleptAlone;
     }
 }

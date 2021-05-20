@@ -18,7 +18,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\__LocalCopy_RimVali_ Far From Avalon_-2-11 - Copy\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\__LocalCopy_RimVali_ Far From Avalon_-16-5\1.2\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -93,26 +93,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
-    <None Include="AlienPartGenerator.BodyAddon.cs" />
-    <None Include="AlienPartGenerator.cs" />
-    <None Include="BackstoryDef.cs" />
     <Compile Include="CodeFile1.cs" />
-    <None Include="ColorGenerators.cs" />
-    <None Include="HarmonyPatches.cs" />
     <Compile Include="HarmonyPatches\Class1.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />
     <Compile Include="HediffStuff\ConflictsWithProps.cs" />
     <Compile Include="RimValiUtilities\FloorConstructor.cs" />
+    <Compile Include="RimValiUtilities\PawnTracker.cs" />
     <Compile Include="RVR\Class1.cs" />
     <Compile Include="RVR\Hacking.cs" />
+    <Compile Include="RVR\Renders.cs" />
+    <Compile Include="Storyteller\Storyteller.cs" />
+    <Compile Include="Storyteller\StoryTellerDatamapComp.cs" />
     <Compile Include="ThingComps\Aeriel\AERIALSYSTEM.cs" />
     <Compile Include="ModScanner.cs" />
     <Compile Include="DeathWorker.cs" />
     <Compile Include="HediffStuff\AddHediff.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\Shared_room_worker.cs" />
     <Compile Include="Packs\PackMapComponents\ThoughtDriver\PackLossWorker.cs" />
-    <None Include="PawnBioDef.cs" />
-    <None Include="RaceSettings.cs" />
     <Compile Include="RimValiUtilities\Dialog_NamePack.cs" />
     <Compile Include="RimValiUtilities\Tab.cs" />
     <Compile Include="Graphic\CodeFile3.cs" />
@@ -161,8 +158,7 @@
     <Compile Include="HediffStuff\MPB\MPBComp.cs" />
     <Compile Include="HarmonyPatches\StatPart_Temperature.cs" />
     <Compile Include="Defs.cs" />
-    <None Include="ThingDef_AlienRace.cs" />
-    <None Include="Utilities.cs" />
+    <Compile Include="ThoughtWorker\BarrackThoughts.cs" />
     <Compile Include="Verbs\ExplodeEMP.cs" />
     <Compile Include="Verbs\ExplodeFireVerb .cs" />
     <Compile Include="Verbs\ExplodeBombVerb.cs" />
