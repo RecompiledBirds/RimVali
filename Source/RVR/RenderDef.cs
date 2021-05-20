@@ -28,13 +28,19 @@ namespace AvaliMod
         public string backstoryTitle;
         public HediffDef hediffDef;
     }
-   
+    public class BodyPartGraphicPos
+    {
+        public Vector2 position = new Vector2(0f, 0f);
+        public float layer = 1f;
+        public Vector2 size = new Vector2(1f, 1f);
+
+    }
     public class RenderableDef : Def
     {
-
+       
         public Graphic graphic;
 
-
+        #region backstory checks
         public bool StoryIsName(Backstory story, string title)
         {
             //I have to check if everything is null so we get this mess, otherwise sometimes a null reference exception occurs.
@@ -52,7 +58,8 @@ namespace AvaliMod
                         || story.title == title)));
             //Now we hope Tynan never changes backstories. Ever. Or else this thing breaks.
         }
-
+        #endregion
+        #region get index
         public int GetMyIndex(Pawn pawn)
         {
             if(pawn.def is RimValiRaceDef)
@@ -68,7 +75,9 @@ namespace AvaliMod
             }
             return 0;
         }
+        #endregion
 
+        #region get texture
         public string texPath(Pawn pawn)
         {
             return texPath(pawn, GetMyIndex(pawn));
@@ -158,7 +167,7 @@ namespace AvaliMod
             return path;
 
         }
-
+        #endregion
         public List<BaseTex> textures;
         public string bodyPart = null;
 
@@ -175,6 +184,7 @@ namespace AvaliMod
         public List<BackstoryTex> backstoryTextures = new List<BackstoryTex>();
         public List<HediffTex> hediffTextures = new List<HediffTex>();
         public List<HediffStoryTex> hediffStoryTextures = new List<HediffStoryTex>();
+        #region portrait check
         public bool CanShowPortrait(Pawn pawn)
         {
             if (bodyPart == null)
@@ -204,6 +214,9 @@ namespace AvaliMod
                 return true;
             }
         }
+        #endregion
+
+        #region general show check
         public bool CanShow(Pawn pawn)
         {
             if (bodyPart == null)
@@ -238,5 +251,6 @@ namespace AvaliMod
                 return true;
             }
         }
+        #endregion
     }
 }

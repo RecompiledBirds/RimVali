@@ -37,7 +37,6 @@ namespace AvaliMod
 
 		protected override  bool TryCastShot()
         {
-			Log.Message("test3");
 			AERIALChangeableProjectile comp = EquipmentSource.GetComp<AERIALChangeableProjectile>();
 			Thing launcher = caster;
 			ThingDef projectile = Projectile;
@@ -45,7 +44,6 @@ namespace AvaliMod
             {
 				return false;
             }
-			Log.Message("test");
 			Thing equipment = EquipmentSource;
 			Vector3 drawPos = this.caster.DrawPos;
 			ShootLine shootLine;
@@ -86,7 +84,6 @@ namespace AvaliMod
 				comp.loadedShells.RemoveAt(comp.loadedShells.Count - 1);
 			}
 
-			Log.Message($"{comp.loadedShells.Count}");
 			return true;
 		}
 		protected bool oldShotCast()

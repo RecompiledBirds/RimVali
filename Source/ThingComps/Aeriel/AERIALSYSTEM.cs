@@ -269,7 +269,6 @@ namespace AvaliMod
 						}
 						if (this.burstCooldownTicksLeft <= 0 && this.IsHashIntervalTick(10))
 						{
-							Log.Message("trystartshootsomething");
 							this.TryStartShootSomethingAERIAL(true);
 						}
 					}
@@ -279,7 +278,6 @@ namespace AvaliMod
 			}
 			else
 			{
-				Log.Message("resetcurrenttarget");
 				this.ResetCurrentTarget();
 			}
 		}
@@ -355,7 +353,8 @@ namespace AvaliMod
 			{
 				stringBuilder.AppendLine("MinimumRange".Translate() + ": " + this.AttackVerb.verbProps.minRange.ToString("F0"));
 			}
-			stringBuilder.AppendLine("AERIALShellSpaceLeft".Translate($"{compChangeableProjectile.loadedShells.Count}/{compChangeableProjectile.Props.maxShellCount}".Named("SPACE")));
+			
+			stringBuilder.AppendLine("AERIALShellSpaceLeft".Translate($"{compChangeableProjectile.loadedShells.Count}/{RimValiMod.settings.AERIALShellCap}".Named("SPACE")));
 			if (base.Spawned && this.IsMortarOrProjectileFliesOverhead && base.Position.Roofed(base.Map))
 			{
 				stringBuilder.AppendLine("CannotFire".Translate() + ": " + "Roofed".Translate().CapitalizeFirst());

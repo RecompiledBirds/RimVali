@@ -47,112 +47,116 @@ namespace AvaliMod
 			Rect outRect = new Rect(0f, 0f, position.width, position.height);
 			Rect viewRect = new Rect(0f, 0f, position.width - 16f, this.scrollViewHeight);
 			Widgets.BeginScrollView(outRect, ref this.scrollPosition, viewRect, true);
-			Pawn pawn = SelPawn;
-			AvaliPack pack = pawn.GetPack();
-			float rectPosY = 0f;
-
-			if (pack != null && pack.pawns.Count > 1)
 			{
-				string effects = "";
-				string packSpecialityName = "NONE";
-				int listCount = 0;
-				if (pack.GetPackSkillDef() != null)
+				Pawn pawn = SelPawn;
+				AvaliPack pack = pawn.GetPack();
+				float rectPosY = 0f;
+			
+				if (pack != null && pack.pawns.Count > 1)
 				{
-					AvaliPackSkillDef skillDef = pack.GetPackSkillDef();
-
-					if (skillDef != null)
+					string effects = "";
+					string packSpecialityName = "NONE";
+					int listCount = 0;
+					if (pack.GetPackSkillDef() != null)
 					{
-						listCount = skillDef.effectList.Count;
-						packSpecialityName = skillDef.specialityLabel;
-						foreach(string str in skillDef.effectList)
-                        {
-							effects = effects + $"{str}\n";
+						AvaliPackSkillDef skillDef = pack.GetPackSkillDef();
 
-						}
-					}
-					
-				}
-				Text.Font = GameFont.Medium;
-				Rect PackNameRect = new Rect(outRect.xMin, rectPosY, 500f, 30f);
-				Rect RenameButtonRect = new Rect(outRect.xMax - 30f, rectPosY, 30f, 30f);
-				Widgets.DrawLineHorizontal(0f, (PackNameRect.yMax + 10f), rect.width);
-				Text.Font = GameFont.Small;
-				rectPosY = PackNameRect.yMax + 10f;
-				rectPosY += 20f;
-
-
-				Rect PackMemberListRect = new Rect(outRect.xMin, rectPosY, 500f, outRect.height);
-				Rect PackMemberListViewRect = new Rect(outRect.xMin, rectPosY, 480f, pack.pawns.Count * 30f);
-
-				Rect PackMemberCountRect = new Rect(outRect.RightHalf().x, rectPosY, 40f, 30f);
-				string packcount = pack.pawns.Count.ToString() + "/" + maxSize.ToString();
-
-				Rect bonusRect = new Rect(PackMemberCountRect.xMax, rectPosY, outRect.RightHalf().width, outRect.RightHalf().height);
-				Rect bonusViewRect = new Rect(PackMemberCountRect.x + PackMemberCountRect.width, rectPosY, outRect.RightHalf().width-20, listCount*30f);
-				float num = rectPosY;
-				float y = membersScrollPos.y;
-				float num2 = membersScrollPos.y + PackMemberListRect.height;
-				void drawLabels()
-                {
-					//Count
-					Widgets.Label(PackMemberCountRect, packcount);
-					
-					//List of packmates
-					num = rectPosY;
-					y = membersScrollPos.y;
-					num2 = membersScrollPos.y + PackMemberListRect.height;
-					Widgets.BeginScrollView(PackMemberListRect, ref membersScrollPos, PackMemberListViewRect, true);
-					for (int i = 0; i < pack.pawns.Count; i++)
-					{
-						float rowHeight = 30f;
-						if (num > y - rowHeight && num < num2)
+						if (skillDef != null)
 						{
-							DrawMemberRow(num, PackMemberListRect.width, pack.pawns[i]);
+							listCount = skillDef.effectList.Count;
+							packSpecialityName = skillDef.specialityLabel;
+							foreach (string str in skillDef.effectList)
+							{
+								effects = effects + $"{str}\n";
+
+							}
 						}
-						num += rowHeight;
+
 					}
-					Widgets.EndScrollView();
-					
-					//Name
-					Widgets.Label(PackNameRect, GetPackName(rect, pack));
-					if (Widgets.ButtonImage(RenameButtonRect, UIResources.Rename, true))
+					Text.Font = GameFont.Medium;
+					Rect PackNameRect = new Rect(outRect.xMin, rectPosY, 500f, 30f);
+					Rect RenameButtonRect = new Rect(outRect.xMax - 30f, rectPosY, 30f, 30f);
+					Widgets.DrawLineHorizontal(0f, (PackNameRect.yMax + 10f), rect.width);
+					Text.Font = GameFont.Small;
+					rectPosY = PackNameRect.yMax + 10f;
+					rectPosY += 20f;
+
+
+					Rect PackMemberListRect = new Rect(outRect.xMin, rectPosY, 500f, outRect.height);
+					Rect PackMemberListViewRect = new Rect(outRect.xMin, rectPosY, 480f, pack.pawns.Count * 30f);
+
+					Rect PackMemberCountRect = new Rect(outRect.RightHalf().x, rectPosY, 40f, 30f);
+					string packcount = pack.pawns.Count.ToString() + "/" + maxSize.ToString();
+
+					Rect bonusRect = new Rect(PackMemberCountRect.xMax, rectPosY, outRect.RightHalf().width, outRect.RightHalf().height);
+					Rect bonusViewRect = new Rect(PackMemberCountRect.x + PackMemberCountRect.width, rectPosY, outRect.RightHalf().width - 20, listCount * 30f);
+					float num = rectPosY;
+					float y = membersScrollPos.y;
+					float num2 = membersScrollPos.y + PackMemberListRect.height;
+					void drawLabels()
 					{
-						Find.WindowStack.Add(new Dialog_NamePack(pawn));
+						//Count
+						Widgets.Label(PackMemberCountRect, packcount);
+
+						//List of packmates
+						num = rectPosY;
+						y = membersScrollPos.y;
+						num2 = membersScrollPos.y + PackMemberListRect.height;
+						Widgets.BeginScrollView(PackMemberListRect, ref membersScrollPos, PackMemberListViewRect, true);
+						{
+							for (int i = 0; i < pack.pawns.Count; i++)
+							{
+								float rowHeight = 30f;
+								if (num > y - rowHeight && num < num2)
+								{
+									DrawMemberRow(num, PackMemberListRect.width, pack.pawns[i]);
+								}
+								num += rowHeight;
+							}
+						}
+						Widgets.EndScrollView();
+
+						//Name
+						Widgets.Label(PackNameRect, GetPackName(rect, pack));
+						if (Widgets.ButtonImage(RenameButtonRect, UIResources.Rename, true))
+						{
+							Find.WindowStack.Add(new Dialog_NamePack(pawn));
+						}
+						//Border line
+						float offset = 10f;
+						float heightOffset = 12f;
+						Widgets.DrawLine(new Vector2(bonusRect.x - offset, PackNameRect.y + PackNameRect.height + heightOffset), new Vector2(bonusRect.x - offset, bonusRect.y + bonusRect.height), Color.white, 1f);
+
+						//Speciality
+
+						Widgets.Label(bonusRect, new GUIContent { text = $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}" });
+
+
+
 					}
-					//Border line
-					float offset = 10f;
-					float heightOffset = 12f;
-					Widgets.DrawLine(new Vector2(bonusRect.x-offset,PackNameRect.y+PackNameRect.height+heightOffset),new Vector2(bonusRect.x-offset,bonusRect.y+bonusRect.height),Color.white,1f);
-
-					//Speciality
-
-					Widgets.Label(bonusRect, new GUIContent { text = $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}" });
-
-				
-
-				}
-				drawLabels();
-				
-				//Makes it easier to see the GUI layout
-				if (debugSquares)
-				{
-					Widgets.DrawBoxSolid(PackMemberListRect,Color.red);
-					Widgets.DrawBoxSolid(PackMemberListViewRect,Color.blue);
-					Widgets.DrawBoxSolid(PackNameRect,Color.magenta);
-					Widgets.DrawBoxSolid(bonusRect,Color.green);
-					Widgets.DrawBoxSolid(PackMemberCountRect, Color.cyan);
-					Widgets.DrawBoxSolid(bonusViewRect, Color.black);
-
-
 					drawLabels();
-					
+
+					//Makes it easier to see the GUI layout
+					if (debugSquares)
+					{
+						Widgets.DrawBoxSolid(PackMemberListRect, Color.red);
+						Widgets.DrawBoxSolid(PackMemberListViewRect, Color.blue);
+						Widgets.DrawBoxSolid(PackNameRect, Color.magenta);
+						Widgets.DrawBoxSolid(bonusRect, Color.green);
+						Widgets.DrawBoxSolid(PackMemberCountRect, Color.cyan);
+						Widgets.DrawBoxSolid(bonusViewRect, Color.black);
+
+
+						drawLabels();
+
+					}
 				}
-			}
-			else
-			{
-				Widgets.Label(rect, "NoPack".Translate());
-				//Log.Message("Pack list size: " + AvaliPackDriver.packs.Count);						
-				//Widgets.EndScrollView();
+				else
+				{
+					Widgets.Label(rect, "NoPack".Translate());
+					//Log.Message("Pack list size: " + AvaliPackDriver.packs.Count);						
+					//Widgets.EndScrollView();
+				}
 			}
 			//Widgets.Label(rect, "test");
 			Widgets.EndScrollView();

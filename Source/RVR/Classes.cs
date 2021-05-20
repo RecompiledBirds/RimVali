@@ -132,13 +132,7 @@ namespace AvaliMod
         public List<BodyTypeDef> bodyTypeDefs = new List<BodyTypeDef>();
     }
 
-    public class BodyPartGraphicPos
-    {
-        public Vector2 position = new Vector2(0f,0f);
-        public float layer = 1f;
-        public Vector2 size = new Vector2(1f,1f);
-      
-    }
+  
 
     public class ColorSet : IExposable
     {

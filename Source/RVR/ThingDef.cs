@@ -22,6 +22,9 @@ namespace AvaliMod
         public butcherAndHarvestThoughts butcherAndHarvestThoughts = new butcherAndHarvestThoughts();
         public ThingDef corpseToUse = null;
         public ThingDef meatToUse = null;
+
+        
+
         public override void ResolveReferences()
         {
            

@@ -12,22 +12,25 @@ using System.Threading.Tasks;
 
 namespace AvaliMod
 {
-    #region ApparelUtility HasPartsToWear patch
-    [HarmonyPatch(typeof(ApparelUtility), "HasPartsToWear")]
-    public static class ApparelUtilityPatch
+    #region Apparel score gain patch
+    [HarmonyPatch(typeof(JobGiver_OptimizeApparel), "ApparelScoreGain_NewTmp")]
+    public static class ApparelScorePatch
     {
         [HarmonyPostfix]
-        static void Patch(Pawn p, ThingDef apparel, ref bool __result)
+        public static void ApparelScoreGain_NewTmp(Pawn pawn, Apparel ap, List<float> wornScoresCache, ref float __result)
         {
-            __result = Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, apparel, p.def);
-            if (p.def is RimValiRaceDef valiRaceDef && valiRaceDef.restrictions.canOnlyUseApprovedApparel && !ApparelPatch.CanWearHeavyRestricted(apparel, p))
+            if (!Restrictions.checkRestrictions(Restrictions.equipmentRestrictions, ap.def, pawn.def) && !Restrictions.checkRestrictions(Restrictions.equipabblbleWhiteLists, ap.def, pawn.def, false))
             {
-                __result = false;
+                __result = -100;
+                return;
             }
-            __result = __result && true;
+            if (pawn.def is RimValiRaceDef valiRaceDef && valiRaceDef.restrictions.canOnlyUseApprovedApparel  && !ApparelPatch.CanWearHeavyRestricted(ap.def, pawn))
+            {
+                __result = -100;
+            }
         }
     }
-    #endregion 
+    #endregion
     #region Research restriction patch
 
     [HarmonyPatch(typeof(WorkGiver_Researcher), "ShouldSkip")]
@@ -237,6 +240,7 @@ namespace AvaliMod
                     {
                         foreach (ThingDef def in mod.AllDefs.Where(x => x is ThingDef thingDef && (thingDef.IsApparel || thingDef.IsWeapon || thingDef.IsMeleeWeapon || thingDef.IsRangedWeapon)))
                         {
+                            
                             AddRestriction(ref equipabblbleWhiteLists, def, raceDef);
                         }
                     }
@@ -244,9 +248,9 @@ namespace AvaliMod
 
                 if (raceDef.restrictions.modContentRestrictionsApparelList.Count > 0)
                 {
-
                     foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading.Where(x => raceDef.restrictions.modContentRestrictionsApparelList.Contains(x.Name) || raceDef.restrictions.modContentRestrictionsApparelList.Contains(x.PackageId)))
                     {
+                        
                         foreach (ThingDef def in mod.AllDefs.Where(x => x is ThingDef thingDef && (thingDef.IsApparel || thingDef.IsWeapon || thingDef.IsMeleeWeapon || thingDef.IsRangedWeapon)))
                         {
                             AddRestriction(ref equipmentRestrictions, def, raceDef);
@@ -1165,7 +1169,6 @@ namespace AvaliMod
                     else
                     {
                         //Log.Message(rimValiRace.bodyTypes.RandomElement().defName);
-                        Log.Message(rimValiRace.bodyTypes.Count.ToString());
                         pawn.story.bodyType = rimValiRace.bodyTypes.RandomElement();
 
                     }
@@ -1176,6 +1179,10 @@ namespace AvaliMod
                     Log.Message(e.Message);
                     Log.Message("Trying again...");
                     Patch(ref pawn);
+                }
+                if (!rimValiRace.hasHair)
+                {
+                    //pawn.story.hairDef = null;
                 }
             }
             else
@@ -1253,7 +1260,7 @@ namespace AvaliMod
             {
 
                 __result = false;
-                cantReason = pawn.def.label + " " + "CannotWear".Translate(pawn.def.label.Named("RACE"));
+                cantReason ="CannotWearRVR".Translate(pawn.def.label.Named("RACE"));
 
             }
 
@@ -1272,7 +1279,7 @@ namespace AvaliMod
                         {
 
                             __result = false;
-                            cantReason = pawn.def.label + " " + "CannotWear".Translate(pawn.def.label.Named("RACE"));
+                            cantReason ="CannotWearRVR".Translate(pawn.def.label.Named("RACE"));
                         }
                     }
                 }
@@ -1400,7 +1407,7 @@ namespace AvaliMod
         public static void Patch(ref Apparel apparel, ref BodyTypeDef bodyType, ref ApparelGraphicRecord rec)
         {
             Pawn pawn = apparel.Wearer;
-            if (apparel.def.apparel.layers.Any(d => d == ApparelLayerDefOf.Overhead))
+            if (apparel.def.apparel.layers.Any(d => d == ApparelLayerDefOf.Overhead) && apparel.def.apparel.wornGraphicPath != null)
             {
                 if (bodyType != AvaliMod.AvaliDefs.Avali && bodyType != AvaliMod.AvaliDefs.Avali)
                     return;
@@ -1473,7 +1480,8 @@ namespace AvaliMod
                 //Achivement get! How did we get here?
                 Log.Error("Something has gone terribly wrong! Error: \n" + error.Message);
             }
-            object[] p = new object[] { zero, angle, true, Rot4.South, Rot4.South, RimValiUtility.GetProp<Rot4>("CurRotDrawMode", obj: __instance), true, !__instance.graphics.pawn.health.hediffSet.HasHead, __instance.graphics.pawn.IsInvisible() };
+            
+            object[] p = new object[] { zero, angle, true, Rot4.South, Rot4.South, Rot4.South, true, !__instance.graphics.pawn.health.hediffSet.HasHead, __instance.graphics.pawn.IsInvisible() };
             RimValiUtility.InvokeMethod("RenderPawnInternal",__instance,p);
             //__instance.RenderPawnInternal(zero, angle, true, Rot4.South, Rot4.South, RimValiUtility.GetProp<Rot4>("CurRotDrawMode",obj: __instance), true, !__instance.graphics.pawn.health.hediffSet.HasHead, __instance.graphics.pawn.IsInvisible());
         }
@@ -1560,6 +1568,11 @@ namespace AvaliMod
                         }
                         else
                         {
+
+                            if (!Renders.graphics.Keys.Any(rObj=>rObj.pawn ==pawn&& rObj.rDef==renderable))
+                            {
+
+                            }
                             AvaliGraphic graphic = AvaliGraphicDatabase.Get<AvaliGraphic_Multi>(renderable.texPath(pawn), AvaliShaderDatabase.Tricolor, size, pawn.story.SkinColor);
                             GenDraw.DrawMeshNowOrLater(graphic.MeshAt(rotation), vector + offset.RotatedBy(Mathf.Acos(Quaternion.Dot(Quaternion.identity, quaternion)) * 114.59156f),
                              quaternion, graphic.MatAt(rotation), portrait);
@@ -1816,6 +1829,33 @@ namespace AvaliMod
 
     }
     #endregion
-    
-  
+    #region Starting window patch
+    [HarmonyPatch(typeof(Page_ConfigureStartingPawns),"DoWindowContents")]
+    public static class StartingWindowPatch
+    {
+        public static bool showing = false;
+        public static Rect area;
+        [HarmonyPrefix]
+        public static void Patch(Rect rect, Page_ConfigureStartingPawns __instance)
+        {
+            Listing_Standard ls = new Listing_Standard();
+            area = new Rect(new Vector2(rect.center.x+200,rect.yMax),new Vector2(170,100));
+            ls.Begin(area);
+           /* if(ls.ButtonText("Configure pawns")){
+                showing = !showing;
+            }
+            if (showing)
+            {
+                
+                Traverse traverse = Traverse.Create(typeof(Page_ConfigureStartingPawns)).Field("curPawn");
+                Pawn pawn = traverse.GetValue<Pawn>(); //RimValiUtility.GetVar<Pawn>("curPawn", BindingFlags.Public | BindingFlags.Instance
+                GUI.color = Color.white;
+                GUI.backgroundColor = Color.white;
+                GUI.Box(rect, "test");
+            }*/
+            ls.End();
+        }
+    }
+   
+    #endregion
 }

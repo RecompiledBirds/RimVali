@@ -67,7 +67,7 @@ namespace AvaliMod
                 SendMessage(def);
             }
         }
-        
+        float day = 60000;
         int tick;
         public override void WorldComponentTick()
         {
@@ -75,9 +75,9 @@ namespace AvaliMod
             {
 
                 tick++;
-                if (tick == 120)
+                if (tick == day*5)
                 {
-                    if (UnityEngine.Random.RandomRange(0, 100) < RimValiMod.settings.hackChance)
+                    if (UnityEngine.Random.Range(0, 100) < RimValiMod.settings.hackChance)
                     {
                         ResearchProjectDef def = getAllUnhacked.RandomElement();
                         if (RimValiMod.settings.enableDebugMode)

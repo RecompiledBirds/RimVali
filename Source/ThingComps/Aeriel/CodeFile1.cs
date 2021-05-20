@@ -10,15 +10,17 @@ namespace AvaliMod
 	public class AERIALChangable : CompProperties
 	{
 		public int maxShellCount = 6;
-		// Token: 0x0600550E RID: 21774 RVA: 0x0003AF21 File Offset: 0x00039121
 		public AERIALChangable()
 		{
+			
 			this.compClass = typeof(AERIALChangeableProjectile);
 		}
 	}
 	// Token: 0x020017AB RID: 6059
 	public class AERIALChangeableProjectile : ThingComp, IStoreSettingsParent
 	{
+		bool hasSetup = false;
+		public int maxShells;
 		// Token: 0x170014BB RID: 5307
 		// (get) Token: 0x060085F8 RID: 34296 RVA: 0x00059C88 File Offset: 0x00057E88
 		public AERIALChangable Props
@@ -77,16 +79,31 @@ namespace AvaliMod
 
 		public override void Initialize(CompProperties props)
 		{
+			
 			base.Initialize(props);
+			
 			this.allowedShellsSettings = new StorageSettings(this);
 			if (this.parent.def.building.defaultStorageSettings != null)
 			{
 				this.allowedShellsSettings.CopyFrom(this.parent.def.building.defaultStorageSettings);
 			}
 		}
-
-		// Token: 0x060085FF RID: 34303 RVA: 0x00059D03 File Offset: 0x00057F03
-		public virtual void Notify_ProjectileLaunched()
+        public override void CompTick()
+        {
+			if (!hasSetup)
+			{
+				maxShells = Props.maxShellCount;
+				if (this.parent.def == AvaliDefs.Aerial)
+				{
+					
+					maxShells = RimValiMod.settings.AERIALShellCap;
+				}
+				hasSetup = true;
+			}
+			base.CompTick();
+        }
+        // Token: 0x060085FF RID: 34303 RVA: 0x00059D03 File Offset: 0x00057F03
+        public virtual void Notify_ProjectileLaunched()
 		{
 			if (this.loadedCount > 0)
 			{
@@ -178,7 +195,7 @@ namespace AvaliMod
 				return false;
 			}
 			AERIALChangeableProjectile compChangeableProjectile = building_TurretGun.gun.TryGetComp<AERIALChangeableProjectile>();
-			return compChangeableProjectile != null && !(compChangeableProjectile.loadedShells.Count>=compChangeableProjectile.Props.maxShellCount);
+			return compChangeableProjectile != null && !(compChangeableProjectile.loadedShells.Count>=RimValiMod.settings.AERIALShellCap);
 		}
 		public static Thing findAmmo(Pawn pawn, AERIALSYSTEM aeriel)
 		{
