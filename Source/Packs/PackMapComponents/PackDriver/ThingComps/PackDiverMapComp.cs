@@ -26,7 +26,7 @@ namespace AvaliMod
         public Dictionary<Pawn, bool> pawnsHaveHadPacks = new Dictionary<Pawn, bool>();
         public List<Pawn> pawns = new List<Pawn>();
         public List<bool> bools = new List<bool>();
-
+        public List<Pawn> pawnsInWorld= new List<Pawn>();
         //public AvaliPackDriver(Map map) : base(map) { }
 
         //public AvaliPackDriver(World world) : base(world) { }
@@ -119,7 +119,7 @@ namespace AvaliMod
         {
             try
             {
-                foreach (Pawn pawn in PawnsFinder.All_AliveOrDead.Where(p => p.def.defName == "Avali"))
+                foreach (Pawn pawn in RimValiUtility.FetchAllAliveOrDeadPawns().Where(p => p.def.defName == "Avali"))
                 {
                     Pawn nPawn = ConPawn(pawn);
                     RimValiRaceDef def = nPawn.def as RimValiRaceDef;
@@ -206,13 +206,16 @@ namespace AvaliMod
         {
             lock (packs)
             {
-                IEnumerable<Pawn> pawnsInWorld = RimValiUtility.AllPawnsOfRaceInWorld(racesInPacks).Where<Pawn>(x => RimValiUtility.GetPackSize(x) < maxSize && x.Spawned);
-                foreach (Pawn pawn in pawnsInWorld)
+                
+                if (!pawnsInWorld.EnumerableNullOrEmpty())
                 {
-                    PackComp comp = pawn.TryGetComp<PackComp>();
-                    if (!(comp == null))
+                    foreach (Pawn pawn in pawnsInWorld)
                     {
-                        packs = RimValiUtility.EiPackHandler(packs, pawn, racesInPacks, maxSize);
+                        PackComp comp = pawn.TryGetComp<PackComp>();
+                        if (!(comp == null))
+                        {
+                            packs = RimValiUtility.EiPackHandler(packs, pawn, maxSize);
+                        }
                     }
                 }
             }
@@ -222,10 +225,13 @@ namespace AvaliMod
         public override void GameComponentTick()
         {
 
-            if (onTick == 0 && packsEnabled)
+            if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
             {
+                //pawnsInWorld = RimVali.RimValiMapComponent.GetRimValiPawnTracker(Find.CurrentMap).AllPawnsOfRaceInWorld(racesInPacks).ToList();
+                pawnsInWorld = RimValiUtility.AllPawnsOfRaceInWorld(racesInPacks).ToList();
                 if (multiThreaded && !ThreadIsActive)
                 {
+                    
                     ThreadIsActive = true;
                     Task packTask = new Task(UpdatePacks);
                     packTask.Start();
@@ -278,7 +284,7 @@ namespace AvaliMod
         {
             try
             {
-                foreach (Pawn pawn in PawnsFinder.AllMaps.Where(p => p.def.defName == "Avali"))
+                foreach (Pawn pawn in RimValiUtility.FetchPawnsOnAllMaps().Where(p => p.def.defName == "Avali"))
                 {
                     Log.Message("test world comp");
                     if (pawn != null)

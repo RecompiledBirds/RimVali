@@ -40,12 +40,12 @@ namespace AvaliMod
                 return false;
             }
         }
-
+        public List<Pawn> pawns = new List<Pawn>();
         public void UpdatePawns(Map map)
         {
             
             AvaliPackDriver AvaliPackDriver = Current.Game.GetComponent<AvaliPackDriver>();
-            IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => AvaliPackDriver.racesInPacks.Contains(x.def));
+            //IEnumerable<Pawn> pawns = RimValiUtility.CheckAllPawnsInMapAndFaction(map, Faction.OfPlayer).Where(x => AvaliPackDriver.racesInPacks.Contains(x.def));
             IEnumerable<AvaliPack> packs = AvaliPackDriver.packs;
             foreach (Pawn pawn in pawns)
             {
@@ -102,9 +102,12 @@ namespace AvaliMod
             {
                 if (onTick == 120)
                 {
+                    List<ThingDef> races = new List<ThingDef> { AvaliDefs.RimVali, AvaliDefs.IWAvaliRace };
                     Map map = this.map;
                     if (multiThreaded)
                     {
+                       
+                        pawns = RimValiUtility.AllPawnsOfRaceInWorld(races).ToList();
                         ThreadStart packThreadRef = new ThreadStart(UpdateThreaded);
                         Thread packThread = new Thread(packThreadRef);
                         packThread.Start();

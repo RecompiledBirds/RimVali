@@ -109,6 +109,10 @@ namespace AvaliMod
                     avoidSkills.Add(def);
                     record = RimValiUtility.GetHighestSkillOfpack(this, avoidSkills);
                     def = record.def;
+                    if (def == null)
+                    {
+                        def = SkillDefOf.Intellectual;
+                    }
                 }
                 avoidSkills = prevSkills;
                 return DefDatabase<AvaliPackSkillDef>.AllDefs.ToList().Find(APSD => APSD.skill == def);

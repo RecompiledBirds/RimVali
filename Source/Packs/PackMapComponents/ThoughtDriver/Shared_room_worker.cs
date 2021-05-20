@@ -9,28 +9,11 @@ namespace AvaliMod
         {
             AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
             PackComp packComp = pawn.TryGetComp<PackComp>();
-            if (!(avaliThoughtDriver == null))
-            {
-                if (pawn.Awake())
-                {
-                    if (pawn.CheckIfPackmatesInRoom())
-                    {
-                        return ThoughtState.ActiveDefault;
-                    }
-                    else
-                    {
-                        return ThoughtState.Inactive;
-                    }
-                }
-                else
-                {
-                    return ThoughtState.Inactive;
-                }
+            if (!(avaliThoughtDriver == null) && pawn.Awake() && pawn.CheckIfPackmatesInRoom()) { 
+                return ThoughtState.ActiveDefault;
             }
-            else
-            {
-                return ThoughtState.Inactive;
-            }
+
+            return ThoughtState.Inactive;
         }
     }
 }
