@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- <AvaliShootingPackBonus.label>Pack effect</AvaliShootingPackBonus.label> -->
-  <AvaliShootingPackBonus.label>Rudeleffekt</AvaliShootingPackBonus.label>
+  <AvaliShootingPackBonus.label>Rudeleffekt (Militär Fernkampf)</AvaliShootingPackBonus.label>
   <!-- <AvaliShootingPackBonus.description>Pack effect</AvaliShootingPackBonus.description> -->
-  <AvaliShootingPackBonus.description>Rudeleffekt</AvaliShootingPackBonus.description>
+  <AvaliShootingPackBonus.description>Effekt der Spezialisierung des Rudels auf Militär und Fernkampf.</AvaliShootingPackBonus.description>
+
+  <!-- <AvaliMeleePackBonus.label>Pack effect</AvaliMeleePackBonus.label> -->
+  <AvaliMeleePackBonus.label>Rudeleffekt (Militär Nahkampf)</AvaliMeleePackBonus.label>
+  <!-- <AvaliMeleePackBonus.description>Pack effect</AvaliMeleePackBonus.description> -->
+  <AvaliMeleePackBonus.description>Effekt der Spezialisierung des Rudels auf Militär und Nahkampf.</AvaliMeleePackBonus.description>
+
+  <!-- <AvaliMiningPackBonus.label>Pack effect</AvaliMiningPackBonus.label> -->
+  <AvaliMiningPackBonus.label>Rudeleffekt (Bergbau)</AvaliMiningPackBonus.label>
+  <!-- <AvaliMiningPackBonus.description>Pack effect</AvaliMiningPackBonus.description> -->
+  <AvaliMiningPackBonus.description>Effekt der Spezialisierung des Rudels auf Bergbau.</AvaliMiningPackBonus.description>
+
+  <!-- <AvaliAnimalFarmingPackBonus.label>Pack effect</AvaliAnimalFarmingPackBonus.label> -->
+  <AvaliAnimalFarmingPackBonus.label>Rudeleffekt (Tiere)</AvaliAnimalFarmingPackBonus.label>
+  <!-- <AvaliAnimalFarmingPackBonus.description>Pack effect</AvaliAnimalFarmingPackBonus.description> -->
+  <AvaliAnimalFarmingPackBonus.description>Effekt der Spezialisierung des Rudels auf landwirtschaftliche Tierhaltung.</AvaliAnimalFarmingPackBonus.description>
+
+  <!-- <AvaliPlantFarmingPackBonus.label>Pack effect</AvaliPlantFarmingPackBonus.label> -->
+  <AvaliPlantFarmingPackBonus.label>Rudeleffekt (Pflanzen)</AvaliPlantFarmingPackBonus.label>
+  <!-- <AvaliPlantFarmingPackBonus.description>Pack effect</AvaliPlantFarmingPackBonus.description> -->
+  <AvaliPlantFarmingPackBonus.description>Effekt der Spezialisierung des Rudels auf Ackerbau und Sammeln von Pflanzen.</AvaliPlantFarmingPackBonus.description>
+
+  <!-- <AvaliConstructionPackBonus.label>Pack effect</AvaliConstructionPackBonus.label> -->
+  <AvaliConstructionPackBonus.label>Rudeleffekt (Konstruktion)</AvaliConstructionPackBonus.label>
+  <!-- <AvaliConstructionPackBonus.description>Pack effect</AvaliConstructionPackBonus.description> -->
+  <AvaliConstructionPackBonus.description>Effekt der Spezialisierung des Rudels auf Konstruktion.</AvaliConstructionPackBonus.description>
 </LanguageData>

@@ -210,6 +210,20 @@
   <AvaliPalaceDesigner.story.baseDesc>storydesc</AvaliPalaceDesigner.story.baseDesc>
 
 
+  <NoviceDeveloper.title>NoviceDeveloper</NoviceDeveloper.title>
+  <NoviceDeveloper.story.title>NoviceDeveloper</NoviceDeveloper.story.title>
+  <NoviceDeveloper.shortTitle>NoviceDeveloper</NoviceDeveloper.shortTitle>
+  <NoviceDeveloper.storyDesc>storyDesc</NoviceDeveloper.storyDesc>
+  <NoviceDeveloper.story.baseDesc>storydesc</NoviceDeveloper.story.baseDesc>
+
+
+  <NezaiStoryAdult.title>NezaiStoryAdult</NezaiStoryAdult.title>
+  <NezaiStoryAdult.story.title>NezaiStoryAdult</NezaiStoryAdult.story.title>
+  <NezaiStoryAdult.shortTitle>NezaiStoryAdult</NezaiStoryAdult.shortTitle>
+  <NezaiStoryAdult.storyDesc>storyDesc</NezaiStoryAdult.storyDesc>
+  <NezaiStoryAdult.story.baseDesc>storydesc</NezaiStoryAdult.story.baseDesc>
+
+
   <AvaliLostEgg.title>AvaliLostEgg</AvaliLostEgg.title>
   <AvaliLostEgg.story.title>AvaliLostEgg</AvaliLostEgg.story.title>
   <AvaliLostEgg.shortTitle>AvaliLostEgg</AvaliLostEgg.shortTitle>

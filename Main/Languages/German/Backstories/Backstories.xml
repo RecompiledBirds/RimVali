@@ -44,7 +44,7 @@
     <titleFemale></titleFemale>
     <titleShort>Kriegsgeboren</titleShort>
     <titleShortFemale></titleShortFemale>
-    <desc>[PAWN_nameDef] war gerade erst geschlüpft, als [PAWN_possessive]e Kolonie von einem feindlichen Rudel überfallen wurde. Glücklicherweise fand [PAWN_pronoun] niemand, da [PAWN_pronoun] sich kurz vor dem Angriff rechtzeitig verstecken konnte. Nur ein paar Tage später wurde [PAWN_pronoun] von Spähern gefunden, die sich entschlossen [PAWN_nameDef] mit sich nach Hause zu nehmen. Danach erlebte [PAWN_nameDef] eine relativ normale Kindheit, [PAWN_possessive]e Erinnerungen an den Überfall durch das traumatische Erlebnis bis ins Erwachsenenalter verdrängt.</desc>
+    <desc>[PAWN_nameDef] war gerade erst geschlüpft, als [PAWN_possessive]e Kolonie von einem feindlichen Rudel überfallen wurde. Da [PAWN_pronoun] sich kurz vor dem Angriff rechtzeitig verstecken konnte, wurde [PAWN_pronoun] glücklicherweise nicht entdeckt. Nur ein paar Tage später wurde [PAWN_pronoun] von Spähern gefunden, die sich dazu entschlossen [PAWN_nameDef] mit sich nach Hause zu nehmen. Danach erlebte [PAWN_nameDef] eine relativ normale Kindheit, [PAWN_possessive]e Erinnerungen an den Überfall durch das traumatische Erlebnis hat [PAWN_pronoun] bis ins Erwachsenenalter verdrängt.</desc>
   </AvaliWarchild>
 
   <!-- <AvaliSoldierChild>
@@ -446,6 +446,36 @@
     <desc>[PAWN_nameDef] entwarf fast alle wichtigen Wahrzeichen von Avalon im Alleingang. [PAWN_pronoun] war der erste Architekt der Illuminate, der für seine wunderschönen, aber dennoch realistischen und funktionalen Designs bekannt war.</desc>
   </AvaliPalaceDesigner>
 
+  <!-- <NoviceDeveloper>
+    <title>Novice Developer</title>
+    <titleFemale></titleFemale>
+    <titleShort></titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was a hobbyist programmer and modeler. [PAWN_pronoun] independently developed several small applications and created various virtual items for use on the Nexus.</desc>
+  </NoviceDeveloper> -->
+  <NoviceDeveloper>
+    <title>Junior Developer</title>
+    <titleFemale></titleFemale>
+    <titleShort></titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war ein Hobby-3D-Designer und -Programmierer. [PAWN_pronoun] entwickelte mehrere, voneinander unabhängige kleine Anwendungen und verschiedene virtuelle Objekte, die für den Nexus verwendet werden können.</desc>
+  </NoviceDeveloper>
+
+  <!-- <NezaiStoryAdult>
+    <title>Nezai</title>
+    <titleFemale></titleFemale>
+    <titleShort>Nezai</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>After a catastrophic accident killed two of his packmates and crippled two more, as the healthy one, Nezai gave up his passions to become a mercenary in order to keep up with his pack's medical costs. He grew cold and bitter to most, and getting stranded here didn't help either.</desc>
+  </NezaiStoryAdult> -->
+  <NezaiStoryAdult>
+    <title>Nezai</title>
+    <titleFemale></titleFemale>
+    <titleShort>Nezai</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Nachdem ein katastrophaler Unfall zwei seiner Rudelmitglieder getötet und zwei weitere versehrte, gab Nezai als einzig Gesunder seine Leidenschaft auf Söldner zu werden, um die medizinischen Kosten seines Rudels zu decken. Er wurde für die meisten kalt und bitter. Und jetzt hier zu bleiben, half auch nichts.</desc>
+  </NezaiStoryAdult>
+
   <!-- <AvaliLostEgg>
     <title>Lost egg</title>
     <titleFemale></titleFemale>
@@ -458,7 +488,7 @@
     <titleFemale></titleFemale>
     <titleShort>Verlorenes Ei</titleShort>
     <titleShortFemale></titleShortFemale>
-    <desc>[PAWN_nameDef]'s Ei ging bei einem Umzug des Horts verloren, nachdem ein Vorfall zu einer strukturellen Instabilität geführt hatte, wodurch für die Eier ein Risiko entstand. Glücklicherweise wurde [PAWN_pronoun] in jungen jahren von einem anderen Rudel gefunden [PAWN_pronoun] und aufgenommen, aber manchmal fragt [PAWN_nameDef] sich ob [PAWN_possessive] ursprüngliches Rudel noch irgendwo dort draußen ist und vielleicht sogar immernoch nach [PAWN_objective] sucht.</desc>
+    <desc>[PAWN_nameDef]'s Ei ging bei einem Umzug des Horts verloren, nachdem ein Vorfall zu einer strukturellen Instabilität geführt hatte, wodurch für die Eier ein Risiko entstand. Glücklicherweise wurde [PAWN_pronoun] in jungen jahren von einem anderen Rudel gefunden und aufgenommen, aber manchmal fragt [PAWN_pronoun] sich ob [PAWN_possessive] ursprüngliches Rudel noch irgendwo dort draußen ist und vielleicht sogar immernoch nach [PAWN_nameDef] sucht.</desc>
   </AvaliLostEgg>
 
 

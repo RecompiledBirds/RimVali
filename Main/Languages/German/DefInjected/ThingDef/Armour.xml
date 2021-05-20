@@ -36,8 +36,8 @@
 
   <!-- <AvaliCombatArmor.label>Avali combat armor</AvaliCombatArmor.label> -->
   <AvaliCombatArmor.label>Avali Kampfrüstung</AvaliCombatArmor.label>
-  <!-- <AvaliCombatArmor.description>A combat suit. [placeholder]</AvaliCombatArmor.description> -->
-  <AvaliCombatArmor.description>Eine Kampfrüstung. [placeholder]</AvaliCombatArmor.description>
+  <!-- <AvaliCombatArmor.description>A Illuminate combat suit.</AvaliCombatArmor.description> -->
+  <AvaliCombatArmor.description>Eine Illuminate-Kampfrüstung.</AvaliCombatArmor.description>
 
 
   <!-- Scout armor -->
@@ -46,4 +46,12 @@
   <AvaliScoutArmor.label>Avali Späherrüstung</AvaliScoutArmor.label>
   <!-- <AvaliScoutArmor.description>A combat suit. [placeholder]</AvaliScoutArmor.description> -->
   <AvaliScoutArmor.description>Eine Späherrüstung. [placeholder]</AvaliScoutArmor.description>
+
+
+  <!-- Nezai -->
+
+  <!-- <NezaiArmor.label>Gold avali armor</NezaiArmor.label> -->
+  <NezaiArmor.label>Goldene Avali Rüstung</NezaiArmor.label>
+  <!-- <NezaiArmor.description>An avali's power armor.</NezaiArmor.description> -->
+  <NezaiArmor.description>Die Power-Rüstung eines Avali.</NezaiArmor.description>
 </LanguageData>

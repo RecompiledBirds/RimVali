@@ -10,8 +10,7 @@
   <RimValiScenario.scenario.summary>Vergleichbar mit der klassischen Rimworld Version, hier mit Avali.</RimValiScenario.scenario.summary>
   <!-- <RimValiScenario.scenario.description>Your pack has been sent by the Illuminate to colonize this planet. Everything is going as planned... so far. You'll start with a small amount of resources, but scans indicate this planet is resource-plenty. Good luck!</RimValiScenario.scenario.description> -->
   <RimValiScenario.scenario.description>Dein Rudel wurde von den Illuminate ausgesandt, um diesen Planeten zu bevölkern. Alles läuft wie geplant... bis jetzt. Du startest mit wenig Ressourcen, aber Scans zeigen, dass dieser Planet reiche Vorkommen besitzt. Viel Glück!</RimValiScenario.scenario.description>
-  <!-- <RimValiScenario.scenario.parts.17.text>You've been sent by the Illuminate to colonise this distant rimworld. 
-We all wish you the best of luck out on the rim! A orbital drone will keep an eye on your progress.</RimValiScenario.scenario.parts.17.text> -->
-  <RimValiScenario.scenario.parts.17.text>Du wurdest von den Illuminate geschickt, um diesen weit entfernten Planeten zu bevölkern.
-Wir wünschen dir viel Glück dort draußen! Eine Orbital-Drohne wird deinen Fortschritt überwachen.</RimValiScenario.scenario.parts.17.text>
+  <!-- <RimValiScenario.scenario.parts.17.text>You've been sent by the Illuminate to colonise this distant rimworld. After the journey here, you've finally made it. There will be new dangers for you to face, but we trust that you will be able to survive.
+  </RimValiScenario.scenario.parts.17.text> -->
+  <RimValiScenario.scenario.parts.17.text>Du wurdest von den Illuminate geschickt, um diesen weit entfernten Planeten zu bevölkern. Nach dieser langen Reise hast du es nun endlich geschafft. Du wirst neuen Gefahren begegnen, aber wir vertrauen darauf, dass du in der Lage sein wirst zu überleben.</RimValiScenario.scenario.parts.17.text>
 </LanguageData>

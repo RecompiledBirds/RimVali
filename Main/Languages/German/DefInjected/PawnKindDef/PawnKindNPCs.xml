@@ -39,18 +39,18 @@
   <!-- <AvaliTrader.labelFemalePlural>female Pack Traders</AvaliTrader.labelFemalePlural> -->
   <AvaliTrader.labelFemalePlural>weibliche Rudelhändlerinnen</AvaliTrader.labelFemalePlural>
 
-  <!-- <NeziSoliderAvali.label>Avali Soilder</NeziSoliderAvali.label> -->
-  <NeziSoliderAvali.label>Avali Soldat</NeziSoliderAvali.label>
-  <!-- <NeziSoliderAvali.labelPlural>Avali Soilders</NeziSoliderAvali.labelPlural> -->
-  <NeziSoliderAvali.labelPlural>Avali Soldaten</NeziSoliderAvali.labelPlural>
-  <!-- <NeziSoliderAvali.labelMale>male Avali Soilder</NeziSoliderAvali.labelMale> -->
-  <NeziSoliderAvali.labelMale>männlicher Avali Soldat</NeziSoliderAvali.labelMale>
-  <!-- <NeziSoliderAvali.labelMalePlural>male Avali Soilders</NeziSoliderAvali.labelMalePlural> -->
-  <NeziSoliderAvali.labelMalePlural>männliche Avali Soldaten</NeziSoliderAvali.labelMalePlural>
-  <!-- <NeziSoliderAvali.labelFemale>female Avali Soilder</NeziSoliderAvali.labelFemale> -->
-  <NeziSoliderAvali.labelFemale>weibliche Avali Soldatin</NeziSoliderAvali.labelFemale>
-  <!-- <NeziSoliderAvali.labelFemalePlural>female Avali Soilders</NeziSoliderAvali.labelFemalePlural> -->
-  <NeziSoliderAvali.labelFemalePlural>weibliche Avali Soldatinnen</NeziSoliderAvali.labelFemalePlural>
+  <!-- <SoliderAvali.label>Avali Soilder</SoliderAvali.label> -->
+  <SoliderAvali.label>Avali Soldat</SoliderAvali.label>
+  <!-- <SoliderAvali.labelPlural>Avali Soilders</SoliderAvali.labelPlural> -->
+  <SoliderAvali.labelPlural>Avali Soldaten</SoliderAvali.labelPlural>
+  <!-- <SoliderAvali.labelMale>male Avali Soilder</SoliderAvali.labelMale> -->
+  <SoliderAvali.labelMale>männlicher Avali Soldat</SoliderAvali.labelMale>
+  <!-- <SoliderAvali.labelMalePlural>male Avali Soilders</SoliderAvali.labelMalePlural> -->
+  <SoliderAvali.labelMalePlural>männliche Avali Soldaten</SoliderAvali.labelMalePlural>
+  <!-- <SoliderAvali.labelFemale>female Avali Soilder</SoliderAvali.labelFemale> -->
+  <SoliderAvali.labelFemale>weibliche Avali Soldatin</SoliderAvali.labelFemale>
+  <!-- <SoliderAvali.labelFemalePlural>female Avali Soilders</SoliderAvali.labelFemalePlural> -->
+  <SoliderAvali.labelFemalePlural>weibliche Avali Soldatinnen</SoliderAvali.labelFemalePlural>
 
   <!-- <AvaliRocketeer.label>Avali Solider</AvaliRocketeer.label> -->
   <AvaliRocketeer.label>Avali Raketenwerfer</AvaliRocketeer.label>
@@ -104,16 +104,16 @@
   <!-- <AvaliMelee.labelFemalePlural>female Avali Fighters</AvaliMelee.labelFemalePlural> -->
   <AvaliMelee.labelFemalePlural>weibliche Avali Kämpferinnen</AvaliMelee.labelFemalePlural>
 
-  <!-- <NeziEnhancedSoliderAvali.label>Enhanced Avali Soilder</NeziEnhancedSoliderAvali.label> -->
-  <NeziEnhancedSoliderAvali.label>Verbesserter Avali Soldat</NeziEnhancedSoliderAvali.label>
-  <!-- <NeziEnhancedSoliderAvali.labelPlural>Enhanced Avali Soilders</NeziEnhancedSoliderAvali.labelPlural> -->
-  <NeziEnhancedSoliderAvali.labelPlural>Verbesserte Avali Soldaten</NeziEnhancedSoliderAvali.labelPlural>
-  <!-- <NeziEnhancedSoliderAvali.labelMale>male Enhanced Avali Soilder</NeziEnhancedSoliderAvali.labelMale> -->
-  <NeziEnhancedSoliderAvali.labelMale>männlicher verbesserter Avali Soldat</NeziEnhancedSoliderAvali.labelMale>
-  <!-- <NeziEnhancedSoliderAvali.labelMalePlural>male Enhanced Avali Soilders</NeziEnhancedSoliderAvali.labelMalePlural> -->
-  <NeziEnhancedSoliderAvali.labelMalePlural>männliche verbesserte Avali Soldaten</NeziEnhancedSoliderAvali.labelMalePlural>
-  <!-- <NeziEnhancedSoliderAvali.labelFemale>female Enhanced Avali Soilder</NeziEnhancedSoliderAvali.labelFemale> -->
-  <NeziEnhancedSoliderAvali.labelFemale>weibliche verbesserte Avali Soldatin</NeziEnhancedSoliderAvali.labelFemale>
-  <!-- <NeziEnhancedSoliderAvali.labelFemalePlural>female Enhanced Avali Soilders</NeziEnhancedSoliderAvali.labelFemalePlural> -->
-  <NeziEnhancedSoliderAvali.labelFemalePlural>weibliche verbesserte Avali Soldatinnen</NeziEnhancedSoliderAvali.labelFemalePlural>
+  <!-- <EnhancedSoliderAvali.label>Enhanced Avali Soilder</EnhancedSoliderAvali.label> -->
+  <EnhancedSoliderAvali.label>Verbesserter Avali Soldat</EnhancedSoliderAvali.label>
+  <!-- <EnhancedSoliderAvali.labelPlural>Enhanced Avali Soilders</EnhancedSoliderAvali.labelPlural> -->
+  <EnhancedSoliderAvali.labelPlural>Verbesserte Avali Soldaten</EnhancedSoliderAvali.labelPlural>
+  <!-- <EnhancedSoliderAvali.labelMale>male Enhanced Avali Soilder</EnhancedSoliderAvali.labelMale> -->
+  <EnhancedSoliderAvali.labelMale>männlicher verbesserter Avali Soldat</EnhancedSoliderAvali.labelMale>
+  <!-- <EnhancedSoliderAvali.labelMalePlural>male Enhanced Avali Soilders</EnhancedSoliderAvali.labelMalePlural> -->
+  <EnhancedSoliderAvali.labelMalePlural>männliche verbesserte Avali Soldaten</EnhancedSoliderAvali.labelMalePlural>
+  <!-- <EnhancedSoliderAvali.labelFemale>female Enhanced Avali Soilder</EnhancedSoliderAvali.labelFemale> -->
+  <EnhancedSoliderAvali.labelFemale>weibliche verbesserte Avali Soldatin</EnhancedSoliderAvali.labelFemale>
+  <!-- <EnhancedSoliderAvali.labelFemalePlural>female Enhanced Avali Soilders</EnhancedSoliderAvali.labelFemalePlural> -->
+  <EnhancedSoliderAvali.labelFemalePlural>weibliche verbesserte Avali Soldatinnen</EnhancedSoliderAvali.labelFemalePlural>
 </LanguageData>

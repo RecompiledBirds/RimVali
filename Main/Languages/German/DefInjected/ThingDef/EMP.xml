@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <!-- <AERIALEMPShell.label>AERIAL EMP rocket</AERIALEMPShell.label> -->
+  <AERIALEMPShell.label>AERIAL-EMP-Rakete</AERIALEMPShell.label>
+  <!-- <AERIALEMPShell.description>A rocket with an onboard EMP device, made to be launched from the AERIAL system.</AERIALEMPShell.description> -->
+  <AERIALEMPShell.description>Eine Rakete mit integrierten EMP, welche vom AERIAL-System aus gestartet werden kann.</AERIALEMPShell.description>
+
+  <!-- <AERIAL_EMP_SHELL.label>EMP shell</AERIAL_EMP_SHELL.label> -->
+  <AERIAL_EMP_SHELL.label>EMP-Granate</AERIAL_EMP_SHELL.label>
+
   <!-- <AIMSEMP.label>AIMS EMP shell</AIMSEMP.label> -->
-  <AIMSEMP.label>AIMS EMP Granate</AIMSEMP.label>
+  <AIMSEMP.label>AIMS-EMP-Granate</AIMSEMP.label>
   <!-- <AIMSEMP.description>A shell with an onboard EMP device. Can be fired from an AIMS system.</AIMSEMP.description> -->
   <AIMSEMP.description>Eine Granate mit einem integrierten EMP-Device. Kann von einem AIMS-System abgefeuert werden.</AIMSEMP.description>
 

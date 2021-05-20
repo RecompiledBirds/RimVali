@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- <AvaliBFG.label>BFG turret [placeholder]</AvaliBFG.label> -->
-  <AvaliBFG.label>BFG-Geschützturm [placeholder]</AvaliBFG.label>
-  <!-- <AvaliBFG.description>PLACEHOLDER DESC</AvaliBFG.description> -->
-  <AvaliBFG.description>PLACEHOLDER DESC</AvaliBFG.description>
+  <!-- <AvaliBFG.label>BFG turret</AvaliBFG.label> -->
+  <AvaliBFG.label>BFG-Geschützturm</AvaliBFG.label>
+  <!-- <AvaliBFG.description>This large turret, nicknamed the "BFG" is a sniper turret, designed to kill anything at long range.</AvaliBFG.description> -->
+  <AvaliBFG.description>Dieser große Geschützturm mit dem Spitznamen "BFG" ist eine Scharfschützen-Turret, entwickelt, um alles auf große Entfernung zu eliminieren.</AvaliBFG.description>
   <!-- <AvaliBFG.comps.CompRefuelable.fuelGizmoLabel>Ammunition left: </AvaliBFG.comps.CompRefuelable.fuelGizmoLabel> -->
   <AvaliBFG.comps.CompRefuelable.fuelGizmoLabel>Verbleibende Munition: </AvaliBFG.comps.CompRefuelable.fuelGizmoLabel>
   <!-- <AvaliBFG.comps.CompRefuelable.fuelLabel>Ammo until  refuel</AvaliBFG.comps.CompRefuelable.fuelLabel> -->

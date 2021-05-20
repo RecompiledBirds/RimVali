@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <AERIALNUKE.label>AERIAL ATOM rocket</AERIALNUKE.label> -->
+  <AERIALNUKE.label>AERIAL ATOM-Rakete</AERIALNUKE.label>
+  <!-- <AERIALNUKE.description>A highly explosive and devastating rocket, launched from AERIAL.</AERIALNUKE.description> -->
+  <AERIALNUKE.description>Eine hochexplosive und verheerende Rakete, abgefeuert von einem AERIAL-System.</AERIALNUKE.description>
+
+  <!-- <AERIAL_ATOM_SHELL.label>ATOM shell</AERIAL_ATOM_SHELL.label> -->
+  <AERIAL_ATOM_SHELL.label>ATOM-Rakete</AERIAL_ATOM_SHELL.label>
+</LanguageData>

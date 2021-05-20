@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- <MilitaryRangedPack.specialityLabel>Military pack</MilitaryRangedPack.specialityLabel> -->
-  <MilitaryRangedPack.specialityLabel>Militärisches Rudel</MilitaryRangedPack.specialityLabel>
-  <!-- <MilitaryRangedPack.effectList.0>Aim time: -20%</MilitaryRangedPack.effectList.0> -->
-  <MilitaryRangedPack.effectList.0>Zielzeit: -20%</MilitaryRangedPack.effectList.0>
+  <MilitaryRangedPack.specialityLabel>Militärisches Rudel (Fernkampf)</MilitaryRangedPack.specialityLabel>
+  <!-- <MilitaryRangedPack.effectList.0>Aim time: -2</MilitaryRangedPack.effectList.0> -->
+  <MilitaryRangedPack.effectList.0>Anvisierungsdauer: -2</MilitaryRangedPack.effectList.0>
   <!-- <MilitaryRangedPack.effectList.1>Shooting accuracy: +50%</MilitaryRangedPack.effectList.1> -->
-  <MilitaryRangedPack.effectList.1>Zielgenauigkeit: +50%</MilitaryRangedPack.effectList.1>
+  <MilitaryRangedPack.effectList.1>Fernkampfgenauigkeit: +50%</MilitaryRangedPack.effectList.1>
   <!-- <MilitaryRangedPack.effectList.2>Melee hit chance: +10%</MilitaryRangedPack.effectList.2> -->
-  <MilitaryRangedPack.effectList.2>Nahkampf Trefferchance: +10%</MilitaryRangedPack.effectList.2>
+  <MilitaryRangedPack.effectList.2>Nahkampftrefferchance: +10%</MilitaryRangedPack.effectList.2>
+  
+  <!-- <MilitaryMeleePack.specialityLabel>Military pack</MilitaryMeleePack.specialityLabel> -->
+  <MilitaryMeleePack.specialityLabel>Militärisches Rudel (Nahkampf)</MilitaryMeleePack.specialityLabel>
+  <!-- <MilitaryMeleePack.effectList.0>Aim time: -0.5</MilitaryMeleePack.effectList.0> -->
+  <MilitaryMeleePack.effectList.0>Anvisierungsdauer: -0.5</MilitaryMeleePack.effectList.0>
+  <!-- <MilitaryMeleePack.effectList.1>Melee dodge: +20%</MilitaryMeleePack.effectList.1> -->
+  <MilitaryMeleePack.effectList.1>Nahkampfausweichchance: +20%</MilitaryMeleePack.effectList.1>
+  <!-- <MilitaryMeleePack.effectList.2>Melee hit chance: +50%</MilitaryMeleePack.effectList.2> -->
+  <MilitaryMeleePack.effectList.2>Nahkampftrefferchance: +50%</MilitaryMeleePack.effectList.2>
+  
+  <!-- <MiningPack.specialityLabel>Mining pack</MiningPack.specialityLabel> -->
+  <MiningPack.specialityLabel>Auf Bergbau spezialisiertes Rudel</MiningPack.specialityLabel>
+  <!-- <MiningPack.effectList.0>Deep drilling speed: +30%</MiningPack.effectList.0> -->
+  <MiningPack.effectList.0>Tiefenbohrgeschwindigkeit: +30%</MiningPack.effectList.0>
+  <!-- <MiningPack.effectList.1>Mining speed: +50%</MiningPack.effectList.1> -->
+  <MiningPack.effectList.1>Gesteinsabbaugeschwindigkeit: +50%</MiningPack.effectList.1>
+
+  <!-- <FarmingAnimalPack.specialityLabel>Farming pack</FarmingAnimalPack.specialityLabel> -->
+  <FarmingAnimalPack.specialityLabel>Landwirtschaftliches Rudel (Tiere)</FarmingAnimalPack.specialityLabel>
+  <!-- <FarmingAnimalPack.effectList.0>Animal gathering speed: +50%</FarmingAnimalPack.effectList.0> -->
+  <FarmingAnimalPack.effectList.0>Tierproduktgewinnungsrate: +50%</FarmingAnimalPack.effectList.0>
+  <!-- <FarmingAnimalPack.effectList.1>Animal yield: +30%</FarmingAnimalPack.effectList.1> -->
+  <FarmingAnimalPack.effectList.1>Tierproduktgewinnungsertrag: +30%</FarmingAnimalPack.effectList.1>
+  <!-- <FarmingAnimalPack.effectList.2>Hunting stealth: +0.1%</FarmingAnimalPack.effectList.2> -->
+  <FarmingAnimalPack.effectList.2>Tarnung beim Jagen: +0.1%</FarmingAnimalPack.effectList.2>
+  
+  <!-- <FarmingPlantPack.specialityLabel>Farming pack</FarmingPlantPack.specialityLabel> -->
+  <FarmingPlantPack.specialityLabel>Landwirtschaftliches Rudel (Pflanzen)</FarmingPlantPack.specialityLabel>
+  <!-- <FarmingPlantPack.effectList.0>Plant work speed: +60%</FarmingPlantPack.effectList.0> -->
+  <FarmingPlantPack.effectList.0>Pflanzenarbeitsgeschwindigkeit: +60%</FarmingPlantPack.effectList.0>
+  <!-- <FarmingPlantPack.effectList.1>Plant yeild: +40%</FarmingPlantPack.effectList.1> -->
+  <FarmingPlantPack.effectList.1>Pflanzengewinnungsertrag: +40%</FarmingPlantPack.effectList.1>
+  
+  <!-- <ConstructionPack.specialityLabel>Construction pack</ConstructionPack.specialityLabel> -->
+  <ConstructionPack.specialityLabel>Auf Konstruktion spezialisiertes Rudel</ConstructionPack.specialityLabel>
+  <!-- <ConstructionPack.effectList.0>Construction Success Chance: +60%</ConstructionPack.effectList.0> -->
+  <ConstructionPack.effectList.0>Bauerfolgschance: +60%</ConstructionPack.effectList.0>
+  <!-- <ConstructionPack.effectList.1>Repair Success Chance: +20%</ConstructionPack.effectList.1> -->
+  <ConstructionPack.effectList.1>Reparaturerfolgschance: +20%</ConstructionPack.effectList.1>
+  <!-- <ConstructionPack.effectList.2>Construction speed: +50%</ConstructionPack.effectList.2> -->
+  <ConstructionPack.effectList.2>Baugeschwindigkeit: +50%</ConstructionPack.effectList.2>
 </LanguageData>
