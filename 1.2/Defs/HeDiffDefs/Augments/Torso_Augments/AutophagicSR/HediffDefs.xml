@@ -10,15 +10,15 @@
         <capMods>
           <li>
             <capacity>BloodFiltration</capacity>
-            <offset>0.05</offset>
+            <offset>0.10</offset>
           </li>
           <li>
             <capacity>BloodPumping</capacity>
-            <offset>0.05</offset>
+            <offset>0.10</offset>
           </li>
           <li>
             <capacity>Metabolism</capacity>
-            <offset>0.05</offset>
+            <offset>0.10</offset>
           </li>
         </capMods>
       </li>

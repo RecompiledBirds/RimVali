@@ -14,9 +14,9 @@
     <stages>
       <li>
         <statOffsets>
-          <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-          <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
-          <MaxHitPoints>20</MaxHitPoints>
+          <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+         <HealthIncreaseAdd>5</HealthIncreaseAdd>
         </statOffsets>
         <capMods>
           <li>
@@ -34,7 +34,7 @@
             <capacities>
               <li>Blunt</li>
             </capacities>
-            <power>5</power>
+            <power>6</power>
             <cooldownTime>1.5</cooldownTime>
             <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
             <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>

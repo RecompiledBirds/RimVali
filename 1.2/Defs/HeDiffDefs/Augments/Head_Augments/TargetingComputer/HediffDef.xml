@@ -14,8 +14,8 @@
     <stages>
       <li>
         <statFactors>
-          <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
-          <AimingDelayFactor>-1.8</AimingDelayFactor>
+          <ShootingAccuracyPawn>1.3</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.2</AimingDelayFactor>
         </statFactors>
       </li>
     </stages>

@@ -8,15 +8,13 @@
     <spawnThingOnRemoved>ParallelArm</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
-      <partEfficiency>2.5</partEfficiency>
+      <partEfficiency>1.5</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
     <stages>
       <li>
         <statOffsets>
-          <ArmorRating_Sharp>-1.0</ArmorRating_Sharp>
-          <ArmorRating_Blunt>-1.0</ArmorRating_Blunt>
-          <HealthIncreaseAdd>-20</HealthIncreaseAdd>
+          <HealthIncreaseAdd>-0.05</HealthIncreaseAdd>
         </statOffsets>
       </li>
     </stages>

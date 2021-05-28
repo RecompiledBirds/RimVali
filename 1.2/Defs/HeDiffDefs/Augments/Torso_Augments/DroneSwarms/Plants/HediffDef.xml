@@ -9,8 +9,8 @@
     <stages>
       <li>
         <statOffsets>
-         <PlantWorkSpeed>1.2</PlantWorkSpeed>
-         <PlantHarvestYield>0.8</PlantHarvestYield>
+         <PlantWorkSpeed>0.4</PlantWorkSpeed>
+         <PlantHarvestYield>0.2</PlantHarvestYield>
         </statOffsets>
       </li>
     </stages>

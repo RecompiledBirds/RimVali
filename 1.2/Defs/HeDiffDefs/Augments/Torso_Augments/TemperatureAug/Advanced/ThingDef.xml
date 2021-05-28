@@ -15,13 +15,14 @@
     <description>This augment, sometimes refered to as a T.C.A, has the ability to assist in regulating the body temperature of Avali.</description>
     <descriptionHyperlinks><RecipeDef>InstallAvaliTemperatureImplantAdv</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Steel>15</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <Steel>25</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <AvaliTungstenPowder>20</AvaliTungstenPowder>
+      <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
       <Mass>0.3</Mass>
-      <MarketValue>50</MarketValue>
     </statBases>
     <recipeMaker>
       <researchPrerequisite>AvaliAdvCooling</researchPrerequisite>

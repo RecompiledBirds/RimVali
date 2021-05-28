@@ -15,13 +15,13 @@
     <description>This augment produces a swarm of micro-drones, dedicated to assisting in one singular task. In this case, it's farming.</description>
     <descriptionHyperlinks><RecipeDef>InstallDP</RecipeDef></descriptionHyperlinks>
     <costList>
-      <Steel>15</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <Steel>150</Steel>
+      <ComponentIndustrial>30</ComponentIndustrial>
     </costList>
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
       <Mass>0.3</Mass>
-      <MarketValue>50</MarketValue>
+      <MarketValue>500</MarketValue>
     </statBases>
     <recipeMaker>
       <researchPrerequisite>MicroDrones</researchPrerequisite>

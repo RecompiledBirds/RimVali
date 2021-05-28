@@ -9,9 +9,9 @@
     <stages>
       <li>
         <statOffsets>
-          <ConstructionSpeed>1.2</ConstructionSpeed>
-          <FixBrokenDownBuildingSuccessChance>1.3</FixBrokenDownBuildingSuccessChance>
-          <ConstructSuccessChance>0.4</ConstructSuccessChance>
+          <ConstructionSpeed>0.4</ConstructionSpeed>
+          <FixBrokenDownBuildingSuccessChance>0.2</FixBrokenDownBuildingSuccessChance>
+          <ConstructSuccessChance>0.2</ConstructSuccessChance>
           <SmoothingSpeed>0.4</SmoothingSpeed>
         </statOffsets>
       </li>

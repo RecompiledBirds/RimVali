@@ -21,7 +21,6 @@
     <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     <statBases>
       <Mass>0.3</Mass>
-      <MarketValue>50</MarketValue>
     </statBases>
     <recipeMaker>
       <researchPrerequisite>BasicAvaliImplants</researchPrerequisite>

@@ -9,9 +9,9 @@
     <stages>
       <li>
         <statOffsets>
-          <MiningSpeed>1.2</MiningSpeed>
-          <DeepDrillingSpeed>1.2</DeepDrillingSpeed>
-          <MiningYield>0.8</MiningYield>
+          <MiningSpeed>0.5</MiningSpeed>
+          <DeepDrillingSpeed>0.5</DeepDrillingSpeed>
+          <MiningYield>0.2</MiningYield>
         </statOffsets>
       </li>
     </stages>

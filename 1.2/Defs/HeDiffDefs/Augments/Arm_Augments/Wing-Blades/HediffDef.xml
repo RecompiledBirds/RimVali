@@ -8,7 +8,7 @@
     <spawnThingOnRemoved></spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
-      <partEfficiency>1.1</partEfficiency>
+      <partEfficiency>0.9</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
      <comps>
@@ -22,7 +22,7 @@
               <li>Scratch</li>
             </capacities>
             <linkedBodyPartsGroup>Arms</linkedBodyPartsGroup>
-            <power>3</power>
+            <power>18</power>
             <cooldownTime>3</cooldownTime>
           </li>
         </tools>

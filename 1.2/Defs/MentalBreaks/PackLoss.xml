@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MentalBreakDef>
+    <defName>PackLoss</defName>
+    <mentalState>PackLossState</mentalState>
+    <workerClass>AvaliMod.PackBreakworker</workerClass>
+    <baseCommonality>0.5</baseCommonality>
+    <intensity>Minor</intensity>
+  </MentalBreakDef>
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>PackLossState</defName>
+    <stateClass>MentalState_WanderSad</stateClass>
+    <workerClass>AvaliMod.PackLossWorker</workerClass>
+    <label>Talking to their pack</label>
+    <category>Misc</category>
+    <colonistsOnly>true</colonistsOnly>
+    <minTicksBeforeRecovery>40000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.166</recoveryMtbDays>
+    <recoverFromSleep>true</recoverFromSleep>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <recoveryMessage>{0} is no longer trying to talk to their non-existent packmates.</recoveryMessage>
+    <beginLetterLabel>sad wander</beginLetterLabel>
+    <beginLetter>{0} has broken down and is trying to talk to their non-existent packmates.</beginLetter>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
+    <baseInspectLine>Mental state: Talking to packmates</baseInspectLine>
+    <allowBeatfire>true</allowBeatfire>
+    <unspawnedCanDo>true</unspawnedCanDo>
+    <escapingPrisonersIgnore>false</escapingPrisonersIgnore>
+  </MentalStateDef>
+</Defs>

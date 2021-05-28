@@ -8,7 +8,7 @@
     <spawnThingOnRemoved>AvaliBasicBionicEar</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
-      <partEfficiency>1.05</partEfficiency>
+      <partEfficiency>1.25</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
   </HediffDef>
