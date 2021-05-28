@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <RimValiCore.RVR.RVRBackstory>
+    <defName>AvaliRuffian</defName>
+    <title>Ruffian</title>
+    <shortTitle>Ruffian</shortTitle>
+    <storyDesc>[PAWN_NameDef] had always felt as if not all rules applied to them. Most of [PAWN_possessive] free time was spent along a thin line between legal and illegal be it through grifting valuable assets from notable personalities or having a small edge ahead of everyone else at the gambling table. It didn't take long for their acquired skills to evolve into a lifestyle and that lifestyle into a very real issue with the law. Eventually, [PAWN_pronoun] was forced to flee from their past actions and has found themselves on this planet. Their wild personality makes it very difficult for them to focus on a project for an extended period of time however.</storyDesc>
+    <spawnInCategories>
+      <li>RimValiBackstories</li>
+    </spawnInCategories>
+    <skillGains>
+      <li>
+        <skill>Shooting</skill>
+        <amount>3</amount>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <amount>3</amount>
+      </li>
+      <li>
+        <skill>Social</skill>
+        <amount>6</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+      <li>
+        <def>Nimble</def>
+      </li>
+    </forcedTraits>
 
-  <AvaliMod.RVRBackstory Name="HoloValiBase">
+    <disabledWorkTypes>
+      <li>Crafting</li>
+      <li>Intellectual</li>
+      </disabledWorkTypes>
+    <enabledWorkTypes>
+      <li>Commoner</li>
+    </enabledWorkTypes>
+
+  </RimValiCore.RVR.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory Name="HoloValiBase">
     <defName>AvaliHologram</defName>
     <title>Holo-vali</title>
     <shortTitle>Holo-vali</shortTitle>
@@ -182,9 +218,9 @@
         <amount>2</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliNomad</defName>
     <title>Space Nomad</title>
     <shortTitle>Nomad</shortTitle>
@@ -207,17 +243,17 @@
         <amount>2</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 
 
-  <AvaliMod.RVRBackstory Name="MaleBase" Abstract = "true">
+  <RimValiCore.RVR.RVRBackstory Name="MaleBase" Abstract = "true">
     <canSpawnFemale>false</canSpawnFemale>
-  </AvaliMod.RVRBackstory>
-  <AvaliMod.RVRBackstory Name="FemaleBase" Abstract = "true">
+  </RimValiCore.RVR.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory Name="FemaleBase" Abstract = "true">
     <canSpawnMale>false</canSpawnMale>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 	
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliWarchild</defName>
     <title>War Hatchling</title>
     <shortTitle>War Hatchling</shortTitle>
@@ -226,9 +262,9 @@
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 	
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSoldierChild</defName>
     <title>Child Soldier</title>
     <shortTitle>Child Soldier</shortTitle>
@@ -255,9 +291,9 @@
 	      <amount>-1</amount>
 		  </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-	<AvaliMod.RVRBackstory>
+	<RimValiCore.RVR.RVRBackstory>
     <defName>AvaliLaborChild</defName>
     <title>Child Laborer</title>
     <shortTitle>Child Laborer</shortTitle>
@@ -280,10 +316,10 @@
 	      <amount>-1</amount>
 		  </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 		
 		
-	<AvaliMod.RVRBackstory>
+	<RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBlessedChild</defName>
     <title>Chosen One</title>
     <shortTitle>Chosen One</shortTitle>
@@ -306,9 +342,9 @@
 	      <amount>2</amount>
 		  </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-		<AvaliMod.RVRBackstory>
+		<RimValiCore.RVR.RVRBackstory>
     <defName>AvaliLateHatch</defName>
     <title>Late Hatch</title>
     <shortTitle>Late Hatch</shortTitle>
@@ -325,9 +361,9 @@
     </skillGains>
 	  <maleChance>10</maleChance>
 	  <femaleChance>10</femaleChance>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 		
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSolider</defName>
     <title>Illuminate Solider</title>
     <shortTitle>Solider</shortTitle>
@@ -350,9 +386,9 @@
         <amount>2</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliFarmer</defName>
     <title>Farmer</title>
     <shortTitle>Farmer</shortTitle>
@@ -371,9 +407,9 @@
         <amount>1</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliResearcher</defName>
     <title>Illuminate Researcher</title>
     <shortTitle>Researcher</shortTitle>
@@ -388,9 +424,9 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBuilder</defName>
     <title>Builder</title>
     <shortTitle>Builder</shortTitle>
@@ -405,9 +441,9 @@
         <amount>3</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliExplorer</defName>
     <title>Pioneer</title>
     <shortTitle>Explorer</shortTitle>
@@ -444,9 +480,9 @@
 		    <degree>1</degree>
 	   </li>
 	  </forcedTraits>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliDiplomat</defName>
     <title>Diplomat</title>
     <shortTitle>Diplomat</shortTitle>
@@ -478,9 +514,9 @@
         <def>Kind</def>
       </li>
 	  </forcedTraits>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliLoner</defName>
     <title>Loner</title>
     <shortTitle>Loner</shortTitle>
@@ -514,9 +550,9 @@
         <amount>1</amount>
       </li>
     </skillGains>
-	</AvaliMod.RVRBackstory>
+	</RimValiCore.RVR.RVRBackstory>
 
-	<AvaliMod.RVRBackstory>
+	<RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSpy</defName>
     <title>Illuminate Spy</title>
     <shortTitle>Spy</shortTitle>
@@ -560,9 +596,9 @@
 	      <def>Bloodlust</def>
 	    </li>
 	  </forcedTraits>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliThief</defName>
     <title>Thief</title>
     <shortTitle>Thief</shortTitle>
@@ -596,9 +632,9 @@
 	      <def>Greedy</def>
 	    </li>
   	</forcedTraits>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliTinkerer</defName>
     <title>Tinkerer</title>
     <shortTitle>Tinkerer</shortTitle>
@@ -626,9 +662,9 @@
         <amount>-3</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliCaveMedic</defName>
     <title>Miner Medic</title>
     <shortTitle>Miner Medic</shortTitle>
@@ -664,9 +700,9 @@
         </li>
       </butcherThoughts>
     </butcherAndHarvestThoughtOverrides>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-   <AvaliMod.RVRBackstory>
+   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBionicDesigner</defName>
     <title>Bionic Designer</title>
     <shortTitle>Bionic Designer</shortTitle>
@@ -690,9 +726,9 @@
         <amount>-5</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSheriff</defName>
     <title>Sheriff</title>
     <shortTitle>Sheriff</shortTitle>
@@ -716,9 +752,9 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliTrained</defName>
     <title>Devoted Colonist</title>
     <shortTitle>Devoted Colonist</shortTitle>
@@ -755,9 +791,9 @@
 		    <degree>1</degree>
 	    </li>
 	  </forcedTraits>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliCultist</defName>
     <title>Cultist</title>
     <shortTitle>Cultist</shortTitle>
@@ -797,9 +833,9 @@
 	  </forcedTraits>
 	  <maleChance>5</maleChance>
 	  <femaleChance>5</femaleChance>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-   <AvaliMod.RVRBackstory>
+   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBerserker</defName>
     <title>Berserker</title>
     <shortTitle>Berserker</shortTitle>
@@ -830,9 +866,9 @@
 	  </forcedTraits>
 	  <maleChance>1</maleChance> <!--Why?-->
 	  <femaleChance>0</femaleChance>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 
- <AvaliMod.RVRBackstory>
+ <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliFactoryWorker</defName>
     <title>Factory Worker</title>
     <shortTitle>Worker</shortTitle>
@@ -857,9 +893,9 @@
 		   <degree>2</degree>
 	    </li>
   	</forcedTraits>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliModel</defName>
     <title>Avali Model</title>
     <shortTitle>Model</shortTitle>
@@ -897,9 +933,9 @@
 		    <degree>-1</degree>
 	    </li>
 	  </forcedTraits>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-   <AvaliMod.RVRBackstory>
+   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBurger</defName>
     <title>Food Cart Owner</title>
     <shortTitle>Foodcart Owner</shortTitle>
@@ -927,9 +963,9 @@
         <amount>-4</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliAnimalScientist</defName>
     <title>Animal Scientist</title>
     <shortTitle>Scientist</shortTitle>
@@ -961,9 +997,9 @@
         <amount>-4</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
   
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliPalaceDesigner</defName>
     <title>Illuminate Architect</title>
     <shortTitle>Architect</shortTitle>
@@ -983,9 +1019,9 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 
-  <AvaliMod.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>NoviceDeveloper</defName>
     <title>Novice Developer</title>
     
@@ -1009,12 +1045,12 @@
         <amount>4</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 
   
 
   
-  <AvaliMod.RVRBackstory Name = "BaseLostEgg">
+  <RimValiCore.RVR.RVRBackstory Name = "BaseLostEgg">
     <defName>AvaliLostEgg</defName>
     <title>Lost egg</title>
     <storyDesc>[PAWN_nameDef]'s egg was accidentally lost during a move between nurseries, after an incident caused the nursery the egg was in to no longer be structurally sound, and therefore a risk to the eggs. [PAWN_pronoun] was luckily found by another pack while [PAWN_pronoun] was young, and was able to join them, but sometimes [PAWN_nameDef] wonders if [PAWN_possessive] pack is still out there, maybe looking for [PAWN_objective]. </storyDesc>
@@ -1040,5 +1076,5 @@
         <amount>1</amount>
       </li>
     </skillGains>
-  </AvaliMod.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 </Defs>

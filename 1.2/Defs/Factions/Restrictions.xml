@@ -139,4 +139,40 @@
       </li>
     </factionResearchRestrictionBlackList>
   </AvaliMod.FactionResearchRestrictionDef>
+  <AvaliMod.FactionStartRelationDef>
+    <defName>RVPC_AF_Relations</defName>
+    <faction>RimValiPlayerColony</faction>
+    <relations>
+      <li>
+        <otherFaction>AvaliFaction</otherFaction>
+        <relation>100</relation>
+      </li>
+       <li>
+        <otherFaction>AvaliIndepenentWorldsTribal</otherFaction>
+        <relation>-100</relation>
+      </li>
+       <li>
+        <otherFaction>AvaliIndepenentWorldsIlluminate</otherFaction>
+        <relation>-100</relation>
+      </li>
+    </relations>
+  </AvaliMod.FactionStartRelationDef>
+   <AvaliMod.FactionStartRelationDef>
+    <defName>IWPC_AF_Relations</defName>
+    <faction>IWPlayerColony</faction>
+    <relations>
+      <li>
+        <otherFaction>AvaliFaction</otherFaction>
+        <relation>-100</relation>
+      </li>
+       <li>
+        <otherFaction>AvaliIndepenentWorldsTribal</otherFaction>
+        <relation>100</relation>
+      </li>
+       <li>
+        <otherFaction>AvaliIndepenentWorldsIlluminate</otherFaction>
+        <relation>100</relation>
+      </li>
+    </relations>
+  </AvaliMod.FactionStartRelationDef>
 </Defs>

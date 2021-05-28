@@ -26,7 +26,7 @@
           <li>Dresser</li>
           <li>EndTable</li>
           <li>IlluminateEndTable</li>
-          <li>IlluminateEndTableLit</li>
+       
         </linkableFacilities>
       </li>
     </comps>
@@ -71,7 +71,7 @@
           <li>EndTable</li>
           <li>Dresser</li>
           <li>IlluminateEndTable</li>
-          <li>IlluminateEndTableLit</li>
+       
         </linkableFacilities>
       </li>
     </comps>

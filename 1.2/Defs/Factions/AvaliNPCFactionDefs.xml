@@ -71,44 +71,46 @@
       <li>
         <kindDef>Combat</kindDef>
         <options>
-          <AvaliRocketeer>100</AvaliRocketeer>
-          <SoliderAvali>10</SoliderAvali>
-          <EnhancedSoliderAvali>50</EnhancedSoliderAvali>
-          <AvaliTownCouncilman>150</AvaliTownCouncilman>
-          <AvaliSniper>20</AvaliSniper>
-          <AvaliMelee>7</AvaliMelee>
+          <AvaliRocketeer>500</AvaliRocketeer>
+          <SoldierAvali>270</SoldierAvali>
+          <EnhancedSoliderAvali>300</EnhancedSoliderAvali>
+          <AvaliTownCouncilman>600</AvaliTownCouncilman>
+          <AvaliSniper>350</AvaliSniper>
+          <AvaliMelee>250</AvaliMelee>
         </options>
       </li>
       <li>
         <kindDef>Peaceful</kindDef>
         <options>
-          <AvaliVillager>10</AvaliVillager>
-          <AvaliTownCouncilman>2.5</AvaliTownCouncilman>
-          <SoliderAvali>5</SoliderAvali>
-          <AvaliMelee>7</AvaliMelee>
+          <AvaliVillager>100</AvaliVillager>
+          <AvaliTownCouncilman>200</AvaliTownCouncilman>
+          <SoldierAvali>50</SoldierAvali>
+          <AvaliMelee>50</AvaliMelee>
         </options>
       </li>
       <li>
         <kindDef>Trader</kindDef>
         <traders>
-          <AvaliTrader>20</AvaliTrader>
+          <AvaliTrader>200</AvaliTrader>
         </traders>
         <carriers>
           <Muffalo>5</Muffalo>
         </carriers>
         <guards>
-          <AvaliSniper>15</AvaliSniper>
+          <AvaliSniper>350</AvaliSniper>
+          <AvaliRocketeer>500</AvaliRocketeer>
+          <SoldierAvali>150</SoldierAvali>
         </guards>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
         <options>
-          <AvaliVillager>5</AvaliVillager>
-          <AvaliTownGuard>10</AvaliTownGuard>
-          <AvaliTownCouncilman>1</AvaliTownCouncilman>
-          <SoliderAvali>5</SoliderAvali>
-           <AvaliMelee>7</AvaliMelee>
-          <EnhancedSoliderAvali>100</EnhancedSoliderAvali>
+          <AvaliVillager>100</AvaliVillager>
+          <AvaliTownGuard>100</AvaliTownGuard>
+          <AvaliTownCouncilman>600</AvaliTownCouncilman>
+          <SoldierAvali>270</SoldierAvali>
+           <AvaliMelee>250</AvaliMelee>
+          <EnhancedSoliderAvali>300</EnhancedSoliderAvali>
         </options>
       </li>
     </pawnGroupMakers>

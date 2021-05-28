@@ -72,35 +72,35 @@
       <li>
         <kindDef>Combat</kindDef>
         <options>
-          <IWTribalAvaliWarrior>5</IWTribalAvaliWarrior>
-          <IWTribeLeader>10</IWTribeLeader>
+          <IWTribalAvaliWarrior>200</IWTribalAvaliWarrior>
+          <IWTribeLeader>100</IWTribeLeader>
         </options>
       </li>
       <li>
         <kindDef>Peaceful</kindDef>
         <options>
-          <IWTribalAvaliVillager>10</IWTribalAvaliVillager>
-          <IWTribeLeader>5</IWTribeLeader>
+          <IWTribalAvaliVillager>100</IWTribalAvaliVillager>
+          <IWTribeLeader>10</IWTribeLeader>
         </options>
       </li>
       <li>
         <kindDef>Trader</kindDef>
         <traders>
-          <AvaliTrader>20</AvaliTrader>
+          <IWTribalAvaliVillager>200</IWTribalAvaliVillager>
         </traders>
         <carriers>
-          <Muffalo>5</Muffalo>
+          <Muffalo>20</Muffalo>
         </carriers>
         <guards>
-          <AvaliSniper>15</AvaliSniper>
+          <IWTribalAvaliWarrior>150</IWTribalAvaliWarrior>
         </guards>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
         <options>
-          <IWTribalAvaliVillager>5</IWTribalAvaliVillager>
-          <IWTribalAvaliWarrior>5</IWTribalAvaliWarrior>
-          <IWTribeLeader>1</IWTribeLeader>
+          <IWTribalAvaliVillager>100</IWTribalAvaliVillager>
+          <IWTribalAvaliWarrior>100</IWTribalAvaliWarrior>
+          <IWTribeLeader>150</IWTribeLeader>
         </options>
       </li>
     </pawnGroupMakers>
@@ -185,11 +185,11 @@
       <li>
         <kindDef>Combat</kindDef>
         <options>
-          <AvaliRocketeer>10</AvaliRocketeer>
-          <SoliderAvali>10</SoliderAvali>
+          <AvaliRocketeer>500</AvaliRocketeer>
+          <SoldierAvali>20</SoldierAvali>
           <AvaliTownCouncilman>10</AvaliTownCouncilman>
-          <AvaliSniper>10</AvaliSniper>
-          <AvaliMelee>7</AvaliMelee>
+          <AvaliSniper>350</AvaliSniper>
+          <AvaliMelee>250</AvaliMelee>
         </options>
       </li>
       <li>
@@ -202,21 +202,21 @@
       <li>
         <kindDef>Trader</kindDef>
         <traders>
-          <AvaliTrader>20</AvaliTrader>
+          <AvaliTrader>200</AvaliTrader>
         </traders>
         <carriers>
           <Muffalo>5</Muffalo>
         </carriers>
         <guards>
-          <AvaliSniper>15</AvaliSniper>
+          <AvaliSniper>250</AvaliSniper>
         </guards>
       </li>
       <li>
         <kindDef>Settlement</kindDef>
         <options>
-          <IWTechAvaliVillager>5</IWTechAvaliVillager>
-          <AvaliTownGuard>10</AvaliTownGuard>
-          <IWTechAvaliLeader>15</IWTechAvaliLeader>
+          <IWTechAvaliVillager>100</IWTechAvaliVillager>
+          <AvaliTownGuard>100</AvaliTownGuard>
+          <IWTechAvaliLeader>150</IWTechAvaliLeader>
         </options>
       </li>
     </pawnGroupMakers>
