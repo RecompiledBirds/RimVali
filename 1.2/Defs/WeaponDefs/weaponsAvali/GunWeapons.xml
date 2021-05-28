@@ -59,7 +59,7 @@
       <damageAmountBase>8</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <speed>150</speed>
-      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <armorPenetrationBase>0.185</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -78,12 +78,12 @@
       <li>AvaliWeapons</li>
     </weaponTags>
     <statBases>
-      <WorkToMake>500</WorkToMake>
+      <WorkToMake>4500</WorkToMake>
       <Mass>1.5</Mass>
-      <AccuracyTouch>1</AccuracyTouch>
-      <AccuracyShort>0.89</AccuracyShort>
-      <AccuracyMedium>0.63</AccuracyMedium>
-      <AccuracyLong>0.45</AccuracyLong>
+      <AccuracyTouch>0.87</AccuracyTouch>
+      <AccuracyShort>0.92</AccuracyShort>
+      <AccuracyMedium>0.77</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
       <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
@@ -92,12 +92,12 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliPistolBullet</defaultProjectile>
         <warmupTime>0.3</warmupTime>
-        <range>30</range>
+        <range>29.9</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
         <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
-        <burstShotCount>2</burstShotCount>
+        <burstShotCount>1</burstShotCount>
       </li>
     </verbs>
     <tools>
@@ -107,7 +107,7 @@
           <li>Blunt</li>
         </capacities>
         <power>9</power>
-        <cooldownTime>2</cooldownTime>
+        <cooldownTime>1.8</cooldownTime>
       </li>
       <li>
         <label>barrel</label>
@@ -116,7 +116,7 @@
           <li>Poke</li>
         </capacities>
         <power>9</power>
-        <cooldownTime>2</cooldownTime>
+        <cooldownTime>1.8</cooldownTime>
       </li>
     </tools>
     <costList>
@@ -144,9 +144,9 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>12</damageAmountBase>
+      <damageAmountBase>16</damageAmountBase>
       <speed>150</speed>
-      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <armorPenetrationBase>0.32</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -163,29 +163,28 @@
     <soundInteract>Interact_SMG</soundInteract>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>34000</WorkToMake>
+      <WorkToMake>28000</WorkToMake>
       <Mass>4.5</Mass>
       <AccuracyTouch>0.70</AccuracyTouch>
       <AccuracyShort>0.86</AccuracyShort>
       <AccuracyMedium>0.72</AccuracyMedium>
-      <AccuracyLong>0.6</AccuracyLong>
-      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+      <AccuracyLong>0.52</AccuracyLong>
+      <RangedWeapon_Cooldown>1.35</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>150</Steel>
-      <ComponentSpacer>3</ComponentSpacer>
-      <ComponentIndustrial>10</ComponentIndustrial>
-      <AvaliTungstenPowder>15</AvaliTungstenPowder>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <AvaliTungstenPowder>12</AvaliTungstenPowder>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliSMGBullet</defaultProjectile>
-        <warmupTime>1.8</warmupTime>
+        <warmupTime>0.7</warmupTime>
         <range>30.4</range>
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
-        <burstShotCount>3</burstShotCount>
+        <burstShotCount>2</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
@@ -239,9 +238,9 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>8</damageAmountBase>
-      <speed>150</speed>
-      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>88</speed>
+      <armorPenetrationBase>0.47</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -258,19 +257,20 @@
     <soundInteract>Interact_SMG</soundInteract>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>34000</WorkToMake>
-      <Mass>4.5</Mass>
+      <WorkToMake>37500</WorkToMake>
+      <Mass>6.5</Mass>
+       <MarketValue>1445</MarketValue>
       <AccuracyTouch>0.36</AccuracyTouch>
       <AccuracyShort>0.43</AccuracyShort>
-      <AccuracyMedium>0.44</AccuracyMedium>
-      <AccuracyLong>0.30</AccuracyLong>
-      <RangedWeapon_Cooldown>2.50</RangedWeapon_Cooldown>
+      <AccuracyMedium>0.39</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>150</Steel>
       <ComponentSpacer>3</ComponentSpacer>
-      <ComponentIndustrial>10</ComponentIndustrial>
-      <AvaliTungstenPowder>15</AvaliTungstenPowder>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <AvaliTungstenPowder>25</AvaliTungstenPowder>
     </costList>
     <verbs>
       <li>
@@ -279,8 +279,8 @@
         <defaultProjectile>AvaliMinigunBullet</defaultProjectile>
         <warmupTime>1.8</warmupTime>
         <range>35</range>
-        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
-        <burstShotCount>20</burstShotCount>
+        <ticksBetweenBurstShots>2.5</ticksBetweenBurstShots>
+        <burstShotCount>22</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
@@ -329,8 +329,8 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>13</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
-      <speed>170</speed>
-      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <speed>177</speed>
+      <armorPenetrationBase>0.42</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -348,29 +348,29 @@
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
       <WorkToMake>34000</WorkToMake>
-      <Mass>5.5</Mass>
-      <AccuracyTouch>0.7</AccuracyTouch>
-      <AccuracyShort>0.84</AccuracyShort>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.69</AccuracyTouch>
+      <AccuracyShort>0.81</AccuracyShort>
       <AccuracyMedium>0.92</AccuracyMedium>
-      <AccuracyLong>0.79</AccuracyLong>
-      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+      <AccuracyLong>0.86</AccuracyLong>
+      <RangedWeapon_Cooldown>1.45</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>150</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <AvaliTungstenPowder>10</AvaliTungstenPowder>
+      <Steel>50</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <AvaliTungstenPowder>7</AvaliTungstenPowder>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliRifleBullet</defaultProjectile>
-        <warmupTime>1.8</warmupTime>
-        <range>40.5</range>
+        <warmupTime>1.6</warmupTime>
+        <range>38.5</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
-        <burstShotCount>2</burstShotCount>
+        <burstShotCount>1</burstShotCount>
         <muzzleFlashScale>0</muzzleFlashScale>
       </li>
     </verbs>
@@ -415,12 +415,12 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>70</damageAmountBase>
-      <speed>200</speed>
+      <damageAmountBase>33</damageAmountBase>
+      <speed>183</speed>
       
-      <stoppingPower>3</stoppingPower>
+      <stoppingPower>2</stoppingPower>
       
-      <armorPenetrationBase>1</armorPenetrationBase>
+      <armorPenetrationBase>0.54</armorPenetrationBase>
     </projectile>
   </ThingDef>
     <!-- Sniper rifle -->
@@ -428,7 +428,7 @@
     <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliSniperRifle</defName>
     <label>Illuminate Sniper Rifle</label>
-    <description>A weapon perfect for picking off enemies at a distance.</description>
+    <description>A highly sophisticated weapon perfect for picking off enemies at a distance. The firepower required to fire a singleprojectile is so strong that the coils must be cooled with liquid helium at all times to prevent the weapon from exploding in its user's talons.</description>
     <graphicData>
       <texPath>avali/Things/Weapons/Guns/SniperRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -436,27 +436,26 @@
     <soundInteract>Interact_Rifle</soundInteract>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>34000</WorkToMake>
-      <Mass>5.5</Mass>
+      <WorkToMake>66000</WorkToMake>
+      <Mass>6.5</Mass>
       <AccuracyTouch>0.6</AccuracyTouch>
-      <AccuracyShort>0.92</AccuracyShort>
-      <AccuracyMedium>1</AccuracyMedium>
-      <AccuracyLong>1</AccuracyLong>
-      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+      <AccuracyShort>0.82</AccuracyShort>
+      <AccuracyMedium>0.88</AccuracyMedium>
+      <AccuracyLong>0.93</AccuracyLong>
+      <RangedWeapon_Cooldown>2.9</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>100</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
+      <Steel>250</Steel>
       <ComponentSpacer>5</ComponentSpacer>
-      <AvaliTungstenPowder>3</AvaliTungstenPowder>
+      <AvaliTungstenPowder>25</AvaliTungstenPowder>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliSniperBullet</defaultProjectile>
-        <warmupTime>2</warmupTime>
-        <range>55</range>
+        <warmupTime>1.85</warmupTime>
+        <range>48</range>
         <soundCast>Shot_SniperRifle</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
@@ -505,9 +504,9 @@
     <projectile>
       <damageDef>Bullet</damageDef>
       <stoppingPower>3</stoppingPower>
-      <damageAmountBase>22</damageAmountBase>
+      <damageAmountBase>24</damageAmountBase>
       <speed>150</speed>
-      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <armorPenetrationBase>0.33</armorPenetrationBase>
     </projectile>
   </ThingDef>
   
@@ -524,18 +523,18 @@
     <soundInteract>Interact_Shotgun</soundInteract>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <statBases>
-      <WorkToMake>34000</WorkToMake>
-      <Mass>5.5</Mass>
-      <AccuracyTouch>0.78</AccuracyTouch>
-      <AccuracyShort>0.97</AccuracyShort>
-      <AccuracyMedium>0.85</AccuracyMedium>
-      <AccuracyLong>0.64</AccuracyLong>
-      <RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
+      <WorkToMake>22000</WorkToMake>
+      <Mass>5.0</Mass>
+      <AccuracyTouch>0.68</AccuracyTouch>
+      <AccuracyShort>0.79</AccuracyShort>
+      <AccuracyMedium>0.82</AccuracyMedium>
+      <AccuracyLong>0.65</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
     </statBases>
     <costList>
-      <Steel>100</Steel>
-      <ComponentIndustrial>5</ComponentIndustrial>
-      <AvaliTungstenPowder>5</AvaliTungstenPowder>
+      <Steel>70</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <AvaliTungstenPowder>3</AvaliTungstenPowder>
     </costList>
     <verbs>
       <li>
@@ -543,9 +542,9 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>AvaliShotgunBullet</defaultProjectile>
         <warmupTime>1.9</warmupTime>
-        <range>30</range>
+        <range>24</range>
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-        <burstShotCount>4</burstShotCount>
+        <burstShotCount>1</burstShotCount>
         <soundCast>Shot_Shotgun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>0</muzzleFlashScale>
@@ -602,7 +601,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>1000</MarketValue>
+      <MarketValue>2020</MarketValue>
       <Mass>7</Mass>
       <RangedWeapon_Cooldown>4.7</RangedWeapon_Cooldown>
     </statBases>
@@ -625,7 +624,7 @@
         <forcedMissRadius>0.5</forcedMissRadius>
         <warmupTime>4.5</warmupTime>
         <ai_AvoidFriendlyFireRadius>5</ai_AvoidFriendlyFireRadius>
-        <range>40</range>
+        <range>34</range>
         <soundCast>InfernoCannon_Fire</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <onlyManualCast>true</onlyManualCast>
@@ -667,8 +666,8 @@
     <projectile>
       <damageDef>Bomb</damageDef>
       <!-- Use default damage from explosion def -->
-      <explosionRadius>3.9</explosionRadius>
-      <speed>50</speed>
+      <explosionRadius>3.7</explosionRadius>
+      <speed>35</speed>
     </projectile>
   </ThingDef>
 </Defs>
