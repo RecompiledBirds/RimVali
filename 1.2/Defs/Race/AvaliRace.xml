@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-   <AvaliMod.RenderableDef Name="BaseAvaliPart" Abstract="True">
+   <RimValiCore.RVR.RenderableDef Name="BaseAvaliPart" Abstract="True">
     <useColorSet>Skin</useColorSet>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
+  
+  <RimValiCore.RVR.RenderableDef Abstract="True" ParentName="BaseAvaliPart" Name = "BaseAvaliEar">
 
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+  </RimValiCore.RVR.RenderableDef >
+  
+  
+  
+  
+  
+  
+  <RimValiCore.RVR.RenderableDef  ParentName="BaseAvaliEar">
     <defName>EarLL</defName>
     <textures>
         <li>
@@ -40,10 +49,11 @@
       <size>0.8</size>
       <layer>-0.3034662</layer>
     </west>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliEar">
     <defName>EarLR</defName>
+    
     <textures>
         <li>
           <tex>avali/Ears/Male/LowerRight/MaleLowerRight</tex>
@@ -77,9 +87,9 @@
       <size>0.8</size>
       <layer>-1</layer>
     </west>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliEar">
     <defName>EarUR</defName>
     <textures>
         <li>
@@ -114,9 +124,9 @@
       <layer>-1</layer>
       <size>0.8</size>
     </west>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-    <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliEar">
     <defName>EarUL</defName>
     <textures>
         <li>
@@ -151,10 +161,10 @@
       <layer>-0.3024662</layer>
       <size>0.8</size>
     </west>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
     
     
-    <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+    <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
       <defName>EyeL</defName>
       <useColorSet>Eye</useColorSet>
       <textures>
@@ -191,9 +201,9 @@
       <layer>0.031</layer>
       <size>0.8</size>
     </south>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
       <defName>EyeR</defName>
       <useColorSet>Eye</useColorSet>
       <textures>
@@ -230,9 +240,9 @@
       <layer>0.031</layer>
       <size>0.8</size>
     </south>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
       <defName>AvaliMouth</defName>
       <textures>
         <li>
@@ -260,8 +270,8 @@
       <layer>0.031</layer>
       <size>0.8</size>
     </south>
-  </AvaliMod.RenderableDef>
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+  </RimValiCore.RVR.RenderableDef>
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
     <defName>TailSkirt</defName>
     <backstoryTextures>
       <li>
@@ -297,9 +307,9 @@
       <layer>-0.3086463</layer>
       <size>0.8</size>
     </south>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-  <AvaliMod.RenderableDef ParentName="BaseAvaliPart">
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
     <defName>TailMain</defName>
     <backstoryTextures>
       <li>
@@ -336,9 +346,9 @@
       <layer>-1</layer>
       <size>0.8</size>
     </south>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-  <AvaliMod.RenderableDef  ParentName="BaseAvaliPart">
+  <RimValiCore.RVR.RenderableDef  ParentName="BaseAvaliPart">
      <defName>Head</defName>
      <textures>
        <li>
@@ -373,9 +383,9 @@
       <layer>-0.3054662</layer>
       <size>0.8</size>
     </west>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
   
-  <AvaliMod.RenderableDef  ParentName="BaseAvaliPart">
+  <RimValiCore.RVR.RenderableDef  ParentName="BaseAvaliPart">
      <defName>Body</defName>
      <textures>
         <li>
@@ -406,10 +416,10 @@
       <layer>-0.3247589</layer>
       <size>0.8</size>
     </south>
-  </AvaliMod.RenderableDef>
+  </RimValiCore.RVR.RenderableDef>
 
   
-	<AvaliMod.RimValiRaceDef Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
+	<RimValiCore.RVR.RimValiRaceDef Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
         <thingClass>Pawn</thingClass>
         <category>Pawn</category>
         <selectable>true</selectable>
@@ -455,12 +465,12 @@
             </li>
         </comps>
         <drawGUIOverlay>true</drawGUIOverlay>
-    </AvaliMod.RimValiRaceDef>
+    </RimValiCore.RVR.RimValiRaceDef>
 	
-	<AvaliMod.RimValiRaceDef ParentName="BaseAvaliRace" Name="BaseFullAvali">
+	<RimValiCore.RVR.RimValiRaceDef ParentName="BaseAvaliRace" Name="BaseFullAvali">
         <defName>RimVali</defName>
         <label>Avali</label>
-        <description>Cute, fluffy raptors with highly advanced tech. The primary in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
+        <description>Cute, fluffy raptors with highly advanced tech. The primary solvent in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
 		<mainSettings>
     </mainSettings>
     
@@ -821,6 +831,9 @@
         <li>AvaliBed</li>
         <li>AvaliHammock</li>
       </bedDefs>
+      
+
+      
       <bodyTypes>
         <li>Avali</li>
       </bodyTypes>
@@ -1020,7 +1033,7 @@
       <li>CureBloodRot</li>
       <li>CureAbasia</li>
 		</recipes>
-	</AvaliMod.RimValiRaceDef>
+	</RimValiCore.RVR.RimValiRaceDef>
   
   
 </Defs>

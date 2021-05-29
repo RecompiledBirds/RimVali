@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <AvaliMod.RimValiRaceDef ParentName="BaseFullAvali">
+  <RimValiCore.RVR.RimValiRaceDef ParentName="BaseFullAvali">
     <defName>IWAvaliRace</defName>
     <corpseToUse>Corpse_RimVali</corpseToUse>
     <meatToUse>Meat_RimVali</meatToUse>
@@ -72,6 +72,6 @@
       <baseBodySize>0.9</baseBodySize>
 			<baseHungerRate>0.6</baseHungerRate>
     </race>
-  </AvaliMod.RimValiRaceDef>
+  </RimValiCore.RVR.RimValiRaceDef>
 
 </Defs>
