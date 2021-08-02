@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallAvaliTemperatureImplantAdv</defName>
+    <label>Install advanced Temperature Control Augment [TCA]</label>
+    <description>Install advanced Temperature Control Augment [TCA].</description>
+    <descriptionHyperlinks><ThingDef>AvaliAdvTempControl</ThingDef></descriptionHyperlinks>
+    <jobString>Installing advanced Temperature Control Augment [TCA].</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAdvTempControl</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AvaliAdvTempControl</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>AvaliTemperatureImplantAdv</addsHediff>
+  </RecipeDef>
+</Defs>

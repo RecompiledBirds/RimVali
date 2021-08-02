@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RulePackDef>
+  <defName>AvaliFactionBaseNamer</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[FirstSectionName][MidSectionName][LastSectionName]'s [FactionBaseEnding]</li>
+        <li>name->[FirstSectionName][MidSectionName][MidSectionName]'s [FactionBaseEnding]</li>
+        <li>name->[FirstSectionName][LastSectionName][LastSectionName]'s [FactionBaseEnding]</li>
+        <li>name->[FirstSectionName][LastSectionName]'s [FactionBaseEnding]</li>
+        <li>name->[FirstSectionName][MidSectionName]'s [FactionBaseEnding]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class = "Rule_File">
+          <keyword>FirstSectionName</keyword>
+          <path>NeziAvaliNameGen/FirstSectionName</path>
+        </li>
+        <li Class = "Rule_File">
+          <keyword>MidSectionName</keyword>
+          <path>NeziAvaliNameGen/MidSectionName</path>          
+        </li>
+        <li Class = "Rule_File">
+          <keyword>LastSectionName</keyword>
+          <path>NeziAvaliNameGen/LastSectionName</path>       
+        </li>
+        <li Class = "Rule_File"> 
+          <keyword>FactionBaseEnding</keyword>
+         <path>NeziAvaliNameGen/FactionEndings</path>
+       </li>
+      </rulesRaw>
+    </rulePack>
+	</RulePackDef>
+</Defs>

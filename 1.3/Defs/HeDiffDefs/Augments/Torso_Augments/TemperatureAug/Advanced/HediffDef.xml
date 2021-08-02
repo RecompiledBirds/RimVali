@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>AvaliTemperatureImplantAdv</defName>
+    <label>Advanced T.C.A</label>
+    <description>An advanced Temperature Control Augment (or just TCA). This augment uses cooling and heating systems to regulate and keep the wearer within temperature ranges where the egg-whites won’t start decaying. This is the advanced version of it and is generally more reliable with regulating temperatures, but it isn’t powerful enough to deal with extremes.</description>
+    <spawnThingOnRemoved>AvaliAdvTempControl</spawnThingOnRemoved>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMax>10</ComfyTemperatureMax>
+          <ComfyTemperatureMin>-8</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+    </comps>
+  </HediffDef>
+</Defs>

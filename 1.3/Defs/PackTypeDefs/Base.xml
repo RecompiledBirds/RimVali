@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AvaliMod.AvaliPackSkillDef>
+    <defName>MilitaryRangedPack</defName>
+    <skill>Shooting</skill>
+    <specialityLabel>Military pack</specialityLabel>
+    <hediffEffectApplied>AvaliShootingPackBonus</hediffEffectApplied>
+    <effectList>
+      <li>Aim time: -2</li>
+      <li>Shooting accuracy: +50%</li>
+      <li>Melee hit chance: +10%</li>
+    </effectList>
+  </AvaliMod.AvaliPackSkillDef>
+  
+  
+  
+  <HediffDef>
+    <defName>AvaliShootingPackBonus</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Pack effect</description>
+    <label>Pack effect</label>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+        <statOffsets>
+         
+           <AimingDelayFactor>-0.2</AimingDelayFactor>
+         </statOffsets>
+         
+         <statFactors>
+             <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+           <MeleeHitChance>1.1</MeleeHitChance>
+         </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="AvaliMod.AvaliPackHediffCompProps">
+        <associatedDef>MilitaryRangedPack</associatedDef>
+      </li>
+    </comps>
+  </HediffDef>  
+  
+  
+  
+  
+  <AvaliMod.AvaliPackSkillDef>
+    <defName>MilitaryMeleePack</defName>
+    <skill>Melee</skill>
+    <specialityLabel>Military pack</specialityLabel>
+    <hediffEffectApplied>AvaliMeleePackBonus</hediffEffectApplied>
+    <effectList>
+      <li>Aim time: -0.5</li>
+      <li>Melee dodge: +20%</li>
+      <li>Melee hit chance: +50%</li>
+    </effectList>
+  </AvaliMod.AvaliPackSkillDef>
+  
+  
+  
+  <HediffDef>
+    <defName>AvaliMeleePackBonus</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Pack effect</description>
+    <label>Pack effect</label>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+        <statOffsets>
+         
+           <AimingDelayFactor>-0.05</AimingDelayFactor>
+         </statOffsets>
+         
+         <statFactors>
+             <MeleeDodgeChance>1.2</MeleeDodgeChance>
+           <MeleeHitChance>1.5</MeleeHitChance>
+         </statFactors>
+      </li>
+    </stages>
+     <comps>
+      <li Class="AvaliMod.AvaliPackHediffCompProps">
+        <associatedDef>MilitaryMeleePack</associatedDef>
+      </li>
+    </comps>
+  </HediffDef> 
+  
+  
+  
+  
+  
+   <AvaliMod.AvaliPackSkillDef>
+    <defName>MiningPack</defName>
+    <skill>Mining</skill>
+    <specialityLabel>Mining pack</specialityLabel>
+    <hediffEffectApplied>AvaliMiningPackBonus</hediffEffectApplied>
+    <effectList>
+      <li>Deep drilling speed: +30%</li>
+      <li>Mining speed: +50%</li>
+    </effectList>
+  </AvaliMod.AvaliPackSkillDef>
+  
+  
+  
+  <HediffDef>
+    <defName>AvaliMiningPackBonus</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Pack effect</description>
+    <label>Pack effect</label>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+         
+         <statFactors>
+             <DeepDrillingSpeed>1.3</DeepDrillingSpeed>
+           <MiningSpeed>1.5</MiningSpeed>
+         </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="AvaliMod.AvaliPackHediffCompProps">
+        <associatedDef>MiningPack</associatedDef>
+      </li>
+    </comps>
+  </HediffDef> 
+  
+  
+    <AvaliMod.AvaliPackSkillDef>
+    <defName>FarmingAnimalPack</defName>
+    <skill>Animals</skill>
+    <specialityLabel>Farming pack</specialityLabel>
+    <hediffEffectApplied>AvaliAnimalFarmingPackBonus</hediffEffectApplied>
+    <effectList>
+      <li>Animal gathering speed: +50%</li>
+      <li>Animal yield: +30%</li>
+      <li>Hunting stealth: +0.1%</li>
+    </effectList>
+  </AvaliMod.AvaliPackSkillDef>
+  
+  
+  
+  <HediffDef>
+    <defName>AvaliAnimalFarmingPackBonus</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Pack effect</description>
+    <label>Pack effect</label>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+         
+         <statFactors>
+           <AnimalGatherSpeed>1.5</AnimalGatherSpeed>
+             <AnimalGatherYield>1.3</AnimalGatherYield>
+           <HuntingStealth>1.1</HuntingStealth>
+         </statFactors>
+      </li>
+    </stages>
+     <comps>
+      <li Class="AvaliMod.AvaliPackHediffCompProps">
+        <associatedDef>FarmingAnimalPack</associatedDef>
+      </li>
+    </comps>
+  </HediffDef> 
+  
+  
+    
+    <AvaliMod.AvaliPackSkillDef>
+    <defName>FarmingPlantPack</defName>
+    <skill>Plants</skill>
+    <specialityLabel>Farming pack</specialityLabel>
+    <hediffEffectApplied>AvaliPlantFarmingPackBonus</hediffEffectApplied>
+    <effectList>
+      <li>Plant work speed: +60%</li>
+      <li>Plant yeild: +40%</li>
+    </effectList>
+  </AvaliMod.AvaliPackSkillDef>
+  
+  
+  
+  <HediffDef>
+    <defName>AvaliPlantFarmingPackBonus</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Pack effect</description>
+    <label>Pack effect</label>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+         
+         <statFactors>
+           <PlantWorkSpeed>1.6</PlantWorkSpeed>
+             <PlantHarvestYield>1.4</PlantHarvestYield>
+         </statFactors>
+      </li>
+    </stages>
+     <comps>
+      <li Class="AvaliMod.AvaliPackHediffCompProps">
+        <associatedDef>FarmingPlantPack</associatedDef>
+      </li>
+    </comps>
+  </HediffDef> 
+  
+  
+  
+  
+  
+  
+  <AvaliMod.AvaliPackSkillDef>
+    <defName>ConstructionPack</defName>
+    <skill>Construction</skill>
+    <specialityLabel>Construction pack</specialityLabel>
+    <hediffEffectApplied>AvaliConstructionPackBonus</hediffEffectApplied>
+    <effectList>
+      <li>Construction Success Chance: +60%</li>
+      <li>Repair Success Chance: +20%</li>
+      <li>Construction speed: +50%</li>
+    </effectList>
+  </AvaliMod.AvaliPackSkillDef>
+  
+  
+  
+  <HediffDef>
+    <defName>AvaliConstructionPackBonus</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>Pack effect</description>
+    <label>Pack effect</label>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+         
+         <statFactors>
+           <ConstructionSpeed>1.5</ConstructionSpeed>
+             <ConstructSuccessChance>1.6</ConstructSuccessChance>
+           <FixBrokenDownBuildingSuccessChance>1.2</FixBrokenDownBuildingSuccessChance>
+         </statFactors>
+      </li>
+    </stages>
+        <comps>
+      <li Class="AvaliMod.AvaliPackHediffCompProps">
+        <associatedDef>ConstructionPack</associatedDef>
+      </li>
+    </comps>
+  </HediffDef> 
+</Defs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>PositiveE</defName>
+    <label>Positive enforcement augment</label>
+    <labelNoun>a positive enforcement augment</labelNoun>
+    <description>A positive enforcement augment. When this augment is installed, it will manipulate and stimulate the brain to perceive others with a more positive manner and will as such raise their opinion of them. Whilst this effect is definitely useful, the stimulation leaves the Avali more forgetful and it has pretty negative moral implications to come with it.</description>
+    <spawnThingOnRemoved>PositiveE</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <stages>
+      <li>
+        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+        <forgetMemoryThoughtMtbDays>0.2</forgetMemoryThoughtMtbDays>
+      </li>
+    </stages>
+    <comps>
+    </comps>
+  </HediffDef>
+</Defs>

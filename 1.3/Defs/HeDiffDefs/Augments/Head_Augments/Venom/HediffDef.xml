@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VenomTeeth</defName>
+    <label>Venomous Teeth</label>
+    <labelNoun>a set of venomous teeth</labelNoun>
+    <description>A kit of venomous teeth. This augment replaces some of the Avali’s fangs and connects them to a sac with dangerous toxins stored in it, allowing them to inject said toxin into any target they decide to bite. However, because Avali were never supposed to be venomous, it relies on a mechanical trigger and the wearer has to avoid accidentally triggering it, making both talking and eating harder.</description>
+     <spawnThingOnRemoved>VenomTeeth</spawnThingOnRemoved>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>Teeth</label>
+            <capacities>
+              <li>AmmoniaBite</li>
+            </capacities>
+            <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+            <power>3</power>
+            <cooldownTime>1.9</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.05</offset>
+         </li>
+         <li>
+            <capacity>Eating</capacity>
+            <offset>-0.15</offset>
+         </li>
+       </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

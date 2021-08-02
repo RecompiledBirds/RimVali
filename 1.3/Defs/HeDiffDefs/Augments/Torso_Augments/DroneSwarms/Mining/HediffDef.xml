@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>DroneMining</defName>
+    <label>Micro drone swarm (Mining)</label>
+    <description>A pod containing a micro-drone swarm. When installed onto a pawn, they gain the ability to summon micro-drones from their body to assist them with certain tasks. Sadly enough these swarms are very resource intensive and as such can only be assigned to a singular task. This swarm has been made with mining in mind.</description>
+    <spawnThingOnRemoved>DroneConstruction</spawnThingOnRemoved>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+        <statOffsets>
+          <MiningSpeed>0.5</MiningSpeed>
+          <DeepDrillingSpeed>0.5</DeepDrillingSpeed>
+          <MiningYield>0.2</MiningYield>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+    </comps>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallTailStiffeningAugment</defName>
+    <label>Install tail stiffening augment</label>
+    <description>Install a tail stiffening augment.</description>
+    <descriptionHyperlinks><ThingDef>TailStiffeningAugment</ThingDef></descriptionHyperlinks>
+    <jobString>Installing tail stiffening augment.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TailStiffeningAugment</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>TailStiffeningAugment</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>RimValiTail</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>TailStiffeningAugment</addsHediff>
+  </RecipeDef>
+</Defs>

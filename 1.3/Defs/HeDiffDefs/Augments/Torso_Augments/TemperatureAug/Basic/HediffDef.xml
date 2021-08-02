@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>AvaliTemperatureImplantBasic</defName>
+    <label>Basic T.C.A</label>
+    <description>A basic Temperature Control Augment (or just TCA). This augment uses cooling and heating systems to regulate and keep the wearer within temperature ranges where the egg-whites won’t start decaying. This is only the basic version of it and isn’t very powerful, but it may just be enough to keep the pawn from overheating or freezing.</description>
+    <spawnThingOnRemoved>AvaliBasicTempControl</spawnThingOnRemoved>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMax>5</ComfyTemperatureMax>
+          <ComfyTemperatureMin>-2</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+    </comps>
+  </HediffDef>
+</Defs>

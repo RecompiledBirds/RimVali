@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>DroneConstruction</defName>
+    <label>Micro drone swarm (Construction)</label>
+    <description>A pod containing a micro-drone swarm. When installed onto a pawn, they gain the ability to summon micro-drones from their body to assist them with certain tasks. Sadly enough these swarms are very resource intensive and as such can only be assigned to a singular task. This swarm has been made with construction in mind.</description>
+    <spawnThingOnRemoved>DroneConstruction</spawnThingOnRemoved>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+        <statOffsets>
+          <ConstructionSpeed>0.4</ConstructionSpeed>
+          <FixBrokenDownBuildingSuccessChance>0.2</FixBrokenDownBuildingSuccessChance>
+          <ConstructSuccessChance>0.2</ConstructSuccessChance>
+          <SmoothingSpeed>0.4</SmoothingSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+    </comps>
+  </HediffDef>
+</Defs>

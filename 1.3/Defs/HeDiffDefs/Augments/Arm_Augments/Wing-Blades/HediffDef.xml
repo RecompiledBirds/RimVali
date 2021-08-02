@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <HediffDef ParentName="AddedBodyPartBase">
+    <defName>WingBlades</defName>
+    <label>Wing blades</label>
+    <labelNoun>Wing blades</labelNoun>
+    <description>A set of wing blades. As the name implies, this augment replaces nearly if not all flight feathers on an Avali’s wings with sharp blades. With the right equipment or apparel these blades could easily be concealed to be used as a hold-out weapon when the wearer gets ambushed or lacks the proper weapon for close quarters combat.</description>
+    <spawnThingOnRemoved></spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.9</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+     <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>Wing-blades</label>
+            <capacities>
+              <li>Stab</li>
+              <li>Cut</li>
+              <li>Scratch</li>
+            </capacities>
+            <linkedBodyPartsGroup>Arms</linkedBodyPartsGroup>
+            <power>18</power>
+            <cooldownTime>3</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

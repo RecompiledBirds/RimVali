@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallAvaliBasicBionicLeg</defName>
+    <label>Install basic bionic leg</label>
+    <description>Install a basic bionic leg.</description>
+    <descriptionHyperlinks><ThingDef>AvaliBasicBionicLeg</ThingDef></descriptionHyperlinks>
+    <jobString>Installing basic bionic leg.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliBasicBionicLeg</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AvaliBasicBionicLeg</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Leg</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>AvaliBasicBionicLeg</addsHediff>
+  </RecipeDef>
+</Defs>

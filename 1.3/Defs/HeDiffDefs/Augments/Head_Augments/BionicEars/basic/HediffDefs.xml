@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>AvaliBasicBionicEar</defName>
+    <label>Basic bionic Ear</label>
+    <labelNoun>a basic bionic Ear</labelNoun>
+    <description>A basic bionic Avali ear. Whilst not necessarily better when compared to an organic one, the construction of this bionic directs vibrations a little better and as such still improves the hearing of the wearer by a small amount. But perhaps this augment is best used as a replacement for a lost ear instead of replacing a still functioning organic ones.</description>
+    <spawnThingOnRemoved>AvaliBasicBionicEar</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.25</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+</Defs>

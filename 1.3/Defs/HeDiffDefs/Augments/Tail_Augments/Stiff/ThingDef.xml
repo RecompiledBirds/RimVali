@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>TailStiffeningAugment</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/tail</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Tail stiffening augment</label>
+    <description>A augment designed to stiffen the users tail via nanites. This allows the tail to take more damage, along being used as a weapon. However, it can make it slightly harder to move.</description>
+    <descriptionHyperlinks><RecipeDef>InstallTailStiffeningAugment</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>15</Plasteel>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliImplants</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

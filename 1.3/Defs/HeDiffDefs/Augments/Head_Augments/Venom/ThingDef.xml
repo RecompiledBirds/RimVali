@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef>
+    <defName>VenomTeeth</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/head</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Venomous Teeth augment</label>
+    <description>A kit of venomous teeth. This augment replaces some of the Avali’s fangs and connects them to a sac with dangerous toxins stored in it, allowing them to inject said toxin into any target they decide to bite. However, because Avali were never supposed to be venomous, it relies on a mechanical trigger and the wearer has to avoid accidentally triggering it, making both talking and eating harder.</description>
+    <descriptionHyperlinks><RecipeDef>InstallVenomTeeth</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <thingClass>ThingWithComps</thingClass>
+    <tradeTags>
+      <li>Bionic</li>
+    </tradeTags>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <costList>
+      <Steel>10</Steel>
+      <AvaliAerogel>5</AvaliAerogel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Neutroamine>5</Neutroamine>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>AvaliFighting</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

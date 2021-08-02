@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>PackReplacementAI</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/head</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Pack replacement AI</label>
+    <description>A pack replacement AI. This augment uses an advanced AI Persona Core and divides it into three outputs to simulate the sensation of having a pack. Whilst this augment does prevent packloss, the wearer loses out on the physical benefits of having a pack and the actual morality of installing this augment is disputed by many.</description>
+    <descriptionHyperlinks><RecipeDef>InstallPackReplacementAI</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <AIPersonaCore>1</AIPersonaCore>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Steel>15</Steel>
+      <Gold>5</Gold>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliImplants</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

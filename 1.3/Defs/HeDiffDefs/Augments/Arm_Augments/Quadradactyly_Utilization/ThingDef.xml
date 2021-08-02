@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>TetradactylyUtilization</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/arm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Tetradactyly Utilitizer</label>
+    <description>A Tetradactyly Utilizer. This augment is installed on Avali who do not expect to use their wings for flight. Taking the wing's fourth digit, they mold and bend it into a more forward position, practically giving the Avali a fourth finger for more practical usage. Whilst this may be the case, they lose most steering control with their wings and a lot of fellow Avali may find the inclusion of a fourth digit uncanny.</description>
+    <descriptionHyperlinks><RecipeDef>InstallTetradactylyUtilitizer</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>2</Plasteel>
+      <AvaliAerogel>2</AvaliAerogel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <AvaliTungstenPowder>5</AvaliTungstenPowder>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <techHediffsTags>
+      <li>BasicAvali</li>
+    </techHediffsTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliBionics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>PositiveE</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/head</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Positive enforcement augment</label>
+    <description>A positive enforcement augment. When this augment is installed, it will manipulate and stimulate the brain to perceive others with a more positive manner and will as such raise their opinion of them. Whilst this effect is definitely useful, the stimulation leaves the Avali more forgetful and it has pretty negative moral implications to come with it.</description>
+    <descriptionHyperlinks><RecipeDef>InstallPE</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>5</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <Gold>2</Gold>
+      <Steel>14</Steel>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliImplants</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

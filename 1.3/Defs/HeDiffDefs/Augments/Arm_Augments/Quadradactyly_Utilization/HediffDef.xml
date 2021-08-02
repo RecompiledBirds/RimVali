@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <HediffDef ParentName="AddedBodyPartBase">
+    <defName>TetradactylyUtilization</defName>
+    <label>Tetradactyly Utilitizer</label>
+    <labelNoun>Tetradactyly Utilitizer</labelNoun>
+    <description>A Tetradactyly Utilizer. This augment is installed on Avali who do not expect to use their wings for flight. Taking the wing's fourth digit, they mold and bend it into a more forward position, practically giving the Avali a fourth finger for more practical usage. Whilst this may be the case, they lose most steering control with their wings and a lot of fellow Avali may find the inclusion of a fourth digit uncanny.</description>
+    <spawnThingOnRemoved></spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.1</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+</Defs>

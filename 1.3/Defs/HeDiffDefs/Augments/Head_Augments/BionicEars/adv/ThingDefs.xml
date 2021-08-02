@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>AvaliAdvancedBionicEar</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/ear</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Advanced bionic Ear</label>
+    <description>An advanced bionic Avali ear. Both superior to its organic and basic packmates. This augment features self repair systems, the most sophisticated shapes you can have for picking up sounds and even a small device that improves both noise filtration and the range of frequencies the wearer can pick up.</description>
+    <descriptionHyperlinks><RecipeDef>InstallAvaliAdvancedBionicEar</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <AvaliAerogel>2</AvaliAerogel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <AvaliTungstenPowder>10</AvaliTungstenPowder>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>0.3</Mass>
+      <MarketValue>300</MarketValue>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>AdvancedAvaliBionics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>AvaliAdvTempControl</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/torso</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <techHediffsTags>
+      <li>AdvancedAvali</li>
+    </techHediffsTags>
+    
+    <label>Advanced Temperature Control Augment [TCA]</label>
+    <description>An advanced Temperature Control Augment (or just TCA). This augment uses cooling and heating systems to regulate and keep the wearer within temperature ranges where the egg-whites won’t start decaying. This is the advanced version of it and is generally more reliable with regulating temperatures, but it isn’t powerful enough to deal with extremes.</description>
+    <descriptionHyperlinks><RecipeDef>InstallAvaliTemperatureImplantAdv</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <AvaliTungstenPowder>20</AvaliTungstenPowder>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>0.3</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvCooling</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>

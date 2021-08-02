@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <defName>SocialEnhancer</defName>
+    <graphicData>
+      <texPath>avali/Things/Cybernetics/head</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <label>Social capability enhancer</label>
+    <description>A social capability enhancer. With the usage of a techprof subpersona core, this augment will analyze the social and auditory cues of the wearer's current target, before feeding them information for the best possible manner of communication with said target. Improving the wearer's social skills and increasing their vocabulary in the meantime.</description>
+    <descriptionHyperlinks><RecipeDef>InstallSC</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Plasteel>10</Plasteel>
+      <TechprofSubpersonaCore>1</TechprofSubpersonaCore>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Steel>15</Steel>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliImplants</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
