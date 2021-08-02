@@ -7,7 +7,9 @@ using RimWorld.Planet;
 
 namespace AvaliMod
 {
+    #region settings stuff
     [StaticConstructorOnStartup]
+    
     public static class AirdropResearchManager
     {
         static AirdropResearchManager()
@@ -28,20 +30,16 @@ namespace AvaliMod
             } 
         }
     }
+    #endregion
     public class AirdropAlert : Alert
     {
         public override AlertReport GetReport()
         {
             
-            defaultLabel = "IlluminateAirdropSend".Translate((AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).Named("TIME"))/* "AirdropInStart".Translate() + " " + (AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).ToString() + " " + "AirdropInEnd".Translate()*/;
-            if (AirDropHandler.hasMessaged && !AirDropHandler.hasDropped)
-            {
-                return AlertReport.Active;
-            }
-            else
-            {
-                return AlertReport.Inactive;
-            }
+            defaultLabel = "IlluminateAirdropSend".Translate(AirDropHandler.GetTimeToDropInHours.Named("TIME"))/* "AirdropInStart".Translate() + " " + (AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).ToString() + " " + "AirdropInEnd".Translate()*/;
+
+
+            return AirDropHandler.HasMessaged && !AirDropHandler.hasDropped ? AlertReport.Active : AlertReport.Inactive;
         }
     }
     public class AirDropHandler : WorldComponent
@@ -50,8 +48,25 @@ namespace AvaliMod
         private readonly int avaliReq = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().avaliRequiredForDrop;
         private int ticks = 0;
         public static int timeToDrop;
-        public static int ticksInAnHour = 25;
-        public static bool hasMessaged;
+
+        public static int GetTimeToDropInHours
+        {
+            get
+            {
+                return timeToDrop / ticksInAnHour;
+            }
+        }
+
+
+        private static readonly int ticksInAnHour = 25;
+        private static bool hasMessaged;
+        public static bool HasMessaged
+        {
+            get
+            {
+                return hasMessaged;
+            }
+        }
         public AirDropHandler(World world) : base(world) {
             timeToDrop = 0;
             hasMessaged = false;
@@ -59,43 +74,52 @@ namespace AvaliMod
         }
 
         public static bool hasDropped = false;
-        
+
+
+        private IntVec3 targetPos;
+        private Map map;
         public override void ExposeData()
         {
             Scribe_Values.Look(ref timeToDrop, "timeToDrop", 0);
             Scribe_Values.Look(ref hasDropped, "hasDropped", false);
             Scribe_Values.Look(ref hasMessaged, "hasMessaged", false);
+            Scribe_Values.Look(ref targetPos, "targetPos");
+            Scribe_References.Look(ref map, "map");
             base.ExposeData();
         }
         private void SendDrop()
         {
-            Map map = Current.Game.CurrentMap;
+            map = Current.Game.CurrentMap;
             GenDate.DayOfYear(ticks, Find.WorldGrid.LongLatOf(map.Tile).x);
             List<Thing> thingList = new List<Thing>
             {
                 ThingMaker.MakeThing(AvaliDefs.AvaliNexus)
             };
+            
+
             Scribe_Values.Look(ref hasDropped, "hasDropped", false);
-            Map target = map;
-            List<Faction> newFactions = new List<Faction>();
-            IntVec3 intVec3 = DropCellFinder.TradeDropSpot(target);
+            
+            GlobalTargetInfo targ = new GlobalTargetInfo(targetPos, map);
+            
             if (map.IsPlayerHome)
             {
                 hasDropped = true;
-                foreach(Faction faction in Find.FactionManager.AllFactions.Where(x => x.def == AvaliDefs.AvaliFaction))
+                //TODO: Figure out why this doesn't seem to be working.
+                //Assembly outdated?
+                /*foreach(Faction faction in Find.FactionManager.AllFactions.Where(x => x.def == AvaliDefs.AvaliFaction))
                 {
-                    faction.SetRelationDirect(Faction.OfPlayer, FactionRelationKind.Ally);
-                    FactionRelation rel = faction.RelationWith(Faction.OfPlayer);
-                    rel.goodwill = 100;
-                    newFactions.Add(faction);
-                }
-                DropPodUtility.DropThingsNear(intVec3, target, (IEnumerable<Thing>)thingList);
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliMod.AvaliDefs.IlluminateAirdrop);
+                    faction.TryAffectGoodwillWith(Faction.OfPlayer, 200, true, false, "Illuminate colony");
+                }*/
+                DropPodUtility.DropThingsNear(targetPos, map, thingList);
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliDefs.IlluminateAirdrop, lookTargets: new LookTargets() { targets = new List<GlobalTargetInfo>() {targ } });
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
             else
             {
+                hasMessaged = false;
                 SetupDrop();
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter(def: AvaliDefs.IlluminateAirdrop,label: "Cannotsend",text:"test");
+                Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
         }
 
@@ -103,9 +127,11 @@ namespace AvaliMod
         {
             if (!hasMessaged)
             {
+                map = Current.Game.CurrentMap;
                 timeToDrop = UnityEngine.Random.Range(1 * ticksInAnHour, 48 * ticksInAnHour);
-
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("AirdropSendMsg".Translate(), "IlluminateAirdropSend".Translate((AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).Named("TIME")), AvaliMod.AvaliDefs.IlluminateAirdrop);
+                targetPos = DropCellFinder.TradeDropSpot(map);
+                GlobalTargetInfo targ = new GlobalTargetInfo(targetPos, map);
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("AirdropSendMsg".Translate(), "IlluminateAirdropSend".Translate((GetTimeToDropInHours).Named("TIME")), AvaliDefs.IlluminateAirdrop,lookTargets: new LookTargets() { targets = new List<GlobalTargetInfo>() { targ } });
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
                 hasMessaged = true;
             }
@@ -113,18 +139,17 @@ namespace AvaliMod
 
         private bool GetReady()
         {
-            Map map = Current.Game.CurrentMap;
+            map = Current.Game.CurrentMap;
             if (RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq && !hasDropped && map.IsPlayerHome)
             {
-                if (!hasDropped)
-                {
-                    SetupDrop();
-                    
-                }
+
+                SetupDrop();
                 return true;
+
             }
             return false;
         }
+        
         public override void WorldComponentTick()
         {
             ticks++;
@@ -132,12 +157,11 @@ namespace AvaliMod
             {
                 if (airdrops)
                 {
-                    if (GetReady() && !hasDropped)
+                    if (GetReady())
                     {
-                        
                         timeToDrop--;
                     }
-                    Map map = Current.Game.CurrentMap;
+                    map = Current.Game.CurrentMap;
                     if (timeToDrop <= 0 && RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq && !hasDropped && map.IsPlayerHome)
                     {
                         SendDrop();
@@ -146,6 +170,7 @@ namespace AvaliMod
                 ticks = 0;
             }
         }
+        
     }
    
 }
