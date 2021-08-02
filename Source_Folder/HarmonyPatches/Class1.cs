@@ -22,7 +22,7 @@ namespace AvaliMod
             Pawn pawn = apparel.Wearer;
             if (apparel.def.apparel.layers.Any(d => d == ApparelLayerDefOf.Overhead) && apparel.def.apparel.wornGraphicPath != null)
             {
-                if (bodyType != AvaliMod.AvaliDefs.Avali && bodyType != AvaliMod.AvaliDefs.Avali)
+                if (bodyType != AvaliDefs.Avali && bodyType != AvaliDefs.Avali)
                     return;
 
                 string path = $"{apparel.def.apparel.wornGraphicPath}_{bodyType.defName}";

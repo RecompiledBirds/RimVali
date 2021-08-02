@@ -16,8 +16,8 @@ namespace AvaliMod
         static RimValiPatches()
         {
             
-            Harmony rimValiHarmony = new Harmony("RimVali.patches");
-            Log.Message("[RimVali] Started patches.", false);
+            Harmony rimValiHarmony = new Harmony("RimVali.FarFromAvalon");
+            Log.Message("[RimVali: Far From Avalon] Started patches.", false);
             try {
 
                 rimValiHarmony.PatchAll();
@@ -31,12 +31,12 @@ namespace AvaliMod
                 rimValiHarmony.Patch(AccessTools.Method(typeof(PawnRenderer), "RenderPortrait"), null, new HarmonyMethod(typeof(RenderPatch), "Portrait"));*/
                 
                 int methodsPatched = rimValiHarmony.GetPatchedMethods().EnumerableCount();
-                Log.Message("[RimVali] Patches completed. " + methodsPatched.ToString() + " methods patched. [RimVali]");
+                Log.Message("[RimVali: Far From Avalon] Patches completed. " + methodsPatched.ToString() + " methods patched.");
                 
             }
             catch (Exception error)
             {
-                Log.Warning("[RimVali] A patch has failed! Patches completed: " + rimValiHarmony.GetPatchedMethods().EnumerableCount().ToString());
+                Log.Warning("[RimVali: Far From Avalon] A patch has failed! Patches completed: " + rimValiHarmony.GetPatchedMethods().EnumerableCount().ToString());
                 Log.Error(error.ToString());
 
             }
