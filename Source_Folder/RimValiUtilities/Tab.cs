@@ -54,7 +54,7 @@ namespace AvaliMod
 					AvaliPack pack = pawn.GetPack();
 					float rectPosY = 0f;
 
-					if (pack != null && pack.pawns.Count > 1)
+					if (pack != null && pack.GetAllNonNullPawns.Count > 1)
 					{
 						string effects = "";
 						string packSpecialityName = "NONE";
@@ -85,10 +85,10 @@ namespace AvaliMod
 
 
 						Rect PackMemberListRect = new Rect(outRect.xMin, rectPosY, 500f, outRect.height);
-						Rect PackMemberListViewRect = new Rect(outRect.xMin, rectPosY, 480f, pack.pawns.Count * 30f);
+						Rect PackMemberListViewRect = new Rect(outRect.xMin, rectPosY, 480f, pack.GetAllNonNullPawns.Count * 30f);
 
 						Rect PackMemberCountRect = new Rect(outRect.RightHalf().x, rectPosY, 40f, 30f);
-						string packcount = pack.pawns.Count.ToString() + "/" + maxSize.ToString();
+						string packcount = pack.GetAllNonNullPawns.Count.ToString() + "/" + maxSize.ToString();
 
 						Rect bonusRect = new Rect(PackMemberCountRect.xMax, rectPosY, outRect.RightHalf().width, outRect.RightHalf().height);
 						Rect bonusViewRect = new Rect(PackMemberCountRect.x + PackMemberCountRect.width, rectPosY, outRect.RightHalf().width - 20, listCount * 30f);
@@ -106,13 +106,10 @@ namespace AvaliMod
 							num2 = membersScrollPos.y + PackMemberListRect.height;
 							Widgets.BeginScrollView(PackMemberListRect, ref membersScrollPos, PackMemberListViewRect, true);
 							{
-								for (int i = 0; i < pack.pawns.Count; i++)
-								{
+								foreach(Pawn p in pack.GetAllNonNullPawns)
+                                {
 									float rowHeight = 30f;
-									if (num > y - rowHeight && num < num2)
-									{
-										DrawMemberRow(num, PackMemberListRect.width, pack.pawns[i]);
-									}
+									if (num > y - rowHeight && num < num2){DrawMemberRow(num, PackMemberListRect.width, p);}
 									num += rowHeight;
 								}
 							}
@@ -120,10 +117,7 @@ namespace AvaliMod
 
 							//Name
 							Widgets.Label(PackNameRect, GetPackName(rect, pack));
-							if (Widgets.ButtonImage(RenameButtonRect, UIResources.Rename, true))
-							{
-								Find.WindowStack.Add(new Dialog_NamePack(pawn));
-							}
+							if (Widgets.ButtonImage(RenameButtonRect, UIResources.Rename, true)){Find.WindowStack.Add(new Dialog_NamePack(pawn));}
 							//Border line
 							float offset = 10f;
 							float heightOffset = 12f;
@@ -163,7 +157,7 @@ namespace AvaliMod
 			}catch(Exception e)
             {
 				Log.Error(e.Message);
-				Widgets.Label(rect,$"Hey! If you are seeing this, something probably went wrong somewhere. I've logged the error: {e.Message}");
+				Widgets.Label(rect,$"Hey! If you are seeing this, something probably went wrong somewhere... sorry about that :( . I've logged the error: {e.Message}");
 			}
 			//Widgets.Label(rect, "test");
 			Widgets.EndScrollView();
@@ -179,18 +173,9 @@ namespace AvaliMod
 			{
 				if (Current.ProgramState == ProgramState.Playing)
 				{
-					if (otherPawn.Dead)
-					{
-						Messages.Message("MessageCantSelectDeadPawn".Translate(otherPawn.LabelShort, otherPawn).CapitalizeFirst(), MessageTypeDefOf.RejectInput, false);
-					}
-					else if (otherPawn.SpawnedOrAnyParentSpawned)
-					{
-						CameraJumper.TryJumpAndSelect(otherPawn);
-					}
-					else
-					{
-						Messages.Message("MessageCantSelectOffMapPawn".Translate(otherPawn.LabelShort, otherPawn).CapitalizeFirst(), MessageTypeDefOf.RejectInput, false);
-					}
+					if (otherPawn.Dead){Messages.Message("MessageCantSelectDeadPawn".Translate(otherPawn.LabelShort, otherPawn).CapitalizeFirst(), MessageTypeDefOf.RejectInput, false);}
+					else if (otherPawn.Spawned){CameraJumper.TryJumpAndSelect(otherPawn);}
+					else{Messages.Message("MessageCantSelectOffMapPawn".Translate(otherPawn.LabelShort, otherPawn).CapitalizeFirst(), MessageTypeDefOf.RejectInput, false);}
 				}
 			}
 			Rect rect4 = new Rect(0f, y + 3f, 500f, rowHeight - 3f);

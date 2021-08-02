@@ -43,9 +43,13 @@ namespace AvaliMod
         public int IWAvaliMinTemp;
         public Dictionary<string, bool> enabledRaces = new Dictionary<string, bool>();
         public bool liteMode;
+        public bool packThoughtsEnabled;
+        public int ticksBetweenPackUpdate;
 
         public RimValiModSettings()
         {
+            ticksBetweenPackUpdate = 120;
+            packThoughtsEnabled = true;
             enabledRaces = new Dictionary<string, bool>();
             healthScale = 1.3f;
             packLossEnabled = true;
@@ -73,11 +77,12 @@ namespace AvaliMod
         }
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref healthScale, "healthScale",1.3f, true);
+            Scribe_Values.Look(ref packThoughtsEnabled, "packThoughtsEnabled", true);
+            Scribe_Values.Look(ref healthScale, "healthScale", 1.3f, true);
             Scribe_Values.Look(ref packLossEnabled, "packLossEnabled", true, true);
             Scribe_Values.Look(ref packsEnabled, "packsEnabled", true, true);
             Scribe_Values.Look(ref checkOtherRaces, "checkOtherRaces", true, true);
-            Scribe_Values.Look(ref allowAllRaces, "allowAllRaces", false , true);
+            Scribe_Values.Look(ref allowAllRaces, "allowAllRaces", false, true);
             Scribe_Values.Look(ref enableAirdrops, "airdropsEnabled", true, true);
             Scribe_Values.Look(ref packMultiThreading, "threading", true, true);
             Scribe_Values.Look(ref maxPackSize, "maxPackSize", 5, true);
@@ -97,13 +102,14 @@ namespace AvaliMod
             Scribe_Values.Look(ref IWAvaliMinTemp, "IWAvaliMinTemp", -5, true);
             Scribe_Values.Look(ref IWAvaliMaxTemp, "IWAvaliMaxTemp", 25, true);
             Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces", LookMode.Undefined, LookMode.Undefined);
-            Scribe_Values.Look(ref packBrokenChance, "packBrokenChance",5,true);
-            Scribe_Values.Look(ref canGetPackBroken, "canGetPackBroken",true,true);
+            Scribe_Values.Look(ref packBrokenChance, "packBrokenChance", 5, true);
+            Scribe_Values.Look(ref ticksBetweenPackUpdate, "ticksBetweenPackUpdate", 120, true);
+            Scribe_Values.Look(ref canGetPackBroken, "canGetPackBroken", true, true);
             Scribe_Values.Look(ref liteMode, "liteMode", false, true);
             base.ExposeData();
         }
     }
-    
+
     public class RimValiMod : Mod
     {
         public settingsWindow windowToShow;
@@ -122,9 +128,16 @@ namespace AvaliMod
                 hasCollectedModules = true;
             }
             this.mod = content;
-           
+            if (LoadedModManager.RunningModsListForReading.Any(x => x.Name.ToLower().Contains("avali continued")))
+            {
+                Log.Warning("It appears avali continued or a mod made for it is running with RimVali! This may cause issues, and is not recommended.");
+            }
+            if (!LoadedModManager.RunningModsListForReading.Any(x => x.Name.ToLower() == "rimvali: core"))
+            {
+                Log.Error("RIMVALI CORE IS NOT LOADED. THIS WILL CRASH THE GAME");
+            }
             settings = GetSettings<RimValiModSettings>();
-          
+
             if (settings.packMultiThreading)
             {
                 Log.Message("!---RIMVALI PACK MULTITHREADING IS ACTIVE.---!");
@@ -142,11 +155,11 @@ namespace AvaliMod
             Window window = Find.WindowStack.currentlyDrawnWindow;
             bool threaded = settings.packMultiThreading;
             if (settings.enabledRaces == null)
-            { 
+            {
                 settings.enabledRaces = new Dictionary<string, bool>();
             }
-            
-            
+
+
             Rect TopHalf = rect.TopHalf();
             Rect TopLeft = TopHalf.LeftHalf();
             Rect TopRight = TopHalf.RightHalf();
@@ -158,12 +171,12 @@ namespace AvaliMod
             //Main page
             if (settingsWindow.main == windowToShow)
             {
-                
+
                 listing_Standard.Begin(rect);
                 bool packSettings = listing_Standard.ButtonText("PackLabel".Translate());
                 bool gameplaySettings = listing_Standard.ButtonText("GameplayLabel".Translate());
                 bool debug = listing_Standard.ButtonText("DebugLabel".Translate());
-               // bool pawnsSettings = listing_Standard.ButtonText("Pawns");
+                // bool pawnsSettings = listing_Standard.ButtonText("Pawns");
                 if (packSettings)
                 {
                     windowToShow = settingsWindow.packs;
@@ -172,8 +185,8 @@ namespace AvaliMod
                     windowToShow = settingsWindow.gameplay;
                 if (debug)
                     windowToShow = settingsWindow.debug;
-               // if (pawnsSettings)
-                 //   windowToShow = settingsWindow.pawns;
+                // if (pawnsSettings)
+                //   windowToShow = settingsWindow.pawns;
             }
             #endregion
             #region pack settings
@@ -183,13 +196,14 @@ namespace AvaliMod
                 listing_Standard.Begin(rect);
                 Backbutton(listing_Standard);
                 listing_Standard.CheckboxLabeled("PackLossCheck".Translate(), ref settings.packLossEnabled, "PackLossDesc".Translate());
-                bool threading = listing_Standard.ButtonText("MultithreadingCheck".Translate() +" "+((Func<string>) delegate { if (settings.packMultiThreading) { return "Y"; } else { return "N"; }; })());
+                bool threading = listing_Standard.ButtonText("MultithreadingCheck".Translate() + " " + ((Func<string>)delegate { if (settings.packMultiThreading) { return "Y"; } else { return "N"; }; })());
                 if (threading)
                 {
                     windowToShow = settingsWindow.threading;
                 }
-                
+
                 listing_Standard.CheckboxLabeled("PacksCheck".Translate(), ref settings.packsEnabled, "PacksDesc".Translate());
+                listing_Standard.CheckboxLabeled("PackThoughtsCheck".Translate(), ref settings.packThoughtsEnabled);
                 listing_Standard.Label("MaxPackSize".Translate(settings.maxPackSize.Named("COUNT")), -1, "PacksNum".Translate());
                 settings.maxPackSize = (int)listing_Standard.Slider(settings.maxPackSize, 2, 50);
                 listing_Standard.Label("PackOpinionReq".Translate(settings.packOpReq.Named("COUNT")));
@@ -211,7 +225,8 @@ namespace AvaliMod
                 listing_Standard.CheckboxLabeled("CanGetpackBroken".Translate(), ref settings.canGetPackBroken, "PackBrokenDesc".Translate());
                 listing_Standard.Label("PackBrokenChance".Translate(settings.packBrokenChance.Named("CHANCE")));
                 settings.packBrokenChance = (int)listing_Standard.Slider(settings.packBrokenChance, 0, 100);
-                
+                listing_Standard.Label("TicksBetweenPackUpdates".Translate());
+                Int32.TryParse(listing_Standard.TextEntry(settings.ticksBetweenPackUpdate.ToString()), out settings.ticksBetweenPackUpdate);
             }
             #endregion
             #region gameplay
@@ -230,7 +245,7 @@ namespace AvaliMod
                 listing_Standard.Label("HPScaler".Translate(settings.healthScale.Named("SCALE")));
                 settings.healthScale = (float)listing_Standard.Slider(settings.healthScale, 0.01f, 2.5f);
 
-                
+
                 listing_Standard.Label("ChanceToHackTech".Translate(settings.hackChance.Named("CHANCE")));
                 settings.hackChance = (int)listing_Standard.Slider(settings.hackChance, 0, 100);
                 listing_Standard.Label("AERIALShellCapSetting".Translate(settings.AERIALShellCap.Named("CAP")));
@@ -238,64 +253,36 @@ namespace AvaliMod
                 {
                     int newTemp;
                     listing_Standard.Label("IlluminateAvaliMaxTemp".Translate());
-                    Int32.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMaxTemp.ToString()), out newTemp);
-                    if (newTemp != null && newTemp != settings.IlluminateAvaliMaxTemp)
+                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMaxTemp.ToString()), out newTemp);
+                    if (newTemp != settings.IlluminateAvaliMaxTemp)
                     {
-                        if (newTemp > 1000)
-                        {
-                            newTemp = 1000;
-                        }
-                        if (newTemp < -200)
-                        {
-                            newTemp = -200;
-                        }
+                        newTemp= Mathf.Clamp(newTemp, -200, 1000);
                         settings.IlluminateAvaliMaxTemp = newTemp;
                     }
                     int newTempMin;
                     listing_Standard.Label("IlluminateAvaliMinTemp".Translate());
-                    Int32.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMinTemp.ToString()), out newTempMin);
-                    if (newTempMin != null && newTempMin != settings.IlluminateAvaliMinTemp)
+                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMinTemp.ToString()), out newTempMin);
+                    if (newTempMin != settings.IlluminateAvaliMinTemp)
                     {
-                        if (newTempMin > settings.IlluminateAvaliMaxTemp)
-                        {
-                            newTempMin = settings.IlluminateAvaliMaxTemp - 1;
-                        }
-                        if (newTempMin < -200)
-                        {
-                            newTempMin = -200;
-                        }
+                        newTempMin = Mathf.Clamp(newTempMin,-200, newTemp);
                         settings.IlluminateAvaliMinTemp = newTempMin;
                     }
                 }
                 {
                     int newTemp;
                     listing_Standard.Label("IWAvaliMaxTemp".Translate());
-                    Int32.TryParse(listing_Standard.TextEntry(settings.IWAvaliMaxTemp.ToString()), out newTemp);
-                    if (newTemp != null && newTemp != settings.IWAvaliMaxTemp)
+                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMaxTemp.ToString()), out newTemp);
+                    if (newTemp != settings.IWAvaliMaxTemp)
                     {
-                        if (newTemp > 1000)
-                        {
-                            newTemp = 1000;
-                        }
-                        if (newTemp < -200)
-                        {
-                            newTemp = -200;
-                        }
+                        newTemp = Mathf.Clamp(newTemp, -200, 1000);
                         settings.IWAvaliMaxTemp = newTemp;
                     }
                     int newTempMin;
                     listing_Standard.Label("IWAvaliMinTemp".Translate());
-                    Int32.TryParse(listing_Standard.TextEntry(settings.IWAvaliMinTemp.ToString()), out newTempMin);
-                    if (newTempMin != null && newTempMin != settings.IWAvaliMinTemp)
+                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMinTemp.ToString()), out newTempMin);
+                    if (newTempMin != settings.IWAvaliMinTemp)
                     {
-                        if (newTempMin > settings.IWAvaliMaxTemp)
-                        {
-                            newTempMin = settings.IWAvaliMaxTemp - 1;
-                        }
-                        if (newTempMin < -200)
-                        {
-                            newTempMin = -200;
-                        }
+                        newTempMin = Mathf.Clamp(newTempMin, -200, newTemp);
                         settings.IWAvaliMinTemp = newTempMin;
                     }
                 }
@@ -313,7 +300,7 @@ namespace AvaliMod
                 listing_Standard.Label("RVBuild".Translate(RimValiUtility.build.Named("BUILD")));
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
                 bool rL = listing_Standard.ButtonText("Reset pack loss");
-                
+
                 listing_Standard.Label(RimValiUtility.modulesFound);
                 Backbutton(listing_Standard);
             }
@@ -322,85 +309,85 @@ namespace AvaliMod
             if (windowToShow == settingsWindow.pawns)
             {
                 Listing_Standard ls = new Listing_Standard();
-                Vector2 scrollPos = new Vector2(0,0);
-                Rect vRect = new Rect(rect.x,rect.y,rect.width,rect.height+220);
+                Vector2 scrollPos = new Vector2(0, 0);
+                Rect vRect = new Rect(rect.x, rect.y, rect.width, rect.height + 220);
                 Widgets.BeginScrollView(vRect, ref scrollPos, rect);
 
                 Widgets.EndScrollView();
-              /*  Backbutton(ls);
+                /*  Backbutton(ls);
 
-                List<Colors> sets = AvaliDefs.RimVali.graphics.colorSets;
-                Colors eyes = sets.First(x => x.name.ToLower() == "eye");
-                Colors skin = sets.First(x => x.name.ToLower() == "skin");
+                  List<Colors> sets = AvaliDefs.RimVali.graphics.colorSets;
+                  Colors eyes = sets.First(x => x.name.ToLower() == "eye");
+                  Colors skin = sets.First(x => x.name.ToLower() == "skin");
 
-                if (ls.ButtonText("Show eyes"))
-                    showingEyesColors = !showingEyesColors;
-                if (showingEyesColors)
-                {
-                    ls.Label("Eye colorgen");
-                    ColorGenerator_Options gen = (ColorGenerator_Options)eyes.colorGenerator.firstColor;
-                    foreach (ColorOption option in gen.options)
-                    {
-                        ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
-                        option.max.r = ls.Slider(option.max.r, 0, 255);
-                        option.max.g = ls.Slider(option.max.g, 0, 255);
-                        option.max.b = ls.Slider(option.max.b, 0, 255);
+                  if (ls.ButtonText("Show eyes"))
+                      showingEyesColors = !showingEyesColors;
+                  if (showingEyesColors)
+                  {
+                      ls.Label("Eye colorgen");
+                      ColorGenerator_Options gen = (ColorGenerator_Options)eyes.colorGenerator.firstColor;
+                      foreach (ColorOption option in gen.options)
+                      {
+                          ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
+                          option.max.r = ls.Slider(option.max.r, 0, 255);
+                          option.max.g = ls.Slider(option.max.g, 0, 255);
+                          option.max.b = ls.Slider(option.max.b, 0, 255);
 
-                        ls.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
-                        option.min.r = ls.Slider(option.min.r, 0, 255);
-                        option.min.g = ls.Slider(option.min.g, 0, 255);
-                        option.min.b = ls.Slider(option.min.b, 0, 255);
-                    }
+                          ls.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
+                          option.min.r = ls.Slider(option.min.r, 0, 255);
+                          option.min.g = ls.Slider(option.min.g, 0, 255);
+                          option.min.b = ls.Slider(option.min.b, 0, 255);
+                      }
 
 
-                }
-                if (ls.ButtonText("Show skin"))
-                    showingSkinColors = !showingSkinColors;
-                if (showingSkinColors)
-                {
-                    ls.Label("Skin colorgen");
-                    ColorGenerator_Options gen = (ColorGenerator_Options)skin.colorGenerator.firstColor;
-                    foreach (ColorOption option in gen.options)
-                    {
-                        ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
-                        option.max.r = ls.Slider(option.max.r, 0, 255);
-                        option.max.g = ls.Slider(option.max.g, 0, 255);
-                        option.max.b = ls.Slider(option.max.b, 0, 255);
+                  }
+                  if (ls.ButtonText("Show skin"))
+                      showingSkinColors = !showingSkinColors;
+                  if (showingSkinColors)
+                  {
+                      ls.Label("Skin colorgen");
+                      ColorGenerator_Options gen = (ColorGenerator_Options)skin.colorGenerator.firstColor;
+                      foreach (ColorOption option in gen.options)
+                      {
+                          ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
+                          option.max.r = ls.Slider(option.max.r, 0, 255);
+                          option.max.g = ls.Slider(option.max.g, 0, 255);
+                          option.max.b = ls.Slider(option.max.b, 0, 255);
 
-                        listing_Standard.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
-                        option.min.r = ls.Slider(option.min.r, 0, 255);
-                        option.min.g = ls.Slider(option.min.g, 0, 255);
-                        option.min.b = ls.Slider(option.min.b, 0, 255);
-                    }
-                    ColorGenerator_Options gen2 = (ColorGenerator_Options)skin.colorGenerator.secondColor;
-                    foreach (ColorOption option in gen2.options)
-                    {
-                        ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
-                        option.max.r = ls.Slider(option.max.r, 0, 255);
-                        option.max.g = ls.Slider(option.max.g, 0, 255);
-                        option.max.b = ls.Slider(option.max.b, 0, 255);
+                          listing_Standard.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
+                          option.min.r = ls.Slider(option.min.r, 0, 255);
+                          option.min.g = ls.Slider(option.min.g, 0, 255);
+                          option.min.b = ls.Slider(option.min.b, 0, 255);
+                      }
+                      ColorGenerator_Options gen2 = (ColorGenerator_Options)skin.colorGenerator.secondColor;
+                      foreach (ColorOption option in gen2.options)
+                      {
+                          ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
+                          option.max.r = ls.Slider(option.max.r, 0, 255);
+                          option.max.g = ls.Slider(option.max.g, 0, 255);
+                          option.max.b = ls.Slider(option.max.b, 0, 255);
 
-                        ls.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
-                        option.min.r = ls.Slider(option.min.r, 0, 255);
-                        option.min.g = ls.Slider(option.min.g, 0, 255);
-                        option.min.b = ls.Slider(option.min.b, 0, 255);
-                    }
-                    ColorGenerator_Options gen3 = (ColorGenerator_Options)skin.colorGenerator.secondColor;
-                    foreach (ColorOption option in gen3.options)
-                    {
-                        ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
-                        option.max.r = ls.Slider(option.max.r, 0, 255);
-                        option.max.g = ls.Slider(option.max.g, 0, 255);
-                        option.max.b = ls.Slider(option.max.b, 0, 255);
+                          ls.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
+                          option.min.r = ls.Slider(option.min.r, 0, 255);
+                          option.min.g = ls.Slider(option.min.g, 0, 255);
+                          option.min.b = ls.Slider(option.min.b, 0, 255);
+                      }
+                      ColorGenerator_Options gen3 = (ColorGenerator_Options)skin.colorGenerator.secondColor;
+                      foreach (ColorOption option in gen3.options)
+                      {
+                          ls.Label($"Max R:{option.max.r}, G:{option.max.g}, B:{option.max.b}");
+                          option.max.r = ls.Slider(option.max.r, 0, 255);
+                          option.max.g = ls.Slider(option.max.g, 0, 255);
+                          option.max.b = ls.Slider(option.max.b, 0, 255);
 
-                        ls.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
-                        option.min.r = ls.Slider(option.min.r, 0, 255);
-                        option.min.g = ls.Slider(option.min.g, 0, 255);
-                        option.min.b = ls.Slider(option.min.b, 0, 255);
-                    }
-                }
-                ls.ButtonText("Enable pawn editing tab");*/
-               // ls.EndScrollView(ref rect);
+                          ls.Label($"Min R:{option.min.r}, G:{option.min.g}, B:{option.min.b}");
+                          option.min.r = ls.Slider(option.min.r, 0, 255);
+                          option.min.g = ls.Slider(option.min.g, 0, 255);
+                          option.min.b = ls.Slider(option.min.b, 0, 255);
+                      }
+                  }
+                  ls.ButtonText("Enable pawn editing tab");*/
+                // ls.EndScrollView(ref rect);
             }
             #endregion
             #region Multithreading warn
@@ -432,7 +419,7 @@ namespace AvaliMod
             {
                 listing_Standard.End();
             }
-           
+
             base.DoSettingsWindowContents(rect);
 
         }

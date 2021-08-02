@@ -1,12 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using RimValiCore.RVR;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
-using RimWorld;
-using AlienRace;
-using HarmonyLib;
-using AvaliMod;
-using System;
-using RimValiCore.RVR;
 
 namespace AvaliMod
 {
@@ -21,14 +16,14 @@ namespace AvaliMod
         {
             setup();
         }
-       public static void setup()
+        public static void setup()
         {
             potentialRaces = DefDatabase<RimValiRaceDef>.AllDefs.Where(x => x.race != null).ToList();
         }
         public static List<ThingDef> potentialPackRaces = new List<ThingDef>();
         public static List<RimValiRaceDef> potentialRaces = new List<RimValiRaceDef>();
-        
+
         public static IEnumerable<RimValiRaceDef> races = DefDatabase<RimValiRaceDef>.AllDefs.Where<RimValiRaceDef>(x => x is RimValiRaceDef);
-       
+
     }
 }
