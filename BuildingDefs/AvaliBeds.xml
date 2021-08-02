@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>AvaliPillowBed</defName>
+    <thingClass>Building_Bed</thingClass>
+    <label>avali bed</label>
+    <description>A soft cussion made for Avali to sleep on, it's a little too small for most other species.</description>
+    <rotatable>true</rotatable>
+    <fillPercent>0.15</fillPercent>
+    <pathCost>14</pathCost>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <graphicData>
+      <texPath>avali/Beds/avali_bed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <uiIconScale>0.80</uiIconScale>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>40</costStuffCount>
+    <size>(1,1)</size>
+    <building>
+      <bed_humanlike>true</bed_humanlike>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>140</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>5</Mass>
+      <Comfort>0.75</Comfort>
+      <Beauty>2</Beauty>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>AvalipillowsOne</defName>
+    <thingClass>Building_Bed</thingClass>
+    <label>small pile of pillows</label>
+    <description>a clump of pillows all piled together, enough for two Avali to sleep together.</description>
+    <rotatable>true</rotatable>
+    <fillPercent>0.15</fillPercent>
+    <pathCost>14</pathCost>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <graphicData>
+      <texPath>avali/Beds/avali_pillows_s</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <uiIconScale>0.80</uiIconScale>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>60</costStuffCount>
+    <size>(2,1)</size>
+    <building>
+      <bed_humanlike>true</bed_humanlike>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>190</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>5.4</Mass>
+      <Comfort>0.75</Comfort>
+      <Beauty>2</Beauty>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>AvalipillowsTwo</defName>
+    <thingClass>Building_Bed</thingClass>
+    <label>pile of pillows</label>
+    <description>a clump of pillows all piled together, enough for a small pack of Avali to sleep together.</description>
+    <rotatable>true</rotatable>
+    <fillPercent>0.15</fillPercent>
+    <pathCost>14</pathCost>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <graphicData>
+      <texPath>avali/Beds/avali_pillows_m</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <uiIconScale>0.80</uiIconScale>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>90</costStuffCount>
+    <size>(2,2)</size>
+    <building>
+      <bed_humanlike>true</bed_humanlike>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>6.5</Mass>
+      <Comfort>0.75</Comfort>
+      <Beauty>2</Beauty>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>AvalipillowsThree</defName>
+    <thingClass>Building_Bed</thingClass>
+    <label>large pile of pillows</label>
+    <description>a clump of pillows all piled together, enough for a whole pack of Avali to sleep together.</description>
+    <rotatable>true</rotatable>
+    <fillPercent>0.15</fillPercent>
+    <pathCost>14</pathCost>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <graphicData>
+      <texPath>avali/Beds/avali_pillows_l</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <uiIconScale>0.80</uiIconScale>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>120</costStuffCount>
+    <size>(3,2)</size>
+    <building>
+      <bed_humanlike>true</bed_humanlike>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+      <destroySound>BuildingDestroyed_Soft_Small</destroySound>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>8</Mass>
+      <Comfort>0.75</Comfort>
+      <Beauty>2</Beauty>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>
