@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <!-- Pistol -->
+
+   
+  <ThingDef ParentName="BaseBullet">
+    <defName>IWPistolBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>6</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>75</speed>
+      <armorPenetrationBase>0.10</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWPistol</defName>
+    <label>Independent Worlds Pistol</label>
+    <description>A simple non-Illuminate pistol. Whilst dealing less damage and having a slightly shorter range when compared to its Terran counterpart, it makes up for this by using coil technology for a better firing rate and more medium range viability.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Pistol_IndependentWorlds</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>4500</WorkToMake>
+      <Mass>1.5</Mass>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWPistolBullet</defaultProjectile>
+        <warmupTime>0.2</warmupTime>
+        <range>22</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  <!-- Semi-auto -->
+
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>IWSemiAutoBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>11</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>135</speed>
+      <armorPenetrationBase>0.19</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <!-- keeping defname same to avoid errors -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWSemiAuto</defName>
+    <label>Independent Worlds battle rifle</label>
+    <description>A popular non-Illuminate battle rifle. The design of these simple rifles has quickly spread throughout the Rimworld to offer Avali both defensive and hunting capacities. Together with a regular old blowback-action design and its fast but small bullet, it brings a decent fire-rate and equally decent range to the table.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/vali_Primative_semiauto</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.66</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.82</AccuracyMedium>
+      <AccuracyLong>0.63</AccuracyLong>
+      <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWSemiAutoBullet</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>32</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+   <!-- Rifle -->
+
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>IWRifleBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>17</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>150</speed>
+      <armorPenetrationBase>0.22</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWRifle</defName>
+    <label>Independent Worlds rifle</label>
+    <description>A bolt-action non-Illuminate rifle. Whilst this weapon has a lower fire-rate when compared to its semi-auto packmate, it quickly proves itself when competing for range and accuracy against it. This causes the weapon to still attract Avali sharpshooters that seek something reliable and simple to arm themselves with.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primative_Rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>25000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.5</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.85</AccuracyLong>
+       <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWRifleBullet</defaultProjectile>
+        <warmupTime>1.3</warmupTime>
+        
+        <range>37</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  
+  
+  <!--Assault Rifle -->
+
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>IWAssaultRifleBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>9</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>130</speed>
+      <armorPenetrationBase>0.12</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWAssaultRifle</defName>
+    <label>Independent Worlds battle rifle</label>
+    <description>A non-Illuminate assault rifle. Choosing fire-power over accuracy, this weapon releases a burst of four shots before the user has to zero in again due to recoil. Whilst it doesn’t receive the same love from Avali sharpshooters that the other rifles receive, it certainly finds its favour by Avali who prefer more suppressing fire.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primative_Assualt_Rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>38000</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWAssaultRifleBullet</defaultProjectile>
+        <warmupTime>1.1</warmupTime>
+        <range>28</range>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>55</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  
+  <!-- MG -->
+
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>IWMGBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>6</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>100</speed>
+      <armorPenetrationBase>0.12</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWMachineGun</defName>
+    <label>Independent Worlds light machine gun</label>
+    <description>A rapid-fire non-Illuminate LMG. Throwing away more popular doctrines of accuracy and controllability. This weapon is capable of firing enough projectiles to make a certain area wholly suppressed. Whilst it certainly has this high fire-power, this comes at the expense of the Avali wielder who needs time to zero it in again after usage.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Independent_MG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>10.5</Mass>
+      <AccuracyTouch>0.18</AccuracyTouch>
+      <AccuracyShort>0.29</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
+      <AccuracyLong>0.24</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWMGBullet</defaultProjectile>
+         <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <burstShotCount>28</burstShotCount>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <range>28.5</range>
+        <warmupTime>1.9</warmupTime>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>125</Steel>
+      <ComponentIndustrial>17</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  <!-- GPMG -->
+
+  
+    <ThingDef ParentName="BaseBullet">
+    <defName>IWGPMGBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>125</speed>
+      <armorPenetrationBase>0.26</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IW_GPMG</defName>
+    <label>Independent Worlds machine gun</label>
+    <description>A more general purpose non-Illuminate machine gun. When compared to its lighter packmate, this machine gun already comes with more accuracy and a heavier bullet. Whilst this may be the case, it generally has less range compared to it and the advised burst is also lowered for more controllability.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primative_GPMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>66666</WorkToMake>
+      <Mass>12.5</Mass>
+      <AccuracyTouch>0.31</AccuracyTouch>
+      <AccuracyShort>0.42</AccuracyShort>
+      <AccuracyMedium>0.34</AccuracyMedium>
+      <AccuracyLong>0.26</AccuracyLong>
+      <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWGPMGBullet</defaultProjectile>
+         <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>7</burstShotCount>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <range>24.5</range>
+        <warmupTime>1.5</warmupTime>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>22</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+   <!-- Vali_Primative_AngryTube.png -->
+
+  
+    <ThingDef ParentName="BaseBullet">
+    <defName>IWSMGBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <speed>96</speed>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWSMG</defName>
+    <label>Independent Worlds sub-machine gun</label>
+    <description>A regular old non-Illuminate SMG. Whilst generally better in close quarters or when closing in on your target, its fire-rate is the thing that makes up for this fact. This weapon is best used in shorter ranges or maybe just a way to protect yourself from melee based attackers, or an alternative to melee attacks of your own.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primative_AngryTube</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>22500</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.73</AccuracyTouch>
+      <AccuracyShort>0.58</AccuracyShort>
+      <AccuracyMedium>0.27</AccuracyMedium>
+      <AccuracyLong>0.28</AccuracyLong>
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWSMGBullet</defaultProjectile>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <burstShotCount>5</burstShotCount>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <range>18.5</range>
+        <warmupTime>0.7</warmupTime>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  <!-- Railrifle/sniper -->
+
+  
+   <ThingDef ParentName="BaseBullet">
+    <defName>IWRailRifleBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>175</speed>
+      <armorPenetrationBase>0.52</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWRailRifle</defName>
+    <label>Independent Worlds rail rifle</label>
+    <description>A non-Illuminate Anti-Tank rail rifle. Together with its lengthy coil system and its dense projectile, this rifle will punch a hole through most armoured targets and will do the same to unarmoured targets — with overpenetration, mind you.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primative_Railrifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>56789</WorkToMake>
+      <Mass>5.5</Mass>
+      <AccuracyTouch>0.6</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.67</AccuracyLong>
+      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWRailRifleBullet</defaultProjectile>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <range>33.5</range>
+        <warmupTime>1.5</warmupTime>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  
+  
+  
+  
+  <!-- Revolver -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>IWRevolverBullet</defName>
+    <label>Avali bullet</label>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>85</speed>
+      <armorPenetrationBase>0.14</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>IWRevolver</defName>
+    <label>Independent Worlds revolver</label>
+    <description>A Terran influenced non-Illuminate revolver. Despite its non-Avali nature, this cylinder shooter still shouldn’t be mistaken for a kit’s toy to the same kin that designed it. Sporting short range accuracy and a punchy bullet, it’s a good weapon for an Avali that wants an easy to both maintain and make weapon.</description>
+    <graphicData>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Revolver</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <weaponTags>
+      <li>IWAvaliWeapons</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>3400</WorkToMake>
+      <Mass>2.5</Mass>
+      <AccuracyTouch>0.74</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.49</AccuracyMedium>
+      <AccuracyLong>0.37</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>IWRevolverBullet</defaultProjectile>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <range>21.5</range>
+        <warmupTime>0.2</warmupTime>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    
+    <recipeMaker>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+  </ThingDef>
+  
+</Defs>

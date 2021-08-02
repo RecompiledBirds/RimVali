@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ConceptDef>
+    <defName>RimValiBasicConcept</defName>
+    <label>Avali</label>
+    <priority>1000</priority>
+    <helpText>Hi! It appears at least 1 avali is in your colony. Avali can do avali-related research, build avali-only buidlings, and use any avali related items. But, Avali need to be kept cold, and are normally weaker than humans. But their tech makes them dangerous.</helpText>
+  </ConceptDef>
+</Defs>

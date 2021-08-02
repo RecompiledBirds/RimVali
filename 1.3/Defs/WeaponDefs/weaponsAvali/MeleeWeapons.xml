@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef Name="AvaliMeleeWeapon_Sharp_Quality" Abstract="True" ParentName="BaseMeleeWeapon_Sharp">
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponMelee</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Scythe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliScythe</defName>
+    <label>Avali Scythe</label>
+    <description>A high-tech Avali scythe. Unlike most Ferrogel weapons, this one’s blade isn’t actually supposed to break in the target. Despite this it still has an advanced printer in the blade’s base to replace it when it gets dull. Whilst its viability for actual combat is questionable, being attacked by this weapon is still going to deal great damage.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>10</AvaliAerogel>
+      <Steel>20</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>3000</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali Scythe Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Scythe Blade</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedMelee</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>2</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  
+  
+   
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Axe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliAxe</defName>
+    <label>Avali Axe</label>
+    <description>A dangerous Avali battle axe. Truly meant for combat, this weapon uses vibrations to cut into the skin of the enemy, after multiple hits the blade will break off and stick in its target’s flesh before rapidly being reconstructed by the printer in its head. It is renowned for its brutality and the surprising force an Avali can strike down with it.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>10</AvaliAerogel>
+      <Steel>15</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali axe Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Axe Blade</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>5.2</power>
+        <cooldownTime>1</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedMelee</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Knife</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliKnife</defName>
+    <label>Avali knife</label>
+    <description>A small Avali survival knife. Whilst primarily used together with its vibrating blade as a tool to cut food and small objects with, it is still a dangerous hold-out weapon, able to use its vibrating blade to cut through an enemy with ease and being able to reprint the blade when it shatters in the enemy or simply gets too dull with just the same amount of ease.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>5</AvaliAerogel>
+      <Steel>5</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali knife Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Knife Blade</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>2.2</power>
+        <cooldownTime>0.2</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>1</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  
+  
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Spear</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliSpear</defName>
+    <label>Avali Spear</label>
+    <description>An elegant and long Avali spear. Being popular for both the low amount of training required and the large amount of ferrogel able to be stored in it to reprint its head with. It is perhaps the most viable weapon to train beginners with but is also dangerous in the talons of masters with its sharp and explicitly fragile head.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costList>
+      <AvaliAerogel>5</AvaliAerogel>
+      <Steel>35</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali Spear Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Spear Blade</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>5</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+  
+      <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+    <graphicData>
+      <texPath>avali/Things/Weapons/Melee/Viroblade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <defName>AvaliViroblade</defName>
+    <label>Avali Viroblade</label>
+    <description>The renowned and highly iconic Avali sword. Perhaps it is the vibrating blade and the song-like hum it creates that makes it so popular. Or perhaps it is the splintering ferrogel blade instead, creating many deadly injuries. Whatever the reason may be, this blade has a legendary reputation and a bodycount to support it.</description>
+    <uiIconScale>1.2</uiIconScale>
+    <techLevel>Spacer</techLevel>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <costList>
+      <AvaliAerogel>15</AvaliAerogel>
+      <Steel>35</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>1400</WorkToMake>
+      <Mass>0.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>Avali Viroblade Handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>3</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Viroblade guard</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Avali Viroblade</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>AvaliAdvancedMelee</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>AvaliNanoForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
