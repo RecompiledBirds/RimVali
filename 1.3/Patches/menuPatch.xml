@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+
+<Patch>
+<!-- 
+
+        <Operation Class="AvaliMod.PatchOperationRandInsert">
+          <xpath>/Defs/ExpansionDef[defName="Core"]/linkedMod</xpath>
+          <randValue>
+           < duplicated for commonality >
+
+            <li>
+              <backgroundPath>avali/Menu</backgroundPath>
+            </li>
+            <li>
+              <backgroundPath>avali/Menu</backgroundPath>
+            </li>
+            <li>
+              <backgroundPath>avali/Menu</backgroundPath>
+            </li>
+            <li>
+              <backgroundPath>avali/Menu</backgroundPath>
+            </li>
+            <li>
+                <backgroundPath>avali/Menu2</backgroundPath>
+             </li>
+          </randValue>
+        </Operation>
+        <Operation Class="AvaliMod.PatchOperationRandReplace">
+          <xpath>/Defs/ExpansionDef[defName="Royalty"]/backgroundPath</xpath>
+            <randValue>
+              <li>
+                <backgroundPath>avali/Menu</backgroundPath>
+             </li>
+             <li>
+              <backgroundPath>avali/Menu</backgroundPath>
+            </li>
+            <li>
+              <backgroundPath>avali/Menu</backgroundPath>
+            </li>
+            <li>
+              <backgroundPath>avali/Menu</backgroundPath>
+            </li>
+             <li>
+                <backgroundPath>avali/Menu2</backgroundPath>
+             </li>
+          </randValue>
+          <success>Always</success>
+        </Operation>
+  -->
+ </Patch>
