@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <DamageDef ParentName="Bite">
+    <defName>AmmoniaBite</defName>
+    <label>ammonia bite</label>
+    <additionalHediffs>
+      <li>
+        <hediff>AmmoniaPoisoning</hediff>
+        <severityPerDamageDealt>0.018</severityPerDamageDealt>
+        <victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+        <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+</Defs>
