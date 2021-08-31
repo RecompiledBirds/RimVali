@@ -8,7 +8,7 @@
       <li>Apparel</li>
     </thingCategories>     
     <label>Avali spec ops armor</label>
-    <description>A combat suit.</description>
+    <description>A set of dark Avali special operations armour. Covering nearly their entire body barring their head, this large suit of armour provides the wearer with much protection from any hostile elements. Be it temperature, bullets, physical attacks or even toxic particles. Regretfully, due to its large size and somewhat bulky nature—the wearer has a slightly harder time moving but that’s the cost for survival.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -44,7 +44,8 @@
     
     <equippedStatOffsets>
       <MoveSpeed>-2</MoveSpeed>
-	  <ToxicSensitivity>1.5</ToxicSensitivity>
+	  <ToxicSensitivity>-0.5</ToxicSensitivity>
+	    <BluntDamageMultiplier>0.15<BluntDamageMultiplier>
     </equippedStatOffsets>
     <costList>
      <ComponentIndustrial>10</ComponentIndustrial>
@@ -111,7 +112,7 @@
       <li>Apparel</li>
     </thingCategories>
     <label>Avali spec ops helmet</label>
-    <description>An avali spec ops helmet.</description>
+    <description>A dark Avali special operations helmet. Going over their head, this piece of headwear is commonly paired with the rest of the suit. Giving the same protections and bulkiness as the rest of the suit does, it in turn also gives the wearer a simple LASER based targeting system that heightens their hit probability with ranged weapons.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -148,7 +149,7 @@
     <equippedStatOffsets>
       <ShootingAccuracyPawn>+0.2</ShootingAccuracyPawn>
       <MoveSpeed>-1.5</MoveSpeed>
-	  <ToxicSensitivity>1.5</ToxicSensitivity>
+	  <ToxicSensitivity>-0.5</ToxicSensitivity>
     </equippedStatOffsets>
     <costList>
      <ComponentIndustrial>10</ComponentIndustrial>
@@ -215,7 +216,7 @@
       <li>AvaliHelmets</li>
       <li>Apparel</li>
     </thingCategories>
-    <description>An avali scout helmet.</description>
+    <description>A light Avali scout helmet. Going on their head and barely protecting the ears, this piece of headwear is commonly paired with the rest of the suit. Giving the same protections as the rest of the suit, it in turn also features an antenna that allows them to communicate with homebase, sometimes even allowing them to receive information about the target they’re shooting at.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -241,8 +242,8 @@
       <MaxHitPoints>240</MaxHitPoints>
       <Mass>1.5</Mass>
       <Flammability>0.02</Flammability>
-      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.46</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.28</ArmorRating_Blunt>
       <ArmorRating_Heat>0.3</ArmorRating_Heat>
       <Insulation_Cold>4</Insulation_Cold>
       <Insulation_Heat>2</Insulation_Heat>
@@ -311,7 +312,7 @@
       <li>Apparel</li>
     </thingCategories>
     <label>Avali combat helmet</label>
-    <description>An avali combat helmet.</description>
+    <description>A bulky Avali combat helmet. Covering the entirety of an Avali’s head, this piece of headwear is commonly paired with the rest of the suit. Giving the same protections and bulkiness as the rest of the suit, it brings a strong piece of headwear that is certain to improve chances of survival, albeit it doesn’t bring much advanced technology wise.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -337,9 +338,9 @@
       <MaxHitPoints>200</MaxHitPoints>
       <Mass>3</Mass>
       <Flammability>0.02</Flammability>
-      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.3</ArmorRating_Heat>
+      <ArmorRating_Sharp>0.58</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.37</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.34</ArmorRating_Heat>
       <Insulation_Cold>4</Insulation_Cold>
       <Insulation_Heat>2</Insulation_Heat>
       <EquipDelay>4</EquipDelay>
@@ -405,7 +406,7 @@
       <li>Apparel</li>
     </thingCategories>
     <label>Avali combat armor</label>
-    <description>A Illuminate combat suit.</description>
+    <description>A set of bulky combat armour. Covering nearly their entire body barring their head and tailfeather, this suit gives the wearer much needed protection against bullet based or physical attacks. Whilst its bulky nature does make the wearer somewhat slower, it’s a somewhat cheap option when compared to more advanced suits. As such it is sometimes jokingly referred to as “Avali plate armour” because of it.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -432,8 +433,8 @@
       <MaxHitPoints>150</MaxHitPoints>
       <Mass>3</Mass>
       <Flammability>0.02</Flammability>
-      <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.34</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
       <ArmorRating_Heat>0.3</ArmorRating_Heat>
       <Insulation_Cold>10</Insulation_Cold>
       <Insulation_Heat>10</Insulation_Heat>
@@ -442,6 +443,7 @@
     
     <equippedStatOffsets>
       <MoveSpeed>-1</MoveSpeed>
+	    <BluntDamageMultiplier>0.05<BluntDamageMultiplier>
     </equippedStatOffsets>
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -509,7 +511,7 @@
       <li>AvaliArmor</li>
       <li>Apparel</li>
     </thingCategories>     
-    <description>A combat suit.</description>
+    <description>A set of sleek Avali scout armour. Covering nearly their entire body barring their head and tail, this suit brings true scouting capabilities to the table. Whilst not as protective as other armours, it does increase the wearer’s speed with the help of its exo-skeleton. Allowing for better evasion of enemies or perhaps a more rapid approach with a close ranged weapon.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -535,8 +537,8 @@
       <MaxHitPoints>240</MaxHitPoints>
       <Mass>1.5</Mass>
       <Flammability>0.02</Flammability>
-       <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+       <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.34</ArmorRating_Blunt>
       <ArmorRating_Heat>0.2</ArmorRating_Heat>
       <Insulation_Cold>4</Insulation_Cold>
       <Insulation_Heat>6</Insulation_Heat>
@@ -544,7 +546,7 @@
     </statBases>
     
     <equippedStatOffsets>
-
+	<MoveSpeed>0.6</MoveSpeed>
     </equippedStatOffsets>
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -607,7 +609,7 @@
   <ThingDef ParentName="ArmorSmithableBase">
     <defName>NezaiArmor</defName>
     <label>Gold avali armor</label>
-    <description>An avali's power armor.</description>
+    <description>A beautiful set of golden Avali armour. Covering nearly their entire body barring their head and tailfeather, this suit of armour whilst at first seeming ceremonial brings a lot of protection in reality. The golden ornaments on this piece of armour hides sheets of an uranium, plasteel and tungsten composite. Whilst pretty timely to put on, its exo-skeleton makes it bearable enough to wear but still doesn't help with the bulkiness of it. Despite this, it surely has a striking appearance that can impress anyone who lays their eyes on it.</description>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
       <skillRequirements>
@@ -636,6 +638,7 @@
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-2.0</MoveSpeed>
+	    <SocialImpact>0.4<SocialImpact>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>
