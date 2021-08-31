@@ -11,7 +11,13 @@ namespace AvaliMod
         public static IEnumerable<ModuleDef> moduleDefs = DefDatabase<ModuleDef>.AllDefs;
         public static void startup()
         {
+            
+          //  AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
+          //  AvaliDefs.IWAvaliRace.race.baseHealthScale = RimValiMod.settings.healthScale;
+
+            
             moduleDefs = DefDatabase<ModuleDef>.AllDefs;
+           
             foreach (ModuleDef module in moduleDefs)
             {
                 if (!RimValiUtility.modulesFound.ToLower().Contains(module.name.ToLower()))
@@ -20,18 +26,13 @@ namespace AvaliMod
 
                     Log.Message(module.name);
                     RimValiUtility.modulesFound = RimValiUtility.modulesFound + module.name + "\n";
-                    AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
-                    AvaliDefs.IWAvaliRace.race.baseHealthScale = RimValiMod.settings.healthScale;
-                    AvaliDefs.IWAvaliRace.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMax, value = RimValiMod.settings.IWAvaliMaxTemp });
-                    AvaliDefs.IWAvaliRace.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMin, value = RimValiMod.settings.IWAvaliMinTemp });
-                    AvaliDefs.RimVali.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMax, value = RimValiMod.settings.IlluminateAvaliMaxTemp });
-                    AvaliDefs.RimVali.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMin, value = RimValiMod.settings.IlluminateAvaliMinTemp });
+
                     if (RimValiMod.settings.liteMode)
                     {
                         AvaliDefs.AvaliNanoForge.thingCategories = new List<ThingCategoryDef> { AvaliDefs.BuildingsSpecial };
                         AvaliDefs.AvaliNanoForge.PostLoad();
                         AvaliDefs.AvaliNanoForge.ResolveReferences();
-                        
+
                         AvaliDefs.AvaliNanoLoom.thingCategories = new List<ThingCategoryDef> { AvaliDefs.BuildingsSpecial };
                         AvaliDefs.AvaliNanoLoom.PostLoad();
                         AvaliDefs.AvaliNanoLoom.ResolveReferences();
@@ -41,7 +42,7 @@ namespace AvaliMod
                         AvaliDefs.AvaliResearchBench.ResolveReferences();
                         AvaliDefs.AvaliResearchBench.designationCategory.PostLoad();
                         AvaliDefs.AvaliResearchBench.designationCategory.ResolveReferences();
-                        foreach(ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x => x.IsWeapon && x.modContentPack.PackageId.ToLower() == "nezitheavali.rimvali"))
+                        foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x => x.IsWeapon && x.modContentPack.PackageId.ToLower() == "nezitheavali.rimvali"))
                         {
                             def.recipeMaker = new RecipeMakerProperties();
                             def.weaponTags = new List<string>();
@@ -55,27 +56,17 @@ namespace AvaliMod
                             def.recipeMaker = new RecipeMakerProperties();
                             def.weaponTags = new List<string>();
                             def.tradeTags = new List<string>();
-                            
+
                             def.PostLoad();
                             def.ResolveReferences();
                         }
                     }
                 }
             }
-           
-            //AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
-            //AvaliDefs.IWAvaliRace.race.baseHealthScale = RimValiMod.settings.healthScale;
-
-            /*
-            AvaliDefs.IWAvaliRace.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMax, value = RimValiMod.settings.IWAvaliMaxTemp });
-            AvaliDefs.IWAvaliRace.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMin, value = RimValiMod.settings.IWAvaliMinTemp });
-            AvaliDefs.RimVali.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMax, value = RimValiMod.settings.IlluminateAvaliMaxTemp });
-            AvaliDefs.RimVali.statBases.Add(new StatModifier() { stat = StatDefOf.ComfyTemperatureMin, value = RimValiMod.settings.IlluminateAvaliMinTemp });
-            */
         }
         static Modulefinder()
         {
-            startup();
+           startup();
         }
     }
 }
