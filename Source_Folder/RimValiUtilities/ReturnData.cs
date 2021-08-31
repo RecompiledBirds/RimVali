@@ -14,16 +14,22 @@ namespace AvaliMod
     {
         static RimValiDefChecks()
         {
-            setup();
+           // setup();
         }
-        public static void setup()
-        {
-            potentialRaces = DefDatabase<RimValiRaceDef>.AllDefs.Where(x => x.race != null).ToList();
-        }
-        public static List<ThingDef> potentialPackRaces = new List<ThingDef>();
-        public static List<RimValiRaceDef> potentialRaces = new List<RimValiRaceDef>();
 
-        public static IEnumerable<RimValiRaceDef> races = DefDatabase<RimValiRaceDef>.AllDefs.Where<RimValiRaceDef>(x => x is RimValiRaceDef);
+        public static List<ThingDef> PotentialPackRaces
+        {
+            get
+            {
+                if (potentialRaces == null) {
+                    potentialRaces = DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.comps.Any(comp => comp.compClass == typeof(PackComp))).ToList();
+                }
+                return potentialRaces;
+            }
+        }
+        public static List<ThingDef> potentialRaces;
+
+        public static IEnumerable<RimValiRaceDef> races = DefDatabase<RimValiRaceDef>.AllDefs.Where(x => x is RimValiRaceDef);
 
     }
 }

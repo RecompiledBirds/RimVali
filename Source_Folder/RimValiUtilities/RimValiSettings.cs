@@ -116,12 +116,17 @@ namespace AvaliMod
         public static RimValiModSettings settings;
         public ModContentPack mod;
         private bool hasCollectedModules = false;
-        bool showingEyesColors;
-        bool showingSkinColors;
-        bool showingPackLossSettings;
-        bool showingTemperatureSettings;
+        private static string dir;
+        public static string GetDir
+        {
+            get
+            {
+                return dir;
+            }
+        }
         public RimValiMod(ModContentPack content) : base(content)
         {
+            dir = content.RootDir.ToString();
             if (!hasCollectedModules)
             {
                 Modulefinder.startup();
@@ -242,9 +247,9 @@ namespace AvaliMod
                 listing_Standard.CheckboxLabeled("AirdropsText".Translate(), ref settings.enableAirdrops, "AirdropsLabel".Translate());
                 listing_Standard.Label("AvaliForDropReq".Translate(settings.avaliRequiredForDrop.Named("COUNT")));
                 settings.avaliRequiredForDrop = (int)listing_Standard.Slider(settings.avaliRequiredForDrop, 0, 100);
+                float scale = settings.healthScale;
                 listing_Standard.Label("HPScaler".Translate(settings.healthScale.Named("SCALE")));
                 settings.healthScale = (float)listing_Standard.Slider(settings.healthScale, 0.01f, 2.5f);
-
 
                 listing_Standard.Label("ChanceToHackTech".Translate(settings.hackChance.Named("CHANCE")));
                 settings.hackChance = (int)listing_Standard.Slider(settings.hackChance, 0, 100);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
+using System.Text;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -11,6 +12,7 @@ namespace AvaliMod
 	[StaticConstructorOnStartup]
 	public class UIResources
 	{
+		public static readonly Texture2D NegativePackOP = SolidColorMaterials.NewSolidColorTexture(new Color(247, 0, 0));
 		public static readonly Texture2D Rename = ContentFinder<Texture2D>.Get("UI/Buttons/Rename", true);
 	}
 
@@ -30,23 +32,50 @@ namespace AvaliMod
 		{
 			return pack.name;
 		}
-		public Vector2 WinSize = new Vector2(630f, 510f);
+		float heightOffset = 12f;
+		float packMembersRectSize = 300f;
+		public Vector2 WinSize = new Vector2(700, 400);
 		protected override void FillTab()
 		{
 			bool debugSquares = RimValiMod.settings.enableDebugMode;
-			Listing_Standard ls = new Listing_Standard();
+			
 
 
 			Text.Font = GameFont.Small;
-			Rect rect = new Rect(0f, 20f, this.size.x, this.size.y - 20f).ContractedBy(10f);
+			Rect rect = new Rect(0f, 20f, size.x, size.y - 20f).ContractedBy(10f);
 
 			Rect position = new Rect(rect.x, rect.y, rect.width, rect.height);
 			GUI.BeginGroup(position);
 			Text.Font = GameFont.Small;
 			GUI.color = Color.white;
 			Rect outRect = new Rect(0f, 0f, position.width, position.height);
-			Rect viewRect = new Rect(0f, 0f, position.width - 16f, this.scrollViewHeight);
-			Widgets.BeginScrollView(outRect, ref this.scrollPosition, viewRect, true);
+			Rect viewRect = new Rect(0f, 0f, position.width - 16f, scrollViewHeight);
+
+
+
+			//COMPILED BY NESGUI
+			//Prepare varibles
+
+			GameFont prevFont = Text.Font;
+			TextAnchor textAnchor = Text.Anchor;
+
+			//Rect pass
+
+			Rect packNameRect = new Rect(new Vector2(5f, 5f), new Vector2(600f, 30f));
+			Rect changeNameRect = new Rect(new Vector2(605f, 5f), new Vector2(30f, 30f));
+			Rect countRect = new Rect(new Vector2(635f, 5f), new Vector2(55f, 30f));
+			Rect packLeaderLabelRect = new Rect(new Vector2(5f, 45f), new Vector2(90f, 25f));
+			Rect leaderNameRect = new Rect(new Vector2(95f, 45f), new Vector2(110f, 25f));
+			Rect pawnListRect = new Rect(new Vector2(5f, 75f), new Vector2(200f, 310f));
+			Rect pawnLikedLabelRect = new Rect(new Vector2(205f, 45f), new Vector2(125f, 25f));
+			Rect pawnLikedFillRect = new Rect(new Vector2(340f, 45f), new Vector2(350f, 25f));
+			Rect packTypeRect = new Rect(new Vector2(205f, 75f), new Vector2(240f, 310f));
+			Rect packRelationsRect = new Rect(new Vector2(445f, 75f), new Vector2(245f, 310f));
+
+			//END NESGUI CODE
+
+
+			Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect, true);
 			try
 			{
 				{
@@ -69,14 +98,13 @@ namespace AvaliMod
 								packSpecialityName = skillDef.specialityLabel;
 								foreach (string str in skillDef.effectList)
 								{
-									effects = effects + $"{str}\n";
-
+									effects = $"{effects} {str}\n";
 								}
 							}
 
 						}
 						Text.Font = GameFont.Medium;
-						Rect PackNameRect = new Rect(outRect.xMin, rectPosY, 500f, 30f);
+						Rect PackNameRect = new Rect(outRect.xMin, rectPosY, packMembersRectSize, 30f);
 						Rect RenameButtonRect = new Rect(outRect.xMax - 30f, rectPosY, 30f, 30f);
 						Widgets.DrawLineHorizontal(0f, (PackNameRect.yMax + 10f), rect.width);
 						Text.Font = GameFont.Small;
@@ -84,74 +112,96 @@ namespace AvaliMod
 						rectPosY += 20f;
 
 
-						Rect PackMemberListRect = new Rect(outRect.xMin, rectPosY, 500f, outRect.height);
-						Rect PackMemberListViewRect = new Rect(outRect.xMin, rectPosY, 480f, pack.GetAllNonNullPawns.Count * 30f);
+						Rect packMemberListViewRect = new Rect(pawnListRect.x-5, pawnListRect.y-10, pawnListRect.width-5, pack.GetAllNonNullPawns.Count * 30f);
 
-						Rect PackMemberCountRect = new Rect(outRect.RightHalf().x, rectPosY, 40f, 30f);
 						string packcount = pack.GetAllNonNullPawns.Count.ToString() + "/" + maxSize.ToString();
 
-						Rect bonusRect = new Rect(PackMemberCountRect.xMax, rectPosY, outRect.RightHalf().width, outRect.RightHalf().height);
-						Rect bonusViewRect = new Rect(PackMemberCountRect.x + PackMemberCountRect.width, rectPosY, outRect.RightHalf().width - 20, listCount * 30f);
+						
 						float num = rectPosY;
 						float y = membersScrollPos.y;
-						float num2 = membersScrollPos.y + PackMemberListRect.height;
+						float num2 = membersScrollPos.y + pawnListRect.height;
 						void drawLabels()
 						{
 							//Count
-							Widgets.Label(PackMemberCountRect, packcount);
-
-							//List of packmates
+							Widgets.Label(countRect, packcount);
 							num = rectPosY;
 							y = membersScrollPos.y;
-							num2 = membersScrollPos.y + PackMemberListRect.height;
-							Widgets.BeginScrollView(PackMemberListRect, ref membersScrollPos, PackMemberListViewRect, true);
+							num2 = membersScrollPos.y + pawnListRect.height;
+							Widgets.BeginScrollView(pawnListRect, ref membersScrollPos, packMemberListViewRect, true);
 							{
-								foreach(Pawn p in pack.GetAllNonNullPawns)
-                                {
-									float rowHeight = 30f;
-									if (num > y - rowHeight && num < num2){DrawMemberRow(num, PackMemberListRect.width, p);}
-									num += rowHeight;
+								foreach (Pawn p in pack.GetAllNonNullPawns)
+								{
+									if (p != pack.leaderPawn)
+									{
+										float rowHeight = 30f;
+										if (num > y - rowHeight && num < num2) { DrawMemberRow(num, pawnListRect.width, p); }
+										num += rowHeight;
+									}
 								}
 							}
 							Widgets.EndScrollView();
 
-							//Name
-							Widgets.Label(PackNameRect, GetPackName(rect, pack));
-							if (Widgets.ButtonImage(RenameButtonRect, UIResources.Rename, true)){Find.WindowStack.Add(new Dialog_NamePack(pawn));}
-							//Border line
-							float offset = 10f;
-							float heightOffset = 12f;
-							Widgets.DrawLine(new Vector2(bonusRect.x - offset, PackNameRect.y + PackNameRect.height + heightOffset), new Vector2(bonusRect.x - offset, bonusRect.y + bonusRect.height), Color.white, 1f);
+							Widgets.Label(packNameRect, GetPackName(rect, pack));
+							if (Widgets.ButtonImage(changeNameRect, UIResources.Rename, true)) { Find.WindowStack.Add(new Dialog_NamePack(pawn)); }
 
-							//Speciality
-
-							Widgets.Label(bonusRect, new GUIContent { text = $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}" });
+							Widgets.Label(packTypeRect, new GUIContent { text = $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}" });
 
 
+							float opinion = RimValiUtility.GetPackAvgOP(pack, pawn);
+							if (opinion > 0)
+							{
+								Widgets.FillableBar(pawnLikedFillRect, opinion/100);
+							}
+							else
+							{
+								Widgets.FillableBar(pawnLikedFillRect, -opinion/100, UIResources.NegativePackOP);
+							}
+							string name = pawn.Name.ToStringShort;
+							Widgets.DrawHighlightIfMouseover(pawnLikedFillRect);
+							Widgets.Label(pawnLikedLabelRect, "PackOpinionLabel".Translate());
+							StringBuilder builder = new StringBuilder();
+							builder.AppendLine("PackOpinionTooltip".Translate(opinion.Named("OPINION"),name.Named("PAWN")));
+							builder.AppendLine();
+							foreach(Pawn p in pack.GetAllNonNullPawns)
+                            {
+								if(p!=pawn)
+									builder.AppendLine($"{p.Name.ToStringShort}: {p.relations.OpinionOf(pawn)}");
+                            }
+							TooltipHandler.TipRegion(pawnLikedFillRect, builder.ToString());
+							builder.Clear();
 
+							Widgets.Label(packLeaderLabelRect, "PackLeaderLabel".Translate());
+							Widgets.Label(leaderNameRect, pack.leaderPawn.Name.ToStringShort);
+							if (Widgets.ButtonInvisible(leaderNameRect, true) && Current.ProgramState == ProgramState.Playing)
+							{
+								if (pack.leaderPawn.Dead) { Messages.Message("MessageCantSelectDeadPawn".Translate(pack.leaderPawn.LabelShort, pack.leaderPawn).CapitalizeFirst(), MessageTypeDefOf.RejectInput, false); }
+								else if (pack.leaderPawn.Spawned) { CameraJumper.TryJumpAndSelect(pack.leaderPawn); }
+								else { Messages.Message("MessageCantSelectOffMapPawn".Translate(pack.leaderPawn.LabelShort, pack.leaderPawn).CapitalizeFirst(), MessageTypeDefOf.RejectInput, false); }
+							}
+							
 						}
-						drawLabels();
+						
 
 						//Makes it easier to see the GUI layout
 						if (debugSquares)
 						{
-							Widgets.DrawBoxSolid(PackMemberListRect, Color.red);
-							Widgets.DrawBoxSolid(PackMemberListViewRect, Color.blue);
-							Widgets.DrawBoxSolid(PackNameRect, Color.magenta);
-							Widgets.DrawBoxSolid(bonusRect, Color.green);
-							Widgets.DrawBoxSolid(PackMemberCountRect, Color.cyan);
-							Widgets.DrawBoxSolid(bonusViewRect, Color.black);
-
-
-							drawLabels();
-
+							Widgets.DrawBoxSolid(pawnListRect, Color.red);
+							Widgets.DrawBoxSolid(pawnLikedLabelRect, Color.blue);
+							Widgets.DrawBoxSolid(packNameRect, Color.magenta);
+							Widgets.DrawBoxSolid(packTypeRect, Color.green);
+							Widgets.DrawBoxSolid(countRect, Color.cyan);
+							Widgets.DrawBoxSolid(pawnLikedFillRect, Color.black);
+							Widgets.DrawBoxSolid(packRelationsRect, Color.grey);
+							Widgets.DrawBoxSolid(leaderNameRect, Color.yellow);
+							Widgets.DrawBoxSolid(changeNameRect, Color.red);
+							Widgets.DrawBoxSolid(packLeaderLabelRect, Color.blue);
 						}
+
+						drawLabels();
 					}
 					else
 					{
 						Widgets.Label(rect, "NoPack".Translate());
-						//Log.Message("Pack list size: " + AvaliPackDriver.packs.Count);						
-						//Widgets.EndScrollView();
 					}
 				}
 			}catch(Exception e)
@@ -159,7 +209,6 @@ namespace AvaliMod
 				Log.Error(e.Message);
 				Widgets.Label(rect,$"Hey! If you are seeing this, something probably went wrong somewhere... sorry about that :( . I've logged the error: {e.Message}");
 			}
-			//Widgets.Label(rect, "test");
 			Widgets.EndScrollView();
 			GUI.EndGroup();
 		}
@@ -180,14 +229,11 @@ namespace AvaliMod
 			}
 			Rect rect4 = new Rect(0f, y + 3f, 500f, rowHeight - 3f);
 			Widgets.Label(rect4, otherPawn.Name.ToStringFull);
-
-			//SocialCardUtility.DrawPawnLabel(otherPawn, rect3);
-
 		}
 
 		public AvaliTab()
 		{
-			this.size = new Vector2(600f, 450f);
+			this.size = WinSize;
 			this.labelKey = "PackTab";
 		}
 
