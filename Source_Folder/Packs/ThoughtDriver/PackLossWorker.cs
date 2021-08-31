@@ -11,42 +11,32 @@ namespace AvaliMod
         int dayLen = 60000;
         public void UpdatePackLoss(Pawn pawn)
         {
-            AvaliThoughtDriver thoughtComp = pawn.TryGetComp<AvaliThoughtDriver>();
             PackComp packComp = pawn.TryGetComp<PackComp>();
-            AvaliPackDriver driver = Current.Game.GetComponent<AvaliPackDriver>();
             
-            if (packComp.ticksSinceLastInpack == 0 && (pawn.GetPackWithoutSelf() == null || pawn.GetPackWithoutSelf().pawns.Count == 0))
-            {
-                packComp.inPack= false;
-            }
-            else if (pawn.GetPackWithoutSelf() != null && pawn.GetPackWithoutSelf().pawns.Count > 1)
-            {
-                packComp.inPack =true;
-            }
+            if (packComp.ticksSinceLastInpack == 0 && (pawn.GetPackWithoutSelf() == null || pawn.GetPackWithoutSelf().GetAllNonNullPawns.EnumerableNullOrEmpty() ||pawn.GetPackWithoutSelf().GetAllNonNullPawns.Count == 0)){ packComp.inPack = false; }
+            else if (pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) || (pawn.GetPackWithoutSelf() != null && pawn.GetPackWithoutSelf().GetAllNonNullPawns.Count > 1)){packComp.inPack =true;}
         }
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
+
+            if (RimValiUtility.Driver==null || !RimValiUtility.Driver.PawnHasHadPack(p))
+            {
+                return ThoughtState.Inactive;
+            }
             
             PackComp packComp = p.TryGetComp<PackComp>();
             AvaliThoughtDriver thoughtComp = p.TryGetComp<AvaliThoughtDriver>();
 
-            if (p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken)|| thoughtComp == null||packComp == null|| p.health.hediffSet.hediffs.Any(x => thoughtComp.Props.packLossPreventers.Contains(x.def)) || !LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packLossEnabled)
-            {
-                return ThoughtState.Inactive; 
-            }
+            if (thoughtComp == null||packComp == null|| p.health.hediffSet.hediffs.Any(x => thoughtComp.Props.packLossPreventers.Contains(x.def)) || !LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packLossEnabled){return ThoughtState.Inactive; }
             UpdatePackLoss(p);
             
             int timeAlone = packComp.ticksSinceLastInpack;
-            if (timeAlone == Find.TickManager.TicksGame || timeAlone == 0)
-            { return ThoughtState.Inactive; }
+            if (timeAlone == Find.TickManager.TicksGame || timeAlone == 0){ return ThoughtState.Inactive; }
             if (timeAlone >= dayLen*stageThree)
             {
                 if (packComp.lastDay+3 < GenDate.DaysPassed)
                 {
-                    if (new Random().Next(0, 100) < RimValiMod.settings.packBrokenChance && RimValiMod.settings.canGetPackBroken && !p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
-                    {
-                        p.story.traits.GainTrait(new Trait(AvaliDefs.AvaliPackBroken));
-                    }
+                    if (new Random().Next(0, 100) < RimValiMod.settings.packBrokenChance * (RimValiUtility.Driver.GetPacksPawnHasHad(p) / 2) && RimValiMod.settings.canGetPackBroken && !p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken)){p.story.traits.GainTrait(new Trait(AvaliDefs.AvaliPackBroken));}
                     packComp.lastDay = GenDate.DaysPassed;
                 }
               
@@ -58,10 +48,7 @@ namespace AvaliMod
 
                 if (packComp.lastDay + 3 < GenDate.DaysPassed)
                 {
-                    if (new Random().Next(0, 100) < RimValiMod.settings.packBrokenChance && RimValiMod.settings.canGetPackBroken && !p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
-                    {
-                        p.story.traits.GainTrait(new Trait(AvaliDefs.AvaliPackBroken));
-                    }
+                    if (new Random().Next(0, 100) < (RimValiMod.settings.packBrokenChance*(RimValiUtility.Driver.GetPacksPawnHasHad(p)/3)) && RimValiMod.settings.canGetPackBroken && !p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken)){p.story.traits.GainTrait(new Trait(AvaliDefs.AvaliPackBroken));}
                     packComp.lastDay = GenDate.DaysPassed;
                 }
                 return ThoughtState.ActiveAtStage(1);

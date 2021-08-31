@@ -8,8 +8,7 @@ namespace AvaliMod
         protected override ThoughtState CurrentStateInternal(Pawn pawn)
         {
             AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-            PackComp packComp = pawn.TryGetComp<PackComp>();
-            if (!(avaliThoughtDriver == null) && pawn.Awake() && pawn.CheckIfPackmatesInRoom()) { 
+            if (RimValiUtility.Driver!=null && RimValiUtility.Driver.HasPack(pawn) && !(avaliThoughtDriver == null) && pawn.Awake() && pawn.CheckIfPackmatesInRoom()) { 
                 return ThoughtState.ActiveDefault;
             }
 
