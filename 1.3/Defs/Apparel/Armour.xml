@@ -45,7 +45,7 @@
     <equippedStatOffsets>
       <MoveSpeed>-2</MoveSpeed>
 	  <ToxicSensitivity>-0.5</ToxicSensitivity>
-	    <BluntDamageMultiplier>0.15<BluntDamageMultiplier>
+	    <BluntDamageMultiplier>0.15</BluntDamageMultiplier>
     </equippedStatOffsets>
     <costList>
      <ComponentIndustrial>10</ComponentIndustrial>
@@ -443,7 +443,7 @@
     
     <equippedStatOffsets>
       <MoveSpeed>-1</MoveSpeed>
-	    <BluntDamageMultiplier>0.05<BluntDamageMultiplier>
+	    <BluntDamageMultiplier>0.05</BluntDamageMultiplier>
     </equippedStatOffsets>
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -638,7 +638,7 @@
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-2.0</MoveSpeed>
-	    <SocialImpact>0.4<SocialImpact>
+	    <SocialImpact>0.4</SocialImpact>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>
