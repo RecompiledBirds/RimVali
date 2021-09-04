@@ -106,10 +106,10 @@ namespace AvaliMod
                 hasDropped = true;
                 //TODO: Figure out why this doesn't seem to be working.
                 //Assembly outdated?
-                /*foreach(Faction faction in Find.FactionManager.AllFactions.Where(x => x.def == AvaliDefs.AvaliFaction))
+                foreach(Faction faction in Find.FactionManager.AllFactions.Where(x => x.def == AvaliDefs.AvaliFaction))
                 {
-                    faction.TryAffectGoodwillWith(Faction.OfPlayer, 200, true, false, "Illuminate colony");
-                }*/
+                    faction.TryAffectGoodwillWith(Faction.OfPlayer, 200, true, false);
+                }
                 DropPodUtility.DropThingsNear(targetPos, map, thingList);
                 ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliDefs.IlluminateAirdrop, lookTargets: new LookTargets() { targets = new List<GlobalTargetInfo>() {targ } });
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);

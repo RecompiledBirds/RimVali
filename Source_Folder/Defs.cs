@@ -61,6 +61,7 @@ namespace AvaliMod
 
         //Faction defs
         public static FactionDef AvaliFaction;
+        public static FactionDef NesiSpecOps;
 
         //Research defs
         public static ResearchProjectDef AvaliAdvancedGuns;
@@ -78,5 +79,11 @@ namespace AvaliMod
         public static ThoughtDef AvaliPackLoss;
 
         public static HairDef RVRNoHair;
+
+
+
+
+        //Pawn Kinds
+        public static PawnKindDef RimValiColonist;
     }
 }

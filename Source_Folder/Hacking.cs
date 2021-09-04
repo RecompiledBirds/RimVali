@@ -70,6 +70,7 @@ namespace AvaliMod
         }
         float day = 60000;
         int tick;
+        
         public override void WorldComponentTick()
         {
             if (Find.ResearchManager.currentProj != null)

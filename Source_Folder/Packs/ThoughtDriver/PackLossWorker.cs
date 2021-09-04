@@ -12,9 +12,15 @@ namespace AvaliMod
         public void UpdatePackLoss(Pawn pawn)
         {
             PackComp packComp = pawn.TryGetComp<PackComp>();
-            
-            if (packComp.ticksSinceLastInpack == 0 && (pawn.GetPackWithoutSelf() == null || pawn.GetPackWithoutSelf().GetAllNonNullPawns.EnumerableNullOrEmpty() ||pawn.GetPackWithoutSelf().GetAllNonNullPawns.Count == 0)){ packComp.inPack = false; }
-            else if (pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) || (pawn.GetPackWithoutSelf() != null && pawn.GetPackWithoutSelf().GetAllNonNullPawns.Count > 1)){packComp.inPack =true;}
+
+            if (packComp.ticksSinceLastInpack == 0 && (pawn.GetPackWithoutSelf() == null || pawn.GetPackWithoutSelf().GetAllNonNullPawns.EnumerableNullOrEmpty() || pawn.GetPackWithoutSelf().GetAllNonNullPawns.Count == 0))
+            {
+                packComp.inPack = false;
+            }
+            else if (pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) || (pawn.GetPackWithoutSelf() != null && pawn.GetPackWithoutSelf().GetAllNonNullPawns.Count > 1))
+            {
+                packComp.inPack = true;
+            }
         }
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
@@ -27,7 +33,9 @@ namespace AvaliMod
             PackComp packComp = p.TryGetComp<PackComp>();
             AvaliThoughtDriver thoughtComp = p.TryGetComp<AvaliThoughtDriver>();
 
-            if (thoughtComp == null||packComp == null|| p.health.hediffSet.hediffs.Any(x => thoughtComp.Props.packLossPreventers.Contains(x.def)) || !LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packLossEnabled){return ThoughtState.Inactive; }
+            if (thoughtComp == null||packComp == null ||p.health.hediffSet.hediffs.Any(x => thoughtComp.Props.packLossPreventers.Contains(x.def)) || !LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packLossEnabled){
+                return ThoughtState.Inactive; 
+            }
             UpdatePackLoss(p);
             
             int timeAlone = packComp.ticksSinceLastInpack;

@@ -13,119 +13,27 @@ namespace AvaliMod
         public RoomThoughtsHandler(Map map) : base(map)
         {
         }
-        public List<Pawn> pawns = new List<Pawn>();
+        public IEnumerable<Pawn> pawns;
         void UpdateAllPawnThoughts()
         {
-            foreach(Pawn pawn in pawns)
+            foreach (Pawn pawn in pawns)
             {
-                float qual = pawn.GetRoomQuality();
-                bool sharedRoom = pawn.SharedBedroom();
 
-                if (sharedRoom && !pawn.needs.mood.thoughts.memories.Memories.Any(x => x.def == AvaliDefs.AvaliSharedBedRoom))
+                bool sharedRoom = pawn.SharedBedroom();
+                if (!pawn.Awake())
                 {
-                    ThoughtDef thoughtDef = AvaliDefs.AvaliSharedBedRoom;
-                    if( qual < 20)
+                    if (sharedRoom && !pawn.needs.mood.thoughts.memories.Memories.Any(x => x.def == AvaliDefs.AvaliSharedBedRoom))
                     {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 0);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }else if(qual >= 20 && qual < 30)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 1);
+                        ThoughtDef thoughtDef = AvaliDefs.AvaliSharedBedRoom;
+                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, RoomStatDefOf.Impressiveness.GetScoreStageIndex(pawn.CurrentBed().GetRoom().GetStat(RoomStatDefOf.Impressiveness)));
                         pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
                     }
-                    else if (qual >= 30 && qual <40)
+                    else if (!sharedRoom && !pawn.needs.mood.thoughts.memories.Memories.Any(x => x.def == AvaliDefs.AvaliSleptAlone))
                     {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 2);
+                        ThoughtDef thoughtDef = AvaliDefs.AvaliSleptAlone;
+                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, RoomStatDefOf.Impressiveness.GetScoreStageIndex(pawn.CurrentBed().GetRoom().GetStat(RoomStatDefOf.Impressiveness)));
                         pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 40 && qual <50)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 3);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 50 && qual < 65)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 4);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 65 && qual < 85)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 5);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 85 && qual < 120)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 6);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 120 && qual < 170)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 7);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 170 && qual < 240)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 8);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 240)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 9);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                }
-                else if( !sharedRoom&& !pawn.needs.mood.thoughts.memories.Memories.Any(x => x.def == AvaliDefs.AvaliSleptAlone))
-                {
-                    ThoughtDef thoughtDef = AvaliDefs.AvaliSleptAlone;
-                    if (qual < 20)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 0);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 20 && qual < 30)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 1);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 30 && qual < 40)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 2);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 40 && qual < 50)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 3);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 50 && qual < 65)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 4);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 65 && qual < 85)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 5);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 85 && qual < 120)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 6);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 85 && qual < 120)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 7);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 170 && qual < 240)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 8);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
-                    }
-                    else if (qual >= 240)
-                    {
-                        Thought_Memory mem = ThoughtMaker.MakeThought(thoughtDef, 9);
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(mem);
+
                     }
                 }
             }
@@ -136,10 +44,10 @@ namespace AvaliMod
         {
             if (tick == 240)
             {
-                /*pawns = map.mapPawns.AllPawns.Where(x => (x.def == AvaliDefs.RimVali || x.def.defName == "IWAvaliRace") && !x.Awake()).ToList();
+                pawns = RimValiCore.RimValiUtility.AllPawnsOfRaceOnMap(new List<ThingDef> { AvaliDefs.RimVali, AvaliDefs.IWAvaliRace }, map);
                 Task task = new Task(UpdateAllPawnThoughts);
-                task.Start();*/
-                UpdateAllPawnThoughts();
+                task.Start();
+               //UpdateAllPawnThoughts();
                 tick = 0;
             }
             tick++;

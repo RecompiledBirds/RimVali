@@ -11,7 +11,7 @@ namespace AvaliMod
             {
                 if (pawn.health.hediffSet.HasHediff(hediff))
                 {
-                    return;
+                   return;
                 }
                 BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement<BodyPartRecord>();
                 pawn.health.AddHediff(hediff, bodyPartRecord);

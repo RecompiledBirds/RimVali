@@ -72,14 +72,8 @@ namespace AvaliMod
                         Log.Message("onItem [pre-add]: " + onItem.ToString());
                         Log.Message("Hediff at position: " + conflictingHediffs[onItem].ToString());
                     }
-                    if ((onItem + 1) >= conflictingHediffs.Count)
-                    {
-                        output = output + hediffDef.label + ". ";
-                    }
-                    else
-                    {
-                        output = output + hediffDef.label + ", ";
-                    }
+                    if ((onItem + 1) >= conflictingHediffs.Count){output = output + hediffDef.label + ". ";}
+                    else{output = output + hediffDef.label + ", ";}
                     onItem = onItem + 1;
                     if (debugInfo)
                     {

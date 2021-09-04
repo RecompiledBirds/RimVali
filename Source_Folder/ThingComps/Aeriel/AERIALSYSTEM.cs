@@ -381,7 +381,7 @@ namespace AvaliMod
 		// Token: 0x06007DD6 RID: 32214 RVA: 0x0005490D File Offset: 0x00052B0D
 		public override void Draw()
 		{
-			this.top.DrawTurret();
+			this.top.DrawTurret(Vector3.zero,0.0f);
 			base.Draw();
 		}
 
