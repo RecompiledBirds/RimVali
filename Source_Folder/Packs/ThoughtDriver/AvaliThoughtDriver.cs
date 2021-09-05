@@ -66,21 +66,6 @@ namespace AvaliMod
             }
         }
 
-        public void UpdateThreaded()
-        {
-            UpdatePawns();
-            threadRunning = false;
-        }
-        public bool CanStartNextThread
-        {
-            get
-            {
-                ThreadPool.GetAvailableThreads(out int wThreads, out _);
-                return !threadRunning && wThreads > 0;
-            }
-        }
-
-
         public override void WorldComponentTick()
         {
             if (RimValiMod.settings.packThoughtsEnabled && mapCompOn && !(RimValiUtility.Driver.Packs == null) && RimValiUtility.Driver.Packs.Count > 0)
@@ -88,14 +73,13 @@ namespace AvaliMod
                 if (onTick == 120)
                 {
                     pawns = RimValiUtility.PawnsInWorld;
-                    if (multiThreaded && CanStartNextThread)
+                    if (multiThreaded)
                     {
-                        threadRunning = true;
-                        ThreadStart packThreadRef = new ThreadStart(UpdateThreaded);
-                        Thread packThread = new Thread(packThreadRef);
-                        packThread.Start();
+                        RimValiUtility.ThreadQueue.AddActionToQueue(UpdatePawns);
                     }
-                    else { UpdatePawns(); }
+                    else { 
+                        UpdatePawns(); 
+                    }
                     onTick = 0;
                 }
                 onTick++;

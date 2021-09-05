@@ -14,9 +14,21 @@ namespace AvaliMod
         public static string modulesFound = "Modules:\n";
         private static AvaliPackDriver driver;
         private static AvaliUpdater thoughtDriver;
-
+        private static ThreadQueue threadQueue;
 
         public static HashSet<Pawn> PawnsInWorld => RimValiCore.RimValiUtility.AllPawnsOfRaceInWorld(RimValiDefChecks.PotentialPackRaces).Where(x => !x.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) && x.Spawned).ToHashSet();
+        
+        public static ThreadQueue ThreadQueue
+        {
+            get
+            {
+                if (threadQueue == null)
+                {
+                    threadQueue = Current.Game.GetComponent<ThreadQueue>();
+                }
+                return threadQueue;
+            }
+        }
         public static AvaliPackDriver Driver
         {
             get

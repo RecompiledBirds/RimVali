@@ -186,15 +186,7 @@ namespace AvaliMod
         }
 
 
-        public bool CanStartNextThread
-        {
-            get
-            {
-
-                ThreadPool.GetAvailableThreads(out int wThreads, out _);
-                return !ThreadIsActive && wThreads > 0;
-            }
-        }
+        
 
         private bool hasKickedBack;
 
@@ -211,14 +203,13 @@ namespace AvaliMod
                 if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
                 {
 
-                    if (multiThreaded && CanStartNextThread)
+                    if (multiThreaded)
                     {
-
-                        ThreadIsActive = true;
-                        Task packTask = new Task(UpdatePacks);
-                        packTask.Start();
+                        RimValiUtility.ThreadQueue.AddActionToQueue(UpdatePacks);    
                     }
-                    else { UpdatePacks(); }
+                    else { 
+                        UpdatePacks(); 
+                    }
                     onTick = tickTime;
                 }
                 else { onTick--; }
