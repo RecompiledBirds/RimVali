@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  
-      <ThingDef ParentName="MakeableAERIALShellBase">
+  <ThingDef ParentName="MakeableAERIALShellBase">
     <defName>AERIALEMPShell</defName>
     <label>AERIAL EMP rocket</label>
     <description>A rocket with an onboard EMP device, made to be launched from the AERIAL system.</description>
@@ -31,7 +30,7 @@
       <researchPrerequisite>AERIELRES</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseBullet">
     <defName>AERIAL_EMP_SHELL</defName>
     <label>EMP shell</label>

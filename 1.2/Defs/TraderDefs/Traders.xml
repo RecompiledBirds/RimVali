@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <TraderKindDef>
-  <defName>AvaliResourceTrader</defName>
-  <label>Avali trader</label>
+    <defName>AvaliResourceTrader</defName>
+    <label>Avali trader</label>
     <stockGenerators>
 
       <!-- Resources -->
@@ -60,39 +60,39 @@
           <li>Pemmican</li>
         </thingDefs>
       </li>
-      
+
       <!-- Drugs -->
       <li Class="StockGenerator_Category">
         <categoryDef>Drugs</categoryDef>
       </li>
-      
+
       <!-- Techprints -->
       <!-- none -->
-      
+
       <!-- Weapons -->
       <!-- none -->
-      
+
       <!-- Apparel -->
       <li Class="StockGenerator_Clothes">
         <countRange>10~10</countRange>
       </li>
-      
+
       <!-- Implants -->
       <!-- none -->
-      
+
       <!-- Buildings -->
       <li Class="StockGenerator_Category">
         <categoryDef>BuildingsFurniture</categoryDef>
         <thingDefCountRange>3~3</thingDefCountRange>
         <countRange>1~1</countRange>
       </li>
-      
+
       <!-- Exotic -->
       <!-- none -->
-      
+
       <!-- Slaves -->
       <!-- none -->
-      
+
       <!-- Animals -->
       <li Class="StockGenerator_Animals">
         <maxWildness>0.70</maxWildness>
@@ -106,12 +106,12 @@
         <kindCountRange>1~1</kindCountRange>
         <countRange>3~4</countRange>
       </li>
-      
+
       <!-- Buying -->
       <li Class="StockGenerator_BuyExpensiveSimple" />
       <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
       <li Class="StockGenerator_BuyTradeTag"><tag>MusicalInstrument</tag></li>
-      
+
     </stockGenerators>
   </TraderKindDef>
 </Defs>

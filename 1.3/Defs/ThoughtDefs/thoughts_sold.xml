@@ -1,18 +1,18 @@
 <Defs>
-    <ThoughtDef ParentName="LostMemory">
-      <defName>PackmateSold</defName>
-      <durationDays>20</durationDays>
-      <stackLimit>50</stackLimit>
-      <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
-      <nullifyingTraits>
-        <li>Psychopath</li>
-      </nullifyingTraits>
-      <stages>
-        <li>
-          <label>My packmate {0} was sold</label>
-          <description>My packmate was sold, as if they were nothing more than something to trade for coins... I already miss them..</description>
-          <baseMoodEffect>-20</baseMoodEffect> 
-        </li>
-      </stages>
-    </ThoughtDef>
+  <ThoughtDef ParentName="LostMemory">
+    <defName>PackmateSold</defName>
+    <durationDays>20</durationDays>
+    <stackLimit>50</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>My packmate {0} was sold</label>
+        <description>My packmate was sold, as if they were nothing more than something to trade for coins... I already miss them..</description>
+        <baseMoodEffect>-20</baseMoodEffect> 
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

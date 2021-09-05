@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
- <!-- SpecOps armor -->
-<ThingDef ParentName="ArmorMachineableBase">
+  <!-- SpecOps armor -->
+  <ThingDef ParentName="ArmorMachineableBase">
     <defName>AvaliSpecOpsArmor</defName>
-     <thingCategories>
+    <thingCategories>
       <li>AvaliArmor</li>
       <li>Apparel</li>
     </thingCategories>     
@@ -41,14 +41,14 @@
       <Insulation_Cold>15</Insulation_Cold>
       <Insulation_Heat>15</Insulation_Heat>
     </statBases>
-    
+
     <equippedStatOffsets>
       <MoveSpeed>-2</MoveSpeed>
-	  <ToxicSensitivity>-0.5</ToxicSensitivity>
-	    <BluntDamageMultiplier>0.15</BluntDamageMultiplier>
+      <ToxicSensitivity>-0.5</ToxicSensitivity>
+      <BluntDamageMultiplier>0.15</BluntDamageMultiplier>
     </equippedStatOffsets>
     <costList>
-     <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentSpacer>3</ComponentSpacer>
       <Plasteel>45</Plasteel>
       <AeroTungstenCarbide>60</AeroTungstenCarbide>
@@ -102,12 +102,11 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
+
   <!-- spec ops helm -->
- <ThingDef ParentName="ArmorHelmetMakeableBase">
+  <ThingDef ParentName="ArmorHelmetMakeableBase">
     <defName>AvaliSpecOpsHelm</defName>
-      <thingCategories>
+    <thingCategories>
       <li>AvaliHelmets</li>
       <li>Apparel</li>
     </thingCategories>
@@ -116,7 +115,7 @@
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-    <researchPrerequisite>AvaliSpecOpsArmor</researchPrerequisite>
+      <researchPrerequisite>AvaliSpecOpsArmor</researchPrerequisite>
       <skillRequirements>
         <Crafting>15</Crafting>
       </skillRequirements>
@@ -145,14 +144,14 @@
       <Insulation_Heat>2</Insulation_Heat>
       <EquipDelay>6</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
       <ShootingAccuracyPawn>+0.2</ShootingAccuracyPawn>
       <MoveSpeed>-1.5</MoveSpeed>
-	  <ToxicSensitivity>-0.5</ToxicSensitivity>
+      <ToxicSensitivity>-0.5</ToxicSensitivity>
     </equippedStatOffsets>
     <costList>
-     <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentIndustrial>10</ComponentIndustrial>
       <ComponentSpacer>3</ComponentSpacer>
       <Plasteel>45</Plasteel>
       <AeroTungstenCarbide>60</AeroTungstenCarbide>
@@ -202,17 +201,13 @@
     </thingSetMakerTags>
 
   </ThingDef>
-  
-  
-  
-  
+
   <!-- Scout helm -->
 
-  
   <ThingDef ParentName="ArmorHelmetMakeableBase">
     <defName>AvaliScoutHelmet</defName>
     <label>Avali scout helmet</label>
-     <thingCategories>
+    <thingCategories>
       <li>AvaliHelmets</li>
       <li>Apparel</li>
     </thingCategories>
@@ -220,7 +215,7 @@
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-       <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
+      <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
       <skillRequirements>
         <Crafting>12</Crafting>
       </skillRequirements>
@@ -249,13 +244,13 @@
       <Insulation_Heat>2</Insulation_Heat>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
-	<AimingDelayFactor>-0.15</AimingDelayFactor>
+      <AimingDelayFactor>-0.15</AimingDelayFactor>
     </equippedStatOffsets>
     <costList>
-       <ComponentIndustrial>5</ComponentIndustrial>
-	   <ComponentSpacer>2</ComponentSpacer>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
       <Plasteel>20</Plasteel>
       <AvaliAerogel>10</AvaliAerogel>
     </costList>
@@ -264,7 +259,7 @@
         <li>Avali</li>
         <li>AvaliArmor</li>
         <li>AvaliScout</li>
-		<li>EVA</li>
+        <li>EVA</li>
       </tags>
       <bodyPartGroups>
         <li>FullHead</li>
@@ -307,7 +302,7 @@
   <!-- Combat helmet -->
   <ThingDef ParentName="ArmorHelmetMakeableBase">
     <defName>AvaliCombatHelmet</defName>
-      <thingCategories>
+    <thingCategories>
       <li>AvaliHelmets</li>
       <li>Apparel</li>
     </thingCategories>
@@ -316,7 +311,7 @@
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-       <researchPrerequisite>AvaliCombatArmor</researchPrerequisite>
+      <researchPrerequisite>AvaliCombatArmor</researchPrerequisite>
       <skillRequirements>
         <Crafting>6</Crafting>
       </skillRequirements>
@@ -345,9 +340,9 @@
       <Insulation_Heat>2</Insulation_Heat>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
-	<MoveSpeed>-0.5</MoveSpeed>
+      <MoveSpeed>-0.5</MoveSpeed>
     </equippedStatOffsets>
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -355,11 +350,11 @@
       <Steel>40</Steel>
     </costList>
     <apparel>
-    <tags>
-      <li>EVA</li>
-      <li>Avali</li>
-      <li>AvaliArmor</li>
-    </tags>
+      <tags>
+        <li>EVA</li>
+        <li>Avali</li>
+        <li>AvaliArmor</li>
+      </tags>
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
@@ -397,11 +392,10 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
+
   <ThingDef ParentName="ArmorMachineableBase">
     <defName>AvaliCombatArmor</defName>
-     <thingCategories>
+    <thingCategories>
       <li>AvaliArmor</li>
       <li>Apparel</li>
     </thingCategories>
@@ -410,7 +404,7 @@
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-       <researchPrerequisite>AvaliCombatArmor</researchPrerequisite>
+      <researchPrerequisite>AvaliCombatArmor</researchPrerequisite>
       <skillRequirements>
         <Crafting>6</Crafting>
       </skillRequirements>
@@ -426,7 +420,7 @@
     <tradeTags>
       <li>HiTechArmor</li>
     </tradeTags>
-    
+
     <generateCommonality>2</generateCommonality>
     <statBases>
       <WorkToMake>20000</WorkToMake>
@@ -440,10 +434,10 @@
       <Insulation_Heat>10</Insulation_Heat>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
       <MoveSpeed>-1</MoveSpeed>
-	    <BluntDamageMultiplier>0.05</BluntDamageMultiplier>
+      <BluntDamageMultiplier>0.05</BluntDamageMultiplier>
     </equippedStatOffsets>
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
@@ -451,11 +445,11 @@
       <Steel>40</Steel>
     </costList>
     <apparel>
-    <tags>
-      <li>EVA</li>
-      <li>Avali</li>
-      <li>AvaliArmor</li>
-    </tags>
+      <tags>
+        <li>EVA</li>
+        <li>Avali</li>
+        <li>AvaliArmor</li>
+      </tags>
       <bodyPartGroups>
         <li>Torso</li>
         <li>Neck</li>
@@ -498,16 +492,12 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
-  
-  
-  
+
   <!-- Scout armor -->
-<ThingDef ParentName="ArmorMachineableBase">
+  <ThingDef ParentName="ArmorMachineableBase">
     <defName>AvaliScoutArmor</defName>
     <label>Avali scout armor</label>
-     <thingCategories>
+    <thingCategories>
       <li>AvaliArmor</li>
       <li>Apparel</li>
     </thingCategories>     
@@ -515,7 +505,7 @@
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-       <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
+      <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
       <skillRequirements>
         <Crafting>12</Crafting>
       </skillRequirements>
@@ -537,20 +527,20 @@
       <MaxHitPoints>240</MaxHitPoints>
       <Mass>1.5</Mass>
       <Flammability>0.02</Flammability>
-       <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.34</ArmorRating_Blunt>
       <ArmorRating_Heat>0.2</ArmorRating_Heat>
       <Insulation_Cold>4</Insulation_Cold>
       <Insulation_Heat>6</Insulation_Heat>
       <EquipDelay>2</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
-	<MoveSpeed>0.6</MoveSpeed>
+      <MoveSpeed>0.6</MoveSpeed>
     </equippedStatOffsets>
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
-	  <ComponentSpacer>2</ComponentSpacer>
+      <ComponentSpacer>2</ComponentSpacer>
       <Plasteel>20</Plasteel>
       <AvaliAerogel>10</AvaliAerogel>
     </costList>
@@ -574,7 +564,7 @@
         <li>Avali</li>
         <li>AvaliArmor</li>
         <li>AvaliScout</li>
-		<li>EVA</li>
+        <li>EVA</li>
       </tags>
       <useDeflectMetalEffect>true</useDeflectMetalEffect>
     </apparel>
@@ -603,8 +593,7 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
+
   <!-- Nezai -->
   <ThingDef ParentName="ArmorSmithableBase">
     <defName>NezaiArmor</defName>
@@ -634,11 +623,11 @@
       <Insulation_Cold>32</Insulation_Cold>
       <Insulation_Heat>15</Insulation_Heat>
       <EquipDelay>20</EquipDelay>
-      
+
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-2.0</MoveSpeed>
-	    <SocialImpact>0.4</SocialImpact>
+      <SocialImpact>0.4</SocialImpact>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>
@@ -669,4 +658,4 @@
       </defaultOutfitTags>
     </apparel>
   </ThingDef>
-  </Defs>
+</Defs>

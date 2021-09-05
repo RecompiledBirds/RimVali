@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-   <RimValiCore.RVR.RenderableDef Name="BaseAvaliPart" Abstract="True">
+  <RimValiCore.RVR.RenderableDef Name="BaseAvaliPart" Abstract="True">
     <useColorSet>Skin</useColorSet>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef Abstract="True" ParentName="BaseAvaliPart" Name = "BaseAvaliUpperEar">
-      <east>
+    <east>
       <position>(-0.1,0.4)</position>
       <layer>-0.3024662</layer>
       <size>0.8</size>
@@ -17,8 +17,8 @@
       <size>0.8</size>
     </north>
     <south>
-       <position>(0,0.4)</position>
-       <layer>-0.032</layer>
+      <position>(0,0.4)</position>
+      <layer>-0.032</layer>
       <size>0.8</size>
     </south>
     <west>
@@ -27,9 +27,9 @@
       <size>0.8</size>
     </west>
   </RimValiCore.RVR.RenderableDef >
-  
+
   <RimValiCore.RVR.RenderableDef Abstract="True" ParentName="BaseAvaliPart" Name = "BaseAvaliLowerEar">
- <east>
+    <east>
       <position>(-0.1,0.4)</position>
       <layer>-1</layer>
       <size>0.8</size>
@@ -40,27 +40,24 @@
       <size>0.8</size>
     </north>
     <south>
-       <position>(0,0.4)</position>
+      <position>(0,0.4)</position>
       <layer>-0.035</layer>
       <size>0.8</size>
     </south>
     <west>
-       <position>(0.1,0.4)</position>
+      <position>(0.1,0.4)</position>
       <size>0.8</size>
       <layer>-0.3034662</layer>
     </west>
   </RimValiCore.RVR.RenderableDef>
-      
-  
-  
-  
+
   <RimValiCore.RVR.RenderableDef  ParentName="BaseAvaliLowerEar">
     <defName>EarLL</defName>
     <textures>
-        <li>
-          <tex>avali/Ears/Male/LowerLeft/MaleLowerLeft</tex>
-          <femaleTex>avali/Ears/Female/LowerLeft/FemaleLowerLeft</femaleTex>
-       </li>
+      <li>
+        <tex>avali/Ears/Male/LowerLeft/MaleLowerLeft</tex>
+        <femaleTex>avali/Ears/Female/LowerLeft/FemaleLowerLeft</femaleTex>
+      </li>
     </textures>
     <bodyPart>left lower ear</bodyPart>
     <backstoryTextures>
@@ -68,22 +65,22 @@
         <backstoryTitle>Eimilian</backstoryTitle>
         <tex>avali/Unique/Eimilian/Ears/LL/LowerLeft</tex>
       </li>
-    
+
     </backstoryTextures>
-  <west>
+    <west>
       <position>(0.1,0.4)</position>
-       <layer>-0.3014662</layer>
+      <layer>-0.3014662</layer>
       <size>0.8</size>
     </west>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliLowerEar">
     <defName>EarLR</defName>
     <textures>
-        <li>
-          <tex>avali/Ears/Male/LowerRight/MaleLowerRight</tex>
-          <femaleTex>avali/Ears/Female/LowerRight/FemaleLowerRight</femaleTex>
-        </li>
+      <li>
+        <tex>avali/Ears/Male/LowerRight/MaleLowerRight</tex>
+        <femaleTex>avali/Ears/Female/LowerRight/FemaleLowerRight</femaleTex>
+      </li>
     </textures>
     <backstoryTextures>
       <li>
@@ -92,20 +89,20 @@
       </li>
     </backstoryTextures>
     <bodyPart>right lower ear</bodyPart>
-      <east>
+    <east>
       <position>(-0.1,0.4)</position>
-       <layer>-0.3014662</layer>
+      <layer>-0.3014662</layer>
       <size>0.8</size>
     </east>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliUpperEar">
     <defName>EarUR</defName>
     <textures>
-        <li>
-          <tex>avali/Ears/Male/UpperRight/MaleUpperRight</tex>
-          <femaleTex>avali/Ears/Female/UpperRight/FemaleUpperRight</femaleTex>
-        </li>
+      <li>
+        <tex>avali/Ears/Male/UpperRight/MaleUpperRight</tex>
+        <femaleTex>avali/Ears/Female/UpperRight/FemaleUpperRight</femaleTex>
+      </li>
     </textures>
     <backstoryTextures>
       <li>
@@ -114,20 +111,20 @@
       </li>
     </backstoryTextures>
     <bodyPart>right upper ear</bodyPart>
-     <east>
+    <east>
       <position>(-0.1,0.4)</position>
-       <layer>-0.3014662</layer>
+      <layer>-0.3014662</layer>
       <size>0.8</size>
     </east>
   </RimValiCore.RVR.RenderableDef>
-  
-    <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliUpperEar">
+
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliUpperEar">
     <defName>EarUL</defName>
     <textures>
-        <li>
-          <tex>avali/Ears/Male/UpperLeft/MaleUpperLeft</tex>
-          <femaleTex>avali/Ears/Female/UpperLeft/FemaleUpperLeft</femaleTex>
-        </li>
+      <li>
+        <tex>avali/Ears/Male/UpperLeft/MaleUpperLeft</tex>
+        <femaleTex>avali/Ears/Female/UpperLeft/FemaleUpperLeft</femaleTex>
+      </li>
     </textures>
     <backstoryTextures>
       <li>
@@ -138,21 +135,20 @@
     <bodyPart>left upper ear</bodyPart>
     <west>
       <position>(0.1,0.4)</position>
-       <layer>-0.3014662</layer>
+      <layer>-0.3014662</layer>
       <size>0.8</size>
     </west>
   </RimValiCore.RVR.RenderableDef>
-    
-    
-    <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
-      <defName>EyeL</defName>
-      <useColorSet>Eye</useColorSet>
-      <textures>
-        <li>
-          <tex>avali/Eyes/EyeL</tex>
-        </li>
-      </textures>
-      <backstoryTextures>
+
+  <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+    <defName>EyeL</defName>
+    <useColorSet>Eye</useColorSet>
+    <textures>
+      <li>
+        <tex>avali/Eyes/EyeL</tex>
+      </li>
+    </textures>
+    <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
         <tex>avali/Unique/Eimilian/Eyes/EyeL</tex>
@@ -160,14 +156,14 @@
     </backstoryTextures>
     <!-- Minor error on my part. -->
 
-        <bodyPart>right eye</bodyPart>
+    <bodyPart>right eye</bodyPart>
     <east>
       <position>(0.1,0.4)</position>
       <layer>-0.3044662</layer>
       <size>0.8</size>
     </east>
     <west>
-       <position>(0.1,0.4)</position>
+      <position>(0.1,0.4)</position>
       <layer>-0.3044662</layer>
       <size>0.8</size>
     </west>
@@ -178,35 +174,35 @@
     </north>
     <south>
       <position>(0,0.4)</position>
-        <layer>-0.032</layer>
+      <layer>-0.032</layer>
       <size>0.8</size>
     </south>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
-      <defName>EyeR</defName>
-      <useColorSet>Eye</useColorSet>
-      <textures>
-        <li>
-          <tex>avali/Eyes/EyeR</tex>
-        </li>
-      </textures>        
-      <backstoryTextures>
+    <defName>EyeR</defName>
+    <useColorSet>Eye</useColorSet>
+    <textures>
+      <li>
+        <tex>avali/Eyes/EyeR</tex>
+      </li>
+    </textures>        
+    <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
         <tex>avali/Unique/Eimilian/Eyes/EyeR</tex>
       </li>
     </backstoryTextures>
-     <!-- Minor error on my part. -->
+    <!-- Minor error on my part. -->
 
-        <bodyPart>left eye</bodyPart>
+    <bodyPart>left eye</bodyPart>
     <east>
-       <position>(0.1,0.4)</position>
+      <position>(0.1,0.4)</position>
       <layer>-0.3044662</layer>
       <size>0.8</size>
     </east>
     <west>
-       <position>(-0.1,0.4)</position>
+      <position>(-0.1,0.4)</position>
       <layer>-0.3044662</layer>
       <size>0.8</size>
     </west>
@@ -217,37 +213,37 @@
     </north>
     <south>
       <position>(0,0.4)</position>
-        <layer>-0.032</layer>
+      <layer>-0.032</layer>
       <size>0.8</size>
     </south>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
-      <defName>AvaliMouth</defName>
-      <textures>
-        <li>
-          <tex>avali/Mouth/Mouth</tex>
-        </li>
-      </textures>
-        <bodyPart>head</bodyPart>
-        <west>
-       <position>(-0.1,0.4)</position>
+    <defName>AvaliMouth</defName>
+    <textures>
+      <li>
+        <tex>avali/Mouth/Mouth</tex>
+      </li>
+    </textures>
+    <bodyPart>head</bodyPart>
+    <west>
+      <position>(-0.1,0.4)</position>
       <layer>-0.3044662</layer>
       <size>0.8</size>
     </west>
     <east>
-       <position>(0.1,0.4)</position>
+      <position>(0.1,0.4)</position>
       <layer>-0.3044662</layer>
       <size>0.8</size>
     </east>
     <north>
-       <position>(0.1,0.4)</position>
+      <position>(0.1,0.4)</position>
       <layer>-0.3044662</layer>
       <size>0.8</size>
     </north>
     <south>
-       <position>(0,0.4)</position>
-        <layer>-0.032</layer>
+      <position>(0,0.4)</position>
+      <layer>-0.032</layer>
       <size>0.8</size>
     </south>
   </RimValiCore.RVR.RenderableDef>
@@ -261,7 +257,7 @@
     </backstoryTextures>
     <showsInBed>false</showsInBed>
     <textures>
-       <li>
+      <li>
         <tex>avali/Tail/Tailskirt/Male/MaleTailskirt</tex>
         <femaleTex>avali/Tail/Tailskirt/Female/FemaleTailskirt</femaleTex>
       </li>
@@ -273,7 +269,7 @@
       <size>0.8</size>
     </east>
     <west>
-     <position>(0.13,-0.15)</position>
+      <position>(0.13,-0.15)</position>
       <layer>-0.3086463</layer>
       <size>0.8</size>
     </west>
@@ -288,7 +284,7 @@
       <size>0.8</size>
     </south>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
     <defName>TailMain</defName>
     <backstoryTextures>
@@ -298,7 +294,7 @@
       </li>
     </backstoryTextures>
     <showsInBed>false</showsInBed>
-    
+
     <textures>
       <li>
         <tex>avali/Tail/Male/MaleTail</tex>
@@ -307,7 +303,7 @@
     </textures>
     <bodyPart>avali Tail</bodyPart>
     <east>
-     <position>(-0.41,0.12)</position>
+      <position>(-0.41,0.12)</position>
       <layer>-0.3094662</layer>
       <size>0.8</size>
     </east>
@@ -327,61 +323,61 @@
       <size>0.8</size>
     </south>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef  ParentName="BaseAvaliPart">
-     <defName>Head</defName>
-     <textures>
-       <li>
-         <tex>avali/Heads/Male/MaleHead</tex>
-         <femaleTex>avali/Heads/Female/FemaleHead</femaleTex>
-       </li>
-     </textures>
-     <bodyPart>head</bodyPart>
-     <backstoryTextures>
+    <defName>Head</defName>
+    <textures>
+      <li>
+        <tex>avali/Heads/Male/MaleHead</tex>
+        <femaleTex>avali/Heads/Female/FemaleHead</femaleTex>
+      </li>
+    </textures>
+    <bodyPart>head</bodyPart>
+    <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
         <tex>avali/Unique/Eimilian/Head/EimilHead</tex>
       </li>
     </backstoryTextures>
-     <east>
-       <position>(0.1,0.4)</position>
+    <east>
+      <position>(0.1,0.4)</position>
       <layer>-0.3054662</layer>
       <size>0.8</size>
     </east>
     <north>
-       <position>(0,0.4)</position>
+      <position>(0,0.4)</position>
       <layer>-0.3054662</layer>
       <size>0.8</size>
     </north>
     <south>
-       <position>(0,0.4)</position>
+      <position>(0,0.4)</position>
       <layer>-0.032</layer>
       <size>0.8</size>
     </south>
     <west>
-       <position>(-0.1,0.4)</position>
+      <position>(-0.1,0.4)</position>
       <layer>-0.3054662</layer>
       <size>0.8</size>
     </west>
   </RimValiCore.RVR.RenderableDef>
-  
+
   <RimValiCore.RVR.RenderableDef  ParentName="BaseAvaliPart">
-     <defName>Body</defName>
-     <textures>
-        <li>
-         <tex>avali/Body/Male/MaleBody</tex>
-         <femaleTex>avali/Body/Female/FemaleBody</femaleTex>
-        </li>
-     </textures>
-     <bodyPart>Torso</bodyPart>
-     <showsInBed>false</showsInBed>
-     <backstoryTextures>
+    <defName>Body</defName>
+    <textures>
+      <li>
+        <tex>avali/Body/Male/MaleBody</tex>
+        <femaleTex>avali/Body/Female/FemaleBody</femaleTex>
+      </li>
+    </textures>
+    <bodyPart>Torso</bodyPart>
+    <showsInBed>false</showsInBed>
+    <backstoryTextures>
       <li>
         <backstoryTitle>Eimilian</backstoryTitle>
         <tex>avali/Unique/Eimilian/Body/Eimil_body</tex>
       </li>
     </backstoryTextures>
-     <east>
+    <east>
       <position>(0,0)</position>
       <layer>-0.3247589</layer>
       <size>0.8</size>
@@ -398,63 +394,62 @@
     </south>
   </RimValiCore.RVR.RenderableDef>
 
-  
-	<RimValiCore.RVR.RimValiRaceDef Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
-        <thingClass>Pawn</thingClass>
-        <category>Pawn</category>
-        <selectable>true</selectable>
-        <tickerType>Normal</tickerType>
-        <altitudeLayer>Pawn</altitudeLayer>
-        <useHitPoints>false</useHitPoints>
-        <hasTooltip>true</hasTooltip>
-        <inspectorTabs>
-          <li>AvaliMod.AvaliTab</li>
-        </inspectorTabs>
-        <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
-        <comps>
-            <li>
-                <compClass>CompAttachBase</compClass>
-            </li>
-	    <!--Cool things, these handle alot of the pack systems.-->
-            <!-- Just don't remove any lines from these, please.-->
-            <li Class="AvaliMod.AvaliDriverThoughtProps">
-                <inSameRoomThought>AvaliSharingRoom</inSameRoomThought>
-                <sharedBedroomThought>SharedRoomWithPack</sharedBedroomThought>
-                <sleptApartThought>BedroomWithoutPack</sleptApartThought>
-                <packLossPreventers>
-                  <li>PackReplacementAI</li>
-              </packLossPreventers>
-            </li>
-         
-            <li Class="AvaliMod.PackProps">
-              <racesInPacks>
-                <li>RimVali</li>
-              </racesInPacks>
-              <aloneThought>AvaliPackLoss</aloneThought>
-              <togetherThought>AvaliPackmateThought</togetherThought>
-              <deathThought>PackMateDied</deathThought>
-              
-            </li>
-            
-            <!-- That's off by default, don't worry. I don't even know if it actually works.. -->
-            <li Class="AvaliMod.AvaliEggLayer_Props">
-              <eggLayIntervalDays>30</eggLayIntervalDays>
-              <eggCountRange>1</eggCountRange>
-              <eggFertilizationCountMax>1</eggFertilizationCountMax>
-              <eggFertilizedDef>AvaliEgg</eggFertilizedDef>
-            </li>
-        </comps>
-        <drawGUIOverlay>true</drawGUIOverlay>
-    </RimValiCore.RVR.RimValiRaceDef>
-	
-	<RimValiCore.RVR.RimValiRaceDef ParentName="BaseAvaliRace" Name="BaseFullAvali">
-        <defName>RimVali</defName>
-        <label>Avali</label>
-        <description>Cute, fluffy raptors with highly advanced tech. The primary solvent in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
+  <RimValiCore.RVR.RimValiRaceDef Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
+    <thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <inspectorTabs>
+      <li>AvaliMod.AvaliTab</li>
+    </inspectorTabs>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+      <!--Cool things, these handle alot of the pack systems.-->
+      <!-- Just don't remove any lines from these, please.-->
+      <li Class="AvaliMod.AvaliDriverThoughtProps">
+        <inSameRoomThought>AvaliSharingRoom</inSameRoomThought>
+        <sharedBedroomThought>SharedRoomWithPack</sharedBedroomThought>
+        <sleptApartThought>BedroomWithoutPack</sleptApartThought>
+        <packLossPreventers>
+          <li>PackReplacementAI</li>
+        </packLossPreventers>
+      </li>
+
+      <li Class="AvaliMod.PackProps">
+        <racesInPacks>
+          <li>RimVali</li>
+        </racesInPacks>
+        <aloneThought>AvaliPackLoss</aloneThought>
+        <togetherThought>AvaliPackmateThought</togetherThought>
+        <deathThought>PackMateDied</deathThought>
+
+      </li>
+
+      <!-- That's off by default, don't worry. I don't even know if it actually works.. -->
+      <li Class="AvaliMod.AvaliEggLayer_Props">
+        <eggLayIntervalDays>30</eggLayIntervalDays>
+        <eggCountRange>1</eggCountRange>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggFertilizedDef>AvaliEgg</eggFertilizedDef>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+  </RimValiCore.RVR.RimValiRaceDef>
+
+  <RimValiCore.RVR.RimValiRaceDef ParentName="BaseAvaliRace" Name="BaseFullAvali">
+    <defName>RimVali</defName>
+    <label>Avali</label>
+    <description>Cute, fluffy raptors with highly advanced tech. The primary solvent in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
     <corpseThingCategories>
       <li>CorpsesHumanlike</li>
     </corpseThingCategories>
-    
+
     <butcherAndHarvestThoughts>
       <butcherThoughts>
         <li>
@@ -473,16 +468,15 @@
           <race>RimVali</race>
         </li>
       </harvestedThoughts>
-      
+
       <!-- Do we really care if another race has had their organs harvested or been butchered? -->
       <careAboutUndefinedRaces>false</careAboutUndefinedRaces>
     </butcherAndHarvestThoughts>
-    
+
     <bodyTypes>
-        <li>Avali</li>
-     </bodyTypes>
-    
-    
+      <li>Avali</li>
+    </bodyTypes>
+
     <raceInsertion>
       <!-- globalChance and chance stack! -->
       <!--A global chance of 100 and 50 = 50, but a global chance of 50 and a chance of 50 = 25  -->
@@ -501,7 +495,7 @@
     </raceInsertion>
     <graphics>
       <skinColorSet>Skin</skinColorSet>
-    
+
       <bodyTex>avali/Heads/AvaliHead</bodyTex>
       <headTex>avali/Heads/AvaliHead</headTex>
       <headOffsets>
@@ -516,251 +510,251 @@
           <name>Skin</name>
           <isGendered>true</isGendered>
           <colorGenerator>
-          <firstColor Class="ColorGenerator_Options">
-                <options>
-                  <li>
-                    <weight>10</weight>
-                    <min>(200, 200, 200)</min>
-                    <max>(255, 255, 255)</max>
-                  </li>
-                  <li>
-                    <weight>2</weight>
-                    <min>(220, 220, 220)</min>
-                    <max>(240, 240, 240)</max>
-                  </li>
-                  <li>
-                    <weight>5</weight>
-                      <min>RGBA(40, 40, 40, 255)</min>
-                     <max>RGBA(60, 60, 60, 255)</max>
-                  </li>
-                </options>
-              </firstColor>
-              <secondColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>(50, 50, 50)</min>
-                     <max>(200, 200, 200)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>RGBA(40, 40, 40, 255)</min>
-                     <max>RGBA(60, 60, 60, 255)</max>
-                   </li>
-                  </options>
-              </secondColor>
-              <thirdColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>(50, 50, 50)</min>
-                     <max>(200, 200, 200)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>(40, 40, 40)</min>
-                     <max>(60, 60, 60)</max>
-                   </li>
-                  </options>
-              </thirdColor>
-             </colorGenerator>
-              <colorGeneratorFemale>
-                <firstColor Class="ColorGenerator_Options">
-                  <options>
-                    <li>
-                      <weight>10</weight>
-                      <min>(185, 185, 185)</min>
-                      <max>(215, 215, 215)</max>
-                    </li>
-                    <li>
-                      <weight>2</weight>
-                      <min>(220, 220, 220)</min>
-                      <max>(240, 240, 240)</max>
-                    </li>
-                    <li>
-                      <weight>1</weight>
-                      <min>RGBA(40, 40, 40, 255)</min>
-                       <max>RGBA(60, 60, 60, 255)</max>
-                    </li>
-                   </options>
-                </firstColor>
-                <secondColor Class="ColorGenerator_Options">
-                <options>
-                    <li>
-                      <weight>10</weight>
-                      <min>(185, 185, 185)</min>
-                      <max>(215, 215, 215)</max>
-                    </li>
-                    <li>
-                      <weight>2</weight>
-                      <min>(220, 220, 220)</min>
-                      <max>(240, 240, 240)</max>
-                    </li>
-                    <li>
-                      <weight>1</weight>
-                      <min>RGBA(40, 40, 40, 255)</min>
-                       <max>RGBA(60, 60, 60, 255)</max>
-                    </li>
-                   </options>
-                </secondColor>
-                <thirdColor Class="ColorGenerator_Options">
-                 <options>
-                    <li>
-                      <weight>10</weight>
-                      <min>(185, 185, 185)</min>
-                      <max>(215, 215, 215)</max>
-                    </li>
-                    <li>
-                      <weight>2</weight>
-                      <min>(220, 220, 220)</min>
-                      <max>(240, 240, 240)</max>
-                    </li>
-                    <li>
-                      <weight>1</weight>
-                      <min>RGBA(40, 40, 40, 255)</min>
-                       <max>RGBA(60, 60, 60, 255)</max>
-                    </li>
-                   </options>
-                </thirdColor>
-             </colorGeneratorFemale>
+            <firstColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(200, 200, 200)</min>
+                  <max>(255, 255, 255)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>(220, 220, 220)</min>
+                  <max>(240, 240, 240)</max>
+                </li>
+                <li>
+                  <weight>5</weight>
+                  <min>RGBA(40, 40, 40, 255)</min>
+                  <max>RGBA(60, 60, 60, 255)</max>
+                </li>
+              </options>
+            </firstColor>
+            <secondColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(50, 50, 50)</min>
+                  <max>(200, 200, 200)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>RGBA(40, 40, 40, 255)</min>
+                  <max>RGBA(60, 60, 60, 255)</max>
+                </li>
+              </options>
+            </secondColor>
+            <thirdColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(50, 50, 50)</min>
+                  <max>(200, 200, 200)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>(40, 40, 40)</min>
+                  <max>(60, 60, 60)</max>
+                </li>
+              </options>
+            </thirdColor>
+          </colorGenerator>
+          <colorGeneratorFemale>
+            <firstColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(185, 185, 185)</min>
+                  <max>(215, 215, 215)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>(220, 220, 220)</min>
+                  <max>(240, 240, 240)</max>
+                </li>
+                <li>
+                  <weight>1</weight>
+                  <min>RGBA(40, 40, 40, 255)</min>
+                  <max>RGBA(60, 60, 60, 255)</max>
+                </li>
+              </options>
+            </firstColor>
+            <secondColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(185, 185, 185)</min>
+                  <max>(215, 215, 215)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>(220, 220, 220)</min>
+                  <max>(240, 240, 240)</max>
+                </li>
+                <li>
+                  <weight>1</weight>
+                  <min>RGBA(40, 40, 40, 255)</min>
+                  <max>RGBA(60, 60, 60, 255)</max>
+                </li>
+              </options>
+            </secondColor>
+            <thirdColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(185, 185, 185)</min>
+                  <max>(215, 215, 215)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>(220, 220, 220)</min>
+                  <max>(240, 240, 240)</max>
+                </li>
+                <li>
+                  <weight>1</weight>
+                  <min>RGBA(40, 40, 40, 255)</min>
+                  <max>RGBA(60, 60, 60, 255)</max>
+                </li>
+              </options>
+            </thirdColor>
+          </colorGeneratorFemale>
         </li>
         <li>
           <name>Eye</name>
           <isDyeable>false</isDyeable>
           <colorGenerator>
-          <firstColor Class="ColorGenerator_Options">
-                <options>
-                  <li>
-                    <weight>10</weight>
-                    <min>(0, 0, 0)</min>
-                    <max>(255, 255, 255)</max>
-                  </li>
-                </options>
-              </firstColor>
-              <secondColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>(50, 50, 50)</min>
-                     <max>(200, 200, 200)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>RGBA(40, 40, 40, 255)</min>
-                     <max>RGBA(60, 60, 60, 255)</max>
-                   </li>
-                  </options>
-              </secondColor>
-              <thirdColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>(50, 50, 50)</min>
-                     <max>(200, 200, 200)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>(40, 40, 40)</min>
-                     <max>(60, 60, 60)</max>
-                   </li>
-                  </options>
-              </thirdColor>
-             </colorGenerator>
+            <firstColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(0, 0, 0)</min>
+                  <max>(255, 255, 255)</max>
+                </li>
+              </options>
+            </firstColor>
+            <secondColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(50, 50, 50)</min>
+                  <max>(200, 200, 200)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>RGBA(40, 40, 40, 255)</min>
+                  <max>RGBA(60, 60, 60, 255)</max>
+                </li>
+              </options>
+            </secondColor>
+            <thirdColor Class="ColorGenerator_Options">
+              <options>
+                <li>
+                  <weight>10</weight>
+                  <min>(50, 50, 50)</min>
+                  <max>(200, 200, 200)</max>
+                </li>
+                <li>
+                  <weight>2</weight>
+                  <min>(40, 40, 40)</min>
+                  <max>(60, 60, 60)</max>
+                </li>
+              </options>
+            </thirdColor>
+          </colorGenerator>
         </li>
       </colorSets>
     </graphics>
     <hasHair>false</hasHair>
-    
+
     <renderableDefs>
-      
+
       <li>Head</li>
       <li>Body</li>
-      
+
       <li>EarLL</li>
       <li>EarLR</li>
       <li>EarUR</li>
       <li>EarUL</li>
-      
+
       <li>EyeL</li>
       <li>EyeR</li>
-      
+
       <li>AvaliMouth</li>
-      
+
       <li>TailMain</li>
       <li>TailSkirt</li>
-      
+
     </renderableDefs>
-    
+
     <replaceableThoughts>
       <li>
-              <thoughtToReplace>NonAvaliAteEgg</thoughtToReplace>
-              <replacementThought>AvaliAteEgg</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MySonDied</thoughtToReplace>
-              <replacementThought>AvaliKitDied</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyDaughterDied</thoughtToReplace>
-              <replacementThought>AvaliKitDied</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyHusbandDied</thoughtToReplace>
-              <replacementThought>MateDied</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyWifeDied</thoughtToReplace>
-              <replacementThought>MateDied</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MySonLost</thoughtToReplace>
-              <replacementThought>KitLost</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyDaughterLost</thoughtToReplace>
-              <replacementThought>KitLost</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyHusbandLost</thoughtToReplace>
-              <replacementThought>MateLost</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyWifeLost</thoughtToReplace>
-              <replacementThought>MateLost</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyMotherLost</thoughtToReplace>
-              <replacementThought>MyParentLost</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>MyFatherLost</thoughtToReplace>
-              <replacementThought>MyParentLost</replacementThought>
-            </li>
-            <li>
-              <thoughtToReplace>SnowyWeather</thoughtToReplace>
-              <replacementThought>AvaliSnowy</replacementThought>
-            </li>
+        <thoughtToReplace>NonAvaliAteEgg</thoughtToReplace>
+        <replacementThought>AvaliAteEgg</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MySonDied</thoughtToReplace>
+        <replacementThought>AvaliKitDied</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyDaughterDied</thoughtToReplace>
+        <replacementThought>AvaliKitDied</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyHusbandDied</thoughtToReplace>
+        <replacementThought>MateDied</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyWifeDied</thoughtToReplace>
+        <replacementThought>MateDied</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MySonLost</thoughtToReplace>
+        <replacementThought>KitLost</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyDaughterLost</thoughtToReplace>
+        <replacementThought>KitLost</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyHusbandLost</thoughtToReplace>
+        <replacementThought>MateLost</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyWifeLost</thoughtToReplace>
+        <replacementThought>MateLost</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyMotherLost</thoughtToReplace>
+        <replacementThought>MyParentLost</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>MyFatherLost</thoughtToReplace>
+        <replacementThought>MyParentLost</replacementThought>
+      </li>
+      <li>
+        <thoughtToReplace>SnowyWeather</thoughtToReplace>
+        <replacementThought>AvaliSnowy</replacementThought>
+      </li>
     </replaceableThoughts>
     <cannibalismThoughts>
       <thoughts>
-          <li>
-            <race>RimVali</race>
-            <ateCooked>AvaliAteAvaliAsIngredient</ateCooked>
-            <ateRaw>AvaliAteAvaliDirect</ateRaw>
-            <ateCookedCannibal>AvaliAteAvaliMeatAsIngredientCannibal</ateCookedCannibal>
-            <ateRawCannibal>AvaliAteAvaliMeatDirectCannibal</ateRawCannibal>
-          </li>
-          <li>
-            <race>IWAvaliRace</race>
-            <ateCooked>AvaliAteAvaliAsIngredient</ateCooked>
-            <ateRaw>AvaliAteAvaliDirect</ateRaw>
-            <ateCookedCannibal>AvaliAteAvaliMeatAsIngredientCannibal</ateCookedCannibal>
-            <ateRawCannibal>AvaliAteAvaliMeatDirectCannibal</ateRawCannibal>
-          </li>
+        <li>
+          <race>RimVali</race>
+          <ateCooked>AvaliAteAvaliAsIngredient</ateCooked>
+          <ateRaw>AvaliAteAvaliDirect</ateRaw>
+          <ateCookedCannibal>AvaliAteAvaliMeatAsIngredientCannibal</ateCookedCannibal>
+          <ateRawCannibal>AvaliAteAvaliMeatDirectCannibal</ateRawCannibal>
+        </li>
+        <li>
+          <race>IWAvaliRace</race>
+          <ateCooked>AvaliAteAvaliAsIngredient</ateCooked>
+          <ateRaw>AvaliAteAvaliDirect</ateRaw>
+          <ateCookedCannibal>AvaliAteAvaliMeatAsIngredientCannibal</ateCookedCannibal>
+          <ateRawCannibal>AvaliAteAvaliMeatDirectCannibal</ateRawCannibal>
+        </li>
       </thoughts>
       <careAbountUndefinedRaces>false</careAbountUndefinedRaces>
     </cannibalismThoughts>
-    
+
     <restrictions>
       <disabledTraits>
         <li>BodyPurist</li>
@@ -772,12 +766,11 @@
 
         <li>SleptInBedroom</li> 
         <li>SleptInBarracks</li>    
-            
+
         <li>SleepDisturbed</li>
         <li>SharedBed</li>    
         <li>ObservedLayingCorpse</li>
-        
-           
+
         <li>ButcheredHumanlikeCorpse</li>
         <li>KnowButcheredHumanlikeCorpse</li>
       </thoughtBlacklist>
@@ -792,15 +785,15 @@
       </modContentRestrictionsApparelList>
 
       <modResearchRestrictionsList>
-         <li>nezitheavali.rimvali</li>
+        <li>nezitheavali.rimvali</li>
       </modResearchRestrictionsList>
-      
+
       <modTraitRestrictions>
         <li>nezitheavali.rimvali</li>
       </modTraitRestrictions>
 
       <modBuildingRestrictions>
-         <li>nezitheavali.rimvali</li>
+        <li>nezitheavali.rimvali</li>
       </modBuildingRestrictions>
 
       <bedDefs>
@@ -811,160 +804,153 @@
         <li>AvaliBed</li>
         <li>AvaliHammock</li>
       </bedDefs>
-      
 
-      
       <bodyTypes>
         <li>Avali</li>
       </bodyTypes>
       <canOnlyUseApprovedApparel>true</canOnlyUseApprovedApparel>  
-        
+
     </restrictions>
-    
-    
-    
-    
-    
+
     <statBases>
-            <MarketValue>1500</MarketValue>
-            <MoveSpeed>8.5</MoveSpeed>
-            <Flammability>200</Flammability>
-            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>15</ComfyTemperatureMax>
-            <LeatherAmount>5</LeatherAmount>
-            <ResearchSpeed>1.5</ResearchSpeed>
-            <MiningSpeed>0.8</MiningSpeed>
-            <SocialImpact>1.5</SocialImpact>
-		      	<ConstructionSpeed>0.8</ConstructionSpeed>
-			      <AnimalGatherSpeed>0.3</AnimalGatherSpeed>
-			      <AnimalGatherYield>0.3</AnimalGatherYield>
-			      <ImmunityGainSpeed>1.15</ImmunityGainSpeed>
-            <PsychicSensitivity>1.5</PsychicSensitivity>
-            <!-- This stat was waaaay too high, i just turned it down. -->
-			      <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
-						<Mass>45</Mass>
-            <RestRateMultiplier>1.25</RestRateMultiplier>
-        </statBases>
-        <tools>
+      <MarketValue>1500</MarketValue>
+      <MoveSpeed>8.5</MoveSpeed>
+      <Flammability>200</Flammability>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+      <ComfyTemperatureMax>15</ComfyTemperatureMax>
+      <LeatherAmount>5</LeatherAmount>
+      <ResearchSpeed>1.5</ResearchSpeed>
+      <MiningSpeed>0.8</MiningSpeed>
+      <SocialImpact>1.5</SocialImpact>
+      <ConstructionSpeed>0.8</ConstructionSpeed>
+      <AnimalGatherSpeed>0.3</AnimalGatherSpeed>
+      <AnimalGatherYield>0.3</AnimalGatherYield>
+      <ImmunityGainSpeed>1.15</ImmunityGainSpeed>
+      <PsychicSensitivity>1.5</PsychicSensitivity>
+      <!-- This stat was waaaay too high, i just turned it down. -->
+      <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+      <Mass>45</Mass>
+      <RestRateMultiplier>1.25</RestRateMultiplier>
+    </statBases>
+    <tools>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>1.6</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>Left Talons</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.45</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
             <li>
-				<label>teeth</label>
-				<capacities>
-				<li>Bite</li>
-				</capacities>
-				<power>2</power>
-				<cooldownTime>1.6</cooldownTime>
-				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+              <def>Stun</def>
+              <amount>4</amount>
             </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Right Talons</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3</power>
+        <cooldownTime>1.45</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
             <li>
-				<label>Left Talons</label>
-				<capacities>
-				<li>Scratch</li>
-				</capacities>
-				<power>3</power>
-				<cooldownTime>1.45</cooldownTime>
-				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-				<surpriseAttack>
-				<extraMeleeDamages>
-					<li>
-					<def>Stun</def>
-					<amount>4</amount>
-				</li>
-				</extraMeleeDamages>
-				</surpriseAttack>
+              <def>Stun</def>
+              <amount>4</amount>
             </li>
-            <li>
-				<label>Right Talons</label>
-				<capacities>
-				<li>Scratch</li>
-				</capacities>
-				<power>3</power>
-				<cooldownTime>1.45</cooldownTime>
-				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-				<surpriseAttack>
-				<extraMeleeDamages>
-					<li>
-					<def>Stun</def>
-					<amount>4</amount>
-				</li>
-				</extraMeleeDamages>
-				</surpriseAttack>
-            </li>
-        </tools>
-        <race>
-            <thinkTreeMain>Humanlike</thinkTreeMain>
-            <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
-            <intelligence>Humanlike</intelligence>
-            <makesFootprints>true</makesFootprints>
-            <lifeExpectancy>1000</lifeExpectancy>
-            <deathActionWorkerClass>AvaliMod.DeathActionWorker_Test</deathActionWorkerClass>
-			      <leatherDef>Leather_RimVali</leatherDef>
-			      <nameGenerator>AvaliPersonNamer</nameGenerator>
-            <body>RimValiBody</body>
-            <baseBodySize>0.6</baseBodySize>
-			      <baseHungerRate>0.6</baseHungerRate>
-            <baseHealthScale>1.3</baseHealthScale>
-            <meatColor>(238,203,242)</meatColor>
-            <bloodDef>AvaliBlood</bloodDef>
-            <fleshType>AvaliFlesh</fleshType>
-            <foodType>OmnivoreHuman</foodType>
-			<gestationPeriodDays>30</gestationPeriodDays>
-			<litterSizeCurve>
-				<points>
-				<li>(0.5, 0)</li>
-				<li>(1, 1)</li>
-				<li>(1.01, 0.01)</li>
-				<li>(2, 0)</li>
-				</points>
-			</litterSizeCurve>
-            <lifeStageAges>
-                <li>
-                    <def>HumanlikeBaby</def>
-                    <minAge>0</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeToddler</def>
-                    <minAge>2.5</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeChild</def>
-                    <minAge>6</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeTeenager</def>
-                    <minAge>14</minAge>
-                </li>
-                <li>
-                    <def>HumanlikeAdult</def>
-                    <minAge>20</minAge>
-                </li>
-            </lifeStageAges>
-            <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
-            <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
-            <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
-            <specialShadowData>
-                <volume>(0.3, 0.8, 0.4)</volume>
-                <offset>(0,0,-0.3)</offset>
-            </specialShadowData>
-            <ageGenerationCurve>
-                <points>
-                    <li>(14,0)</li>
-                    <li>(20,100)</li>
-                    <li>(35,90)</li>
-                    <li>(50,30)</li>
-                    <li>(70,8)</li>
-                    <li>(85,3)</li>
-                    <li>(100,1)</li>
-                    <li>(120,0)</li>
-                </points>
-            </ageGenerationCurve>
-           <hediffGiverSets>
-             <li>OrganicStandard</li>
-             <li>AvaliBio</li>
-           </hediffGiverSets>
-        </race>
-		<recipes>
-      
-      
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>Humanlike</thinkTreeMain>
+      <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+      <intelligence>Humanlike</intelligence>
+      <makesFootprints>true</makesFootprints>
+      <lifeExpectancy>1000</lifeExpectancy>
+      <deathActionWorkerClass>AvaliMod.DeathActionWorker_Test</deathActionWorkerClass>
+      <leatherDef>Leather_RimVali</leatherDef>
+      <nameGenerator>AvaliPersonNamer</nameGenerator>
+      <body>RimValiBody</body>
+      <baseBodySize>0.6</baseBodySize>
+      <baseHungerRate>0.6</baseHungerRate>
+      <baseHealthScale>1.3</baseHealthScale>
+      <meatColor>(238,203,242)</meatColor>
+      <bloodDef>AvaliBlood</bloodDef>
+      <fleshType>AvaliFlesh</fleshType>
+      <foodType>OmnivoreHuman</foodType>
+      <gestationPeriodDays>30</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.01, 0.01)</li>
+          <li>(2, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeStageAges>
+        <li>
+          <def>HumanlikeBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>HumanlikeToddler</def>
+          <minAge>2.5</minAge>
+        </li>
+        <li>
+          <def>HumanlikeChild</def>
+          <minAge>6</minAge>
+        </li>
+        <li>
+          <def>HumanlikeTeenager</def>
+          <minAge>14</minAge>
+        </li>
+        <li>
+          <def>HumanlikeAdult</def>
+          <minAge>20</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      <specialShadowData>
+        <volume>(0.3, 0.8, 0.4)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+      <ageGenerationCurve>
+        <points>
+          <li>(14,0)</li>
+          <li>(20,100)</li>
+          <li>(35,90)</li>
+          <li>(50,30)</li>
+          <li>(70,8)</li>
+          <li>(85,3)</li>
+          <li>(100,1)</li>
+          <li>(120,0)</li>
+        </points>
+      </ageGenerationCurve>
+      <hediffGiverSets>
+        <li>OrganicStandard</li>
+        <li>AvaliBio</li>
+      </hediffGiverSets>
+    </race>
+    <recipes>
+
       <!-- Normal -->
 
       <li>InstallArchotechEye</li>
@@ -985,41 +971,40 @@
       <li>Anesthetize</li>
       <li>RemoveBodyPart</li>
       <li>Euthanize</li>
-      
+
       <!-- Arms -->
 
       <li>InstallAvaliBasicBionicArm</li>
       <li>InstallAvaliAdvancedBionicArm</li>
-      
+
       <!-- Legs -->
 
       <li>InstallAvaliAdvancedBionicLeg</li>
       <li>InstallAvaliBasicBionicLeg</li>
-      
+
       <!-- Temperature -->
 
       <li>InstallAvaliTemperatureImplantBasic</li>
       <li>InstallAvaliTemperatureImplantElite</li>
       <li>InstallAvaliTemperatureImplantAdv</li>
-      
+
       <!-- Tail -->
       <li>RimValiInstallPegTail</li>
       <li>InstallTailStiffeningAugment</li>
       <li>InstallNaturalAvaliTail</li>
       <li>InstallAvaliAdvancedBionicTail</li>
       <li>InstallAvaliBasicBionicTail</li>
-      
+
       <!-- Head -->
       <li>InstallVenomTeeth</li>
-      
+
       <!-- Brain -->
       <li>InstallPE</li>
-      
+
       <!-- Royalty -->
       <li>CureBloodRot</li>
       <li>CureAbasia</li>
-		</recipes>
-	</RimValiCore.RVR.RimValiRaceDef>
-  
-  
+    </recipes>
+  </RimValiCore.RVR.RimValiRaceDef>
+
 </Defs>

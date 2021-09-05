@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <PackMateDied.stages.0.label>My packmate {0} died.</PackMateDied.stages.0.label> -->
+  <PackMateDied.stages.0.label>Mein Rudelmitglied {0} starb.</PackMateDied.stages.0.label>
+  <!-- <PackMateDied.stages.0.description>One of my packmates died...</PackMateDied.stages.0.description> -->
+  <PackMateDied.stages.0.description>Einer aus meinem Rudel starb...</PackMateDied.stages.0.description>
+  <!-- <PackMateDied.stages.1.label>{0} died.</PackMateDied.stages.1.label> -->
+  <PackMateDied.stages.1.label>{0} starb.</PackMateDied.stages.1.label>
+  <!-- <PackMateDied.stages.1.description>I still miss my packmate. I wish they didn't die.</PackMateDied.stages.1.description> -->
+  <PackMateDied.stages.1.description>Ich vermisse sie. Warum mussten sie sterben?</PackMateDied.stages.1.description>
+
+  <!-- <AvaliKitDied.stages.0.label>My kit {0} died.</AvaliKitDied.stages.0.label> -->
+  <AvaliKitDied.stages.0.label>Mein Kind {0} starb.</AvaliKitDied.stages.0.label>
+  <!-- <AvaliKitDied.stages.0.description>My kit died.</AvaliKitDied.stages.0.description> -->
+  <AvaliKitDied.stages.0.description>Mein Kind starb.</AvaliKitDied.stages.0.description>
+
+  <!-- <MateDied.stages.0.label>Mate {0} died.</MateDied.stages.0.label> -->
+  <MateDied.stages.0.label>Partner {0} starb.</MateDied.stages.0.label>
+  <!-- <MateDied.stages.0.description>I am alone.</MateDied.stages.0.description> -->
+  <MateDied.stages.0.description>Ich bin alleine.</MateDied.stages.0.description>
+</LanguageData>

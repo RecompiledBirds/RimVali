@@ -10,7 +10,7 @@
     <techHediffsTags>
       <li>BasicAvali</li>
     </techHediffsTags>
-    
+
     <label>Autophagic system rewrite augment</label>
     <description>This augment rewrites the metabolic processes associated with the managment of biological waste. The lymph nodes in the body are altered to generate products from cell waste, which are then recycled. These enhance most body functions.</description>
     <descriptionHyperlinks><RecipeDef>InstallAvaliTemperatureImplantBasic</RecipeDef></descriptionHyperlinks>

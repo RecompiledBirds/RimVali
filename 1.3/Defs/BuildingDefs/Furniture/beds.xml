@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-     <ThingDef ParentName="BedWithQualityBase">
+  <ThingDef ParentName="BedWithQualityBase">
     <defName>AvaliHammock</defName>
     <label>Avali hammock</label>
     <description>This hammock is suspended between two poles, and just the right size for an avali!</description>
@@ -26,7 +26,7 @@
           <li>Dresser</li>
           <li>EndTable</li>
           <li>IlluminateEndTable</li>
-       
+
         </linkableFacilities>
       </li>
     </comps>
@@ -47,12 +47,8 @@
     <passability>Standable</passability>
     <designationHotKey>Misc2</designationHotKey>
   </ThingDef>
-  
-  
-  
-  
-  
-   <ThingDef ParentName="BedWithQualityBase">
+
+  <ThingDef ParentName="BedWithQualityBase">
     <defName>AvaliBed</defName>
     <label>Avali bed</label>
     <description>A cozy mattress and sheets on a frame for resting. Perfectly sized for an avali</description>
@@ -71,7 +67,7 @@
           <li>EndTable</li>
           <li>Dresser</li>
           <li>IlluminateEndTable</li>
-       
+
         </linkableFacilities>
       </li>
     </comps>

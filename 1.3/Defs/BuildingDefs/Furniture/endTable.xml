@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
-
-
-
-    <ThingDef ParentName="TableBase">
+  <ThingDef ParentName="TableBase">
     <defName>IlluminateEndTable</defName>
     <label>Avali end table</label>
     <description>An avali end table.</description>
@@ -45,11 +41,11 @@
         <texPath>avali/buildings/furniture/table_light/lit/end_table_lit</texPath>
         <offset>(0,0,0)</offset>
       </li>
-       <li Class="CompProperties_Power">
+      <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>30</basePowerConsumption>
       </li>
-       <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Glower">
         <glowRadius>5</glowRadius>
         <glowColor>(255, 102, 0,0)</glowColor>
@@ -58,5 +54,5 @@
     <staticSunShadowHeight>0</staticSunShadowHeight>
     <castEdgeShadows>false</castEdgeShadows>
   </ThingDef>
- 
- </Defs>
+
+</Defs>

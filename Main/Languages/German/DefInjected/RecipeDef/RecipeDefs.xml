@@ -22,7 +22,7 @@
   <RimValiPrintAerogelThree.description>Erstelle Ferrogel, indem die Bestandteile auf nahezu atomarer Ebene neu zusammengesetzt werden.</RimValiPrintAerogelThree.description>
   <!-- <RimValiPrintAerogelThree.jobString>Printing aerogel</RimValiPrintAerogelThree.jobString> -->
   <RimValiPrintAerogelThree.jobString>druckt Ferrogel.</RimValiPrintAerogelThree.jobString>
-  
+
   <!-- Tungsten -->
 
   <!-- <RimValiPowderTungsten.label>Sinter Tungsten</RimValiPowderTungsten.label> -->
@@ -45,7 +45,7 @@
   <RimValiPowderTungstenThree.description>Verwende rohen, unbrauchbaren Wolfram und wandle es in verwendbares Wolframcarbid um.</RimValiPowderTungstenThree.description>
   <!-- <RimValiPowderTungstenThree.jobString>Sintering tungsten</RimValiPowderTungstenThree.jobString> -->
   <RimValiPowderTungstenThree.jobString>zerkleinert Wolfram.</RimValiPowderTungstenThree.jobString>
-  
+
   <!-- Nanofiber -->
   <!-- Nano-Fiber translated: Nanofaser; Hyperweave vanilla item translated: Nanofaser; So, need a new translated name for nano-fiber... -->
 
@@ -69,7 +69,7 @@
   <WeaveNanoFiberThree.description>Webe Nanotuch aus Stoff.</WeaveNanoFiberThree.description>
   <!-- <WeaveNanoFiberThree.jobString>Weaving nano-fiber</WeaveNanoFiberThree.jobString> -->
   <WeaveNanoFiberThree.jobString>webt Nanotuch.</WeaveNanoFiberThree.jobString>
-  
+
   <!-- Ferroweave -->
   <!-- Problem: Weave in German is "Gewebe", sounds odd and like a kind of skin. "Stoff" could also mean an element. -->
 
@@ -93,7 +93,7 @@
   <WeaveFerroweaveThree.description>Verbindet Nanotuch und Ferrogel, um Ferroseide herzustellen.</WeaveFerroweaveThree.description>
   <!-- <WeaveFerroweaveThree.jobString>Weaving Ferroweave</WeaveFerroweaveThree.jobString> -->
   <WeaveFerroweaveThree.jobString>webt Ferroseide.</WeaveFerroweaveThree.jobString>
-  
+
   <!-- Aero-Tungsten Carbide -->
 
   <!-- <ForgeAeroTungsten.label>Forge Aero-Tungsten Carbide(25)</ForgeAeroTungsten.label> -->
@@ -116,7 +116,7 @@
   <ForgeAeroTungstenThree.description>Erstellt ein unglaubliches nützliches Material aus Ferrogel, Wolfram und anderen Ressourcen.</ForgeAeroTungstenThree.description>
   <!-- <ForgeAeroTungstenThree.jobString>Forging Aero-Tungsten</ForgeAeroTungstenThree.jobString> -->
   <ForgeAeroTungstenThree.jobString>schmiedet Ferro-Wolframcarbid.</ForgeAeroTungstenThree.jobString>
- 
+
   <!-- NanoCarbon -->
 
   <!-- <RefineAvaliCarbon.label>Refine carbon (5)</RefineAvaliCarbon.label> -->
@@ -160,7 +160,6 @@
   <WeaveNanoCarbonFiberThree.description>Webt Kohlenstoff-Nanofasern (50).</WeaveNanoCarbonFiberThree.description>
   <!-- <WeaveNanoCarbonFiberThree.jobString>Weaving nano carbon fiber (x50).</WeaveNanoCarbonFiberThree.jobString> -->
   <WeaveNanoCarbonFiberThree.jobString>webt Kohlenstoff-Nanofasern (50).</WeaveNanoCarbonFiberThree.jobString>
-
 
   <!-- <WeaveAeroTungstenFiber.label>Weave aero tungsten fiber</WeaveAeroTungstenFiber.label> -->
   <WeaveAeroTungstenFiber.label>Ferro-Wolframcarbid-Fasern weben</WeaveAeroTungstenFiber.label>

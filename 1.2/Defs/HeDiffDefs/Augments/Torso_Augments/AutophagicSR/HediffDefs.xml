@@ -3,7 +3,7 @@
   <HediffDef ParentName="ImplantHediffBase">
     <defName>AvaliASR</defName>
     <label>Autophagic System Rewrite</label>
-     <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>HediffWithComps</hediffClass>
     <description>This augmesnt rewrites metabolic processes associated with managing biological waste. Lymph nodes are altered to generate new products from celluar waste. These are used in metabolic reactions, which slightly increase most body functions.</description>
     <stages>
       <li>

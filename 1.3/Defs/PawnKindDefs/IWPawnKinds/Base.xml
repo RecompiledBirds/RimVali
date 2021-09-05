@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-   <PawnKindDef Abstract = "True" Name="BaseIWAvali">
-     <race>IWAvaliRace</race>
-     <combatPower>10</combatPower>
-     <baseRecruitDifficulty>0.8</baseRecruitDifficulty>
-     <isFighter>false</isFighter>
-     <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
-     <forceNormalGearQuality>true</forceNormalGearQuality>
-	 <initialWillRange>10~20</initialWillRange>
+  <PawnKindDef Abstract = "True" Name="BaseIWAvali">
+    <race>IWAvaliRace</race>
+    <combatPower>10</combatPower>
+    <baseRecruitDifficulty>0.8</baseRecruitDifficulty>
+    <isFighter>false</isFighter>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+    <initialWillRange>10~20</initialWillRange>
     <initialResistanceRange>10~15</initialResistanceRange>
   </PawnKindDef>
 </Defs>

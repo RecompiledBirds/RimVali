@@ -32,7 +32,7 @@
     </tags>
     <destroyableByDamage>true</destroyableByDamage>
   </BodyPartDef>
-  
+
   <BodyPartDef>
     <defName>RimValiHand</defName>
     <label>hand</label>
@@ -67,7 +67,7 @@
       <li>MovingLimbDigit</li>
     </tags>
   </BodyPartDef>
-  
+
   <BodyPartDef>
     <defName>RimValiLeg</defName>
     <label>leg</label>
@@ -106,8 +106,8 @@
     <spawnThingOnRemoved>RimValiTail</spawnThingOnRemoved>
     <destroyableByDamage>true</destroyableByDamage>
   </BodyPartDef>
-  
-    <!-- Tail thing def -->
+
+  <!-- Tail thing def -->
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>RimValiTail</defName>
     <label>Avali tail</label>
@@ -118,8 +118,8 @@
       <Mass>2</Mass>
     </statBases>
   </ThingDef>
-  
-    <RecipeDef ParentName="SurgeryInstallBodyPartNaturalBase">
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartNaturalBase">
     <defName>InstallNaturalAvaliTail</defName>
     <label>install avali tail</label>
     <description>Install a biological tail.</description>

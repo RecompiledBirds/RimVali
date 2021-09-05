@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
-  
+
   <!-- Nano-Forge -->
-   
+
   <ThingDef ParentName="BenchBase">
     <defName>AvaliNanoForge</defName>
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -18,21 +17,21 @@
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
     <recipes>
-    
+
       <li>MakeBFGSabot</li>
-    
+
       <li>RimValiPowderTungsten</li>
       <li>RimValiPowderTungstenTwo</li>
       <li>RimValiPowderTungstenThree</li>
-      
-        <li>RimValiPrintAerogel</li>
-        <li>RimValiPrintAerogelTwo</li>
-        <li>RimValiPrintAerogelThree</li>
-      
+
+      <li>RimValiPrintAerogel</li>
+      <li>RimValiPrintAerogelTwo</li>
+      <li>RimValiPrintAerogelThree</li>
+
       <li>ForgeAeroTungsten</li>
       <li>ForgeAeroTungstenTwo</li>
       <li>ForgeAeroTungstenThree</li>
-      
+
       <li>RefineAvaliCarbon</li>
       <li>RefineAvaliCarbonTwo</li>
       <li>RefineAvaliCarbonThree</li>
@@ -45,9 +44,9 @@
       <Steel>100</Steel>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
-     <researchPrerequisites>
-       <li>ResearchNanoForge</li>
-     </researchPrerequisites>
+    <researchPrerequisites>
+      <li>ResearchNanoForge</li>
+    </researchPrerequisites>
     <graphicData>
       <texPath>avali/buildings/production/nanoforge</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -60,7 +59,7 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-     <castEdgeShadows>true</castEdgeShadows>
+    <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>0.20</staticSunShadowHeight>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -69,7 +68,7 @@
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>0</Flammability>
-       <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
+      <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
     </statBases>
     <comps>
       <li Class="CompProperties_Power">
@@ -96,7 +95,6 @@
   </ThingDef>
 
   <!-- Research bench -->
-	
 
   <ThingDef ParentName="BenchBase">
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -138,7 +136,7 @@
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>1.0</Flammability>
       <ResearchSpeedFactor>1.0</ResearchSpeedFactor>
-       <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
+      <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
     </statBases>
     <comps>
       <li Class="CompProperties_Power">
@@ -150,7 +148,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>MultiAnalyzer</li>
-		  <li>AvaliNexus</li>
+          <li>AvaliNexus</li>
         </linkableFacilities>
       </li>
       <li Class="CompProperties_Breakdownable"/>
@@ -171,7 +169,7 @@
       <li>BasicRimValiTech</li>
     </researchPrerequisites>
   </ThingDef>
-  
+
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliNexus</defName>
     <label>Illuminate Nexus Connection</label>
@@ -191,7 +189,7 @@
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <thingCategories>
-     <li>BuildingsSpecial</li>
+      <li>BuildingsSpecial</li>
     </thingCategories>
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
@@ -203,9 +201,9 @@
       <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
     </building>
     <comps>
-		<li Class="CompProperties_Glower">
-			<glowRadius>8</glowRadius>
-			<glowColor>(236, 166, 245)</glowColor>
+      <li Class="CompProperties_Glower">
+        <glowRadius>8</glowRadius>
+        <glowColor>(236, 166, 245)</glowColor>
       </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -225,9 +223,9 @@
     </placeWorkers>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
-  
+
   <!-- Nano-loom -->
-    <ThingDef ParentName="BenchBase">
+  <ThingDef ParentName="BenchBase">
     <minifiedDef>MinifiedThing</minifiedDef>
     <defName>AvaliNanoLoom</defName>
     <label>Avali Nano-Printing Loom</label>
@@ -261,9 +259,9 @@
       <ComponentSpacer>2</ComponentSpacer>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
-     <researchPrerequisites>
-       <li>ResearchNanoLoom</li>
-     </researchPrerequisites>
+    <researchPrerequisites>
+      <li>ResearchNanoLoom</li>
+    </researchPrerequisites>
     <graphicData>
       <texPath>avali/buildings/production/loom/loom</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -276,7 +274,7 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-     <castEdgeShadows>true</castEdgeShadows>
+    <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>0.20</staticSunShadowHeight>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -285,7 +283,7 @@
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>0</Flammability>
-       <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
+      <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
     </statBases>
     <comps>
       <li Class="CompProperties_Power">
@@ -310,7 +308,5 @@
       <li>ITab_Bills</li>
     </inspectorTabs>
   </ThingDef>
-
-
 
 </Defs>

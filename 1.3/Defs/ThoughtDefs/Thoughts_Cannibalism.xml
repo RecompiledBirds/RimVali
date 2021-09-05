@@ -16,8 +16,7 @@
       </li>
     </stages>
   </ThoughtDef>
-  
-  
+
   <ThoughtDef>
     <defName>AvaliAteAvaliMeatDirectCannibal</defName>
     <showBubble>true</showBubble>
@@ -34,7 +33,7 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>AvaliAteAvaliMeatAsIngredientCannibal</defName>
     <showBubble>true</showBubble>
@@ -51,13 +50,13 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>AvaliAteAvaliAsIngredient</defName>
     <showBubble>true</showBubble>
     <icon>Things/Mote/ThoughtSymbol/Food</icon>
     <durationDays>1</durationDays>
-     <nullifyingTraits>
+    <nullifyingTraits>
       <li>Cannibal</li>
     </nullifyingTraits>
     <stages>
@@ -68,7 +67,7 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>KnowButcheredAvaliCorpse</defName>
     <durationDays>6</durationDays>
@@ -86,7 +85,7 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>ButcheredAvali</defName>
     <durationDays>6</durationDays>

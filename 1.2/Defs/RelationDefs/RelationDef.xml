@@ -17,8 +17,8 @@
     <implied>false</implied>
     <reflexive>true</reflexive>
   </PawnRelationDef>
-  
-    <PawnRelationDef>
+
+  <PawnRelationDef>
     <workerClass>AvaliMod.AvaliRelationWorker_PackMate</workerClass>
     <defName>PackLeader</defName>
     <label>Packmate</label>

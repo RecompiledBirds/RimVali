@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <TerrainDef ParentName="TileMetalBase">
-      <defName>TungstenTile</defName>
-      <label>Tungsten tile</label>
-      <renderPrecedence>240</renderPrecedence>
-      <description>Tungsten tiles, with a nice shine to them.</description>
-      <color>(163,134,116)</color>
-      <statBases>
-        <WorkToBuild>800</WorkToBuild>
-        <Beauty>2</Beauty>
-        <Cleanliness>0.5</Cleanliness>
-      </statBases>
-      <costList>
+    <defName>TungstenTile</defName>
+    <label>Tungsten tile</label>
+    <renderPrecedence>240</renderPrecedence>
+    <description>Tungsten tiles, with a nice shine to them.</description>
+    <color>(163,134,116)</color>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <Beauty>2</Beauty>
+      <Cleanliness>0.5</Cleanliness>
+    </statBases>
+    <costList>
       <AvaliTungstenPowder>7</AvaliTungstenPowder>
     </costList>
     <designationHotKey>Misc7</designationHotKey>
@@ -19,44 +19,42 @@
       <li>FineFloor</li>
     </tags>
   </TerrainDef>
-  
-  
-    <DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
     <defName>ScrapTile</defName>
     <label>Scrap floor</label>
   </DesignatorDropdownGroupDef>
-  
-   <DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
     <defName>ShingleFloors</defName>
     <label>Shingle floor</label>
   </DesignatorDropdownGroupDef>
-  
-   <DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
     <defName>WeaveFloors</defName>
     <label>Shingle floor</label>
   </DesignatorDropdownGroupDef>
-  
-  
-     <DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
     <defName>DiamondFloors</defName>
     <label>Diamond floor</label>
   </DesignatorDropdownGroupDef>
-  
-       <DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
     <defName>ChaosFloor</defName>
     <label>Chaos floor</label>
   </DesignatorDropdownGroupDef>
-   <DesignatorDropdownGroupDef>
+  <DesignatorDropdownGroupDef>
     <defName>FlowerFloor</defName>
     <label>Flower floor</label>
   </DesignatorDropdownGroupDef>
-  
-     <DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
     <defName>RoomFloor</defName>
     <label>"Room" pattern floor</label>
   </DesignatorDropdownGroupDef>
-  
-   <TerrainDef  ParentName="AvaliFloorBase">
+
+  <TerrainDef  ParentName="AvaliFloorBase">
     <defName>AvaliRoomPattern</defName>
     <label>{0} "room" pattern floor</label>
     <renderPrecedence>240</renderPrecedence>
@@ -70,7 +68,7 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-  
+
     <designationHotKey>Misc7</designationHotKey>
     <texturePath>avali/Floors/r_o_o_m_s</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
@@ -87,15 +85,14 @@
       <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
       <!-- [Command tag:] Tells the C# we want to make a clone for every metal material. It searches for everything with the Metallic category. -->
       <li>cloneMaterial_Metallic[ENDCATNAME]_RFC</li>
-     <!-- [Command tag:] Tells the C# we want to make a clone for every stone material. It searches for everything with the Stony category. -->
-     <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
+      <!-- [Command tag:] Tells the C# we want to make a clone for every stone material. It searches for everything with the Stony category. -->
+      <li>removeFromResearch_Smithing[ENDRESNAME]_RFC</li>
       <li>cloneMaterial_Stony[ENDCATNAME]_RFC</li>
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
-  
-  
-    <TerrainDef  ParentName="AvaliFloorBase">
+
+  <TerrainDef  ParentName="AvaliFloorBase">
     <defName>AvaliFlower</defName>
     <label>{0} flower floor</label>
     <renderPrecedence>240</renderPrecedence>
@@ -109,7 +106,7 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-  
+
     <designationHotKey>Misc7</designationHotKey>
     <texturePath>avali/Floors/flower_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
@@ -125,9 +122,8 @@
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
-  
-  
-   <TerrainDef Name="AvaliFloorBase" Abstract="True">
+
+  <TerrainDef Name="AvaliFloorBase" Abstract="True">
     <layerable>true</layerable>
     <affordances>
       <li>Light</li>
@@ -141,8 +137,8 @@
     <constructEffect>ConstructDirt</constructEffect>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
   </TerrainDef>
-  
-   <TerrainDef  ParentName="AvaliFloorBase">
+
+  <TerrainDef  ParentName="AvaliFloorBase">
     <defName>AvaliChaosPattern</defName>
     <label>{0} "chaos" floor</label>
     <renderPrecedence>240</renderPrecedence>
@@ -156,7 +152,7 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-  
+
     <designationHotKey>Misc7</designationHotKey>
     <texturePath>avali/Floors/chaos</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
@@ -172,13 +168,7 @@
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
-  
-  
-  
-  
-  
-  
-  
+
   <TerrainDef  ParentName="AvaliFloorBase">
     <defName>AvaliDiamondFloor</defName>
     <label>{0} diamond floor</label>
@@ -193,7 +183,7 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-  
+
     <designationHotKey>Misc7</designationHotKey>
     <texturePath>avali/Floors/diamond</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
@@ -210,8 +200,7 @@
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
-  
-  
+
   <TerrainDef  ParentName="AvaliFloorBase">
     <defName>AvaliScrapFloor</defName>
     <label>{0} scrap floor</label>
@@ -226,7 +215,7 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-  
+
     <designationHotKey>Misc7</designationHotKey>
     <texturePath>avali/Floors/scrap_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
@@ -243,9 +232,6 @@
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
 
-  
-  
-  
   <TerrainDef  ParentName="AvaliFloorBase">
     <defName>AvaliShingleFloor</defName>
     <label>{0} shingle floor</label>
@@ -260,7 +246,7 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-  
+
     <designationHotKey>Misc7</designationHotKey>
     <texturePath>avali/Floors/shingles</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
@@ -276,10 +262,8 @@
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
-  
-  
-  
-    <TerrainDef  ParentName="AvaliFloorBase">
+
+  <TerrainDef  ParentName="AvaliFloorBase">
     <defName>AvaliWeaveFloor</defName>
     <label>{0} weave floor</label>
     <renderPrecedence>240</renderPrecedence>
@@ -293,7 +277,7 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-  
+
     <designationHotKey>Misc7</designationHotKey>
     <texturePath>avali/Floors/weave_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
@@ -309,22 +293,19 @@
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
-  
-  
-  
-  
+
   <TerrainDef ParentName="TileMetalBase">
-      <defName>AeroTungstenTile</defName>
-      <label>Aero-Tungsten Carbide tile</label>
-      <renderPrecedence>240</renderPrecedence>
-      <description>A metallic, white tile. It looks quite nice.</description>
-      <color>(255,255,255)</color>
-      <statBases>
-        <WorkToBuild>800</WorkToBuild>
-        <Beauty>3</Beauty>
-        <Cleanliness>0.6</Cleanliness>
-      </statBases>
-      <costList>
+    <defName>AeroTungstenTile</defName>
+    <label>Aero-Tungsten Carbide tile</label>
+    <renderPrecedence>240</renderPrecedence>
+    <description>A metallic, white tile. It looks quite nice.</description>
+    <color>(255,255,255)</color>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <Beauty>3</Beauty>
+      <Cleanliness>0.6</Cleanliness>
+    </statBases>
+    <costList>
       <AeroTungstenCarbide>7</AeroTungstenCarbide>
     </costList>
     <designationHotKey>Misc7</designationHotKey>
@@ -333,17 +314,17 @@
     </tags>
   </TerrainDef>
   <TerrainDef ParentName="TileMetalBase">
-      <defName>AerogellTile</defName>
-      <label>Ferrogel tile</label>
-      <renderPrecedence>240</renderPrecedence>
-      <description>A bright orange tile made from ferrogel.</description>
-      <color>(244,119,33)</color>
-      <statBases>
-        <WorkToBuild>800</WorkToBuild>
-        <Beauty>1</Beauty>
-        <Cleanliness>0.3</Cleanliness>
-      </statBases>
-      <costList>
+    <defName>AerogellTile</defName>
+    <label>Ferrogel tile</label>
+    <renderPrecedence>240</renderPrecedence>
+    <description>A bright orange tile made from ferrogel.</description>
+    <color>(244,119,33)</color>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <Beauty>1</Beauty>
+      <Cleanliness>0.3</Cleanliness>
+    </statBases>
+    <costList>
       <AvaliAerogel>7</AvaliAerogel>
     </costList>
     <designationHotKey>Misc7</designationHotKey>

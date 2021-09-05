@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-   <PawnKindDef ParentName="BaseIWAvali" Name="IWTechAvaliBase">
-     <defName>IWTechAvaliVillager</defName>
-     <label>Avali villager</label>
-     <combatPower>5</combatPower>
+  <PawnKindDef ParentName="BaseIWAvali" Name="IWTechAvaliBase">
+    <defName>IWTechAvaliVillager</defName>
+    <label>Avali villager</label>
+    <combatPower>5</combatPower>
     <baseRecruitDifficulty>0.6</baseRecruitDifficulty>
     <backstoryCategories>
       <li>RimValiBackstories</li>
-        <li>Offworld</li>
-          <li>Outlander</li>
+      <li>Offworld</li>
+      <li>Outlander</li>
     </backstoryCategories>
     <defaultFactionType>AvaliFaction</defaultFactionType>
     <itemQuality>Good</itemQuality>
@@ -52,64 +52,61 @@
         </li>
       </subOptionsChooseOne>
     </inventoryOptions>
-   </PawnKindDef>
-   
-   
-   <PawnKindDef ParentName="IWTechAvaliBase">
-     <defName>IWAvaliSoldier</defName>
-     <label>Avali Soldier</label>
-     <combatPower>5</combatPower>
-     <defaultFactionType>AvaliFaction</defaultFactionType>
-     <baseRecruitDifficulty>0.55</baseRecruitDifficulty>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>50</maxGenerationAge>
-     <gearHealthRange>0.9~2.5</gearHealthRange>
-     <apparelMoney>1000~100000</apparelMoney>
-     <apparelTags Inherit = "False">
-       <li>AvaliArmor</li>
-       <li>IndustrialBasic</li>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="IWTechAvaliBase">
+    <defName>IWAvaliSoldier</defName>
+    <label>Avali Soldier</label>
+    <combatPower>5</combatPower>
+    <defaultFactionType>AvaliFaction</defaultFactionType>
+    <baseRecruitDifficulty>0.55</baseRecruitDifficulty>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>50</maxGenerationAge>
+    <gearHealthRange>0.9~2.5</gearHealthRange>
+    <apparelMoney>1000~100000</apparelMoney>
+    <apparelTags Inherit = "False">
+      <li>AvaliArmor</li>
+      <li>IndustrialBasic</li>
       <li>IndustrialAdvanced</li>
-       <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryBasic</li>
       <li>IndustrialMilitaryAdvanced</li>
-     </apparelTags>
-     <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
-     <weaponMoney>200~1000</weaponMoney>
-     <techHediffsMoney>5000~8000</techHediffsMoney>
-     <techHediffsTags>
-       <li>Advanced</li>
-     </techHediffsTags>
-     <techHediffsChance>2</techHediffsChance>
-     <invNutrition>5</invNutrition>
-   </PawnKindDef>
-   
-   
-    
-   <PawnKindDef ParentName = "IWTechAvaliBase">
-     <defName>IWTechAvaliLeader</defName>
-     <label>Avali Pack Leader</label>
-     <combatPower>5</combatPower>
-     <factionLeader>true</factionLeader>
-     <minGenerationAge>20</minGenerationAge>
-     <isFighter>false</isFighter>
-     <gearHealthRange>0.5~1</gearHealthRange>
-     <itemQuality>Good</itemQuality>
-     <weaponMoney>200~700</weaponMoney>
-     <weaponTags>
-       <li>AvaliWeapons</li>
-     </weaponTags>
-     <apparelMoney>500~3500</apparelMoney>
-     <apparelTags>
-       <li>BeltDefensePop</li>
-       <li>IndustrialMilitaryBasic</li>
-       <li>Avali</li>
-     </apparelTags>
-     <techHediffsChance>1.2</techHediffsChance>
-     <techHediffsMoney>800~2000</techHediffsMoney>
-       <techHediffsTags>
-         <li>Advanced</li>
-       </techHediffsTags>
-   </PawnKindDef>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
+    <weaponMoney>200~1000</weaponMoney>
+    <techHediffsMoney>5000~8000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>2</techHediffsChance>
+    <invNutrition>5</invNutrition>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName = "IWTechAvaliBase">
+    <defName>IWTechAvaliLeader</defName>
+    <label>Avali Pack Leader</label>
+    <combatPower>5</combatPower>
+    <factionLeader>true</factionLeader>
+    <minGenerationAge>20</minGenerationAge>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.5~1</gearHealthRange>
+    <itemQuality>Good</itemQuality>
+    <weaponMoney>200~700</weaponMoney>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <apparelMoney>500~3500</apparelMoney>
+    <apparelTags>
+      <li>BeltDefensePop</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>Avali</li>
+    </apparelTags>
+    <techHediffsChance>1.2</techHediffsChance>
+    <techHediffsMoney>800~2000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+  </PawnKindDef>
 </Defs>

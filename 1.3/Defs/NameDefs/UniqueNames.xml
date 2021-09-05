@@ -12,9 +12,9 @@
           <path>NeziAvaliNameGen/NeoName</path>
         </li>
       </rulesRaw>
-     </rulePack>
+    </rulePack>
   </RulePackDef>
-    <RulePackDef>
+  <RulePackDef>
     <defName>EimilNamer</defName>
     <rulePack>
       <rulesStrings>
@@ -22,9 +22,9 @@
       </rulesStrings>
       <rulesRaw>
         <li Class = "Rule_File">
-            <keyword>EimilName</keyword>
-            <path>NeziAvaliNameGen/EimilName</path>
-          </li>
+          <keyword>EimilName</keyword>
+          <path>NeziAvaliNameGen/EimilName</path>
+        </li>
       </rulesRaw>
     </rulePack>
   </RulePackDef>

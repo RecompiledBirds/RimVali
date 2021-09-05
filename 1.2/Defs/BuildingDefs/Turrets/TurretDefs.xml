@@ -112,11 +112,11 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>25</damageAmountBase>
       <speed>90</speed>
-       <stoppingPower>1</stoppingPower>
+      <stoppingPower>1</stoppingPower>
       <armorPenetrationBase>0.3</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>AvaliBasicTurretGun</defName>
     <label>Basic avali turret gun</label>
@@ -151,12 +151,8 @@
       </li>
     </verbs>
   </ThingDef>
-  
-  
-  
-  
-  
-   <ThingDef ParentName="BuildingBase">
+
+  <ThingDef ParentName="BuildingBase">
     <defName>AvaliMiniGunTurret</defName>
     <size>(2,2)</size>
     <label>Avali minigun turret</label>
@@ -272,7 +268,7 @@
       <armorPenetrationBase>0.2</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>AvaliMiniGunTurretGun</defName>
     <label>Basic avali turret gun</label>

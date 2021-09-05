@@ -20,22 +20,22 @@
           </thingDefs>
         </filter>
         <count>5</count>
-        </li>
-        <li>
-          <filter>
-            <thingDefs>
-              <li>Plasteel</li>
-            </thingDefs>
-          </filter>
-          <count>5</count>
-        </li>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
     </ingredients>
     <products>
       <AvaliAerogel>10</AvaliAerogel>
     </products>
   </RecipeDef>
-  
-   <RecipeDef>
+
+  <RecipeDef>
     <defName>RimValiPrintAerogelTwo</defName>
     <label>Print aerogel (20)</label>
     <description>Create aerogel by re-assembling the ingredients at a near-atomic level.</description>
@@ -52,21 +52,21 @@
           </thingDefs>
         </filter>
         <count>15</count>
-        </li>
-        <li>
-          <filter>
-            <thingDefs>
-              <li>Plasteel</li>
-            </thingDefs>
-          </filter>
-          <count>10</count>
-        </li>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
     </ingredients>
     <products>
       <AvaliAerogel>20</AvaliAerogel>
     </products>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>RimValiPrintAerogelThree</defName>
     <label>Print aerogel (40)</label>
@@ -84,15 +84,15 @@
           </thingDefs>
         </filter>
         <count>30</count>
-        </li>
-        <li>
-          <filter>
-            <thingDefs>
-              <li>Plasteel</li>
-            </thingDefs>
-          </filter>
-          <count>20</count>
-        </li>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
     </ingredients>
     <products>
       <AvaliAerogel>40</AvaliAerogel>
@@ -117,7 +117,7 @@
           </thingDefs>
         </filter>
         <count>10</count>
-        </li>
+      </li>
     </ingredients>
     <products>
       <AvaliTungstenPowder>8</AvaliTungstenPowder>
@@ -141,7 +141,7 @@
           </thingDefs>
         </filter>
         <count>25</count>
-        </li>
+      </li>
     </ingredients>
     <products>
       <AvaliTungstenPowder>16</AvaliTungstenPowder>
@@ -165,20 +165,20 @@
           </thingDefs>
         </filter>
         <count>50</count>
-        </li>
+      </li>
     </ingredients>
     <products>
       <AvaliTungstenPowder>40</AvaliTungstenPowder>
     </products>
     <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
   </RecipeDef>
-  
+
   <!-- Nanofiber -->
 
   <RecipeDef>
     <researchPrerequisites>
-       <li>NanoFibreResearch</li>
-     </researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
     <workAmount>7</workAmount>
     <defName>WeaveNanoFiber</defName>
     <label>Weave Nano-Fiber</label>
@@ -201,12 +201,12 @@
       <AvaliNanoFiber>8</AvaliNanoFiber>
     </products>
   </RecipeDef>
-  
-    <RecipeDef>
+
+  <RecipeDef>
     <workAmount>35</workAmount>
     <researchPrerequisites>
-       <li>NanoFibreResearch</li>
-     </researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
     <defName>WeaveNanoFiberTwo</defName>
     <label>Weave Nano-Fiber (40)</label>
     <description>Weave nano-fiber from cloth.</description>
@@ -228,12 +228,12 @@
       <AvaliNanoFiber>40</AvaliNanoFiber>
     </products>
   </RecipeDef>
-  
-    <RecipeDef>
+
+  <RecipeDef>
     <workAmount>70</workAmount>
     <researchPrerequisites>
-       <li>NanoFibreResearch</li>
-     </researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
     <defName>WeaveNanoFiberThree</defName>
     <label>Weave Nano-Fiber (80)</label>
     <description>Weave nano-fiber from cloth.</description>
@@ -255,12 +255,12 @@
       <AvaliNanoFiber>80</AvaliNanoFiber>
     </products>
   </RecipeDef>
-  
+
   <!-- Ferroweave -->
   <RecipeDef>
     <researchPrerequisites>
-       <li>AeroWeaveResearch</li>
-     </researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
     <workAmount>30</workAmount>
     <defName>WeaveFerroweave</defName>
     <label>Weave Ferroweave</label>
@@ -291,11 +291,11 @@
       <AvaliAeroweave>10</AvaliAeroweave>
     </products>
   </RecipeDef>
-  
+
   <RecipeDef>
     <researchPrerequisites>
-       <li>AeroWeaveResearch</li>
-     </researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
     <workAmount>150</workAmount>
     <defName>WeaveFerroweaveTwo</defName>
     <label>Weave Ferroweave (25)</label>
@@ -327,9 +327,9 @@
     </products>
   </RecipeDef>
   <RecipeDef>
-  <researchPrerequisites>
-       <li>AeroWeaveResearch</li>
-     </researchPrerequisites>
+    <researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
     <workAmount>300</workAmount>
     <defName>WeaveFerroweaveThree</defName>
     <label>Weave Ferroweave (100)</label>
@@ -360,9 +360,9 @@
       <AvaliAeroweave>100</AvaliAeroweave>
     </products>
   </RecipeDef>
-  
+
   <!-- Aero-Tungsten Carbide -->
-  
+
   <RecipeDef>
     <workAmount>100</workAmount>
     <defName>ForgeAeroTungsten</defName>
@@ -410,10 +410,10 @@
       <AeroTungstenCarbide>25</AeroTungstenCarbide>
     </products>
     <researchPrerequisites>
-       <li>AvaliAeroTungsten</li>
-     </researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <workAmount>500</workAmount>
     <defName>ForgeAeroTungstenTwo</defName>
@@ -461,8 +461,8 @@
       <AeroTungstenCarbide>50</AeroTungstenCarbide>
     </products>
     <researchPrerequisites>
-       <li>AvaliAeroTungsten</li>
-     </researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
   </RecipeDef>
 
   <RecipeDef>
@@ -512,10 +512,10 @@
       <AeroTungstenCarbide>125</AeroTungstenCarbide>
     </products>
     <researchPrerequisites>
-       <li>AvaliAeroTungsten</li>
-     </researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
   </RecipeDef>
-  
+
   <!-- NanoCarbon -->
   <RecipeDef>
     <defName>RefineAvaliCarbon</defName>
@@ -534,7 +534,7 @@
         </filter>
         <count>5</count>
       </li>
-            <li>
+      <li>
         <filter>
           <thingDefs>
             <li>WoodLog</li>
@@ -547,10 +547,10 @@
       <AvaliNanoCarbon>5</AvaliNanoCarbon>
     </products>
     <researchPrerequisites>
-       <li>NanoCarbonResearch</li>
-     </researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>RefineAvaliCarbonTwo</defName>
     <label>Refine carbon (25)</label>
@@ -581,10 +581,10 @@
       <AvaliNanoCarbon>25</AvaliNanoCarbon>
     </products>
     <researchPrerequisites>
-       <li>NanoCarbonResearch</li>
-     </researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>RefineAvaliCarbonThree</defName>
     <label>Refine carbon (50)</label>
@@ -602,7 +602,7 @@
         </filter>
         <count>50</count>
       </li>
-              <li>
+      <li>
         <filter>
           <thingDefs>
             <li>WoodLog</li>
@@ -615,10 +615,9 @@
       <AvaliNanoCarbon>50</AvaliNanoCarbon>
     </products>
     <researchPrerequisites>
-       <li>NanoCarbonResearch</li>
-     </researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
   </RecipeDef>
-
 
   <RecipeDef>
     <workAmount>100</workAmount>
@@ -651,16 +650,11 @@
       <AvaliNanoCarbonFiber>5</AvaliNanoCarbonFiber>
     </products>
     <researchPrerequisites>
-       <li>NanoFibreResearch</li>
-     </researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
   </RecipeDef>
-  
-  
-  
-  
-  
-  
-   <RecipeDef>
+
+  <RecipeDef>
     <workAmount>100</workAmount>
     <defName>WeaveNanoCarbonFiberTwo</defName>
     <label>Weave nano carbon fiber</label>
@@ -669,7 +663,7 @@
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
-        <ingredients>
+    <ingredients>
       <li>
         <filter>
           <thingDefs>
@@ -691,8 +685,8 @@
       <AvaliNanoCarbonFiber>25</AvaliNanoCarbonFiber>
     </products>
     <researchPrerequisites>
-       <li>NanoFibreResearch</li>
-     </researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
   </RecipeDef>
   <RecipeDef>
     <workAmount>100</workAmount>
@@ -703,7 +697,7 @@
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
-        <ingredients>
+    <ingredients>
       <li>
         <filter>
           <thingDefs>
@@ -725,10 +719,10 @@
       <AvaliNanoCarbonFiber>50</AvaliNanoCarbonFiber>
     </products>
     <researchPrerequisites>
-       <li>NanoFibreResearch</li>
-     </researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
   </RecipeDef>
-   <RecipeDef>
+  <RecipeDef>
     <workAmount>100</workAmount>
     <defName>WeaveAeroTungstenFiber</defName>
     <label>Weave aero tungsten fiber</label>
@@ -767,7 +761,7 @@
       <AvaliAeroTungstenFiber>25</AvaliAeroTungstenFiber>
     </products>
     <researchPrerequisites>
-       <li>AvaliAeroTungstenFiber</li>
-     </researchPrerequisites>
+      <li>AvaliAeroTungstenFiber</li>
+    </researchPrerequisites>
   </RecipeDef>
 </Defs>

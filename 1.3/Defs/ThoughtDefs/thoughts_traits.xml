@@ -41,7 +41,7 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>AvaliHatesCybernetics</defName>
     <workerClass>ThoughtWorker_HasAddedBodyPart</workerClass>

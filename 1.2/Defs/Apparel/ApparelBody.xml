@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
-  
+
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliTDW</defName>
     <label>Avali traditional wear</label>
     <description>Traditional avali clothing. It's lightweight, and comfortable. It also has some chimes on it, which the avali like.</description>
     <recipeMaker>
-        <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
     </recipeMaker>
-   
+
     <graphicData>
       <texPath>avali/Things/Apparel/TraditionalWear/TraditionalWear_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -37,7 +36,7 @@
       <EquipDelay>1.5</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-    
+
     </equippedStatOffsets>
     <apparel>
       <bodyPartGroups>
@@ -60,23 +59,17 @@
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
   </ThingDef>
-    
- 
-  
-  
-  
-  
-  
-    <!-- HUD -->
-   <ThingDef ParentName="ApparelMakeableBase">
+
+  <!-- HUD -->
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHUD</defName>
-      
+
     <label>Avali HUD [placeholder]</label>
     <description>An avali HUD. [placeholder]</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-       <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
+      <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
       <skillRequirements>
         <Crafting>5</Crafting>
       </skillRequirements>
@@ -103,7 +96,7 @@
     </thingCategories>
     <equippedStatOffsets>
       <ShootingAccuracyPawn>3.5</ShootingAccuracyPawn>
-       <ResearchSpeed>5.5</ResearchSpeed>
+      <ResearchSpeed>5.5</ResearchSpeed>
     </equippedStatOffsets>
     <costList>
       <ComponentSpacer>5</ComponentSpacer>
@@ -156,8 +149,8 @@
       <li Class="CompProperties_BiocodableApparel"/>
     </comps>
   </ThingDef>
-  
-  
+
+  <!-- TODO: Head Dress -> Headdress -->
   <!-- Headress -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHeadress</defName>
@@ -190,7 +183,7 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>1</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
       <SocialImpact>1</SocialImpact>
     </equippedStatOffsets>
@@ -223,9 +216,9 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
+
   <!-- Hood -->
-<ThingDef ParentName="ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHood</defName>
     <label>Avali hood</label>
     <description>An avali hood. [placeholder]</description>
@@ -240,7 +233,7 @@
         <li>FabricationBench</li>
       </recipeUsers>
     </recipeMaker>
-        <costStuffCount>20</costStuffCount>
+    <costStuffCount>20</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -262,12 +255,12 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
       <SocialImpact>-0.1</SocialImpact>
-        <ComfyTemperatureMin>-2</ComfyTemperatureMin>
-            <ComfyTemperatureMax>2</ComfyTemperatureMax>
-         <Flammability>20</Flammability>
+      <ComfyTemperatureMin>-2</ComfyTemperatureMin>
+      <ComfyTemperatureMax>2</ComfyTemperatureMax>
+      <Flammability>20</Flammability>
     </equippedStatOffsets>
     <costList>
       <ComponentSpacer>1</ComponentSpacer>
@@ -294,19 +287,15 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
-  
-  
-  
+
   <!-- bell cloak -->
-<ThingDef ParentName="ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliBellCloak</defName>
     <label>Avali bell cloak</label>
     <description>An avali cloak. [placeholder]</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
-     <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>3</Crafting>
       </skillRequirements>
@@ -314,7 +303,7 @@
         <li>FabricationBench</li>
       </recipeUsers>
     </recipeMaker>
-         <costStuffCount>30</costStuffCount>
+    <costStuffCount>30</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -336,11 +325,11 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
-         <RestRateMultiplier>0.25</RestRateMultiplier>
-         <SocialImpact>0.5</SocialImpact>
-         <MoveSpeed>1</MoveSpeed>
+      <RestRateMultiplier>0.25</RestRateMultiplier>
+      <SocialImpact>0.5</SocialImpact>
+      <MoveSpeed>1</MoveSpeed>
     </equippedStatOffsets>
 
     <apparel>
@@ -363,16 +352,12 @@
       </defaultOutfitTags>
       <useDeflectMetalEffect>false</useDeflectMetalEffect>
     </apparel>
-   <colorGenerator Class="ColorGenerator_StandardApparel" />
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
     <thingSetMakerTags>
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
-  
-  
-  
+
   <!-- Thermal wraps -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliThermalWraps</defName>
@@ -389,7 +374,7 @@
         <li>FabricationBench</li>
       </recipeUsers>
     </recipeMaker>
-        <costStuffCount>70</costStuffCount>
+    <costStuffCount>70</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -411,11 +396,11 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
-         <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>15</ComfyTemperatureMax>
-          <Flammability>20</Flammability>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+      <ComfyTemperatureMax>15</ComfyTemperatureMax>
+      <Flammability>20</Flammability>
     </equippedStatOffsets>
     <costList>
       <AvaliAeroweave>30</AvaliAeroweave>

@@ -14,13 +14,13 @@
         </statOffsets>
       </li>
     </degreeDatas>
-     <conflictingTraits>
-       <li>Kind</li>
-       <li>Psychopath</li>
-     </conflictingTraits>
+    <conflictingTraits>
+      <li>Kind</li>
+      <li>Psychopath</li>
+    </conflictingTraits>
   </TraitDef>
   <TraitDef Abstract="True" Name="CantFightFire">
-    
+
     <disabledWorkTags>Firefighting</disabledWorkTags>
   </TraitDef>
   <TraitDef ParentName="CantFightFire">
@@ -87,7 +87,7 @@
       <li>AvaliNormal</li>
     </conflictingTraits>
   </TraitDef>
-  
+
   <TraitDef>
     <defName>AvaliBionicCareless</defName>
     <commonality>40</commonality>

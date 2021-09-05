@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-      <ThingDef ParentName="MakeableAERIALShellBase">
+  <ThingDef ParentName="MakeableAERIALShellBase">
     <defName>AERIAL_HE</defName>
     <label>AERIAL HE rocket</label>
     <description>A highly explosive rocket, launched from an AERIAL system.</description>
@@ -21,7 +21,7 @@
     <projectileWhenLoaded>AERIAL_HE_SHELL</projectileWhenLoaded>
     <costList>
       <AeroTungstenCarbide>5</AeroTungstenCarbide>
-       <AvaliTungstenPowder>17</AvaliTungstenPowder>
+      <AvaliTungstenPowder>17</AvaliTungstenPowder>
       <Steel>40</Steel>
       <Chemfuel>30</Chemfuel>
     </costList>
@@ -29,7 +29,7 @@
       <researchPrerequisite>AERIELRES</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseBullet">
     <defName>AERIAL_HE_SHELL</defName>
     <label>high-explosive shell</label>

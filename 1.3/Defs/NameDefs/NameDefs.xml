@@ -32,10 +32,8 @@
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][MidSectionName][MidSectionName]</li>
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][LastSectionName][LastSectionName]</li>
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][LastSectionName][LastSectionName]</li>
-         <li>AvaliName->[FirstSectionName][MidSectionName][LastSectionName] [FirstSectionName][MidSectionName][LastSectionName]</li>
-         
-         
-         
+        <li>AvaliName->[FirstSectionName][MidSectionName][LastSectionName] [FirstSectionName][MidSectionName][LastSectionName]</li>
+
         <li>AvaliName->[FirstSectionName][LastSectionName][MidSectionName] [FirstSectionName][MidSectionName]</li>
         <li>AvaliName->[FirstSectionName][MidSectionName][LastSectionName] [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[FirstSectionName][LastSectionName][LastSectionName] [FirstSectionName][MidSectionName]</li>
@@ -46,23 +44,22 @@
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[FirstSectionName][MidSectionName][LastSectionName] [FirstSectionName][MidSectionName]</li>
-        
+
         <li>AvaliName->[FirstSectionName][LastSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[FirstSectionName][MidSectionName][LastSectionName] '[FirstSectionName][LastSectionName]' [FirstSectionName][MidSectionName]</li>
         <li>AvaliName->[FirstSectionName][LastSectionName][LastSectionName] '[FirstSectionName][LastSectionName]' [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[FirstSectionName][LastSectionName][LastSectionName] '[FirstSectionName][LastSectionName]' [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[FirstSectionName][LastSectionName][LastSectionName] '[FirstSectionName][LastSectionName]' [FirstSectionName][MidSectionName]</li>
-        
+
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][LastSectionName]</li>
-        
+
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][MidSectionName]</li>
-        
+
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][LastSectionName]</li>
-        
+
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[UName] [UName]</li>
-        
-        
+
       </rulesStrings>
       <rulesRaw>
         <li Class = "Rule_File">
@@ -84,5 +81,5 @@
       </rulesRaw>
     </rulePack>
   </RulePackDef>
-  
+
 </Defs>

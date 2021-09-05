@@ -8,7 +8,7 @@
       <drawSize>0.85</drawSize>
     </graphicData>
     <label>Vocal replacements</label>
-   <description>A small kit of vocal replacements. After tinkering with and replacing the vocal cords of the wearer, it makes their voice sound more appealing and makes it more flexible, giving them better social gain from other pawns.</description>
+    <description>A small kit of vocal replacements. After tinkering with and replacing the vocal cords of the wearer, it makes their voice sound more appealing and makes it more flexible, giving them better social gain from other pawns.</description>
     <descriptionHyperlinks><RecipeDef>InstallVocalReplacements</RecipeDef></descriptionHyperlinks>
     <costList>
       <ComponentIndustrial>1</ComponentIndustrial>

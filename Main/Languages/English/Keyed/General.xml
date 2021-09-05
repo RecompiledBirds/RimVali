@@ -20,23 +20,22 @@
   <PackLossStageTwoSetting>Days for stage two pack loss to set in: {TIME}</PackLossStageTwoSetting>
   <PackLossStageThreeSetting>Days for stage three pack loss to set in: {TIME}</PackLossStageThreeSetting>
   <PackLossCheck>Pack loss enabled:</PackLossCheck>
-  
+
   <PackLossDesc>Enable/disable pack loss.\n Pack loss is a time-based effect if an avali does not have a pack. Recommended for a "full" experience.</PackLossDesc>
-  
+
   <PacksNum>The maximum number of avali in a pack.\n5 is usually recommended.</PacksNum>
-  
+
   <PackOpinionReq>Opinion required to join pack: {COUNT}</PackOpinionReq>
-  
+
   <MultithreadingCheck>Multithreading enabled:</MultithreadingCheck>
-  
+
   <MultiThreadingDesc>Enable/disable pack multithreading. [WARNING: RESTARTS THE GAME.]\nIt is recommended to have this enabled, as it reduces lag greatly. May cause issues with Dub's performance anaylzer.</MultiThreadingDesc>
-  
+
   <PacksCheck>Packs enabled:</PacksCheck>
-  
+
   <PacksDesc>Enable/disable packs. These give boosts to your pawns! Recommended for a "full" experience.</PacksDesc>
-  
+
   <MaxPackSize>Maximum pack size: {COUNT}</MaxPackSize>
-  
 
   <!-- Gameplay -->
   <GameplayLabel>Gameplay Settings</GameplayLabel>
@@ -53,13 +52,12 @@
   <StableSettings>Stable.</StableSettings>
   <PotentialIssuesSettings>Potential issues may occur.</PotentialIssuesSettings>
   <UnstableSettings>Unstable.</UnstableSettings>
-  
+
   <!-- Debug -->
   <DebugLabel>Debug and advanced settings</DebugLabel>
   <ToggleDebug>Toggle debug mode</ToggleDebug>
   <RVBuild>RimVali build: {BUILD}</RVBuild>
-  
-    
+
   <!-- Letters -->
 
   <IlluminateFactionName>Illuminate colony</IlluminateFactionName>
@@ -68,18 +66,16 @@
   <IlluminateAirdropSend>An Illuminate airdrop is en route! It will land in: {TIME} hours! Be prepared!</IlluminateAirdropSend>
   <AirdropSendMsg>Airdrop en route</AirdropSendMsg>
   <HackedProject>Hacked project: {PROJECT}</HackedProject>
- <UnlockedResearch>Tech now researchable: {PROJECT}</UnlockedResearch>
-  
+  <UnlockedResearch>Tech now researchable: {PROJECT}</UnlockedResearch>
+
   <!-- RVR -->
   <CannotWear>{RACE} can't wear this</CannotWear>
   <CannotBuild>{RACE} can't build this</CannotBuild>
   <CannotEat>{RACE} can't eat this</CannotEat>
-  
-  
+
   <!-- Jobs -->
   <RefuelThing>Refuel {1_labelShort}</RefuelThing>
-  
-  
+
   <!-- AERIAL -->
   <AERIALShellSpaceLeft>Space used: {SPACE}</AERIALShellSpaceLeft>
   <AERIALShellCapSetting>Aerial shell cap: {CAP}</AERIALShellCapSetting>

@@ -9,21 +9,16 @@
     <match Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationReplace">
-           <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Avali"]</xpath>
-    <value>
-      <RimValiCore.RVR.RimValiRaceDef ParentName="BaseFullAvali">
-        <defName>Alien_Avali</defName>
-      </RimValiCore.RVR.RimValiRaceDef>
-    </value>
+          <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Avali"]</xpath>
+          <value>
+            <RimValiCore.RVR.RimValiRaceDef ParentName="BaseFullAvali">
+              <defName>Alien_Avali</defName>
+            </RimValiCore.RVR.RimValiRaceDef>
+          </value>
         </li>
-         
+
       </operations>
     </match>
   </Operation>
-  
-  
-  
-  
-  
-  
+
 </Patch>

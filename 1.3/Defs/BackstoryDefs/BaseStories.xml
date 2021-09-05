@@ -31,7 +31,7 @@
     <disabledWorkTypes>
       <li>Crafting</li>
       <li>Intellectual</li>
-      </disabledWorkTypes>
+    </disabledWorkTypes>
     <enabledWorkTypes>
       <li>Commoner</li>
     </enabledWorkTypes>
@@ -77,17 +77,17 @@
           </firstColor>
           <secondColor Class="ColorGenerator_Options">
             <options>
-                <li>
-                  <weight>10</weight>
-                  <min>RGBA(50, 50, 50,150)</min>
-                  <max>RGBA(200, 200, 200,210)</max>
-                </li>
-                <li>
-                  <weight>2</weight>
-                  <min>RGBA(40, 40, 40, 150)</min>
-                  <max>RGBA(60, 60, 60, 210)</max>
-                </li>
-              </options>
+              <li>
+                <weight>10</weight>
+                <min>RGBA(50, 50, 50,150)</min>
+                <max>RGBA(200, 200, 200,210)</max>
+              </li>
+              <li>
+                <weight>2</weight>
+                <min>RGBA(40, 40, 40, 150)</min>
+                <max>RGBA(60, 60, 60, 210)</max>
+              </li>
+            </options>
           </secondColor>
           <thirdColor Class="ColorGenerator_Options">
             <options>
@@ -245,14 +245,13 @@
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
 
-
   <RimValiCore.RVR.RVRBackstory Name="MaleBase" Abstract = "true">
     <canSpawnFemale>false</canSpawnFemale>
   </RimValiCore.RVR.RVRBackstory>
   <RimValiCore.RVR.RVRBackstory Name="FemaleBase" Abstract = "true">
     <canSpawnMale>false</canSpawnMale>
   </RimValiCore.RVR.RVRBackstory>
-	
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliWarchild</defName>
     <title>War Hatchling</title>
@@ -263,7 +262,7 @@
       <li>RimValiBackstories</li>
     </spawnInCategories>
   </RimValiCore.RVR.RVRBackstory>
-	
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSoldierChild</defName>
     <title>Child Soldier</title>
@@ -273,7 +272,7 @@
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <skillGains>
+    <skillGains>
       <li>
         <skill>Shooting</skill>
         <amount>2</amount>
@@ -287,13 +286,13 @@
         <amount>1</amount>
       </li>
       <li>
-	      <skill>Social</skill>
-	      <amount>-1</amount>
-		  </li>
+        <skill>Social</skill>
+        <amount>-1</amount>
+      </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
-	<RimValiCore.RVR.RVRBackstory>
+
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliLaborChild</defName>
     <title>Child Laborer</title>
     <shortTitle>Child Laborer</shortTitle>
@@ -302,7 +301,7 @@
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <skillGains>
+    <skillGains>
       <li>
         <skill>Construction</skill>
         <amount>2</amount>
@@ -312,14 +311,13 @@
         <amount>1</amount>
       </li>
       <li>
-	      <skill>Social</skill>
-	      <amount>-1</amount>
-		  </li>
+        <skill>Social</skill>
+        <amount>-1</amount>
+      </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-		
-		
-	<RimValiCore.RVR.RVRBackstory>
+
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBlessedChild</defName>
     <title>Chosen One</title>
     <shortTitle>Chosen One</shortTitle>
@@ -328,7 +326,7 @@
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <skillGains>
+    <skillGains>
       <li>
         <skill>Intellectual</skill>
         <amount>2</amount>
@@ -338,13 +336,13 @@
         <amount>1</amount>
       </li>
       <li>
-	      <skill>Social</skill>
-	      <amount>2</amount>
-		  </li>
+        <skill>Social</skill>
+        <amount>2</amount>
+      </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
-		<RimValiCore.RVR.RVRBackstory>
+
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliLateHatch</defName>
     <title>Late Hatch</title>
     <shortTitle>Late Hatch</shortTitle>
@@ -353,16 +351,16 @@
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <skillGains>
+    <skillGains>
       <li>
         <skill>Social</skill>
         <amount>-2</amount>
       </li>
     </skillGains>
-	  <maleChance>10</maleChance>
-	  <femaleChance>10</femaleChance>
+    <maleChance>10</maleChance>
+    <femaleChance>10</femaleChance>
   </RimValiCore.RVR.RVRBackstory>
-		
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSolider</defName>
     <title>Illuminate Solider</title>
@@ -387,7 +385,7 @@
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliFarmer</defName>
     <title>Farmer</title>
@@ -408,7 +406,7 @@
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliResearcher</defName>
     <title>Illuminate Researcher</title>
@@ -425,7 +423,7 @@
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBuilder</defName>
     <title>Builder</title>
@@ -442,7 +440,7 @@
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliExplorer</defName>
     <title>Pioneer</title>
@@ -457,31 +455,31 @@
         <skill>Plants</skill>
         <amount>4</amount>
       </li>
-	    <li>
+      <li>
         <skill>Animals</skill>
         <amount>2</amount>
       </li>
-	    <li>
+      <li>
         <skill>Mining</skill>
         <amount>2</amount>
       </li>
-	    <li>
+      <li>
         <skill>Intellectual</skill>
         <amount>1</amount>
       </li>
-	    <li>
+      <li>
         <skill>Social</skill>
         <amount>-2</amount>
       </li>
     </skillGains>
-  	<forcedTraits>
-	    <li>
-	      <def>Nerves</def>
-		    <degree>1</degree>
-	   </li>
-	  </forcedTraits>
+    <forcedTraits>
+      <li>
+        <def>Nerves</def>
+        <degree>1</degree>
+      </li>
+    </forcedTraits>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliDiplomat</defName>
     <title>Diplomat</title>
@@ -509,11 +507,11 @@
         <amount>-2</amount>
       </li>
     </skillGains>
-  	<forcedTraits>
+    <forcedTraits>
       <li>
         <def>Kind</def>
       </li>
-	  </forcedTraits>
+    </forcedTraits>
   </RimValiCore.RVR.RVRBackstory>
 
   <RimValiCore.RVR.RVRBackstory>
@@ -525,7 +523,7 @@
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <disabledWorkTypes>
+    <disabledWorkTypes>
       <li>Social</li>
     </disabledWorkTypes>
     <skillGains>
@@ -550,19 +548,19 @@
         <amount>1</amount>
       </li>
     </skillGains>
-	</RimValiCore.RVR.RVRBackstory>
+  </RimValiCore.RVR.RVRBackstory>
 
-	<RimValiCore.RVR.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSpy</defName>
     <title>Illuminate Spy</title>
     <shortTitle>Spy</shortTitle>
     <storyDesc>[PAWN_nameDef] enlisted at a young age to join the Illuminate. Years and years of propaganda clearly did their job, and [PAWN_nameDef] quickly climbed the ranks of the Illuminate spy program. [PAWN_nameDef] lives to serve the Illuminate, the Illuminate serves to grant livelihood to [PAWN_nameDef].\n\nIf [PAWN_nameDef] wants something out of someone, [PAWN_pronoun] will get it, no matter the cost. It's not torture, it's coersion after all! [PAWN_nameDef] can play many roles, and can hold [PAWN_possessive] own in many situations. 
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <disabledWorkTypes>
+    <disabledWorkTypes>
       <li>Caring</li>
     </disabledWorkTypes>
     <skillGains>
@@ -591,27 +589,27 @@
         <amount>1</amount>
       </li>
     </skillGains>
-	  <forcedTraits>
-	    <li>
-	      <def>Bloodlust</def>
-	    </li>
-	  </forcedTraits>
+    <forcedTraits>
+      <li>
+        <def>Bloodlust</def>
+      </li>
+    </forcedTraits>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliThief</defName>
     <title>Thief</title>
     <shortTitle>Thief</shortTitle>
     <storyDesc>[PAWN_nameDef] made [PAWN_possessive] living back on Avalon by petty thievery, shoplifting, and running black market goods. However, even those endeavours started to prove ineffective in fufilling [PAWN_nameDef]'s crave for possessions, so they then stepped up to muggings, kidnappings, ransom, robberies, and many more goodies.\n\nAfter a few years, [PAWN_nameDef] was caught, and placed into an Avali prisoner program. [PAWN_nameDef] is now being sent to a foreign planet for some kind of expedition, but [PAWN_pronoun] was too busy pickpocketing the instructor to really be listening.
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <disabledWorkTypes>
+    <disabledWorkTypes>
       <li>Caring</li>
-	    <li>Crafting</li>
-	    <li>Cooking</li>
+      <li>Crafting</li>
+      <li>Cooking</li>
     </disabledWorkTypes>
     <skillGains>
       <li>
@@ -627,19 +625,19 @@
         <amount>6</amount>
       </li>
     </skillGains>
-	  <forcedTraits>
-	    <li>
-	      <def>Greedy</def>
-	    </li>
-  	</forcedTraits>
+    <forcedTraits>
+      <li>
+        <def>Greedy</def>
+      </li>
+    </forcedTraits>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliTinkerer</defName>
     <title>Tinkerer</title>
     <shortTitle>Tinkerer</shortTitle>
     <storyDesc>[PAWN_nameDef] never really worked for anyone in particular, finding [PAWN_possessive] lifestyle in making, restoring, improving, changing, destroying, and designing countless odd machines. At home, [PAWN_pronoun] was disregarded for the bizarre creations [PAWN_pronoun] made, dismissed as being "absolutely impractical" and "having less worth then a wet dishrag." Nonetheless, [PAWN_nameDef] continued to hone their trade, developing many odd trinkets, even if [PAWN_nameDef] couldn't do [PAWN_possessive] dream designs such as "A giant robotic centipede with machine guns attached to it" or "A portable device that can generate tornadoes on command".\n\nBut, this isn't Avalon anymore. Maybe [PAWN_nameDef]'s creations will finally be recognized for what they are worth on this new world?
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
@@ -663,33 +661,32 @@
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliCaveMedic</defName>
     <title>Miner Medic</title>
     <shortTitle>Miner Medic</shortTitle>
     <storyDesc>On Avalon, mining is a crucial part of the economy, many basic Avali resources are based on precious rocks and metals found deep in caves or mountains. It also so happens that mining is an extremely dangerous job, and some people let the glowy rocks down below get to their heads; and that is not just a metaphor.\n\n[PAWN_nameDef]'s job entails digging into collapsed mining areas, and rescuing whoever is still alive. Sadly, it seems giant boulders usually beat Avali, but [PAWN_nameDef] has seen and dealt with quite a few different emergency situations, and is always ready for the next idiot who doesn't understand basic gravity.
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
     <skillGains>
-	    <li>
+      <li>
         <skill>Mining</skill>
         <amount>5</amount>
       </li>
-	    <li>
+      <li>
         <skill>Medicine</skill>
         <amount>7</amount>
       </li>
-	    <li>
+      <li>
         <skill>Construction</skill>
         <amount>2</amount>
       </li>
     </skillGains>
-    
-    
+
     <hasButcherThoughtOverrides>true</hasButcherThoughtOverrides>
     <butcherAndHarvestThoughtOverrides>
       <butcherThoughts>
@@ -701,33 +698,33 @@
       </butcherThoughts>
     </butcherAndHarvestThoughtOverrides>
   </RimValiCore.RVR.RVRBackstory>
-  
-   <RimValiCore.RVR.RVRBackstory>
+
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBionicDesigner</defName>
     <title>Bionic Designer</title>
     <shortTitle>Bionic Designer</shortTitle>
     <storyDesc>[PAWN_nameDef] has been designing robotic replacements for body parts ever since a member of [PAWN_possessive] pack lost an arm, and [PAWN_pronoun] spent weeks trying different things to replace their arm. After weeks of jabbing new devices into the packmate's shoulder, one suddenly came to life, punching [PAWN_nameDef] square in the face. [PAWN_nameDef] has since then avoided actually installing the parts; they just wanna make them.
-  	</storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
     <skillGains>
-	    <li>
+      <li>
         <skill>Crafting</skill>
         <amount>8</amount>
       </li>
-	    <li>
+      <li>
         <skill>Intellectual</skill>
         <amount>4</amount>
       </li>
-	    <li>
+      <li>
         <skill>Medicine</skill>
         <amount>-5</amount>
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliSheriff</defName>
     <title>Sheriff</title>
@@ -737,23 +734,23 @@
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <disabledWorkTypes>
+    <disabledWorkTypes>
       <li>Hauling</li>
-	    <li>Cleaning</li>
-	    <li>ManualDumb</li>
+      <li>Cleaning</li>
+      <li>ManualDumb</li>
     </disabledWorkTypes>
     <skillGains>
-	    <li>
+      <li>
         <skill>Shooting</skill>
         <amount>8</amount>
       </li>
-	   <li>
+      <li>
         <skill>Social</skill>
         <amount>4</amount>
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliTrained</defName>
     <title>Devoted Colonist</title>
@@ -764,111 +761,111 @@
       <li>RimValiBackstories</li>
     </spawnInCategories>
     <skillGains>
-	    <li>
+      <li>
         <skill>Construction</skill>
         <amount>3</amount>
       </li>
-	    <li>
+      <li>
         <skill>Medicine</skill>
         <amount>2</amount>
       </li>
-	    <li>
+      <li>
         <skill>Cooking</skill>
         <amount>1</amount>
       </li>
-	    <li>
+      <li>
         <skill>Mining</skill>
         <amount>2</amount>
       </li>
-	    <li>
+      <li>
         <skill>Plants</skill>
         <amount>3</amount>
       </li>
     </skillGains>
-	  <forcedTraits>
-	    <li>
-	      <def>NaturalMood</def>
-		    <degree>1</degree>
-	    </li>
-	  </forcedTraits>
+    <forcedTraits>
+      <li>
+        <def>NaturalMood</def>
+        <degree>1</degree>
+      </li>
+    </forcedTraits>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliCultist</defName>
     <title>Cultist</title>
     <shortTitle>Cultist</shortTitle>
     <storyDesc>[PAWN_nameDef] is part of an extremely strange cult that believes that all plants are the work of some ancient evil, and they all must be destroyed or they will corrupt the world. Somehow, [PAWN_pronoun] snuck [PAWN_objective]selves onto the colony program. They probably aren't fit for this new environment, but there is no going back now. [PAWN_nameDef] will not fight fires, believing that fires are the cleansing graces of their deity.
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <disabledWorkTypes>
+    <disabledWorkTypes>
       <li>Social</li>
-	    <li>Firefighting</li>
-	    <li>PlantWork</li>
+      <li>Firefighting</li>
+      <li>PlantWork</li>
     </disabledWorkTypes>
     <skillGains>
-	    <li>
+      <li>
         <skill>Artistic</skill>
         <amount>2</amount>
       </li>
-	    <li>
+      <li>
         <skill>Mining</skill>
         <amount>4</amount>
       </li>
-	    <li>
+      <li>
         <skill>Construction</skill>
         <amount>3</amount>
       </li>
     </skillGains>
-	  <forcedTraits>
-	    <li>
-	      <def>Pyromaniac</def>
-	    </li>
-	    <li>
-	      <def>PsychicSensitivity</def>
-		    <degree>-2</degree>
-	    </li>
-	  </forcedTraits>
-	  <maleChance>5</maleChance>
-	  <femaleChance>5</femaleChance>
+    <forcedTraits>
+      <li>
+        <def>Pyromaniac</def>
+      </li>
+      <li>
+        <def>PsychicSensitivity</def>
+        <degree>-2</degree>
+      </li>
+    </forcedTraits>
+    <maleChance>5</maleChance>
+    <femaleChance>5</femaleChance>
   </RimValiCore.RVR.RVRBackstory>
-  
-   <RimValiCore.RVR.RVRBackstory>
+
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBerserker</defName>
     <title>Berserker</title>
     <shortTitle>Berserker</shortTitle>
     <storyDesc>[PAWN_nameDef] strong. [PAWN_nameDef] no need smart, no need talk, no need friend. Fight is friend. [PAWN_nameDef] must hurt others.
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
 
     <skillGains>
-	    <li>
+      <li>
         <skill>Melee</skill>
         <amount>14</amount>
       </li>
-	    <li>
+      <li>
         <skill>Mining</skill>
         <amount>12</amount>
       </li>
     </skillGains>
-	  <forcedTraits>
-	    <li>
-	      <def>Brawler</def>
-	    </li>
-	    <li>
-	      <def>Psychopath</def>
-	    </li>
-	  </forcedTraits>
-	  <maleChance>1</maleChance> <!--Why?-->
-	  <femaleChance>0</femaleChance>
+    <forcedTraits>
+      <li>
+        <def>Brawler</def>
+      </li>
+      <li>
+        <def>Psychopath</def>
+      </li>
+    </forcedTraits>
+    <maleChance>1</maleChance> <!--Why?-->
+    <femaleChance>0</femaleChance>
   </RimValiCore.RVR.RVRBackstory>
 
- <RimValiCore.RVR.RVRBackstory>
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliFactoryWorker</defName>
     <title>Factory Worker</title>
     <shortTitle>Worker</shortTitle>
@@ -878,143 +875,143 @@
       <li>RimValiBackstories</li>
     </spawnInCategories>
     <skillGains>
-	    <li>
+      <li>
         <skill>Crafting</skill>
         <amount>5</amount>
       </li>
-	    <li>
+      <li>
         <skill>Construction</skill>
         <amount>3</amount>
       </li>
     </skillGains>
-	  <forcedTraits>
-	    <li>
-	     <def>Industriousness</def>
-		   <degree>2</degree>
-	    </li>
-  	</forcedTraits>
+    <forcedTraits>
+      <li>
+        <def>Industriousness</def>
+        <degree>2</degree>
+      </li>
+    </forcedTraits>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliModel</defName>
     <title>Avali Model</title>
     <shortTitle>Model</shortTitle>
     <storyDesc>[PAWN_nameDef] was just born absolutely stunning, and everyone agrees. [PAWN_nameDef] spent most of their life as an Avali model, taking constant photoshoots, featuring in movies, varying in... theme. However, this life grew boring to [PAWN_objective]. Being so high up in the Avali society, [PAWN_pronoun] heard about the colony program before anyone else. However, the colony program wouldn't allow many high-class Avali such as [PAWN_objective]self.\n\nSo, [PAWN_nameDef] tired of [PAWN_possessive] life as a celebrity, allowed [PAWN_objective]self into the program by sneaking onto a ship as it was leaving. Will they be able to live without the same glamour?
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-	  <disabledWorkTypes>
+    <disabledWorkTypes>
       <li>Violent</li>
-	    <li>Firefighting</li>
+      <li>Firefighting</li>
     </disabledWorkTypes>
     <skillGains>
-	    <li>
+      <li>
         <skill>Crafting</skill>
         <amount>6</amount>
       </li>
-	    <li>
+      <li>
         <skill>Social</skill>
         <amount>3</amount>
       </li>
-	   <li>
+      <li>
         <skill>Artistic</skill>
         <amount>3</amount>
       </li>
     </skillGains>
-	  <forcedTraits>
-	    <li>
-	      <def>Beauty</def>
-		    <degree>2</degree>
-	    </li>
-	    <li>
-	      <def>Nerves</def>
-		    <degree>-1</degree>
-	    </li>
-	  </forcedTraits>
+    <forcedTraits>
+      <li>
+        <def>Beauty</def>
+        <degree>2</degree>
+      </li>
+      <li>
+        <def>Nerves</def>
+        <degree>-1</degree>
+      </li>
+    </forcedTraits>
   </RimValiCore.RVR.RVRBackstory>
-  
-   <RimValiCore.RVR.RVRBackstory>
+
+  <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliBurger</defName>
     <title>Food Cart Owner</title>
     <shortTitle>Foodcart Owner</shortTitle>
     <storyDesc>[PAWN_nameDef] made a living running [PAWN_possessive] own food cart, simply grilling hamburgers and selling them to passerby in city squares. However, Avali cities just don't have the population/economy to make this a liveable practice, and [PAWN_nameDef] turned to other options out of desperation for money. Now they are a colonist ready to land on a largely unknown, extremely dangerous, extremely vital planet. [PAWN_nameDef] wonders if they should have stuck with the "AvaliBurger" cart.
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
     <skillGains>
-	    <li>
+      <li>
         <skill>Cooking</skill>
         <amount>6</amount>
       </li>
-	    <li>
+      <li>
         <skill>Crafting</skill>
         <amount>3</amount>
       </li>
-	    <li>
+      <li>
         <skill>Artistic</skill>
         <amount>-3</amount>
       </li>
-	  	<li>
+      <li>
         <skill>Animals</skill>
         <amount>-4</amount>
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliAnimalScientist</defName>
     <title>Animal Scientist</title>
     <shortTitle>Scientist</shortTitle>
     <storyDesc>[PAWN_nameDef] always had a fascination with animals, and was always curious as to what was possible with them. [PAWN_nameDef] nearly had developed a module that would allow Avali to speak with animals using common brain signals, however, all of [PAWN_nameDef]'s work was destroyed in a freak accident in [PAWN_possessive] lab, and [PAWN_pronoun] was forced to relocate [PAWN_possessive] studies elsewhere.
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
     <skillGains>
-	    <li>
+      <li>
         <skill>Animals</skill>
         <amount>6</amount>
       </li>
-	    <li>
+      <li>
         <skill>Crafting</skill>
         <amount>2</amount>
       </li>
-	    <li>
+      <li>
         <skill>Intellectual</skill>
         <amount>3</amount>
       </li>
-	    <li>
+      <li>
         <skill>Melee</skill>
         <amount>-3</amount>
       </li>
-	    <li>
+      <li>
         <skill>Shooting</skill>
         <amount>-4</amount>
       </li>
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
-  
+
   <RimValiCore.RVR.RVRBackstory>
     <defName>AvaliPalaceDesigner</defName>
     <title>Illuminate Architect</title>
     <shortTitle>Architect</shortTitle>
     <storyDesc>[PAWN_nameDef] singlehandedly designed nearly every major Avalon landmark, being the Illuminate's go-to architectural designer, noted for [PAWN_possessive] beautiful yet realistic and functional designs.
-	  </storyDesc>
+    </storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
     <skillGains>
-	    <li>
+      <li>
         <skill>Construction</skill>
         <amount>5</amount>
       </li>
-	    <li>
+      <li>
         <skill>Artistic</skill>
         <amount>4</amount>
       </li>
@@ -1024,13 +1021,13 @@
   <RimValiCore.RVR.RVRBackstory>
     <defName>NoviceDeveloper</defName>
     <title>Novice Developer</title>
-    
+
     <storyDesc>[PAWN_nameDef] was a hobbyist programmer and modeler. [PAWN_pronoun] independently developed several small applications and created various virtual items for use on the Nexus.</storyDesc>
-    
+
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
-    
+
     <skillGains>
       <li>
         <skill>Crafting</skill>
@@ -1047,9 +1044,6 @@
     </skillGains>
   </RimValiCore.RVR.RVRBackstory>
 
-  
-
-  
   <RimValiCore.RVR.RVRBackstory Name = "BaseLostEgg">
     <defName>AvaliLostEgg</defName>
     <title>Lost egg</title>

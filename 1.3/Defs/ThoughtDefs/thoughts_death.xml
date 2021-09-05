@@ -19,7 +19,7 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef ParentName="DeathMemoryFamily">
     <defName>AvaliKitDied</defName>
     <stages>
@@ -30,7 +30,7 @@
       </li>
     </stages>  
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>MateDied</defName>
     <stages>

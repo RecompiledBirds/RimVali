@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<RulePackDef>
-  <defName>AvaliFactionBaseNamer</defName>
+  <RulePackDef>
+    <defName>AvaliFactionBaseNamer</defName>
     <rulePack>
       <rulesStrings>
         <li>name->[FirstSectionName][MidSectionName][LastSectionName]'s [FactionBaseEnding]</li>
@@ -25,9 +25,9 @@
         </li>
         <li Class = "Rule_File"> 
           <keyword>FactionBaseEnding</keyword>
-         <path>NeziAvaliNameGen/FactionEndings</path>
-       </li>
+          <path>NeziAvaliNameGen/FactionEndings</path>
+        </li>
       </rulesRaw>
     </rulePack>
-	</RulePackDef>
+  </RulePackDef>
 </Defs>

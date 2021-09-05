@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-   <!-- Pistol -->
+  <!-- Pistol -->
 
-   
   <ThingDef ParentName="BaseBullet">
     <defName>IWPistolBullet</defName>
     <label>Avali bullet</label>
@@ -18,7 +17,7 @@
       <armorPenetrationBase>0.10</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWPistol</defName>
     <label>Independent Worlds Pistol</label>
@@ -76,7 +75,7 @@
       <Steel>20</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
@@ -84,11 +83,9 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-  
+
   <!-- Semi-auto -->
 
-  
   <ThingDef ParentName="BaseBullet">
     <defName>IWSemiAutoBullet</defName>
     <label>Avali bullet</label>
@@ -104,7 +101,7 @@
       <armorPenetrationBase>0.19</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWSemiAuto</defName>
     <label>Independent Worlds semi-auto rifle</label>
@@ -162,7 +159,7 @@
       <Steel>75</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>BlowbackOperation</researchPrerequisite>
       <skillRequirements>
@@ -170,11 +167,9 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-  
-   <!-- Rifle -->
 
-  
+  <!-- Rifle -->
+
   <ThingDef ParentName="BaseBullet">
     <defName>IWRifleBullet</defName>
     <label>Avali bullet</label>
@@ -190,7 +185,7 @@
       <armorPenetrationBase>0.22</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWRifle</defName>
     <label>Independent Worlds rifle</label>
@@ -211,7 +206,7 @@
       <AccuracyShort>0.7</AccuracyShort>
       <AccuracyMedium>0.8</AccuracyMedium>
       <AccuracyLong>0.85</AccuracyLong>
-       <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
     </statBases>
     <verbs>
       <li>
@@ -219,7 +214,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>IWRifleBullet</defaultProjectile>
         <warmupTime>1.3</warmupTime>
-        
+
         <range>37</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
@@ -249,7 +244,7 @@
       <Steel>50</Steel>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
@@ -257,13 +252,9 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-  
-  
-  
+
   <!--Assault Rifle -->
 
-  
   <ThingDef ParentName="BaseBullet">
     <defName>IWAssaultRifleBullet</defName>
     <label>Avali bullet</label>
@@ -279,7 +270,7 @@
       <armorPenetrationBase>0.12</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWAssaultRifle</defName>
     <label>Independent Worlds battle rifle</label>
@@ -339,7 +330,7 @@
       <Steel>55</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>PrecisionRifling</researchPrerequisite>
       <skillRequirements>
@@ -347,12 +338,9 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-  
-  
+
   <!-- MG -->
 
-  
   <ThingDef ParentName="BaseBullet">
     <defName>IWMGBullet</defName>
     <label>Avali bullet</label>
@@ -368,7 +356,7 @@
       <armorPenetrationBase>0.12</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWMachineGun</defName>
     <label>Independent Worlds light machine gun</label>
@@ -396,7 +384,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>IWMGBullet</defaultProjectile>
-         <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
         <burstShotCount>28</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
@@ -428,7 +416,7 @@
       <Steel>125</Steel>
       <ComponentIndustrial>17</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>GasOperation</researchPrerequisite>
       <skillRequirements>
@@ -436,12 +424,10 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-  
+
   <!-- GPMG -->
 
-  
-    <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>IWGPMGBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
@@ -456,7 +442,7 @@
       <armorPenetrationBase>0.26</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IW_GPMG</defName>
     <label>Independent Worlds machine gun</label>
@@ -484,7 +470,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>IWGPMGBullet</defaultProjectile>
-         <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
         <burstShotCount>7</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
@@ -516,7 +502,7 @@
       <Steel>200</Steel>
       <ComponentIndustrial>22</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
       <skillRequirements>
@@ -524,11 +510,10 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-   <!-- Vali_Primative_AngryTube.png -->
 
-  
-    <ThingDef ParentName="BaseBullet">
+  <!-- Vali_Primative_AngryTube.png -->
+
+  <ThingDef ParentName="BaseBullet">
     <defName>IWSMGBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
@@ -543,7 +528,7 @@
       <armorPenetrationBase>0.15</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWSMG</defName>
     <label>Independent Worlds sub-machine gun</label>
@@ -603,7 +588,7 @@
       <Steel>100</Steel>
       <ComponentIndustrial>7</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>GasOperation</researchPrerequisite>
       <skillRequirements>
@@ -611,12 +596,10 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-  
+
   <!-- Railrifle/sniper -->
 
-  
-   <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>IWRailRifleBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
@@ -631,7 +614,7 @@
       <armorPenetrationBase>0.52</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWRailRifle</defName>
     <label>Independent Worlds rail rifle</label>
@@ -689,7 +672,7 @@
       <Steel>250</Steel>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>PrecisionRifling</researchPrerequisite>
       <skillRequirements>
@@ -697,12 +680,7 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
-  
-  
-  
-  
-  
+
   <!-- Revolver -->
 
   <ThingDef ParentName="BaseBullet">
@@ -720,7 +698,7 @@
       <armorPenetrationBase>0.14</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>IWRevolver</defName>
     <label>Independent Worlds revolver</label>
@@ -778,7 +756,7 @@
       <Steel>25</Steel>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
-    
+
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
@@ -786,5 +764,5 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-  
+
 </Defs>

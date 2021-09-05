@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef Name="AvaliBasicBodyPartBionicBase" ParentName="BodyPartBase" Abstract="True">
+  <ThingDef Name="AvaliBasicBodyPartBionicBase" ParentName="BodyPartBase" Abstract="True">
     <techLevel>Spacer</techLevel>
     <thingCategories>
       <li>BodyPartsBionic</li>
@@ -31,7 +31,7 @@
       </recipeUsers>
     </recipeMaker>
   </ThingDef>
-  
+
   <ThingDef Name="BodyPartAvaliBasicBase" ParentName="BodyPartBase" Abstract="True">
     <techLevel>Spacer</techLevel>
     <thingCategories>
