@@ -46,11 +46,12 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RimValiCore">
-      <HintPath>..\..\RimValiCore\1.3\Assemblies\RimValiCore.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RimValiCore\1.3\Assemblies\RimValiCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Packs\Threading\ThreadQueue.cs" />
     <Compile Include="PatchOperations.cs" />
     <Compile Include="HarmonyPatches\Class1.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />
