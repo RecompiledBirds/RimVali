@@ -53,7 +53,8 @@ namespace AvaliMod
             if (pawn.Spawned)
             {
                 hediffsFound = 0;
-                foreach (HediffDef hediff in otherHediffs)
+                // TODO: This is iterating, but not using the iterator value? Why??
+                foreach (HediffDef _ in otherHediffs)
                 {
                     if (onItem <= bodyPartsMustBeOn.Count)
                     {

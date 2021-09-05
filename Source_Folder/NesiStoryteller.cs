@@ -92,7 +92,7 @@ namespace AvaliMod
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
 
-            parms.points = parms.points * new Random(Find.World.ConstantRandSeed).Next(1, (int)StorytellerUtilityPopulation.AdjustedPopulation * new Random(Find.World.ConstantRandSeed).Next(1, 3));
+            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1, (int)StorytellerUtilityPopulation.AdjustedPopulation * new Random(Find.World.ConstantRandSeed).Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
             if (!def.Worker.CanFireNow(parms2)) { return null; }
             if (new Random(Find.World.ConstantRandSeed).Next(1, 2) == 2) { NesiStorytellerData.state = NesiState.Aggressive; }
@@ -105,7 +105,7 @@ namespace AvaliMod
             defs.AddRange(DefDatabase<IncidentDef>.AllDefs.Where(x => x.category == IncidentCategoryDefOf.Misc));
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
-            parms.points = parms.points * new Random(Find.World.ConstantRandSeed).Next(1, (int)StorytellerUtilityPopulation.AdjustedPopulation * new Random(Find.World.ConstantRandSeed).Next(1, 3));
+            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1, (int)StorytellerUtilityPopulation.AdjustedPopulation * new Random(Find.World.ConstantRandSeed).Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
             if (def == AvaliDefs.RefugeePodCrash || def == AvaliDefs.WildManWandersIn || new Random(Find.World.ConstantRandSeed).Next(1, 5) == 2)
             {
@@ -122,7 +122,7 @@ namespace AvaliMod
             defs.AddRange(DefDatabase<IncidentDef>.AllDefs.Where(x => x.category == IncidentCategoryDefOf.GiveQuest || x.category == IncidentCategoryDefOf.OrbitalVisitor || x.category == IncidentCategoryDefOf.AllyAssistance));
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
-            parms.points = parms.points * new Random(Find.World.ConstantRandSeed).Next(1, (int)StorytellerUtilityPopulation.AdjustedPopulation * new Random(Find.World.ConstantRandSeed).Next(1, 3));
+            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1, (int)StorytellerUtilityPopulation.AdjustedPopulation * new Random(Find.World.ConstantRandSeed).Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
             if (def.category == IncidentCategoryDefOf.OrbitalVisitor || new Random(Find.World.ConstantRandSeed).Next(1, 5) == 2)
             {
@@ -206,7 +206,7 @@ namespace AvaliMod
                 }
                 if (GenDate.DaysPassed > NesiStorytellerData.daysSpentNice + new Random(Find.World.ConstantRandSeed).Next(0, 4) && NesiStorytellerData.state > 0)
                 {
-                    NesiStorytellerData.state = NesiStorytellerData.state - 1;
+                    NesiStorytellerData.state--;
                     if (NesiStorytellerData.state == 0)
                     {
                         NesiStorytellerData.daysSpentNice = GenDate.DaysPassed;

@@ -45,7 +45,7 @@ namespace AvaliMod
         public string specialityLabel = "Unlabeled";
         public List<string> effectList = new List<string>();
     }
-#pragma warning disable CS0114 // Member hides inherited member; missing override keyword
+
     public class AvaliPack : Thing, ILoadReferenceable, IExposable
     {
         public AvaliPack()
@@ -185,9 +185,7 @@ namespace AvaliMod
 
         }
 
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
-        public string GetUniqueLoadID()
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        public new string GetUniqueLoadID()
         {
             return "date_" + GetHashCode().ToString() + ticks.ToString();
         }

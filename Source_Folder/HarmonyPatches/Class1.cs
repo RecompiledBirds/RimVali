@@ -67,8 +67,7 @@ namespace AvaliMod
             foreach (CreditsEntry creditsEntry in __result)
             {
                 yield return creditsEntry;
-                CreditRecord_Role creditRecord_Role = creditsEntry as CreditRecord_Role;
-                if (creditRecord_Role != null && creditRecord_Role.creditee == "Many other gracious volunteers!" /*Thanks for playing!*/)
+                if (creditsEntry is CreditRecord_Role creditRecord_Role && creditRecord_Role.creditee == "Many other gracious volunteers!" /*Thanks for playing!*/)
                 {
 
                     yield return new CreditRecord_Space(150f);

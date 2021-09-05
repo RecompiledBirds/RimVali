@@ -5,10 +5,6 @@ using Verse;
 
 namespace AvaliMod
 {
-
-
-
-
     [StaticConstructorOnStartup]
     public static class RimValiDefChecks
     {

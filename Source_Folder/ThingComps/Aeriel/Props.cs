@@ -96,7 +96,7 @@ namespace AvaliMod
 
 
         public List<ThingDef> loadedShells = new List<ThingDef>();
-        public void NewLoadShell(ThingDef shell, int count)
+        public void NewLoadShell(ThingDef shell, int _)
         {
             loadedShells.Add(shell);
         }
@@ -160,10 +160,9 @@ namespace AvaliMod
     public class RefuelAerielJobDriver : JobDriver
     {
 
-        private static bool GunNeedsLoading(Building b)
+        private static bool GunNeedsLoading(Building building)
         {
-            AERIALSYSTEM building_TurretGun = b as AERIALSYSTEM;
-            if (building_TurretGun == null)
+            if (!(building is AERIALSYSTEM building_TurretGun))
             {
                 return false;
             }

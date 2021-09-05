@@ -234,7 +234,6 @@ namespace AvaliMod
                 return;
             }
             //Log.Message($"Is forced targ valid: {forcedTarget.IsValid}");
-            bool isValid = currentTargetInt.IsValid;
             if (forcedTarget.IsValid)
             {
                 //Log.Message("forced target is valid");
@@ -413,7 +412,6 @@ namespace AvaliMod
                     isActive = (() => holdFire)
                 };
             }
-            yield break;
             yield break;
         }
 

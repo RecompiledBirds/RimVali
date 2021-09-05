@@ -62,7 +62,6 @@ namespace AvaliMod
             bool mustBeAwake = showTextClasses[item].mustBeAwake;
             bool mustBeAsleep = showTextClasses[item].mustBeAsleep;
             bool mustBeSharingRoomWithPack = showTextClasses[item].mustBeSharingRoomWithPack;
-            PawnRelationDef relationDef = showTextClasses[item].relationDef;
 
             Pawn pawn = parent.pawn;
             Map map = pawn.Map;

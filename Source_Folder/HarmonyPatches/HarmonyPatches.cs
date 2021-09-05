@@ -12,14 +12,10 @@ namespace AvaliMod
         {
 
             Harmony rimValiHarmony = new Harmony("RimVali.FarFromAvalon");
-            Log.Message("[RimVali: Far From Avalon] Started patches.", false);
+            Log.Message("[RimVali: Far From Avalon] Started patches.");
             try
             {
-
                 rimValiHarmony.PatchAll();
-
-
-
 
                 //Graphics
                 /*rimValiHarmony.Patch(AccessTools.Method(typeof(PawnGraphicSet), "ResolveAllGraphics"), new HarmonyMethod(typeof(ResolvePatch), "ResolveGraphics"), null);

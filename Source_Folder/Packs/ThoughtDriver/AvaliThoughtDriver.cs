@@ -75,8 +75,7 @@ namespace AvaliMod
         {
             get
             {
-
-                ThreadPool.GetAvailableThreads(out int wThreads, out int cThreads);
+                ThreadPool.GetAvailableThreads(out int wThreads, out _);
                 return !threadRunning && wThreads > 0;
             }
         }

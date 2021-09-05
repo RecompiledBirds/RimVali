@@ -69,7 +69,7 @@ namespace AvaliMod
         {
             if (!Active)
             {
-                Log.Error("LayEgg while not Active: " + parent, false);
+                Log.Error("LayEgg while not Active: " + parent);
             }
 
             eggProgress = 0.0f;
@@ -98,7 +98,7 @@ namespace AvaliMod
             string str = "EggProgress".Translate() + ": " + eggProgress.ToStringPercent();
             if (fertilizationCount > 0)
             {
-                str = str + ("\n" + "Fertilized".Translate());
+                str += ("\n" + "Fertilized".Translate());
             }
 
             return str;

@@ -53,7 +53,7 @@ namespace AvaliMod
                     }
                     if ((onItem + 1) >= conflictingHediffs.Count) { output = output + hediffDef.label + ". "; }
                     else { output = output + hediffDef.label + ", "; }
-                    onItem = onItem + 1;
+                    onItem++;
                     if (debugInfo)
                     {
                         Log.Message("onItem [post-add]: " + onItem.ToString());

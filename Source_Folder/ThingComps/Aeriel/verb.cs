@@ -44,7 +44,7 @@ namespace AvaliMod
             }
             Thing equipment = EquipmentSource;
             Vector3 drawPos = caster.DrawPos;
-            bool flag = base.TryFindShootLineFromTo(caster.Position, currentTarget, out ShootLine shootLine);
+            TryFindShootLineFromTo(caster.Position, currentTarget, out ShootLine shootLine);
             float num = VerbUtility.CalculateAdjustedForcedMiss(verbProps.ForcedMissRadius, currentTarget.Cell - caster.Position);
             int max = GenRadial.NumCellsInRadius(num);
             int num2 = Rand.Range(0, max);
@@ -151,7 +151,6 @@ namespace AvaliMod
             }
             ShotReport shotReport = ShotReport.HitReportFor(caster, this, currentTarget);
             Thing randomCoverToMissInto = shotReport.GetRandomCoverToMissInto();
-            ThingDef targetCoverDef = (randomCoverToMissInto != null) ? randomCoverToMissInto.def : null;
             if (!Rand.Chance(shotReport.AimOnTargetChance_IgnoringPosture))
             {
                 shootLine.ChangeDestToMissWild(shotReport.AimOnTargetChance_StandardTarget);

@@ -84,7 +84,6 @@
     <Compile Include="RimValiUtilities\RimValiUtils.cs" />
     <Compile Include="ThingComps\Aeriel\Props.cs" />
     <Compile Include="ThingComps\Aeriel\verb.cs" />
-    <Compile Include="AvaliDef.cs" />
     <Compile Include="ThingComps\EggLaying\Comp.cs" />
     <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />

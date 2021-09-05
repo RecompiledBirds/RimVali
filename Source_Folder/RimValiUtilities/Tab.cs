@@ -22,16 +22,13 @@ namespace AvaliMod
         public Vector2 bonusScrollPos = new Vector2();
         public virtual AvaliPack GetPack(Pawn pawn)
         {
-            AvaliPack pack = null;
-            pack = pawn.GetPack();
-            return pack;
+            return pawn.GetPack();
         }
         public virtual string GetPackName(Rect rect, AvaliPack pack)
         {
             return pack.name;
         }
 
-        private readonly float heightOffset = 12f;
         private readonly float packMembersRectSize = 300f;
         public Vector2 WinSize = new Vector2(700, 400);
         protected override void FillTab()
@@ -54,6 +51,7 @@ namespace AvaliMod
 
             //COMPILED BY NESGUI
             //Prepare varibles
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
 
             GameFont prevFont = Text.Font;
             TextAnchor textAnchor = Text.Anchor;
@@ -71,6 +69,7 @@ namespace AvaliMod
             Rect packTypeRect = new Rect(new Vector2(205f, 75f), new Vector2(240f, 310f));
             Rect packRelationsRect = new Rect(new Vector2(445f, 75f), new Vector2(245f, 310f));
 
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
             //END NESGUI CODE
 
 
@@ -239,14 +238,10 @@ namespace AvaliMod
             labelKey = "PackTab";
         }
 
-        // Token: 0x17000007 RID: 7
-        // (get) Token: 0x06000034 RID: 52 RVA: 0x00004078 File Offset: 0x00003078
         public override bool IsVisible => packsEnabled;
         private Vector2 scrollPosition = Vector2.zero;
 
-        // Token: 0x04006154 RID: 24916
-        private readonly float scrollViewHeight;
-
+        private const float scrollViewHeight = 0f;
     }
 
 }
