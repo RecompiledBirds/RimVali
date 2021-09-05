@@ -12,82 +12,22 @@ namespace AvaliMod
         private bool triggeredTextRemove = false;
         private BodyPartDef bodyPart;
 
-        public MultiPartBionicCompProperties Props
-        {
-            get
-            {
-                return (MultiPartBionicCompProperties)this.props;
-            }
-        }
-        private string hediffsLeft
-        {
-            get
-            {
-                return this.Props.stringForHediffsLeft;
-            }
-        }
+        public MultiPartBionicCompProperties Props => (MultiPartBionicCompProperties)props;
+        private string hediffsLeft => Props.stringForHediffsLeft;
 
-        private bool displayTextWhenChanged
-        {
-            get
-            {
-                return this.Props.displayTextWhenChanged;
-            }
-        }
-        private List<BodyPartDef> bodyParts
-        {
-            get
-            {
-                return this.Props.bodyPartsToAffect;
-            }
-        }
-        private List<HediffDef> otherHediffs
-        {
-            get
-            {
-                return this.Props.otherHediffs;
-            }
-        }
-        private List<HediffDef> hediffsToAdd
-        {
-            get
-            {
-                return this.Props.hediffsToAdd;
-            }
-        }
-        private string textOnAdd
-        {
-            get
-            {
-                return this.Props.textOnAdd;
-            }
-        }
-        private string textOnRemove
-        {
-            get
-            {
-                return this.Props.textOnRemove;
-            }
-        }
-        private int timeToFade
-        {
-            get
-            {
-                return this.Props.timeToFade;
-            }
-        }
-        private List<BodyPartDef> bodyPartsMustBeOn
-        {
-            get
-            {
-                return this.Props.bodyPartsMustBeOn;
-            }
-        }
+        private bool displayTextWhenChanged => Props.displayTextWhenChanged;
+        private List<BodyPartDef> bodyParts => Props.bodyPartsToAffect;
+        private List<HediffDef> otherHediffs => Props.otherHediffs;
+        private List<HediffDef> hediffsToAdd => Props.hediffsToAdd;
+        private string textOnAdd => Props.textOnAdd;
+        private string textOnRemove => Props.textOnRemove;
+        private int timeToFade => Props.timeToFade;
+        private List<BodyPartDef> bodyPartsMustBeOn => Props.bodyPartsMustBeOn;
         public override string CompTipStringExtra
         {
             get
             {
-                Pawn pawn = this.parent.pawn;
+                Pawn pawn = parent.pawn;
 
                 output = hediffsLeft;
                 foreach (HediffDef hediffDef in otherHediffs)
@@ -109,7 +49,7 @@ namespace AvaliMod
         }
         public override void CompPostTick(ref float severityAdjustment)
         {
-            Pawn pawn = this.parent.pawn;
+            Pawn pawn = parent.pawn;
             if (pawn.Spawned)
             {
                 hediffsFound = 0;

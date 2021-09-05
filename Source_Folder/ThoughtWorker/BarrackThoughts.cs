@@ -1,11 +1,9 @@
-﻿using System;
+﻿using RimValiCore;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using RimWorld;
 using Verse;
-using RimValiCore;
 namespace AvaliMod
 {
     public class RoomThoughtsHandler : MapComponent
@@ -14,7 +12,8 @@ namespace AvaliMod
         {
         }
         public IEnumerable<Pawn> pawns;
-        void UpdateAllPawnThoughts()
+
+        private void UpdateAllPawnThoughts()
         {
             foreach (Pawn pawn in pawns)
             {
@@ -39,7 +38,7 @@ namespace AvaliMod
             }
         }
 
-        int tick = 0;
+        private int tick = 0;
         public override void MapComponentTick()
         {
             if (tick == 240)
@@ -47,7 +46,7 @@ namespace AvaliMod
                 pawns = RimValiCore.RimValiUtility.AllPawnsOfRaceOnMap(new List<ThingDef> { AvaliDefs.RimVali, AvaliDefs.IWAvaliRace }, map);
                 Task task = new Task(UpdateAllPawnThoughts);
                 task.Start();
-               //UpdateAllPawnThoughts();
+                //UpdateAllPawnThoughts();
                 tick = 0;
             }
             tick++;

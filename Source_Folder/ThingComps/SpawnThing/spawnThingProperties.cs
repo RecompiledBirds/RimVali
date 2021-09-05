@@ -8,7 +8,7 @@ namespace AvaliMod
 
         public thingSpawnerProps()
         {
-            this.compClass = typeof(spawnThingComp);
+            compClass = typeof(spawnThingComp);
         }
     }
 }

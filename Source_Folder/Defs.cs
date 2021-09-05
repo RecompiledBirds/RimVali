@@ -1,5 +1,5 @@
-﻿using RimWorld;
-using RimValiCore.RVR;
+﻿using RimValiCore.RVR;
+using RimWorld;
 using Verse;
 namespace AvaliMod
 {

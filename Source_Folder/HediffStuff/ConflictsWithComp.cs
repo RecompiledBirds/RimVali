@@ -4,34 +4,10 @@ namespace AvaliMod
 {
     public class ConflictsWith : HediffComp
     {
-        public ConflictsWithProps Props
-        {
-            get
-            {
-                return (ConflictsWithProps)this.props;
-            }
-        }
-        private List<HediffDef> conflictingHediffs
-        {
-            get
-            {
-                return this.Props.conflictingHediffs;
-            }
-        }
-        private bool showConflicts
-        {
-            get
-            {
-                return this.Props.showConflicts;
-            }
-        }
-        private bool debugInfo
-        {
-            get
-            {
-                return this.Props.debugInfo;
-            }
-        }
+        public ConflictsWithProps Props => (ConflictsWithProps)props;
+        private List<HediffDef> conflictingHediffs => Props.conflictingHediffs;
+        private bool showConflicts => Props.showConflicts;
+        private bool debugInfo => Props.debugInfo;
         private int onItem = 0;
         public override void CompPostTick(ref float severityAdjustment)
         {
@@ -61,7 +37,10 @@ namespace AvaliMod
             {
                 string empty = string.Empty;
                 if (!showConflicts)
+                {
                     return empty;
+                }
+
                 string output = empty + "Conflicts with: ";
                 onItem = 0;
                 foreach (HediffDef hediffDef in conflictingHediffs)
@@ -72,8 +51,8 @@ namespace AvaliMod
                         Log.Message("onItem [pre-add]: " + onItem.ToString());
                         Log.Message("Hediff at position: " + conflictingHediffs[onItem].ToString());
                     }
-                    if ((onItem + 1) >= conflictingHediffs.Count){output = output + hediffDef.label + ". ";}
-                    else{output = output + hediffDef.label + ", ";}
+                    if ((onItem + 1) >= conflictingHediffs.Count) { output = output + hediffDef.label + ". "; }
+                    else { output = output + hediffDef.label + ", "; }
                     onItem = onItem + 1;
                     if (debugInfo)
                     {

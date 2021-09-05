@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeFile1.cs" />
+    <Compile Include="PatchOperations.cs" />
     <Compile Include="HarmonyPatches\Class1.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />
     <Compile Include="HediffStuff\ConflictsWithProps.cs" />

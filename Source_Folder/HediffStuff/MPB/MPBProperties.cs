@@ -15,7 +15,7 @@ namespace AvaliMod
         public List<BodyPartDef> bodyPartsMustBeOn;
         public MultiPartBionicCompProperties()
         {
-            this.compClass = typeof(MultiPartBionic);
+            compClass = typeof(MultiPartBionic);
         }
     }
 }

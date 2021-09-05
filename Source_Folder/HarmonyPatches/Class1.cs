@@ -1,13 +1,10 @@
 ﻿using HarmonyLib;
+using RimValiCore.RVR;
 using RimWorld;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Verse;
 using UnityEngine;
-using RimValiCore.RVR;
+using Verse;
 
 namespace AvaliMod
 {
@@ -23,7 +20,9 @@ namespace AvaliMod
             if (apparel.def.apparel.layers.Any(d => d == ApparelLayerDefOf.Overhead) && apparel.def.apparel.wornGraphicPath != null)
             {
                 if (bodyType != AvaliDefs.Avali && bodyType != AvaliDefs.Avali)
+                {
                     return;
+                }
 
                 string path = $"{apparel.def.apparel.wornGraphicPath}_{bodyType.defName}";
                 if (pawn.def is RimValiRaceDef def && (ContentFinder<Texture2D>.Get($"{path}_north", false) != null) && (ContentFinder<Texture2D>.Get($"{path}_east", false) != null) && (ContentFinder<Texture2D>.Get($"{path}_south", false) != null))
@@ -55,38 +54,38 @@ namespace AvaliMod
     }
     #endregion
     public class CreditDef : Def
-	{
-		public string title;
-		public List<string> names = new List<string>();
-	}
-	[HarmonyPatch(typeof(CreditsAssembler), "AllCredits")]
-	public class Credits
-	{
-		[HarmonyPostfix]
-		public static IEnumerable<CreditsEntry> CreditsPatch(IEnumerable<CreditsEntry> __result)
-		{
-			foreach (CreditsEntry creditsEntry in __result)
-			{
-				yield return creditsEntry;
-				CreditRecord_Role creditRecord_Role = creditsEntry as CreditRecord_Role;
-				if (creditRecord_Role != null && creditRecord_Role.creditee == "Many other gracious volunteers!" /*Thanks for playing!*/)
-				{
+    {
+        public string title;
+        public List<string> names = new List<string>();
+    }
+    [HarmonyPatch(typeof(CreditsAssembler), "AllCredits")]
+    public class Credits
+    {
+        [HarmonyPostfix]
+        public static IEnumerable<CreditsEntry> CreditsPatch(IEnumerable<CreditsEntry> __result)
+        {
+            foreach (CreditsEntry creditsEntry in __result)
+            {
+                yield return creditsEntry;
+                CreditRecord_Role creditRecord_Role = creditsEntry as CreditRecord_Role;
+                if (creditRecord_Role != null && creditRecord_Role.creditee == "Many other gracious volunteers!" /*Thanks for playing!*/)
+                {
 
-					yield return new CreditRecord_Space(150f);
-					yield return new CreditRecord_Title("RimVali would like to thank several people:");
-					foreach (CreditDef def in DefDatabase<CreditDef>.AllDefs)
-					{
-						yield return new CreditRecord_Space(150f);
-						yield return new CreditRecord_Title(def.title);
-						foreach (String name in def.names)
-						{
-							yield return new CreditRecord_Role(null, name);
-						}
-					}
+                    yield return new CreditRecord_Space(150f);
+                    yield return new CreditRecord_Title("RimVali would like to thank several people:");
+                    foreach (CreditDef def in DefDatabase<CreditDef>.AllDefs)
+                    {
+                        yield return new CreditRecord_Space(150f);
+                        yield return new CreditRecord_Title(def.title);
+                        foreach (string name in def.names)
+                        {
+                            yield return new CreditRecord_Role(null, name);
+                        }
+                    }
 
-				}
+                }
 
-			}
-		}
-	}
+            }
+        }
+    }
 }

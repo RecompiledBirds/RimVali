@@ -1,6 +1,5 @@
-﻿using RimWorld;
+﻿using System.Collections.Generic;
 using Verse;
-using System.Collections.Generic;
 namespace AvaliMod
 {
 
@@ -16,12 +15,12 @@ namespace AvaliMod
             {
                 return true;
             }
-              
+
         }
 
         public int GetHashCode(Pawn obj)
         {
-            return ((object)obj).GetHashCode();
+            return obj.GetHashCode();
         }
     }
 }

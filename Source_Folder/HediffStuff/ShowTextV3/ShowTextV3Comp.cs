@@ -7,20 +7,8 @@ namespace AvaliMod
     public class ShowTextComp : HediffComp
     {
         private readonly Random random = new Random();
-        public ShowTextPropsV3 Props
-        {
-            get
-            {
-                return (ShowTextPropsV3)this.props;
-            }
-        }
-        private List<showTextClass> showTexts
-        {
-            get
-            {
-                return this.Props.showText;
-            }
-        }
+        public ShowTextPropsV3 Props => (ShowTextPropsV3)props;
+        private List<showTextClass> showTexts => Props.showText;
 
         public void SpawnText(Pawn pawn, string textToShow, bool mustBeAwake, bool genderLock, Gender gender, int timeToFade, bool mustBeAsleep)
         {
@@ -76,26 +64,28 @@ namespace AvaliMod
             bool mustBeSharingRoomWithPack = showTextClasses[item].mustBeSharingRoomWithPack;
             PawnRelationDef relationDef = showTextClasses[item].relationDef;
 
-            Pawn pawn = this.parent.pawn;
+            Pawn pawn = parent.pawn;
             Map map = pawn.Map;
             if (pawn.Spawned == true)
             {
-                if (!map.moteCounter.SaturatedLowPriority) {
+                if (!map.moteCounter.SaturatedLowPriority)
+                {
                     if (!(Rand.MTBEventOccurs(randomDays, mtbUnit, checkDuration)))
                     {
                         return;
                     }
                     else if (pawn.Position.ShouldSpawnMotesAt(pawn.Map))
                     {
-                        
-                        if(mustBeSharingRoomWithPack && RimValiUtility.CheckIfPackmatesInRoom(pawn)){
+
+                        if (mustBeSharingRoomWithPack && RimValiUtility.CheckIfPackmatesInRoom(pawn))
+                        {
                             SpawnText(pawn, textToShow, mustBeAwake, genderLock, gender, timeToFade, mustBeAsleep);
                         }
                         else if (!mustBeSharingRoomWithPack)
                         {
                             SpawnText(pawn, textToShow, mustBeAwake, genderLock, gender, timeToFade, mustBeAsleep);
                         }
-                        
+
                     }
                 }
             }
@@ -109,7 +99,7 @@ namespace AvaliMod
             {
                 if (random.Next(0, 5) == 4)
                 {
-                
+
                     showText(showTexts, itemToGet);
                 }
             }

@@ -1,7 +1,6 @@
-﻿using System;
-using Verse;
-using RimWorld;
+﻿using RimWorld;
 using System.Linq;
+using Verse;
 
 namespace AvaliMod
 {
@@ -25,16 +24,18 @@ namespace AvaliMod
                         Log.Message("I got here, packs exist.");
                     }
                     Pawn pawn = corpse.InnerPawn;
-                    AvaliPack pack= pawn.GetPack();
+                    AvaliPack pack = pawn.GetPack();
                     if (pack != null)
                     {
                         if (enableDebug)
                         {
                             Log.Message("The pawn had a pack");
                         }
-                        DeathDate deathDate = new DeathDate(pawn);
-                        //Log.Message(GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x).ToString());
-                        deathDate.day = GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x);
+                        DeathDate deathDate = new DeathDate(pawn)
+                        {
+                            //Log.Message(GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x).ToString());
+                            day = GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x)
+                        };
                         if (corpse.InnerPawn != null && enableDebug)
                         {
                             Log.Message("Pawn is not null");

@@ -1,15 +1,8 @@
-﻿using RimWorld;
-using Verse;
+﻿using Verse;
 namespace AvaliMod
 {
     public class AvaliThoughtDriver : ThingComp
     {
-        public AvaliDriverThoughtProps Props
-        {
-            get
-            {
-                return (AvaliDriverThoughtProps) this.props;
-            }
-        }
+        public AvaliDriverThoughtProps Props => (AvaliDriverThoughtProps)props;
     }
 }

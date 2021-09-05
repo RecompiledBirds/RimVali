@@ -8,7 +8,7 @@ namespace AvaliMod
 
         public ShowTextPropsV3()
         {
-            this.compClass = typeof(ShowTextComp);
+            compClass = typeof(ShowTextComp);
         }
     }
 }
