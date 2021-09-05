@@ -1,7 +1,0 @@
-﻿[*.cs]
-
-# CS0169: The field 'AvaliGraphicDatabase.shadertest' is never used
-dotnet_diagnostic.CS0169.severity = none
-
-# CS0649: Field 'AvaliTab.scrollViewHeight' is never assigned to, and will always have its default value 0
-dotnet_diagnostic.CS0649.severity = silent

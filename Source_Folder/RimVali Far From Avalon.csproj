@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
     <Compile Include="CodeFile1.cs" />
     <Compile Include="HarmonyPatches\Class1.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />
