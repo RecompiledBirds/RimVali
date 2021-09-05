@@ -18,8 +18,8 @@
   <!-- <RimVali.comps.2.slots.2.name>Brain</RimVali.comps.2.slots.2.name> -->
   <RimVali.comps.2.slots.2.name>Gehirn</RimVali.comps.2.slots.2.name>
 
-
-  <!-- <RimVali.graphics.colorSets.0.name>Skin</RimVali.graphics.colorSets.0.name>
+  <!--
+  <RimVali.graphics.colorSets.0.name>Skin</RimVali.graphics.colorSets.0.name>
   <RimVali.graphics.colorSets.1.name>Eye</RimVali.graphics.colorSets.1.name>
   <RimVali.comps.2.slots.0.name>Temperature</RimVali.comps.2.slots.0.name>
   <RimVali.comps.2.slots.1.name>Torso</RimVali.comps.2.slots.1.name>

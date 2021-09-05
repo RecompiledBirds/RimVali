@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
+
   <WorkGiverDef>
     <defName>DoBillsNanoForge</defName>
     <label>work at the nanoforge</label>
@@ -17,7 +17,7 @@
     </requiredCapacities>
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
-  
+
   <WorkGiverDef>
     <defName>DoBillsNanoLoom</defName>
     <label>work at the nanoloom</label>

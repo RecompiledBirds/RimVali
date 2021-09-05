@@ -5,13 +5,7 @@ namespace AvaliMod
     {
         private float thingProgress;
 
-        private thingSpawnerProps Props
-        {
-            get
-            {
-                return (thingSpawnerProps)this.props;
-            }
-        }
+        private thingSpawnerProps Props => (thingSpawnerProps)props;
         public override void PostExposeData()
         {
             base.PostExposeData();
@@ -19,10 +13,13 @@ namespace AvaliMod
         }
         public override void CompTick()
         {
-            thingProgress += (float)(1.0 / ((double)this.Props.daysToSpawn * 60000.0));
-            if ((double)thingProgress <= 1.0)
+            thingProgress += (float)(1.0 / (Props.daysToSpawn * 60000.0));
+            if (thingProgress <= 1.0)
+            {
                 return;
-            spawnThing(this.Props.thingToSpawn, this.parent.Position, this.parent.Map);
+            }
+
+            spawnThing(Props.thingToSpawn, parent.Position, parent.Map);
         }
         public void spawnThing(ThingDef thingDef, IntVec3 loc, Map map)
         {
@@ -33,15 +30,15 @@ namespace AvaliMod
             }
             finally
             {
-                if (!this.parent.Destroyed)
+                if (!parent.Destroyed)
                 {
-                    this.parent.Destroy(DestroyMode.Vanish);
+                    parent.Destroy(DestroyMode.Vanish);
                 }
             }
         }
         public override string CompInspectStringExtra()
         {
-            return (string)("Progress: " + thingProgress.ToStringPercent());
+            return "Progress: " + thingProgress.ToStringPercent();
         }
     }
 }

@@ -3,7 +3,7 @@
   <BodyTypeDef>
     <defName>Avali</defName>
     <headOffset>(0.0, 0.0)</headOffset>
-     <bodyNakedGraphicPath>Things/Pawn/Humanlike/Bodies/Naked_Thin</bodyNakedGraphicPath>
+    <bodyNakedGraphicPath>Things/Pawn/Humanlike/Bodies/Naked_Thin</bodyNakedGraphicPath>
     <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
     <label>Avali</label>
   </BodyTypeDef>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <ThingDef>
+  <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -39,9 +39,8 @@
       <li>AvaliResources</li>
     </thingCategories>
   </ThingDef>
-  
-  
-   <RecipeDef>
+
+  <RecipeDef>
     <defName>MakeBFGSabot</defName>
     <label>Forge BFG sabots</label>
     <description>Forge BFG Sabots from tungsten.</description>
@@ -58,19 +57,19 @@
           </thingDefs>
         </filter>
         <count>5</count>
-        </li>
-        <li>
-          <filter>
-            <thingDefs>
-              <li>AvaliTungstenPowder</li>
-            </thingDefs>
-          </filter>
-          <count>10</count>
-        </li>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungstenPowder</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
     </ingredients>
     <products>
       <BFGAmmo>5</BFGAmmo>
     </products>
   </RecipeDef>
-  
+
 </Defs>

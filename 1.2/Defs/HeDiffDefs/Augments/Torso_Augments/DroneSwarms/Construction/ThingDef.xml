@@ -10,7 +10,7 @@
     <techHediffsTags>
       <li>EliteAvali</li>
     </techHediffsTags>
-    
+
     <label>Micro drone swarm (Construction)</label>
     <description>This augment produces a swarm of micro-drones, dedicated to assisting in one singular task. In this case, it's construction.</description>
     <descriptionHyperlinks><RecipeDef>InstallDC</RecipeDef></descriptionHyperlinks>

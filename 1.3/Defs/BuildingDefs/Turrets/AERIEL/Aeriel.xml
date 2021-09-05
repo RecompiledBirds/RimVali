@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <ThingDef ParentName="BaseArtilleryBuilding">
+  <ThingDef ParentName="BaseArtilleryBuilding">
     <thingClass>AvaliMod.AERIALSYSTEM</thingClass>
     <graphicData>
       <texPath>avali/buildings/turrets/AERIAL/AERIAL_TURRET_BASE_3X3</texPath>
@@ -9,20 +9,20 @@
     <defName>Aerial</defName>
     <label>AERIAL System</label>
     <description>AERIAL is a high accuracy rocket system, that can hold up to six rockets, and fire two at once.</description>
-    
+
     <researchPrerequisites>
       <li>AERIELRES</li>
     </researchPrerequisites>
     <comps Inherit = "False">
       <li Class="CompProperties_Forbiddable"/>
-      
+
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
         <explosiveRadius>4.9</explosiveRadius>
         <explosiveDamageType>Bomb</explosiveDamageType>
       </li>
-     <li Class="AvaliMod.AerielProps"/>
-  
+      <li Class="AvaliMod.AerielProps"/>
+
     </comps>
     <designationHotKey>Misc4</designationHotKey>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -33,21 +33,12 @@
         <li>Artillery_MannedMortar</li>
       </buildingTags>
     </building>
-  <uiIconPath>avali/buildings/turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
-  <uiIconScale>0.9</uiIconScale>
-  
+    <uiIconPath>avali/buildings/turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
+    <uiIconScale>0.9</uiIconScale>
+
   </ThingDef>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    <ThingDef ParentName="BaseArtilleryWeapon">
+
+  <ThingDef ParentName="BaseArtilleryWeapon">
     <defName>AerialLauncher</defName>
     <label>AERIAL</label>
     <description>AERIAL launch system.</description>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-      <ThingDef ParentName="MakeableAIMSShellBase">
+  <ThingDef ParentName="MakeableAIMSShellBase">
     <defName>AIMSINC</defName>
     <label>AIMS incendiary shell</label>
     <description>A shell filled with highly flammable materials. Can be fired from an AIMS system.</description>
@@ -20,7 +20,7 @@
     </comps>
     <projectileWhenLoaded>AIMS_INC_SHELL</projectileWhenLoaded>
     <costList>
-       <AvaliTungstenPowder>15</AvaliTungstenPowder>
+      <AvaliTungstenPowder>15</AvaliTungstenPowder>
       <Steel>15</Steel>
       <Chemfuel>24</Chemfuel>
     </costList>
@@ -28,7 +28,7 @@
       <researchPrerequisite>AIMSRes</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseBullet">
     <defName>AIMS_INC_SHELL</defName>
     <label>high-explosive shell</label>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  
-      <ThingDef ParentName="MakeableAIMSShellBase">
+  <ThingDef ParentName="MakeableAIMSShellBase">
     <defName>AIMSEMP</defName>
     <label>AIMS EMP shell</label>
     <description>A shell with an onboard EMP device. Can be fired from an AIMS system.</description>
@@ -30,7 +29,7 @@
       <researchPrerequisite>AIMSRes</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseBullet">
     <defName>AIMS_EMP_SHELL</defName>
     <label>high-explosive shell</label>

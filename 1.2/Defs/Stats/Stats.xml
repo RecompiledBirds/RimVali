@@ -1,6 +1,6 @@
 
 <Defs>
-    <StatDef>
+  <StatDef>
     <defName>ExplodeBombRadius</defName>
     <label>Explosion [Bomb] radius</label>
     <description>The area affected when this detonates.</description>
@@ -22,7 +22,7 @@
       </li>
     </parts>
   </StatDef>
-  
+
   <StatDef>
     <defName>ExplodeFireRadius</defName>
     <label>Explosion [Fire] radius</label>
@@ -45,7 +45,7 @@
       </li>
     </parts>
   </StatDef>
-  
+
   <StatDef>
     <defName>ExplodeEMPRadius</defName>
     <label>Explosion [EMP] radius</label>
@@ -68,7 +68,7 @@
       </li>
     </parts>
   </StatDef>
-  
+
   <StatDef>
     <defName>KillOnExplosion</defName>
     <label>Kills pawn on explosion</label>
@@ -91,5 +91,5 @@
       </li>
     </parts>
   </StatDef>
-  
+
 </Defs>

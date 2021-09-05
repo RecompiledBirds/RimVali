@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
-using RimWorld.Planet;
+﻿using RimWorld.Planet;
 using Verse;
 namespace AvaliMod
 {
@@ -16,6 +10,12 @@ namespace AvaliMod
         public static int dayLastUpdated;
         public override void ExposeData()
         {
+            if (Current.Game.storyteller.def.defName == "Nesi")
+            {
+                Log.Message("Can't wait to see what happens..");
+            }
+
+            Log.Message("HEY");
             Scribe_Values.Look(ref state, "state");
             Scribe_Values.Look(ref daysPassedSinceLastHunt, "daysPassedSinceLastHunt");
             Scribe_Values.Look(ref daysSpentNice, "daysSpentNice");

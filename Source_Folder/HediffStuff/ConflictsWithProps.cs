@@ -9,7 +9,7 @@ namespace AvaliMod
         public bool debugInfo;
         public ConflictsWithProps()
         {
-            this.compClass = typeof(ConflictsWith);
+            compClass = typeof(ConflictsWith);
         }
     }
 

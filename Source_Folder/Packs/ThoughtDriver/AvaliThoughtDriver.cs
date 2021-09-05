@@ -1,11 +1,10 @@
-﻿using Verse;
+﻿using RimValiCore;
 using RimWorld;
+using RimWorld.Planet;
 using System.Collections.Generic;
 using System.Linq;
-
 using System.Threading;
-using RimWorld.Planet;
-using RimValiCore;
+using Verse;
 
 
 namespace AvaliMod
@@ -17,11 +16,11 @@ namespace AvaliMod
         private int onTick;
         private List<Pawn> pawnsHaveBeenSold = new List<Pawn>();
         private List<Pawn> pawnsAreMissing = new List<Pawn>();
-        bool threadRunning;
+        private bool threadRunning;
         public AvaliUpdater(World map)
             : base(map)
         {
-           
+
         }
         public override void ExposeData()
         {
@@ -38,12 +37,12 @@ namespace AvaliMod
                 pawnsAreMissing.Add(pawn);
                 return true;
             }
-            else{return false;}
+            else { return false; }
         }
         public HashSet<Pawn> pawns = new HashSet<Pawn>();
         public void UpdatePawns()
         {
-            
+
             if (!RimValiUtility.Driver.Packs.EnumerableNullOrEmpty())
             {
                 foreach (AvaliPack pack in RimValiUtility.Driver.Packs)
@@ -57,15 +56,16 @@ namespace AvaliMod
                 }
             }
         }
-        void GivePackThoughts(AvaliPack pawnPack,PackComp packComp)
+
+        private void GivePackThoughts(AvaliPack pawnPack, PackComp packComp)
         {
-            foreach (Pawn packmate in pawnPack.GetAllNonNullPawns.Where(x=>x.Alive()&&x!=pawnPack.leaderPawn))
+            foreach (Pawn packmate in pawnPack.GetAllNonNullPawns.Where(x => x.Alive() && x != pawnPack.leaderPawn))
             {
                 Thought_Memory thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
-                if (packmate != null && pawnPack.leaderPawn != null  && !thought_Memory2.TryMergeWithExistingMemory(out bool bubble)){ packmate.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, pawnPack.leaderPawn);}
+                if (packmate != null && pawnPack.leaderPawn != null && !thought_Memory2.TryMergeWithExistingMemory(out bool bubble)) { packmate.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, pawnPack.leaderPawn); }
             }
         }
-        
+
         public void UpdateThreaded()
         {
             UpdatePawns();
@@ -75,16 +75,15 @@ namespace AvaliMod
         {
             get
             {
-
-                ThreadPool.GetAvailableThreads(out int wThreads, out int cThreads);
+                ThreadPool.GetAvailableThreads(out int wThreads, out _);
                 return !threadRunning && wThreads > 0;
             }
         }
 
-        
+
         public override void WorldComponentTick()
         {
-            if (RimValiMod.settings.packThoughtsEnabled&& mapCompOn && !(RimValiUtility.Driver.Packs == null) && RimValiUtility.Driver.Packs.Count > 0)
+            if (RimValiMod.settings.packThoughtsEnabled && mapCompOn && !(RimValiUtility.Driver.Packs == null) && RimValiUtility.Driver.Packs.Count > 0)
             {
                 if (onTick == 120)
                 {
@@ -96,13 +95,13 @@ namespace AvaliMod
                         Thread packThread = new Thread(packThreadRef);
                         packThread.Start();
                     }
-                    else{UpdatePawns();}
+                    else { UpdatePawns(); }
                     onTick = 0;
                 }
                 onTick++;
             }
         }
-        
+
 
     }
 }

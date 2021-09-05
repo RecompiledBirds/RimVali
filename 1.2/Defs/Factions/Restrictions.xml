@@ -147,17 +147,17 @@
         <otherFaction>AvaliFaction</otherFaction>
         <relation>100</relation>
       </li>
-       <li>
+      <li>
         <otherFaction>AvaliIndepenentWorldsTribal</otherFaction>
         <relation>-100</relation>
       </li>
-       <li>
+      <li>
         <otherFaction>AvaliIndepenentWorldsIlluminate</otherFaction>
         <relation>-100</relation>
       </li>
     </relations>
   </AvaliMod.FactionStartRelationDef>
-   <AvaliMod.FactionStartRelationDef>
+  <AvaliMod.FactionStartRelationDef>
     <defName>IWPC_AF_Relations</defName>
     <faction>IWPlayerColony</faction>
     <relations>
@@ -165,11 +165,11 @@
         <otherFaction>AvaliFaction</otherFaction>
         <relation>-100</relation>
       </li>
-       <li>
+      <li>
         <otherFaction>AvaliIndepenentWorldsTribal</otherFaction>
         <relation>100</relation>
       </li>
-       <li>
+      <li>
         <otherFaction>AvaliIndepenentWorldsIlluminate</otherFaction>
         <relation>100</relation>
       </li>

@@ -10,8 +10,8 @@
     <showIfUndefined>false</showIfUndefined>
     <displayPriorityInCategory>4510</displayPriorityInCategory>
   </StatDef>
-  
-   <StatDef>
+
+  <StatDef>
     <defName>HealthIncreaseAdd</defName>
     <label>Part health impact</label>
     <description>How much the part health is increased/decreased by a bionic.</description>

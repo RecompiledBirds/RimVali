@@ -1,7 +1,6 @@
-﻿using RimWorld;
-using Verse;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Verse;
 namespace AvaliMod
 {
     [StaticConstructorOnStartup]
@@ -11,13 +10,13 @@ namespace AvaliMod
         public static IEnumerable<ModuleDef> moduleDefs = DefDatabase<ModuleDef>.AllDefs;
         public static void startup()
         {
-            
-          //  AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
-          //  AvaliDefs.IWAvaliRace.race.baseHealthScale = RimValiMod.settings.healthScale;
 
-            
+            //  AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
+            //  AvaliDefs.IWAvaliRace.race.baseHealthScale = RimValiMod.settings.healthScale;
+
+
             moduleDefs = DefDatabase<ModuleDef>.AllDefs;
-           
+
             foreach (ModuleDef module in moduleDefs)
             {
                 if (!RimValiUtility.modulesFound.ToLower().Contains(module.name.ToLower()))
@@ -66,7 +65,7 @@ namespace AvaliMod
         }
         static Modulefinder()
         {
-           startup();
+            startup();
         }
     }
 }

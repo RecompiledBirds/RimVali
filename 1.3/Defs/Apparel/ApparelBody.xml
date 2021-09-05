@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
-  
+
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliTDW</defName>
     <label>Avali traditional wear</label>
     <description>A two piece set of traditional avali wear. Consisting of a short piece that goes over the shoulders and barely covers their chest and another piece that goes sideways over their waist, leaving one thigh exposed and the other covered. It is generally considered lightweight and comfortable, even featuring some chimes for that sentimental noise.</description>
     <recipeMaker>
-        <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
     </recipeMaker>
-   
+
     <graphicData>
       <texPath>avali/Things/Apparel/TraditionalWear/TraditionalWear_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -34,11 +33,11 @@
       <Mass>0.5</Mass>
       <StuffEffectMultiplierArmor>0.24</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.02</StuffEffectMultiplierInsulation_Cold>
-	  <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
+      <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.5</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-    
+
     </equippedStatOffsets>
     <apparel>
       <bodyPartGroups>
@@ -61,23 +60,17 @@
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
   </ThingDef>
-    
- 
-  
-  
-  
-  
-  
-    <!-- HUD -->
-   <ThingDef ParentName="ApparelMakeableBase">
+
+  <!-- HUD -->
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHUD</defName>
-      
+
     <label>Avali HUD [placeholder]</label>
     <description>An Avali HUD. Attached to the side of an Avali’s head, this piece sports three important components: A small antenna to relay and receive information; a hard translucent visor and most importantly of all, a matrix of miniscule LASERs at the base of the visor. Whilst these can feed the Avali a lot of information, they sadly can only keep to one color and have to keep 2D as well.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-       <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
+      <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -105,7 +98,7 @@
     <equippedStatOffsets>
       <ShootingAccuracyPawn>+0.2</ShootingAccuracyPawn>
       <ResearchSpeed>0.35</ResearchSpeed>
-	  <AimingDelayFactor>-0.25</AimingDelayFactor>
+      <AimingDelayFactor>-0.25</AimingDelayFactor>
     </equippedStatOffsets>
     <costList>
       <ComponentSpacer>5</ComponentSpacer>
@@ -156,8 +149,7 @@
     </thingSetMakerTags>
 
   </ThingDef>
-  
-  
+
   <!-- Headress -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHeadress</defName>
@@ -190,7 +182,7 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>1</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
       <SocialImpact>1.25</SocialImpact>
     </equippedStatOffsets>
@@ -223,9 +215,9 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
+
   <!-- Hood -->
-<ThingDef ParentName="ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHood</defName>
     <label>Avali hood</label>
     <description>A large Avali hood. Going over their head, this hood covers most of it. Only leaving their eyes and ear-tips visible. Whether this is for concealing purposes, simple matter of taste or perhaps something more religious shouldn’t really matter as it serves for all pretty well. In the end it’s just a simple hood, and perhaps you should just use it to protect your pawns from the environment.</description>
@@ -240,7 +232,7 @@
         <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-        <costStuffCount>20</costStuffCount>
+    <costStuffCount>20</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -259,13 +251,13 @@
       <WorkToMake>200</WorkToMake>
       <MaxHitPoints>120</MaxHitPoints>
       <Mass>0.3</Mass>
-	  <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.04</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
     </equippedStatOffsets>
     <costList>
@@ -291,19 +283,15 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
-  
-  
-  
+
   <!-- bell cloak -->
-<ThingDef ParentName="ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliBellCloak</defName>
     <label>Avali bell cloak</label>
     <description>An Avali bell cloak. Large bulbous sheets of fabric or leather attached to the neck of an Avali with a simple belt. These cloaks are commonly used by Avali who either travel around a lot or who want to wear something whilst still being able to wear stuff under it. Other than that these cloaks offer decent protection to the environment, but perhaps only from small debris and particles.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
-     <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>3</Crafting>
       </skillRequirements>
@@ -311,7 +299,7 @@
         <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-         <costStuffCount>60</costStuffCount>
+    <costStuffCount>60</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -330,13 +318,13 @@
       <WorkToMake>200</WorkToMake>
       <MaxHitPoints>160</MaxHitPoints>
       <Mass>0.2</Mass>
-	  <StuffEffectMultiplierArmor>0.24</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>0.24</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.02</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
     </equippedStatOffsets>
 
@@ -362,16 +350,12 @@
       </defaultOutfitTags>
       <useDeflectMetalEffect>false</useDeflectMetalEffect>
     </apparel>
-   <colorGenerator Class="ColorGenerator_StandardApparel" />
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
     <thingSetMakerTags>
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
-  
-  
-  
+
   <!-- Thermal wraps -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliThermalWraps</defName>
@@ -388,7 +372,7 @@
         <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-        <costStuffCount>50</costStuffCount>
+    <costStuffCount>50</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -410,11 +394,11 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
+
     <equippedStatOffsets>
-         <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>15</ComfyTemperatureMax>
-          <Flammability>20</Flammability>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+      <ComfyTemperatureMax>15</ComfyTemperatureMax>
+      <Flammability>20</Flammability>
     </equippedStatOffsets>
     <costList>
       <AvaliAeroweave>30</AvaliAeroweave>

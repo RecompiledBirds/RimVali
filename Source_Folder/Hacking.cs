@@ -40,15 +40,15 @@ namespace AvaliMod
         {
             get
             {
-                List <ResearchProjectDef> list1 = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.allPreReqDone() && !x.IsFinished
-                 && !(hackProjects.ContainsKey(x) && hackProjects[x])
-                 && DefDatabase<FactionResearchRestrictionDef>.AllDefs.Any(z =>
-                     z.factionResearchRestrictionBlackList.Any(y => y.isHackable
-                         && y.researchProj == x
-                         && y.factionDef != Faction.OfPlayer.def)
-                     || z.factionResearchRestrictions.Any(y => y.isHackable
-                         && y.researchProj == x
-                         && y.factionDef != Faction.OfPlayer.def))).ToList();
+                List<ResearchProjectDef> list1 = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.allPreReqDone() && !x.IsFinished
+                && !(hackProjects.ContainsKey(x) && hackProjects[x])
+                && DefDatabase<FactionResearchRestrictionDef>.AllDefs.Any(z =>
+                    z.factionResearchRestrictionBlackList.Any(y => y.isHackable
+                        && y.researchProj == x
+                        && y.factionDef != Faction.OfPlayer.def)
+                    || z.factionResearchRestrictions.Any(y => y.isHackable
+                        && y.researchProj == x
+                        && y.factionDef != Faction.OfPlayer.def))).ToList();
                 return list1;
             }
         }
@@ -68,15 +68,17 @@ namespace AvaliMod
                 SendMessage(def);
             }
         }
-        float day = 60000;
-        int tick;
+
+        private readonly float day = 60000;
+        private int tick;
+
         public override void WorldComponentTick()
         {
             if (Find.ResearchManager.currentProj != null)
             {
 
                 tick++;
-                if (tick == day*5)
+                if (tick == day * 5)
                 {
                     if (UnityEngine.Random.Range(0, 100) < RimValiMod.settings.hackChance)
                     {

@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Ferroweave -->
+
+  <RecipeDef>
+    <defName>RimValiPrintAerogel</defName>
+    <label>Print aerogel</label>
+    <description>Create aerogel by re-assembling the ingredients at a near-atomic level.</description>
+    <jobString>Printing aerogel</jobString>
+    <workAmount>10</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAerogel>10</AvaliAerogel>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RimValiPrintAerogelTwo</defName>
+    <label>Print aerogel (20)</label>
+    <description>Create aerogel by re-assembling the ingredients at a near-atomic level.</description>
+    <jobString>Printing aerogel</jobString>
+    <workAmount>50</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAerogel>20</AvaliAerogel>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RimValiPrintAerogelThree</defName>
+    <label>Print aerogel (40)</label>
+    <description>Create aerogel by re-assembling the ingredients at a near-atomic level.</description>
+    <jobString>Printing aerogel</jobString>
+    <workAmount>50</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAerogel>40</AvaliAerogel>
+    </products>
+  </RecipeDef>
+  <!-- Tungsten -->
+
+  <RecipeDef>
+    <defName>RimValiPowderTungsten</defName>
+    <label>Sinter Tungsten</label>
+    <description>Turn raw, unusable tungsten into tungsten carbide, which has more use.</description>
+    <jobString>Sintering tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <workAmount>50</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungsten</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliTungstenPowder>8</AvaliTungstenPowder>
+    </products>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
+  </RecipeDef>
+  <RecipeDef>
+    <workAmount>250</workAmount>
+    <defName>RimValiPowderTungstenTwo</defName>
+    <label>Sinter Tungsten (16)</label>
+    <description>Turn raw, unusable tungsten into tungsten carbide, which has more use.</description>
+    <jobString>Sintering tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungsten</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliTungstenPowder>16</AvaliTungstenPowder>
+    </products>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
+  </RecipeDef>
+  <RecipeDef>
+    <workAmount>500</workAmount>
+    <defName>RimValiPowderTungstenThree</defName>
+    <label>Sinter Tungsten (40)</label>
+    <description>Turn raw, unusable tungsten into tungsten carbide, which has more use.</description>
+    <jobString>Sintering tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungsten</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliTungstenPowder>40</AvaliTungstenPowder>
+    </products>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
+  </RecipeDef>
+
+  <!-- Nanofiber -->
+
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+    <workAmount>7</workAmount>
+    <defName>WeaveNanoFiber</defName>
+    <label>Weave Nano-Fiber</label>
+    <description>Weave nano-fiber from cloth.</description>
+    <jobString>Weaving nano-fiber</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoFiber>8</AvaliNanoFiber>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>35</workAmount>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+    <defName>WeaveNanoFiberTwo</defName>
+    <label>Weave Nano-Fiber (40)</label>
+    <description>Weave nano-fiber from cloth.</description>
+    <jobString>Weaving nano-fiber</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoFiber>40</AvaliNanoFiber>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>70</workAmount>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+    <defName>WeaveNanoFiberThree</defName>
+    <label>Weave Nano-Fiber (80)</label>
+    <description>Weave nano-fiber from cloth.</description>
+    <jobString>Weaving nano-fiber</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoFiber>80</AvaliNanoFiber>
+    </products>
+  </RecipeDef>
+
+  <!-- Ferroweave -->
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
+    <workAmount>30</workAmount>
+    <defName>WeaveFerroweave</defName>
+    <label>Weave Ferroweave</label>
+    <description>Weave nano-fiber and ferrogel together to make a hybrid: ferroweave.</description>
+    <jobString>Weaving Ferroweave</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroweave>10</AvaliAeroweave>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
+    <workAmount>150</workAmount>
+    <defName>WeaveFerroweaveTwo</defName>
+    <label>Weave Ferroweave (25)</label>
+    <description>Weave nano-fiber and ferrogel together to make a hybrid: ferroweave.</description>
+    <jobString>Weaving Ferroweave</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroweave>50</AvaliAeroweave>
+    </products>
+  </RecipeDef>
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
+    <workAmount>300</workAmount>
+    <defName>WeaveFerroweaveThree</defName>
+    <label>Weave Ferroweave (100)</label>
+    <description>Weave nano-fiber and ferrogel together to make a hybrid: ferroweave.</description>
+    <jobString>Weaving Ferroweave</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroweave>100</AvaliAeroweave>
+    </products>
+  </RecipeDef>
+
+  <!-- Aero-Tungsten Carbide -->
+
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>ForgeAeroTungsten</defName>
+    <label>Forge Aero-Tungsten Carbide(25)</label>
+    <description>Create a supermaterial, forged from Aerogel, Tungsten, and several other resources.</description>
+    <jobString>Forging Aero-Tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungstenPowder</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AeroTungstenCarbide>25</AeroTungstenCarbide>
+    </products>
+    <researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>500</workAmount>
+    <defName>ForgeAeroTungstenTwo</defName>
+    <label>Forge Aero-Tungsten Carbide(50)</label>
+    <description>Create a supermaterial, forged from Aerogel, Tungsten, and several other resources.</description>
+    <jobString>Forging Aero-Tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungstenPowder</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <products>
+      <AeroTungstenCarbide>50</AeroTungstenCarbide>
+    </products>
+    <researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>1000</workAmount>
+    <defName>ForgeAeroTungstenThree</defName>
+    <label>Forge Aero-Tungsten Carbide(125)</label>
+    <description>Create a supermaterial, forged from Aerogel, Tungsten, and several other resources.</description>
+    <jobString>Forging Aero-Tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungstenPowder</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AeroTungstenCarbide>125</AeroTungstenCarbide>
+    </products>
+    <researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <!-- NanoCarbon -->
+  <RecipeDef>
+    <defName>RefineAvaliCarbon</defName>
+    <label>Refine carbon (5)</label>
+    <description>Extract refined carbon from the resources used.</description>
+    <jobString>Refining carbon</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbon>5</AvaliNanoCarbon>
+    </products>
+    <researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RefineAvaliCarbonTwo</defName>
+    <label>Refine carbon (25)</label>
+    <description>Extract refined carbon from the resources used.</description>
+    <jobString>Refining carbon</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbon>25</AvaliNanoCarbon>
+    </products>
+    <researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RefineAvaliCarbonThree</defName>
+    <label>Refine carbon (50)</label>
+    <description>Extract refined carbon from the resources used.</description>
+    <jobString>Refining carbon</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbon>50</AvaliNanoCarbon>
+    </products>
+    <researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveNanoCarbonFiber</defName>
+    <label>Weave nano carbon fiber</label>
+    <description>Weave nano carbon fiber.</description>
+    <jobString>Weaving nano carbon fiber.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbonFiber>5</AvaliNanoCarbonFiber>
+    </products>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveNanoCarbonFiberTwo</defName>
+    <label>Weave nano carbon fiber</label>
+    <description>Weave nano carbon fiber (x10).</description>
+    <jobString>Weaving nano carbon fiber (x10).</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbonFiber>25</AvaliNanoCarbonFiber>
+    </products>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveNanoCarbonFiberThree</defName>
+    <label>Weave nano carbon fiber</label>
+    <description>Weave nano carbon fiber (x50).</description>
+    <jobString>Weaving nano carbon fiber (x50).</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbonFiber>50</AvaliNanoCarbonFiber>
+    </products>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveAeroTungstenFiber</defName>
+    <label>Weave aero tungsten fiber</label>
+    <description>Weave aero tungsten fiber.</description>
+    <jobString>Weaving Aero-Tungsten fiber.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AeroTungstenCarbide</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbonFiber</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Hyperweave</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroTungstenFiber>25</AvaliAeroTungstenFiber>
+    </products>
+    <researchPrerequisites>
+      <li>AvaliAeroTungstenFiber</li>
+    </researchPrerequisites>
+  </RecipeDef>
+</Defs>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <PackmateSold.stages.0.label>My packmate {0} was sold</PackmateSold.stages.0.label> -->
+  <PackmateSold.stages.0.label>Ein Rudelmitglied {0} wurde verkauft</PackmateSold.stages.0.label>
+  <!-- <PackmateSold.stages.0.description>My packmate was sold, as if they were nothing more than something to trade for coins... I already miss them..</PackmateSold.stages.0.description> -->
+  <PackmateSold.stages.0.description>Ein Mitglied meines Rudels wurde verkauft, als wäre er nichts weiter als Ware. Wie konnten wir das nur tun?!</PackmateSold.stages.0.description>
+</LanguageData>

@@ -13,12 +13,15 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ReferencePath>$(SolutionDir)Refs</ReferencePath>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\__LocalCopy_RimVali_ Far From Avalon_-16-5\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\1.3\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,7 +31,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\__LocalCopy_RimVali_ Far From Avalon_-2-11 - Copy\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\1.3\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -38,70 +41,22 @@
     <ApplicationIcon>img.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Refs\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="AlienRace, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\RimVali-beta\Source\Refs\AlienRace.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp, Version=1.2.7558.21380, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Refs\Assembly-CSharp.dll</HintPath>
+    <Reference Include="PresentationFramework">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
       <Private>False</Private>
     </Reference>
     <Reference Include="RimValiCore">
-      <HintPath>..\RimValiCore\1.2\Assemblies\RimValiCore.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Refs\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Refs\UnityEngine.AssetBundleModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Refs\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Refs\UnityEngine.IMGUIModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.InputModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\..\RimValiCore\1.3\Assemblies\RimValiCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
-    <Compile Include="CodeFile1.cs" />
+    <Compile Include="PatchOperations.cs" />
     <Compile Include="HarmonyPatches\Class1.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />
     <Compile Include="HediffStuff\ConflictsWithProps.cs" />
     <Compile Include="MentalBreaks\PackLoss.cs" />
+    <Compile Include="NewStoryteller.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackDiverMapComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackProps.cs" />
@@ -111,9 +66,8 @@
     <Compile Include="Packs\ThoughtDriver\ThingComps\AvaliThoughtDriverComp.cs" />
     <Compile Include="Packs\ThoughtDriver\ThingComps\AvaliThoughtDriverProps.cs" />
     <Compile Include="Packs\Packs.cs" />
-    <Compile Include="RimValiUtilities\PawnTracker.cs" />
     <Compile Include="Hacking.cs" />
-    <Compile Include="Storyteller.cs" />
+    <Compile Include="NesiStoryteller.cs" />
     <Compile Include="StoryTellerDatamapComp.cs" />
     <Compile Include="ThingComps\Aeriel\AERIALSYSTEM.cs" />
     <Compile Include="ModScanner.cs" />
@@ -128,8 +82,8 @@
     <Compile Include="RimValiUtilities\ReturnData.cs" />
     <Compile Include="RimValiUtilities\RimValiSettings.cs" />
     <Compile Include="RimValiUtilities\RimValiUtils.cs" />
-    <Compile Include="ThingComps\Aeriel\CodeFile1.cs" />
-    <Compile Include="ThingComps\Aeriel\CodeFile2.cs" />
+    <Compile Include="ThingComps\Aeriel\Props.cs" />
+    <Compile Include="ThingComps\Aeriel\verb.cs" />
     <Compile Include="ThingComps\EggLaying\Comp.cs" />
     <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />
@@ -163,5 +117,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref">
+      <Version>1.3.3102</Version>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <IncludeAssets>compile</IncludeAssets>
+      <Version>2.1.1</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>

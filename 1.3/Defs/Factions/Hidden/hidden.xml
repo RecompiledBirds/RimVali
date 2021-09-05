@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
- 
- <Defs>
+
+<Defs>
   <FactionDef ParentName="FactionBase">
     <defName>NesiSpecOps</defName>
     <label>Nesi's spec ops</label>
@@ -12,111 +12,107 @@
     <fixedName>Nesi's spec ops</fixedName>
     <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
     <techLevel>Spacer</techLevel>
-      <maxPawnCostPerTotalPointsCurve>
-    <points>
-      <li>(0, 1000)</li>
-      <li>(1000,2000)</li>
-      <li>(2000, 4000)</li>
-      <li>(10000, 20000)</li>
-    </points>
-     </maxPawnCostPerTotalPointsCurve>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0, 1000)</li>
+        <li>(1000,2000)</li>
+        <li>(2000, 4000)</li>
+        <li>(10000, 20000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
     <backstoryFilters>
       <li>
         <categories>
          <li>RimValiBackstories</li>
-        </categories>
-      </li>
-    </backstoryFilters>
-    <hidden>true</hidden>
-    <rescueesCanJoin>true</rescueesCanJoin>
-    <autoFlee>false</autoFlee>
-    <geneticVariance>1</geneticVariance>
-    <apparelStuffFilter>
-      <thingDefs>
-        <li>AeroTungstenCarbide</li>
-      </thingDefs>
-    </apparelStuffFilter>
-    <pawnGroupMakers>
-      <li>
-        <kindDef>Combat</kindDef>
-        <options>
-           <NesiSpecOps>1000</NesiSpecOps>
-        </options>
-      </li>
-      <li>
-        <kindDef>Peaceful</kindDef>
-        <options>
-           <NesiSpecOps>2000</NesiSpecOps>
-        </options>
-      </li>
-      <li>
-        <kindDef>Trader</kindDef>
-        <traders>
-          <AvaliTrader>200</AvaliTrader>
-        </traders>
-        <carriers>
-          <Muffalo>5</Muffalo>
-        </carriers>
-        <guards>
-          <NesiSpecOps>2000</NesiSpecOps>
-        </guards>
-      </li>
-      <li>
-        <kindDef>Settlement</kindDef>
-        <options>
-            <NesiSpecOps>2000</NesiSpecOps>
-        </options>
-      </li>
-    </pawnGroupMakers>
-      
-  </FactionDef>
-    
-    
-    
-    
-     <PawnKindDef ParentName="BaseAvali">
-     <defName>NesiSpecOps</defName>
-     <label>Nesi's Spec Ops Avali</label>
-     <combatPower>200</combatPower>
-     <baseRecruitDifficulty>0.73</baseRecruitDifficulty>
-     <defaultFactionType>NesiSpecOps</defaultFactionType>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <invNutrition>5</invNutrition>
-     <itemQuality>Excellent</itemQuality>
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>40</maxGenerationAge>
-     <gearHealthRange>1.2~2.4</gearHealthRange>
-     <apparelTags>
-       <li>AvaliSpecOps</li>
-     </apparelTags>
-     <apparelMoney>5000~9999999</apparelMoney>
-     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
-     <weaponMoney>700~99999999</weaponMoney>
-     <weaponTags>
-       <li>AvaliWeapons</li>
-     </weaponTags>
-     <techHediffsMoney>5000~99999</techHediffsMoney>
-     <techHediffsTags>
-       <li>Advanced</li>
-       <li>Spacer</li>
-     </techHediffsTags>
-     <techHediffsChance>100</techHediffsChance>
-     <inventoryOptions>
-       <skipChance>0.25</skipChance>
-       <subOptionsChooseOne>
-         <li>
-           <thingDef>Silver</thingDef>
-           <countRange>250~500</countRange>
-         </li>
-         <li>
-         <thingDef>MedicineIndustrial</thingDef>
-          <countRange>4~6</countRange>
-         </li>
-       </subOptionsChooseOne>
-     </inventoryOptions>
-   </PawnKindDef>
+       </categories>
+     </li>
+   </backstoryFilters>
+   <hidden>true</hidden>
+   <rescueesCanJoin>true</rescueesCanJoin>
+   <autoFlee>false</autoFlee>
+   <geneticVariance>1</geneticVariance>
+   <apparelStuffFilter>
+    <thingDefs>
+      <li>AeroTungstenCarbide</li>
+    </thingDefs>
+  </apparelStuffFilter>
+  <pawnGroupMakers>
+    <li>
+      <kindDef>Combat</kindDef>
+      <options>
+       <NesiSpecOps>1000</NesiSpecOps>
+     </options>
+   </li>
+   <li>
+    <kindDef>Peaceful</kindDef>
+    <options>
+     <NesiSpecOps>2000</NesiSpecOps>
+   </options>
+ </li>
+ <li>
+  <kindDef>Trader</kindDef>
+  <traders>
+    <AvaliTrader>200</AvaliTrader>
+  </traders>
+  <carriers>
+    <Muffalo>5</Muffalo>
+  </carriers>
+  <guards>
+    <NesiSpecOps>2000</NesiSpecOps>
+  </guards>
+</li>
+<li>
+  <kindDef>Settlement</kindDef>
+  <options>
+    <NesiSpecOps>2000</NesiSpecOps>
+  </options>
+</li>
+</pawnGroupMakers>
 
-  
- </Defs>
+</FactionDef>
+
+<PawnKindDef ParentName="BaseAvali">
+ <defName>NesiSpecOps</defName>
+ <label>Nesi's Spec Ops Avali</label>
+ <combatPower>200</combatPower>
+ <baseRecruitDifficulty>0.73</baseRecruitDifficulty>
+ <defaultFactionType>NesiSpecOps</defaultFactionType>
+ <backstoryCategories>
+   <li>RimValiBackstories</li>
+ </backstoryCategories>
+ <invNutrition>5</invNutrition>
+ <itemQuality>Excellent</itemQuality>
+ <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+ <maxGenerationAge>40</maxGenerationAge>
+ <gearHealthRange>1.2~2.4</gearHealthRange>
+ <apparelTags>
+   <li>AvaliSpecOps</li>
+ </apparelTags>
+ <apparelMoney>5000~9999999</apparelMoney>
+ <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+ <weaponMoney>700~99999999</weaponMoney>
+ <weaponTags>
+   <li>AvaliWeapons</li>
+ </weaponTags>
+ <techHediffsMoney>5000~99999</techHediffsMoney>
+ <techHediffsTags>
+   <li>Advanced</li>
+   <li>Spacer</li>
+ </techHediffsTags>
+ <techHediffsChance>100</techHediffsChance>
+ <inventoryOptions>
+   <skipChance>0.25</skipChance>
+   <subOptionsChooseOne>
+     <li>
+       <thingDef>Silver</thingDef>
+       <countRange>250~500</countRange>
+     </li>
+     <li>
+       <thingDef>MedicineIndustrial</thingDef>
+       <countRange>4~6</countRange>
+     </li>
+   </subOptionsChooseOne>
+ </inventoryOptions>
+</PawnKindDef>
+
+</Defs>

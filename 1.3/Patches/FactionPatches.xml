@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <Operation Class="PatchOperationAdd">
-     <success>Always</success>
-      <xpath>/Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
-      <value>
-        <li>RimValiPlayerColony</li>
-      </value>
- </Operation>
+    <success>Always</success>
+    <xpath>/Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
+    <value>
+      <li>RimValiPlayerColony</li>
+    </value>
+  </Operation>
 </Patch>

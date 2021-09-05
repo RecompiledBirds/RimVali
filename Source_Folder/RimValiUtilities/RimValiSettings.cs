@@ -101,7 +101,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref IlluminateAvaliMaxTemp, "IlluminateAvaliMaxTemp", 15, true);
             Scribe_Values.Look(ref IWAvaliMinTemp, "IWAvaliMinTemp", -5, true);
             Scribe_Values.Look(ref IWAvaliMaxTemp, "IWAvaliMaxTemp", 25, true);
-            Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces", LookMode.Undefined, LookMode.Undefined);
+            Scribe_Collections.Look(ref enabledRaces, "enabledRaces", LookMode.Undefined, LookMode.Undefined);
             Scribe_Values.Look(ref packBrokenChance, "packBrokenChance", 5, true);
             Scribe_Values.Look(ref ticksBetweenPackUpdate, "ticksBetweenPackUpdate", 120, true);
             Scribe_Values.Look(ref canGetPackBroken, "canGetPackBroken", true, true);
@@ -115,24 +115,19 @@ namespace AvaliMod
         public settingsWindow windowToShow;
         public static RimValiModSettings settings;
         public ModContentPack mod;
-        private bool hasCollectedModules = false;
+        private readonly bool hasCollectedModules = false;
         private static string dir;
-        public static string GetDir
-        {
-            get
-            {
-                return dir;
-            }
-        }
+        public static string GetDir => dir;
         public RimValiMod(ModContentPack content) : base(content)
         {
             dir = content.RootDir.ToString();
+
             if (!hasCollectedModules)
             {
                 Modulefinder.startup();
                 hasCollectedModules = true;
             }
-            this.mod = content;
+            mod = content;
             if (LoadedModManager.RunningModsListForReading.Any(x => x.Name.ToLower().Contains("avali continued")))
             {
                 Log.Warning("It appears avali continued or a mod made for it is running with RimVali! This may cause issues, and is not recommended.");
@@ -149,11 +144,13 @@ namespace AvaliMod
             }
         }
 
-        void Backbutton(Listing_Standard listing_Standard)
+        private void Backbutton(Listing_Standard listing_Standard)
         {
             bool goBack = listing_Standard.ButtonText("goBack".Translate());
             if (goBack)
+            {
                 windowToShow = 0;
+            }
         }
         public override void DoSettingsWindowContents(Rect rect)
         {
@@ -187,9 +184,14 @@ namespace AvaliMod
                     windowToShow = settingsWindow.packs;
                 }
                 if (gameplaySettings)
+                {
                     windowToShow = settingsWindow.gameplay;
+                }
+
                 if (debug)
+                {
                     windowToShow = settingsWindow.debug;
+                }
                 // if (pawnsSettings)
                 //   windowToShow = settingsWindow.pawns;
             }
@@ -231,7 +233,7 @@ namespace AvaliMod
                 listing_Standard.Label("PackBrokenChance".Translate(settings.packBrokenChance.Named("CHANCE")));
                 settings.packBrokenChance = (int)listing_Standard.Slider(settings.packBrokenChance, 0, 100);
                 listing_Standard.Label("TicksBetweenPackUpdates".Translate());
-                Int32.TryParse(listing_Standard.TextEntry(settings.ticksBetweenPackUpdate.ToString()), out settings.ticksBetweenPackUpdate);
+                int.TryParse(listing_Standard.TextEntry(settings.ticksBetweenPackUpdate.ToString()), out settings.ticksBetweenPackUpdate);
             }
             #endregion
             #region gameplay
@@ -249,42 +251,38 @@ namespace AvaliMod
                 settings.avaliRequiredForDrop = (int)listing_Standard.Slider(settings.avaliRequiredForDrop, 0, 100);
                 float scale = settings.healthScale;
                 listing_Standard.Label("HPScaler".Translate(settings.healthScale.Named("SCALE")));
-                settings.healthScale = (float)listing_Standard.Slider(settings.healthScale, 0.01f, 2.5f);
+                settings.healthScale = listing_Standard.Slider(settings.healthScale, 0.01f, 2.5f);
 
                 listing_Standard.Label("ChanceToHackTech".Translate(settings.hackChance.Named("CHANCE")));
                 settings.hackChance = (int)listing_Standard.Slider(settings.hackChance, 0, 100);
                 listing_Standard.Label("AERIALShellCapSetting".Translate(settings.AERIALShellCap.Named("CAP")));
                 settings.AERIALShellCap = (int)listing_Standard.Slider(settings.AERIALShellCap, 1, 100);
                 {
-                    int newTemp;
                     listing_Standard.Label("IlluminateAvaliMaxTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMaxTemp.ToString()), out newTemp);
+                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMaxTemp.ToString()), out int newTemp);
                     if (newTemp != settings.IlluminateAvaliMaxTemp)
                     {
-                        newTemp= Mathf.Clamp(newTemp, -200, 1000);
+                        newTemp = Mathf.Clamp(newTemp, -200, 1000);
                         settings.IlluminateAvaliMaxTemp = newTemp;
                     }
-                    int newTempMin;
                     listing_Standard.Label("IlluminateAvaliMinTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMinTemp.ToString()), out newTempMin);
+                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMinTemp.ToString()), out int newTempMin);
                     if (newTempMin != settings.IlluminateAvaliMinTemp)
                     {
-                        newTempMin = Mathf.Clamp(newTempMin,-200, newTemp);
+                        newTempMin = Mathf.Clamp(newTempMin, -200, newTemp);
                         settings.IlluminateAvaliMinTemp = newTempMin;
                     }
                 }
                 {
-                    int newTemp;
                     listing_Standard.Label("IWAvaliMaxTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMaxTemp.ToString()), out newTemp);
+                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMaxTemp.ToString()), out int newTemp);
                     if (newTemp != settings.IWAvaliMaxTemp)
                     {
                         newTemp = Mathf.Clamp(newTemp, -200, 1000);
                         settings.IWAvaliMaxTemp = newTemp;
                     }
-                    int newTempMin;
                     listing_Standard.Label("IWAvaliMinTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMinTemp.ToString()), out newTempMin);
+                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMinTemp.ToString()), out int newTempMin);
                     if (newTempMin != settings.IWAvaliMinTemp)
                     {
                         newTempMin = Mathf.Clamp(newTempMin, -200, newTemp);

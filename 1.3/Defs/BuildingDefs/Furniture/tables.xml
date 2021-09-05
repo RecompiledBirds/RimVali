@@ -27,7 +27,6 @@
     <rotatable>false</rotatable>
   </ThingDef>
 
-
   <ThingDef ParentName="TableGatherSpotBase">
     <defName>Illuminate2x4Table</defName>
     <label>2x4 Avali table</label>

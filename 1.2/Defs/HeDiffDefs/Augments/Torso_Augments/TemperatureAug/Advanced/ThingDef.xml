@@ -10,7 +10,7 @@
     <techHediffsTags>
       <li>AdvancedAvali</li>
     </techHediffsTags>
-    
+
     <label>Advanced Temperature Control Augment [TCA]</label>
     <description>This augment, sometimes refered to as a T.C.A, has the ability to assist in regulating the body temperature of Avali.</description>
     <descriptionHyperlinks><RecipeDef>InstallAvaliTemperatureImplantAdv</RecipeDef></descriptionHyperlinks>

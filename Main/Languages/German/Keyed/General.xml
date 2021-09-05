@@ -14,7 +14,7 @@
   <PackSpeciality>Art des Rudels: {SPECIALITY}</PackSpeciality>
   <!-- <PackEffects>Effects:</PackEffects> -->
   <PackEffects>Effekte:</PackEffects>
-  
+
   <!-- Settings -->
 
   <!-- <goBack>Go back</goBack> -->
@@ -27,7 +27,7 @@
   <MultiThreadYes>Ja, ich habe verstanden.</MultiThreadYes>
   <!-- <MultiThreadNo>Wait! Go back!</MultiThreadNo> -->
   <MultiThreadNo>Warte! Zurück!</MultiThreadNo>
-  
+
   <!-- Pack settings -->
 
   <!-- <PackLabel>Pack settings</PackLabel> -->
@@ -56,7 +56,7 @@
   <PacksDesc>Aktiviere/Deaktiviere Rudel. Gibt deinen Rudelmitgliedern Boosts! Für ein "volles" Erlebnis empfohlen.</PacksDesc>
   <!-- <MaxPackSize>Maximum pack size: {COUNT}</MaxPackSize> -->
   <MaxPackSize>Maximale Rudelgröße: {COUNT}</MaxPackSize>
-  
+
   <!-- Gameplay -->
 
   <!-- <GameplayLabel>Gameplay Settings</GameplayLabel> -->
@@ -79,7 +79,7 @@
   <HPScaler>HP Skalierung: {SCALE}</HPScaler>
   <!-- <ChanceToHackTech>Chance to hack tech: {CHANCE}</ChanceToHackTech> -->
   <ChanceToHackTech>Chance, Tech zu hacken: {CHANCE}</ChanceToHackTech>
-  
+
   <!-- Stability warn -->
 
   <!-- <StableSettings>Stable.</StableSettings> -->
@@ -88,7 +88,7 @@
   <PotentialIssuesSettings>Konflikte könnten möglicherweise auftreten.</PotentialIssuesSettings>
   <!-- <UnstableSettings>Unstable.</UnstableSettings> -->
   <UnstableSettings>Nicht Stabil.</UnstableSettings>
-  
+
   <!-- Debug -->
 
   <!-- <DebugLabel>Debug and advanced settings</DebugLabel> -->
@@ -97,7 +97,7 @@
   <ToggleDebug>Debug Modus umschalten</ToggleDebug>
   <!-- <RVBuild>RimVali build: {BUILD}</RVBuild> -->
   <RVBuild>RimVali build: {BUILD}</RVBuild>
-  
+
   <!-- Letters -->
 
   <!-- <IlluminateFactionName>Illuminate colony</IlluminateFactionName> -->
@@ -114,7 +114,7 @@
   <HackedProject>Erfolgreich gehacktes Projekt: {PROJECT}</HackedProject>
   <!-- <UnlockedResearch>Tech now researchable: {PROJECT}</UnlockedResearch> -->
   <UnlockedResearch>Tech jetzt erforschbar: {PROJECT}</UnlockedResearch>
-  
+
   <!-- RVR -->
 
   <!-- <CannotWearRVR>{RACE} can't wear this</CannotWearRVR> -->
@@ -123,7 +123,7 @@
   <CannotBuildRVR>{RACE} kann dies nicht bauen</CannotBuildRVR>
   <!-- <CannotEatRVR>{RACE} can't eat this</CannotEatRVR> -->
   <CannotEatRVR>{RACE} kann das nicht essen</CannotEatRVR>
-  
+
   <!-- Jobs -->
   <!-- <RefuelThing>Refuel {1_labelShort}</RefuelThing> -->
   <RefuelThing>Betanke {1_labelShort}</RefuelThing>

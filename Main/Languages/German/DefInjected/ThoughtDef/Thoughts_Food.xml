@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <NonAvaliAteEgg.stages.0.label>Ate avali egg</NonAvaliAteEgg.stages.0.label> -->
+  <NonAvaliAteEgg.stages.0.label>Avali-Ei gegessen</NonAvaliAteEgg.stages.0.label>
+  <!-- <NonAvaliAteEgg.stages.0.description>That egg tasted decent.</NonAvaliAteEgg.stages.0.description> -->
+  <NonAvaliAteEgg.stages.0.description>Das Ei hat ganz gut geschmeckt.</NonAvaliAteEgg.stages.0.description>
+
+  <!-- <AvaliAteEgg.stages.0.label>Ate avali egg</AvaliAteEgg.stages.0.label> -->
+  <AvaliAteEgg.stages.0.label>Avali-Ei gegessen</AvaliAteEgg.stages.0.label>
+  <!-- <AvaliAteEgg.stages.0.description>I had to eat an avali egg... one of our own kind..</AvaliAteEgg.stages.0.description> -->
+  <AvaliAteEgg.stages.0.description>Ich habe ein Avali-Ei gegessen... einen meiner eigenen Art..</AvaliAteEgg.stages.0.description>
+
+  <!-- <AvaliAteHumanlikeDirect.stages.0.label>Ate humanlike</AvaliAteHumanlikeDirect.stages.0.label> -->
+  <AvaliAteHumanlikeDirect.stages.0.label>Mensch(-lichen) gegessen (roh)</AvaliAteHumanlikeDirect.stages.0.label>
+  <!-- <AvaliAteHumanlikeDirect.stages.0.description>It probably would have tasted better cooked.</AvaliAteHumanlikeDirect.stages.0.description> -->
+  <AvaliAteHumanlikeDirect.stages.0.description>Hätte zubereitet vermutlich besser geschmeckt.</AvaliAteHumanlikeDirect.stages.0.description>
+
+  <!-- <AvaliAteHumanlikeCooked.stages.0.label>Ate humanlike as ingredient</AvaliAteHumanlikeCooked.stages.0.label> -->
+  <AvaliAteHumanlikeCooked.stages.0.label>Mensch(-lichen) gegessen (gekocht)</AvaliAteHumanlikeCooked.stages.0.label>
+  <!-- <AvaliAteHumanlikeCooked.stages.0.description>It tasted ok, I suppose.</AvaliAteHumanlikeCooked.stages.0.description> -->
+  <AvaliAteHumanlikeCooked.stages.0.description>Naja, es hat ganz ok geschmeckt.</AvaliAteHumanlikeCooked.stages.0.description>
+
+  <!-- <AvaliButcheredHumanlike.stages.0.label>Butchered humanlike</AvaliButcheredHumanlike.stages.0.label> -->
+  <AvaliButcheredHumanlike.stages.0.label>Menschen(-ähnlichen) geschlachtet</AvaliButcheredHumanlike.stages.0.label>
+  <!-- <AvaliButcheredHumanlike.stages.0.description>I butchered a sentient creature.</AvaliButcheredHumanlike.stages.0.description> -->
+  <AvaliButcheredHumanlike.stages.0.description>Ich habe jemanden geschlachtet wie ein Tier.</AvaliButcheredHumanlike.stages.0.description>
+
+  <!-- <AvaliKnowButcheredHumanLike.stages.0.label>A humanlike was butchered</AvaliKnowButcheredHumanLike.stages.0.label> -->
+  <AvaliKnowButcheredHumanLike.stages.0.label>Mensch(-enähnlicher) wurde geschlachtet</AvaliKnowButcheredHumanLike.stages.0.label>
+  <!-- <AvaliKnowButcheredHumanLike.stages.0.description>A sentient creature was butchered.</AvaliKnowButcheredHumanLike.stages.0.description> -->
+  <AvaliKnowButcheredHumanLike.stages.0.description>Ein Mensch(-enähnlicher) wurde geschlachtet.</AvaliKnowButcheredHumanLike.stages.0.description>
+</LanguageData>

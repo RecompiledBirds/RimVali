@@ -14,7 +14,7 @@
       <preferability>DesperateOnly</preferability>
       <foodType>AnimalProduct</foodType>
       <ingestSound>RawMeat_Eat</ingestSound>
-			<tasteThought>NonAvaliAteEgg</tasteThought>
+      <tasteThought>NonAvaliAteEgg</tasteThought>
     </ingestible>
     <thingCategories>
       <li>AvaliResources</li>

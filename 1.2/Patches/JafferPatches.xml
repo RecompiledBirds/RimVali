@@ -9,14 +9,14 @@
     <match Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationReplace">
-           <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Avali"]</xpath>
-    <value>
-      <AvaliMod.RimValiRaceDef ParentName="BaseFullAvali">
-        <defName>Alien_Avali</defName>
-      </AvaliMod.RimValiRaceDef>
-    </value>
+          <xpath>/Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Avali"]</xpath>
+          <value>
+            <AvaliMod.RimValiRaceDef ParentName="BaseFullAvali">
+              <defName>Alien_Avali</defName>
+            </AvaliMod.RimValiRaceDef>
+          </value>
         </li>
-         
+
       </operations>
     </match>
   </Operation>
