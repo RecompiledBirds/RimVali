@@ -51,9 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HediffStuff\ShowTextV3\ShowTextClass.cs" />
     <Compile Include="Packs\Threading\ThreadQueue.cs" />
     <Compile Include="PatchOperations.cs" />
-    <Compile Include="HarmonyPatches\Class1.cs" />
+    <Compile Include="HarmonyPatches\Credits.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />
     <Compile Include="HediffStuff\ConflictsWithProps.cs" />
     <Compile Include="MentalBreaks\PackLoss.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackProps.cs" />
     <Compile Include="Packs\ThoughtDriver\AvaliThoughtDriver.cs" />
     <Compile Include="Packs\ThoughtDriver\PackLossWorker.cs" />
-    <Compile Include="Packs\ThoughtDriver\Shared_room_worker.cs" />
+    <Compile Include="Packs\ThoughtDriver\SharedRoomWorker.cs" />
     <Compile Include="Packs\ThoughtDriver\ThingComps\AvaliThoughtDriverComp.cs" />
     <Compile Include="Packs\ThoughtDriver\ThingComps\AvaliThoughtDriverProps.cs" />
     <Compile Include="Packs\Packs.cs" />
@@ -75,30 +76,29 @@
     <Compile Include="DeathWorker.cs" />
     <Compile Include="HediffStuff\AddHediff.cs" />
     <Compile Include="RimValiUtilities\Dialog_NamePack.cs" />
-    <Compile Include="RimValiUtilities\Tab.cs" />
+    <Compile Include="RimValiUtilities\AvaliTab.cs" />
     <Compile Include="Airdrop.cs" />
-    <Compile Include="Comparators\comparer.cs" />
-    <Compile Include="HediffStuff\ShowTextV3\showTextV3Props.cs" />
-    <Compile Include="HediffStuff\ShowTextV3\showTextPropsV3Class.cs" />
-    <Compile Include="RimValiUtilities\ReturnData.cs" />
-    <Compile Include="RimValiUtilities\RimValiSettings.cs" />
+    <Compile Include="Comparators\PawnEqualityComparer.cs" />
+    <Compile Include="HediffStuff\ShowTextV3\ShowTextPropsV3.cs" />
+    <Compile Include="RimValiUtilities\RimValiDefChecks.cs" />
+    <Compile Include="RimValiUtilities\RimValiModSettings.cs" />
     <Compile Include="RimValiUtilities\RimValiUtils.cs" />
     <Compile Include="ThingComps\Aeriel\Props.cs" />
-    <Compile Include="ThingComps\Aeriel\verb.cs" />
+    <Compile Include="ThingComps\Aeriel\Verb.cs" />
     <Compile Include="ThingComps\EggLaying\Comp.cs" />
     <Compile Include="ThingComps\EggLaying\Props.cs" />
     <Compile Include="ThingComps\GeneratePawn\GeneratePawnComp.cs" />
-    <Compile Include="ThingComps\SpawnThing\spawnThingComp.cs" />
-    <Compile Include="ThingComps\SpawnThing\spawnThingProperties.cs" />
-    <Compile Include="HediffStuff\ShowTextV3\ShowTextV3Comp.cs" />
+    <Compile Include="ThingComps\SpawnThing\SpawnThingComp.cs" />
+    <Compile Include="ThingComps\SpawnThing\SpawnThingProperties.cs" />
+    <Compile Include="HediffStuff\ShowTextV3\ShowTextComp.cs" />
     <Compile Include="HediffStuff\MPB\MPBProperties.cs" />
     <Compile Include="HediffStuff\MPB\MPBComp.cs" />
     <Compile Include="HarmonyPatches\StatPart_Temperature.cs" />
     <Compile Include="Defs.cs" />
-    <Compile Include="ThoughtWorker\BarrackThoughts.cs" />
-    <Compile Include="Verbs\ExplodeEMP.cs" />
-    <Compile Include="Verbs\ExplodeFireVerb .cs" />
-    <Compile Include="Verbs\ExplodeBombVerb.cs" />
+    <Compile Include="ThoughtWorker\BarrackThoughtsHandler.cs" />
+    <Compile Include="Verbs\Verb_Emp.cs" />
+    <Compile Include="Verbs\Verb_Fire.cs" />
+    <Compile Include="Verbs\Verb_Explode.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="HarmonyPatches\EggFactionPicker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

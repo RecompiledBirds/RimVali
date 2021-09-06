@@ -126,7 +126,7 @@
     <nullifyingTraits>
       <li>Psychopath</li>
     </nullifyingTraits>
-    <workerClass>AvaliMod.Shared_workRoom</workerClass>
+    <workerClass>AvaliMod.SharedRoomWorker</workerClass>
     <stackLimit>1</stackLimit>
     <stages>
       <li>

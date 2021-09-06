@@ -1,4 +1,5 @@
 ﻿using Verse;
+
 namespace AvaliMod
 {
     public class AvaliThoughtDriver : ThingComp

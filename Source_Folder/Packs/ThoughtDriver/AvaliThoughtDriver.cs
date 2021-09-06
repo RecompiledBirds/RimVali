@@ -3,9 +3,7 @@ using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using Verse;
-
 
 namespace AvaliMod
 {
@@ -16,12 +14,13 @@ namespace AvaliMod
         private int onTick;
         private List<Pawn> pawnsHaveBeenSold = new List<Pawn>();
         private List<Pawn> pawnsAreMissing = new List<Pawn>();
-        private bool threadRunning;
+        private readonly bool threadRunning;
+
         public AvaliUpdater(World map)
             : base(map)
         {
-
         }
+
         public override void ExposeData()
         {
             Scribe_Collections.Look(ref pawnsHaveBeenSold, "soldPawns", LookMode.Reference);
@@ -39,10 +38,11 @@ namespace AvaliMod
             }
             else { return false; }
         }
+
         public HashSet<Pawn> pawns = new HashSet<Pawn>();
+
         public void UpdatePawns()
         {
-
             if (!RimValiUtility.Driver.Packs.EnumerableNullOrEmpty())
             {
                 foreach (AvaliPack pack in RimValiUtility.Driver.Packs)
@@ -77,15 +77,14 @@ namespace AvaliMod
                     {
                         RimValiUtility.ThreadQueue.AddActionToQueue(UpdatePawns);
                     }
-                    else { 
-                        UpdatePawns(); 
+                    else
+                    {
+                        UpdatePawns();
                     }
                     onTick = 0;
                 }
                 onTick++;
             }
         }
-
-
     }
 }

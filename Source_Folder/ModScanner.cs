@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Verse;
+
 namespace AvaliMod
 {
     [StaticConstructorOnStartup]
@@ -8,12 +9,16 @@ namespace AvaliMod
     {
         public static IEnumerable<ModContentPack> loadedMods = LoadedModManager.RunningMods.Where(x => x.Name.ToLower().Contains("rimvali"));
         public static IEnumerable<ModuleDef> moduleDefs = DefDatabase<ModuleDef>.AllDefs;
-        public static void startup()
-        {
 
+        static Modulefinder()
+        {
+            Startup();
+        }
+
+        public static void Startup()
+        {
             //  AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
             //  AvaliDefs.IWAvaliRace.race.baseHealthScale = RimValiMod.settings.healthScale;
-
 
             moduleDefs = DefDatabase<ModuleDef>.AllDefs;
 
@@ -21,8 +26,6 @@ namespace AvaliMod
             {
                 if (!RimValiUtility.modulesFound.ToLower().Contains(module.name.ToLower()))
                 {
-
-
                     Log.Message(module.name);
                     RimValiUtility.modulesFound = RimValiUtility.modulesFound + module.name + "\n";
 
@@ -62,10 +65,6 @@ namespace AvaliMod
                     }
                 }
             }
-        }
-        static Modulefinder()
-        {
-            startup();
         }
     }
 }

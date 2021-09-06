@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Verse;
+
 namespace AvaliMod
 {
-
-    public class PawnEqaulityComparer : IEqualityComparer<Pawn>
+    public class PawnEqualityComparer : IEqualityComparer<Pawn>
     {
         public bool Equals(Pawn x, Pawn y)
         {
@@ -15,7 +15,6 @@ namespace AvaliMod
             {
                 return true;
             }
-
         }
 
         public int GetHashCode(Pawn obj)

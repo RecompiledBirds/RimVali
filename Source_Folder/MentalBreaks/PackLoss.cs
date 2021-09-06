@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using Verse.AI;
+
 namespace AvaliMod
 {
     public class PackLossWorker : MentalStateWorker
@@ -15,8 +16,8 @@ namespace AvaliMod
             }
             return false;
         }
-
     }
+
     public class PackBreakworker : MentalBreakWorker
     {
         public override bool BreakCanOccur(Pawn pawn)

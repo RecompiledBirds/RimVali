@@ -7,10 +7,8 @@ namespace AvaliMod
     [StaticConstructorOnStartup]
     public static class RimValiPatches
     {
-
         static RimValiPatches()
         {
-
             Harmony rimValiHarmony = new Harmony("RimVali.FarFromAvalon");
             Log.Message("[RimVali: Far From Avalon] Started patches.");
             try
@@ -24,18 +22,12 @@ namespace AvaliMod
 
                 int methodsPatched = rimValiHarmony.GetPatchedMethods().EnumerableCount();
                 Log.Message("[RimVali: Far From Avalon] Patches completed. " + methodsPatched.ToString() + " methods patched.");
-
             }
             catch (Exception error)
             {
                 Log.Warning("[RimVali: Far From Avalon] A patch has failed! Patches completed: " + rimValiHarmony.GetPatchedMethods().EnumerableCount().ToString());
                 Log.Error(error.ToString());
-
             }
-
-
         }
-
-
     }
 }

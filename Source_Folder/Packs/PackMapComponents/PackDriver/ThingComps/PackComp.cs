@@ -1,16 +1,17 @@
 ﻿using Verse;
+
 namespace AvaliMod
 {
     public class PackComp : ThingComp
     {
         public PackProps Props => (PackProps)props;
 
-
         public bool inPack = false;
         public int ticksSinceLastInpack = 0;
         public int timeAlone;
         public int ticks;
         public int lastDay;
+
         public override void CompTick()
         {
             if (!inPack)
@@ -22,6 +23,7 @@ namespace AvaliMod
                 ticksSinceLastInpack--;
             }
         }
+
         public override void PostExposeData()
         {
             Scribe_Values.Look(ref timeAlone, "timeAlone", 0);

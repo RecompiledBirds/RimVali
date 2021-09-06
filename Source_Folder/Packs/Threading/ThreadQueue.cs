@@ -1,17 +1,13 @@
-﻿using System;
+﻿using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
-using RimWorld;
-using RimWorld.Planet;
-using Verse;
+
 namespace AvaliMod
 {
     public class ThreadQueue : WorldComponent
     {
-        private Queue<Action> actionQueue = new Queue<Action>();
+        private readonly Queue<Action> actionQueue = new Queue<Action>();
         private bool threadIsRunning = false;
         private Action nextAction;
 
@@ -32,7 +28,6 @@ namespace AvaliMod
             threadIsRunning = false;
         }
 
-
         public void AddActionToQueue(Action action)
         {
             if (actionQueue.Count < 100000)
@@ -41,7 +36,7 @@ namespace AvaliMod
             }
         }
 
-        int onTick = 0;
+        private int onTick = 0;
 
         public ThreadQueue(World world) : base(world)
         {
@@ -50,7 +45,8 @@ namespace AvaliMod
 
         public override void WorldComponentTick()
         {
-            if(onTick == 2){
+            if (onTick == 2)
+            {
                 onTick = 0;
                 RunNextAction();
             }

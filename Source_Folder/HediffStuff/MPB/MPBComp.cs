@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using Verse;
+
 namespace AvaliMod
 {
     public class MultiPartBionic : HediffComp
@@ -23,6 +24,7 @@ namespace AvaliMod
         private string textOnRemove => Props.textOnRemove;
         private int timeToFade => Props.timeToFade;
         private List<BodyPartDef> bodyPartsMustBeOn => Props.bodyPartsMustBeOn;
+
         public override string CompTipStringExtra
         {
             get
@@ -47,6 +49,7 @@ namespace AvaliMod
                 return output;
             }
         }
+
         public override void CompPostTick(ref float severityAdjustment)
         {
             Pawn pawn = parent.pawn;
@@ -64,7 +67,7 @@ namespace AvaliMod
                     {
                         bodyPart = bodyPartsMustBeOn[bodyPartsMustBeOn.Count];
                     }
-                    BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement<BodyPartRecord>();
+                    BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement();
                     if (pawn.health.hediffSet.HasHediff(otherHediffs[onItem], bodyPartRecord, false))
                     {
                         hediffsFound += 1;
@@ -82,7 +85,7 @@ namespace AvaliMod
                         {
                             bodyPart = bodyParts[bodyParts.Count];
                         }
-                        BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement<BodyPartRecord>();
+                        BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement();
                         Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn, null);
                         if (!pawn.health.hediffSet.HasHediff(hediffDef, false))
                         {
@@ -96,7 +99,6 @@ namespace AvaliMod
                             }
                         }
                         onItem += 1;
-
                     }
                 }
                 else

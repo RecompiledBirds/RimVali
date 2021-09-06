@@ -4,10 +4,11 @@ using Verse;
 
 namespace AvaliMod
 {
-    // Token: 0x020000DC RID: 220
+    // the _Test seems to indicate this either needs to be renamed, or removed
     public class DeathActionWorker_Test : DeathActionWorker
     {
         private readonly bool enableDebug = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableDebugMode;
+
         public override void PawnDied(Corpse corpse)
         {
             if (enableDebug)
@@ -16,7 +17,6 @@ namespace AvaliMod
             }
             if (corpse.InnerPawn.def.HasComp(typeof(PackComp)))
             {
-
                 if (!(RimValiUtility.Driver.Packs == null) && RimValiUtility.Driver.Packs.Count > 0)
                 {
                     if (enableDebug)
@@ -75,7 +75,6 @@ namespace AvaliMod
                                 }
                             }
                         }
-
                     }
                 }
             }

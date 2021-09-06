@@ -2,15 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Verse;
+
 namespace AvaliMod
 {
     public class AvaliPackDriver : WorldComponent//MapComponent//
     {
-
-
         private readonly bool packsEnabled = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packsEnabled;
 
         private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
@@ -26,8 +23,6 @@ namespace AvaliMod
         //public AvaliPackDriver(Map map) : base(map) { }
 
         //public AvaliPackDriver(World world) : base(world) { }
-
-
 
         public List<ThingDef> racesInPacks = new List<ThingDef>();
 
@@ -62,7 +57,6 @@ namespace AvaliMod
                 packs.Remove(pack);
                 packInt++;
             }
-
         }
 
         public void CleanupPawnPacks(Pawn pawn)
@@ -81,7 +75,6 @@ namespace AvaliMod
                 pawnPack.CleanupPack(pawn);
                 pawnPack.UpdateHediffForAllMembers();
             }
-
         }
 
         public void MakePawnHavePack(Pawn pawn)
@@ -115,6 +108,7 @@ namespace AvaliMod
         {
             return packs.Contains(pack);
         }
+
         public void AddPack(AvaliPack pack)
         {
             packs.Add(pack);
@@ -140,11 +134,6 @@ namespace AvaliMod
             return packs.Any(pack => pack.GetAllNonNullPawns.Contains(pawn));
         }
 
-
-
-
-
-
         public override void ExposeData()
         {
             if (Scribe.mode == LoadSaveMode.LoadingVars)
@@ -158,13 +147,13 @@ namespace AvaliMod
             Scribe_Collections.Look(ref pawnHasHadXPacks, "pawnHasHadXPacks", LookMode.Reference, LookMode.Undefined, ref pawns, ref count);
             Scribe_Collections.Look(ref packs, "packs", LookMode.Deep);
 
-
             if (pawnHasHadXPacks == null) { pawnHasHadXPacks = new Dictionary<Pawn, int>(); }
             if (packs == null) { packs = new HashSet<AvaliPack>(); }
             if (pawns == null) { pawns = new List<Pawn>(); }
             if (count == null) { count = new List<int>(); }
             base.ExposeData();
         }
+
         public void UpdatePacks()
         {
             if (!workingPawnHashset.EnumerableNullOrEmpty())
@@ -181,9 +170,6 @@ namespace AvaliMod
             }
         }
 
-
-        
-
         private bool hasKickedBack;
 
         public AvaliPackDriver(World world) : base(world)
@@ -198,13 +184,13 @@ namespace AvaliMod
                 workingPawnHashset = RimValiUtility.PawnsInWorld;
                 if (onTick == tickTime && packsEnabled && Find.CurrentMap != null)
                 {
-
                     if (multiThreaded)
                     {
-                        RimValiUtility.ThreadQueue.AddActionToQueue(UpdatePacks);    
+                        RimValiUtility.ThreadQueue.AddActionToQueue(UpdatePacks);
                     }
-                    else { 
-                        UpdatePacks(); 
+                    else
+                    {
+                        UpdatePacks();
                     }
                     onTick = tickTime;
                 }
@@ -219,10 +205,7 @@ namespace AvaliMod
                     Log.Warning("Kio pack handler has encountered an error, kicking back ticks between update by 60000");
                 }
                 Log.Error($"{e}");
-
             }
         }
     }
-
-
 }

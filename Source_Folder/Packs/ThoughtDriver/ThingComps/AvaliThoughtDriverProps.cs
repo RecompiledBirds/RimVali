@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using Verse;
+
 namespace AvaliMod
 {
     public class AvaliDriverThoughtProps : CompProperties
@@ -9,6 +10,7 @@ namespace AvaliMod
         public ThoughtDef sharedBedroomThought;
         public ThoughtDef sleptApartThought;
         public List<HediffDef> packLossPreventers;
+
         public AvaliDriverThoughtProps()
         {
             compClass = typeof(AvaliThoughtDriver);

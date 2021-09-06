@@ -1,12 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
+
 namespace AvaliMod
 {
     [HarmonyPatch(typeof(CompHatcher), "Hatch")]
-    internal class EggPatch
+    public static class EggPatch
     {
         [HarmonyPostfix]
-        private static void HatchPatch(CompHatcher __instance)
+        public static void HatchPatch(CompHatcher __instance)
         {
             if (__instance.hatcheeParent == null & __instance.Props.hatcherPawn.RaceProps.body.defName == "RimValiBody")
             {

@@ -1,12 +1,13 @@
 ﻿using RimWorld;
 using Verse;
+
 namespace AvaliMod
 {
     public class Verb_Fire : Verb
     {
         protected override bool TryCastShot()
         {
-            Verb_Fire.Flame(ReloadableCompSource);
+            Flame(ReloadableCompSource);
             return true;
         }
 
@@ -26,7 +27,7 @@ namespace AvaliMod
             ThingWithComps parent = comp.parent;
             Pawn wearer = comp.Wearer;
 
-            GenExplosion.DoExplosion(wearer.Position, wearer.Map, parent.GetStatValue(AvaliDefs.ExplodeFireRadius, true), DamageDefOf.Flame, null, -1, -1f, null, null, null, null, null, 0.0f, 1, false, null, 0.0f, 1, 0.0f, false, new float?(), null);
+            GenExplosion.DoExplosion(wearer.Position, wearer.Map, parent.GetStatValue(AvaliDefs.ExplodeFireRadius, true), DamageDefOf.Flame, null);
 
             comp.UsedOnce();
         }

@@ -4,15 +4,12 @@ using Verse;
 
 namespace AvaliMod
 {
-
     public class Dialog_NamePack : Window
     {
-
         private string curPackName;
         private readonly Pawn pawn;
 
         public override Vector2 InitialSize => new Vector2(500f, 175f);
-
 
         public Dialog_NamePack(Pawn pawn)
         {

@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System;
 using Verse;
+
 namespace AvaliMod
 {
     public class PackLossThoughtWorker : ThoughtWorker
@@ -9,6 +10,7 @@ namespace AvaliMod
         private readonly int stageTwo = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().stageTwoDaysPackloss;
         private readonly int stageThree = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().stageThreeDaysPackloss;
         private readonly int dayLen = 60000;
+
         public void UpdatePackLoss(Pawn pawn)
         {
             PackComp packComp = pawn.TryGetComp<PackComp>();
@@ -22,9 +24,9 @@ namespace AvaliMod
                 packComp.inPack = true;
             }
         }
+
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-
             if (RimValiUtility.Driver == null || !RimValiUtility.Driver.PawnHasHadPack(p))
             {
                 return ThoughtState.Inactive;
@@ -49,12 +51,10 @@ namespace AvaliMod
                     packComp.lastDay = GenDate.DaysPassed;
                 }
 
-
                 return ThoughtState.ActiveAtStage(2);
             }
             if (timeAlone >= dayLen * stageTwo)
             {
-
                 if (packComp.lastDay + 3 < GenDate.DaysPassed)
                 {
                     if (new Random().Next(0, 100) < (RimValiMod.settings.packBrokenChance * (RimValiUtility.Driver.GetPacksPawnHasHad(p) / 3)) && RimValiMod.settings.canGetPackBroken && !p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken)) { p.story.traits.GainTrait(new Trait(AvaliDefs.AvaliPackBroken)); }

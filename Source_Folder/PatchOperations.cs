@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Xml;
 using Verse;
+
 namespace AvaliMod
 {
     public class ModuleDef : Def
@@ -23,16 +24,18 @@ namespace AvaliMod
 
         public PatchOperation hasLiteModeOn;
     }
+
     public class PatchOperationRandReplace : PatchOperationReplace
     {
         public List<XmlContainer> randValue = new List<XmlContainer>();
+
         protected override bool ApplyWorker(XmlDocument xml)
         {
             XmlNode node = randValue.RandomElement().node;
             bool result = false;
             if (node != null)
             {
-                foreach (XmlNode xmlNode in xml.SelectNodes(xpath).Cast<XmlNode>().ToArray<XmlNode>())
+                foreach (XmlNode xmlNode in xml.SelectNodes(xpath).Cast<XmlNode>().ToArray())
                 {
                     result = true;
                     XmlNode parentNode = xmlNode.ParentNode;

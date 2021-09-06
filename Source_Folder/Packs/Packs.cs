@@ -10,11 +10,13 @@ namespace AvaliMod
     public class AvaliPackHediffCompProps : HediffCompProperties
     {
         public AvaliPackSkillDef associatedDef;
+
         public AvaliPackHediffCompProps()
         {
             compClass = typeof(AvaliPackHediffComp);
         }
     }
+
     public class AvaliPackHediffComp : HediffComp
     {
         public AvaliPackHediffCompProps Props => (AvaliPackHediffCompProps)props;
@@ -37,9 +39,9 @@ namespace AvaliMod
             base.CompPostTick(ref severityAdjustment);
         }
     }
+
     public class AvaliPackSkillDef : Def
     {
-
         public HediffDef hediffEffectApplied;
         public SkillDef skill;
         public string specialityLabel = "Unlabeled";
@@ -50,7 +52,6 @@ namespace AvaliMod
     {
         public AvaliPack()
         {
-
         }
 
         public AvaliPack(Pawn leader)
@@ -69,15 +70,12 @@ namespace AvaliMod
         public List<DeathDate> deathDates = new List<DeathDate>();
         public Date creationDate = new Date();
 
-
-
         public void CleanupPack(Pawn pawn)
         {
             if (GetAllNonNullPawns.Where(x => x == pawn).Count() > 1)
             {
                 for (int a = 0; a < GetAllNonNullPawns.Where(x => x == pawn).Count() - 1; a++) { pawns.Remove(GetAllNonNullPawns.Where(x => x == pawn).ToList()[a]); }
             }
-
         }
 
         public void UpdateHediffForAllMembers()
@@ -85,9 +83,9 @@ namespace AvaliMod
             AvaliPackSkillDef def = GetPackSkillDef();
             if (RimValiMod.settings.enableDebugMode)
             {
-                Log.Message($"Def is: {def.defName}");
+                // Log.Message($"[RimVali FFA/Packs] UpdateHediffForAllMembers - Def is: {def.defName}");
             }
-            if (def != null && def.hediffEffectApplied != null)
+            if (def?.hediffEffectApplied != null)
             {
                 foreach (Pawn pawn in GetAllNonNullPawns.Where(p => p.Alive() && p.Spawned))
                 {
@@ -103,12 +101,8 @@ namespace AvaliMod
                         if (RimValiMod.settings.enableDebugMode) { Log.Message($"Removed def: {hDef.defName}"); }
                     }
                 }
-
             }
-
         }
-
-
 
         public AvaliPackSkillDef GetPackSkillDef()
         {
@@ -118,7 +112,6 @@ namespace AvaliMod
                 prevSkills.AddRange(avoidSkills);
                 SkillRecord record;
                 SkillDef def = SkillDefOf.Intellectual;
-
 
                 while (!DefDatabase<AvaliPackSkillDef>.AllDefs.Any(APSD => APSD.skill == def))
                 {
@@ -133,7 +126,6 @@ namespace AvaliMod
                         //defaulting if record is null
                         def = SkillDefOf.Intellectual;
                     }
-
                 }
                 avoidSkills = prevSkills;
                 AvaliPackSkillDef avaliPackSkillDef = DefDatabase<AvaliPackSkillDef>.AllDefs.ToList().Find(APSD => APSD.skill == def);
@@ -142,35 +134,34 @@ namespace AvaliMod
             return null;
         }
 
-
         public override void ExposeData()
         {
             Scribe_References.Look(ref leaderPawn, "leaderPawn");
-            Scribe_Collections.Look<Pawn>(ref pawns, "pawns", LookMode.Reference);
+            Scribe_Collections.Look(ref pawns, "pawns", LookMode.Reference);
             Scribe_Values.Look(ref name, "packName", "NoName", true);
-            Scribe_References.Look<Faction>(ref faction, "faction", false);
-            Scribe_Collections.Look<DeathDate>(ref deathDates, "deathDates", LookMode.Deep, Array.Empty<object>());
-            Scribe_Deep.Look<Date>(ref creationDate, "cDate");
+            Scribe_References.Look(ref faction, "faction", false);
+            Scribe_Collections.Look(ref deathDates, "deathDates", LookMode.Deep, Array.Empty<object>());
+            Scribe_Deep.Look(ref creationDate, "cDate");
         }
 
         public HashSet<Pawn> GetAllNonNullPawns => pawns.Where(pawn => pawn != null).ToHashSet();
 
-
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+
         public string GetUniqueLoadID()
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         {
             return "pack_" + GetHashCode().ToString();
         }
-
-
     }
+
     public class Date : Thing, ILoadReferenceable, IExposable
     {
         public long date = 0;
         public int day = 0;
         public int ticks = 0;
         public Quadrum quadrum = Quadrum.Undefined;
+
         public Date()
         {
             try { GetCurrentDate(); }
@@ -182,7 +173,6 @@ namespace AvaliMod
             day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
             quadrum = GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
             ticks = GenTicks.TicksGame;
-
         }
 
         public new string GetUniqueLoadID()
@@ -192,20 +182,21 @@ namespace AvaliMod
 
         public override void ExposeData()
         {
-            Scribe_Values.Look<int>(ref ticks, "ticks", ticks, true);
-            Scribe_Values.Look<int>(ref day, "Day", day, true);
-            Scribe_Values.Look<Quadrum>(ref quadrum, "Quadrum", quadrum, true);
+            Scribe_Values.Look(ref ticks, "ticks", ticks, true);
+            Scribe_Values.Look(ref day, "Day", day, true);
+            Scribe_Values.Look(ref quadrum, "Quadrum", quadrum, true);
         }
-
 
         public override string ToString()
         {
             return day.ToString() + quadrum.ToString();
         }
     }
+
     public class DeathDate : Date
     {
         public Pawn deadPawn;
+
         public DeathDate(Pawn pawn)
         {
             day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
