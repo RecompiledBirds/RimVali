@@ -10,12 +10,15 @@ namespace AvaliMod
         public static int dayLastUpdated;
         public override void ExposeData()
         {
+            //Soon(tm)
             if (Current.Game.storyteller.def.defName == "Nesi")
             {
-                Log.Message("Can't wait to see what happens..");
-            }
 
-            Log.Message("HEY");
+            }
+            if (Current.Game.storyteller.def.defName == "Todd")
+            {
+
+            }
             Scribe_Values.Look(ref state, "state");
             Scribe_Values.Look(ref daysPassedSinceLastHunt, "daysPassedSinceLastHunt");
             Scribe_Values.Look(ref daysSpentNice, "daysSpentNice");

@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Packs\Threading\ThreadQueue.cs" />
     <Compile Include="PatchOperations.cs" />
     <Compile Include="HarmonyPatches\Class1.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />

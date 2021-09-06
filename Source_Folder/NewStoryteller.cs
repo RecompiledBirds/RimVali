@@ -7,7 +7,6 @@ namespace AvaliMod
     {
         public override void Notify_PawnEvent(Pawn p, AdaptationEvent ev, DamageInfo? dinfo = null)
         {
-
             base.Notify_PawnEvent(p, ev, dinfo);
         }
 

@@ -167,34 +167,22 @@ namespace AvaliMod
         }
         public void UpdatePacks()
         {
-            lock (packs)
+            if (!workingPawnHashset.EnumerableNullOrEmpty())
             {
-
-                if (!RimValiUtility.PawnsInWorld.EnumerableNullOrEmpty())
+                foreach (Pawn pawn in workingPawnHashset)
                 {
-                    foreach (Pawn pawn in workingPawnHashset)
-                    {
-                        RimValiUtility.KioPackHandler(pawn);
-                    }
-                    if (!packs.EnumerableNullOrEmpty())
-                    {
-                        CleanupBadPacks();
-                    }
+                    RimValiUtility.KioPackHandler(pawn);
                 }
-            }
-            ThreadIsActive = false;
-        }
-
-
-        public bool CanStartNextThread
-        {
-            get
-            {
-
-                ThreadPool.GetAvailableThreads(out int wThreads, out _);
-                return !ThreadIsActive && wThreads > 0;
+                if (!packs.EnumerableNullOrEmpty())
+                {
+                    CleanupBadPacks();
+                }
+                ThreadIsActive = false;
             }
         }
+
+
+        
 
         private bool hasKickedBack;
 
@@ -208,27 +196,26 @@ namespace AvaliMod
             try
             {
                 workingPawnHashset = RimValiUtility.PawnsInWorld;
-                if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
+                if (onTick == tickTime && packsEnabled && Find.CurrentMap != null)
                 {
 
-                    if (multiThreaded && CanStartNextThread)
+                    if (multiThreaded)
                     {
-
-                        ThreadIsActive = true;
-                        Task packTask = new Task(UpdatePacks);
-                        packTask.Start();
+                        RimValiUtility.ThreadQueue.AddActionToQueue(UpdatePacks);    
                     }
-                    else { UpdatePacks(); }
+                    else { 
+                        UpdatePacks(); 
+                    }
                     onTick = tickTime;
                 }
-                else { onTick--; }
+                else { onTick++; }
             }
             catch (Exception e)
             {
                 if (!hasKickedBack)
                 {
                     hasKickedBack = true;
-                    tickTime += 60000;
+                    //tickTime += 60000;
                     Log.Warning("Kio pack handler has encountered an error, kicking back ticks between update by 60000");
                 }
                 Log.Error($"{e}");
