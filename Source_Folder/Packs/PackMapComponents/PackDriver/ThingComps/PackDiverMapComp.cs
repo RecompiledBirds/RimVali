@@ -167,22 +167,18 @@ namespace AvaliMod
         }
         public void UpdatePacks()
         {
-            lock (packs)
+            if (!workingPawnHashset.EnumerableNullOrEmpty())
             {
-
-                if (!RimValiUtility.PawnsInWorld.EnumerableNullOrEmpty())
+                foreach (Pawn pawn in workingPawnHashset)
                 {
-                    foreach (Pawn pawn in workingPawnHashset)
-                    {
-                        RimValiUtility.KioPackHandler(pawn);
-                    }
-                    if (!packs.EnumerableNullOrEmpty())
-                    {
-                        CleanupBadPacks();
-                    }
+                    RimValiUtility.KioPackHandler(pawn);
                 }
+                if (!packs.EnumerableNullOrEmpty())
+                {
+                    CleanupBadPacks();
+                }
+                ThreadIsActive = false;
             }
-            ThreadIsActive = false;
         }
 
 
@@ -200,7 +196,7 @@ namespace AvaliMod
             try
             {
                 workingPawnHashset = RimValiUtility.PawnsInWorld;
-                if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
+                if (onTick == tickTime && packsEnabled && Find.CurrentMap != null)
                 {
 
                     if (multiThreaded)
@@ -212,14 +208,14 @@ namespace AvaliMod
                     }
                     onTick = tickTime;
                 }
-                else { onTick--; }
+                else { onTick++; }
             }
             catch (Exception e)
             {
                 if (!hasKickedBack)
                 {
                     hasKickedBack = true;
-                    tickTime += 60000;
+                    //tickTime += 60000;
                     Log.Warning("Kio pack handler has encountered an error, kicking back ticks between update by 60000");
                 }
                 Log.Error($"{e}");

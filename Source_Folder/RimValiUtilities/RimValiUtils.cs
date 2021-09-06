@@ -10,7 +10,7 @@ namespace AvaliMod
 
     public static class RimValiUtility
     {
-        public static string build = "Kio 1.0.3";
+        public static string build = "Einu 1.0.9";
         public static string modulesFound = "Modules:\n";
         private static AvaliPackDriver driver;
         private static AvaliUpdater thoughtDriver;
@@ -24,7 +24,7 @@ namespace AvaliMod
             {
                 if (threadQueue == null)
                 {
-                    threadQueue = Current.Game.GetComponent<ThreadQueue>();
+                    threadQueue = Current.Game.World.GetComponent<ThreadQueue>();
                 }
                 return threadQueue;
             }
@@ -223,7 +223,9 @@ namespace AvaliMod
 
                     JoinedPack: if (RimValiMod.settings.enableDebugMode) { Log.Message($"{pawn.Name.ToStringShort} joined a pack"); }
                     }
-                    else if (!Driver.HasPack(pawn)) { CreatePack(pawn, "No packs in toUse list"); }
+                    else if (!Driver.HasPack(pawn)) { 
+                        CreatePack(pawn, "No packs in toUse list"); 
+                    }
                 }
                 if (Driver.Packs.EnumerableNullOrEmpty())
                 {
@@ -260,16 +262,16 @@ namespace AvaliMod
 
                 if (pack.pawns.Count == 1 && !driver.PawnHasHadPack(pack.pawns.First()))
                 {
-                    driver.MakePawnHavePack(pack.pawns.First());
+                    Driver.MakePawnHavePack(pack.pawns.First());
                 }
-                driver.TransferPawnToPack(pawn, pack);
-                driver.MakePawnHavePack(pawn);
+                Driver.TransferPawnToPack(pawn, pack);
+                Driver.MakePawnHavePack(pawn);
                 Joined = true;
 
             }
             else if (GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq)
             {
-                driver.TransferPawnToPack(pawn, pack);
+                Driver.TransferPawnToPack(pawn, pack);
                 Joined = true;
             }
 
@@ -320,7 +322,7 @@ namespace AvaliMod
         {
             AvaliPack pack = pawn.GetPack();
 
-            return driver.PawnHasHadMoreThenOnePack(pawn) && pack != null && GetPackAvgOP(pack, pawn) < 30;
+            return Driver.PawnHasHadMoreThenOnePack(pawn) && pack != null && GetPackAvgOP(pack, pawn) < 30;
         }
 
         public static void LeavePack(Pawn pawn)
@@ -351,9 +353,11 @@ namespace AvaliMod
             {
                 return null;
             }
-            if (driver.Packs.EnumerableNullOrEmpty())
+            if (Driver.Packs.EnumerableNullOrEmpty())
             {
-                if (RimValiMod.settings.enableDebugMode) { Log.Error("Pawn check is null, or no packs!"); }
+                if (RimValiMod.settings.enableDebugMode) { 
+                    Log.Error("Pawn check is null, or no packs!"); 
+                }
                 return null;
             }
 
