@@ -10,7 +10,7 @@
       <li>BuildingsProduction</li>
     </thingCategories>
     <label>Avali Nano-Printing Forge</label>
-    <description>The Avali Nano-Printing Forge is a 3D printer, like most Avali crafting utilities. It works with immense heat, and nanotechnologies able to rearrange the structure and molecues of the items put in. Caution: Do not stick fingers, toes, feet, hands, tails, or other limbs inside, even if the device appears to be powered off.</description>
+    <description>The Avali Nano-Printing Forge is perhaps the bulk of any Avali operation. Utilizing immense heat and nano-technologies, this workbench is capable of changing the structure and sometimes even the composition of certain molecules. As such this workbench is primarily purposed to prepare raw resources for future printing or to print metallic gear with.</description>
     <size>(3,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
