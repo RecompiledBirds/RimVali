@@ -5,6 +5,7 @@
     <label>Avali turret</label>
     <description>A lightweight railgun turret, designed for long range combat. It is somewhat less durrable than it's human-built counterparts, but has great long range accuracy.</description>
     <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>avali/buildings/turrets/basic_turret_base</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -158,6 +159,7 @@
     <label>Avali minigun turret</label>
     <description>A heavy turret, with two avali miniguns onboard. Due to also being a railgun of avali design, it performs best at long range.</description>
     <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>avali/buildings/turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
