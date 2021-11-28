@@ -4,7 +4,7 @@
     <defName>AvaliPillowBed</defName>
     <thingClass>Building_Bed</thingClass>
     <label>avali bed</label>
-    <description>A soft cussion made for Avali to sleep on, it's a little too small for most other species.</description>
+    <description>A soft bed for Avali to sleep on. Not to be confused with an animal bed, as that wouldn't be appreciated.</description>
     <rotatable>true</rotatable>
     <fillPercent>0.15</fillPercent>
     <pathCost>14</pathCost>
@@ -66,7 +66,7 @@
     <defName>AvalipillowsOne</defName>
     <thingClass>Building_Bed</thingClass>
     <label>small pile of pillows</label>
-    <description>a clump of pillows all piled together, enough for two Avali to sleep together.</description>
+    <description>A small clump of pillows piled neatly together for Avali to rest on. This pile has been arranged for two Avali to sleep together on.</description>
     <rotatable>true</rotatable>
     <fillPercent>0.15</fillPercent>
     <pathCost>14</pathCost>
@@ -128,7 +128,7 @@
     <defName>AvalipillowsTwo</defName>
     <thingClass>Building_Bed</thingClass>
     <label>pile of pillows</label>
-    <description>a clump of pillows all piled together, enough for a small pack of Avali to sleep together.</description>
+    <description>A moderate clump of pillows piled neatly together for Avali to rest on. This pile has been arranged for a small Avali pack to sleep together on.</description>
     <rotatable>true</rotatable>
     <fillPercent>0.15</fillPercent>
     <pathCost>14</pathCost>
@@ -190,7 +190,7 @@
     <defName>AvalipillowsThree</defName>
     <thingClass>Building_Bed</thingClass>
     <label>large pile of pillows</label>
-    <description>a clump of pillows all piled together, enough for a whole pack of Avali to sleep together.</description>
+    <description>A large clump of pillows piled neatly together for Avali to rest on. This pile has been arranged for an entire Avali pack to sleep together on.</description>
     <rotatable>true</rotatable>
     <fillPercent>0.15</fillPercent>
     <pathCost>14</pathCost>
