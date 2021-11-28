@@ -201,6 +201,7 @@ namespace AvaliMod
 
                         if (hasPack)
                         {
+                            /*
                             PackTransferal packTransferal = ShouldTransferToOtherPack(pawn);
                             if (packTransferal.isRecommended)
                             {
@@ -210,6 +211,7 @@ namespace AvaliMod
                             {
                                 LeavePack(pawn);
                             }
+                            */
                         }
                         //This checks if a pack only has one pawn or if it is null, and also if we can join a random pack.
                         if ((!hasPack || pack.GetAllNonNullPawns.EnumerableNullOrEmpty() || pack.GetAllNonNullPawns.Count == 1) && pack2 != null && !pack2.pawns.EnumerableNullOrEmpty())
@@ -264,12 +266,12 @@ namespace AvaliMod
             {
 
 
-                driver.SwitchPack(pawn, pack);
+                driver.AddPawnToPack(pawn,ref pack);
                 Joined = true;
                
             }
             else if (GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq) { 
-                driver.SwitchPack(pawn, pack);
+                driver.AddPawnToPack(pawn,ref pack);
 
                 Joined = true;
             }
