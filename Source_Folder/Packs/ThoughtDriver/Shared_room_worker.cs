@@ -1,5 +1,6 @@
-﻿using RimWorld;
+﻿using System;
 using Verse;
+using RimWorld;
 namespace AvaliMod
 {
     public class Shared_workRoom : ThoughtWorker
@@ -7,8 +8,7 @@ namespace AvaliMod
         protected override ThoughtState CurrentStateInternal(Pawn pawn)
         {
             AvaliThoughtDriver avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-            if (RimValiUtility.Driver != null && RimValiUtility.Driver.HasPack(pawn) && !(avaliThoughtDriver == null) && pawn.Awake() && pawn.CheckIfPackmatesInRoom())
-            {
+            if (RimValiUtility.Driver!=null && RimValiUtility.Driver.HasPack(pawn) && !(avaliThoughtDriver == null) && pawn.Awake() && pawn.CheckIfPackmatesInRoom()) { 
                 return ThoughtState.ActiveDefault;
             }
 

@@ -15,7 +15,7 @@ namespace AvaliMod
 
         public PackProps()
         {
-            compClass = typeof(PackComp);
+            this.compClass = typeof(PackComp);
         }
     }
 }
