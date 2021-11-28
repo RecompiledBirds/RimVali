@@ -10,7 +10,7 @@
       <li>BuildingsProduction</li>
     </thingCategories>
     <label>Avali Nano-Printing Forge</label>
-    <description>The Avali Nano-Printing Forge is a 3D printer, like most Avali crafting utilities. It works with immense heat, and nanotechnologies able to rearrange the structure and molecues of the items put in. Caution: Do not stick fingers, toes, feet, hands, tails, or other limbs inside, even if the device appears to be powered off.</description>
+    <description>The Avali Nano-Printing Forge is perhaps the bulk of any Avali operation. Utilizing immense heat and nano-technologies, this workbench is capable of changing the structure and sometimes even the composition of certain molecules. As such this workbench is primarily purposed to prepare raw resources for future printing or to print metallic gear with.</description>
     <size>(3,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
@@ -102,7 +102,7 @@
     </thingCategories>
     <defName>AvaliResearchBench</defName>
     <label>Avali Research bench</label>
-    <description>An avali research bench. Most avali would dimiss this kind of tech as simple, and somewhat bulky, while the humans just stare at the hologram it projects. You'll learn to make better versions later on, most likely, but this is a start. You'll need it to research avali tech.</description>
+    <description>An Avali research bench equiped with a single-color LASER array and a basic operating system. Whilst a lot of trivial Avali tech is already floating around on the Rimworld, a lot designs are either unfit for usage in this enviroment or instead jealously guarded by opposing factions. As such this table is used by Rimworld Avali researchers to decrypt and alter designs for proper usage within the colony.</description>
     <thingClass>Building_ResearchBench</thingClass>
     <size>(3,2)</size>
     <stuffCategories>
@@ -172,7 +172,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliNexus</defName>
     <label>Illuminate Nexus Connection</label>
-    <description>This device can be used to access higher levels of tech, thanks to its connection to the nexus.</description>
+    <description>The Illuminate Nexus Connection utilizes a rare material known as a Sync Crystal to communicate with the Nexus through their strange properties regarding quantum entanglement. Due to their widespread integration into Avali Illuminate society, these large connections are only given to colonies that seem to be strong enough to protect themselves, allowing them access to higher techs aswell.</description>
     <graphicData>
       <texPath>avali/buildings/production/sync_crystal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -231,7 +231,7 @@
     <thingCategories Inherit="false">
       <li>BuildingsProduction</li>
     </thingCategories>
-    <description>The Avali Nano-loom is a highly important piece of equipment. Without it, Avali wouldn't be able to make any of their advanced cloth materials, which are used in other things..</description>
+    <description>The Avali Nano-loom is a highly prized piece of machinery within the Avali Rimworld colonies. Making use of nanotechnology, this loom is able to weave strands of polymer fabrics that are a lot more robust than usual fabrics of the same material. This allows Avali colonies to create more sturdy clothing and tents when compared to their competitors.</description>
     <size>(2,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
