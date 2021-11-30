@@ -1,13 +1,9 @@
-﻿using RimWorld;
+﻿using RimValiCore;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using Verse;
-using System;
-using RimValiCore;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Reflection;
+using Verse;
 
 namespace AvaliMod
 {
@@ -220,13 +216,15 @@ namespace AvaliMod
                             JoinPack(pawn, ref pack2, out bool Joined);
                             if (Joined)
                             {
+                                // How dare you use a goto in C#
                                 goto JoinedPack;
                             }
                         }
 
                         CreatePack(pawn, "pawn cant join a pack");
 
-                        JoinedPack: if (RimValiMod.settings.enableDebugMode) { Log.Message($"{pawn.Name.ToStringShort} joined a pack"); }
+                    JoinedPack:
+                        if (RimValiMod.settings.enableDebugMode) { Log.Message($"{pawn.Name.ToStringShort} joined a pack"); }
                     }
                     else if (!Driver.HasPack(pawn))
                     {
@@ -266,15 +264,15 @@ namespace AvaliMod
             Joined = false;
             if ((!driver.PawnHasHadPack(pawn)) && date.ToString() == pack.creationDate.ToString())
             {
-                driver.AddPawnToPack(pawn,ref pack);
+                driver.AddPawnToPack(pawn, ref pack);
                 Joined = true;
             }
-            else if (GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq) { 
-                driver.AddPawnToPack(pawn,ref pack);
+            else if (GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq)
+            {
+                driver.AddPawnToPack(pawn, ref pack);
+                Joined = true;
+            }
 
-                Joined = true;
-            }
-           
             return pack;
         }
 
@@ -298,7 +296,7 @@ namespace AvaliMod
         public static PackTransferal ShouldTransferToOtherPack(Pawn pawn)
         {
             IEnumerable<AvaliPack> packs = driver.Packs.Where(x => GetPackAvgOP(x, pawn) > 30 && x.faction == pawn.Faction && x.GetAllNonNullPawns.Any(p => p.Map == pawn.Map));
-            if (ShouldLeavePack(pawn) && packs.Count()>0)
+            if (ShouldLeavePack(pawn) && packs.Count() > 0)
             {
                 foreach (AvaliPack pack in packs)
                 {
@@ -307,7 +305,7 @@ namespace AvaliMod
                         return new PackTransferal
                         {
                             isRecommended = true,
-                            recommendedPack=pack
+                            recommendedPack = pack
                         };
                     }
                 }
@@ -322,7 +320,7 @@ namespace AvaliMod
         {
             AvaliPack pack = Driver.GetCurrentPack(pawn);
 
-            return driver.GetPackCount(pawn)>1 && pack != null && GetPackAvgOP(pack, pawn) < 30;
+            return driver.GetPackCount(pawn) > 1 && pack != null && GetPackAvgOP(pack, pawn) < 30;
         }
 
         public static void LeavePack(Pawn pawn)
@@ -390,7 +388,7 @@ namespace AvaliMod
                 }
             }
         }
-       
+
 
         [DebugAction("RimVali", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void ResetPacks()
@@ -413,7 +411,7 @@ namespace AvaliMod
         [DebugAction("Nesi", "Message test", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void MessageTest()
         {
-            Assembly a = Assembly.Load(RimValiMod.GetDir+ "/PresentationFramework.dll");
+            Assembly a = Assembly.Load(RimValiMod.GetDir + "/PresentationFramework.dll");
             //AppDomain.CurrentDomain.Load()
             if (a == null)
             {

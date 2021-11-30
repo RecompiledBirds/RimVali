@@ -5,7 +5,7 @@ using Verse;
 namespace AvaliMod
 {
     public class AvaliDriverThoughtProps : CompProperties
-    { 
+    {
         public ThoughtDef inSameRoomThought;
         public ThoughtDef sharedBedroomThought;
         public ThoughtDef sleptApartThought;

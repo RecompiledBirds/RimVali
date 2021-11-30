@@ -1,11 +1,9 @@
-﻿using RimWorld;                    
-using RimWorld.Planet;
-using Verse;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using RimWorld.Planet;
 using System;
+using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using Verse;
 using static AvaliMod.RimValiUtility;
 
 namespace AvaliMod
@@ -58,7 +56,7 @@ namespace AvaliMod
         private void RemovePack(AvaliPack pack)
         {
             packs.Remove(pack);
-            foreach(Pawn pawn in pack.pawns)
+            foreach (Pawn pawn in pack.pawns)
             {
                 pawnsThatHavePacks.Remove(pawn);
             }
@@ -81,7 +79,7 @@ namespace AvaliMod
 
         public AvaliPack GetCurrentPack(Pawn pawn)
         {
-            if (currentPack.ContainsKey(pawn) && currentPack[pawn]!=-1)
+            if (currentPack.ContainsKey(pawn) && currentPack[pawn] != -1)
             {
                 return packs[currentPack[pawn]];
             }
@@ -89,7 +87,7 @@ namespace AvaliMod
             return null;
         }
 
-        public void AddPawnToPack(Pawn pawn,ref AvaliPack pack)
+        public void AddPawnToPack(Pawn pawn, ref AvaliPack pack)
         {
             Log.Message($"Adding {pawn.Name.ToStringShort} to {pack}");
             pack.pawns.Add(pawn);
@@ -97,7 +95,7 @@ namespace AvaliMod
             pawnsThatHavePacks.Add(pawn);
             SetPawnPack(pawn, pack);
         }
-        
+
         private void SetPawnPack(Pawn pawn, AvaliPack pack)
         {
             if (!currentPack.ContainsKey(pawn))
@@ -124,7 +122,7 @@ namespace AvaliMod
 
         public override void ExposeData()
         {
-            Scribe_Collections.Look(ref pawnsThatHavePacks, "pawnsThatHavePacks" ,LookMode.Reference);
+            Scribe_Collections.Look(ref pawnsThatHavePacks, "pawnsThatHavePacks", LookMode.Reference);
             Scribe_Collections.Look(ref packCounter, "packCounter", LookMode.Reference);
             Scribe_Collections.Look(ref packs, "packs");
 
@@ -190,7 +188,6 @@ namespace AvaliMod
         {
             try
             {
-               
                 workingPawnHashset = PawnsInWorld;
                 if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
                 {

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEngine;
 using Verse;
@@ -128,7 +127,7 @@ namespace AvaliMod
         public RimValiMod(ModContentPack content) : base(content)
         {
             dir = content.RootDir.ToString();
-           
+
             if (!hasCollectedModules)
             {
                 Modulefinder.Startup();
@@ -263,7 +262,7 @@ namespace AvaliMod
                     int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMaxTemp.ToString()), out newTemp);
                     if (newTemp != settings.IlluminateAvaliMaxTemp)
                     {
-                        newTemp= Mathf.Clamp(newTemp, -200, 1000);
+                        newTemp = Mathf.Clamp(newTemp, -200, 1000);
                         settings.IlluminateAvaliMaxTemp = newTemp;
                     }
                     int newTempMin;
@@ -271,7 +270,7 @@ namespace AvaliMod
                     int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMinTemp.ToString()), out newTempMin);
                     if (newTempMin != settings.IlluminateAvaliMinTemp)
                     {
-                        newTempMin = Mathf.Clamp(newTempMin,-200, newTemp);
+                        newTempMin = Mathf.Clamp(newTempMin, -200, newTemp);
                         settings.IlluminateAvaliMinTemp = newTempMin;
                     }
                 }

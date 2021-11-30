@@ -1,9 +1,9 @@
-﻿using RimWorld;
-using Verse;
-using System.Collections.Generic;
+﻿using RimValiCore;
+using RimWorld;
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using RimValiCore;
+using Verse;
 
 namespace AvaliMod
 {
@@ -26,8 +26,11 @@ namespace AvaliMod
                 return (AvaliPackHediffCompProps)this.props;
             }
         }
+        // Tick never gets incremented?
+#pragma warning disable IDE0044 // Add readonly modifier
         int tick = 0;
-        
+#pragma warning restore IDE0044 // Add readonly modifier
+
         public override void CompPostTick(ref float severityAdjustment)
         {
             if (tick == 120)
@@ -52,7 +55,7 @@ namespace AvaliMod
         public string specialityLabel = "Unlabeled";
         public List<string> effectList = new List<string>();
     }
-#pragma warning disable CS0114 // Member hides inherited member; missing override keyword
+
     public class AvaliPack : Thing, ILoadReferenceable, IExposable
     {
         public AvaliPack()
@@ -65,7 +68,7 @@ namespace AvaliMod
             faction = leader.Faction;
             name = leader.Name.ToStringShort + "'s pack";
             pawns.Add(leader);
-        } 
+        }
 
         public static List<SkillDef> avoidSkills = new List<SkillDef>();
         public string name = "NoName";
@@ -77,9 +80,8 @@ namespace AvaliMod
 
         public void CleanupPack(Pawn pawn)
         {
-            if (GetAllNonNullPawns.Where(x => x == pawn).Count() > 1)
-            {
-                for (int a = 0; a < GetAllNonNullPawns.Where(x => x == pawn).Count() - 1; a++){pawns.Remove(GetAllNonNullPawns.Where(x => x == pawn).ToList()[a]);}
+            for (int a = 0; a < GetAllNonNullPawns.Where(x => x == pawn).Count() - 1; a++) {
+                pawns.Remove(GetAllNonNullPawns.Where(x => x == pawn).ToList()[a]);
             }
         }
 
@@ -92,17 +94,18 @@ namespace AvaliMod
             }
             if (def?.hediffEffectApplied != null)
             {
-                foreach (Pawn pawn in GetAllNonNullPawns.Where(p => p.Alive()&&p.Spawned))
+                foreach (Pawn pawn in GetAllNonNullPawns.Where(p => p.Alive() && p.Spawned))
                 {
                     if (!pawn.health.hediffSet.HasHediff(def.hediffEffectApplied))
                     {
                         pawn.health.AddHediff(def.hediffEffectApplied);
-                        if (RimValiMod.settings.enableDebugMode){Log.Message($"Added def: {def.hediffEffectApplied.defName}");}
+                        if (RimValiMod.settings.enableDebugMode) { Log.Message($"Added def: {def.hediffEffectApplied.defName}"); }
                     }
 
-                    foreach (HediffDef hDef in DefDatabase<HediffDef>.AllDefs.Where(h=> h != def.hediffEffectApplied && DefDatabase<AvaliPackSkillDef>.AllDefs.Any(APSD=>APSD != def && APSD.hediffEffectApplied == h && pawn.health.hediffSet.HasHediff(APSD.hediffEffectApplied)))){
+                    foreach (HediffDef hDef in DefDatabase<HediffDef>.AllDefs.Where(h => h != def.hediffEffectApplied && DefDatabase<AvaliPackSkillDef>.AllDefs.Any(APSD => APSD != def && APSD.hediffEffectApplied == h && pawn.health.hediffSet.HasHediff(APSD.hediffEffectApplied))))
+                    {
                         pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(hDef));
-                        if (RimValiMod.settings.enableDebugMode){Log.Message($"Removed def: {hDef.defName}");}
+                        if (RimValiMod.settings.enableDebugMode) { Log.Message($"Removed def: {hDef.defName}"); }
                     }
                 }
             }
@@ -110,7 +113,7 @@ namespace AvaliMod
 
         public AvaliPackSkillDef GetPackSkillDef()
         {
-            if (DefDatabase<AvaliPackSkillDef>.AllDefs.Count() > 0 && this != null && GetAllNonNullPawns.Count>1)
+            if (DefDatabase<AvaliPackSkillDef>.AllDefs.Count() > 0 && this != null && GetAllNonNullPawns.Count > 1)
             {
                 List<SkillDef> prevSkills = new List<SkillDef>();
                 prevSkills.AddRange(avoidSkills);
@@ -169,7 +172,8 @@ namespace AvaliMod
             catch { Log.Message("Not on a map yet!"); }
         }
 
-        public void GetCurrentDate(bool forSaving = false)
+        // Wouldn't this make more sense as a `public static Date GetCurrentDate()`?
+        public void GetCurrentDate()
         {
             day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
             quadrum = GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);

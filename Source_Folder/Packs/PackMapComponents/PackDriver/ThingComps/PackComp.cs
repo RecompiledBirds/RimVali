@@ -1,7 +1,4 @@
-using RimWorld;
 using Verse;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace AvaliMod
 {
@@ -27,7 +24,7 @@ namespace AvaliMod
             {
                 ticksSinceLastInpack++;
             }
-            else if(ticksSinceLastInpack>0)
+            else if (ticksSinceLastInpack > 0)
             {
                 ticksSinceLastInpack--;
             }

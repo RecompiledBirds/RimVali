@@ -14,14 +14,15 @@ namespace AvaliMod
     {
         static RimValiDefChecks()
         {
-           // setup();
+            // setup();
         }
 
         public static List<ThingDef> PotentialPackRaces
         {
             get
             {
-                if (potentialRaces == null) {
+                if (potentialRaces == null)
+                {
                     potentialRaces = DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.comps.Any(comp => comp.compClass == typeof(PackComp))).ToList();
                 }
                 return potentialRaces;
