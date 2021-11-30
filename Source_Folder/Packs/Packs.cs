@@ -78,13 +78,6 @@ namespace AvaliMod
         public List<DeathDate> deathDates = new List<DeathDate>();
         public Date creationDate = new Date();
 
-        public void CleanupPack(Pawn pawn)
-        {
-            for (int a = 0; a < GetAllNonNullPawns.Where(x => x == pawn).Count() - 1; a++) {
-                pawns.Remove(GetAllNonNullPawns.Where(x => x == pawn).ToList()[a]);
-            }
-        }
-
         public void UpdateHediffForAllMembers()
         {
             AvaliPackSkillDef def = GetPackSkillDef();
