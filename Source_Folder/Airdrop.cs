@@ -8,8 +8,8 @@ using Verse;
 namespace AvaliMod
 {
     #region settings stuff
-    [StaticConstructorOnStartup]
 
+    [StaticConstructorOnStartup]
     public static class AirdropResearchManager
     {
         static AirdropResearchManager()
@@ -30,18 +30,19 @@ namespace AvaliMod
             }
         }
     }
-    #endregion
+
+    #endregion settings stuff
+
     public class AirdropAlert : Alert
     {
         public override AlertReport GetReport()
         {
-
             defaultLabel = "IlluminateAirdropSend".Translate(AirDropHandler.GetTimeToDropInHours.Named("TIME"))/* "AirdropInStart".Translate() + " " + (AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).ToString() + " " + "AirdropInEnd".Translate()*/;
-
 
             return AirDropHandler.HasMessaged && !AirDropHandler.hasDropped ? AlertReport.Active : AlertReport.Inactive;
         }
     }
+
     public class AirDropHandler : WorldComponent
     {
         private readonly bool airdrops = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableAirdrops;
@@ -51,10 +52,10 @@ namespace AvaliMod
 
         public static int GetTimeToDropInHours => timeToDrop / ticksInAnHour;
 
-
         private static readonly int ticksInAnHour = 25;
         private static bool hasMessaged;
         public static bool HasMessaged => hasMessaged;
+
         public AirDropHandler(World world) : base(world)
         {
             timeToDrop = 0;
@@ -64,9 +65,9 @@ namespace AvaliMod
 
         public static bool hasDropped = false;
 
-
         private IntVec3 targetPos;
         private Map map;
+
         public override void ExposeData()
         {
             Scribe_Values.Look(ref timeToDrop, "timeToDrop", 0);
@@ -76,6 +77,7 @@ namespace AvaliMod
             Scribe_References.Look(ref map, "map");
             base.ExposeData();
         }
+
         private void SendDrop()
         {
             map = Current.Game.CurrentMap;
@@ -84,7 +86,6 @@ namespace AvaliMod
             {
                 ThingMaker.MakeThing(AvaliDefs.AvaliNexus)
             };
-
 
             Scribe_Values.Look(ref hasDropped, "hasDropped", false);
 
@@ -131,10 +132,8 @@ namespace AvaliMod
             map = Current.Game.CurrentMap;
             if (RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq && !hasDropped && map.IsPlayerHome)
             {
-
                 SetupDrop();
                 return true;
-
             }
             return false;
         }
@@ -159,7 +158,5 @@ namespace AvaliMod
                 ticks = 0;
             }
         }
-
     }
-
 }

@@ -4,19 +4,15 @@ using Verse;
 
 namespace AvaliMod
 {
-    // Token: 0x020008AA RID: 2218
     public class AERIALLaunch : Verb
     {
-        // Token: 0x170008AA RID: 2218
-        // (get) Token: 0x06003731 RID: 14129 RVA: 0x0015FD1C File Offset: 0x0015DF1C
         public virtual ThingDef Projectile
         {
             get
             {
-
-                if (base.EquipmentSource != null)
+                if (EquipmentSource != null)
                 {
-                    AERIALChangeableProjectile comp = base.EquipmentSource.GetComp<AERIALChangeableProjectile>();
+                    AERIALChangeableProjectile comp = EquipmentSource.GetComp<AERIALChangeableProjectile>();
                     if (comp != null && comp.Loaded)
                     {
                         return comp.Projectile;
@@ -26,11 +22,10 @@ namespace AvaliMod
             }
         }
 
-        //jn Token: 0x06003732 RID: 14130 RVA: 0x0015FD5C File Offset: 0x0015DF5C
         public override void WarmupComplete()
         {
             base.WarmupComplete();
-            Find.BattleLog.Add(new BattleLogEntry_RangedFire(caster, currentTarget.HasThing ? currentTarget.Thing : null, (base.EquipmentSource != null) ? base.EquipmentSource.def : null, Projectile, ShotsPerBurst > 1));
+            Find.BattleLog.Add(new BattleLogEntry_RangedFire(caster, currentTarget.HasThing ? currentTarget.Thing : null, EquipmentSource?.def, Projectile, ShotsPerBurst > 1));
         }
 
         protected override bool TryCastShot()
@@ -49,8 +44,6 @@ namespace AvaliMod
             int max = GenRadial.NumCellsInRadius(num);
             int num2 = Rand.Range(0, max);
             IntVec3 c = currentTarget.Cell + GenRadial.RadialPattern[num2];
-
-
 
             ThrowDebugText("ToRadius");
             ThrowDebugText("Rad\nDest", c);
@@ -83,6 +76,7 @@ namespace AvaliMod
 
             return true;
         }
+
         protected bool oldShotCast()
         {
             if (currentTarget.HasThing && currentTarget.Thing.Map != caster.Map)
@@ -94,26 +88,26 @@ namespace AvaliMod
             {
                 return false;
             }
-            bool flag = base.TryFindShootLineFromTo(caster.Position, currentTarget, out ShootLine shootLine);
+            bool flag = TryFindShootLineFromTo(caster.Position, currentTarget, out ShootLine shootLine);
             if (verbProps.stopBurstWithoutLos && !flag)
             {
                 return false;
             }
-            if (base.EquipmentSource != null)
+            if (EquipmentSource != null)
             {
-                AERIALChangeableProjectile comp = base.EquipmentSource.GetComp<AERIALChangeableProjectile>();
+                AERIALChangeableProjectile comp = EquipmentSource.GetComp<AERIALChangeableProjectile>();
                 if (comp != null)
                 {
                     comp.Notify_ProjectileLaunched();
                 }
-                CompReloadable comp2 = base.EquipmentSource.GetComp<CompReloadable>();
+                CompReloadable comp2 = EquipmentSource.GetComp<CompReloadable>();
                 if (comp2 != null)
                 {
                     comp2.UsedOnce();
                 }
             }
             Thing launcher = caster;
-            Thing equipment = base.EquipmentSource;
+            Thing equipment = EquipmentSource;
             CompMannable compMannable = caster.TryGetComp<CompMannable>();
             if (compMannable != null && compMannable.ManningPawn != null)
             {
@@ -124,7 +118,6 @@ namespace AvaliMod
             Projectile projectile2 = (Projectile)GenSpawn.Spawn(projectile, shootLine.Source, caster.Map, WipeMode.Vanish);
             if (verbProps.ForcedMissRadius > 0.5f)
             {
-
                 float num = VerbUtility.CalculateAdjustedForcedMiss(verbProps.ForcedMissRadius, currentTarget.Cell - caster.Position);
                 if (num > 0.5f)
                 {
@@ -199,7 +192,6 @@ namespace AvaliMod
             return true;
         }
 
-        // Token: 0x06003734 RID: 14132 RVA: 0x0002AB7F File Offset: 0x00028D7F
         private void ThrowDebugText(string text)
         {
             if (DebugViewSettings.drawShooting)
@@ -208,7 +200,6 @@ namespace AvaliMod
             }
         }
 
-        // Token: 0x06003735 RID: 14133 RVA: 0x0002ABA9 File Offset: 0x00028DA9
         private void ThrowDebugText(string text, IntVec3 c)
         {
             if (DebugViewSettings.drawShooting)
@@ -217,7 +208,6 @@ namespace AvaliMod
             }
         }
 
-        // Token: 0x06003736 RID: 14134 RVA: 0x001601E0 File Offset: 0x0015E3E0
         public override float HighlightFieldRadiusAroundTarget(out bool needLOSToCenter)
         {
             needLOSToCenter = true;
@@ -229,7 +219,6 @@ namespace AvaliMod
             return projectile.projectile.explosionRadius;
         }
 
-        // Token: 0x06003737 RID: 14135 RVA: 0x0016020C File Offset: 0x0015E40C
         public override bool Available()
         {
             if (!base.Available())

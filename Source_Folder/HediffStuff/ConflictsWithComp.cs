@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Verse;
+
 namespace AvaliMod
 {
     public class ConflictsWith : HediffComp
@@ -9,6 +10,7 @@ namespace AvaliMod
         private bool showConflicts => Props.showConflicts;
         private bool debugInfo => Props.debugInfo;
         private int onItem = 0;
+
         public override void CompPostTick(ref float severityAdjustment)
         {
             Pawn pawn = parent.pawn;
@@ -17,7 +19,6 @@ namespace AvaliMod
                 onItem = 0;
                 foreach (HediffDef hediffDef in conflictingHediffs)
                 {
-
                     Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn, null);
                     if (pawn.health.hediffSet.HasHediff(hediffDef))
                     {
@@ -31,6 +32,7 @@ namespace AvaliMod
                 }
             }
         }
+
         public override string CompTipStringExtra
         {
             get
@@ -63,6 +65,5 @@ namespace AvaliMod
                 return output;
             }
         }
-
     }
 }

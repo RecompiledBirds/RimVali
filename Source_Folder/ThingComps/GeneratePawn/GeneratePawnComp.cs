@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+
 namespace AvaliMod
 {
-
     public class AvaliTransfer : ThingComp
     {
         private readonly List<PawnRelationDef> relations = new List<PawnRelationDef>();
         private readonly List<Pawn> pawns = new List<Pawn>();
 
-
         public Pawn PawnToUpload()
         {
             ThingWithComps parent = this.parent;
-            List<Pawn> pawns = RimValiCore.RimValiUtility.CheckAllPawnsInMapAndFaction(parent.Map, parent.Faction).ToList<Pawn>();
+            List<Pawn> pawns = RimValiCore.RimValiUtility.CheckAllPawnsInMapAndFaction(parent.Map, parent.Faction).ToList();
             foreach (Pawn pawn in pawns)
             {
                 PhysicalInteractionReservationManager physicalInteractionReservationManager = new PhysicalInteractionReservationManager();
@@ -25,7 +24,6 @@ namespace AvaliMod
             }
             return null;
         }
-
 
         /* private void GetPawnRelations(Pawn pawn)
          {
@@ -74,11 +72,9 @@ namespace AvaliMod
                 {
                     if (pawn.Position == cell)
                     {
-
                     }
                 }
             }
-
         }
     }
 }

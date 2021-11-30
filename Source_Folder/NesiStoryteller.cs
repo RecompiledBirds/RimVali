@@ -24,12 +24,12 @@ namespace AvaliMod
         public SimpleCurve acceptPercentFactorPerThreatPointsCurve;
 
         public SimpleCurve acceptPercentFactorPerProgressScoreCurve;
+
         public NesiStoryTellerProps()
         {
             compClass = typeof(NesiStoryTeller);
         }
     }
-
 
     public enum NesiState
     {
@@ -41,14 +41,12 @@ namespace AvaliMod
         Friendly = 2,
     }
 
-
-
     public class NesiStoryTeller : StorytellerComp
     {
         protected NesiStoryTellerProps Props => (NesiStoryTellerProps)props;
 
-
         #region Incident gen
+
         public FiringIncident GenAgressiveIncident(IIncidentTarget targ)
         {
             List<IncidentDef> defs = new List<IncidentDef> { IncidentDefOf.ManhunterPack, IncidentDefOf.MechCluster, IncidentDefOf.RaidEnemy, IncidentDefOf.Infestation };
@@ -59,34 +57,29 @@ namespace AvaliMod
             if (!def.Worker.CanFireNow(parms2)) { return null; }
             parms.faction = HasPawnsNotAvali ? Find.FactionManager.FirstFactionOfDef(AvaliDefs.NesiSpecOps) : parms.faction;
 
-
             parms.points *= new Random(Find.World.ConstantRandSeed).Next(1, (int)StorytellerUtilityPopulation.AdjustedPopulation * new Random(Find.World.ConstantRandSeed).Next(1, 3)) * (HasPawnsNotAvali ? ratioNonAvaliToAvali * 2 : 1);
 
             if (HasPawnsNotAvali && ratioNonAvaliToAvali > 5)
             {
                 int multiplier = 5;
-                MessageBoxResult res = System.Windows.MessageBox.Show("Are you watching? \n -Nesi", "Nesi", button: MessageBoxButton.YesNo);
+                MessageBoxResult res = MessageBox.Show("Are you watching? \n -Nesi", "Nesi", button: MessageBoxButton.YesNo);
                 if (res == MessageBoxResult.Yes)
                 {
-                    System.Windows.MessageBox.Show("I hope you enjoy the show! \n -Nesi");
-
+                    MessageBox.Show("I hope you enjoy the show! \n -Nesi");
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Oh.. alright. I hope you understand I don't like to be ignored. \n -Nesi");
+                    MessageBox.Show("Oh.. alright. I hope you understand I don't like to be ignored. \n -Nesi");
                     multiplier = 10;
                 }
                 parms.points *= ratioAvaliToNonAvali * multiplier;
             }
 
             return new FiringIncident(def, this, parms) { parms = parms };
-
-
         }
 
         public FiringIncident GenHunting(IIncidentTarget targ)
         {
-
             List<IncidentDef> defs = new List<IncidentDef> { IncidentDefOf.Eclipse, IncidentDefOf.SolarFlare, IncidentDefOf.ToxicFallout, IncidentDefOf.ToxicFallout, AvaliDefs.VolcanicWinter, AvaliDefs.Alphabeavers, AvaliDefs.HeatWave, AvaliDefs.Flashstorm, AvaliDefs.PsychicDrone, AvaliDefs.ShortCircuit };
             defs.AddRange(DefDatabase<IncidentDef>.AllDefs.Where(x => x.category == IncidentCategoryDefOf.DiseaseHuman));
             IncidentDef def = defs.RandomElement();
@@ -133,7 +126,8 @@ namespace AvaliMod
             if (!def.Worker.CanFireNow(parms2)) { return null; }
             return new FiringIncident(def, this, parms) { parms = parms };
         }
-        #endregion
+
+        #endregion Incident gen
 
         public override IEnumerable<FiringIncident> MakeIntervalIncidents(IIncidentTarget target)
         {
@@ -150,18 +144,21 @@ namespace AvaliMod
                     case NesiState.Aggressive:
                         inc = GenAgressiveIncident(target);
                         break;
+
                     case NesiState.Hunting:
                         inc = GenHunting(target);
                         break;
+
                     case NesiState.Neutral:
                         inc = GenNeutral(target);
                         break;
+
                     case NesiState.Friendly:
                         inc = GenFriendly(target);
                         break;
+
                     case NesiState.Calm:
                         break;
-
                 }
                 if (inc != null)
                 {
@@ -186,7 +183,6 @@ namespace AvaliMod
 
         private void UpdateState()
         {
-
             //Make sure we're not on the hunting->aggressive route, and we've given the current state time to do it's job.
             if (NesiStorytellerData.state != NesiState.Hunting && GenDate.DaysPassed > NesiStorytellerData.dayLastUpdated + 5)
             {
@@ -226,10 +222,7 @@ namespace AvaliMod
                     NesiStorytellerData.dayLastUpdated = GenDate.DaysPassed;
                     return;
                 }
-
             }
-
         }
-
     }
 }

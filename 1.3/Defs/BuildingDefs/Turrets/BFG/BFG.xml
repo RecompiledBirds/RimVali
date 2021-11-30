@@ -6,6 +6,7 @@
     <label>BFG turret</label>
     <description>This large turret, nicknamed the "BFG" is a sniper turret, designed to kill anything at long range.</description>
     <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>avali/buildings/turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>

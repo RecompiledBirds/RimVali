@@ -5,26 +5,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+
 namespace AvaliMod
 {
     public static class ResExtenstion
     {
-        public static bool allPreReqDone(this ResearchProjectDef d)
+        public static bool AllPrerequisitesDone(this ResearchProjectDef def)
         {
-            if (d.prerequisites != null)
+            if (def.prerequisites?.Any(prerequisite => !prerequisite.IsFinished) ?? false)
             {
-                if (d.prerequisites.Any(def => !def.IsFinished))
-                {
-                    return false;
-                }
+                return false;
             }
             return true;
         }
     }
+
     public class HackingGameComp : WorldComponent
     {
         public List<string> techLvls;
         public Dictionary<ResearchProjectDef, bool> hackProjects = new Dictionary<ResearchProjectDef, bool>();
+
         public HackingGameComp(World world) : base(world)
         {
             techLvls = Enum.GetNames(typeof(TechLevel)).ToList();
@@ -40,7 +40,7 @@ namespace AvaliMod
         {
             get
             {
-                List<ResearchProjectDef> list1 = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.allPreReqDone() && !x.IsFinished
+                List<ResearchProjectDef> list1 = DefDatabase<ResearchProjectDef>.AllDefs.Where(x => x.AllPrerequisitesDone() && !x.IsFinished
                 && !(hackProjects.ContainsKey(x) && hackProjects[x])
                 && DefDatabase<FactionResearchRestrictionDef>.AllDefs.Any(z =>
                     z.factionResearchRestrictionBlackList.Any(y => y.isHackable
@@ -53,16 +53,15 @@ namespace AvaliMod
             }
         }
 
-
         public void SendMessage(ResearchProjectDef def)
         {
-            ChoiceLetter choiceLetter = LetterMaker.MakeLetter("HackedProject".Translate(def.label.Named("PROJECT")), "UnlockedResearch".Translate(def.label.Named("PROJECT")), AvaliMod.AvaliDefs.IlluminateAirdrop);
+            ChoiceLetter choiceLetter = LetterMaker.MakeLetter("HackedProject".Translate(def.label.Named("PROJECT")), "UnlockedResearch".Translate(def.label.Named("PROJECT")), AvaliDefs.IlluminateAirdrop);
             Find.LetterStack.ReceiveLetter(choiceLetter, null);
         }
 
         public void HackRes(ResearchProjectDef def)
         {
-            if (def.allPreReqDone())
+            if (def.AllPrerequisitesDone())
             {
                 hackProjects.Add(def, true);
                 SendMessage(def);
@@ -76,7 +75,6 @@ namespace AvaliMod
         {
             if (Find.ResearchManager.currentProj != null)
             {
-
                 tick++;
                 if (tick == day * 5)
                 {

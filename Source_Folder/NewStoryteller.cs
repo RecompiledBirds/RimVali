@@ -1,6 +1,8 @@
 ﻿using RimWorld;
 using Verse;
 
+// What is this for?
+
 namespace AvaliMod
 {
     internal class NewStorytellerComp : StorytellerComp

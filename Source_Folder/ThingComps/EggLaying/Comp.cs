@@ -2,7 +2,6 @@
 using UnityEngine;
 using Verse;
 
-
 namespace AvaliMod
 {
     public class AvaliEggLayer : ThingComp
@@ -25,15 +24,14 @@ namespace AvaliMod
 
         public bool FullyFertilized => fertilizationCount >= Props.eggFertilizationCountMax;
 
-
         public AvaliEggLayer_Props Props => (AvaliEggLayer_Props)props;
 
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look<float>(ref eggProgress, "eggProgress", 0.0f, false);
-            Scribe_Values.Look<int>(ref fertilizationCount, "fertilizationCount", 0, false);
-            Scribe_References.Look<Pawn>(ref fertilizedBy, "fertilizedBy", false);
+            Scribe_Values.Look(ref eggProgress, "eggProgress", 0.0f, false);
+            Scribe_Values.Look(ref fertilizationCount, "fertilizationCount", 0, false);
+            Scribe_References.Look(ref fertilizedBy, "fertilizedBy", false);
         }
 
         public override void CompTick()

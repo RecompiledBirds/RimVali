@@ -273,7 +273,7 @@
         <defaultProjectile>AvaliMinigunBullet</defaultProjectile>
         <warmupTime>1.8</warmupTime>
         <range>35</range>
-        <ticksBetweenBurstShots>2.5</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
         <burstShotCount>22</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
