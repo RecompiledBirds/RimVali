@@ -1,32 +1,35 @@
-﻿using RimValiCore.RVR;
+using RimValiCore.RVR;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
 namespace AvaliMod
 {
+
+
+
+
     [StaticConstructorOnStartup]
     public static class RimValiDefChecks
     {
         static RimValiDefChecks()
         {
-            // setup();
+           // setup();
         }
 
         public static List<ThingDef> PotentialPackRaces
         {
             get
             {
-                if (PotentialRaces == null)
-                {
-                    PotentialRaces = DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.comps.Any(comp => comp.compClass == typeof(PackComp))).ToList();
+                if (potentialRaces == null) {
+                    potentialRaces = DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.comps.Any(comp => comp.compClass == typeof(PackComp))).ToList();
                 }
-                return PotentialRaces;
+                return potentialRaces;
             }
         }
-
-        public static List<ThingDef> PotentialRaces;
+        public static List<ThingDef> potentialRaces;
 
         public static IEnumerable<RimValiRaceDef> races = DefDatabase<RimValiRaceDef>.AllDefs.Where(x => x is RimValiRaceDef);
+
     }
 }

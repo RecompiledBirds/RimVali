@@ -1,10 +1,19 @@
-﻿using Verse;
+using RimWorld;
+using Verse;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace AvaliMod
 {
     public class PackComp : ThingComp
     {
-        public PackProps Props => (PackProps)props;
+        public PackProps Props
+        {
+            get
+            {
+                return (PackProps)this.props;
+            }
+        }
 
         public bool inPack = false;
         public int ticksSinceLastInpack = 0;
@@ -18,7 +27,7 @@ namespace AvaliMod
             {
                 ticksSinceLastInpack++;
             }
-            else if (ticksSinceLastInpack > 0)
+            else if(ticksSinceLastInpack>0)
             {
                 ticksSinceLastInpack--;
             }

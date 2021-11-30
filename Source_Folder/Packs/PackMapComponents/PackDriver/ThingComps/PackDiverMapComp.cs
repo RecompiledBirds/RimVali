@@ -1,18 +1,23 @@
-﻿using RimWorld.Planet;
-using System;
+﻿using RimWorld;                    
+using RimWorld.Planet;
+using Verse;
 using System.Collections.Generic;
 using System.Linq;
-using Verse;
+using System.Threading;
+using System;
+using System.Threading.Tasks;
+using static AvaliMod.RimValiUtility;
 
 namespace AvaliMod
 {
     public class AvaliPackDriver : WorldComponent//MapComponent//
     {
+        /*
         private readonly bool packsEnabled = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packsEnabled;
-
+      
         private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
         public static int tickTime = RimValiMod.settings.ticksBetweenPackUpdate;
-
+      
         private bool ThreadIsActive;
         private HashSet<AvaliPack> packs = new HashSet<AvaliPack>();
         private int onTick = 0;
@@ -20,13 +25,23 @@ namespace AvaliMod
         public List<Pawn> pawns = new List<Pawn>();
         public List<int> count = new List<int>();
         public HashSet<Pawn> workingPawnHashset = new HashSet<Pawn>();
+
+
+
+
         //public AvaliPackDriver(Map map) : base(map) { }
 
         //public AvaliPackDriver(World world) : base(world) { }
 
         public List<ThingDef> racesInPacks = new List<ThingDef>();
 
-        public HashSet<AvaliPack> Packs => packs;
+        public HashSet<AvaliPack> Packs
+        {
+            get
+            {
+                return packs;
+            }
+        }
 
         public void MakePawnLeavePack(Pawn pawn, AvaliPack pack)
         {
@@ -68,15 +83,13 @@ namespace AvaliMod
                 foreach (Pawn p in pawnPack.pawns)
                 {
                     if (pawnHasHadXPacks.ContainsKey(pawn))
-                    {
                         pawnHasHadXPacks[pawn]--;
-                    }
                 }
                 pawnPack.CleanupPack(pawn);
                 pawnPack.UpdateHediffForAllMembers();
             }
         }
-
+        
         public void MakePawnHavePack(Pawn pawn)
         {
             if (!pawnHasHadXPacks.ContainsKey(pawn))
@@ -112,12 +125,12 @@ namespace AvaliMod
         public void AddPack(AvaliPack pack)
         {
             packs.Add(pack);
-            foreach (Pawn pawn in pack.pawns.Where(p => PawnHasHadPack(p)))
+            foreach(Pawn pawn in pack.pawns.Where(p => PawnHasHadPack(p)))
             {
                 MakePawnHavePack(pawn);
             }
         }
-
+        
         public void ResetPacks()
         {
             pawnHasHadXPacks = new Dictionary<Pawn, int>();
@@ -126,11 +139,8 @@ namespace AvaliMod
 
         public bool HasPack(Pawn pawn)
         {
-            if (packs.EnumerableNullOrEmpty())
-            {
+            if(packs.EnumerableNullOrEmpty())
                 return false;
-            }
-
             return packs.Any(pack => pack.GetAllNonNullPawns.Contains(pawn));
         }
 
@@ -156,56 +166,267 @@ namespace AvaliMod
 
         public void UpdatePacks()
         {
-            if (!workingPawnHashset.EnumerableNullOrEmpty())
+            lock (packs)
             {
-                foreach (Pawn pawn in workingPawnHashset)
+                
+                if (!RimValiUtility.PawnsInWorld.EnumerableNullOrEmpty())
                 {
-                    RimValiUtility.KioPackHandler(pawn);
+                    foreach (Pawn pawn in workingPawnHashset)
+                    {
+                       RimValiUtility.KioPackHandler(pawn);
+                    }
+                    if (!packs.EnumerableNullOrEmpty())
+                    {
+                        CleanupBadPacks();
+                    }
                 }
-                if (!packs.EnumerableNullOrEmpty())
-                {
-                    CleanupBadPacks();
-                }
-                ThreadIsActive = false;
+            }
+            ThreadIsActive = false;
+        }
+        
+        public bool CanStartNextThread
+        {
+            get
+            {
+                
+                ThreadPool.GetAvailableThreads(out int wThreads, out int cThreads);
+                return !ThreadIsActive && wThreads > 0; 
             }
         }
-
         private bool hasKickedBack;
 
         public AvaliPackDriver(World world) : base(world)
         {
         }
-
+        
         public override void WorldComponentTick()
-
+        
         {
             try
             {
                 workingPawnHashset = RimValiUtility.PawnsInWorld;
-                if (onTick == tickTime && packsEnabled && Find.CurrentMap != null)
+                if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
                 {
-                    if (multiThreaded)
+                    
+                    if (multiThreaded && CanStartNextThread)
                     {
-                        RimValiUtility.ThreadQueue.AddActionToQueue(UpdatePacks);
+
+                        ThreadIsActive = true;
+                        Task packTask = new Task(UpdatePacks);
+                        packTask.Start();
                     }
-                    else
-                    {
-                        UpdatePacks();
-                    }
+                    else{UpdatePacks();}
                     onTick = tickTime;
                 }
-                else { onTick++; }
+                else{onTick--;}
+            }
+            catch(Exception e)
+            {
+                if (!hasKickedBack)
+                {
+                    hasKickedBack = true;
+                    tickTime += 60000;
+                    Log.Warning("Kio pack handler has encountered an error, kicking back ticks between update by 60000");
+                }
+                Log.Error($"{e}");
+            }
+        }
+        */
+        public AvaliPackDriver(World world) : base(world)
+        {
+            ResetPacks();
+        }
+
+        private List<Pawn> pawnsThatHavePacks = new List<Pawn>();
+
+        private List<AvaliPack> packs = new List<AvaliPack>();
+
+        private Dictionary<Pawn, int> packCounter = new Dictionary<Pawn, int>();
+
+        private Dictionary<Pawn, int> currentPack = new Dictionary<Pawn, int>();
+
+        public int GetPackCount(Pawn pawn)
+        {
+            if (!packCounter.ContainsKey(pawn))
+            {
+                return 0;
+            }
+            return packCounter[pawn];
+        }
+
+        public void AddToPackCount(Pawn pawn)
+        {
+            if (!packCounter.ContainsKey(pawn))
+            {
+                packCounter.Add(pawn, 0);
+            }
+            packCounter[pawn]++;
+        }
+
+        public List<AvaliPack> Packs
+        {
+            get
+            {
+                return packs;
+            }
+        }
+
+        public bool PawnHasPack(Pawn pawn) => pawnsThatHavePacks.Contains(pawn);
+        public bool PawnsHasHadPack(Pawn pawn) => GetPackCount(pawn) > 0;
+
+        private void RemovePack(AvaliPack pack)
+        {
+            packs.Remove(pack);
+            foreach(Pawn pawn in pack.pawns)
+            {
+                pawnsThatHavePacks.Remove(pawn);
+            }
+        }
+
+        public void AddPack(AvaliPack pack)
+        {
+            if (!packs.Contains(pack))
+            {
+                Log.Message($"Adding {pack} to packs");
+                int ID = packs.Count;
+                packs.Add(pack);
+                foreach (Pawn pawn in pack.pawns)
+                {
+                    pawnsThatHavePacks.Add(pawn);
+                    AddToPackCount(pawn);
+                    currentPack[pawn] = ID;
+                }
+            }
+        }
+
+        public AvaliPack GetCurrentPack(Pawn pawn)
+        {
+            if (currentPack.ContainsKey(pawn))
+            {
+                return packs[currentPack[pawn]];
+            }
+            return null;
+        }
+
+        private void AddPawnToPack(Pawn pawn,ref AvaliPack pack)
+        {
+            Log.Message($"Adding {pawn.Name.ToStringShort} to {pack}");
+            pack.pawns.Add(pawn);
+            AddToPackCount(pawn);
+            currentPack[pawn] = packs.IndexOf(pack);
+        }
+
+        private void RemovePawnFromPack(Pawn pawn, ref AvaliPack pack)
+        {
+            pack.pawns.Remove(pawn);
+            if (currentPack.ContainsKey(pawn))
+            {
+                currentPack.Remove(pawn);
+            }
+        }
+
+        public bool HasPack(Pawn pawn)
+        {
+            return pawnsThatHavePacks.Contains(pawn);
+        }
+
+        public override void ExposeData()
+        {
+            Scribe_Collections.Look(ref pawnsThatHavePacks, "pawnsThatHavePacks" ,LookMode.Reference);
+            Scribe_Collections.Look(ref packCounter, "packCounter", LookMode.Reference);
+            Scribe_Collections.Look(ref packs, "packs");
+
+            base.ExposeData();
+        }
+
+
+        public void ResetPacks()
+        {
+            pawnsThatHavePacks = new List<Pawn>();
+            packs = new List<AvaliPack>();
+            packCounter = new Dictionary<Pawn, int>();
+        }
+
+        public void SwitchPack(Pawn pawn, AvaliPack newPack)
+        {
+            AvaliPack oldPack = GetCurrentPack(pawn);
+            if (oldPack != null)
+            {
+                RemovePawnFromPack(pawn, ref oldPack);
+            }
+            AddPawnToPack(pawn, ref newPack);
+        }
+
+        int onTick = 0;
+        private readonly bool packsEnabled = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packsEnabled;
+
+        private readonly bool multiThreaded = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
+
+        public HashSet<Pawn> workingPawnHashset = new HashSet<Pawn>();
+        public static int tickTime = RimValiMod.settings.ticksBetweenPackUpdate;
+        private bool hasKickedBack;
+        private bool ThreadIsActive;
+
+        public bool CanStartNextThread
+        {
+            get
+            {
+
+                ThreadPool.GetAvailableThreads(out int wThreads, out int cThreads);
+                return !ThreadIsActive && wThreads > 0;
+            }
+        }
+
+        public void UpdatePacks()
+        {
+            lock (packs)
+            {
+                if (!PawnsInWorld.EnumerableNullOrEmpty())
+                {
+                    Log.Message("Running update");
+                    foreach (Pawn pawn in workingPawnHashset)
+                    {
+                        KioPackHandler(pawn);
+                    }
+                }
+            }
+            ThreadIsActive = false;
+        }
+
+
+        public override void WorldComponentTick()
+        {
+            try
+            {
+               
+                workingPawnHashset = PawnsInWorld;
+                if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
+                {
+                    Log.Message("Running tick");
+                    if (multiThreaded && CanStartNextThread)
+                    {
+                        Log.Message("Running thread");
+
+                        ThreadIsActive = true;
+                        Task packTask = new Task(UpdatePacks);
+                        packTask.Start();
+                    }
+                    else { UpdatePacks(); }
+                    onTick = tickTime;
+                }
+                else { onTick--; }
             }
             catch (Exception e)
             {
                 if (!hasKickedBack)
                 {
                     hasKickedBack = true;
-                    //tickTime += 60000;
+                    tickTime += 60000;
                     Log.Warning("Kio pack handler has encountered an error, kicking back ticks between update by 60000");
                 }
                 Log.Error($"{e}");
             }
+            base.WorldComponentTick();
         }
     }
 }

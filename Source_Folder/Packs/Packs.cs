@@ -1,9 +1,9 @@
-﻿using RimValiCore;
-using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using RimWorld;
 using Verse;
+using System.Collections.Generic;
+using System;
+using System.Linq;
+using RimValiCore;
 
 namespace AvaliMod
 {
@@ -13,23 +13,28 @@ namespace AvaliMod
 
         public AvaliPackHediffCompProps()
         {
-            compClass = typeof(AvaliPackHediffComp);
+            this.compClass = typeof(AvaliPackHediffComp);
         }
     }
 
     public class AvaliPackHediffComp : HediffComp
     {
-        public AvaliPackHediffCompProps Props => (AvaliPackHediffCompProps)props;
-
-        private readonly int tick = 0;
-
+        public AvaliPackHediffCompProps Props
+        {
+            get
+            {
+                return (AvaliPackHediffCompProps)this.props;
+            }
+        }
+        int tick = 0;
+        
         public override void CompPostTick(ref float severityAdjustment)
         {
             if (tick == 120)
             {
-                if (parent.pawn.GetPack() != null)
+                if (RimValiUtility.Driver.GetCurrentPack(parent.pawn) != null)
                 {
-                    AvaliPack pack = parent.pawn.GetPack();
+                    AvaliPack pack = RimValiUtility.Driver.GetCurrentPack(parent.pawn);
                     if (pack.GetPackSkillDef() != null && pack.GetPackSkillDef() != Props.associatedDef)
                     {
                         parent.pawn.health.RemoveHediff(parent);
@@ -47,7 +52,7 @@ namespace AvaliMod
         public string specialityLabel = "Unlabeled";
         public List<string> effectList = new List<string>();
     }
-
+#pragma warning disable CS0114 // Member hides inherited member; missing override keyword
     public class AvaliPack : Thing, ILoadReferenceable, IExposable
     {
         public AvaliPack()
@@ -60,7 +65,7 @@ namespace AvaliMod
             faction = leader.Faction;
             name = leader.Name.ToStringShort + "'s pack";
             pawns.Add(leader);
-        }
+        } 
 
         public static List<SkillDef> avoidSkills = new List<SkillDef>();
         public string name = "NoName";
@@ -74,7 +79,7 @@ namespace AvaliMod
         {
             if (GetAllNonNullPawns.Where(x => x == pawn).Count() > 1)
             {
-                for (int a = 0; a < GetAllNonNullPawns.Where(x => x == pawn).Count() - 1; a++) { pawns.Remove(GetAllNonNullPawns.Where(x => x == pawn).ToList()[a]); }
+                for (int a = 0; a < GetAllNonNullPawns.Where(x => x == pawn).Count() - 1; a++){pawns.Remove(GetAllNonNullPawns.Where(x => x == pawn).ToList()[a]);}
             }
         }
 
@@ -87,18 +92,17 @@ namespace AvaliMod
             }
             if (def?.hediffEffectApplied != null)
             {
-                foreach (Pawn pawn in GetAllNonNullPawns.Where(p => p.Alive() && p.Spawned))
+                foreach (Pawn pawn in GetAllNonNullPawns.Where(p => p.Alive()&&p.Spawned))
                 {
                     if (!pawn.health.hediffSet.HasHediff(def.hediffEffectApplied))
                     {
                         pawn.health.AddHediff(def.hediffEffectApplied);
-                        if (RimValiMod.settings.enableDebugMode) { Log.Message($"Added def: {def.hediffEffectApplied.defName}"); }
+                        if (RimValiMod.settings.enableDebugMode){Log.Message($"Added def: {def.hediffEffectApplied.defName}");}
                     }
 
-                    foreach (HediffDef hDef in DefDatabase<HediffDef>.AllDefs.Where(h => h != def.hediffEffectApplied && DefDatabase<AvaliPackSkillDef>.AllDefs.Any(APSD => APSD != def && APSD.hediffEffectApplied == h && pawn.health.hediffSet.HasHediff(APSD.hediffEffectApplied))))
-                    {
+                    foreach (HediffDef hDef in DefDatabase<HediffDef>.AllDefs.Where(h=> h != def.hediffEffectApplied && DefDatabase<AvaliPackSkillDef>.AllDefs.Any(APSD=>APSD != def && APSD.hediffEffectApplied == h && pawn.health.hediffSet.HasHediff(APSD.hediffEffectApplied)))){
                         pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(hDef));
-                        if (RimValiMod.settings.enableDebugMode) { Log.Message($"Removed def: {hDef.defName}"); }
+                        if (RimValiMod.settings.enableDebugMode){Log.Message($"Removed def: {hDef.defName}");}
                     }
                 }
             }
@@ -106,7 +110,7 @@ namespace AvaliMod
 
         public AvaliPackSkillDef GetPackSkillDef()
         {
-            if (DefDatabase<AvaliPackSkillDef>.AllDefs.Count() > 0 && this != null && GetAllNonNullPawns.Count > 1)
+            if (DefDatabase<AvaliPackSkillDef>.AllDefs.Count() > 0 && this != null && GetAllNonNullPawns.Count>1)
             {
                 List<SkillDef> prevSkills = new List<SkillDef>();
                 prevSkills.AddRange(avoidSkills);
@@ -146,12 +150,9 @@ namespace AvaliMod
 
         public HashSet<Pawn> GetAllNonNullPawns => pawns.Where(pawn => pawn != null).ToHashSet();
 
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
-
-        public string GetUniqueLoadID()
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        new public string GetUniqueLoadID()
         {
-            return "pack_" + GetHashCode().ToString();
+            return "pack_" + this.GetHashCode().ToString();
         }
     }
 
@@ -164,7 +165,7 @@ namespace AvaliMod
 
         public Date()
         {
-            try { GetCurrentDate(); }
+            try { this.GetCurrentDate(); }
             catch { Log.Message("Not on a map yet!"); }
         }
 
@@ -175,11 +176,11 @@ namespace AvaliMod
             ticks = GenTicks.TicksGame;
         }
 
-        public new string GetUniqueLoadID()
+        new public string GetUniqueLoadID()
         {
-            return "date_" + GetHashCode().ToString() + ticks.ToString();
+            return "date_" + GetHashCode().ToString()+ticks.ToString();
         }
-
+        
         public override void ExposeData()
         {
             Scribe_Values.Look(ref ticks, "ticks", ticks, true);
@@ -199,9 +200,9 @@ namespace AvaliMod
 
         public DeathDate(Pawn pawn)
         {
-            day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
-            quadrum = GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
-            if (pawn != null) { deadPawn = pawn; }
+            this.day = GenDate.DayOfYear(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
+            this.quadrum = GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(Find.CurrentMap.Tile).x);
+            if (pawn != null) { this.deadPawn = pawn; }
         }
 
         public override void ExposeData()

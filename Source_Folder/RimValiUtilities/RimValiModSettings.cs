@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using Verse;
-
 namespace AvaliMod
 {
-    public enum SettingsWindow
+    public enum settingsWindow
     {
         main = 0,
         packs = 1,
@@ -15,7 +15,6 @@ namespace AvaliMod
         threading = 4,
         pawns = 5
     }
-
     public class RimValiModSettings : ModSettings
     {
         public bool packLossEnabled;
@@ -77,7 +76,6 @@ namespace AvaliMod
             IWAvaliMinTemp = -5;
             liteMode = false;
         }
-
         public override void ExposeData()
         {
             Scribe_Values.Look(ref packThoughtsEnabled, "packThoughtsEnabled", true);
@@ -104,7 +102,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref IlluminateAvaliMaxTemp, "IlluminateAvaliMaxTemp", 15, true);
             Scribe_Values.Look(ref IWAvaliMinTemp, "IWAvaliMinTemp", -5, true);
             Scribe_Values.Look(ref IWAvaliMaxTemp, "IWAvaliMaxTemp", 25, true);
-            Scribe_Collections.Look(ref enabledRaces, "enabledRaces", LookMode.Undefined, LookMode.Undefined);
+            Scribe_Collections.Look<string, bool>(ref enabledRaces, "enabledRaces", LookMode.Undefined, LookMode.Undefined);
             Scribe_Values.Look(ref packBrokenChance, "packBrokenChance", 5, true);
             Scribe_Values.Look(ref ticksBetweenPackUpdate, "ticksBetweenPackUpdate", 120, true);
             Scribe_Values.Look(ref canGetPackBroken, "canGetPackBroken", true, true);
@@ -115,23 +113,28 @@ namespace AvaliMod
 
     public class RimValiMod : Mod
     {
-        public SettingsWindow windowToShow;
+        public settingsWindow windowToShow;
         public static RimValiModSettings settings;
         public ModContentPack mod;
-        private readonly bool hasCollectedModules = false;
-
-        public static string GetDir { get; private set; }
-
+        private bool hasCollectedModules = false;
+        private static string dir;
+        public static string GetDir
+        {
+            get
+            {
+                return dir;
+            }
+        }
         public RimValiMod(ModContentPack content) : base(content)
         {
-            GetDir = content.RootDir.ToString();
-
+            dir = content.RootDir.ToString();
+           
             if (!hasCollectedModules)
             {
-                Modulefinder.Startup();
+                Modulefinder.startup();
                 hasCollectedModules = true;
             }
-            mod = content;
+            this.mod = content;
             if (LoadedModManager.RunningModsListForReading.Any(x => x.Name.ToLower().Contains("avali continued")))
             {
                 Log.Warning("It appears avali continued or a mod made for it is running with RimVali! This may cause issues, and is not recommended.");
@@ -148,15 +151,12 @@ namespace AvaliMod
             }
         }
 
-        private void Backbutton(Listing_Standard listing_Standard)
+        void Backbutton(Listing_Standard listing_Standard)
         {
             bool goBack = listing_Standard.ButtonText("goBack".Translate());
             if (goBack)
-            {
                 windowToShow = 0;
-            }
         }
-
         public override void DoSettingsWindowContents(Rect rect)
         {
             Window window = Find.WindowStack.currentlyDrawnWindow;
@@ -166,6 +166,7 @@ namespace AvaliMod
                 settings.enabledRaces = new Dictionary<string, bool>();
             }
 
+
             Rect TopHalf = rect.TopHalf();
             Rect TopLeft = TopHalf.LeftHalf();
             Rect TopRight = TopHalf.RightHalf();
@@ -173,12 +174,11 @@ namespace AvaliMod
             Rect BottomLeft = BottomHalf.LeftHalf();
             Rect BottomRight = BottomHalf.RightHalf();
             Listing_Standard listing_Standard = new Listing_Standard();
-
             #region main
-
             //Main page
-            if (SettingsWindow.main == windowToShow)
+            if (settingsWindow.main == windowToShow)
             {
+
                 listing_Standard.Begin(rect);
                 bool packSettings = listing_Standard.ButtonText("PackLabel".Translate());
                 bool gameplaySettings = listing_Standard.ButtonText("GameplayLabel".Translate());
@@ -186,27 +186,19 @@ namespace AvaliMod
                 // bool pawnsSettings = listing_Standard.ButtonText("Pawns");
                 if (packSettings)
                 {
-                    windowToShow = SettingsWindow.packs;
+                    windowToShow = settingsWindow.packs;
                 }
                 if (gameplaySettings)
-                {
-                    windowToShow = SettingsWindow.gameplay;
-                }
-
+                    windowToShow = settingsWindow.gameplay;
                 if (debug)
-                {
-                    windowToShow = SettingsWindow.debug;
-                }
+                    windowToShow = settingsWindow.debug;
                 // if (pawnsSettings)
                 //   windowToShow = settingsWindow.pawns;
             }
-
-            #endregion main
-
+            #endregion
             #region pack settings
-
             //Pack settings
-            if (windowToShow == SettingsWindow.packs)
+            if (windowToShow == settingsWindow.packs)
             {
                 listing_Standard.Begin(rect);
                 Backbutton(listing_Standard);
@@ -214,7 +206,7 @@ namespace AvaliMod
                 bool threading = listing_Standard.ButtonText("MultithreadingCheck".Translate() + " " + ((Func<string>)delegate { if (settings.packMultiThreading) { return "Y"; } else { return "N"; }; })());
                 if (threading)
                 {
-                    windowToShow = SettingsWindow.threading;
+                    windowToShow = settingsWindow.threading;
                 }
 
                 listing_Standard.CheckboxLabeled("PacksCheck".Translate(), ref settings.packsEnabled, "PacksDesc".Translate());
@@ -241,15 +233,12 @@ namespace AvaliMod
                 listing_Standard.Label("PackBrokenChance".Translate(settings.packBrokenChance.Named("CHANCE")));
                 settings.packBrokenChance = (int)listing_Standard.Slider(settings.packBrokenChance, 0, 100);
                 listing_Standard.Label("TicksBetweenPackUpdates".Translate());
-                int.TryParse(listing_Standard.TextEntry(settings.ticksBetweenPackUpdate.ToString()), out settings.ticksBetweenPackUpdate);
+                Int32.TryParse(listing_Standard.TextEntry(settings.ticksBetweenPackUpdate.ToString()), out settings.ticksBetweenPackUpdate);
             }
-
-            #endregion pack settings
-
+            #endregion
             #region gameplay
-
             //Gameplay settings
-            if (windowToShow == SettingsWindow.gameplay)
+            if (windowToShow == settingsWindow.gameplay)
             {
                 listing_Standard.Begin(rect);
                 Backbutton(listing_Standard);
@@ -262,38 +251,42 @@ namespace AvaliMod
                 settings.avaliRequiredForDrop = (int)listing_Standard.Slider(settings.avaliRequiredForDrop, 0, 100);
                 float scale = settings.healthScale;
                 listing_Standard.Label("HPScaler".Translate(settings.healthScale.Named("SCALE")));
-                settings.healthScale = listing_Standard.Slider(settings.healthScale, 0.01f, 2.5f);
+                settings.healthScale = (float)listing_Standard.Slider(settings.healthScale, 0.01f, 2.5f);
 
                 listing_Standard.Label("ChanceToHackTech".Translate(settings.hackChance.Named("CHANCE")));
                 settings.hackChance = (int)listing_Standard.Slider(settings.hackChance, 0, 100);
                 listing_Standard.Label("AERIALShellCapSetting".Translate(settings.AERIALShellCap.Named("CAP")));
                 settings.AERIALShellCap = (int)listing_Standard.Slider(settings.AERIALShellCap, 1, 100);
                 {
+                    int newTemp;
                     listing_Standard.Label("IlluminateAvaliMaxTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMaxTemp.ToString()), out int newTemp);
+                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMaxTemp.ToString()), out newTemp);
                     if (newTemp != settings.IlluminateAvaliMaxTemp)
                     {
-                        newTemp = Mathf.Clamp(newTemp, -200, 1000);
+                        newTemp= Mathf.Clamp(newTemp, -200, 1000);
                         settings.IlluminateAvaliMaxTemp = newTemp;
                     }
+                    int newTempMin;
                     listing_Standard.Label("IlluminateAvaliMinTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMinTemp.ToString()), out int newTempMin);
+                    int.TryParse(listing_Standard.TextEntry(settings.IlluminateAvaliMinTemp.ToString()), out newTempMin);
                     if (newTempMin != settings.IlluminateAvaliMinTemp)
                     {
-                        newTempMin = Mathf.Clamp(newTempMin, -200, newTemp);
+                        newTempMin = Mathf.Clamp(newTempMin,-200, newTemp);
                         settings.IlluminateAvaliMinTemp = newTempMin;
                     }
                 }
                 {
+                    int newTemp;
                     listing_Standard.Label("IWAvaliMaxTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMaxTemp.ToString()), out int newTemp);
+                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMaxTemp.ToString()), out newTemp);
                     if (newTemp != settings.IWAvaliMaxTemp)
                     {
                         newTemp = Mathf.Clamp(newTemp, -200, 1000);
                         settings.IWAvaliMaxTemp = newTemp;
                     }
+                    int newTempMin;
                     listing_Standard.Label("IWAvaliMinTemp".Translate());
-                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMinTemp.ToString()), out int newTempMin);
+                    int.TryParse(listing_Standard.TextEntry(settings.IWAvaliMinTemp.ToString()), out newTempMin);
                     if (newTempMin != settings.IWAvaliMinTemp)
                     {
                         newTempMin = Mathf.Clamp(newTempMin, -200, newTemp);
@@ -301,16 +294,13 @@ namespace AvaliMod
                     }
                 }
             }
-
-            #endregion gameplay
-
+            #endregion
             #region Debug
-
             //Debug
-            if (windowToShow == SettingsWindow.debug)
+            if (windowToShow == settingsWindow.debug)
             {
                 listing_Standard.Begin(TopLeft);
-                Modulefinder.Startup();
+                Modulefinder.startup();
                 listing_Standard.Label("Debug settings");
                 listing_Standard.GapLine(10);
                 listing_Standard.CheckboxLabeled("ToggleDebug".Translate(), ref settings.enableDebugMode);
@@ -321,12 +311,9 @@ namespace AvaliMod
                 listing_Standard.Label(RimValiUtility.modulesFound);
                 Backbutton(listing_Standard);
             }
-
-            #endregion Debug
-
+            #endregion
             #region Pawns
-
-            if (windowToShow == SettingsWindow.pawns)
+            if (windowToShow == settingsWindow.pawns)
             {
                 Listing_Standard ls = new Listing_Standard();
                 Vector2 scrollPos = new Vector2(0, 0);
@@ -358,6 +345,8 @@ namespace AvaliMod
                           option.min.g = ls.Slider(option.min.g, 0, 255);
                           option.min.b = ls.Slider(option.min.b, 0, 255);
                       }
+
+
                   }
                   if (ls.ButtonText("Show skin"))
                       showingSkinColors = !showingSkinColors;
@@ -407,13 +396,10 @@ namespace AvaliMod
                   ls.ButtonText("Enable pawn editing tab");*/
                 // ls.EndScrollView(ref rect);
             }
-
-            #endregion Pawns
-
+            #endregion
             #region Multithreading warn
-
             //Multithreading reboot warn
-            if (windowToShow == SettingsWindow.threading)
+            if (windowToShow == settingsWindow.threading)
             {
                 listing_Standard.Begin(rect);
                 listing_Standard.Label("MultiThreadWarnLabel".Translate());
@@ -422,26 +408,28 @@ namespace AvaliMod
                 bool goBack = listing_Standard.ButtonText("MultiThreadNo".Translate());
                 if (ready)
                 {
-                    settings.packMultiThreading = !settings.packMultiThreading;
+                    void UpdateBool(ref bool val)
+                    {
+                        val = !val;
+                    }
+                    UpdateBool(ref settings.packMultiThreading);
                     settings.Write();
                     GenCommandLine.Restart();
                 }
                 if (goBack)
                 {
-                    windowToShow = SettingsWindow.main;
+                    windowToShow = settingsWindow.main;
                 }
             }
-
-            #endregion Multithreading warn
-
-            if (windowToShow != SettingsWindow.pawns)
+            #endregion
+            if (windowToShow != settingsWindow.pawns)
             {
                 listing_Standard.End();
             }
 
             base.DoSettingsWindowContents(rect);
-        }
 
+        }
         public override string SettingsCategory()
         {
             return "RimVali: Far From Avalon";
