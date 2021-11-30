@@ -70,8 +70,8 @@
    <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHUD</defName>
       
-    <label>Avali HUD [placeholder]</label>
-    <description>An Avali HUD. Attached to the side of an Avali’s head, this piece sports three important components: A small antenna to relay and receive information, a hard translucent visor, and- most importantly of all- and a matrix of miniscule LASERs at the base of the visor. Whilst these can feed the Avali a lot of information, they sadly can only keep to one color and have to keep 2D as well.</description>
+    <label>Avali HUD</label>
+    <description>An Avali HUD. Attached to the side of an Avali’s head, this piece sports three important components: A small antenna to relay and receive information, a hard translucent visor and most importantly of all a matrix of miniscule LASERs at the base of the visor. Whilst these can feed the Avali a lot of information, they sadly can only keep to one color and have to keep 2D as well.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -160,7 +160,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHeadress</defName>
     <label>Avali traditional headress</label>
-    <description>A small traditional avali headdress. Simple sporting strings with chimes attached to them around the upper ears meet at a single point on the back of the head before branching off to allow for more chimes on the front and back of the head. Both for beautiful sounds and echolocation; the chimes make up the majority of this headdress.</description>
+    <description>A small traditional avali headdress. Sporting simple strings with chimes attached to them, they go around the upper ears only to meet at a single point on the back of the head before then branching off to allow for more chimes on the front and back of the head. Both for beautiful sounds and echolocation; the chimes make up the majority of this headdress.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <skillRequirements>
