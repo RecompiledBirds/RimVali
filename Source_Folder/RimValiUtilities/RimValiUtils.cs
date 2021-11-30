@@ -264,7 +264,7 @@ namespace AvaliMod
         {
             Date date = new Date();
             Joined = false;
-            if ((!driver.PawnsHasHadPack(pawn)) && date.ToString() == pack.creationDate.ToString())
+            if ((!driver.PawnHasHadPack(pawn)) && date.ToString() == pack.creationDate.ToString())
             {
                 driver.AddPawnToPack(pawn,ref pack);
                 Joined = true;
@@ -419,7 +419,7 @@ namespace AvaliMod
             {
                 Log.Error("Assembly is null!");
             }
-            string str1 = "Are you watching? \n -Nesi";
+            // string str1 = "Are you watching? \n -Nesi";
             //RimValiCore.RimValiUtility.InvokeMethod(a,"Show","MessageBox",obj, out int result, new object[] {str1, "Nesi" });
             /*MessageBoxResult res = MessageBox.Show("Are you watching? \n -Nesi", "Nesi");
             if (res == MessageBoxResult.Yes)

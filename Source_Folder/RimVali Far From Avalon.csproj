@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HediffStuff\ShowTextV3\ShowTextClass.cs" />
-    <Compile Include="Packs\Threading\ThreadQueue.cs" />
     <Compile Include="PatchOperations.cs" />
     <Compile Include="HarmonyPatches\Credits.cs" />
     <Compile Include="HediffStuff\ConflictsWithComp.cs" />

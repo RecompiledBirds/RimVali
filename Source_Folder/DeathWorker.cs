@@ -24,7 +24,10 @@ namespace AvaliMod
                         Log.Message("I got here, packs exist.");
                     }
                     Pawn pawn = corpse.InnerPawn;
-                    AvaliPack pack = pawn.GetPack();
+                    // I changed this from GetPack to GetPackWithoutSelf (the former doesn't exist anymore)
+                    // Is that correct?
+                    // -Toby
+                    AvaliPack pack = pawn.GetPackWithoutSelf();
                     if (pack != null)
                     {
                         if (enableDebug)

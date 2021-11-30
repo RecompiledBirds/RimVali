@@ -52,7 +52,8 @@ namespace AvaliMod
         }
 
         public bool PawnHasPack(Pawn pawn) => pawnsThatHavePacks.Contains(pawn);
-        public bool PawnsHasHadPack(Pawn pawn) => GetPackCount(pawn) > 0;
+
+        public bool PawnHasHadPack(Pawn pawn) => GetPackCount(pawn) > 0;
 
         private void RemovePack(AvaliPack pack)
         {
