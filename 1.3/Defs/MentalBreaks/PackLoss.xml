@@ -3,7 +3,7 @@
   <MentalBreakDef>
     <defName>PackLoss</defName>
     <mentalState>PackLossState</mentalState>
-    <workerClass>AvaliMod.PackBreakworker</workerClass>
+    <workerClass>AvaliMod.PackBreakWorker</workerClass>
     <baseCommonality>0.5</baseCommonality>
     <intensity>Minor</intensity>
   </MentalBreakDef>

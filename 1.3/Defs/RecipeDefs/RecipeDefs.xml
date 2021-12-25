@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
   <!-- Ferroweave -->
-
   <RecipeDef>
     <defName>RimValiPrintAerogel</defName>
     <label>Print aerogel</label>
@@ -98,8 +96,8 @@
       <AvaliAerogel>40</AvaliAerogel>
     </products>
   </RecipeDef>
-  <!-- Tungsten -->
 
+  <!-- Tungsten -->
   <RecipeDef>
     <defName>RimValiPowderTungsten</defName>
     <label>Sinter Tungsten</label>
@@ -619,6 +617,7 @@
     </researchPrerequisites>
   </RecipeDef>
 
+
   <RecipeDef>
     <workAmount>100</workAmount>
     <defName>WeaveNanoCarbonFiber</defName>
@@ -653,6 +652,11 @@
       <li>NanoFibreResearch</li>
     </researchPrerequisites>
   </RecipeDef>
+
+
+
+
+
 
   <RecipeDef>
     <workAmount>100</workAmount>

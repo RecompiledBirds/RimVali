@@ -211,7 +211,7 @@
     <skillGains>
       <li>
         <skill>Intellectual</skill>
-        <amount>5</amount>
+        <amount>8</amount>
       </li>
       <li>
         <skill>Social</skill>
@@ -554,8 +554,7 @@
     <defName>AvaliSpy</defName>
     <title>Illuminate Spy</title>
     <shortTitle>Spy</shortTitle>
-    <storyDesc>[PAWN_nameDef] enlisted at a young age to join the Illuminate. Years and years of propaganda clearly did their job, and [PAWN_nameDef] quickly climbed the ranks of the Illuminate spy program. [PAWN_nameDef] lives to serve the Illuminate, the Illuminate serves to grant livelihood to [PAWN_nameDef].\n\nIf [PAWN_nameDef] wants something out of someone, [PAWN_pronoun] will get it, no matter the cost. It's not torture, it's coersion after all! [PAWN_nameDef] can play many roles, and can hold [PAWN_possessive] own in many situations. 
-    </storyDesc>
+    <storyDesc>[PAWN_nameDef] enlisted at a young age to join the Illuminate. Years and years of propaganda clearly did their job, and [PAWN_nameDef] quickly climbed the ranks of the Illuminate spy program. [PAWN_nameDef] lives to serve the Illuminate, the Illuminate serves to grant livelihood to [PAWN_nameDef].\n\nIf [PAWN_nameDef] wants something out of someone, [PAWN_pronoun] will get it, no matter the cost. It's not torture, it's coersion after all! [PAWN_nameDef] can play many roles, and can hold [PAWN_possessive] own in many situations.</storyDesc>
     <backstorySlot>Adulthood</backstorySlot>
     <spawnInCategories>
       <li>RimValiBackstories</li>

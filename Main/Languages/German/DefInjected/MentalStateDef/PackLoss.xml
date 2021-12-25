@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <PackLossState.label>Talking to their pack</PackLossState.label> -->
+  <PackLossState.label>Spricht zum Rudel</PackLossState.label>
+  <!-- <PackLossState.beginLetter>{0} has broken down and is trying to talk to their non-existent packmates.</PackLossState.beginLetter> -->
+  <PackLossState.beginLetter>{0} ist zusammengebrochen und versucht mit nicht vorhandenen Rudelmitgliedern zu sprechen.</PackLossState.beginLetter>
+  <!-- <PackLossState.beginLetterLabel>sad wander</PackLossState.beginLetterLabel> -->
+  <PackLossState.beginLetterLabel>trauriger Wanderer</PackLossState.beginLetterLabel>
+  <!-- <PackLossState.recoveryMessage>{0} is no longer trying to talk to their non-existent packmates.</PackLossState.recoveryMessage> -->
+  <PackLossState.recoveryMessage>{0} versucht nicht länger mit nicht vorhandenen Rudelmitgliedern zu sprechen.</PackLossState.recoveryMessage>
+  <!-- <PackLossState.baseInspectLine>Mental state: Talking to packmates</PackLossState.baseInspectLine> -->
+  <PackLossState.baseInspectLine>Übergeschnappt: Spricht mit nicht vorhandenen Rudelmitgliedern</PackLossState.baseInspectLine>
+</LanguageData>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
+    <graphicData>
+      <texPath>Avali/Things/Cybernetics/Ear</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <defName>AvaliBasicBionicEar</defName>
+    <label>Basic bionic Ear</label>
+    <description>A basic bionic Avali ear. Whilst not necessarily better when compared to an organic one, the construction of this bionic directs vibrations a little better and as such still improves the hearing of the wearer by a small amount. But perhaps this augment is best used as a replacement for a lost ear instead of replacing a still functioning organic ones.</description>
+    <descriptionHyperlinks><RecipeDef>InstallAvaliBasicBionicEar</RecipeDef></descriptionHyperlinks>
+    <techHediffsTags>
+      <li>BasicAvali</li>
+    </techHediffsTags>
+
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <AvaliAerogel>10</AvaliAerogel>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>BasicAvaliBionics</researchPrerequisite>
+    </recipeMaker>
+    <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    <statBases>
+      <Mass>5</Mass>
+      <MarketValue>210</MarketValue>
+    </statBases>
+  </ThingDef>
+</Defs>

@@ -4,21 +4,21 @@
     <defName>ToValiTrickster</defName>
     <label>&lt;color=#1F85DE&gt;To'vali the Trickster&lt;/color&gt;</label>
     <description>To'vali loves chaos and battles. He will lead you into a false sense of security, with mild events and down time, before attempting to crush you with the world. The idea of having your colonists fight to your last resource entertains him. But he will gladly reward your for your sacrifices, with a few stings attached of course.\n  &lt;color=#DC2020&gt;To'vali is not a fan of watching humans win, however.&lt;/color&gt;</description>
-    
-    <portraitLarge>avali/Storyteller/trickster_todd_squared</portraitLarge>
-    <portraitTiny>avali/Storyteller/trickster_todd</portraitTiny>
+
+    <portraitLarge>Avali/Storyteller/Trickster_Todd_Squared</portraitLarge>
+    <portraitTiny>Avali/Storyteller/Trickster_Todd</portraitTiny>
     <listOrder>40</listOrder>
     <comps>
-      <li Class="AvaliMod.NesiStoryTellerProps">
+      <li Class="AvaliMod.ToddStoryTellerProps">
         <minDaysPassed>0.6</minDaysPassed>
         <onDays>0.5</onDays>
         <offDays>0.5</offDays>
         <minSpacingDays>0.5</minSpacingDays>
         <acceptFractionByDaysPassedCurve>
           <points>
-            <li>(1, 10)</li>
-            <li>(3, 18)</li>
-            <li>(9,30)</li>
+            <li>(1, 15)</li>
+            <li>(3, 23)</li>
+            <li>(9, 40)</li>
           </points>
         </acceptFractionByDaysPassedCurve>
       </li>

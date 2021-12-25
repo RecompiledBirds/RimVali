@@ -11,7 +11,7 @@
         <showConflicts>false</showConflicts>
       </li>
 
-      <li Class="AvaliMod.ShowTextPropsV3">
+      <li Class="AvaliMod.ShowTextProps">
         <showText>
           <li>
             <textToShow>chirp</textToShow>

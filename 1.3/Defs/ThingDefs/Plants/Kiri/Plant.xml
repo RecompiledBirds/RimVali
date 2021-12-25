@@ -9,7 +9,7 @@
       <Nutrition>0.2</Nutrition>
     </statBases>
     <graphicData>
-      <texPath>avali/Things/Plants/Kiri/KiriPlantFull</texPath>
+      <texPath>Avali/Things/Plants/Kiri/KiriPlantFull</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <selectable>true</selectable>
@@ -25,7 +25,7 @@
         <li>Ground</li>
         <li>Hydroponic</li>
       </sowTags>
-      <immatureGraphicPath>avali/Things/Plants/Kiri/KiriPlant</immatureGraphicPath>
+      <immatureGraphicPath>Avali/Things/Plants/Kiri/KiriPlant</immatureGraphicPath>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.3~0.8</visualSizeRange>

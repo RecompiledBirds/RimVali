@@ -60,7 +60,7 @@
       <li>
         <factionDef>IWPlayerColony</factionDef>
         <isHackable>true</isHackable>
-        <researchProj>AERIELRES</researchProj>
+        <researchProj>AERIALRES</researchProj>
       </li>
       <li>
         <factionDef>IWPlayerColony</factionDef>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ThingDef ParentName="MakeableAERIALShellBase">
+    <defName>AERIALEMPShell</defName>
+    <label>AERIAL EMP rocket</label>
+    <description>A rocket with an onboard EMP device, made to be launched from the AERIAL system.</description>
+    <graphicData>
+      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_EMP</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>56</explosiveRadius>
+        <explosiveDamageType>EMP</explosiveDamageType>
+        <explosiveExpandPerStackcount>2</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>AERIAL_EMP_SHELL</projectileWhenLoaded>
+    <costList>
+      <AeroTungstenCarbide>10</AeroTungstenCarbide>
+      <AvaliTungstenPowder>20</AvaliTungstenPowder>
+      <Steel>20</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>AERIALRES</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>AERIAL_EMP_SHELL</defName>
+    <label>EMP shell</label>
+    <graphicData>
+      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_EMP_LAUNCHED</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>EMP</damageDef>
+      <!-- damage amount is the damage def default -->
+      <speed>36</speed>
+      <explosionRadius>20</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>MortarBomb_Explode</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+</Defs>

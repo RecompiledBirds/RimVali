@@ -3,7 +3,7 @@
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>AvaliBasicTempControl</defName>
     <graphicData>
-      <texPath>avali/Things/Cybernetics/torso</texPath>
+      <texPath>Avali/Things/Cybernetics/Torso</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -11,7 +11,7 @@
       <li>BasicAvali</li>
     </techHediffsTags>
 
-    <label>Basic Temperature Control Augment [TCA]</label>
+    <label>Basic Temperature Control Augment (T.C.A.)</label>
     <description>A basic Temperature Control Augment (or just TCA). This augment uses cooling and heating systems to regulate and keep the wearer within temperature ranges where the egg-whites won’t start decaying. This is only the basic version of it and isn’t very powerful, but it may just be enough to keep the pawn from overheating or freezing.</description>
     <descriptionHyperlinks><RecipeDef>InstallAvaliTemperatureImplantBasic</RecipeDef></descriptionHyperlinks>
     <costList>

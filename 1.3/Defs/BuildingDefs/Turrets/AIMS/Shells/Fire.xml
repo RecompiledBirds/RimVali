@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
   <ThingDef ParentName="MakeableAIMSShellBase">
     <defName>AIMSINC</defName>
     <label>AIMS incendiary shell</label>
     <description>A shell filled with highly flammable materials. Can be fired from an AIMS system.</description>
     <graphicData>
-      <texPath>avali/buildings/turrets/AIMS/Shells/AIMS_INC</texPath>
+      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_INC</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -33,7 +32,7 @@
     <defName>AIMS_INC_SHELL</defName>
     <label>high-explosive shell</label>
     <graphicData>
-      <texPath>avali/buildings/turrets/AIMS/Shells/AIMS_INC_launched</texPath>
+      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_INC_launched</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
@@ -50,5 +49,4 @@
       <soundAmbient>MortarRound_Ambient</soundAmbient>
     </projectile>
   </ThingDef>
-
 </Defs>

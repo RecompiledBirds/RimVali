@@ -157,7 +157,7 @@
     </techHediffsTags>
     <techHediffsChance>2</techHediffsChance>
     <invNutrition>5</invNutrition>
-  </PawnKindDef>###
+  </PawnKindDef>
 
   <PawnKindDef ParentName="BaseAvali">
     <defName>AvaliTownGuard</defName>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef ParentName = "AddedBodyPartBase">
+  <HediffDef ParentName="AddedBodyPartBase">
     <defName>RimValiClothFeathers</defName>
     <label>Cloth arm feathers</label>
     <description>Cloth arm feathers. A simple, easy replacement.</description>
@@ -10,7 +10,7 @@
       <partEfficiency>0.3</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <HediffDef ParentName = "AddedBodyPartBase">
+  <HediffDef ParentName="AddedBodyPartBase">
     <defName>RimValiPegTail</defName>
     <label>Avali peg tail</label>
     <description>A peg tail. The avali see it as a.. "interesting" replacement choice.</description>

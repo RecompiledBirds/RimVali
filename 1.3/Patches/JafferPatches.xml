@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Apply patches to both Jaffers Avali (If you are here, check his out- it's the inspiration for this mod!) and our mod accordingly -->
-
 <Patch>
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Avali Race Mod - 1.6.3</li>
-    </mods> 
+    </mods>
     <match Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationReplace">
@@ -20,5 +19,4 @@
       </operations>
     </match>
   </Operation>
-
 </Patch>

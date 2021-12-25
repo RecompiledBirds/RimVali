@@ -7,7 +7,7 @@
     <soundInteract>Grain_Drop</soundInteract>
     <soundDrop>Grain_Drop</soundDrop>
     <graphicData>
-      <texPath>avali/Things/Plants/Kiri/Kiri_fruits</texPath>
+      <texPath>Avali/Things/Plants/Kiri/Kiri_fruits</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1.1</MarketValue>

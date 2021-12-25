@@ -11,7 +11,7 @@
       <li>
         <label>My packmate {0} was sold</label>
         <description>My packmate was sold, as if they were nothing more than something to trade for coins... I already miss them..</description>
-        <baseMoodEffect>-20</baseMoodEffect> 
+        <baseMoodEffect>-20</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

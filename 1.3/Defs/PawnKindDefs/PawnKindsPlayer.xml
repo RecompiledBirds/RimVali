@@ -32,14 +32,14 @@
     </techHediffsTags>
     <techHediffsChance>0.65</techHediffsChance>
     <apparelMoney>180~4000</apparelMoney>
-    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
   </PawnKindDef>
 
   <PawnKindDef ParentName="BaseAvali">
     <defName>RimValiEggColonist</defName>
     <label>Colonist</label>
     <defaultFactionType>RimValiPlayerColony</defaultFactionType>
-    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>    
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
   </PawnKindDef>
 
   <PawnKindDef ParentName="BaseAvali">
@@ -56,7 +56,7 @@
       <max>600</max>
     </techHediffsMoney>
     <apparelMoney>100~200</apparelMoney>
-    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
   </PawnKindDef>
   <!-- RitualNeo -->
 
@@ -73,7 +73,7 @@
     </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <apparelMoney>100~200</apparelMoney>
-    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
   </PawnKindDef>
   <!-- Eimilian -->
   <PawnKindDef ParentName="BaseAvali">
@@ -89,7 +89,7 @@
     </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <apparelMoney>100~200</apparelMoney>
-    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
+    <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
   </PawnKindDef>
 
 </Defs>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <ScenarioDef>
     <defName>IWAvaliScenario</defName>
     <label>Independent worlds tribe</label>
@@ -56,7 +55,6 @@
           <thingDef>Steel</thingDef>
           <count>300</count>
         </li>
-
         <li Class="ScenPart_ScatterThingsAnywhere">
           <def>ScatterThingsAnywhere</def>
           <thingDef>MealSurvivalPack</thingDef>

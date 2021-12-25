@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <NesiSpecOps.label>Nesi's Spec Ops Avali</NesiSpecOps.label> -->
+  <NesiSpecOps.label>Nesi's Avali-Spezialeinheit</NesiSpecOps.label>
+  <!-- <NesiSpecOps.labelPlural>Nesi's Spec Ops Avalis</NesiSpecOps.labelPlural> -->
+  <NesiSpecOps.labelPlural>Nesi's Avali-Spezialeinheiten</NesiSpecOps.labelPlural>
+  <!-- <NesiSpecOps.labelMale>male Nesi's Spec Ops Avali</NesiSpecOps.labelMale> -->
+  <NesiSpecOps.labelMale>männliche Avali-Spezialeinheit (Nesi)</NesiSpecOps.labelMale>
+  <!-- <NesiSpecOps.labelMalePlural>male Nesi's Spec Ops Avalis</NesiSpecOps.labelMalePlural> -->
+  <NesiSpecOps.labelMalePlural>männliche Avali-Spezialeinheiten (Nesi)</NesiSpecOps.labelMalePlural>
+  <!-- <NesiSpecOps.labelFemale>female Nesi's Spec Ops Avali</NesiSpecOps.labelFemale> -->
+  <NesiSpecOps.labelFemale>weibliche Avali-Spezialeinheit (Nesi)</NesiSpecOps.labelFemale>
+  <!-- <NesiSpecOps.labelFemalePlural>female Nesi's Spec Ops Avalis</NesiSpecOps.labelFemalePlural> -->
+  <NesiSpecOps.labelFemalePlural>weibliche Avali-Spezialeinheiten (Nesi)</NesiSpecOps.labelFemalePlural>
+</LanguageData>

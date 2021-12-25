@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <IWAvaliRace.label>Avali</IWAvaliRace.label> -->
+  <IWAvaliRace.label>Avali</IWAvaliRace.label>
+  <!-- <IWAvaliRace.description>Cute, fluffy raptors with highly advanced tech. The primary in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</IWAvaliRace.description> -->
+  <IWAvaliRace.description>Süße, flauschige Raptoren mit hochentwickelter Technologie. Der Hauptbestandteil ihrer Biologie ist Ammoniak, wodurch sie biologisch mit dem Menschen inkompatibel sind. Avali vertragen Hitze nicht gut, da der Siedepunkt ihres Blutes deutlich niedriger ist, als von menschlichem Blut. Jedoch können sie dafür problemlos in der Kälte überleben.</IWAvaliRace.description>
+
+  <!-- <IWAvaliRace.tools.0.label>teeth</IWAvaliRace.tools.0.label> -->
+  <IWAvaliRace.tools.0.label>Zähne</IWAvaliRace.tools.0.label>
+  <!-- <IWAvaliRace.tools.1.label>Left Talons</IWAvaliRace.tools.1.label> -->
+  <IWAvaliRace.tools.1.label>Linke Krallen</IWAvaliRace.tools.1.label>
+  <!-- <IWAvaliRace.tools.2.label>Right Talons</IWAvaliRace.tools.2.label>   -->
+  <IWAvaliRace.tools.2.label>Rechte Krallen</IWAvaliRace.tools.2.label>  
+  <!-- <IWAvaliRace.tools.3.label>teeth</IWAvaliRace.tools.3.label> -->
+  <IWAvaliRace.tools.3.label>Zähne</IWAvaliRace.tools.3.label>
+  <!-- <IWAvaliRace.tools.4.label>Left Talons</IWAvaliRace.tools.4.label> -->
+  <IWAvaliRace.tools.4.label>Linke Krallen</IWAvaliRace.tools.4.label>
+  <!-- <IWAvaliRace.tools.5.label>Right Talons</IWAvaliRace.tools.5.label> -->
+  <IWAvaliRace.tools.5.label>Rechte Krallen</IWAvaliRace.tools.5.label>
+</LanguageData>

@@ -43,7 +43,7 @@
     <stages>
       <li>
         <label>My packmate {0} is missing</label>
-        <description>My packmate is missing... the world just isn't the same without them.</description> 
+        <description>My packmate is missing... the world just isn't the same without them.</description>
         <baseMoodEffect>-20</baseMoodEffect>
       </li>
     </stages>

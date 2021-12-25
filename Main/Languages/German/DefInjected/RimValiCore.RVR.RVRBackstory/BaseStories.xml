@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>  
+  <!-- data from Backstories.xml -->
+
+  <AvaliHologram.title>AvaliHologram</AvaliHologram.title>
+  <AvaliHologram.story.title>AvaliHologram</AvaliHologram.story.title>
+  <AvaliHologram.shortTitle>AvaliHologram</AvaliHologram.shortTitle>
+  <AvaliHologram.story.titleShort>AvaliHologram</AvaliHologram.story.titleShort>
+  <AvaliHologram.storyDesc>storyDesc</AvaliHologram.storyDesc>
+  <AvaliHologram.story.baseDesc>storyDesc</AvaliHologram.story.baseDesc>
+
+
+  <AvaliNomad.title>AvaliNomad</AvaliNomad.title>
+  <AvaliNomad.story.title>AvaliNomad</AvaliNomad.story.title>
+  <AvaliNomad.shortTitle>AvaliNomad</AvaliNomad.shortTitle>
+  <AvaliNomad.story.titleShort>AvaliNomad</AvaliNomad.story.titleShort>
+  <AvaliNomad.storyDesc>storyDesc</AvaliNomad.storyDesc>
+  <AvaliNomad.story.baseDesc>storyDesc</AvaliNomad.story.baseDesc>
+
+
+  <AvaliWarchild.title>AvaliWarchild</AvaliWarchild.title>
+  <AvaliWarchild.story.title>AvaliWarchild</AvaliWarchild.story.title>
+  <AvaliWarchild.shortTitle>AvaliWarchild</AvaliWarchild.shortTitle>
+  <AvaliWarchild.story.titleShort>shortTitle</AvaliWarchild.story.titleShort>
+  <AvaliWarchild.storyDesc>storyDesc</AvaliWarchild.storyDesc>
+  <AvaliWarchild.story.baseDesc>storydesc</AvaliWarchild.story.baseDesc>
+
+
+  <AvaliSoldierChild.title>AvaliSoldierChild</AvaliSoldierChild.title>
+  <AvaliSoldierChild.story.title>AvaliSoldierChild</AvaliSoldierChild.story.title>
+  <AvaliSoldierChild.shortTitle>AvaliSoldierChild</AvaliSoldierChild.shortTitle>
+  <AvaliSoldierChild.story.titleShort>AvaliSoldierChild</AvaliSoldierChild.story.titleShort>
+  <AvaliSoldierChild.storyDesc>storyDesc</AvaliSoldierChild.storyDesc>
+  <AvaliSoldierChild.story.baseDesc>storydesc</AvaliSoldierChild.story.baseDesc>
+
+
+  <AvaliLaborChild.title>AvaliLaborChild</AvaliLaborChild.title>
+  <AvaliLaborChild.story.title>AvaliLaborChild</AvaliLaborChild.story.title>
+  <AvaliLaborChild.shortTitle>AvaliLaborChild</AvaliLaborChild.shortTitle>
+  <AvaliLaborChild.story.titleShort>AvaliLaborChild</AvaliLaborChild.story.titleShort>
+  <AvaliLaborChild.storyDesc>storyDesc</AvaliLaborChild.storyDesc>
+  <AvaliLaborChild.story.baseDesc>storydesc</AvaliLaborChild.story.baseDesc>
+
+
+  <AvaliBlessedChild.title>AvaliBlessedChild</AvaliBlessedChild.title>
+  <AvaliBlessedChild.story.title>AvaliBlessedChild</AvaliBlessedChild.story.title>
+  <AvaliBlessedChild.shortTitle>AvaliBlessedChild</AvaliBlessedChild.shortTitle>
+  <AvaliBlessedChild.story.titleShort>AvaliBlessedChild</AvaliBlessedChild.story.titleShort>
+  <AvaliBlessedChild.storyDesc>storyDesc</AvaliBlessedChild.storyDesc>
+  <AvaliBlessedChild.story.baseDesc>storydesc</AvaliBlessedChild.story.baseDesc>
+
+
+  <AvaliLateHatch.title>AvaliLateHatch</AvaliLateHatch.title>
+  <AvaliLateHatch.story.title>AvaliLateHatch</AvaliLateHatch.story.title>
+  <AvaliLateHatch.shortTitle>AvaliLateHatch</AvaliLateHatch.shortTitle>
+  <AvaliLateHatch.story.titleShort>AvaliLateHatch</AvaliLateHatch.story.titleShort>
+  <AvaliLateHatch.storyDesc>storyDesc</AvaliLateHatch.storyDesc>
+  <AvaliLateHatch.story.baseDesc>storydesc</AvaliLateHatch.story.baseDesc>
+
+
+  <AvaliSolider.title>AvaliSolider</AvaliSolider.title>
+  <AvaliSolider.story.title>AvaliSolider</AvaliSolider.story.title>
+  <AvaliSolider.shortTitle>AvaliSolider</AvaliSolider.shortTitle>
+  <AvaliSolider.storyDesc>storyDesc</AvaliSolider.storyDesc>
+  <AvaliSolider.story.baseDesc>storydesc</AvaliSolider.story.baseDesc>
+
+
+  <AvaliFarmer.title>AvaliFarmer</AvaliFarmer.title>
+  <AvaliFarmer.story.title>AvaliFarmer</AvaliFarmer.story.title>
+  <AvaliFarmer.shortTitle>AvaliFarmer</AvaliFarmer.shortTitle>
+  <AvaliFarmer.storyDesc>storyDesc</AvaliFarmer.storyDesc>
+  <AvaliFarmer.story.baseDesc>storydesc</AvaliFarmer.story.baseDesc>
+
+
+  <AvaliResearcher.title>AvaliResearcher</AvaliResearcher.title>
+  <AvaliResearcher.story.title>AvaliResearcher</AvaliResearcher.story.title>
+  <AvaliResearcher.shortTitle>AvaliResearcher</AvaliResearcher.shortTitle>
+  <AvaliResearcher.storyDesc>storyDesc</AvaliResearcher.storyDesc>
+  <AvaliResearcher.story.baseDesc>storydesc</AvaliResearcher.story.baseDesc>
+
+
+  <AvaliBuilder.title>AvaliBuilder</AvaliBuilder.title>
+  <AvaliBuilder.story.title>AvaliBuilder</AvaliBuilder.story.title>
+  <AvaliBuilder.shortTitle>AvaliBuilder</AvaliBuilder.shortTitle>
+  <AvaliBuilder.storyDesc>storyDesc</AvaliBuilder.storyDesc>
+  <AvaliBuilder.story.baseDesc>storydesc</AvaliBuilder.story.baseDesc>
+
+
+  <AvaliExplorer.title>AvaliExplorer</AvaliExplorer.title>
+  <AvaliExplorer.story.title>AvaliExplorer</AvaliExplorer.story.title>
+  <AvaliExplorer.shortTitle>AvaliExplorer</AvaliExplorer.shortTitle>
+  <AvaliExplorer.storyDesc>storyDesc</AvaliExplorer.storyDesc>
+  <AvaliExplorer.story.baseDesc>storydesc</AvaliExplorer.story.baseDesc>
+
+
+  <AvaliDiplomat.title>AvaliDiplomat</AvaliDiplomat.title>
+  <AvaliDiplomat.story.title>AvaliDiplomat</AvaliDiplomat.story.title>
+  <AvaliDiplomat.shortTitle>AvaliDiplomat</AvaliDiplomat.shortTitle>
+  <AvaliDiplomat.storyDesc>storyDesc</AvaliDiplomat.storyDesc>
+  <AvaliDiplomat.story.baseDesc>storydesc</AvaliDiplomat.story.baseDesc>
+
+
+  <AvaliLoner.title>AvaliLoner</AvaliLoner.title>
+  <AvaliLoner.story.title>AvaliLoner</AvaliLoner.story.title>
+  <AvaliLoner.shortTitle>AvaliLoner</AvaliLoner.shortTitle>
+  <AvaliLoner.storyDesc>storyDesc</AvaliLoner.storyDesc>
+  <AvaliLoner.story.baseDesc>storydesc</AvaliLoner.story.baseDesc>
+
+
+  <AvaliSpy.title>AvaliSpy</AvaliSpy.title>
+  <AvaliSpy.story.title>AvaliSpy</AvaliSpy.story.title>
+  <AvaliSpy.shortTitle>AvaliSpy</AvaliSpy.shortTitle>
+  <AvaliSpy.storyDesc>storyDesc</AvaliSpy.storyDesc>
+  <AvaliSpy.story.baseDesc>storydesc</AvaliSpy.story.baseDesc>
+
+
+  <AvaliThief.title>AvaliThief</AvaliThief.title>
+  <AvaliThief.story.title>AvaliThief</AvaliThief.story.title>
+  <AvaliThief.shortTitle>AvaliThief</AvaliThief.shortTitle>
+  <AvaliThief.storyDesc>storyDesc</AvaliThief.storyDesc>
+  <AvaliThief.story.baseDesc>storydesc</AvaliThief.story.baseDesc>
+
+
+  <AvaliTinkerer.title>AvaliTinkerer</AvaliTinkerer.title>
+  <AvaliTinkerer.story.title>AvaliTinkerer</AvaliTinkerer.story.title>
+  <AvaliTinkerer.shortTitle>AvaliTinkerer</AvaliTinkerer.shortTitle>
+  <AvaliTinkerer.storyDesc>storyDesc</AvaliTinkerer.storyDesc>
+  <AvaliTinkerer.story.baseDesc>storyDesc</AvaliTinkerer.story.baseDesc>
+
+
+  <AvaliCaveMedic.title>AvaliCaveMedic</AvaliCaveMedic.title>
+  <AvaliCaveMedic.story.title>AvaliCaveMedic</AvaliCaveMedic.story.title>
+  <AvaliCaveMedic.shortTitle>AvaliCaveMedic</AvaliCaveMedic.shortTitle>
+  <AvaliCaveMedic.story.titleShort>AvaliCaveMedic</AvaliCaveMedic.story.titleShort>
+  <AvaliCaveMedic.storyDesc>storyDesc</AvaliCaveMedic.storyDesc>
+  <AvaliCaveMedic.story.baseDesc>storydesc</AvaliCaveMedic.story.baseDesc>
+
+
+  <AvaliBionicDesigner.title>AvaliBionicDesigner</AvaliBionicDesigner.title>
+  <AvaliBionicDesigner.story.title>AvaliBionicDesigner</AvaliBionicDesigner.story.title>
+  <AvaliBionicDesigner.shortTitle>AvaliBionicDesigner</AvaliBionicDesigner.shortTitle>
+  <AvaliBionicDesigner.story.titleShort>AvaliBionicDesigner</AvaliBionicDesigner.story.titleShort>
+  <AvaliBionicDesigner.storyDesc>storyDesc</AvaliBionicDesigner.storyDesc>
+  <AvaliBionicDesigner.story.baseDesc>storydesc</AvaliBionicDesigner.story.baseDesc>
+
+
+  <AvaliSheriff.title>AvaliSheriff</AvaliSheriff.title>
+  <AvaliSheriff.story.title>AvaliSheriff</AvaliSheriff.story.title>
+  <AvaliSheriff.shortTitle>AvaliSheriff</AvaliSheriff.shortTitle>
+  <AvaliSheriff.storyDesc>storyDesc</AvaliSheriff.storyDesc>
+  <AvaliSheriff.story.baseDesc>storydesc</AvaliSheriff.story.baseDesc>
+
+
+  <AvaliTrained.title>AvaliTrained</AvaliTrained.title>
+  <AvaliTrained.story.title>AvaliTrained</AvaliTrained.story.title>
+  <AvaliTrained.shortTitle>AvaliTrained</AvaliTrained.shortTitle>
+  <AvaliTrained.story.titleShort>AvaliTrained</AvaliTrained.story.titleShort>
+  <AvaliTrained.storyDesc>storyDesc</AvaliTrained.storyDesc>
+  <AvaliTrained.story.baseDesc>storydesc</AvaliTrained.story.baseDesc>
+
+
+  <AvaliCultist.title>AvaliCultist</AvaliCultist.title>
+  <AvaliCultist.story.title>AvaliCultist</AvaliCultist.story.title>
+  <AvaliCultist.shortTitle>AvaliCultist</AvaliCultist.shortTitle>
+  <AvaliCultist.storyDesc>storyDesc</AvaliCultist.storyDesc>
+  <AvaliCultist.story.baseDesc>storydesc</AvaliCultist.story.baseDesc>
+
+
+  <AvaliBerserker.title>AvaliBerserker</AvaliBerserker.title>
+  <AvaliBerserker.story.title>AvaliBerserker</AvaliBerserker.story.title>
+  <AvaliBerserker.shortTitle>AvaliBerserker</AvaliBerserker.shortTitle>
+  <AvaliBerserker.storyDesc>storyDesc</AvaliBerserker.storyDesc>
+  <AvaliBerserker.story.baseDesc>storydesc</AvaliBerserker.story.baseDesc>
+
+
+  <AvaliFactoryWorker.title>AvaliFactoryWorker</AvaliFactoryWorker.title>
+  <AvaliFactoryWorker.story.title>AvaliFactoryWorker</AvaliFactoryWorker.story.title>
+  <AvaliFactoryWorker.shortTitle>AvaliFactoryWorker</AvaliFactoryWorker.shortTitle>
+  <AvaliFactoryWorker.story.titleShort>AvaliFactoryWorker</AvaliFactoryWorker.story.titleShort>
+  <AvaliFactoryWorker.storyDesc>storyDesc</AvaliFactoryWorker.storyDesc>
+  <AvaliFactoryWorker.story.baseDesc>storydesc</AvaliFactoryWorker.story.baseDesc>
+
+
+  <AvaliModel.title>AvaliModel</AvaliModel.title>
+  <AvaliModel.story.title>AvaliModel</AvaliModel.story.title>
+  <AvaliModel.shortTitle>AvaliModel</AvaliModel.shortTitle>
+  <AvaliModel.storyDesc>storyDesc</AvaliModel.storyDesc>
+  <AvaliModel.story.baseDesc>storydesc</AvaliModel.story.baseDesc>
+
+
+  <AvaliBurger.title>AvaliBurger</AvaliBurger.title>
+  <AvaliBurger.story.title>AvaliBurger</AvaliBurger.story.title>
+  <AvaliBurger.shortTitle>AvaliBurger</AvaliBurger.shortTitle>
+  <AvaliBurger.story.titleShort>AvaliBurger</AvaliBurger.story.titleShort>
+  <AvaliBurger.storyDesc>storyDesc</AvaliBurger.storyDesc>
+  <AvaliBurger.story.baseDesc>storydesc</AvaliBurger.story.baseDesc>
+
+
+  <AvaliAnimalScientist.title>AvaliAnimalScientist</AvaliAnimalScientist.title>
+  <AvaliAnimalScientist.story.title>AvaliAnimalScientist</AvaliAnimalScientist.story.title>
+  <AvaliAnimalScientist.shortTitle>AvaliAnimalScientist</AvaliAnimalScientist.shortTitle>
+  <AvaliAnimalScientist.storyDesc>storyDesc</AvaliAnimalScientist.storyDesc>
+  <AvaliAnimalScientist.story.baseDesc>storydesc</AvaliAnimalScientist.story.baseDesc>
+
+
+  <AvaliPalaceDesigner.title>AvaliPalaceDesigner</AvaliPalaceDesigner.title>
+  <AvaliPalaceDesigner.story.title>AvaliPalaceDesigner</AvaliPalaceDesigner.story.title>
+  <AvaliPalaceDesigner.shortTitle>AvaliPalaceDesigner</AvaliPalaceDesigner.shortTitle>
+  <AvaliPalaceDesigner.storyDesc>storyDesc</AvaliPalaceDesigner.storyDesc>
+  <AvaliPalaceDesigner.story.baseDesc>storydesc</AvaliPalaceDesigner.story.baseDesc>
+
+
+  <NoviceDeveloper.title>NoviceDeveloper</NoviceDeveloper.title>
+  <NoviceDeveloper.story.title>NoviceDeveloper</NoviceDeveloper.story.title>
+  <NoviceDeveloper.shortTitle>NoviceDeveloper</NoviceDeveloper.shortTitle>
+  <NoviceDeveloper.storyDesc>storyDesc</NoviceDeveloper.storyDesc>
+  <NoviceDeveloper.story.baseDesc>storydesc</NoviceDeveloper.story.baseDesc>
+
+
+  <AvaliLostEgg.title>AvaliLostEgg</AvaliLostEgg.title>
+  <AvaliLostEgg.story.title>AvaliLostEgg</AvaliLostEgg.story.title>
+  <AvaliLostEgg.shortTitle>AvaliLostEgg</AvaliLostEgg.shortTitle>
+  <AvaliLostEgg.story.titleShort>AvaliLostEgg</AvaliLostEgg.story.titleShort>
+  <AvaliLostEgg.storyDesc>storyDesc</AvaliLostEgg.storyDesc>
+  <AvaliLostEgg.story.baseDesc>storydesc</AvaliLostEgg.story.baseDesc>
+</LanguageData>

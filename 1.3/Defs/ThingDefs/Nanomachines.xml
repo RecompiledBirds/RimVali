@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
   <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
@@ -9,28 +8,27 @@
     <selectable>true</selectable>
     <altitudeLayer>Item</altitudeLayer>
     <defName>AvaliNanomachines</defName>
-
-    <label>Nanomachines</label>
+    <label>nanomachines</label>
     <stackLimit>75</stackLimit>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
       <li Class= "RimValiCore.HealableMaterial.HealableCompProps">
         <amountHealed>20</amountHealed>
+        <ticksBetweenHeal>60</ticksBetweenHeal>
       </li>
     </comps>
     <alwaysHaulable>true</alwaysHaulable>
     <drawGUIOverlay>true</drawGUIOverlay>
     <rotatable>false</rotatable>
     <description>A group of specialised nanomachines, capable of reshaping and reparing themselves.</description>
-
     <graphicData>
-      <texPath>avali/Things/Nanomachines/nanomachines</texPath>
+      <texPath>Avali/Things/Nanomachines/Nanomachines</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <techLevel>Industrial</techLevel>
     <statBases>
-      <MarketValue>20</MarketValue>
+      <MarketValue>4000</MarketValue>
       <Mass>1.5</Mass>
       <MaxHitPoints>100.0</MaxHitPoints>
       <DeteriorationRate>0.1</DeteriorationRate>
@@ -41,7 +39,6 @@
       <BluntDamageMultiplier>3.45</BluntDamageMultiplier>
       <StuffPower_Insulation_Cold>11</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
-
     </statBases>
     <thingCategories>
       <li>AvaliResources</li>
@@ -60,12 +57,18 @@
       <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-
+      <statFactors>
+        <MaxHitPoints>10.0</MaxHitPoints>
+        <Beauty>1.2</Beauty>
+        <Flammability>0</Flammability>
+        <MarketValue>10.5</MarketValue>
+        <WorkToMake>2.2</WorkToMake>
+        <WorkToBuild>2.2</WorkToBuild>
+      </statFactors>
       <statOffsets>
         <Beauty>4</Beauty>
       </statOffsets>
     </stuffProps>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
   </ThingDef>
-
 </Defs>

@@ -20,7 +20,7 @@
     <rotatable>false</rotatable>
     <description>Ammunition for the BFG Railgun.</description>
     <graphicData>
-      <texPath>avali/buildings/turrets/BFG/BFG_sabot</texPath>
+      <texPath>Avali/Buildings/Turrets/BFG/BFG_sabot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -71,5 +71,4 @@
       <BFGAmmo>5</BFGAmmo>
     </products>
   </RecipeDef>
-
 </Defs>

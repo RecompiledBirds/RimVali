@@ -54,9 +54,11 @@
     <label>"Room" pattern floor</label>
   </DesignatorDropdownGroupDef>
 
-  <TerrainDef  ParentName="AvaliFloorBase">
+  <TerrainDef ParentName="AvaliFloorBase">
     <defName>AvaliRoomPattern</defName>
     <label>{0} "room" pattern floor</label>
+    <!-- The {0} gets replaced, as this is a template for generating floors from different materials at runtime. -->
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
     <renderPrecedence>240</renderPrecedence>
     <description>This floor is often described as looking like a bunch of tiny cubicles/rooms.</description>
     <color>(0.369, 0.369, 0.369)</color>
@@ -70,7 +72,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/r_o_o_m_s</texturePath>
+    <texturePath>Avali/Floors/r_o_o_m_s</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -92,9 +94,11 @@
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
 
-  <TerrainDef  ParentName="AvaliFloorBase">
+  <TerrainDef ParentName="AvaliFloorBase">
     <defName>AvaliFlower</defName>
     <label>{0} flower floor</label>
+    <!-- The {0} gets replaced, as this is a template for generating floors from different materials at runtime. -->
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
     <renderPrecedence>240</renderPrecedence>
     <description>A floor, woven of cloth into a flower.</description>
     <color>(0.369, 0.369, 0.369)</color>
@@ -108,7 +112,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/flower_floor</texturePath>
+    <texturePath>Avali/Floors/flower_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -138,9 +142,11 @@
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
   </TerrainDef>
 
-  <TerrainDef  ParentName="AvaliFloorBase">
+  <TerrainDef ParentName="AvaliFloorBase">
     <defName>AvaliChaosPattern</defName>
     <label>{0} "chaos" floor</label>
+    <!-- The {0} gets replaced, as this is a template for generating floors from different materials at runtime. -->
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
     <renderPrecedence>240</renderPrecedence>
     <description>A stone floor made in a somewhat chaotic pattern.</description>
     <color>(0.369, 0.369, 0.369)</color>
@@ -154,7 +160,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/chaos</texturePath>
+    <texturePath>Avali/Floors/chaos</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -169,9 +175,11 @@
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
 
-  <TerrainDef  ParentName="AvaliFloorBase">
+  <TerrainDef ParentName="AvaliFloorBase">
     <defName>AvaliDiamondFloor</defName>
     <label>{0} diamond floor</label>
+    <!-- The {0} gets replaced, as this is a template for generating floors from different materials at runtime. -->
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
     <renderPrecedence>240</renderPrecedence>
     <description>A floor made in a diamond pattern.</description>
     <color>(0.369, 0.369, 0.369)</color>
@@ -185,7 +193,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/diamond</texturePath>
+    <texturePath>Avali/Floors/diamond</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -201,9 +209,11 @@
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
 
-  <TerrainDef  ParentName="AvaliFloorBase">
+  <TerrainDef ParentName="AvaliFloorBase">
     <defName>AvaliScrapFloor</defName>
     <label>{0} scrap floor</label>
+    <!-- The {0} gets replaced, as this is a template for generating floors from different materials at runtime. -->
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
     <renderPrecedence>240</renderPrecedence>
     <description>A floor made of metal bits and pieces.</description>
     <color>(0.369, 0.369, 0.369)</color>
@@ -215,9 +225,8 @@
     <costList>
       <Steel>2</Steel>
     </costList>
-
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/scrap_floor</texturePath>
+    <texturePath>Avali/Floors/scrap_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -232,9 +241,11 @@
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
 
-  <TerrainDef  ParentName="AvaliFloorBase">
+  <TerrainDef ParentName="AvaliFloorBase">
     <defName>AvaliShingleFloor</defName>
     <label>{0} shingle floor</label>
+    <!-- The {0} gets replaced, as this is a template for generating floors from different materials at runtime. -->
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
     <renderPrecedence>240</renderPrecedence>
     <description>A floor made of stone shingles.</description>
     <color>(0.369, 0.369, 0.369)</color>
@@ -248,7 +259,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/shingles</texturePath>
+    <texturePath>Avali/Floors/shingles</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -263,9 +274,11 @@
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
 
-  <TerrainDef  ParentName="AvaliFloorBase">
+  <TerrainDef ParentName="AvaliFloorBase">
     <defName>AvaliWeaveFloor</defName>
     <label>{0} weave floor</label>
+    <!-- The {0} gets replaced, as this is a template for generating floors from different materials at runtime. -->
+    <ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
     <renderPrecedence>240</renderPrecedence>
     <description>A floor, woven of cloth.</description>
     <color>(0.369, 0.369, 0.369)</color>
@@ -279,7 +292,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/weave_floor</texturePath>
+    <texturePath>Avali/Floors/weave_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>

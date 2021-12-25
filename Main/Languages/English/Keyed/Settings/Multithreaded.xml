@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <goBack>Go back</goBack>
+  <MultiThreadWarnLabel>Multithreading warning!</MultiThreadWarnLabel>
+  <MultiThreadWarnDesc>To enable this, we must restart your game. SAVE YOUR PROGRESS ON ANY CURRENT GAMES.</MultiThreadWarnDesc>
+  <MultiThreadYes>Yes, I understand</MultiThreadYes>
+  <MultiThreadNo>Wait! Go back!</MultiThreadNo>
+  <MultiThreadingDesc>Enable/disable pack multithreading. [WARNING: RESTARTS THE GAME.]\nIt is recommended to have this enabled, as it reduces lag greatly. May cause issues with Dub's performance anaylzer.</MultiThreadingDesc>
+</LanguageData>

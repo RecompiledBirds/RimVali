@@ -39,7 +39,7 @@
             <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
             <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
           </li>
-        </tools>      
+        </tools>
       </li>
     </comps>
   </HediffDef>

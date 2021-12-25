@@ -12,8 +12,8 @@
       <li>RimValiBackstories</li>
       <li>Tribal</li>
     </backstoryCategories>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>Avali/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
 
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>

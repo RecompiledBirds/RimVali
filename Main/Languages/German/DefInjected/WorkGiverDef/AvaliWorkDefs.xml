@@ -1,16 +1,16 @@
-b<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-<!-- <DoBillsNanoForge.label>work at the nanoforge</DoBillsNanoForge.label> -->
-<DoBillsNanoForge.label>arbeitet an der Nanodruck-Schmiede</DoBillsNanoForge.label>
-<!-- <DoBillsNanoForge.verb>smelt</DoBillsNanoForge.verb> -->
-<DoBillsNanoForge.verb>schmilzt</DoBillsNanoForge.verb>
-<!-- <DoBillsNanoForge.gerund>smelting at</DoBillsNanoForge.gerund> -->
-<DoBillsNanoForge.gerund>schmilzt an der</DoBillsNanoForge.gerund>
+  <!-- <DoBillsNanoForge.label>work at the nanoforge</DoBillsNanoForge.label> -->
+  <DoBillsNanoForge.label>arbeitet an der Nanodruck-Schmiede</DoBillsNanoForge.label>
+  <!-- <DoBillsNanoForge.verb>smelt</DoBillsNanoForge.verb> -->
+  <DoBillsNanoForge.verb>schmilzt</DoBillsNanoForge.verb>
+  <!-- <DoBillsNanoForge.gerund>smelting at</DoBillsNanoForge.gerund> -->
+  <DoBillsNanoForge.gerund>schmilzt an der</DoBillsNanoForge.gerund>
 
-<!-- <DoBillsNanoLoom.label>work at the nanoloom</DoBillsNanoLoom.label> -->
-<DoBillsNanoLoom.label>arbeitet an der Nanodruck-Webmaschine</DoBillsNanoLoom.label>
-<!-- <DoBillsNanoLoom.verb>weave</DoBillsNanoLoom.verb> -->
-<DoBillsNanoLoom.verb>webt</DoBillsNanoLoom.verb>
-<!-- <DoBillsNanoLoom.gerund>weaving at</DoBillsNanoLoom.gerund> -->
-<DoBillsNanoLoom.gerund>webt am</DoBillsNanoLoom.gerund>
+  <!-- <DoBillsNanoLoom.label>work at the nanoloom</DoBillsNanoLoom.label> -->
+  <DoBillsNanoLoom.label>arbeitet an der Nanodruck-Webmaschine</DoBillsNanoLoom.label>
+  <!-- <DoBillsNanoLoom.verb>weave</DoBillsNanoLoom.verb> -->
+  <DoBillsNanoLoom.verb>webt</DoBillsNanoLoom.verb>
+  <!-- <DoBillsNanoLoom.gerund>weaving at</DoBillsNanoLoom.gerund> -->
+  <DoBillsNanoLoom.gerund>webt am</DoBillsNanoLoom.gerund>
 </LanguageData>

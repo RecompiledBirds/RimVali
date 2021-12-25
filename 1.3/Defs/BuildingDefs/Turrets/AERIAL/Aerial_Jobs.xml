@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>RefuelAerial</defName>
+    <driverClass>AvaliMod.RefuelAERIALJobDriver</driverClass>
+    <reportString>Refueling Aerial.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

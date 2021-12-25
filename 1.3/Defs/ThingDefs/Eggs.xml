@@ -5,7 +5,7 @@
     <label>Avali egg</label>
     <stackLimit>1</stackLimit>
     <graphicData>
-      <texPath>avali/Things/Egg/Egg</texPath>
+      <texPath>Avali/Things/Egg/Egg</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <color>(255,255,255)</color>
       <drawSize>0.9</drawSize>

@@ -281,51 +281,10 @@
         <def>Abrasive</def>
       </li>
       <li>
-        <!-- For some reason Iron-willed is part of the defName "Nerves" trait, on spectrum 2. Kinda wonder but it doesn't matter too much. -->
-        <!--        
-        <TraitDef>
-          <defName>Nerves</defName>
-          <commonality>2</commonality>
-          <degreeDatas>
-            <li>
-              <label>iron-willed</label>
-              <description>[PAWN_nameDef]'s will is an iron shield. [PAWN_pronoun] keeps going through thick and thin, when others broke down long before.</description>
-              <degree>2</degree>
-              <statOffsets>
-                <MentalBreakThreshold>-0.18</MentalBreakThreshold>
-              </statOffsets>
-            </li>
-            <li>
-              <label>steadfast</label>
-              <description>[PAWN_nameDef] is mentally tough and won't break down under stresses that would crack most people.</description>
-              <degree>1</degree>
-              <statOffsets>
-                <MentalBreakThreshold>-0.09</MentalBreakThreshold>
-              </statOffsets>
-            </li>
-            <li>
-              <label>nervous</label>
-              <description>[PAWN_nameDef] tends to crack under pressure.</description>
-              <degree>-1</degree>
-              <statOffsets>
-                <MentalBreakThreshold>0.08</MentalBreakThreshold>
-              </statOffsets>
-            </li>
-            <li>
-              <label>volatile</label>
-              <description>[PAWN_nameDef] is on a hair-trigger all the time. [PAWN_pronoun] is the first to break in any tough situation.</description>
-              <degree>-2</degree>
-              <statOffsets>
-                <MentalBreakThreshold>0.15</MentalBreakThreshold>
-              </statOffsets>
-            </li>
-          </degreeDatas>
-        </TraitDef> -->
-
+        <!-- Iron-willed is part of the defName "Nerves" trait, on spectrum 2. -->
         <def>Nerves</def>
         <degree>2</degree>
       </li>
     </forcedTraits>
   </AvaliMod.RVRBackstory>
-
 </Defs>

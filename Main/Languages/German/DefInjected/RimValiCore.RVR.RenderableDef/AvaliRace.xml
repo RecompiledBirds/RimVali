@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <EarLL.bodyPart>left lower ear</EarLL.bodyPart> -->
+  <EarLL.bodyPart>linkes unteres Ohr</EarLL.bodyPart>
+  <!-- <EarLR.bodyPart>right lower ear</EarLR.bodyPart> -->
+  <EarLR.bodyPart>rechtes unteres Ohr</EarLR.bodyPart>
+  <!-- <EarUR.bodyPart>right upper ear</EarUR.bodyPart> -->
+  <EarUR.bodyPart>rechtes oberes Ohr</EarUR.bodyPart>
+  <!-- <EarUL.bodyPart>left upper ear</EarUL.bodyPart> -->
+  <EarUL.bodyPart>linkes oberes Ohr</EarUL.bodyPart>
+  <!-- <EyeL.bodyPart>right eye</EyeL.bodyPart> -->
+  <EyeL.bodyPart>rechtes Auge</EyeL.bodyPart>
+  <!-- <EyeR.bodyPart>left eye</EyeR.bodyPart> -->
+  <EyeR.bodyPart>linkes Auge</EyeR.bodyPart>
+  <!-- <TailSkirt.bodyPart>avali Tail</TailSkirt.bodyPart> -->
+  <TailSkirt.bodyPart>avali Schweif</TailSkirt.bodyPart>
+  <!-- <TailMain.bodyPart>avali Tail</TailMain.bodyPart> -->
+  <TailMain.bodyPart>avali Schweif</TailMain.bodyPart>
+</LanguageData>

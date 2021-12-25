@@ -11,8 +11,8 @@
     <backstoryCategories>
       <li>RimValiBackstories</li>
     </backstoryCategories>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>Avali/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
@@ -29,8 +29,8 @@
     </colorSpectrum>
     <techLevel>Spacer</techLevel>
   </FactionDef>
-  <!-- RitualNeo -->
 
+  <!-- RitualNeo -->
   <FactionDef ParentName="PlayerFactionBase">
     <defName>NeoPlayerColony</defName>
     <label>Neo's faction</label>
@@ -43,8 +43,8 @@
     <backstoryCategories>
       <li>RitualNeoStory</li>
     </backstoryCategories>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>Avali/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
 
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
@@ -75,8 +75,8 @@
     <backstoryCategories>
       <li>EimilStory</li>
     </backstoryCategories>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>Avali/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
 
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
@@ -93,5 +93,4 @@
       <li>(1, 0.52, 0.05)</li>
     </colorSpectrum>
   </FactionDef>
-
 </Defs>

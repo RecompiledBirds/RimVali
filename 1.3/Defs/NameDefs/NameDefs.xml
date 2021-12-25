@@ -59,7 +59,6 @@
 
         <li>AvaliName->[FirstSectionName][MidSectionName][MidSectionName] '[FirstSectionName][MidSectionName]' [FirstSectionName][LastSectionName]</li>
         <li>AvaliName->[UName] [UName]</li>
-
       </rulesStrings>
       <rulesRaw>
         <li Class = "Rule_File">
@@ -68,15 +67,15 @@
         </li>
         <li Class = "Rule_File">
           <keyword>MidSectionName</keyword>
-          <path>NeziAvaliNameGen/MidSectionName</path>          
+          <path>NeziAvaliNameGen/MidSectionName</path>
         </li>
         <li Class = "Rule_File">
           <keyword>LastSectionName</keyword>
-          <path>NeziAvaliNameGen/LastSectionName</path>       
+          <path>NeziAvaliNameGen/LastSectionName</path>
         </li>
         <li Class = "Rule_File">
           <keyword>UName</keyword>
-          <path>NeziAvaliNameGen/Names</path>       
+          <path>NeziAvaliNameGen/Names</path>
         </li>
       </rulesRaw>
     </rulePack>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <GameplayLabel>Gameplay Settings</GameplayLabel>
+  <CanHaveEggs>Avali can have eggs:</CanHaveEggs>
+  <EggsDesc>Enable/disable eggs. In case you wanted that.</EggsDesc>
+  <ShowText>Display text (chirp, peep, etc):</ShowText>
+  <ShowTextLabel>Ocasionally, avali will display little bits of text. This may lag lower-end computers or games with more colonists, so you can disable it here.</ShowTextLabel>
+  <AirdropsText>Airdrops enabled:</AirdropsText>
+  <AirdropsLabel>Enables/disables the Illuminate airdrop event. \nThis event adds the "Illuminate Nexus Connection".</AirdropsLabel>
+  <AvaliForDropReq>Avali required for airdrop: {COUNT} </AvaliForDropReq>
+  <HPScaler>HP Scale: {SCALE}</HPScaler>
+  <ChanceToHackTech>Chance to hack tech: {CHANCE}</ChanceToHackTech>
+</LanguageData>

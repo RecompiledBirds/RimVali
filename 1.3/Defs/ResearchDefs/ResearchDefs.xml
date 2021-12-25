@@ -67,8 +67,7 @@
     <baseCost>100</baseCost>
     <techLevel>Spacer</techLevel>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>2.65</researchViewY>
-
+    <researchViewY>2.55</researchViewY>
     <prerequisites>
       <li>ResearchNanoLoom</li>
     </prerequisites>
@@ -96,7 +95,6 @@
     <techLevel>Spacer</techLevel>
     <researchViewX>3.00</researchViewX>
     <researchViewY>3.65</researchViewY>
-
     <prerequisites>
       <li>AvaliBasicApparel</li>
     </prerequisites>
@@ -110,7 +108,6 @@
     <techLevel>Spacer</techLevel>
     <researchViewX>4.00</researchViewX>
     <researchViewY>3.65</researchViewY>
-
     <prerequisites>
       <li>AvaliBasicTechGear</li>
     </prerequisites>
@@ -124,7 +121,6 @@
     <techLevel>Spacer</techLevel>
     <researchViewX>5.00</researchViewX>
     <researchViewY>3.65</researchViewY>
-
     <prerequisites>
       <li>AvaliCombatArmor</li>
     </prerequisites>
@@ -139,7 +135,6 @@
     <techLevel>Spacer</techLevel>
     <researchViewX>2.00</researchViewX>
     <researchViewY>1.10</researchViewY>
-
     <prerequisites>
       <li>ResearchNanoForge</li>
     </prerequisites>
@@ -174,8 +169,8 @@
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
-    <defName>AERIELRES</defName>
-    <label>AERIEL System</label>
+    <defName>AERIALRES</defName>
+    <label>AERIAL System</label>
     <description>A highly advanced automated mortar system, fully capable of automatically selecting targets and lauching projectiles.</description>
     <researchViewX>6.00</researchViewX>
     <researchViewY>1.00</researchViewY>
@@ -208,7 +203,6 @@
     <techLevel>Ultra</techLevel>
     <researchViewX>3.00</researchViewX>
     <researchViewY>0.70</researchViewY>
-
     <prerequisites>
       <li>AvaliBasicWeapons</li>
     </prerequisites>
@@ -222,7 +216,7 @@
     <baseCost>150</baseCost>
     <techLevel>Industrial</techLevel>
     <researchViewX>1.00</researchViewX>
-    <researchViewY>1.45</researchViewY>
+    <researchViewY>2.35</researchViewY>
     <requiredResearchBuilding>AvaliResearchBench</requiredResearchBuilding>
     <tab>RimValiResearch</tab>
     <prerequisites>
@@ -297,99 +291,6 @@
     <researchViewY>1.75</researchViewY>
     <prerequisites>
       <li>AvaliAeroTungsten</li>
-    </prerequisites>
-  </ResearchProjectDef>
-
-  <!-- Bionics -->
-  <ResearchProjectDef ParentName="BaseAvaliResearch">
-    <defName>BasicAvaliBionics</defName>
-    <label>Basic Bionics</label>
-    <description>Create basic bionics to help avoid your avali getting their arms blown off.</description>
-    <baseCost>1400</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>0.00</researchViewX>
-    <researchViewY>4.75</researchViewY>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="BaseAvaliResearch">
-    <defName>BasicAvaliImplants</defName>
-    <label>Basic Implants</label>
-    <description>Design basic implants, capable of assisting with simple body functions and such.</description>
-    <baseCost>600</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>1.00</researchViewX>
-    <researchViewY>4.75</researchViewY>
-    <prerequisites>
-      <li>BasicAvaliBionics</li>
-    </prerequisites>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
-    <defName>AvaliAdvCooling</defName>
-    <label>Better cooling</label>
-    <description>Get the blueprints to a better TCA, meant to help survive harsher conditions.</description>
-    <baseCost>500</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>2.00</researchViewX>
-    <researchViewY>4.75</researchViewY>
-    <prerequisites>
-      <li>BasicAvaliImplants</li>
-      <li>MicroelectronicsBasics</li>
-    </prerequisites>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
-    <defName>AvaliEliteCooling</defName>
-    <label>Elite cooling</label>
-    <description>Research the blueprints to one of the most advanced TCA augments ever designed.</description>
-    <baseCost>1500</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>3.00</researchViewX>
-    <researchViewY>4.75</researchViewY>
-
-    <prerequisites>
-      <li>AvaliAdvCooling</li>
-    </prerequisites>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
-    <defName>AdvancedAvaliBionics</defName>
-    <label>Advanced Bionics</label>
-    <description>Better, faster, stronger bionics.. but still not the best.</description>
-    <baseCost>2000</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>1.00</researchViewX>
-    <researchViewY>4.35</researchViewY>
-    <prerequisites>
-      <li>BasicAvaliBionics</li>
-      <li>MicroelectronicsBasics</li>
-    </prerequisites>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
-    <defName>AvaliFighting</defName>
-    <label>Basic weapon augments</label>
-    <description>Weaponised augments. These make the user much more dangerous.</description>
-    <baseCost>2500</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>2.00</researchViewX>
-    <researchViewY>3.50</researchViewY>
-    <prerequisites>
-      <li>AdvancedAvaliBionics</li>
-    </prerequisites>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
-    <defName>MicroDrones</defName>
-    <label>Micro-drones</label>
-    <description>Swarms of mini drones, assisting the user in various tasks.</description>
-    <baseCost>2500</baseCost>
-    <techLevel>Spacer</techLevel>
-    <researchViewX>2.00</researchViewX>
-    <researchViewY>4.20</researchViewY>
-
-    <prerequisites>
-      <li>AdvancedAvaliBionics</li>
     </prerequisites>
   </ResearchProjectDef>
 </Defs>

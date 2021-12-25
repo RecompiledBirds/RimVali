@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <PawnKindDef Abstract = "True" Name="BaseIWAvali">
-    <race>IWAvaliRace</race>
+    <race>RimVali</race>
     <combatPower>10</combatPower>
     <baseRecruitDifficulty>0.8</baseRecruitDifficulty>
     <isFighter>false</isFighter>

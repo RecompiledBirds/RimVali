@@ -7,7 +7,7 @@
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>avali/buildings/turrets/basic_turret_base</texPath>
+      <texPath>Avali/Buildings/Turrets/BasicTurret_Base</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
       <damageData>
@@ -18,7 +18,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/buildings/turrets/turret_image</uiIconPath>
+    <uiIconPath>Avali/Buildings/Turrets/BasicTurret_Image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -123,7 +123,7 @@
     <label>Basic avali turret gun</label>
     <description>A automatic railgun, made to be mounted to an avali turret.</description>
     <graphicData>
-      <texPath>avali/buildings/turrets/basic_turret_head</texPath>
+      <texPath>Avali/Buildings/Turrets/BasicTurret_Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.5</drawSize>
     </graphicData>
@@ -161,7 +161,7 @@
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>avali/buildings/turrets/Avali_Turret_Base_2x2</texPath>
+      <texPath>Avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -172,7 +172,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/buildings/turrets/Brrrt_image</uiIconPath>
+    <uiIconPath>Avali/Buildings/Turrets/Brrrt_image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -277,7 +277,7 @@
     <label>Basic avali turret gun</label>
     <description>A automatic railgun, made to be mounted to an avali turret.</description>
     <graphicData>
-      <texPath>avali/buildings/turrets/Avali_Turret_Brrt</texPath>
+      <texPath>Avali/Buildings/Turrets/Avali_Turret_Brrt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1,0.5)</drawSize>
     </graphicData>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
   <!-- Nano-Forge -->
-
   <ThingDef ParentName="BenchBase">
     <defName>AvaliNanoForge</defName>
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -10,7 +8,7 @@
       <li>BuildingsProduction</li>
     </thingCategories>
     <label>Avali Nano-Printing Forge</label>
-    <description>The Avali Nano-Printing Forge is perhaps the bulk of any Avali operation. Utilizing immense heat and nano-technologies, this workbench is capable of changing the structure and sometimes even the composition of certain molecules. As such this workbench is primarily purposed to prepare raw resources for future printing or to print metallic gear with.</description>
+    <description>The Avali Nano-Printing Forge is a 3D printer, like most Avali crafting utilities. It works with immense heat, and nanotechnologies able to rearrange the structure and molecues of the items put in. Caution: Do not stick fingers, toes, feet, hands, tails, or other limbs inside, even if the device appears to be powered off.</description>
     <size>(3,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
@@ -47,7 +45,7 @@
       <li>ResearchNanoForge</li>
     </researchPrerequisites>
     <graphicData>
-      <texPath>avali/buildings/production/nanoforge</texPath>
+      <texPath>Avali/Buildings/Production/NanoForge</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(3,2)</drawSize>
@@ -94,7 +92,6 @@
   </ThingDef>
 
   <!-- Research bench -->
-
   <ThingDef ParentName="BenchBase">
     <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories Inherit="false">
@@ -102,7 +99,7 @@
     </thingCategories>
     <defName>AvaliResearchBench</defName>
     <label>Avali Research bench</label>
-    <description>An Avali research bench equiped with a single-color LASER array and a basic operating system. Whilst a lot of trivial Avali tech is already floating around on the Rimworld, a lot designs are either unfit for usage in this enviroment or instead jealously guarded by opposing factions. As such this table is used by Rimworld Avali researchers to decrypt and alter designs for proper usage within the colony.</description>
+    <description>An avali research bench. Most avali would dimiss this kind of tech as simple, and somewhat bulky, while the humans just stare at the hologram it projects. You'll learn to make better versions later on, most likely, but this is a start. You'll need it to research avali tech.</description>
     <thingClass>Building_ResearchBench</thingClass>
     <size>(3,2)</size>
     <stuffCategories>
@@ -114,7 +111,7 @@
       <ComponentIndustrial>10</ComponentIndustrial>
     </costList>
     <graphicData>
-      <texPath>avali/buildings/production/avaliresearchtable</texPath>
+      <texPath>Avali/Buildings/Production/AvaliResearchTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(4,5)</drawSize>
@@ -172,9 +169,9 @@
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliNexus</defName>
     <label>Illuminate Nexus Connection</label>
-    <description>The Illuminate Nexus Connection utilizes a rare material known as a Sync Crystal to communicate with the Nexus through their strange properties regarding quantum entanglement. Due to their widespread integration into Avali Illuminate society, these large connections are only given to colonies that seem to be strong enough to protect themselves, allowing them access to higher techs aswell.</description>
+    <description>This device can be used to access higher levels of tech, thanks to its connection to the nexus.</description>
     <graphicData>
-      <texPath>avali/buildings/production/sync_crystal</texPath>
+      <texPath>Avali/Buildings/Production/SyncCrystal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>3</drawSize>
     </graphicData>
@@ -200,6 +197,8 @@
       <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
     </building>
     <comps>
+      <li Class="AvaliMod.NexusCompProps">
+      </li>
       <li Class="CompProperties_Glower">
         <glowRadius>8</glowRadius>
         <glowColor>(236, 166, 245)</glowColor>
@@ -231,7 +230,7 @@
     <thingCategories Inherit="false">
       <li>BuildingsProduction</li>
     </thingCategories>
-    <description>The Avali Nano-loom is a highly prized piece of machinery within the Avali Rimworld colonies. Making use of nanotechnology, this loom is able to weave strands of polymer fabrics that are a lot more robust than usual fabrics of the same material. This allows Avali colonies to create more sturdy clothing and tents when compared to their competitors.</description>
+    <description>The Avali Nano-loom is a highly important piece of equipment. Without it, Avali wouldn't be able to make any of their advanced cloth materials, which are used in other things..</description>
     <size>(2,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
@@ -262,7 +261,7 @@
       <li>ResearchNanoLoom</li>
     </researchPrerequisites>
     <graphicData>
-      <texPath>avali/buildings/production/loom/loom</texPath>
+      <texPath>Avali/Buildings/Production/Loom/Loom</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,1.8)</drawSize>
@@ -307,5 +306,4 @@
       <li>ITab_Bills</li>
     </inspectorTabs>
   </ThingDef>
-
 </Defs>

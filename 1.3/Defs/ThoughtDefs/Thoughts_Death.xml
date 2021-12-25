@@ -28,7 +28,7 @@
         <description>My kit died.</description>
         <baseMoodEffect>-30</baseMoodEffect>
       </li>
-    </stages>  
+    </stages>
   </ThoughtDef>
 
   <ThoughtDef>
