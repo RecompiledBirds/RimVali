@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef ParentName="AddedBodyPartBase">
+   <HediffDef ParentName="AddedBodyPartBase">
     <defName>WingBlades</defName>
     <label>Wing blades</label>
     <labelNoun>Wing blades</labelNoun>
@@ -11,7 +11,7 @@
       <partEfficiency>0.9</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
-    <comps>
+     <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
           <li>

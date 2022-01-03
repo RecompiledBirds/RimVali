@@ -41,7 +41,7 @@
     </equippedStatOffsets>
     <apparel>
       <bodyPartGroups>
-		<li>Shoulders</li>
+        <li>Shoulders</li>
         <li>Torso</li>
         <li>Legs</li>
       </bodyPartGroups>
@@ -189,7 +189,7 @@
     </statBases>
     
     <equippedStatOffsets>
-      <SocialImpact>1.25</SocialImpact>
+      <SocialImpact>0.125</SocialImpact>
     </equippedStatOffsets>
     <costStuffCount>25</costStuffCount>
     <stuffCategories>

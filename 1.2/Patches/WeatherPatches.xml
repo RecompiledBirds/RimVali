@@ -9,7 +9,7 @@
           <exposedThought>SnowyWeather</exposedThought>
         </value>
       </li>
-
+      
       <li Class="PatchOperationInsert">
         <xpath>/Defs/WeatherDef[defName="SnowGentle"]/label</xpath>
         <value>

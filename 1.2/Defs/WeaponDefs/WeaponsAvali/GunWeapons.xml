@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <!-- Base guns -->
+    <!-- Base guns -->
 
   <ThingDef Name="AvaliGun" Abstract="True" ParentName="BaseWeapon">
     <techLevel>Industrial</techLevel>
@@ -44,7 +44,7 @@
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-
+  
   <!-- Pistol bullet -->
 
   <ThingDef ParentName="BaseBullet">
@@ -62,7 +62,7 @@
       <armorPenetrationBase>0.185</armorPenetrationBase>
     </projectile>
   </ThingDef>
-
+  
   <!-- Pistol -->
   <ThingDef ParentName="AvaliMakeableGun">
     <defName>AvaliPistol</defName>
@@ -124,7 +124,7 @@
       <ComponentIndustrial>3</ComponentIndustrial>
       <AvaliTungstenPowder>5</AvaliTungstenPowder>
     </costList>
-
+    
     <recipeMaker>
       <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
       <skillRequirements>
@@ -132,7 +132,7 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
+  
   <!-- SMG bullet -->
 
   <ThingDef ParentName="BaseBullet">
@@ -149,9 +149,9 @@
       <armorPenetrationBase>0.32</armorPenetrationBase>
     </projectile>
   </ThingDef>
-
+  
   <!-- SMG -->
-
+  
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliSMG</defName>
     <label>Illuminate SMG</label>
@@ -212,7 +212,7 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-
+    
     <recipeMaker>
       <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
       <skillRequirements>
@@ -220,7 +220,13 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
+  
+  
+  
+  
+  
+  
+  
   <!-- Minigun bullet -->
 
   <ThingDef ParentName="BaseBullet">
@@ -237,9 +243,9 @@
       <armorPenetrationBase>0.47</armorPenetrationBase>
     </projectile>
   </ThingDef>
-
+  
   <!-- Minigun -->
-
+  
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliMinigun</defName>
     <label>Illuminate minigun</label>
@@ -253,7 +259,7 @@
     <statBases>
       <WorkToMake>37500</WorkToMake>
       <Mass>6.5</Mass>
-      <MarketValue>1445</MarketValue>
+       <MarketValue>1445</MarketValue>
       <AccuracyTouch>0.36</AccuracyTouch>
       <AccuracyShort>0.43</AccuracyShort>
       <AccuracyMedium>0.39</AccuracyMedium>
@@ -273,7 +279,7 @@
         <defaultProjectile>AvaliMinigunBullet</defaultProjectile>
         <warmupTime>1.8</warmupTime>
         <range>35</range>
-        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>2.5</ticksBetweenBurstShots>
         <burstShotCount>22</burstShotCount>
         <soundCast>Shot_HeavySMG</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
@@ -302,7 +308,7 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-
+    
     <recipeMaker>
       <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
       <skillRequirements>
@@ -310,7 +316,7 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
+  
   <!-- Rife bullet -->
   <ThingDef ParentName="BaseBullet">
     <defName>AvaliRifleBullet</defName>
@@ -327,9 +333,9 @@
       <armorPenetrationBase>0.42</armorPenetrationBase>
     </projectile>
   </ThingDef>
-
-  <!-- Rifle -->
-
+  
+    <!-- Rifle -->
+  
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliRifle</defName>
     <label>Illuminate Rifle</label>
@@ -390,7 +396,7 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-
+    
     <recipeMaker>
       <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
       <skillRequirements>
@@ -398,8 +404,8 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
-  <!--Sniper Rife bullet -->
+  
+    <!--Sniper Rife bullet -->
   <ThingDef ParentName="BaseBullet">
     <defName>AvaliSniperBullet</defName>
     <label>Avali Sniper Rifle bullet</label>
@@ -411,15 +417,15 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>33</damageAmountBase>
       <speed>183</speed>
-
+      
       <stoppingPower>2</stoppingPower>
-
+      
       <armorPenetrationBase>0.54</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  <!-- Sniper rifle -->
+    <!-- Sniper rifle -->
 
-  <ThingDef ParentName="BaseHumanMakeableGun">
+    <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliSniperRifle</defName>
     <label>Illuminate Sniper Rifle</label>
     <description>A highly sophisticated weapon perfect for picking off enemies at a distance. The firepower required to fire a singleprojectile is so strong that the coils must be cooled with liquid helium at all times to prevent the weapon from exploding in its user's talons.</description>
@@ -485,8 +491,8 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
-  <!-- Shotgun bullet -->
+  
+    <!-- Shotgun bullet -->
 
   <ThingDef ParentName="BaseBullet">
     <defName>AvaliShotgunBullet</defName>
@@ -503,9 +509,9 @@
       <armorPenetrationBase>0.33</armorPenetrationBase>
     </projectile>
   </ThingDef>
-
+  
   <!-- Shotgun -->
-
+  
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AvaliShotgun</defName>
     <label>Illuminate Shotgun</label>
@@ -573,7 +579,18 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <ThingDef ParentName="BaseGun">
     <defName>IlluminateRocketLauncher</defName>
     <label>Illuminate rocket launcher</label>
@@ -634,7 +651,6 @@
         <explosiveDamageType>Bomb</explosiveDamageType>
         <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
       </li>
-      <li Class="CompProperties_BiocodableWeapon"/>
     </comps>
   </ThingDef>
   <ThingDef ParentName="BaseBullet">

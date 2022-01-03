@@ -1,4 +1,5 @@
 ﻿using Verse;
+using RimWorld;
 
 namespace AvaliMod
 {
@@ -12,7 +13,7 @@ namespace AvaliMod
 
         public AvaliEggLayer_Props()
         {
-            compClass = typeof(AvaliEggLayer);
+            this.compClass = typeof(AvaliEggLayer);
         }
     }
 }

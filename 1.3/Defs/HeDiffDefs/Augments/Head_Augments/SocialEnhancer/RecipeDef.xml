@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <RecipeDef ParentName="SurgeryInstallImplantBase">
     <defName>InstallSC</defName>
     <label>Install social capability enhancer</label>
     <description>Install a social capability enhancer.</description>

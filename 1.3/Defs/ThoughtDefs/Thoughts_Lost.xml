@@ -10,7 +10,7 @@
       </li>
     </stages>
   </ThoughtDef>
-
+  
   <ThoughtDef>
     <defName>MateLost</defName>
     <stages>
@@ -20,7 +20,7 @@
       </li>
     </stages>
   </ThoughtDef>
-
+  
   <ThoughtDef ParentName="LostMemoryFamily">
     <defName>MyParentLost</defName>
     <stages>
@@ -31,7 +31,7 @@
       </li>
     </stages>
   </ThoughtDef>
-
+  
   <ThoughtDef ParentName="LostMemory">
     <defName>PackmateLost</defName>
     <durationDays>20</durationDays>

@@ -1,6 +1,11 @@
-﻿using RimWorld.Planet;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using RimWorld;
+using RimWorld.Planet;
 using Verse;
-
 namespace AvaliMod
 {
     public class NesiStorytellerData : WorldComponent
@@ -9,23 +14,17 @@ namespace AvaliMod
         public static int daysPassedSinceLastHunt;
         public static int daysSpentNice;
         public static int dayLastUpdated;
-
         public override void ExposeData()
         {
-            //Soon(tm)
             if (Current.Game.storyteller.def.defName == "Nesi")
-            {
-            }
-            if (Current.Game.storyteller.def.defName == "Todd")
-            {
-            }
+                Log.Message("Can't wait to see what happens..");
+            Log.Message("HEY");
             Scribe_Values.Look(ref state, "state");
             Scribe_Values.Look(ref daysPassedSinceLastHunt, "daysPassedSinceLastHunt");
             Scribe_Values.Look(ref daysSpentNice, "daysSpentNice");
             Scribe_Values.Look(ref dayLastUpdated, "dayLastUpdated");
             base.ExposeData();
         }
-
         public NesiStorytellerData(World world) : base(world)
         {
             state = NesiState.Neutral;

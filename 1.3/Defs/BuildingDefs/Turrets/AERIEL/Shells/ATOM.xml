@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef Name="AERIALShellBase" ParentName="ResourceBase" Abstract="True">
+    <ThingDef Name="AERIALShellBase" ParentName="ResourceBase" Abstract="True">
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
     <tickerType>Normal</tickerType>
@@ -20,7 +20,7 @@
       <li>MortarShell</li>
     </tradeTags>
   </ThingDef>
-
+  
   <ThingDef Name="MakeableAERIALShellBase" ParentName="AERIALShellBase" Abstract="True">
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -37,7 +37,8 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
+  
+  
   <ThingDef ParentName="MakeableAERIALShellBase">
     <defName>AERIALNUKE</defName>
     <label>AERIAL ATOM rocket</label>
@@ -48,9 +49,9 @@
     </graphicData>
     <comps>
       <li Class="CompProperties_Explosive">
-        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveRadius>36</explosiveRadius>
         <explosiveDamageType>Bomb</explosiveDamageType>
-        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <explosiveExpandPerStackcount>2</explosiveExpandPerStackcount>
         <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
         <wickTicks>30~60</wickTicks>
       </li>
@@ -58,7 +59,7 @@
     <projectileWhenLoaded>AERIAL_ATOM_SHELL</projectileWhenLoaded>
     <costList>
       <AeroTungstenCarbide>15</AeroTungstenCarbide>
-      <AvaliTungstenPowder>30</AvaliTungstenPowder>
+       <AvaliTungstenPowder>30</AvaliTungstenPowder>
       <Steel>30</Steel>
       <Chemfuel>15</Chemfuel>
       <Uranium>10</Uranium>
@@ -67,7 +68,7 @@
       <researchPrerequisite>AERIELRES</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-
+  
   <ThingDef ParentName="BaseBullet">
     <defName>AERIAL_ATOM_SHELL</defName>
     <label>ATOM shell</label>
@@ -89,5 +90,8 @@
       <soundAmbient>MortarRound_Ambient</soundAmbient>
     </projectile>
   </ThingDef>
+
+
+
 
 </Defs>

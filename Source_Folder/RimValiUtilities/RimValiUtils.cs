@@ -1,16 +1,21 @@
-﻿using RimValiCore;
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Verse;
+using System;
+using RimValiCore;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Reflection;
 
 namespace AvaliMod
 {
+
     public static class RimValiUtility
     {
-        public static string build = "Kio 1.0.3";
-        public static string modulesFound = "Modules:\n";
+        public static string build = "Kisu 1.1.0";
+        public static string modulesFound = "RimValiModules".Translate()+"\n";
 
         static AvaliPackDriver driver;
         static AvaliUpdater thoughtDriver;
@@ -23,7 +28,6 @@ namespace AvaliMod
                 return RimValiCore.RimValiUtility.AllPawnsOfRaceInWorld(RimValiDefChecks.PotentialPackRaces).Where(x => !x.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) && x.Spawned).ToHashSet();
             }
         }
-
         public static AvaliPackDriver Driver
         {
             get
@@ -33,12 +37,10 @@ namespace AvaliMod
                 return driver;
             }
         }
-
         public static void SetDriver(AvaliPackDriver avaliPackDriver)
         {
             driver = avaliPackDriver;
         }
-
         public static AvaliUpdater AvaliThoughtDriver
         {
             get
@@ -50,13 +52,13 @@ namespace AvaliMod
         }
 
         #region pack skills
-
         public static SkillRecord GetHighestSkillOfpack(AvaliPack pack)
         {
             int highestSkillLevel = 0;
             SkillRecord highestSkill = null;
             foreach (Pawn pawn in pack.GetAllNonNullPawns)
             {
+
                 List<SkillRecord> list = new List<SkillRecord>();
                 foreach (SkillRecord skillRecord in pawn.skills.skills.Where(x => DefDatabase<AvaliPackSkillDef>.AllDefs.Any(y => y.skill == x.def)))
                 {
@@ -70,10 +72,13 @@ namespace AvaliMod
                         }
                     }
                 }
+
             }
 
             return highestSkill;
         }
+
+
 
         public static SkillRecord GetHighestSkillOfpack(AvaliPack pack, List<SkillDef> avoidSkills)
         {
@@ -96,6 +101,7 @@ namespace AvaliMod
                             }
                         }
                     }
+
                 }
             }
             return highestSkill;
@@ -107,11 +113,12 @@ namespace AvaliMod
             if (pack != null) { return GetHighestSkillOfpack(pack); }
             return null;
         }
+        #endregion
 
-        #endregion pack skills
+
+
 
         #region room
-
         public static bool PackInBedroom(this Pawn pawn)
         {
             Room room = pawn.GetRoom();
@@ -129,11 +136,9 @@ namespace AvaliMod
             }
             return false;
         }
-
-        #endregion room
+        #endregion
 
         #region pack gen and handling
-
         public static void CreatePack(Pawn pawn, string reason = null)
         {
             AvaliPack newPack = EiCreatePack(pawn);
@@ -142,144 +147,113 @@ namespace AvaliMod
             if (RimValiMod.settings.enableDebugMode && reason != null) { Log.Message($"Creating pack for reason: {reason}"); }
         }
 
-        public static IEnumerable<AvaliPack> FindAllUsablePacks(Pawn pawn)
-        {
-            int packLimit = RimValiMod.settings.maxPackSize;
-            List<AvaliPack> packs = Driver.Packs;
-            IEnumerable<AvaliPack> packsToUse = packs;
-            packsToUse = packs.Where(pack => pack != null && !pack.GetAllNonNullPawns.EnumerableNullOrEmpty() &&
-                                    (!Driver.HasPack(pawn) || pack != Driver.GetCurrentPack(pawn))
-                                    && pack.GetAllNonNullPawns.Count < packLimit &&
-                                    pack.faction == pawn.Faction &&
-                                    pack.GetAllNonNullPawns.Any(packmate => packmate.Spawned && packmate.Alive() && packmate.Map != null && packmate.Map == pawn.Map));
-            return packsToUse;
-        }
+
+
 
         /// <summary>
-        /// Handles the job of managing pack related functions, such as creating packs for a pawn, making a pawn join packs, etc.
+        /// Collect an IEnumberable of all packs this pawn could join, assuming they are not part of a pack.
         /// </summary>
-        /// <param name="packs"></param>
         /// <param name="pawn"></param>
-        /// <param name="racesInPacks"></param>
-        /// <param name="packLimit"></param>
         /// <returns></returns>
-
-        public static void KioPackHandler(Pawn pawn)
+        public static IEnumerable<AvaliPack> FindAllUsablePacks(Pawn pawn)
         {
-            /*
-            if (pawn.Alive() && !pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
-            {
-                if (!Driver.Packs.EnumerableNullOrEmpty())
-                {
-                    bool hasPack = Driver.HasPack(pawn);
-                }
-                else if (!Driver.HasPack(pawn))
-                {
-                    CreatePack(pawn, "No packs in toUse list");
-                }
-            */
-            if (pawn != null && pawn.Spawned && pawn.Alive() && pawn.story != null && pawn.story.traits != null && !pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
-            {
-                if (!Driver.Packs.EnumerableNullOrEmpty())
-                {
-                    Log.Message("We started this!");
-                    bool hasPack = Driver.HasPack(pawn);
-                    IEnumerable<AvaliPack> packsToUse = FindAllUsablePacks(pawn);
+            return driver.Packs.Where(pack => !pack.GetAllNonNullPawns.EnumerableNullOrEmpty() && pack.GetAllNonNullPawns.Count < RimValiMod.settings.maxPackSize && pack.faction == pawn.Faction && pack.GetAllNonNullPawns.Any(x => x.Spawned && x.Alive() && x.Map == pawn.Map));
+        }
 
-                    //We only want to run this if there are packs, otherwise we'll automatically make a "base" pack.
+            /// <summary>
+            /// Handles the job of managing pack related functions, such as creating packs for a pawn, making a pawn join packs, etc.
+            /// </summary>
+            /// <param name="packs"></param>
+            /// <param name="pawn"></param>
+            /// <param name="racesInPacks"></param>
+            /// <param name="packLimit"></param>
+            /// <returns></returns>
+
+            public static void KioPackHandler(Pawn pawn)
+        {
+            if (pawn != null && pawn.Alive() && !pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
+            {
+                AvaliPack pack = Driver.GetCurrentPack(pawn);
+                bool hasPack = pack != null && (pack.GetAllNonNullPawns.Count > 1);
+                if (!Driver.Packs.EnumerableNullOrEmpty())
+                {
+                    IEnumerable<AvaliPack> packsToUse = FindAllUsablePacks(pawn);
                     if (!packsToUse.EnumerableNullOrEmpty())
                     {
-                        AvaliPack pack2 = packsToUse.RandomElement();
-                        AvaliPack pack = hasPack ? driver.GetCurrentPack(pawn) : null;
-
                         if (hasPack)
                         {
-                            /*
-                            PackTransferal packTransferal = ShouldTransferToOtherPack(pawn);
-                            if (packTransferal.isRecommended)
+                            PackTransferal transferal = ShouldTransferToOtherPack(pawn);
+                            if (transferal.isRecommended)
                             {
-                                Driver.SwitchPack(pawn, packTransferal.recommendedPack);
+                                Driver.SwitchPack(pawn, transferal.recommendedPack);
                             }
-                            if (ShouldLeavePack(pawn) && !packTransferal.isRecommended)
+                            else if (ShouldLeavePack(pawn))
                             {
                                 LeavePack(pawn);
                             }
-                            */
                         }
-                        //This checks if a pack only has one pawn or if it is null, and also if we can join a random pack.
-                        if ((!hasPack || pack.GetAllNonNullPawns.EnumerableNullOrEmpty() || pack.GetAllNonNullPawns.Count == 1) && pack2 != null && !pack2.pawns.EnumerableNullOrEmpty())
+                        else
                         {
-                            if (RimValiMod.settings.enableDebugMode)
+                            AvaliPack joinablePack = packsToUse.RandomElement();
+                            if (joinablePack != null && !joinablePack.pawns.EnumerableNullOrEmpty())
                             {
-                                Log.Message($"{pawn.Name.ToStringShort} is trying to join {pack2.name}");
-                            }
-                            JoinPack(pawn, ref pack2, out bool Joined);
-                            if (Joined)
-                            {
-                                // How dare you use a goto in C#
-                                goto JoinedPack;
+                                JoinPack(pawn, ref joinablePack, out bool Joined);
                             }
                         }
-
-                        CreatePack(pawn, "pawn cant join a pack");
-
-                    JoinedPack:
-                        if (RimValiMod.settings.enableDebugMode) { Log.Message($"{pawn.Name.ToStringShort} joined a pack"); }
                     }
-                    else if (!Driver.HasPack(pawn))
+                    else
                     {
-                        CreatePack(pawn, "No packs in toUse list");
+                        Log.Message("packs to use fail");
+                        CreatePack(pawn, "packs list was null or empty");
                     }
                 }
-                if (Driver.Packs.EnumerableNullOrEmpty())
+                else
                 {
+                    Log.Message("normal fail");
                     CreatePack(pawn, "packs list was null or empty");
                 }
             }
         }
-
         #region get opinion and joining
-
         public static float GetPackAvgOP(AvaliPack pack, Pawn pawn)
         {
             if (pack != null)
             {
                 float sum = 0;
-                foreach (Pawn packmember in pack.GetAllNonNullPawns)
-                {
-                    if (packmember != pawn)
-                        sum += packmember.relations.OpinionOf(pawn);
-                }
+                int cont = pack.GetAllNonNullPawns.Count;
+                for (int a = 0; a<cont; a++)
 
-                sum /= pack.GetAllNonNullPawns.Count - 1;
-                Log.Message($"Pack average opinion of {pawn.Name.ToStringShort}: {sum}");
+                sum /= cont;
                 return sum;
             }
             return 0;
         }
 
-        public static AvaliPack JoinPack(Pawn pawn, ref AvaliPack pack, out bool Joined)
+        public static void JoinPack(Pawn pawn, ref AvaliPack pack, out bool Joined)
         {
+            
             Date date = new Date();
             Joined = false;
-            if ((!driver.PawnHasHadPack(pawn)) && date.ToString() == pack.creationDate.ToString())
+            if (pack.pawns.Count < RimValiMod.settings.maxPackSize)
             {
-                driver.AddPawnToPack(pawn, ref pack);
-                Joined = true;
-            }
-            else if (GetPackAvgOP(pack, pawn) >= LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packOpReq)
-            {
-                driver.AddPawnToPack(pawn, ref pack);
-                Joined = true;
-            }
+                if ((!driver.PawnsHasHadPack(pawn)) && date.ToString() == pack.creationDate.ToString())
+                {
+                    driver.AddPawnToPack(pawn, ref pack);
+                    Joined = true;
 
-            return pack;
+                }
+                else if (GetPackAvgOP(pack, pawn) >= RimValiMod.settings.packOpReq)
+                {
+                    driver.AddPawnToPack(pawn, ref pack);
+
+                    Joined = true;
+                }
+            };
         }
-
-        #endregion get opinion and joining
-
+        #endregion
         public static AvaliPack EiCreatePack(Pawn pawn)
         {
+
             AvaliPack PawnPack = new AvaliPack(pawn);
             if (RimValiMod.settings.enableDebugMode) { Log.Message("Creating pack: " + PawnPack.name); }
             return PawnPack;
@@ -296,7 +270,7 @@ namespace AvaliMod
         public static PackTransferal ShouldTransferToOtherPack(Pawn pawn)
         {
             IEnumerable<AvaliPack> packs = driver.Packs.Where(x => GetPackAvgOP(x, pawn) > 30 && x.faction == pawn.Faction && x.GetAllNonNullPawns.Any(p => p.Map == pawn.Map));
-            if (ShouldLeavePack(pawn) && packs.Count() > 0)
+            if (ShouldLeavePack(pawn) && packs.Count()>0)
             {
                 foreach (AvaliPack pack in packs)
                 {
@@ -305,7 +279,7 @@ namespace AvaliMod
                         return new PackTransferal
                         {
                             isRecommended = true,
-                            recommendedPack = pack
+                            recommendedPack=pack
                         };
                     }
                 }
@@ -316,11 +290,12 @@ namespace AvaliMod
             };
         }
 
+
         public static bool ShouldLeavePack(Pawn pawn)
         {
             AvaliPack pack = Driver.GetCurrentPack(pawn);
 
-            return driver.GetPackCount(pawn) > 1 && pack != null && GetPackAvgOP(pack, pawn) < 30;
+            return driver.GetPackCount(pawn)>1 && pack != null && GetPackAvgOP(pack, pawn) < 30;
         }
 
         public static void LeavePack(Pawn pawn)
@@ -335,10 +310,11 @@ namespace AvaliMod
                 if (pack.pawns.Count > 0)
                     pack.leaderPawn = pack.pawns.ToList()[0];
         }
+        #endregion
 
-        #endregion kicking a pawn from a pack and or pack transfering
 
         #region getting pack info
+
 
         public static AvaliPack GetPackWithoutSelf(this Pawn pawn)
         {
@@ -352,6 +328,7 @@ namespace AvaliMod
                 if (RimValiMod.settings.enableDebugMode) { Log.Error("Pawn check is null, or no packs!"); }
                 return null;
             }
+
             AvaliPack pack = Driver.GetCurrentPack(pawn);
             if (pack != null)
             {
@@ -368,12 +345,13 @@ namespace AvaliMod
 
             return null;
         }
-
-        #endregion getting pack info
-
-        #endregion pack gen and handling
+        #endregion
+        #endregion
 
         #region debug
+
+
+
 
         [DebugAction("RimVali", "Reset pack loss", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void ResetPackLoss()
@@ -388,14 +366,14 @@ namespace AvaliMod
                 }
             }
         }
+       
 
 
-        [DebugAction("RimVali", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("RimVali", allowedGameStates =AllowedGameStates.PlayingOnMap)]
         public static void ResetPacks()
         {
             Driver.ResetPacks();
         }
-
         [DebugAction("RimVali", null, false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void SubtractAirdropTime()
         {
@@ -408,16 +386,20 @@ namespace AvaliMod
             AirDropHandler.timeToDrop = 0;
         }
 
+
+
+
+
         [DebugAction("Nesi", "Message test", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void MessageTest()
         {
-            Assembly a = Assembly.Load(RimValiMod.GetDir + "/PresentationFramework.dll");
+            Assembly a = Assembly.Load(RimValiMod.GetDir+ "/PresentationFramework.dll");
             //AppDomain.CurrentDomain.Load()
             if (a == null)
             {
                 Log.Error("Assembly is null!");
             }
-            // string str1 = "Are you watching? \n -Nesi";
+            string str1 = "Are you watching? \n -Nesi";
             //RimValiCore.RimValiUtility.InvokeMethod(a,"Show","MessageBox",obj, out int result, new object[] {str1, "Nesi" });
             /*MessageBoxResult res = MessageBox.Show("Are you watching? \n -Nesi", "Nesi");
             if (res == MessageBoxResult.Yes)
@@ -429,7 +411,6 @@ namespace AvaliMod
                 MessageBox.Show("Oh.. alright. I hope you understand I don't like to be ignored. \n -Nesi");
             }*/
         }
-
-        #endregion debug
+        #endregion
     }
 }

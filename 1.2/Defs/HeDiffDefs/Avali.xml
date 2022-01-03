@@ -10,39 +10,40 @@
         </conflictingHediffs>
         <showConflicts>false</showConflicts>
       </li>
-
+      
       <li Class="AvaliMod.ShowTextPropsV3">
-        <showText>
-          <li>
-            <textToShow>chirp</textToShow>
-            <randomDays>2</randomDays>
-            <checkDuration>60</checkDuration>
-            <mtbUnit>6000</mtbUnit>
-            <timeToFade>2</timeToFade>
-            <mustBeAwake>true</mustBeAwake>
-            <genderLocked>false</genderLocked>
-          </li>
-
-          <li>
-            <textToShow>squeak</textToShow>
-            <randomDays>2</randomDays>
-            <checkDuration>60</checkDuration>
-            <mtbUnit>6000</mtbUnit>
-            <timeToFade>2</timeToFade>
-            <mustBeAwake>true</mustBeAwake>
-            <genderLocked>false</genderLocked>
-          </li>
-
-          <li>
-            <textToShow>peep</textToShow>
-            <randomDays>2</randomDays>
-            <checkDuration>60</checkDuration>
-            <mtbUnit>6000</mtbUnit>
-            <timeToFade>2</timeToFade>
-            <mustBeAwake>true</mustBeAwake>
-            <genderLocked>false</genderLocked>
-          </li>
+      <showText>
+        <li>
+          <textToShow>chirp</textToShow>
+          <randomDays>2</randomDays>
+          <checkDuration>60</checkDuration>
+          <mtbUnit>6000</mtbUnit>
+          <timeToFade>2</timeToFade>
+          <mustBeAwake>true</mustBeAwake>
+          <genderLocked>false</genderLocked>
+        </li>
+        
+        <li>
+          <textToShow>squeak</textToShow>
+          <randomDays>2</randomDays>
+          <checkDuration>60</checkDuration>
+          <mtbUnit>6000</mtbUnit>
+          <timeToFade>2</timeToFade>
+          <mustBeAwake>true</mustBeAwake>
+          <genderLocked>false</genderLocked>
+        </li>
+        
+        <li>
+          <textToShow>peep</textToShow>
+          <randomDays>2</randomDays>
+          <checkDuration>60</checkDuration>
+          <mtbUnit>6000</mtbUnit>
+          <timeToFade>2</timeToFade>
+          <mustBeAwake>true</mustBeAwake>
+          <genderLocked>false</genderLocked>
+        </li>
         </showText>
+
 
       </li>
     </comps>
@@ -55,8 +56,9 @@
       </li>
     </stages>
   </HediffDef>
-
-  <HediffDef>
+  
+  
+    <HediffDef>
     <defName>TestHediffOne</defName>
     <label>TestHediffOne</label>
     <description>TestHediffOne</description>
@@ -67,7 +69,7 @@
     <description>TestHediffTwo</description>
     <hediffClass>HediffWithComps</hediffClass>
     <comps>
-
+    
       <!-- Pick the comp we want. MUST HAVE AvaliMod.[name] -->
       <!-- We want the multipart bionic comp, so we select its properties. -->
       <li Class="AvaliMod.MultiPartBionicCompProperties">
@@ -94,7 +96,7 @@
         <!-- Display text when it is activated or deactivated. -->
         <displayTextWhenChanged>true</displayTextWhenChanged>
         <!-- If displayTextWhenChanged is false, you dont need textOnAdd/Remove, or timeToFade. -->
-
+        
         <!-- Text when adding the hediffs. -->
         <textOnAdd>test</textOnAdd>
         <!-- Text when removing the hediffs. -->
@@ -103,7 +105,7 @@
         <timeToFade>2</timeToFade>
         <!-- Goes in the description of the hediff. -->
         <!-- This gets the bionics needed from <otherHediffs>, and adds them after this text. -->
-
+        
         <stringForHediffsLeft>Test hediffs needed: </stringForHediffsLeft>
       </li>
     </comps>
@@ -113,12 +115,12 @@
     <label>TestHediffThree</label>
     <description>TestHediffThree</description>
   </HediffDef>
-  <HediffDef>
+    <HediffDef>
     <defName>TestHediffFour</defName>
     <label>TestHediffFour</label>
     <description>TestHediffFour</description>
   </HediffDef>
-
+  
   <HediffDef ParentName="InjuryBase">
     <defName>AmmoniaBurn</defName>
     <label>Ammonia Burn</label>
@@ -144,7 +146,7 @@
       <destroyedOutLabel>Burned out (ammonia)</destroyedOutLabel>
     </injuryProps>
   </HediffDef>
-
+  
   <HediffDef>
     <defName>AmmoniaPoisoning</defName>
     <label>Ammonia poisoning</label>
@@ -274,7 +276,7 @@
           </li>
         </hediffGivers>
       </li>
-    </stages>
-
+     </stages>
+    
   </HediffDef>
 </Defs>

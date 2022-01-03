@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+  
+  
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliTDW</defName>
     <label>Avali traditional wear</label>
-    <description>Traditional avali clothing. It's lightweight, and comfortable. It also has some chimes on it, which the avali like.</description>
+    <description>A two piece set of traditional avali wear. Consisting of a short piece that goes over the shoulders and barely covers their chest and another piece that goes sideways over their waist, leaving one thigh exposed and the other covered. It is generally considered lightweight and comfortable, even featuring some chimes for that sentimental noise.
+</description>
     <recipeMaker>
-      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+        <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
     </recipeMaker>
-
+   
     <graphicData>
       <texPath>avali/Things/Apparel/TraditionalWear/TraditionalWear_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -28,15 +30,16 @@
       <li>Apparel</li>
     </thingCategories>
     <statBases>
-      <MaxHitPoints>50</MaxHitPoints>
+      <MaxHitPoints>80</MaxHitPoints>
       <WorkToMake>530</WorkToMake>
-      <Mass>0.05</Mass>
-      <StuffEffectMultiplierArmor>0.02</StuffEffectMultiplierArmor>
+      <Mass>0.5</Mass>
+      <StuffEffectMultiplierArmor>0.24</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.02</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.5</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-
+    
     </equippedStatOffsets>
     <apparel>
       <bodyPartGroups>
@@ -59,22 +62,28 @@
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
   </ThingDef>
-
-  <!-- HUD -->
-  <ThingDef ParentName="ApparelMakeableBase">
+    
+ 
+  
+  
+  
+  
+  
+    <!-- HUD -->
+   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHUD</defName>
-
+      
     <label>Avali HUD [placeholder]</label>
     <description>An avali HUD. [placeholder]</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-      <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
+       <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
       <skillRequirements>
-        <Crafting>5</Crafting>
+        <Crafting>8</Crafting>
       </skillRequirements>
       <recipeUsers Inherit="False">
-        <li>FabricationBench</li>
+        <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
     <graphicData>
@@ -95,8 +104,9 @@
       <li>Apparel</li>
     </thingCategories>
     <equippedStatOffsets>
-      <ShootingAccuracyPawn>3.5</ShootingAccuracyPawn>
-      <ResearchSpeed>5.5</ResearchSpeed>
+      <ShootingAccuracyPawn>+0.2</ShootingAccuracyPawn>
+      <ResearchSpeed>0.35</ResearchSpeed>
+	  <AimingDelayFactor>-0.25</AimingDelayFactor>
     </equippedStatOffsets>
     <costList>
       <ComponentSpacer>5</ComponentSpacer>
@@ -145,12 +155,10 @@
     <thingSetMakerTags>
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
-    <comps>
-      <li Class="CompProperties_BiocodableApparel"/>
-    </comps>
-  </ThingDef>
 
-  <!-- TODO: Head Dress -> Headdress -->
+  </ThingDef>
+  
+  
   <!-- Headress -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHeadress</defName>
@@ -160,10 +168,10 @@
     <recipeMaker>
       <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
-        <Crafting>1</Crafting>
+        <Crafting>3</Crafting>
       </skillRequirements>
       <recipeUsers Inherit="False">
-        <li>FabricationBench</li>
+        <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
     <thingCategories>
@@ -178,16 +186,16 @@
     <generateCommonality>2</generateCommonality>
     <statBases>
       <WorkToMake>200</WorkToMake>
-      <MaxHitPoints>50</MaxHitPoints>
+      <MaxHitPoints>70</MaxHitPoints>
       <Mass>0.03</Mass>
       <Flammability>0.02</Flammability>
       <EquipDelay>1</EquipDelay>
     </statBases>
-
+    
     <equippedStatOffsets>
-      <SocialImpact>1</SocialImpact>
+      <SocialImpact>1.25</SocialImpact>
     </equippedStatOffsets>
-    <costStuffCount>5</costStuffCount>
+    <costStuffCount>20</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -216,9 +224,9 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-
+  
   <!-- Hood -->
-  <ThingDef ParentName="ApparelMakeableBase">
+<ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHood</defName>
     <label>Avali hood</label>
     <description>An avali hood. [placeholder]</description>
@@ -227,13 +235,13 @@
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
       <researchPrerequisite>AvaliThermalWraps</researchPrerequisite>
       <skillRequirements>
-        <Crafting>7</Crafting>
+        <Crafting>5</Crafting>
       </skillRequirements>
       <recipeUsers Inherit="False">
-        <li>FabricationBench</li>
+        <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-    <costStuffCount>20</costStuffCount>
+        <costStuffCount>20</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -250,21 +258,18 @@
     <generateCommonality>2</generateCommonality>
     <statBases>
       <WorkToMake>200</WorkToMake>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>120</MaxHitPoints>
       <Mass>0.3</Mass>
+	  <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.04</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-
+    
     <equippedStatOffsets>
-      <SocialImpact>-0.1</SocialImpact>
-      <ComfyTemperatureMin>-2</ComfyTemperatureMin>
-      <ComfyTemperatureMax>2</ComfyTemperatureMax>
-      <Flammability>20</Flammability>
     </equippedStatOffsets>
     <costList>
-      <ComponentSpacer>1</ComponentSpacer>
-      <Plasteel>40</Plasteel>
     </costList>
     <apparel>
       <bodyPartGroups>
@@ -287,23 +292,28 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-
+  
+  
+  
+  
+  
   <!-- bell cloak -->
-  <ThingDef ParentName="ApparelMakeableBase">
+<ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliBellCloak</defName>
     <label>Avali bell cloak</label>
-    <description>An avali cloak. [placeholder]</description>
+    <description>An Avali bell cloak. Large bulbous sheets of fabric or leather attached to the neck of an Avali with a simple belt. These cloaks are commonly used by Avali who either travel around a lot or who want to wear something whilst still being able to wear stuff under it. Other than that these cloaks offer decent protection to the environment, but perhaps only from small debris and particles.
+</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
-      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+     <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>3</Crafting>
       </skillRequirements>
       <recipeUsers Inherit="False">
-        <li>FabricationBench</li>
+        <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-    <costStuffCount>30</costStuffCount>
+         <costStuffCount>60</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -320,21 +330,23 @@
     <generateCommonality>2</generateCommonality>
     <statBases>
       <WorkToMake>200</WorkToMake>
-      <MaxHitPoints>150</MaxHitPoints>
+      <MaxHitPoints>160</MaxHitPoints>
       <Mass>0.2</Mass>
+	  <StuffEffectMultiplierArmor>0.24</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.02</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-
+    
     <equippedStatOffsets>
-      <RestRateMultiplier>0.25</RestRateMultiplier>
-      <SocialImpact>0.5</SocialImpact>
-      <MoveSpeed>1</MoveSpeed>
     </equippedStatOffsets>
 
     <apparel>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
         <li>Arms</li>
         <li>Legs</li>
       </bodyPartGroups>
@@ -352,17 +364,22 @@
       </defaultOutfitTags>
       <useDeflectMetalEffect>false</useDeflectMetalEffect>
     </apparel>
-    <colorGenerator Class="ColorGenerator_StandardApparel" />
+   <colorGenerator Class="ColorGenerator_StandardApparel" />
     <thingSetMakerTags>
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-
+  
+  
+  
+  
+  
   <!-- Thermal wraps -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliThermalWraps</defName>
     <label>Avali thermal wraps</label>
-    <description>A thermal wraps. [placeholder]</description>
+    <description>A suit of Avali thermal wraps. Together with the very efficient weaving of the nano-printing loom, these wraps are perhaps the best insulators around. Able to protect Avali from both extreme heats and colds, these wraps cover nearly their entire body exempt of their talons, feet and head. Because of their complex designs, some fabrics and leathers can leave this piece of apparel very expensive.
+</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -371,10 +388,10 @@
         <Crafting>7</Crafting>
       </skillRequirements>
       <recipeUsers Inherit="False">
-        <li>FabricationBench</li>
+        <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-    <costStuffCount>70</costStuffCount>
+        <costStuffCount>50</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -396,11 +413,11 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-
+    
     <equippedStatOffsets>
-      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-      <ComfyTemperatureMax>15</ComfyTemperatureMax>
-      <Flammability>20</Flammability>
+         <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+            <ComfyTemperatureMax>15</ComfyTemperatureMax>
+          <Flammability>20</Flammability>
     </equippedStatOffsets>
     <costList>
       <AvaliAeroweave>30</AvaliAeroweave>

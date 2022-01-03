@@ -12,8 +12,6 @@
       <texPath>avali/Things/Plants/Nakati/NakatiPlantFull</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <selectable>true</selectable>
-    <pathCost>14</pathCost>
     <ingestible />
     <plant>
       <dieIfLeafless>true</dieIfLeafless>
@@ -22,10 +20,6 @@
       <harvestedThingDef>NakatiBark</harvestedThingDef>
       <harvestYield>6</harvestYield>
       <immatureGraphicPath>avali/Things/Plants/Nakati/NakatiPlant</immatureGraphicPath>
-      <sowTags>
-        <li>Ground</li>
-        <li>Hydroponic</li>
-      </sowTags>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.3~0.8</visualSizeRange>

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef Name = "BaseAvaliPlant" Abstract="True"  ParentName="PlantBase">
-    <thingClass>Plant</thingClass>
+  <thingClass>Plant</thingClass>
     <plant>
       <growMinGlow>0</growMinGlow>
       <growOptimalGlow>0</growOptimalGlow>
       <cavePlant>true</cavePlant>
+      <sowTags>
+        <li>IcySoil</li>
+        <li>Hydroponic</li>
+      </sowTags>
     </plant>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
   </ThingDef>
 </Defs>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- <IWAvaliColonist.label>Colonist</IWAvaliColonist.label> -->
-  <IWAvaliColonist.label>Kolonist</IWAvaliColonist.label>
-  <!-- <IWAvaliColonist.labelPlural>Colonists</IWAvaliColonist.labelPlural> -->
-  <IWAvaliColonist.labelPlural>Kolonisten</IWAvaliColonist.labelPlural>
-  <!-- <IWAvaliColonist.labelMale>male Colonist</IWAvaliColonist.labelMale> -->
-  <IWAvaliColonist.labelMale>männlicher Kolonist</IWAvaliColonist.labelMale>
-  <!-- <IWAvaliColonist.labelMalePlural>male Colonists</IWAvaliColonist.labelMalePlural> -->
-  <IWAvaliColonist.labelMalePlural>männliche Kolonisten</IWAvaliColonist.labelMalePlural>
-  <!-- <IWAvaliColonist.labelFemale>female Colonist</IWAvaliColonist.labelFemale> -->
-  <IWAvaliColonist.labelFemale>weibliche Kolonistin</IWAvaliColonist.labelFemale>
-  <!-- <IWAvaliColonist.labelFemalePlural>female Colonists</IWAvaliColonist.labelFemalePlural> -->
-  <IWAvaliColonist.labelFemalePlural>weibliche Kolonistinnen</IWAvaliColonist.labelFemalePlural>
+    <!-- <IWAvaliColonist.label>Colonist</IWAvaliColonist.label> -->
+    <IWAvaliColonist.label>Kolonist</IWAvaliColonist.label>
+    <!-- <IWAvaliColonist.labelPlural>Colonists</IWAvaliColonist.labelPlural> -->
+    <IWAvaliColonist.labelPlural>Kolonisten</IWAvaliColonist.labelPlural>
+    <!-- <IWAvaliColonist.labelMale>male Colonist</IWAvaliColonist.labelMale> -->
+    <IWAvaliColonist.labelMale>männlicher Kolonist</IWAvaliColonist.labelMale>
+    <!-- <IWAvaliColonist.labelMalePlural>male Colonists</IWAvaliColonist.labelMalePlural> -->
+    <IWAvaliColonist.labelMalePlural>männliche Kolonisten</IWAvaliColonist.labelMalePlural>
+    <!-- <IWAvaliColonist.labelFemale>female Colonist</IWAvaliColonist.labelFemale> -->
+    <IWAvaliColonist.labelFemale>weibliche Kolonistin</IWAvaliColonist.labelFemale>
+    <!-- <IWAvaliColonist.labelFemalePlural>female Colonists</IWAvaliColonist.labelFemalePlural> -->
+    <IWAvaliColonist.labelFemalePlural>weibliche Kolonistinnen</IWAvaliColonist.labelFemalePlural>
 </LanguageData>

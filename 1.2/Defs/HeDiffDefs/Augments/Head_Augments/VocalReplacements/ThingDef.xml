@@ -8,7 +8,7 @@
       <drawSize>0.85</drawSize>
     </graphicData>
     <label>Vocal replacements</label>
-    <description>Vocal cord replacements. These make the user sound better, giving them a social gain.</description>
+   <description>Vocal cord replacements. These make the user sound better, giving them a social gain.</description>
     <descriptionHyperlinks><RecipeDef>InstallVocalReplacements</RecipeDef></descriptionHyperlinks>
     <costList>
       <ComponentIndustrial>1</ComponentIndustrial>

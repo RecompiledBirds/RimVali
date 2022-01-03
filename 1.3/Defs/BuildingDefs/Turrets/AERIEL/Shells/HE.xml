@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="MakeableAERIALShellBase">
+      <ThingDef ParentName="MakeableAERIALShellBase">
     <defName>AERIAL_HE</defName>
     <label>AERIAL HE rocket</label>
     <description>A highly explosive rocket, launched from an AERIAL system.</description>
@@ -11,9 +11,9 @@
     </graphicData>
     <comps>
       <li Class="CompProperties_Explosive">
-        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveRadius>40</explosiveRadius>
         <explosiveDamageType>Flame</explosiveDamageType>
-        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <explosiveExpandPerStackcount>2</explosiveExpandPerStackcount>
         <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
         <wickTicks>30~60</wickTicks>
       </li>
@@ -21,7 +21,7 @@
     <projectileWhenLoaded>AERIAL_HE_SHELL</projectileWhenLoaded>
     <costList>
       <AeroTungstenCarbide>5</AeroTungstenCarbide>
-      <AvaliTungstenPowder>17</AvaliTungstenPowder>
+       <AvaliTungstenPowder>17</AvaliTungstenPowder>
       <Steel>40</Steel>
       <Chemfuel>30</Chemfuel>
     </costList>
@@ -29,7 +29,7 @@
       <researchPrerequisite>AERIELRES</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-
+  
   <ThingDef ParentName="BaseBullet">
     <defName>AERIAL_HE_SHELL</defName>
     <label>high-explosive shell</label>
@@ -43,7 +43,7 @@
       <damageDef>Flame</damageDef>
       <!-- damage amount is the damage def default -->
       <speed>50</speed>
-      <explosionRadius>40</explosionRadius>
+      <explosionRadius>20</explosionRadius>
       <flyOverhead>true</flyOverhead>
       <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
       <soundExplode>MortarBomb_Explode</soundExplode>

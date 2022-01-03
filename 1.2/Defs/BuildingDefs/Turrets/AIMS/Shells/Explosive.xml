@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef Name="AIMSShellBase" ParentName="ResourceBase" Abstract="True">
+    <ThingDef Name="AIMSShellBase" ParentName="ResourceBase" Abstract="True">
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
     <tickerType>Normal</tickerType>
@@ -20,7 +20,7 @@
       <li>MortarShell</li>
     </tradeTags>
   </ThingDef>
-
+  
   <ThingDef Name="MakeableAIMSShellBase" ParentName="AIMSShellBase" Abstract="True">
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -37,7 +37,8 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
+  
+  
   <ThingDef ParentName="MakeableAIMSShellBase">
     <defName>AIMSHE</defName>
     <label>AIMS HE shell</label>
@@ -57,7 +58,7 @@
     </comps>
     <projectileWhenLoaded>AIMS_HE_SHELL</projectileWhenLoaded>
     <costList>
-      <AvaliTungstenPowder>15</AvaliTungstenPowder>
+       <AvaliTungstenPowder>15</AvaliTungstenPowder>
       <Steel>15</Steel>
       <Chemfuel>15</Chemfuel>
     </costList>
@@ -65,7 +66,7 @@
       <researchPrerequisite>AIMSRes</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-
+  
   <ThingDef ParentName="BaseBullet">
     <defName>AIMS_HE_SHELL</defName>
     <label>high-explosive shell</label>
@@ -87,5 +88,8 @@
       <soundAmbient>MortarRound_Ambient</soundAmbient>
     </projectile>
   </ThingDef>
+
+
+
 
 </Defs>

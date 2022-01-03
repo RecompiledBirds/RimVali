@@ -16,7 +16,7 @@
         <statOffsets>
           <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
-          <HealthIncreaseAdd>5</HealthIncreaseAdd>
+         <HealthIncreaseAdd>5</HealthIncreaseAdd>
         </statOffsets>
         <capMods>
           <li>

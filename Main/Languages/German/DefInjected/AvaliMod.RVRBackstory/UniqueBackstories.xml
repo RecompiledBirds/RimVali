@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <!-- data from Backstories.xml -->
-
+  
   <NeoStoryChild.title>NeoStoryChild</NeoStoryChild.title>
   <NeoStoryChild.story.title>NeoStoryChild</NeoStoryChild.story.title>
   <NeoStoryChild.shortTitle>NeoStoryChild</NeoStoryChild.shortTitle>
   <NeoStoryChild.storyDesc>storyDesc</NeoStoryChild.storyDesc>
   <NeoStoryChild.story.baseDesc>storydesc</NeoStoryChild.story.baseDesc>
+
 
   <NeoStoryAdult.title>NeoStoryAdult</NeoStoryAdult.title>
   <NeoStoryAdult.story.title>NeoStoryAdult</NeoStoryAdult.story.title>
@@ -14,11 +15,13 @@
   <NeoStoryAdult.storyDesc>storyDesc</NeoStoryAdult.storyDesc>
   <NeoStoryAdult.story.baseDesc>storydesc</NeoStoryAdult.story.baseDesc>
 
+
   <Danny.title>Danny</Danny.title>
   <Danny.story.title>Danny</Danny.story.title>
   <Danny.shortTitle>Danny</Danny.shortTitle>
   <Danny.storyDesc>storyDesc</Danny.storyDesc>
   <Danny.story.baseDesc>storydesc</Danny.story.baseDesc>
+
 
   <EmilStoryChild.title>EmilStoryChild</EmilStoryChild.title>
   <EmilStoryChild.story.title>EmilStoryChild</EmilStoryChild.story.title>
@@ -26,11 +29,13 @@
   <EmilStoryChild.storyDesc>storyDesc</EmilStoryChild.storyDesc>
   <EmilStoryChild.story.baseDesc>storydesc</EmilStoryChild.story.baseDesc>
 
+
   <EimilStoryAdult.title>EimilStoryAdult</EimilStoryAdult.title>
   <EimilStoryAdult.story.title>EimilStoryAdult</EimilStoryAdult.story.title>
   <EimilStoryAdult.shortTitle>EimilStoryAdult</EimilStoryAdult.shortTitle>
   <EimilStoryAdult.storyDesc>storyDesc</EimilStoryAdult.storyDesc>
   <EimilStoryAdult.story.baseDesc>storydesc</EimilStoryAdult.story.baseDesc>
+
 
   <SommeilStoryAdult.title>SommeilStoryAdult</SommeilStoryAdult.title>
   <SommeilStoryAdult.story.title>SommeilStoryAdult</SommeilStoryAdult.story.title>
@@ -38,11 +43,13 @@
   <SommeilStoryAdult.storyDesc>storyDesc</SommeilStoryAdult.storyDesc>
   <SommeilStoryAdult.story.baseDesc>storydesc</SommeilStoryAdult.story.baseDesc>
 
+
   <KBraidStoryChild.title>KBraidStoryChild</KBraidStoryChild.title>
   <KBraidStoryChild.story.title>KBraidStoryChild</KBraidStoryChild.story.title>
   <KBraidStoryChild.shortTitle>KBraidStoryChild</KBraidStoryChild.shortTitle>
   <KBraidStoryChild.storyDesc>storyDesc</KBraidStoryChild.storyDesc>
   <KBraidStoryChild.story.baseDesc>storydesc</KBraidStoryChild.story.baseDesc>
+
 
   <KBraidStoryAdult.title>KBraidStoryAdult</KBraidStoryAdult.title>
   <KBraidStoryAdult.story.title>KBraidStoryAdult</KBraidStoryAdult.story.title>
@@ -50,11 +57,13 @@
   <KBraidStoryAdult.storyDesc>storyDesc</KBraidStoryAdult.storyDesc>
   <KBraidStoryAdult.story.baseDesc>storydesc</KBraidStoryAdult.story.baseDesc>
 
+
   <KEiliStoryChild.title>KEiliStoryChild</KEiliStoryChild.title>
   <KEiliStoryChild.story.title>KEiliStoryChild</KEiliStoryChild.story.title>
   <KEiliStoryChild.shortTitle>KEiliStoryChild</KEiliStoryChild.shortTitle>
   <KEiliStoryChild.storyDesc>storyDesc</KEiliStoryChild.storyDesc>
   <KEiliStoryChild.story.baseDesc>storydesc</KEiliStoryChild.story.baseDesc>
+
 
   <KEiliStoryAdult.title>KEiliStoryAdult</KEiliStoryAdult.title>
   <KEiliStoryAdult.story.title>KEiliStoryAdult</KEiliStoryAdult.story.title>

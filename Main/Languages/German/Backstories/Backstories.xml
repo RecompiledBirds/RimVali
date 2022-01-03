@@ -2,644 +2,645 @@
 <BackstoryTranslations>  
   <!-- Base Backstories -->
 
-<!-- <AvaliHologram>
-<title>Holo-vali</title>
-<titleFemale></titleFemale>
-<titleShort>Holo-vali</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was a soldier, until they were shot while on a regular patrol through the edge of Illuminate territory.\n The wound was fatal, however [PAWN_pronoun] agreed to be uploaded into a computer system, to "continue" living, to some degree.\n As a result, [PAWN_nameDef] has become very smart, but is unable to do many physicial tasks.</desc>
-</AvaliHologram> -->
-<AvaliHologram>
-  <title>Holo-Vali</title>
-  <titleFemale></titleFemale>
-  <titleShort>Holo-Vali</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war ein Soldat, bis [PAWN_pronoun] auf einer gewöhnlichen Patrouille am äußeren Rand des Illuminate-Territoriums angeschossen wurde.\n Die Wunde selbst war tödlich, doch dann nahm [PAWN_nameDef] das Angebot an, [PAWN_pronoun] in ein Computersystem hochzuladen, um dort bis zu einem gewissen Grad "weiterzuleben".\n Als Resultat wurde [PAWN_pronoun] durch diese neue Situation sehr berechnend und vorrausschauend, konnte aber selbst keine physischen Aufgaben mehr erledigen.</desc>
-</AvaliHologram>
+  <!-- <AvaliHologram>
+    <title>Holo-vali</title>
+    <titleFemale></titleFemale>
+    <titleShort>Holo-vali</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was a soldier, until they were shot while on a regular patrol through the edge of Illuminate territory.\n The wound was fatal, however [PAWN_pronoun] agreed to be uploaded into a computer system, to "continue" living, to some degree.\n As a result, [PAWN_nameDef] has become very smart, but is unable to do many physicial tasks.</desc>
+  </AvaliHologram> -->
+  <AvaliHologram>
+    <title>Holo-Vali</title>
+    <titleFemale></titleFemale>
+    <titleShort>Holo-Vali</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war ein Soldat, bis [PAWN_pronoun] auf einer gewöhnlichen Patrouille am äußeren Rand des Illuminate-Territoriums angeschossen wurde.\n Die Wunde selbst war tödlich, doch dann nahm [PAWN_nameDef] das Angebot an, [PAWN_pronoun] in ein Computersystem hochzuladen, um dort bis zu einem gewissen Grad "weiterzuleben".\n Als Resultat wurde [PAWN_pronoun] durch diese neue Situation sehr berechnend und vorrausschauend, konnte aber selbst keine physischen Aufgaben mehr erledigen.</desc>
+  </AvaliHologram>
 
-<!-- <AvaliNomad>
-<title>Space Nomad</title>
-<titleFemale></titleFemale>
-<titleShort>Nomad</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] has traveled far across space, with [PAWN_possessive] pack. [PAWN_pronoun] has learned several different skills, although [PAWN_nameDef] never really got to study any single skill for too long, partially due to the fact they were always moving. [PAWN_nameDef]'s pack also never attended a proper school, and was taught by other avali travelling with them.</desc>
-</AvaliNomad> -->
-<AvaliNomad>
-  <title>Weltraum-Nomade</title>
-  <titleFemale></titleFemale>
-  <titleShort>Nomade</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] ist mit [PAWN_possessive]em Rudel bereits quer durch das gesamte Universum gereist. [PAWN_pronoun] hat dadurch viele verschiedene Fähigkeiten erlangt, obwohl [PAWN_nameDef] sich nie auf etwas spezialisieren konnte, denn [PAWN_pronoun] blieb nie lange an einem Ort. [PAWN_nameDef]'s hat auch nie eine Schule besucht, sondern wurde von den mitreisenden Mitgliedern des Rudels unterrichtet.</desc>
-</AvaliNomad>
+  <!-- <AvaliNomad>
+    <title>Space Nomad</title>
+    <titleFemale></titleFemale>
+    <titleShort>Nomad</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] has traveled far across space, with [PAWN_possessive] pack. [PAWN_pronoun] has learned several different skills, although [PAWN_nameDef] never really got to study any single skill for too long, partially due to the fact they were always moving. [PAWN_nameDef]'s pack also never attended a proper school, and was taught by other avali travelling with them.</desc>
+  </AvaliNomad> -->
+  <AvaliNomad>
+    <title>Weltraum-Nomade</title>
+    <titleFemale></titleFemale>
+    <titleShort>Nomade</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] ist mit [PAWN_possessive]em Rudel bereits quer durch das gesamte Universum gereist. [PAWN_pronoun] hat dadurch viele verschiedene Fähigkeiten erlangt, obwohl [PAWN_nameDef] sich nie auf etwas spezialisieren konnte, denn [PAWN_pronoun] blieb nie lange an einem Ort. [PAWN_nameDef]'s hat auch nie eine Schule besucht, sondern wurde von den mitreisenden Mitgliedern des Rudels unterrichtet.</desc>
+  </AvaliNomad>
 
-<!-- <AvaliWarchild>
-<title>War Hatchling</title>
-<titleFemale></titleFemale>
-<titleShort>War Hatchling</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>When [PAWN_nameDef] was just a mere hatchling, [PAWN_possessive] colony was raided by an opposing pack. Luckily, they never found little [PAWN_nameDef], who was hid away before the attack. Only a few days later, [PAWN_pronoun] was found by explorers, who luckily decided to take [PAWN_nameDef] back home with them. [PAWN_nameDef] lived a relatively normal life afterwards, not even made aware of [PAWN_possessive] past until adulthood.</desc>
-</AvaliWarchild> -->
-<AvaliWarchild>
-  <title>Kriegsgeboren</title>
-  <titleFemale></titleFemale>
-  <titleShort>Kriegsgeboren</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war gerade erst geschlüpft, als [PAWN_possessive]e Kolonie von einem feindlichen Rudel überfallen wurde. Da [PAWN_pronoun] sich kurz vor dem Angriff rechtzeitig verstecken konnte, wurde [PAWN_pronoun] glücklicherweise nicht entdeckt. Nur ein paar Tage später wurde [PAWN_pronoun] von Spähern gefunden, die sich dazu entschlossen [PAWN_nameDef] mit sich nach Hause zu nehmen. Danach erlebte [PAWN_nameDef] eine relativ normale Kindheit, [PAWN_possessive]e Erinnerungen an den Überfall durch das traumatische Erlebnis hat [PAWN_pronoun] bis ins Erwachsenenalter verdrängt.</desc>
-</AvaliWarchild>
+  <!-- <AvaliWarchild>
+    <title>War Hatchling</title>
+    <titleFemale></titleFemale>
+    <titleShort>War Hatchling</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>When [PAWN_nameDef] was just a mere hatchling, [PAWN_possessive] colony was raided by an opposing pack. Luckily, they never found little [PAWN_nameDef], who was hid away before the attack. Only a few days later, [PAWN_pronoun] was found by explorers, who luckily decided to take [PAWN_nameDef] back home with them. [PAWN_nameDef] lived a relatively normal life afterwards, not even made aware of [PAWN_possessive] past until adulthood.</desc>
+  </AvaliWarchild> -->
+  <AvaliWarchild>
+    <title>Kriegsgeboren</title>
+    <titleFemale></titleFemale>
+    <titleShort>Kriegsgeboren</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war gerade erst geschlüpft, als [PAWN_possessive]e Kolonie von einem feindlichen Rudel überfallen wurde. Da [PAWN_pronoun] sich kurz vor dem Angriff rechtzeitig verstecken konnte, wurde [PAWN_pronoun] glücklicherweise nicht entdeckt. Nur ein paar Tage später wurde [PAWN_pronoun] von Spähern gefunden, die sich dazu entschlossen [PAWN_nameDef] mit sich nach Hause zu nehmen. Danach erlebte [PAWN_nameDef] eine relativ normale Kindheit, [PAWN_possessive]e Erinnerungen an den Überfall durch das traumatische Erlebnis hat [PAWN_pronoun] bis ins Erwachsenenalter verdrängt.</desc>
+  </AvaliWarchild>
 
-<!-- <AvaliSoldierChild>
-<title>Child Soldier</title>
-<titleFemale></titleFemale>
-<titleShort>Child Soldier</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>From an extremely young age, [PAWN_nameDef] was taught how to fight. [PAWN_possessive] pack was extremely militaristic in nature, and believed in honor codes. [PAWN_nameDef] was drilled from an extremely young age, in harsh conditions, and harsh tests.</desc>
-</AvaliSoldierChild> -->
-<AvaliSoldierChild>
-  <title>Kindssoldat</title>
-  <titleFemale></titleFemale>
-  <titleShort>Kindssoldat</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Von Kindesbeinen an wurde [PAWN_nameDef] auf den Kampf gedrillt, durch harte Tests in noch härteren Umgebungen. [PAWN_possessive] Rudel war extrem militaristisch und glaubte an einen strengen Ehrenkodex.</desc>
-</AvaliSoldierChild>
+  <!-- <AvaliSoldierChild>
+    <title>Child Soldier</title>
+    <titleFemale></titleFemale>
+    <titleShort>Child Soldier</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>From an extremely young age, [PAWN_nameDef] was taught how to fight. [PAWN_possessive] pack was extremely militaristic in nature, and believed in honor codes. [PAWN_nameDef] was drilled from an extremely young age, in harsh conditions, and harsh tests.</desc>
+  </AvaliSoldierChild> -->
+  <AvaliSoldierChild>
+    <title>Kindssoldat</title>
+    <titleFemale></titleFemale>
+    <titleShort>Kindssoldat</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Von Kindesbeinen an wurde [PAWN_nameDef] auf den Kampf gedrillt, durch harte Tests in noch härteren Umgebungen. [PAWN_possessive] Rudel war extrem militaristisch und glaubte an einen strengen Ehrenkodex.</desc>
+  </AvaliSoldierChild>
 
-<!-- <AvaliLaborChild>
-<title>Child Laborer</title>
-<titleFemale></titleFemale>
-<titleShort>Child Laborer</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was born into a ethically questionable situation. Well, "questionable" is an understatement. Their family was part of a shady illuminate business, and [PAWN_nameDef] suffered the same fate as their family; working in awful conditions, for little pay, even as a youngling. They can work really well, but they are socially underdeveloped.</desc>
-</AvaliLaborChild> -->
-<AvaliLaborChild>
-  <title>Arbeiterkind</title>
-  <titleFemale></titleFemale>
-  <titleShort>Arbeiterkind</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] wurde in eine ethisch fragwürdige Situation hineingeboren. Nun, "fragwürdig" ist eine Untertreibung. [PAWN_possessive]e Familie war Teil eines zwielichtigen Geschäfts, was [PAWN_nameDef] zum selben Schicksal wie [PAWN_possessive]e Familie zwang; für einen lächerlichen Lohn zu Arbeiten, selbst als kleines Kind. [PAWN_pronoun] kann gut vor sich hinarbeiten, ist aber sozial unterentwickelt.</desc>
-</AvaliLaborChild>
+  <!-- <AvaliLaborChild>
+    <title>Child Laborer</title>
+    <titleFemale></titleFemale>
+    <titleShort>Child Laborer</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was born into a ethically questionable situation. Well, "questionable" is an understatement. Their family was part of a shady illuminate business, and [PAWN_nameDef] suffered the same fate as their family; working in awful conditions, for little pay, even as a youngling. They can work really well, but they are socially underdeveloped.</desc>
+  </AvaliLaborChild> -->
+  <AvaliLaborChild>
+    <title>Arbeiterkind</title>
+    <titleFemale></titleFemale>
+    <titleShort>Arbeiterkind</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] wurde in eine ethisch fragwürdige Situation hineingeboren. Nun, "fragwürdig" ist eine Untertreibung. [PAWN_possessive]e Familie war Teil eines zwielichtigen Geschäfts, was [PAWN_nameDef] zum selben Schicksal wie [PAWN_possessive]e Familie zwang; für einen lächerlichen Lohn zu Arbeiten, selbst als kleines Kind. [PAWN_pronoun] kann gut vor sich hinarbeiten, ist aber sozial unterentwickelt.</desc>
+  </AvaliLaborChild>
 
-<!-- <AvaliBlessedChild>
-<title>Chosen One</title>
-<titleFemale></titleFemale>
-<titleShort>Chosen One</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was excitedly raised by [PAWN_possessive] pack, they believed [PAWN_nameDef] would be destined to be big for their pack, their beliefs stating that being born on that day would bring great prestige. As such, [PAWN_nameDef] was treated to many things that most Avali younglings never had.</desc>
-</AvaliBlessedChild> -->
-<AvaliBlessedChild>
-  <title>Auserwählt</title>
-  <titleFemale></titleFemale>
-  <titleShort>Auserwählt</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] wurde voller Erwartungen von [PAWN_possessive]em Rudel aufgezogen, in dem Glauben [PAWN_nameDef] sei dafür bestimmt, Großes für das Rudel zu leisten. Sie glauben fest daran, dass ein Kind dem Rudel viel Ruhm einbringen wird, wenn es an einem bestimmten Tag geboren wird. Deswegen wurde [PAWN_nameDef] immer besser behandelt und bekam Dinge, die andere Avali Kinder nie hatten.</desc>
-</AvaliBlessedChild>
+  <!-- <AvaliBlessedChild>
+    <title>Chosen One</title>
+    <titleFemale></titleFemale>
+    <titleShort>Chosen One</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was excitedly raised by [PAWN_possessive] pack, they believed [PAWN_nameDef] would be destined to be big for their pack, their beliefs stating that being born on that day would bring great prestige. As such, [PAWN_nameDef] was treated to many things that most Avali younglings never had.</desc>
+  </AvaliBlessedChild> -->
+  <AvaliBlessedChild>
+    <title>Auserwählt</title>
+    <titleFemale></titleFemale>
+    <titleShort>Auserwählt</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] wurde voller Erwartungen von [PAWN_possessive]em Rudel aufgezogen, in dem Glauben [PAWN_nameDef] sei dafür bestimmt, Großes für das Rudel zu leisten. Sie glauben fest daran, dass ein Kind dem Rudel viel Ruhm einbringen wird, wenn es an einem bestimmten Tag geboren wird. Deswegen wurde [PAWN_nameDef] immer besser behandelt und bekam Dinge, die andere Avali Kinder nie hatten.</desc>
+  </AvaliBlessedChild>
 
-<!-- <AvaliLateHatch>
-<title>Late Hatch</title>
-<titleFemale></titleFemale>
-<titleShort>Late Hatch</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] for some reason hatched way later then the rest of their kit. They grew up behind everyone else and didn't fit in with the rest.</desc>
-</AvaliLateHatch> -->
-<AvaliLateHatch>
-  <title>Spät geschlüpft</title>
-  <titleFemale></titleFemale>
-  <titleShort>Spät geschlüpft</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] ist aus irgendeinem Grund deutlich später als die anderen ausgeschlüpft. [PAWN_pronoun] war geistig immer hinter den anderen und hat nie wirklich dazugepasst.</desc>
-</AvaliLateHatch>
+  <!-- <AvaliLateHatch>
+    <title>Late Hatch</title>
+    <titleFemale></titleFemale>
+    <titleShort>Late Hatch</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] for some reason hatched way later then the rest of their kit. They grew up behind everyone else and didn't fit in with the rest.</desc>
+  </AvaliLateHatch> -->
+  <AvaliLateHatch>
+    <title>Spät geschlüpft</title>
+    <titleFemale></titleFemale>
+    <titleShort>Spät geschlüpft</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] ist aus irgendeinem Grund deutlich später als die anderen ausgeschlüpft. [PAWN_pronoun] war geistig immer hinter den anderen und hat nie wirklich dazugepasst.</desc>
+  </AvaliLateHatch>
 
-<!-- <AvaliSolider>
-<title>Illuminate Solider</title>
-<titleFemale></titleFemale>
-<titleShort>Solider</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was a solider for the Illuminate. [PAWN_pronoun] was taught many combat tatics, as well as basic first aid.</desc>
-</AvaliSolider> -->
-<AvaliSolider>
-  <title>Illuminate Soldat</title>
-  <titleFemale></titleFemale>
-  <titleShort>Soldat</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war ein Soldat für die Illuminate. [PAWN_nameDef] wurden viele unterschiedliche Kampfstrategien beigebracht, [PAWN_pronoun] beherrscht aber auch grundlegende Erste-Hilfe-Kenntnisse.</desc>
-</AvaliSolider>
+  <!-- <AvaliSolider>
+    <title>Illuminate Solider</title>
+    <titleFemale></titleFemale>
+    <titleShort>Solider</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was a solider for the Illuminate. [PAWN_pronoun] was taught many combat tatics, as well as basic first aid.</desc>
+  </AvaliSolider> -->
+  <AvaliSolider>
+    <title>Illuminate Soldat</title>
+    <titleFemale></titleFemale>
+    <titleShort>Soldat</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war ein Soldat für die Illuminate. [PAWN_nameDef] wurden viele unterschiedliche Kampfstrategien beigebracht, [PAWN_pronoun] beherrscht aber auch grundlegende Erste-Hilfe-Kenntnisse.</desc>
+  </AvaliSolider>
 
-<!-- <AvaliFarmer>
-<title>Farmer</title>
-<titleFemale></titleFemale>
-<titleShort>Farmer</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>On Avalon, [PAWN_nameDef] was a farmer. [PAWN_pronoun] mainly worked with the few plants/microorganisms, due to the conditions on avalon.</desc>
-</AvaliFarmer> -->
-<AvaliFarmer>
-  <title>Avalon Landwirt</title>
-  <titleFemale></titleFemale>
-  <titleShort>Landwirt</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war ein Landwirt auf Avalon. [PAWN_pronoun] arbeitete hauptsächtlich mit den wenigen Pflanzen und Mikroorganismen, die auf der rauen Umgebung auf Avalon wuchsen.</desc>
-</AvaliFarmer>
+  <!-- <AvaliFarmer>
+    <title>Farmer</title>
+    <titleFemale></titleFemale>
+    <titleShort>Farmer</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>On Avalon, [PAWN_nameDef] was a farmer. [PAWN_pronoun] mainly worked with the few plants/microorganisms, due to the conditions on avalon.</desc>
+  </AvaliFarmer> -->
+  <AvaliFarmer>
+    <title>Avalon Landwirt</title>
+    <titleFemale></titleFemale>
+    <titleShort>Landwirt</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war ein Landwirt auf Avalon. [PAWN_pronoun] arbeitete hauptsächtlich mit den wenigen Pflanzen und Mikroorganismen, die auf der rauen Umgebung auf Avalon wuchsen.</desc>
+  </AvaliFarmer>
 
-<!-- <AvaliResearcher>
-<title>Illuminate Researcher</title>
-<titleFemale></titleFemale>
-<titleShort>Researcher</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was a researcher for the Illuminate. Even now, they still are, occasionally reporting their scientific findings back to the Illuminate, when [PAWN_pronoun] can.</desc>
-</AvaliResearcher> -->
-<AvaliResearcher>
-  <title>Illuminate Forscher</title>
-  <titleFemale></titleFemale>
-  <titleShort>Forscher</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war ein Forscher für die Illuminate. Selbst aus so großer Entfernung schickt [PAWN_pronoun] gelegentlich [PAWN_possessive]e Forschungsergebnisse zu den Illuminate, wenn es möglich ist.</desc>
-</AvaliResearcher>
+  <!-- <AvaliResearcher>
+    <title>Illuminate Researcher</title>
+    <titleFemale></titleFemale>
+    <titleShort>Researcher</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was a researcher for the Illuminate. Even now, they still are, occasionally reporting their scientific findings back to the Illuminate, when [PAWN_pronoun] can.</desc>
+  </AvaliResearcher> -->
+  <AvaliResearcher>
+    <title>Illuminate Forscher</title>
+    <titleFemale></titleFemale>
+    <titleShort>Forscher</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war ein Forscher für die Illuminate. Selbst aus so großer Entfernung schickt [PAWN_pronoun] gelegentlich [PAWN_possessive]e Forschungsergebnisse zu den Illuminate, wenn es möglich ist.</desc>
+  </AvaliResearcher>
 
-<!-- <AvaliBuilder>
-<title>Builder</title>
-<titleFemale></titleFemale>
-<titleShort>Builder</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] learned to construct permanent buildings, and helped with the construction of more permanent settlements on avalon. Now, they are being sent to help construct buildings on other planets.</desc>
-</AvaliBuilder> -->
-<AvaliBuilder>
-  <title>Baumeister</title>
-  <titleFemale></titleFemale>
-  <titleShort>Baumeister</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] erlernte die Konstruktion von robusten und beständigen Gebäuden und half beim Bau dauerhafter Siedlungen auf Avalon. Jetzt wurde [PAWN_pronoun] ausgesandt, um auch auf anderen Planeten beim Bau von Gebäuden und Siedlungen zu helfen.</desc>
-</AvaliBuilder>
+  <!-- <AvaliBuilder>
+    <title>Builder</title>
+    <titleFemale></titleFemale>
+    <titleShort>Builder</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] learned to construct permanent buildings, and helped with the construction of more permanent settlements on avalon. Now, they are being sent to help construct buildings on other planets.</desc>
+  </AvaliBuilder> -->
+  <AvaliBuilder>
+    <title>Baumeister</title>
+    <titleFemale></titleFemale>
+    <titleShort>Baumeister</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] erlernte die Konstruktion von robusten und beständigen Gebäuden und half beim Bau dauerhafter Siedlungen auf Avalon. Jetzt wurde [PAWN_pronoun] ausgesandt, um auch auf anderen Planeten beim Bau von Gebäuden und Siedlungen zu helfen.</desc>
+  </AvaliBuilder>
 
-<!-- <AvaliExplorer>
-<title>Pioneer</title>
-<titleFemale></titleFemale>
-<titleShort>Explorer</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was an inter-planetary explorer back on Avalon, tasked with charting the artic landscape of the planet. [PAWN_nameDef] usually worked alone, and as such didn't have much social interaction, besides reporting their findings. Still, they learned many invaluable survival skills.</desc>
-</AvaliExplorer> -->
-<AvaliExplorer>
-  <title>Pionier</title>
-  <titleFemale></titleFemale>
-  <titleShort>Entdecker</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war ein interplanetarer Entdecker auf Avalon, dazu beauftragt die arktischen Landschaften des Planeten zu kartieren. [PAWN_nameDef] arbeitete hauptsächtlich alleine, ohne jegliche soziale Interaktionen, außer es ging darum [PAWN_possessive]e Entdeckungen zu melden und weiterzugeben. Dafür besitzt [PAWN_pronoun] aber einen unfassbar großen Erfahrungsschatz an Überlebensstrategien.</desc>
-</AvaliExplorer>
+  <!-- <AvaliExplorer>
+    <title>Pioneer</title>
+    <titleFemale></titleFemale>
+    <titleShort>Explorer</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was an inter-planetary explorer back on Avalon, tasked with charting the artic landscape of the planet. [PAWN_nameDef] usually worked alone, and as such didn't have much social interaction, besides reporting their findings. Still, they learned many invaluable survival skills.</desc>
+  </AvaliExplorer> -->
+  <AvaliExplorer>
+    <title>Pionier</title>
+    <titleFemale></titleFemale>
+    <titleShort>Entdecker</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war ein interplanetarer Entdecker auf Avalon, dazu beauftragt die arktischen Landschaften des Planeten zu kartieren. [PAWN_nameDef] arbeitete hauptsächtlich alleine, ohne jegliche soziale Interaktionen, außer es ging darum [PAWN_possessive]e Entdeckungen zu melden und weiterzugeben. Dafür besitzt [PAWN_pronoun] aber einen unfassbar großen Erfahrungsschatz an Überlebensstrategien.</desc>
+  </AvaliExplorer>
 
-<!-- <AvaliDiplomat>
-<title>Diplomat</title>
-<titleFemale></titleFemale>
-<titleShort>Diplomat</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] performed diplomatic duties back on Avalon, trying [PAWN_possessive] best to resolve tensions between tribes. [PAWN_nameDef] has always aimed to resolve conflict without fighting, and as such, lacks greatly in combat areas. But who needs bullets, when you have words as sharp as steel?</desc>
-</AvaliDiplomat> -->
-<AvaliDiplomat>
-  <title>Diplomat</title>
-  <titleFemale></titleFemale>
-  <titleShort>Diplomat</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] führte solche Aufgaben aus, die viel diplomatisches Geschick erforderten, so etwa versuchte [PAWN_pronoun] die beständigen Spannungen zwischen den Stämmen zu lösen. [PAWN_pronoun] war immer bestrebt Konflikte gewaltfrei zu lösen und als solches mangelt es [PAWN_nameDef] an Kampferfahrung. Aber wer braucht Kugeln und Klingen, wenn man Worte hat, die scharf wie Stahl sind?</desc>
-</AvaliDiplomat>
+  <!-- <AvaliDiplomat>
+    <title>Diplomat</title>
+    <titleFemale></titleFemale>
+    <titleShort>Diplomat</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] performed diplomatic duties back on Avalon, trying [PAWN_possessive] best to resolve tensions between tribes. [PAWN_nameDef] has always aimed to resolve conflict without fighting, and as such, lacks greatly in combat areas. But who needs bullets, when you have words as sharp as steel?</desc>
+  </AvaliDiplomat> -->
+  <AvaliDiplomat>
+    <title>Diplomat</title>
+    <titleFemale></titleFemale>
+    <titleShort>Diplomat</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] führte solche Aufgaben aus, die viel diplomatisches Geschick erforderten, so etwa versuchte [PAWN_pronoun] die beständigen Spannungen zwischen den Stämmen zu lösen. [PAWN_pronoun] war immer bestrebt Konflikte gewaltfrei zu lösen und als solches mangelt es [PAWN_nameDef] an Kampferfahrung. Aber wer braucht Kugeln und Klingen, wenn man Worte hat, die scharf wie Stahl sind?</desc>
+  </AvaliDiplomat>
 
-<!-- <AvaliLoner>
-<title>Loner</title>
-<titleFemale></titleFemale>
-<titleShort>Loner</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] had a rough early adulthood. They were framed for a murder in [PAWN_possessive] pack back on Avalon, despite [PAWN_possessive] having no connection. The colony's leaders stated otherwise. [PAWN_nameDef] was banished from the pack, left alone to the worst parts of the Avalon tundra. Of course, the issue wasn't so much surviving, but the crippling loneliness, and the lack of food. Mirraciously, [PAWN_nameDef] found another pack after years of being alone, and slowly accustomed back to normal life. Being in complete isolation for years made it extremely hard to return to socializing, plus [PAWN_pronoun] didn't learn much technology-wise in the Avalon tundra.
-
-[PAWN_nameDef] swears to find the true murderer one day.</desc>
-</AvaliLoner> -->
-<AvaliLoner>
-  <title>Einzelgänger</title>
-  <titleFemale></titleFemale>
-  <titleShort>Einzelgänger</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] hatte ein hartes Leben im jungen Erwachsenenalter. [PAWN_pronoun] wurde für einen Mord in [PAWN_possessive]em Rudel verantwortlich gemacht, obwohl es keine Beweise dafür gab. Die Anführer der Kolonie sahen das aber anders und [PAWN_nameDef] wurde aus dem Rudel verbannt, ausgesetzt in den schlimmsten Regionen der Tundra Avalons. Das Problem war nicht so sehr das Überleben an sich, sondern die lähmende Einsamkeit und der Mangel an Essen. Wie durch ein Wunder fand [PAWN_nameDef] nach Jahren des Alleinseins ein weiteres Rudel und gewöhnte sich langsam wieder an das normale Leben. Nach der jahrelangen Isolation, fiel es [PAWN_nameDef] schwer wieder Kontakte zu knüpfen und sich wieder an die fortgeschrittene Technologie zu gewöhnen.
-
-    [PAWN_nameDef] schwor, eines Tages den wahren Mörder zu finden.</desc>
+  <!-- <AvaliLoner>
+    <title>Loner</title>
+    <titleFemale></titleFemale>
+    <titleShort>Loner</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] had a rough early adulthood. They were framed for a murder in [PAWN_possessive] pack back on Avalon, despite [PAWN_possessive] having no connection. The colony's leaders stated otherwise. [PAWN_nameDef] was banished from the pack, left alone to the worst parts of the Avalon tundra. Of course, the issue wasn't so much surviving, but the crippling loneliness, and the lack of food. Mirraciously, [PAWN_nameDef] found another pack after years of being alone, and slowly accustomed back to normal life. Being in complete isolation for years made it extremely hard to return to socializing, plus [PAWN_pronoun] didn't learn much technology-wise in the Avalon tundra.
+	
+	[PAWN_nameDef] swears to find the true murderer one day.</desc>
+  </AvaliLoner> -->
+  <AvaliLoner>
+    <title>Einzelgänger</title>
+    <titleFemale></titleFemale>
+    <titleShort>Einzelgänger</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] hatte ein hartes Leben im jungen Erwachsenenalter. [PAWN_pronoun] wurde für einen Mord in [PAWN_possessive]em Rudel verantwortlich gemacht, obwohl es keine Beweise dafür gab. Die Anführer der Kolonie sahen das aber anders und [PAWN_nameDef] wurde aus dem Rudel verbannt, ausgesetzt in den schlimmsten Regionen der Tundra Avalons. Das Problem war nicht so sehr das Überleben an sich, sondern die lähmende Einsamkeit und der Mangel an Essen. Wie durch ein Wunder fand [PAWN_nameDef] nach Jahren des Alleinseins ein weiteres Rudel und gewöhnte sich langsam wieder an das normale Leben. Nach der jahrelangen Isolation, fiel es [PAWN_nameDef] schwer wieder Kontakte zu knüpfen und sich wieder an die fortgeschrittene Technologie zu gewöhnen.
+	
+	[PAWN_nameDef] schwor, eines Tages den wahren Mörder zu finden.</desc>
   </AvaliLoner>
 
-<!-- <AvaliSpy>
-<title>Illuminate Spy</title>
-<titleFemale></titleFemale>
-<titleShort>Spy</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] enlisted at a young age to join the Illuminate. Years and years of propaganda clearly did their job, and [PAWN_nameDef] quickly climbed the ranks of the Illuminate spy program. [PAWN_nameDef] lives to serve the Illuminate, the Illuminate serves to grant livelihood to [PAWN_nameDef].
-
-If [PAWN_nameDef] wants something out of someone, [PAWN_pronoun] will get it, no matter the cost. It's not torture, it's coersion after all! [PAWN_nameDef] can play many roles, and can hold [PAWN_possessive] own in many situations.</desc>
-</AvaliSpy> -->
-<AvaliSpy>
-  <title>Illuminate Spion</title>
-  <titleFemale></titleFemale>
-  <titleShort>Spion</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] wurde in sehr jungen Jahren zu den Illuminate eingezogen. Jahrelange Propaganda erzielten die gewünschten Ergebnisse und [PAWN_nameDef] steig schnell in die Reihen des Illuminate-Spionageprogramms auf. [PAWN_nameDef] lebt um den Illuminate zu dienen und die Illuminate sichern [PAWN_nameDef] ihren Lebensunterhalt.
-
-    Wenn [PAWN_nameDef] etwas von jemandem will, wird [PAWN_pronoun] es bekommen, um jeden Preis. Das ist keine Folter, [PAWN_pronoun] bringt andere nur dazu zu tun, was [PAWN_pronoun] will! [PAWN_nameDef] kann viele Rollen spielen und sich so in vielen Situationen behaupten.</desc>
+  <!-- <AvaliSpy>
+    <title>Illuminate Spy</title>
+    <titleFemale></titleFemale>
+    <titleShort>Spy</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] enlisted at a young age to join the Illuminate. Years and years of propaganda clearly did their job, and [PAWN_nameDef] quickly climbed the ranks of the Illuminate spy program. [PAWN_nameDef] lives to serve the Illuminate, the Illuminate serves to grant livelihood to [PAWN_nameDef].
+	
+	If [PAWN_nameDef] wants something out of someone, [PAWN_pronoun] will get it, no matter the cost. It's not torture, it's coersion after all! [PAWN_nameDef] can play many roles, and can hold [PAWN_possessive] own in many situations.</desc>
+  </AvaliSpy> -->
+  <AvaliSpy>
+    <title>Illuminate Spion</title>
+    <titleFemale></titleFemale>
+    <titleShort>Spion</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] wurde in sehr jungen Jahren zu den Illuminate eingezogen. Jahrelange Propaganda erzielten die gewünschten Ergebnisse und [PAWN_nameDef] steig schnell in die Reihen des Illuminate-Spionageprogramms auf. [PAWN_nameDef] lebt um den Illuminate zu dienen und die Illuminate sichern [PAWN_nameDef] ihren Lebensunterhalt.
+	
+	Wenn [PAWN_nameDef] etwas von jemandem will, wird [PAWN_pronoun] es bekommen, um jeden Preis. Das ist keine Folter, [PAWN_pronoun] bringt andere nur dazu zu tun, was [PAWN_pronoun] will! [PAWN_nameDef] kann viele Rollen spielen und sich so in vielen Situationen behaupten.</desc>
   </AvaliSpy>
 
-<!-- <AvaliThief>
-<title>Thief</title>
-<titleFemale></titleFemale>
-<titleShort>Thief</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] made [PAWN_possessive] living back on Avalon by petty thievery, shoplifting, and running black market goods. However, even those endeavours started to prove ineffective in fufilling [PAWN_nameDef]'s crave for possessions, so they then stepped up to muggings, kidnappings, ransom, robberies, and many more goodies.
-
-After a few years, [PAWN_nameDef] was caught, and placed into an Avali prisoner program. [PAWN_nameDef] is now being sent to a foreign planet for some kind of expedition, but [PAWN_pronoun] was too busy pickpocketing the instructor to really be listening.</desc>
-</AvaliThief> -->
-<AvaliThief>
-  <title>Dieb</title>
-  <titleFemale></titleFemale>
-  <titleShort>Dieb</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] verdiente [PAWN_possessive]en Lebensunterhalt auf Avalon durch Diebstahl, Ladenraub und das Handeln von Schwarzmarktwaren. Doch irgendwann reichte das nicht mehr aus, um [PAWN_nameDef]'s Verlangen nach immer mehr Besitz und Reichtum zu stillen und so ging [PAWN_pronoun] zu Überfällen, Entführungen, Erpressung, Raubüberfällen und vielen weiteren Verbrechen über.
-
-    Nach einigen Jahren wurde [PAWN_nameDef] gefasst und in ein Avali-Gefängnisprogramm aufgenommen. Nun wird [PAWN_nameDef] wohl zu einer Art Expedition auf einen fremden Planeten geschickt, aber [PAWN_pronoun] war viel zu beschäftigt den anderen die Taschen zu leeren, um wirklich zuzuhören.</desc>
+  <!-- <AvaliThief>
+    <title>Thief</title>
+    <titleFemale></titleFemale>
+    <titleShort>Thief</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] made [PAWN_possessive] living back on Avalon by petty thievery, shoplifting, and running black market goods. However, even those endeavours started to prove ineffective in fufilling [PAWN_nameDef]'s crave for possessions, so they then stepped up to muggings, kidnappings, ransom, robberies, and many more goodies.
+	
+	After a few years, [PAWN_nameDef] was caught, and placed into an Avali prisoner program. [PAWN_nameDef] is now being sent to a foreign planet for some kind of expedition, but [PAWN_pronoun] was too busy pickpocketing the instructor to really be listening.</desc>
+  </AvaliThief> -->
+  <AvaliThief>
+    <title>Dieb</title>
+    <titleFemale></titleFemale>
+    <titleShort>Dieb</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] verdiente [PAWN_possessive]en Lebensunterhalt auf Avalon durch Diebstahl, Ladenraub und das Handeln von Schwarzmarktwaren. Doch irgendwann reichte das nicht mehr aus, um [PAWN_nameDef]'s Verlangen nach immer mehr Besitz und Reichtum zu stillen und so ging [PAWN_pronoun] zu Überfällen, Entführungen, Erpressung, Raubüberfällen und vielen weiteren Verbrechen über.
+	
+	Nach einigen Jahren wurde [PAWN_nameDef] gefasst und in ein Avali-Gefängnisprogramm aufgenommen. Nun wird [PAWN_nameDef] wohl zu einer Art Expedition auf einen fremden Planeten geschickt, aber [PAWN_pronoun] war viel zu beschäftigt den anderen die Taschen zu leeren, um wirklich zuzuhören.</desc>
   </AvaliThief>
 
-<!-- <AvaliTinkerer>
-<title>Tinkerer</title>
-<titleFemale></titleFemale>
-<titleShort>Tinkerer</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] never really worked for anyone in particular, finding [PAWN_possessive] lifestyle in making, restoring, improving, changing, destroying, and designing countless odd machines. At home, [PAWN_pronoun] was disregarded for the bizarre creations [PAWN_pronoun] made, dismissed as being "absolutely impractical" and "having less worth then a wet dishrag." Nonetheless, [PAWN_nameDef] continued to hone their trade, developing many odd trinkets, even if [PAWN_nameDef] couldn't do [PAWN_possessive] dream designs such as "A giant robotic centipede with machine guns attached to it" or "A portable device that can generate tornadoes on command".
+  <!-- <AvaliTinkerer>
+    <title>Tinkerer</title>
+    <titleFemale></titleFemale>
+    <titleShort>Tinkerer</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] never really worked for anyone in particular, finding [PAWN_possessive] lifestyle in making, restoring, improving, changing, destroying, and designing countless odd machines. At home, [PAWN_pronoun] was disregarded for the bizarre creations [PAWN_pronoun] made, dismissed as being "absolutely impractical" and "having less worth then a wet dishrag." Nonetheless, [PAWN_nameDef] continued to hone their trade, developing many odd trinkets, even if [PAWN_nameDef] couldn't do [PAWN_possessive] dream designs such as "A giant robotic centipede with machine guns attached to it" or "A portable device that can generate tornadoes on command".
 
-But, this isn't Avalon anymore. Maybe [PAWN_nameDef]'s creations will finally be recognized for what they are worth on this new world?</desc>
-</AvaliTinkerer> -->
-<AvaliTinkerer>
-  <title>Bastler</title>
-  <titleFemale></titleFemale>
-  <titleShort>Bastler</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] hat nie für jemand bestimmten gearbeitet, stattdessen hat [PAWN_pronoun] [PAWN_possessive]en Lebenssinn darin gefunden, unzählige seltsame Maschinen herzustellen, zu reparieren, zu verbessern, zu verändern, zu zerstören und zu entwerfen. Zuhause wurden [PAWN_nameDef] bizarre Erfindungen abgetan als "absolut unpraktisch" und "weniger wert als ein feuchten Fetzen". Trotzdem fuhr [PAWN_nameDef] damit fort [PAWN_possessive] Handwerk zu verbessern und entwickelte viele merkwürdige Objekte, auch wenn es keines davon [PAWN_possessive]em Traum von einem "gigantischen Tausendfüßer mit Maschinengewehren" entsprach oder einem "tragbaren Gerät, mit dem man Tornados auf Kommando erzeugen kann".
+	But, this isn't Avalon anymore. Maybe [PAWN_nameDef]'s creations will finally be recognized for what they are worth on this new world?</desc>
+  </AvaliTinkerer> -->
+  <AvaliTinkerer>
+    <title>Bastler</title>
+    <titleFemale></titleFemale>
+    <titleShort>Bastler</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] hat nie für jemand bestimmten gearbeitet, stattdessen hat [PAWN_pronoun] [PAWN_possessive]en Lebenssinn darin gefunden, unzählige seltsame Maschinen herzustellen, zu reparieren, zu verbessern, zu verändern, zu zerstören und zu entwerfen. Zuhause wurden [PAWN_nameDef] bizarre Erfindungen abgetan als "absolut unpraktisch" und "weniger wert als ein feuchten Fetzen". Trotzdem fuhr [PAWN_nameDef] damit fort [PAWN_possessive] Handwerk zu verbessern und entwickelte viele merkwürdige Objekte, auch wenn es keines davon [PAWN_possessive]em Traum von einem "gigantischen Tausendfüßer mit Maschinengewehren" entsprach oder einem "tragbaren Gerät, mit dem man Tornados auf Kommando erzeugen kann".
 
-    Aber.. das hier ist nicht Avalon. Vielleicht erkennt man in dieser neuen Welt endlich den Wert von [PAWN_nameDef]'s Kreationen?</desc>
+	Aber.. das hier ist nicht Avalon. Vielleicht erkennt man in dieser neuen Welt endlich den Wert von [PAWN_nameDef]'s Kreationen?</desc>
   </AvaliTinkerer>
 
-<!-- <AvaliCaveMedic>
-<title>Miner Medic</title>
-<titleFemale></titleFemale>
-<titleShort>Miner Medic</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>On Avalon, mining is a crucial part of the economy, many basic Avali resources are based on precious rocks and metals found deep in caves or mountains. It also so happens that mining is an extremely dangerous job, and some people let the glowy rocks down below get to their heads; and that is not just a metaphor.
-
-[PAWN_nameDef]'s job entails digging into collapsed mining areas, and rescuing whoever is still alive. Sadly, it seems giant boulders usually beat Avali, but [PAWN_nameDef] has seen and dealt with quite a few different emergency situations, and is always ready for the next idiot who doesn't understand basic gravity.</desc>
-</AvaliCaveMedic> -->
-<AvaliCaveMedic>
-  <title>Untergrund-Mediziner</title>
-  <titleFemale></titleFemale>
-  <titleShort>Untergrund-Mediziner</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Auf Avalon macht der Bergbau einen entscheidenden Teil der Wirtschaft aus. Viele grundlegende Avali-Ressourcen basieren auf Edelsteinen und Metallen, die tief in Höhlen oder Bergen gefunden werden. Allerdings ist der Bergbau selbst mit den besten Sicherheitsmaßnahmen eine äußerst gefährliche Arbeit, die den Leuten gerne die Decke auf den Kopf fallen lässt - und das ist keine Metapher.
-
-    [PAWN_nameDef]'s Job ist es, sich durch die eingestürzten Tunnel zu graben und jeden zu retten der noch lebt. Leider kommt es oft genug vor, dass große Felsbrocken den einen oder anderen Avali treffen, doch [PAWN_nameDef] hat schon viele Notsituationen erfolgreich bewältigt und ist immer auf den nächsten Tunneleinsturz vorbereitet.</desc>
+  <!-- <AvaliCaveMedic>
+    <title>Miner Medic</title>
+    <titleFemale></titleFemale>
+    <titleShort>Miner Medic</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>On Avalon, mining is a crucial part of the economy, many basic Avali resources are based on precious rocks and metals found deep in caves or mountains. It also so happens that mining is an extremely dangerous job, and some people let the glowy rocks down below get to their heads; and that is not just a metaphor.
+	
+	[PAWN_nameDef]'s job entails digging into collapsed mining areas, and rescuing whoever is still alive. Sadly, it seems giant boulders usually beat Avali, but [PAWN_nameDef] has seen and dealt with quite a few different emergency situations, and is always ready for the next idiot who doesn't understand basic gravity.</desc>
+  </AvaliCaveMedic> -->
+  <AvaliCaveMedic>
+    <title>Untergrund-Mediziner</title>
+    <titleFemale></titleFemale>
+    <titleShort>Untergrund-Mediziner</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Auf Avalon macht der Bergbau einen entscheidenden Teil der Wirtschaft aus. Viele grundlegende Avali-Ressourcen basieren auf Edelsteinen und Metallen, die tief in Höhlen oder Bergen gefunden werden. Allerdings ist der Bergbau selbst mit den besten Sicherheitsmaßnahmen eine äußerst gefährliche Arbeit, die den Leuten gerne die Decke auf den Kopf fallen lässt - und das ist keine Metapher.
+	
+	[PAWN_nameDef]'s Job ist es, sich durch die eingestürzten Tunnel zu graben und jeden zu retten der noch lebt. Leider kommt es oft genug vor, dass große Felsbrocken den einen oder anderen Avali treffen, doch [PAWN_nameDef] hat schon viele Notsituationen erfolgreich bewältigt und ist immer auf den nächsten Tunneleinsturz vorbereitet.</desc>
   </AvaliCaveMedic>
 
-<!-- <AvaliBionicDesigner>
-<title>Bionic Designer</title>
-<titleFemale></titleFemale>
-<titleShort>Bionic Designer</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] has been designing robotic replacements for body parts ever since a member of [PAWN_possessive] pack lost an arm, and [PAWN_pronoun] spent weeks trying different things to replace their arm. After weeks of jabbing new devices into the packmate's shoulder, one suddenly came to life, punching [PAWN_nameDef] square in the face. [PAWN_nameDef] has since then avoided actually installing the parts; they just wanna make them.</desc>
-</AvaliBionicDesigner> -->
-<AvaliBionicDesigner>
-  <title>Bionik Designer</title>
-  <titleFemale></titleFemale>
-  <titleShort>Bionik Designer</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] entwirft mechanische Ersatzteile für fehlende Gliedmaßen, seit [PAWN_possessive] Rudelmitglied einen Arm verlor. [PAWN_pronoun] verbrachte Wochen damit den besten Ersatz für den verlorenen Arm zu schaffen. Nach vielen weiteren Wochen an Versuchen, den neuen Arm an der Schulter zu befestigen, zuckte der Arm plötzlich und verpasste [PAWN_nameDef] einen heftigen Schlag mitten ins Gesicht. [PAWN_nameDef] hat es seitdem vermieden [PAWN_possessive]e Werke direkt zu installieren, [PAWN_pronoun] möchte sie nur noch herstellen.</desc>
-</AvaliBionicDesigner>
+  <!-- <AvaliBionicDesigner>
+    <title>Bionic Designer</title>
+    <titleFemale></titleFemale>
+    <titleShort>Bionic Designer</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] has been designing robotic replacements for body parts ever since a member of [PAWN_possessive] pack lost an arm, and [PAWN_pronoun] spent weeks trying different things to replace their arm. After weeks of jabbing new devices into the packmate's shoulder, one suddenly came to life, punching [PAWN_nameDef] square in the face. [PAWN_nameDef] has since then avoided actually installing the parts; they just wanna make them.</desc>
+  </AvaliBionicDesigner> -->
+  <AvaliBionicDesigner>
+    <title>Bionik Designer</title>
+    <titleFemale></titleFemale>
+    <titleShort>Bionik Designer</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] entwirft mechanische Ersatzteile für fehlende Gliedmaßen, seit [PAWN_possessive] Rudelmitglied einen Arm verlor. [PAWN_pronoun] verbrachte Wochen damit den besten Ersatz für den verlorenen Arm zu schaffen. Nach vielen weiteren Wochen an Versuchen, den neuen Arm an der Schulter zu befestigen, zuckte der Arm plötzlich und verpasste [PAWN_nameDef] einen heftigen Schlag mitten ins Gesicht. [PAWN_nameDef] hat es seitdem vermieden [PAWN_possessive]e Werke direkt zu installieren, [PAWN_pronoun] möchte sie nur noch herstellen.</desc>
+  </AvaliBionicDesigner>
 
-<!-- <AvaliSheriff>
-<title>Sheriff</title>
-<titleFemale></titleFemale>
-<titleShort>Sheriff</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was the single Sheriff of [PAWN_possessive] pack back on Avalon. Being a smaller, more tribal pack, they worked mostly alone. [PAWN_nameDef] was often completely swamped with tasks, because even though the pack was fairly small (to Avali standards, anyway), [PAWN_nameDef] still had many tasks to do. [PAWN_pronoun] could never seem to get a break. One day, after another "lost my PDA in the snow" report, [PAWN_nameDef] snapped, leaving the town and taking all [PAWN_possessive] gear with [PAWN_objective]. Soon, [PAWN_nameDef] heard of a new oppurtunity to get off of Avalon with a small group, and quickly enlisted. They want to be the authority to a pack they truly respect.</desc>
-</AvaliSheriff> -->
-<AvaliSheriff>
-  <title>Ordnungshüter</title>
-  <titleFemale></titleFemale>
-  <titleShort>Ordnungshüter</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war der einzige Ordnungshüter in [PAWN_possessive]em Rudel auf Avalon. Das Rudel war klein, fast eher ein Stamm und so arbeiteten die Mitglieder des Rudels meist für sich allein. [PAWN_nameDef] wurde oftmals mit Aufgaben überschwemmt, denn obwohl das Rudel eher klein war (selbst für Avali Verhältnisse), hatte [PAWN_nameDef] viel zu tun. [PAWN_pronoun] konnte sich kaum hinsetzen, ohne dass wieder ein "Notfall" dazukam. Eines Tages, nachdem schonwieder ein Bericht über "Hab mein PDA im Schnee verloren" reinkam, riss bei [PAWN_nameDef] der Geduldsfaden, [PAWN_pronoun] schnappte sich [PAWN_possessive]e Ausrüstung und ging. Schon bald hörte [PAWN_nameDef] von einer neuen Möglichkeit mit einer kleinen Gruppe von Avalon wegzukommen und trug sich sofort dafür ein. Was [PAWN_pronoun] will, ist der Respekt von [PAWN_possessive]em Rudel, den [PAWN_pronoun] verdient.</desc>
-</AvaliSheriff>
+  <!-- <AvaliSheriff>
+    <title>Sheriff</title>
+    <titleFemale></titleFemale>
+    <titleShort>Sheriff</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was the single Sheriff of [PAWN_possessive] pack back on Avalon. Being a smaller, more tribal pack, they worked mostly alone. [PAWN_nameDef] was often completely swamped with tasks, because even though the pack was fairly small (to Avali standards, anyway), [PAWN_nameDef] still had many tasks to do. [PAWN_pronoun] could never seem to get a break. One day, after another "lost my PDA in the snow" report, [PAWN_nameDef] snapped, leaving the town and taking all [PAWN_possessive] gear with [PAWN_objective]. Soon, [PAWN_nameDef] heard of a new oppurtunity to get off of Avalon with a small group, and quickly enlisted. They want to be the authority to a pack they truly respect.</desc>
+  </AvaliSheriff> -->
+  <AvaliSheriff>
+    <title>Ordnungshüter</title>
+    <titleFemale></titleFemale>
+    <titleShort>Ordnungshüter</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war der einzige Ordnungshüter in [PAWN_possessive]em Rudel auf Avalon. Das Rudel war klein, fast eher ein Stamm und so arbeiteten die Mitglieder des Rudels meist für sich allein. [PAWN_nameDef] wurde oftmals mit Aufgaben überschwemmt, denn obwohl das Rudel eher klein war (selbst für Avali Verhältnisse), hatte [PAWN_nameDef] viel zu tun. [PAWN_pronoun] konnte sich kaum hinsetzen, ohne dass wieder ein "Notfall" dazukam. Eines Tages, nachdem schonwieder ein Bericht über "Hab mein PDA im Schnee verloren" reinkam, riss bei [PAWN_nameDef] der Geduldsfaden, [PAWN_pronoun] schnappte sich [PAWN_possessive]e Ausrüstung und ging. Schon bald hörte [PAWN_nameDef] von einer neuen Möglichkeit mit einer kleinen Gruppe von Avalon wegzukommen und trug sich sofort dafür ein. Was [PAWN_pronoun] will, ist der Respekt von [PAWN_possessive]em Rudel, den [PAWN_pronoun] verdient.</desc>
+  </AvaliSheriff>
 
-<!-- <AvaliTrained>
-<title>Devoted Colonist</title>
-<titleFemale></titleFemale>
-<titleShort>Devoted Colonist</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] wanted to join the colonising program, every since they were a hatchling. They dedicated their entire life to picking up all the skills neccesary to survive, wanting to be the best possible choice. Sadly, [PAWN_pronoun] was called out to duty years before [PAWN_pronoun] anticipated, having been able to only pick up bare minimums. I guess there is no better way to learn then doing it yourself, for real, right?</desc>
-</AvaliTrained> -->
-<AvaliTrained>
-  <title>Ergebener Kolonist</title>
-  <titleFemale></titleFemale>
-  <titleShort>Ergebener Kolonist</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] wollte sich dem Kolonisierungsprogramm anschließen, seit [PAWN_pronoun] ein Junges war. [PAWN_pronoun] widmete [PAWN_possessive] Leben dem Erlernen aller Fähigekiten, die zum Überleben notwendig sind, um der bestmöglichste Kandidat für die Auswahl zu sein. Leider wurde [PAWN_pronoun] Jahre früher zum Dienst gerufen, als [PAWN_pronoun] erwartet hatte, wodurch [PAWN_possessive]e Fähigkeiten nur auf das Grundlegenste beschränkt waren. Nun, man lernt immernoch am besten durch Praxis, oder?</desc>
-</AvaliTrained>
+  <!-- <AvaliTrained>
+    <title>Devoted Colonist</title>
+    <titleFemale></titleFemale>
+    <titleShort>Devoted Colonist</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] wanted to join the colonising program, every since they were a hatchling. They dedicated their entire life to picking up all the skills neccesary to survive, wanting to be the best possible choice. Sadly, [PAWN_pronoun] was called out to duty years before [PAWN_pronoun] anticipated, having been able to only pick up bare minimums. I guess there is no better way to learn then doing it yourself, for real, right?</desc>
+  </AvaliTrained> -->
+  <AvaliTrained>
+    <title>Ergebener Kolonist</title>
+    <titleFemale></titleFemale>
+    <titleShort>Ergebener Kolonist</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] wollte sich dem Kolonisierungsprogramm anschließen, seit [PAWN_pronoun] ein Junges war. [PAWN_pronoun] widmete [PAWN_possessive] Leben dem Erlernen aller Fähigekiten, die zum Überleben notwendig sind, um der bestmöglichste Kandidat für die Auswahl zu sein. Leider wurde [PAWN_pronoun] Jahre früher zum Dienst gerufen, als [PAWN_pronoun] erwartet hatte, wodurch [PAWN_possessive]e Fähigkeiten nur auf das Grundlegenste beschränkt waren. Nun, man lernt immernoch am besten durch Praxis, oder?</desc>
+  </AvaliTrained>
 
-<!-- <AvaliCultist>
-<title>Cultist</title>
-<titleFemale></titleFemale>
-<titleShort>Cultist</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] is part of an extremely strange cult that believes that all plants are the work of some ancient evil, and they all must be destroyed or they will corrupt the world. Somehow, [PAWN_pronoun] snuck [PAWN_objective]selves onto the colony program. They probably aren't fit for this new environment, but there is no going back now. [PAWN_nameDef] will not fight fires, believing that fires are the cleansing graces of their deity.</desc>
-</AvaliCultist> -->
-<AvaliCultist>
-  <title>Kultist</title>
-  <titleFemale></titleFemale>
-  <titleShort>Kultist</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] ist Teil eines sehr seltsamen Kultes, der überzeugt davon ist, dass alle Pflanzen das Werk eines uralten Übels seien und alle zerstört werden müssen, bevor sie die Welt verderben. Irgendwie gelang es [PAWN_pronoun] sich in das Kolonisierungsprogramm einzuschleusen, wofür [PAWN_pronoun] weder gerüstet noch vorbereitet war. Doch nun gibt es kein Zurück mehr. [PAWN_nameDef] bekämpft keine Feuer, da [PAWN_pronoun] glaubt, dass [PAWN_possessive]e Gottheit die Welt durch Feuer reinigt.</desc>
-</AvaliCultist>
+  <!-- <AvaliCultist>
+    <title>Cultist</title>
+    <titleFemale></titleFemale>
+    <titleShort>Cultist</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] is part of an extremely strange cult that believes that all plants are the work of some ancient evil, and they all must be destroyed or they will corrupt the world. Somehow, [PAWN_pronoun] snuck [PAWN_objective]selves onto the colony program. They probably aren't fit for this new environment, but there is no going back now. [PAWN_nameDef] will not fight fires, believing that fires are the cleansing graces of their deity.</desc>
+  </AvaliCultist> -->
+  <AvaliCultist>
+    <title>Kultist</title>
+    <titleFemale></titleFemale>
+    <titleShort>Kultist</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] ist Teil eines sehr seltsamen Kultes, der überzeugt davon ist, dass alle Pflanzen das Werk eines uralten Übels seien und alle zerstört werden müssen, bevor sie die Welt verderben. Irgendwie gelang es [PAWN_pronoun] sich in das Kolonisierungsprogramm einzuschleusen, wofür [PAWN_pronoun] weder gerüstet noch vorbereitet war. Doch nun gibt es kein Zurück mehr. [PAWN_nameDef] bekämpft keine Feuer, da [PAWN_pronoun] glaubt, dass [PAWN_possessive]e Gottheit die Welt durch Feuer reinigt.</desc>
+  </AvaliCultist>
 
-<!-- <AvaliBerserker>
-<title>Berserker</title>
-<titleFemale></titleFemale>
-<titleShort>Berserker</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] strong. [PAWN_nameDef] no need smart, no need talk, no need friend. Fight is friend. [PAWN_nameDef] must hurt others.</desc>
-</AvaliBerserker> -->
-<AvaliBerserker>
-  <title>Berserker</title>
-  <titleFemale></titleFemale>
-  <titleShort>Berserker</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] stark. [PAWN_nameDef] nicht sein Schlau, brauch nicht reden, brauch keine Freunde. Kampf ist Freund. [PAWN_nameDef] muss andere verletzen.</desc>
-</AvaliBerserker>
+  <!-- <AvaliBerserker>
+    <title>Berserker</title>
+    <titleFemale></titleFemale>
+    <titleShort>Berserker</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] strong. [PAWN_nameDef] no need smart, no need talk, no need friend. Fight is friend. [PAWN_nameDef] must hurt others.</desc>
+  </AvaliBerserker> -->
+  <AvaliBerserker>
+    <title>Berserker</title>
+    <titleFemale></titleFemale>
+    <titleShort>Berserker</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] stark. [PAWN_nameDef] nicht sein Schlau, brauch nicht reden, brauch keine Freunde. Kampf ist Freund. [PAWN_nameDef] muss andere verletzen.</desc>
+  </AvaliBerserker>
 
-<!-- <AvaliFactoryWorker>
-<title>Factory Worker</title>
-<titleFemale></titleFemale>
-<titleShort>Worker</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] spent most of [PAWN_possessive] life working in factories in Avalon, mostly working on refining metals and assembly line production. Bizarrely, [PAWN_pronoun] loved it, and do not mind doing basic, repetitive tasks, day after day, for measly paychecks. How cool!</desc>
-</AvaliFactoryWorker> -->
-<AvaliFactoryWorker>
-  <title>Fabrikarbeiter</title>
-  <titleFemale></titleFemale>
-  <titleShort>Fabrikarbeiter</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] verbrachte den Großteil [PAWN_possessive]es Lebens mit der Arbeit in den Fabriken auf Avalon, hauptsächlich in der Raffination von Metallen und in der Fließbandproduktion. Merkwürdigerweise liebte [PAWN_pronoun] dieses Leben, es machte [PAWN_nameDef] nichts aus Tag für Tag dieselbe einfache Arbeit für einen Hungerlohn zu erledigen.</desc>
-</AvaliFactoryWorker>
+  <!-- <AvaliFactoryWorker>
+    <title>Factory Worker</title>
+    <titleFemale></titleFemale>
+    <titleShort>Worker</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] spent most of [PAWN_possessive] life working in factories in Avalon, mostly working on refining metals and assembly line production. Bizarrely, [PAWN_pronoun] loved it, and do not mind doing basic, repetitive tasks, day after day, for measly paychecks. How cool!</desc>
+  </AvaliFactoryWorker> -->
+  <AvaliFactoryWorker>
+    <title>Fabrikarbeiter</title>
+    <titleFemale></titleFemale>
+    <titleShort>Fabrikarbeiter</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] verbrachte den Großteil [PAWN_possessive]es Lebens mit der Arbeit in den Fabriken auf Avalon, hauptsächlich in der Raffination von Metallen und in der Fließbandproduktion. Merkwürdigerweise liebte [PAWN_pronoun] dieses Leben, es machte [PAWN_nameDef] nichts aus Tag für Tag dieselbe einfache Arbeit für einen Hungerlohn zu erledigen.</desc>
+  </AvaliFactoryWorker>
 
-<!-- <AvaliModel>
-<title>Avali Model</title>
-<titleFemale></titleFemale>
-<titleShort>Model</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was just born absolutely stunning, and everyone agrees. [PAWN_nameDef] spent most of their life as an Avali model, taking constant photoshoots, featuring in movies, varying in... theme. However, this life grew boring to [PAWN_objective]. Being so high up in the Avali society, [PAWN_pronoun] heard about the colony program before anyone else. However, the colony program wouldn't allow many high-class Avali such as [PAWN_objective]self.
-
-So, [PAWN_nameDef] tired of [PAWN_possessive] life as a celebrity, allowed [PAWN_objective]self into the program by sneaking onto a ship as it was leaving. Will they be able to live without the same glamour?</desc>
-</AvaliModel> -->
-<AvaliModel>
-  <title>Avali Model</title>
-  <titleFemale></titleFemale>
-  <titleShort>Model</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] wurde mit absoluter Schönheit geboren, darüber sind sich alle einig. [PAWN_nameDef] hat den Großteil [PAWN_possessive]es Lebens als Avali Model verbracht, in Fotoshootings, in diversen Filmen mit unterschiedlichen... Themen. Allerdings fing dieses Leben an, für [PAWN_objective] Langweilig zu werden. Durch [PAWN_possessive]en hohen Stand in der Avali-Gesellschaft erfuhr [PAWN_pronoun] früher von dem Kolonisierungsprogramm als alle anderen. Jedoch würde das Kolonisierungsprogramm niemals einen hochklassigen Avali wie [PAWN_objective] aufnehmen.
-
-    Also hat sich [PAWN_nameDef], müde von [PAWN_possessive]em Leben als Berühmtheit, dazu entschlossen sich selbst die Erlaubnis für das Programm zu geben und schlich [PAWN_pronoun] sich kurz vor der Startphase auf das Schiff. Wird [PAWN_pronoun] in der Lage sein, ohne den gewohnten Glamour zu leben?</desc>
+  <!-- <AvaliModel>
+    <title>Avali Model</title>
+    <titleFemale></titleFemale>
+    <titleShort>Model</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was just born absolutely stunning, and everyone agrees. [PAWN_nameDef] spent most of their life as an Avali model, taking constant photoshoots, featuring in movies, varying in... theme. However, this life grew boring to [PAWN_objective]. Being so high up in the Avali society, [PAWN_pronoun] heard about the colony program before anyone else. However, the colony program wouldn't allow many high-class Avali such as [PAWN_objective]self.
+	
+	So, [PAWN_nameDef] tired of [PAWN_possessive] life as a celebrity, allowed [PAWN_objective]self into the program by sneaking onto a ship as it was leaving. Will they be able to live without the same glamour?</desc>
+  </AvaliModel> -->
+  <AvaliModel>
+    <title>Avali Model</title>
+    <titleFemale></titleFemale>
+    <titleShort>Model</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] wurde mit absoluter Schönheit geboren, darüber sind sich alle einig. [PAWN_nameDef] hat den Großteil [PAWN_possessive]es Lebens als Avali Model verbracht, in Fotoshootings, in diversen Filmen mit unterschiedlichen... Themen. Allerdings fing dieses Leben an, für [PAWN_objective] Langweilig zu werden. Durch [PAWN_possessive]en hohen Stand in der Avali-Gesellschaft erfuhr [PAWN_pronoun] früher von dem Kolonisierungsprogramm als alle anderen. Jedoch würde das Kolonisierungsprogramm niemals einen hochklassigen Avali wie [PAWN_objective] aufnehmen.
+	
+	Also hat sich [PAWN_nameDef], müde von [PAWN_possessive]em Leben als Berühmtheit, dazu entschlossen sich selbst die Erlaubnis für das Programm zu geben und schlich [PAWN_pronoun] sich kurz vor der Startphase auf das Schiff. Wird [PAWN_pronoun] in der Lage sein, ohne den gewohnten Glamour zu leben?</desc>
   </AvaliModel>
 
-<!-- <AvaliBurger>
-<title>Food Cart Owner</title>
-<titleFemale></titleFemale>
-<titleShort>Food Cart Owner</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] made a living running [PAWN_possessive] own food cart, simply grilling hamburgers and selling them to passerby in city squares. However, Avali cities just don't have the population/economy to make this a liveable practice, and [PAWN_nameDef] turned to other options out of desperation for money. Now they are a colonist ready to land on a largely unknown, extremely dangerous, extremely vital planet. [PAWN_nameDef] wonders if they should have stuck with the "AvaliBurger" cart.</desc>
-</AvaliBurger> -->
-<AvaliBurger>
-  <title>Imbisswagenbesitzer</title>
-  <titleFemale></titleFemale>
-  <titleShort>Imbisswagenbesitzer</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] verdiente sich den Lebensunterhalt durch [PAWN_possessive]en eigenen Imbisswagen, mit dem [PAWN_pronoun] einfache Hamburger zubereitete und an Passanten an bestimmten Stadtplätzen verkaufte. Avali-Städte haben aber weder genügend Einwohner, noch genug Wirtschaftlichkeit, um einem Imbisswagenbesitzer dauerhaft den Lebensunterhalt zu sichern. Also musste sich [PAWN_nameDef] in der Verzweiflung andere Möglichkeiten überlegen an Geld zu kommen. Nun ist [PAWN_pronoun] bereit auf einem weitgehend unbekannten und außerst gefährlichen Planeten zu landen. [PAWN_nameDef] fragt sich, ob es nicht besser gewesen wäre beim "AvaliBurger" zu bleiben.</desc>
-</AvaliBurger>
+  <!-- <AvaliBurger>
+    <title>Food Cart Owner</title>
+    <titleFemale></titleFemale>
+    <titleShort>Food Cart Owner</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] made a living running [PAWN_possessive] own food cart, simply grilling hamburgers and selling them to passerby in city squares. However, Avali cities just don't have the population/economy to make this a liveable practice, and [PAWN_nameDef] turned to other options out of desperation for money. Now they are a colonist ready to land on a largely unknown, extremely dangerous, extremely vital planet. [PAWN_nameDef] wonders if they should have stuck with the "AvaliBurger" cart.</desc>
+  </AvaliBurger> -->
+  <AvaliBurger>
+    <title>Imbisswagenbesitzer</title>
+    <titleFemale></titleFemale>
+    <titleShort>Imbisswagenbesitzer</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] verdiente sich den Lebensunterhalt durch [PAWN_possessive]en eigenen Imbisswagen, mit dem [PAWN_pronoun] einfache Hamburger zubereitete und an Passanten an bestimmten Stadtplätzen verkaufte. Avali-Städte haben aber weder genügend Einwohner, noch genug Wirtschaftlichkeit, um einem Imbisswagenbesitzer dauerhaft den Lebensunterhalt zu sichern. Also musste sich [PAWN_nameDef] in der Verzweiflung andere Möglichkeiten überlegen an Geld zu kommen. Nun ist [PAWN_pronoun] bereit auf einem weitgehend unbekannten und außerst gefährlichen Planeten zu landen. [PAWN_nameDef] fragt sich, ob es nicht besser gewesen wäre beim "AvaliBurger" zu bleiben.</desc>
+  </AvaliBurger>
 
-<!-- <AvaliAnimalScientist>
-<title>Animal Scientist</title>
-<titleFemale></titleFemale>
-<titleShort>Scientist</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] always had a fascination with animals, and was always curious as to what was possible with them. [PAWN_nameDef] nearly had developed a module that would allow Avali to speak with animals using common brain signals, however, all of [PAWN_nameDef]'s work was destroyed in a freak accident in [PAWN_possessive] lab, and [PAWN_pronoun] was forced to relocate [PAWN_possessive] studies elsewhere.</desc>
-</AvaliAnimalScientist> -->
-<AvaliAnimalScientist>
-  <title>Tierforscher</title>
-  <titleFemale></titleFemale>
-  <titleShort>Forscher</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] hatte schon immer eine Faszination für Tiere und hat sich immer gefragt, was alles mit ihnen möglich wäre. [PAWN_nameDef] gelang es beinahe ein Augment herzustellen, mit dem Avali über bestimmte Gehirnsignale mit Tieren kommunizieren könnten. Allerdings wurde die gesamte Arbeit von [PAWN_nameDef] durch einen ungewöhnlichen Unfall in [PAWN_possessive]em Labor zerstört, was [PAWN_pronoun] dazu zwang [PAWN_possessive]e Studien woanders zu verlagern.</desc>
-</AvaliAnimalScientist>
+  <!-- <AvaliAnimalScientist>
+    <title>Animal Scientist</title>
+    <titleFemale></titleFemale>
+    <titleShort>Scientist</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] always had a fascination with animals, and was always curious as to what was possible with them. [PAWN_nameDef] nearly had developed a module that would allow Avali to speak with animals using common brain signals, however, all of [PAWN_nameDef]'s work was destroyed in a freak accident in [PAWN_possessive] lab, and [PAWN_pronoun] was forced to relocate [PAWN_possessive] studies elsewhere.</desc>
+  </AvaliAnimalScientist> -->
+  <AvaliAnimalScientist>
+    <title>Tierforscher</title>
+    <titleFemale></titleFemale>
+    <titleShort>Forscher</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] hatte schon immer eine Faszination für Tiere und hat sich immer gefragt, was alles mit ihnen möglich wäre. [PAWN_nameDef] gelang es beinahe ein Augment herzustellen, mit dem Avali über bestimmte Gehirnsignale mit Tieren kommunizieren könnten. Allerdings wurde die gesamte Arbeit von [PAWN_nameDef] durch einen ungewöhnlichen Unfall in [PAWN_possessive]em Labor zerstört, was [PAWN_pronoun] dazu zwang [PAWN_possessive]e Studien woanders zu verlagern.</desc>
+  </AvaliAnimalScientist>
 
-<!-- <AvaliPalaceDesigner>
-<title>Illuminate Architect</title>
-<titleFemale></titleFemale>
-<titleShort>Architect</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] singlehandedly designed nearly every major Avalon landmark, being the Illuminate's go-to architectural designer, noted for [PAWN_possessive] beautiful yet realistic and functional designs.</desc>
-</AvaliPalaceDesigner> -->
-<AvaliPalaceDesigner>
-  <title>Illuminate Architekt</title>
-  <titleFemale></titleFemale>
-  <titleShort>Architekt</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] entwarf fast alle wichtigen Wahrzeichen von Avalon im Alleingang. [PAWN_pronoun] war der erste Architekt der Illuminate, der für seine wunderschönen, aber dennoch realistischen und funktionalen Designs bekannt war.</desc>
-</AvaliPalaceDesigner>
+  <!-- <AvaliPalaceDesigner>
+    <title>Illuminate Architect</title>
+    <titleFemale></titleFemale>
+    <titleShort>Architect</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] singlehandedly designed nearly every major Avalon landmark, being the Illuminate's go-to architectural designer, noted for [PAWN_possessive] beautiful yet realistic and functional designs.</desc>
+  </AvaliPalaceDesigner> -->
+  <AvaliPalaceDesigner>
+    <title>Illuminate Architekt</title>
+    <titleFemale></titleFemale>
+    <titleShort>Architekt</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] entwarf fast alle wichtigen Wahrzeichen von Avalon im Alleingang. [PAWN_pronoun] war der erste Architekt der Illuminate, der für seine wunderschönen, aber dennoch realistischen und funktionalen Designs bekannt war.</desc>
+  </AvaliPalaceDesigner>
 
-<!-- <NoviceDeveloper>
-<title>Novice Developer</title>
-<titleFemale></titleFemale>
-<titleShort></titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef] was a hobbyist programmer and modeler. [PAWN_pronoun] independently developed several small applications and created various virtual items for use on the Nexus.</desc>
-</NoviceDeveloper> -->
-<NoviceDeveloper>
-  <title>Junior Developer</title>
-  <titleFemale></titleFemale>
-  <titleShort></titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef] war ein Hobby-3D-Designer und -Programmierer. [PAWN_pronoun] entwickelte mehrere, voneinander unabhängige kleine Anwendungen und verschiedene virtuelle Objekte, die für den Nexus verwendet werden können.</desc>
-</NoviceDeveloper>
+  <!-- <NoviceDeveloper>
+    <title>Novice Developer</title>
+    <titleFemale></titleFemale>
+    <titleShort></titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] was a hobbyist programmer and modeler. [PAWN_pronoun] independently developed several small applications and created various virtual items for use on the Nexus.</desc>
+  </NoviceDeveloper> -->
+  <NoviceDeveloper>
+    <title>Junior Developer</title>
+    <titleFemale></titleFemale>
+    <titleShort></titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef] war ein Hobby-3D-Designer und -Programmierer. [PAWN_pronoun] entwickelte mehrere, voneinander unabhängige kleine Anwendungen und verschiedene virtuelle Objekte, die für den Nexus verwendet werden können.</desc>
+  </NoviceDeveloper>
 
-<!-- <NezaiStoryAdult>
-<title>Nezai</title>
-<titleFemale></titleFemale>
-<titleShort>Nezai</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>After a catastrophic accident killed two of his packmates and crippled two more, as the healthy one, Nezai gave up his passions to become a mercenary in order to keep up with his pack's medical costs. He grew cold and bitter to most, and getting stranded here didn't help either.</desc>
-</NezaiStoryAdult> -->
-<NezaiStoryAdult>
-  <title>Nezai</title>
-  <titleFemale></titleFemale>
-  <titleShort>Nezai</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Nachdem ein katastrophaler Unfall zwei seiner Rudelmitglieder getötet und zwei weitere versehrte, gab Nezai als einzig Gesunder seine Leidenschaft auf Söldner zu werden, um die medizinischen Kosten seines Rudels zu decken. Er wurde für die meisten kalt und bitter. Und jetzt hier zu bleiben, half auch nichts.</desc>
-</NezaiStoryAdult>
+  <!-- <NezaiStoryAdult>
+    <title>Nezai</title>
+    <titleFemale></titleFemale>
+    <titleShort>Nezai</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>After a catastrophic accident killed two of his packmates and crippled two more, as the healthy one, Nezai gave up his passions to become a mercenary in order to keep up with his pack's medical costs. He grew cold and bitter to most, and getting stranded here didn't help either.</desc>
+  </NezaiStoryAdult> -->
+  <NezaiStoryAdult>
+    <title>Nezai</title>
+    <titleFemale></titleFemale>
+    <titleShort>Nezai</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Nachdem ein katastrophaler Unfall zwei seiner Rudelmitglieder getötet und zwei weitere versehrte, gab Nezai als einzig Gesunder seine Leidenschaft auf Söldner zu werden, um die medizinischen Kosten seines Rudels zu decken. Er wurde für die meisten kalt und bitter. Und jetzt hier zu bleiben, half auch nichts.</desc>
+  </NezaiStoryAdult>
 
-<!-- <AvaliLostEgg>
-<title>Lost egg</title>
-<titleFemale></titleFemale>
-<titleShort>Lost egg</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>[PAWN_nameDef]'s egg was accidentally lost during a move between nurseries, after an incident caused the nursery the egg was in to no longer be structurally sound, and therefore a risk to the eggs. [PAWN_pronoun] was luckily found by another pack while [PAWN_pronoun] was young, and was able to join them, but sometimes [PAWN_nameDef] wonders if [PAWN_possessive] pack is still out there, maybe looking for [PAWN_objective].</desc>
-</AvaliLostEgg> -->
-<AvaliLostEgg>
-  <title>Verlorenes Ei</title>
-  <titleFemale></titleFemale>
-  <titleShort>Verlorenes Ei</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>[PAWN_nameDef]'s Ei ging bei einem Umzug des Horts verloren, nachdem ein Vorfall zu einer strukturellen Instabilität geführt hatte, wodurch für die Eier ein Risiko entstand. Glücklicherweise wurde [PAWN_pronoun] in jungen jahren von einem anderen Rudel gefunden und aufgenommen, aber manchmal fragt [PAWN_pronoun] sich ob [PAWN_possessive] ursprüngliches Rudel noch irgendwo dort draußen ist und vielleicht sogar immernoch nach [PAWN_nameDef] sucht.</desc>
-</AvaliLostEgg>
+  <!-- <AvaliLostEgg>
+    <title>Lost egg</title>
+    <titleFemale></titleFemale>
+    <titleShort>Lost egg</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef]'s egg was accidentally lost during a move between nurseries, after an incident caused the nursery the egg was in to no longer be structurally sound, and therefore a risk to the eggs. [PAWN_pronoun] was luckily found by another pack while [PAWN_pronoun] was young, and was able to join them, but sometimes [PAWN_nameDef] wonders if [PAWN_possessive] pack is still out there, maybe looking for [PAWN_objective].</desc>
+  </AvaliLostEgg> -->
+  <AvaliLostEgg>
+    <title>Verlorenes Ei</title>
+    <titleFemale></titleFemale>
+    <titleShort>Verlorenes Ei</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>[PAWN_nameDef]'s Ei ging bei einem Umzug des Horts verloren, nachdem ein Vorfall zu einer strukturellen Instabilität geführt hatte, wodurch für die Eier ein Risiko entstand. Glücklicherweise wurde [PAWN_pronoun] in jungen jahren von einem anderen Rudel gefunden und aufgenommen, aber manchmal fragt [PAWN_pronoun] sich ob [PAWN_possessive] ursprüngliches Rudel noch irgendwo dort draußen ist und vielleicht sogar immernoch nach [PAWN_nameDef] sucht.</desc>
+  </AvaliLostEgg>
 
-<!-- Unique Backstories -->
 
-<!-- <NeoStoryChild>
-<title>RitualNeo</title>
-<titleFemale></titleFemale>
-<titleShort>Neo</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>As a child, Neo always wanted to be a pilot, or space explorer. Eventually, that dream became a reality, and Neo was trained to be an explorer.</desc>
-</NeoStoryChild> -->
-<NeoStoryChild>
-  <title>RitualNeo</title>
-  <titleFemale></titleFemale>
-  <titleShort>Neo</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Als Kind wollte Neo schon immer Pilot oder Weltraumforscher werden. Schließlich wurde dieser Traum Wirklichkeit und Neo wurde zum Entdecker ausgebildet.</desc>
-</NeoStoryChild>
+  <!-- Unique Backstories -->
+  
+  <!-- <NeoStoryChild>
+    <title>RitualNeo</title>
+    <titleFemale></titleFemale>
+    <titleShort>Neo</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>As a child, Neo always wanted to be a pilot, or space explorer. Eventually, that dream became a reality, and Neo was trained to be an explorer.</desc>
+  </NeoStoryChild> -->
+  <NeoStoryChild>
+    <title>RitualNeo</title>
+    <titleFemale></titleFemale>
+    <titleShort>Neo</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Als Kind wollte Neo schon immer Pilot oder Weltraumforscher werden. Schließlich wurde dieser Traum Wirklichkeit und Neo wurde zum Entdecker ausgebildet.</desc>
+  </NeoStoryChild>
 
-<!-- <NeoStoryAdult>
-<title>RitualNeo</title>
-<titleFemale></titleFemale>
-<titleShort>Neo</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>RitualNeo is a veteran space explorer. At one point, he was forced to test a form of FTL travel (Faster-Than-Light), and became stranded in an alternate dimension. And now, he's stranded here.</desc>
-</NeoStoryAdult> -->
-<NeoStoryAdult>
-  <title>RitualNeo</title>
-  <titleFemale></titleFemale>
-  <titleShort>Neo</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>RitualNeo ist ein erfahrener Weltraumforscher. Eines Tages war er gezwungen eine Form der FTL-Reise (Faster-Than-Light) zu testen, wodurch er in einer anderen Dimension alndete. Und so ist er nun hier gestrandet.</desc>
-</NeoStoryAdult>
+  <!-- <NeoStoryAdult>
+    <title>RitualNeo</title>
+    <titleFemale></titleFemale>
+    <titleShort>Neo</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>RitualNeo is a veteran space explorer. At one point, he was forced to test a form of FTL travel (Faster-Than-Light), and became stranded in an alternate dimension. And now, he's stranded here.</desc>
+  </NeoStoryAdult> -->
+  <NeoStoryAdult>
+    <title>RitualNeo</title>
+    <titleFemale></titleFemale>
+    <titleShort>Neo</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>RitualNeo ist ein erfahrener Weltraumforscher. Eines Tages war er gezwungen eine Form der FTL-Reise (Faster-Than-Light) zu testen, wodurch er in einer anderen Dimension alndete. Und so ist er nun hier gestrandet.</desc>
+  </NeoStoryAdult>
 
-<!-- <Danny>
-<title>Danny</title>
-<titleFemale></titleFemale>
-<titleShort>Danny</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>Danny spent most of his life as a dreamer, out of place for being born into such a small pack. Once he was of age, he declared himself leader of his pack, which they gladly followed. He than began a campaign that lasted months, attempting to unify the avali local to him under a singular state. Tragedy struck, when during a battle, a stray bullet hit him right in the head. However... He survived. Danny woke up, dazed in an empty field, unsure of what was going on. He was found there by a neutral pack, who didn't seem to understand what he was saying. He still searches for his lost pack. Also, he may have a slight case of severe brain damage.</desc>
-</Danny> -->
-<Danny>
-  <title>Danny</title>
-  <titleFemale></titleFemale>
-  <titleShort>Danny</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Danny hat den Großteil seines Lebens als Träumer verbracht und war deswegen in seinem kleinem Rudel absolut Fehl am Platz. Als er volljährig wurde, erklärte er sich selbst zum Anführer des Rudels und die anderen folgtem ihm bereitwillig. Er startete ein monatelanges Projekt, in dem Versuch die Avali unter einem einzigen Banner zu vereinen. Dann die Tragödie - inmitten eines Kampfes traf ihn eine verirrte Kugel direkt in den Kopf. Dennoch.. überlebte er. Danny erwachte benommen auf einem leeren Feld, unsicher, was passiert ist. Er wurde von einem neutralen Rudel gefunden, die ihn jedoch nicht verstehen konnten. Er sucht immernoch nach seinem verlorenen Rudel. Außerdem scheint er Anzeichen einer schweren Hirnschädigung zu zeigen.</desc>
-</Danny>
+  <!-- <Danny>
+    <title>Danny</title>
+    <titleFemale></titleFemale>
+    <titleShort>Danny</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Danny spent most of his life as a dreamer, out of place for being born into such a small pack. Once he was of age, he declared himself leader of his pack, which they gladly followed. He than began a campaign that lasted months, attempting to unify the avali local to him under a singular state. Tragedy struck, when during a battle, a stray bullet hit him right in the head. However... He survived. Danny woke up, dazed in an empty field, unsure of what was going on. He was found there by a neutral pack, who didn't seem to understand what he was saying. He still searches for his lost pack. Also, he may have a slight case of severe brain damage.</desc>
+  </Danny> -->
+  <Danny>
+    <title>Danny</title>
+    <titleFemale></titleFemale>
+    <titleShort>Danny</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Danny hat den Großteil seines Lebens als Träumer verbracht und war deswegen in seinem kleinem Rudel absolut Fehl am Platz. Als er volljährig wurde, erklärte er sich selbst zum Anführer des Rudels und die anderen folgtem ihm bereitwillig. Er startete ein monatelanges Projekt, in dem Versuch die Avali unter einem einzigen Banner zu vereinen. Dann die Tragödie - inmitten eines Kampfes traf ihn eine verirrte Kugel direkt in den Kopf. Dennoch.. überlebte er. Danny erwachte benommen auf einem leeren Feld, unsicher, was passiert ist. Er wurde von einem neutralen Rudel gefunden, die ihn jedoch nicht verstehen konnten. Er sucht immernoch nach seinem verlorenen Rudel. Außerdem scheint er Anzeichen einer schweren Hirnschädigung zu zeigen.</desc>
+  </Danny>
 
-<!-- <EmilStoryChild>
-<title>Eimilian</title>
-<titleFemale></titleFemale>
-<titleShort>Eimilian</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other pawns might not in combat, but is more intrested in melee. However, he is a terrible cook.</desc>
-</EmilStoryChild> -->
-<EmilStoryChild>
-  <title>Eimilian</title>
-  <titleFemale></titleFemale>
-  <titleShort>Eimilian</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Eimilian wurde in seiner Kindheit als Teil einer Spezialeinheit ausgebildet. Er lernte Dinge über den Kampf, die andere nicht wussten, war aber besonders an den Nahkampf interessiert. Er ist aber ein furchtbarer Koch.</desc>
-</EmilStoryChild>
+  <!-- <EmilStoryChild>
+    <title>Eimilian</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eimilian</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Eimilian was trained as an apprentice spec ops during his childhood. He learned how to do things other pawns might not in combat, but is more intrested in melee. However, he is a terrible cook.</desc>
+  </EmilStoryChild> -->
+  <EmilStoryChild>
+    <title>Eimilian</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eimilian</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Eimilian wurde in seiner Kindheit als Teil einer Spezialeinheit ausgebildet. Er lernte Dinge über den Kampf, die andere nicht wussten, war aber besonders an den Nahkampf interessiert. Er ist aber ein furchtbarer Koch.</desc>
+  </EmilStoryChild>
 
-<!-- <EimilStoryAdult>
-<title>Eimilian</title>
-<titleFemale></titleFemale>
-<titleShort>Eimilian</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>As an adult, Eimilian was the leader of his pack. He learned from this, and also became better at things like negotiating with others.</desc>
-</EimilStoryAdult> -->
-<EimilStoryAdult>
-  <title>Eimilian</title>
-  <titleFemale></titleFemale>
-  <titleShort>Eimilian</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Als Erwachsener wurde Eimilian Anführer seines Rudels. Er lernte viel daraus und wurde dadurch besser in Dingen wie Diplomatie und Verhandlung.</desc>
-</EimilStoryAdult>
+  <!-- <EimilStoryAdult>
+    <title>Eimilian</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eimilian</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>As an adult, Eimilian was the leader of his pack. He learned from this, and also became better at things like negotiating with others.</desc>
+  </EimilStoryAdult> -->
+  <EimilStoryAdult>
+    <title>Eimilian</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eimilian</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Als Erwachsener wurde Eimilian Anführer seines Rudels. Er lernte viel daraus und wurde dadurch besser in Dingen wie Diplomatie und Verhandlung.</desc>
+  </EimilStoryAdult>
 
-<!-- <SommeilStoryAdult>
-<title>Sommeil</title>
-<titleFemale></titleFemale>
-<titleShort>Sommeil</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>Sommeil is a knight. Unlike most avali, he prefers more "traditional" technologies, rather than what those Illuminate avali use.</desc>
-</SommeilStoryAdult> -->
-<SommeilStoryAdult>
-  <title>Sommeil</title>
-  <titleFemale></titleFemale>
-  <titleShort>Sommeil</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Sommeil ist ein Ritter. Im Gegensatz zu den meisten Avali bevorzugt er eher "traditionelle" Technologien als das, was diese Illuminate-Avali verwenden.</desc>
-</SommeilStoryAdult>
+  <!-- <SommeilStoryAdult>
+    <title>Sommeil</title>
+    <titleFemale></titleFemale>
+    <titleShort>Sommeil</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Sommeil is a knight. Unlike most avali, he prefers more "traditional" technologies, rather than what those Illuminate avali use.</desc>
+  </SommeilStoryAdult> -->
+  <SommeilStoryAdult>
+    <title>Sommeil</title>
+    <titleFemale></titleFemale>
+    <titleShort>Sommeil</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Sommeil ist ein Ritter. Im Gegensatz zu den meisten Avali bevorzugt er eher "traditionelle" Technologien als das, was diese Illuminate-Avali verwenden.</desc>
+  </SommeilStoryAdult>
 
-<!-- <KBraidStoryChild>
-<title>Braid</title>
-<titleFemale></titleFemale>
-<titleShort>Braid</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>In his youthful years, Braid showed a lot of creativity and had a level of intelegance far more prevalent than his peers.</desc>
-</KBraidStoryChild> -->
-<KBraidStoryChild>
-  <title>Braid</title>
-  <titleFemale></titleFemale>
-  <titleShort>Braid</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>In seinen jungen Jahren zeigte Braid viel Kreativität und war weitaus inteleganter als seine Rudelmitglieder.</desc>
-</KBraidStoryChild>
+  <!-- <KBraidStoryChild>
+    <title>Braid</title>
+    <titleFemale></titleFemale>
+    <titleShort>Braid</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>In his youthful years, Braid showed a lot of creativity and had a level of intelegance far more prevalent than his peers.</desc>
+  </KBraidStoryChild> -->
+  <KBraidStoryChild>
+    <title>Braid</title>
+    <titleFemale></titleFemale>
+    <titleShort>Braid</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>In seinen jungen Jahren zeigte Braid viel Kreativität und war weitaus inteleganter als seine Rudelmitglieder.</desc>
+  </KBraidStoryChild>
 
-<!-- <KBraidStoryAdult>
-<title>Braid</title>
-<titleFemale></titleFemale>
-<titleShort>Braid</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>Braid's pack chose the path of the soldier, their fireteam proving themselves to be exeptional. However, on one assignment everything had gone horribly wrong and his whole pack was wiped out, leaving him all alone...</desc>
-</KBraidStoryAdult> -->
-<KBraidStoryAdult>
-  <title>Braid</title>
-  <titleFemale></titleFemale>
-  <titleShort>Braid</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Braids Rudel wählte den Weg des Soldaten und sie machten ihre Arbeit wirklich außergewöhnlich gut. Bei einem Auftrag ist jedoch alles furchtbar schief gelaufen und sein ganzes Rudel wurde ausgelöscht. Nun ist er ganz allein...</desc>
-</KBraidStoryAdult>
+  <!-- <KBraidStoryAdult>
+    <title>Braid</title>
+    <titleFemale></titleFemale>
+    <titleShort>Braid</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Braid's pack chose the path of the soldier, their fireteam proving themselves to be exeptional. However, on one assignment everything had gone horribly wrong and his whole pack was wiped out, leaving him all alone...</desc>
+  </KBraidStoryAdult> -->
+  <KBraidStoryAdult>
+    <title>Braid</title>
+    <titleFemale></titleFemale>
+    <titleShort>Braid</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Braids Rudel wählte den Weg des Soldaten und sie machten ihre Arbeit wirklich außergewöhnlich gut. Bei einem Auftrag ist jedoch alles furchtbar schief gelaufen und sein ganzes Rudel wurde ausgelöscht. Nun ist er ganz allein...</desc>
+  </KBraidStoryAdult>
 
-<!-- <KEiliStoryChild>
-<title>Eili</title>
-<titleFemale></titleFemale>
-<titleShort>Eili</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>Eili was created as a clone of Braid, to act as his companion. Her adolessance was geneticly rushed resulting in slight bone deformities and the mental behaviour of a child.</desc>
-</KEiliStoryChild> -->
-<KEiliStoryChild>
-  <title>Eili</title>
-  <titleFemale></titleFemale>
-  <titleShort>Eili</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Eili ist ein Klon von Braid, dazu geschaffen sein Begleiter zu sein. Ihre Jugend wurde genetisch beschleunigt, was zu einer leichten Deformierung ihrer Knochen und der Mentalität eines Kindes führte.</desc>
-</KEiliStoryChild>
+  <!-- <KEiliStoryChild>
+    <title>Eili</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eili</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Eili was created as a clone of Braid, to act as his companion. Her adolessance was geneticly rushed resulting in slight bone deformities and the mental behaviour of a child.</desc>
+  </KEiliStoryChild> -->
+  <KEiliStoryChild>
+    <title>Eili</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eili</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Eili ist ein Klon von Braid, dazu geschaffen sein Begleiter zu sein. Ihre Jugend wurde genetisch beschleunigt, was zu einer leichten Deformierung ihrer Knochen und der Mentalität eines Kindes führte.</desc>
+  </KEiliStoryChild>
 
-<!-- <KEiliStoryAdult>
-<title>Eili</title>
-<titleFemale></titleFemale>
-<titleShort>Eili</titleShort>
-<titleShortFemale></titleShortFemale>
-<desc>Eili was created as a clone of Braid, to act as his companion. Her adolessance was geneticly rushed resulting in slight bone deformities and the mental behaviour of a child.</desc>
-</KEiliStoryAdult> -->
-<KEiliStoryAdult>
-  <title>Eili</title>
-  <titleFemale></titleFemale>
-  <titleShort>Eili</titleShort>
-  <titleShortFemale></titleShortFemale>
-  <desc>Eili ist ein Klon von Braid, dazu geschaffen sein Begleiter zu sein. Ihre Jugend wurde genetisch beschleunigt, was zu einer leichten Deformierung ihrer Knochen und der Mentalität eines Kindes führte.</desc>
-</KEiliStoryAdult>
+  <!-- <KEiliStoryAdult>
+    <title>Eili</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eili</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Eili was created as a clone of Braid, to act as his companion. Her adolessance was geneticly rushed resulting in slight bone deformities and the mental behaviour of a child.</desc>
+  </KEiliStoryAdult> -->
+  <KEiliStoryAdult>
+    <title>Eili</title>
+    <titleFemale></titleFemale>
+    <titleShort>Eili</titleShort>
+    <titleShortFemale></titleShortFemale>
+    <desc>Eili ist ein Klon von Braid, dazu geschaffen sein Begleiter zu sein. Ihre Jugend wurde genetisch beschleunigt, was zu einer leichten Deformierung ihrer Knochen und der Mentalität eines Kindes führte.</desc>
+  </KEiliStoryAdult>
 </BackstoryTranslations>

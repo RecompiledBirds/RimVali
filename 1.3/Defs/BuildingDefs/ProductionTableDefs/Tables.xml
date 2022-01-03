@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+  
+  
   <!-- Nano-Forge -->
-
+   
   <ThingDef ParentName="BenchBase">
     <defName>AvaliNanoForge</defName>
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -10,27 +11,28 @@
       <li>BuildingsProduction</li>
     </thingCategories>
     <label>Avali Nano-Printing Forge</label>
-    <description>The Avali Nano-Printing Forge is perhaps the bulk of any Avali operation. Utilizing immense heat and nano-technologies, this workbench is capable of changing the structure and sometimes even the composition of certain molecules. As such this workbench is primarily purposed to prepare raw resources for future printing or to print metallic gear with.</description>
+    <description>The Avali Nano-Printing Forge is a 3D printer, like most Avali crafting utilities. It works with immense heat, and nanotechnologies able to rearrange the structure and molecues of the items put in. Caution: Do not stick fingers, toes, feet, hands, tails, or other limbs inside, even if the device appears to be powered off.</description>
     <size>(3,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
     <recipes>
+    
       <li>MakeBFGSabot</li>
-
+    
       <li>RimValiPowderTungsten</li>
       <li>RimValiPowderTungstenTwo</li>
       <li>RimValiPowderTungstenThree</li>
-
-      <li>RimValiPrintAerogel</li>
-      <li>RimValiPrintAerogelTwo</li>
-      <li>RimValiPrintAerogelThree</li>
-
+      
+        <li>RimValiPrintAerogel</li>
+        <li>RimValiPrintAerogelTwo</li>
+        <li>RimValiPrintAerogelThree</li>
+      
       <li>ForgeAeroTungsten</li>
       <li>ForgeAeroTungstenTwo</li>
       <li>ForgeAeroTungstenThree</li>
-
+      
       <li>RefineAvaliCarbon</li>
       <li>RefineAvaliCarbonTwo</li>
       <li>RefineAvaliCarbonThree</li>
@@ -43,9 +45,9 @@
       <Steel>100</Steel>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
-    <researchPrerequisites>
-      <li>ResearchNanoForge</li>
-    </researchPrerequisites>
+     <researchPrerequisites>
+       <li>ResearchNanoForge</li>
+     </researchPrerequisites>
     <graphicData>
       <texPath>avali/buildings/production/nanoforge</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -58,7 +60,7 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-    <castEdgeShadows>true</castEdgeShadows>
+     <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>0.20</staticSunShadowHeight>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -67,7 +69,7 @@
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>0</Flammability>
-      <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
+       <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
     </statBases>
     <comps>
       <li Class="CompProperties_Power">
@@ -94,6 +96,7 @@
   </ThingDef>
 
   <!-- Research bench -->
+	
 
   <ThingDef ParentName="BenchBase">
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -102,7 +105,7 @@
     </thingCategories>
     <defName>AvaliResearchBench</defName>
     <label>Avali Research bench</label>
-    <description>An Avali research bench equiped with a single-color LASER array and a basic operating system. Whilst a lot of trivial Avali tech is already floating around on the Rimworld, a lot designs are either unfit for usage in this enviroment or instead jealously guarded by opposing factions. As such this table is used by Rimworld Avali researchers to decrypt and alter designs for proper usage within the colony.</description>
+    <description>An avali research bench. Most avali would dimiss this kind of tech as simple, and somewhat bulky, while the humans just stare at the hologram it projects. You'll learn to make better versions later on, most likely, but this is a start. You'll need it to research avali tech.</description>
     <thingClass>Building_ResearchBench</thingClass>
     <size>(3,2)</size>
     <stuffCategories>
@@ -135,7 +138,7 @@
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>1.0</Flammability>
       <ResearchSpeedFactor>1.0</ResearchSpeedFactor>
-      <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
+       <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
     </statBases>
     <comps>
       <li Class="CompProperties_Power">
@@ -147,7 +150,7 @@
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>MultiAnalyzer</li>
-          <li>AvaliNexus</li>
+		  <li>AvaliNexus</li>
         </linkableFacilities>
       </li>
       <li Class="CompProperties_Breakdownable"/>
@@ -168,11 +171,11 @@
       <li>BasicRimValiTech</li>
     </researchPrerequisites>
   </ThingDef>
-
+  
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliNexus</defName>
     <label>Illuminate Nexus Connection</label>
-    <description>The Illuminate Nexus Connection utilizes a rare material known as a Sync Crystal to communicate with the Nexus through their strange properties regarding quantum entanglement. Due to their widespread integration into Avali Illuminate society, these large connections are only given to colonies that seem to be strong enough to protect themselves, allowing them access to higher techs aswell.</description>
+    <description>This device can be used to access higher levels of tech, thanks to its connection to the nexus.</description>
     <graphicData>
       <texPath>avali/buildings/production/sync_crystal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -188,7 +191,7 @@
     <canOverlapZones>false</canOverlapZones>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <thingCategories>
-      <li>BuildingsSpecial</li>
+     <li>BuildingsSpecial</li>
     </thingCategories>
     <statBases>
       <MaxHitPoints>200</MaxHitPoints>
@@ -200,9 +203,11 @@
       <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
     </building>
     <comps>
-      <li Class="CompProperties_Glower">
-        <glowRadius>8</glowRadius>
-        <glowColor>(236, 166, 245)</glowColor>
+    <li Class="AvaliMod.NexusCompProps">
+    </li>
+		<li Class="CompProperties_Glower">
+			<glowRadius>8</glowRadius>
+			<glowColor>(236, 166, 245)</glowColor>
       </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
@@ -222,16 +227,16 @@
     </placeWorkers>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
-
+  
   <!-- Nano-loom -->
-  <ThingDef ParentName="BenchBase">
+    <ThingDef ParentName="BenchBase">
     <minifiedDef>MinifiedThing</minifiedDef>
     <defName>AvaliNanoLoom</defName>
     <label>Avali Nano-Printing Loom</label>
     <thingCategories Inherit="false">
       <li>BuildingsProduction</li>
     </thingCategories>
-    <description>The Avali Nano-loom is a highly prized piece of machinery within the Avali Rimworld colonies. Making use of nanotechnology, this loom is able to weave strands of polymer fabrics that are a lot more robust than usual fabrics of the same material. This allows Avali colonies to create more sturdy clothing and tents when compared to their competitors.</description>
+    <description>The Avali Nano-loom is a highly important piece of equipment. Without it, Avali wouldn't be able to make any of their advanced cloth materials, which are used in other things..</description>
     <size>(2,1)</size>
     <thingClass>Building_WorkTable</thingClass>
     <placeWorkers>
@@ -258,9 +263,9 @@
       <ComponentSpacer>2</ComponentSpacer>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
-    <researchPrerequisites>
-      <li>ResearchNanoLoom</li>
-    </researchPrerequisites>
+     <researchPrerequisites>
+       <li>ResearchNanoLoom</li>
+     </researchPrerequisites>
     <graphicData>
       <texPath>avali/buildings/production/loom/loom</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -273,7 +278,7 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-    <castEdgeShadows>true</castEdgeShadows>
+     <castEdgeShadows>true</castEdgeShadows>
     <staticSunShadowHeight>0.20</staticSunShadowHeight>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -282,7 +287,7 @@
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToBuild>5000</WorkToBuild>
       <Flammability>0</Flammability>
-      <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
+       <WorkTableWorkSpeedFactor>1.42</WorkTableWorkSpeedFactor>
     </statBases>
     <comps>
       <li Class="CompProperties_Power">
@@ -307,5 +312,7 @@
       <li>ITab_Bills</li>
     </inspectorTabs>
   </ThingDef>
+
+
 
 </Defs>

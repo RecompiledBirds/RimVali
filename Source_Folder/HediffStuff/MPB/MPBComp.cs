@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using Verse;
-
 namespace AvaliMod
 {
     public class MultiPartBionic : HediffComp
@@ -13,23 +12,82 @@ namespace AvaliMod
         private bool triggeredTextRemove = false;
         private BodyPartDef bodyPart;
 
-        public MultiPartBionicCompProperties Props => (MultiPartBionicCompProperties)props;
-        private string hediffsLeft => Props.stringForHediffsLeft;
+        public MultiPartBionicCompProperties Props
+        {
+            get
+            {
+                return (MultiPartBionicCompProperties)this.props;
+            }
+        }
+        private string hediffsLeft
+        {
+            get
+            {
+                return this.Props.stringForHediffsLeft;
+            }
+        }
 
-        private bool displayTextWhenChanged => Props.displayTextWhenChanged;
-        private List<BodyPartDef> bodyParts => Props.bodyPartsToAffect;
-        private List<HediffDef> otherHediffs => Props.otherHediffs;
-        private List<HediffDef> hediffsToAdd => Props.hediffsToAdd;
-        private string textOnAdd => Props.textOnAdd;
-        private string textOnRemove => Props.textOnRemove;
-        private int timeToFade => Props.timeToFade;
-        private List<BodyPartDef> bodyPartsMustBeOn => Props.bodyPartsMustBeOn;
-
+        private bool displayTextWhenChanged
+        {
+            get
+            {
+                return this.Props.displayTextWhenChanged;
+            }
+        }
+        private List<BodyPartDef> bodyParts
+        {
+            get
+            {
+                return this.Props.bodyPartsToAffect;
+            }
+        }
+        private List<HediffDef> otherHediffs
+        {
+            get
+            {
+                return this.Props.otherHediffs;
+            }
+        }
+        private List<HediffDef> hediffsToAdd
+        {
+            get
+            {
+                return this.Props.hediffsToAdd;
+            }
+        }
+        private string textOnAdd
+        {
+            get
+            {
+                return this.Props.textOnAdd;
+            }
+        }
+        private string textOnRemove
+        {
+            get
+            {
+                return this.Props.textOnRemove;
+            }
+        }
+        private int timeToFade
+        {
+            get
+            {
+                return this.Props.timeToFade;
+            }
+        }
+        private List<BodyPartDef> bodyPartsMustBeOn
+        {
+            get
+            {
+                return this.Props.bodyPartsMustBeOn;
+            }
+        }
         public override string CompTipStringExtra
         {
             get
             {
-                Pawn pawn = parent.pawn;
+                Pawn pawn = this.parent.pawn;
 
                 output = hediffsLeft;
                 foreach (HediffDef hediffDef in otherHediffs)
@@ -49,15 +107,13 @@ namespace AvaliMod
                 return output;
             }
         }
-
         public override void CompPostTick(ref float severityAdjustment)
         {
-            Pawn pawn = parent.pawn;
+            Pawn pawn = this.parent.pawn;
             if (pawn.Spawned)
             {
                 hediffsFound = 0;
-                // TODO: This is iterating, but not using the iterator value? Why??
-                foreach (HediffDef _ in otherHediffs)
+                foreach (HediffDef hediff in otherHediffs)
                 {
                     if (onItem <= bodyPartsMustBeOn.Count)
                     {
@@ -67,7 +123,7 @@ namespace AvaliMod
                     {
                         bodyPart = bodyPartsMustBeOn[bodyPartsMustBeOn.Count];
                     }
-                    BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement();
+                    BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement<BodyPartRecord>();
                     if (pawn.health.hediffSet.HasHediff(otherHediffs[onItem], bodyPartRecord, false))
                     {
                         hediffsFound += 1;
@@ -85,7 +141,7 @@ namespace AvaliMod
                         {
                             bodyPart = bodyParts[bodyParts.Count];
                         }
-                        BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement();
+                        BodyPartRecord bodyPartRecord = pawn.RaceProps.body.GetPartsWithDef(bodyPart).RandomElement<BodyPartRecord>();
                         Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn, null);
                         if (!pawn.health.hediffSet.HasHediff(hediffDef, false))
                         {
@@ -99,6 +155,7 @@ namespace AvaliMod
                             }
                         }
                         onItem += 1;
+
                     }
                 }
                 else

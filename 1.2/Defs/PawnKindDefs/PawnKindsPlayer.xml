@@ -7,6 +7,8 @@
     <isFighter>false</isFighter>
     <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
     <forceNormalGearQuality>true</forceNormalGearQuality>
+    <initialWillRange>10~20</initialWillRange>
+    <initialResistanceRange>10~15</initialResistanceRange>
   </PawnKindDef>
   <!-- Normal -->
 
@@ -32,14 +34,14 @@
     <apparelMoney>180~700</apparelMoney>
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
   </PawnKindDef>
-
+  
   <PawnKindDef ParentName="BaseAvali">
     <defName>RimValiEggColonist</defName>
     <label>Colonist</label>
     <defaultFactionType>RimValiPlayerColony</defaultFactionType>
     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>    
   </PawnKindDef>
-
+  
   <PawnKindDef ParentName="BaseAvali">
     <defName>RimValiCrashedColonist</defName>
     <label>Colonist</label>
@@ -58,10 +60,10 @@
   </PawnKindDef>
   <!-- RitualNeo -->
 
-  <PawnKindDef ParentName="BaseAvali">
+   <PawnKindDef ParentName="BaseAvali">
     <defName>RitualNeo</defName>
     <label>RitualNeo</label>
-    <techHediffsTags>
+     <techHediffsTags>
       <li>BasicAvali</li>
     </techHediffsTags>
     <defaultFactionType>NeoPlayerColony</defaultFactionType>
@@ -74,10 +76,10 @@
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
   </PawnKindDef>
   <!-- Eimilian -->
-  <PawnKindDef ParentName="BaseAvali">
+    <PawnKindDef ParentName="BaseAvali">
     <defName>Eimilian</defName>
     <label>Eimilian</label>
-    <techHediffsTags>
+     <techHediffsTags>
       <li>BasicAvali</li>
     </techHediffsTags>
     <defaultFactionType>EimilPlayerColony</defaultFactionType>

@@ -6,6 +6,7 @@
     <description>Install basic Temperature Control Augment [TCA].</description>
     <descriptionHyperlinks><ThingDef>AvaliBasicTempControl</ThingDef></descriptionHyperlinks>
     <jobString>Installing basic Temperature Control Augment [TCA].</jobString>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
     <ingredients>
       <li>
         <filter>

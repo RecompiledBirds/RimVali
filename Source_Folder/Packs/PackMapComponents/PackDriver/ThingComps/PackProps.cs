@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using Verse;
-
 namespace AvaliMod
 {
     public class PackProps : CompProperties

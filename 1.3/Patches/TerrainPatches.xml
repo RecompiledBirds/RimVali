@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+       <xpath>/Defs/TerrainDef[defName="Ice"]/affordances</xpath>
+    <value>
+      <li>IcySoil</li>
+   
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+       <xpath>/Defs/TerrainDef[defName="Ice"]/fertility</xpath>
+      <value>
+        <fertility>0.8</fertility>
+      </value>
+  </Operation>
+</Patch>

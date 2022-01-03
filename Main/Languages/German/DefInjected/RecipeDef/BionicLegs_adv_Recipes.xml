@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-  <!-- <InstallAvaliAdvancedBionicLeg.label>Install advanced bionic leg</InstallAvaliAdvancedBionicLeg.label> -->
-  <InstallAvaliAdvancedBionicLeg.label>Fortschrittliches bionisches Bein implantieren</InstallAvaliAdvancedBionicLeg.label>
-  <!-- <InstallAvaliAdvancedBionicLeg.description>Install a advanced bionic leg.</InstallAvaliAdvancedBionicLeg.description> -->
-  <InstallAvaliAdvancedBionicLeg.description>Implantiere ein fortschrittliches bionisches Bein.</InstallAvaliAdvancedBionicLeg.description>
-  <!-- <InstallAvaliAdvancedBionicLeg.jobString>Installing advanced bionic leg.</InstallAvaliAdvancedBionicLeg.jobString> -->
-  <InstallAvaliAdvancedBionicLeg.jobString>Implantiert ein fortschrittliches bionisches Bein.</InstallAvaliAdvancedBionicLeg.jobString>
-</LanguageData>

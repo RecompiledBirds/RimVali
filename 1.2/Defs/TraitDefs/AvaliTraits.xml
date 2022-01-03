@@ -9,18 +9,18 @@
         <label>Pack broken</label>
         <description>[PAWN_nameDef] has had a painful life, over and over again every pack they join has been destroyed, [PAWN_nameDef] has been so scarred by the repeated loss of their pack that they refuse to let themselves join another, even if otherwise willing.</description>
         <statOffsets>
-          <MentalBreakThreshold>-0.5</MentalBreakThreshold>
+          <MentalBreakThreshold>0.9</MentalBreakThreshold>
           <PainShockThreshold>0.4</PainShockThreshold>
         </statOffsets>
       </li>
     </degreeDatas>
-    <conflictingTraits>
-      <li>Kind</li>
-      <li>Psychopath</li>
-    </conflictingTraits>
+     <conflictingTraits>
+       <li>Kind</li>
+       <li>Psychopath</li>
+     </conflictingTraits>
   </TraitDef>
   <TraitDef Abstract="True" Name="CantFightFire">
-
+    
     <disabledWorkTags>Firefighting</disabledWorkTags>
   </TraitDef>
   <TraitDef ParentName="CantFightFire">
@@ -87,7 +87,7 @@
       <li>AvaliNormal</li>
     </conflictingTraits>
   </TraitDef>
-
+  
   <TraitDef>
     <defName>AvaliBionicCareless</defName>
     <commonality>40</commonality>

@@ -6,6 +6,7 @@
     <description>Install Elite Temperature Control Augment [TCA].</description>
     <descriptionHyperlinks><ThingDef>AvaliEliteTempControl</ThingDef></descriptionHyperlinks>
     <jobString>Installing Elite Temperature Control Augment [TCA].</jobString>
+    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
     <ingredients>
       <li>
         <filter>

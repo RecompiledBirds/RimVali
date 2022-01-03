@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Verse;
-
 namespace AvaliMod
 {
     public class MultiPartBionicCompProperties : HediffCompProperties
@@ -14,10 +13,9 @@ namespace AvaliMod
         public string stringForHediffsLeft;
         public List<BodyPartDef> bodyPartsToAffect;
         public List<BodyPartDef> bodyPartsMustBeOn;
-
         public MultiPartBionicCompProperties()
         {
-            compClass = typeof(MultiPartBionic);
+            this.compClass = typeof(MultiPartBionic);
         }
     }
 }

@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>IWPlayerColony</defName>
-    <label>Independent worlds tribe</label>
-    <description>A tribe of avali from the independent worlds.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>IWAvaliColonist</basicMemberKind>
-    <pawnSingular>Avali</pawnSingular>
-    <pawnsPlural>avali</pawnsPlural>
-    <backstoryCategories>
-      <li>RimValiBackstories</li>
+	<FactionDef ParentName="PlayerFactionBase">
+		<defName>IWPlayerColony</defName>
+		<label>Independent worlds tribe</label>
+		<description>A tribe of avali from the independent worlds.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>IWAvaliColonist</basicMemberKind>
+		<pawnSingular>Avali</pawnSingular>
+		<pawnsPlural>avali</pawnsPlural>
+		<backstoryCategories>
+			<li>RimValiBackstories</li>
       <li>Tribal</li>
-    </backstoryCategories>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
-    <pawnNameMaker>AvaliPersonNamer</pawnNameMaker>
-    <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
-    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
-    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Tribal</li>
-    </hairTags>
-    <apparelStuffFilter>
+		</backstoryCategories>
+		<factionIconPath>avali/WorldIcons/Town</factionIconPath>
+		<settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+		
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+			<startingResearchTags>
+					<li>ClassicStart</li>
+		</startingResearchTags>
+
+		<apparelStuffFilter>
       <thingDefs>
         <li>Synthread</li>
       </thingDefs>
     </apparelStuffFilter>
-    <colorSpectrum>
-      <li>(1, 0.52, 0.05)</li>
-    </colorSpectrum>
+		<colorSpectrum>
+				<li>(1, 0.52, 0.05)</li>
+		</colorSpectrum>
     <techLevel>Spacer</techLevel>
-  </FactionDef>
+	</FactionDef>
 </Defs>

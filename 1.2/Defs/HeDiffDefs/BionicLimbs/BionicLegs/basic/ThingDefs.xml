@@ -10,11 +10,12 @@
     <label>Basic bionic Avali leg</label>
     <description>A basic bionic leg. It isn't much better, but it's not too bad.</description>
     <descriptionHyperlinks><RecipeDef>InstallAvaliBasicBionicLeg</RecipeDef></descriptionHyperlinks>
-
+    
     <techHediffsTags>
       <li>BasicAvali</li>
     </techHediffsTags>
-
+    
+    
     <costList>
       <Steel>20</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>

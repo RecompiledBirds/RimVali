@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef ParentName = "AddedBodyPartBase">
+    <HediffDef ParentName = "AddedBodyPartBase">
     <defName>RimValiClothFeathers</defName>
     <label>Cloth arm feathers</label>
     <description>Cloth arm feathers. A simple, easy replacement.</description>
@@ -10,7 +10,7 @@
       <partEfficiency>0.3</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <HediffDef ParentName = "AddedBodyPartBase">
+    <HediffDef ParentName = "AddedBodyPartBase">
     <defName>RimValiPegTail</defName>
     <label>Avali peg tail</label>
     <description>A peg tail. The avali see it as a.. "interesting" replacement choice.</description>
@@ -20,7 +20,7 @@
       <partEfficiency>0.3</partEfficiency>
     </addedPartProps>
   </HediffDef>
-  <RecipeDef ParentName="SurgeryInstallWoodenPartBase">
+    <RecipeDef ParentName="SurgeryInstallWoodenPartBase">
     <defName>RimValiInstallPegTail</defName>
     <label>install avali peg tail</label>
     <description>Install an avali peg tail.</description>
@@ -37,7 +37,7 @@
     <description>sew cloth feathers onto a arm.</description>
     <descriptionHyperlinks><ThingDef>Cloth</ThingDef></descriptionHyperlinks>
     <jobString>Sewing cloth feathers.</jobString>
-    <ingredients>
+        <ingredients>
       <li>
         <filter>
           <thingDefs>

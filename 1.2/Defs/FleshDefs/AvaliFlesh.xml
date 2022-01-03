@@ -5,19 +5,5 @@
     <defName>AvaliFlesh</defName>
     <corpseCategory>CorpsesAnimal</corpseCategory>
     <damageEffecter>Damage_HitFlesh</damageEffecter>
-    <wounds>
-      <li>
-        <texture>Things/Pawn/Wounds/WoundFleshA</texture>
-        <color>(122, 15, 119)</color>
-      </li>
-      <li>
-        <texture>Things/Pawn/Wounds/WoundFleshB</texture>
-        <color>(122, 15, 119)</color>
-      </li>
-      <li>
-        <texture>Things/Pawn/Wounds/WoundFleshC</texture>
-        <color>(122, 15, 119)</color>
-      </li>
-    </wounds>
   </FleshTypeDef>
 </Defs>

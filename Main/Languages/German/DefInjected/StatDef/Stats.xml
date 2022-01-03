@@ -4,7 +4,7 @@
   <HealthIncreasePercent.label>Auswirkungen auf die Robustheit des Körperteils</HealthIncreasePercent.label>
   <!-- <HealthIncreasePercent.description>How much the part health is increased/decreased by a bionic.</HealthIncreasePercent.description> -->
   <HealthIncreasePercent.description>Wie sehr die Bionik die Robustheit des Körperteils erhöht/verringert.</HealthIncreasePercent.description>
-
+  
   <!-- <HealthIncreaseAdd.label>Part health impact</HealthIncreaseAdd.label> -->
   <HealthIncreaseAdd.label>Auswirkungen auf die Robustheit des Körperteils</HealthIncreaseAdd.label>
   <!-- <HealthIncreaseAdd.description>How much the part health is increased/decreased by a bionic.</HealthIncreaseAdd.description> -->

@@ -346,7 +346,7 @@
                 <li>Arms</li>
               </groups>
               <parts>
-                <li>
+              <li>
                   <def>RimValiArmFeathers</def>
                   <customLabel>right arm feathers</customLabel>
                   <coverage>0.6</coverage>
@@ -561,5 +561,5 @@
       </parts>
     </corePart>
   </BodyDef>
-
+  
 </Defs>

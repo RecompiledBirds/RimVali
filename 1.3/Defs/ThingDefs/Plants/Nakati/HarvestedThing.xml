@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef ParentName="PlantFoodRawBase">
+    <ThingDef ParentName="PlantFoodRawBase">
     <defName>NakatiBark</defName>
     <label>Nakati bark</label>
     <description>Nakati bark.</description>

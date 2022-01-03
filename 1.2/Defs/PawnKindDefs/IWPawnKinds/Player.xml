@@ -6,7 +6,7 @@
     <defaultFactionType>IWPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.3</chemicalAddictionChance>
     <apparelTags>
-      <li>IndustrialAdvanced</li>
+       <li>IndustrialAdvanced</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <techHediffsMoney>
@@ -21,4 +21,4 @@
     <apparelMoney>180~1000</apparelMoney>
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>    
   </PawnKindDef>
-</Defs>
+  </Defs>

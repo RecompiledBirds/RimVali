@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef ParentName="BaseArtilleryBuilding">
+    <ThingDef ParentName="BaseArtilleryBuilding">
     <graphicData>
       <texPath>avali/buildings/turrets/AIMS/mortar_base</texPath>
       <drawSize>(2,2)</drawSize>
@@ -8,18 +8,18 @@
     <defName>AvaliAIMS</defName>
     <label>AIMS</label>
     <description>AIMS is an improved mortar system, designed for accuracy.</description>
-
+    
     <costList>
       <Steel>300</Steel>
       <Plasteel>5</Plasteel>
       <AvaliTungstenPowder>40</AvaliTungstenPowder>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
-
+    
     <researchPrerequisites>
       <li>AIMSRes</li>
     </researchPrerequisites>
-
+    
     <comps>
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
@@ -38,11 +38,20 @@
       <turretBurstWarmupTime>7.0</turretBurstWarmupTime>
       <turretBurstCooldownTime>30.0</turretBurstCooldownTime>
     </building>
-    <uiIconPath>avali/buildings/turrets/AIMS/AIMS_GUI_IMAGE</uiIconPath>
-    <uiIconScale>0.9</uiIconScale>
+  <uiIconPath>avali/buildings/turrets/AIMS/AIMS_GUI_IMAGE</uiIconPath>
+  <uiIconScale>0.9</uiIconScale>
   </ThingDef>
-
-  <ThingDef ParentName="BaseArtilleryWeapon">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <ThingDef ParentName="BaseArtilleryWeapon">
     <defName>AIMSLauncher</defName>
     <label>AIMS</label>
     <description>AIMS launch system.</description>

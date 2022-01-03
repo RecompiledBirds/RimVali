@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef ParentName="AddedBodyPartBase">
+   <HediffDef ParentName="AddedBodyPartBase">
     <defName>TetradactylyUtilization</defName>
     <label>Tetradactyly Utilitizer</label>
     <labelNoun>Tetradactyly Utilitizer</labelNoun>

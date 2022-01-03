@@ -1,15 +1,15 @@
 ﻿using RimWorld;
-using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Verse;
+using System.Linq;
+using RimWorld.Planet;
 
 namespace AvaliMod
 {
     #region settings stuff
-
     [StaticConstructorOnStartup]
+    
     public static class AirdropResearchManager
     {
         static AirdropResearchManager()
@@ -27,22 +27,21 @@ namespace AvaliMod
                 {
                     Log.Message(e.Message);
                 }
-            }
+            } 
         }
     }
-
-    #endregion settings stuff
-
+    #endregion
     public class AirdropAlert : Alert
     {
         public override AlertReport GetReport()
         {
+            
             defaultLabel = "IlluminateAirdropSend".Translate(AirDropHandler.GetTimeToDropInHours.Named("TIME"))/* "AirdropInStart".Translate() + " " + (AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour).ToString() + " " + "AirdropInEnd".Translate()*/;
+
 
             return AirDropHandler.HasMessaged && !AirDropHandler.hasDropped ? AlertReport.Active : AlertReport.Inactive;
         }
     }
-
     public class AirDropHandler : WorldComponent
     {
         private readonly bool airdrops = LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().enableAirdrops;
@@ -50,24 +49,35 @@ namespace AvaliMod
         private int ticks = 0;
         public static int timeToDrop;
 
-        public static int GetTimeToDropInHours => timeToDrop / ticksInAnHour;
+        public static int GetTimeToDropInHours
+        {
+            get
+            {
+                return timeToDrop / ticksInAnHour;
+            }
+        }
+
 
         private static readonly int ticksInAnHour = 25;
         private static bool hasMessaged;
-        public static bool HasMessaged => hasMessaged;
-
-        public AirDropHandler(World world) : base(world)
+        public static bool HasMessaged
         {
+            get
+            {
+                return hasMessaged;
+            }
+        }
+        public AirDropHandler(World world) : base(world) {
             timeToDrop = 0;
             hasMessaged = false;
-            hasDropped = false;
+            hasDropped = false; 
         }
 
         public static bool hasDropped = false;
 
+
         private IntVec3 targetPos;
         private Map map;
-
         public override void ExposeData()
         {
             Scribe_Values.Look(ref timeToDrop, "timeToDrop", 0);
@@ -77,7 +87,6 @@ namespace AvaliMod
             Scribe_References.Look(ref map, "map");
             base.ExposeData();
         }
-
         private void SendDrop()
         {
             map = Current.Game.CurrentMap;
@@ -86,29 +95,30 @@ namespace AvaliMod
             {
                 ThingMaker.MakeThing(AvaliDefs.AvaliNexus)
             };
+            
 
             Scribe_Values.Look(ref hasDropped, "hasDropped", false);
-
+            
             GlobalTargetInfo targ = new GlobalTargetInfo(targetPos, map);
-
+            
             if (map.IsPlayerHome)
             {
                 hasDropped = true;
                 //TODO: Figure out why this doesn't seem to be working.
                 //Assembly outdated?
-                foreach (Faction faction in Find.FactionManager.AllFactions.Where(x => x.def == AvaliDefs.AvaliFaction))
+                foreach(Faction faction in Find.FactionManager.AllFactions.Where(x => x.def == AvaliDefs.AvaliFaction))
                 {
                     faction.TryAffectGoodwillWith(Faction.OfPlayer, 200, true, false);
                 }
                 DropPodUtility.DropThingsNear(targetPos, map, thingList);
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliDefs.IlluminateAirdrop, lookTargets: new LookTargets() { targets = new List<GlobalTargetInfo>() { targ } });
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("IlluminateAirdrop".Translate(), "AirdropEventDesc".Translate(), AvaliDefs.IlluminateAirdrop, lookTargets: new LookTargets() { targets = new List<GlobalTargetInfo>() {targ } });
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
             else
             {
                 hasMessaged = false;
                 SetupDrop();
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter(def: AvaliDefs.IlluminateAirdrop, label: "Cannotsend", text: "test");
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter(def: AvaliDefs.IlluminateAirdrop,label: "Cannotsend",text:"test");
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
             }
         }
@@ -121,7 +131,7 @@ namespace AvaliMod
                 timeToDrop = UnityEngine.Random.Range(1 * ticksInAnHour, 48 * ticksInAnHour);
                 targetPos = DropCellFinder.TradeDropSpot(map);
                 GlobalTargetInfo targ = new GlobalTargetInfo(targetPos, map);
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("AirdropSendMsg".Translate(), "IlluminateAirdropSend".Translate((GetTimeToDropInHours).Named("TIME")), AvaliDefs.IlluminateAirdrop, lookTargets: new LookTargets() { targets = new List<GlobalTargetInfo>() { targ } });
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("AirdropSendMsg".Translate(), "IlluminateAirdropSend".Translate((GetTimeToDropInHours).Named("TIME")), AvaliDefs.IlluminateAirdrop,lookTargets: new LookTargets() { targets = new List<GlobalTargetInfo>() { targ } });
                 Find.LetterStack.ReceiveLetter(choiceLetter, null);
                 hasMessaged = true;
             }
@@ -132,12 +142,14 @@ namespace AvaliMod
             map = Current.Game.CurrentMap;
             if (RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq && !hasDropped && map.IsPlayerHome)
             {
+
                 SetupDrop();
                 return true;
+
             }
             return false;
         }
-
+        
         public override void WorldComponentTick()
         {
             ticks++;
@@ -158,5 +170,7 @@ namespace AvaliMod
                 ticks = 0;
             }
         }
+        
     }
+   
 }

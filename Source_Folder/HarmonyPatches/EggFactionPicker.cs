@@ -1,18 +1,16 @@
 ﻿using HarmonyLib;
 using RimWorld;
-
+using Verse;
 namespace AvaliMod
 {
-    [HarmonyPatch(typeof(CompHatcher), "Hatch")]
-    public static class EggPatch
+    [HarmonyPatch(typeof(CompHatcher),"Hatch")]
+    class EggPatch
     {
         [HarmonyPostfix]
-        public static void HatchPatch(CompHatcher __instance)
+        static void HatchPatch(CompHatcher __instance)
         {
             if (__instance.hatcheeParent == null & __instance.Props.hatcherPawn.RaceProps.body.defName == "RimValiBody")
-            {
                 __instance.hatcheeFaction = Faction.OfPlayer;
-            }
         }
     }
 }

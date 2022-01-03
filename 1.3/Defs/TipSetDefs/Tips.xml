@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <TipSetDef>
-    <defName>AvaliTips</defName>
-    <tips>
-      <!-- Fluff -->
-      <li>Avali have poor eyesight, but their hearing makes more than up for it.</li>
-      <li>While on Avalon avali can fly, on Earth the thinner athmosphere and stronger gravity would at most allow them to glide.</li>
-      <li>Avali usually grow to around 3 to 4 feet or one meter in height.</li>
-      <li>Avali usually reach a weight of 13 to 18 kg making them perfect for any yeeting related activities.</li>
-      <li>The BFG turret is a neat weapon for home defense purposes.</li>
-
-      <!-- Settings -->
-      <li>RimVali features a highly customisable pack system. Check out the settings for a customisable experience!</li>
-
-      <!-- UI -->
-      <li>You can check out information about an avalis pack by clicking on an avali pawn and clicking on the 'Pack' tab.</li>
-
-      <!-- Mechanics -->
-      <li>Avali don't like to sleep alone, consider making them sleep in barracks.</li>
-      <li>Avali are very attached to their packs, losing one packmate is detrimental to their mental health and losing an entire pack is known to cause insanity.</li>
-      <li>Avali have access to a wide range of augments providing unique advantages and disadvantages.</li>
-      <li>Don't play with Nesi if you plan to have many humans in your colony.</li>
-      <li>Avali are more comfortable in the cold and less resiliant to heat. Consider starting in a colder environment.</li>
-      <li>You will need the avali research bench to research any of the avali research.</li>
-
-      <!-- Other mods -->
-      <li>RimVali:Core comes with a form of pawn texture scaling that will cause issues with other mods doing the same thing, for example "HD Pawn Rendering".</li>
-      <li>Download the RimVali: Cuisine mod to get more foods for your fluffy companions!</li>
-      <li>The #bug-reports-and-feedback channel on the RimVali Discord has a pinned spreadsheet on mod compability</li>
-
-      <!-- Misc -->
-      <li>Join the RimVali Discord for announcements, disscussion and more! https://discord.gg/RpCM3RU</li>
-    </tips>
-  </TipSetDef>
+	<TipSetDef>
+		<defName>AvaliTips</defName>
+		<tips>
+			<!-- Fluff -->
+			<li>Avali have poor eyesight, but their hearing makes more than up for it.</li>
+			<li>While on Avalon avali can fly, on Earth the thinner athmosphere and stronger gravity would at most allow them to glide.</li>
+			<li>Avali usually grow to around 3 to 4 feet or one meter in height.</li>
+			<li>Avali usually reach a weight of 13 to 18 kg making them perfect for any yeeting related activities.</li>
+			<li>The BFG turret is a neat weapon for home defense purposes.</li>
+			
+			<!-- Settings -->
+			<li>RimVali features a highly customisable pack system. Check out the settings for a customisable experience!</li>
+			
+			<!-- UI -->
+			<li>You can check out information about an avalis pack by clicking on an avali pawn and clicking on the 'Pack' tab.</li>
+			
+			<!-- Mechanics -->
+			<li>Avali don't like to sleep alone, consider making them sleep in barracks.</li>
+			<li>Avali are very attached to their packs, losing one packmate is detrimental to their mental health and losing an entire pack is known to cause insanity.</li>
+			<li>Avali have access to a wide range of augments providing unique advantages and disadvantages.</li>
+			<li>Don't play with Nesi if you plan to have many humans in your colony.</li>
+			<li>Avali are more comfortable in the cold and less resiliant to heat. Consider starting in a colder environment.</li>
+			<li>You will need the avali research bench to research any of the avali research.</li>
+			
+			<!-- Other mods -->
+			<li>RimVali:Core comes with a form of pawn texture scaling that will cause issues with other mods doing the same thing, for example "HD Pawn Rendering".</li>
+			<li>Download the RimVali: Cuisine mod to get more foods for your fluffy companions!</li>
+			<li>The #bug-reports-and-feedback channel on the RimVali Discord has a pinned spreadsheet on mod compability</li>
+		
+			<!-- Misc -->
+			<li>Join the RimVali Discord for announcements, disscussion and more! https://discord.gg/RpCM3RU</li>
+		</tips>
+	</TipSetDef>
 </Defs>

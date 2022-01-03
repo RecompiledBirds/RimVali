@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="MakeableAERIALShellBase">
+  
+      <ThingDef ParentName="MakeableAERIALShellBase">
     <defName>AERIALEMPShell</defName>
     <label>AERIAL EMP rocket</label>
     <description>A rocket with an onboard EMP device, made to be launched from the AERIAL system.</description>
@@ -11,9 +12,9 @@
     </graphicData>
     <comps>
       <li Class="CompProperties_Explosive">
-        <explosiveRadius>12</explosiveRadius>
+        <explosiveRadius>56</explosiveRadius>
         <explosiveDamageType>EMP</explosiveDamageType>
-        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <explosiveExpandPerStackcount>2</explosiveExpandPerStackcount>
         <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
         <wickTicks>30~60</wickTicks>
       </li>
@@ -30,7 +31,7 @@
       <researchPrerequisite>AERIELRES</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-
+  
   <ThingDef ParentName="BaseBullet">
     <defName>AERIAL_EMP_SHELL</defName>
     <label>EMP shell</label>
@@ -43,7 +44,7 @@
     <projectile>
       <damageDef>EMP</damageDef>
       <!-- damage amount is the damage def default -->
-      <speed>56</speed>
+      <speed>36</speed>
       <explosionRadius>20</explosionRadius>
       <flyOverhead>true</flyOverhead>
       <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>

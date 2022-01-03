@@ -11,7 +11,7 @@
       <partEfficiency>1</partEfficiency>
       <betterThanNatural>true</betterThanNatural>
     </addedPartProps>
-    <stages>
+     <stages>
       <li>
         <statFactors>
           <SocialImpact>-1.5</SocialImpact>

@@ -4,51 +4,53 @@
   <author>Nesi The Avali, Zentimental, LiQd, Todd, Aipi, Cyasi, and Ranade</author>
   <supportedVersions>
     <li>1.2</li>
-    <li>1.3</li>
+	<li>1.3</li>
   </supportedVersions>
   <packageId>NeziTheAvali.RimVali</packageId>
   <description>
-    Welcome!
+Welcome!
 
-    Welcome to RimVali: Far From Avalon! This mod is designed to be a large-scale avali mod, adding new mechanics, items, weapons, research, factions, materials, and so much more.
-    After spending a year and a half in development, it's finally here.
+Welcome to RimVali: Far From Avalon! This mod is designed to be a large-scale avali mod, adding new mechanics, items, weapons, research, factions, materials, and so much more.
+After spending a year and a half in development, it's finally here.
 
-    Features
 
-    Avali!
-    The avali are the core of this mod. Without them, nothing would exist. These cute, fluffy space raptors are weak- yet still dangerous, fast, and smart. Some avali tribes who have been living here longer then the new colonies sent by the Illuminate have adapted to the conditions on this harsh planet, and become stronger, but slower.
+Features
 
-    Scenarios
-    When starting as an avali faction, you get two starting scenarios. Both offer unique play-styles, advantages, and disadvantages.
+Avali!
+The avali are the core of this mod. Without them, nothing would exist. These cute, fluffy space raptors are weak- yet still dangerous, fast, and smart. Some avali tribes who have been living here longer then the new colonies sent by the Illuminate have adapted to the conditions on this harsh planet, and become stronger, but slower.
 
-    Packs
-    RimVali features a highly customisable pack system (just check the settings panel, or XML files if you're a modder!), giving avali unique boosts based on the highest skills in the pack.
+Scenarios
+When starting as an avali faction, you get two starting scenarios. Both offer unique play-styles, advantages, and disadvantages.
 
-    Being without a pack also will bring about pack-loss, so take care not to get your packmates killed, yeah?
+Packs
+RimVali features a highly customisable pack system (just check the settings panel, or XML files if you're a modder!), giving avali unique boosts based on the highest skills in the pack.
 
-    Augments/Bionics
-    We have over 20 augments (and maybe more planned?), each providing some boost, whether it be body part health, efficiency, or something else.
+Being without a pack also will bring about pack-loss, so take care not to get your packmates killed, yeah?
 
-    Weapons
-    We have about 17 new guns, and 4 new melee weapons introduced in this mod. You'll find both the Illuminate and Independent Worlds have unique weaponry, such as the well known viroblade (Illuminate), modifications of stolen human technologies (Independent worlds), and more.
+Augments/Bionics
+We have over 20 augments (and maybe more planned?), each providing some boost, whether it be body part health, efficiency, or something else.
 
-    There also are 3 new turrets, and 2 new mortars with their own shells.
 
-    Materials
-    A small variety of materials have been added. You'll be familiar with the orange "Ferrogel" (also known as Aerogel), but what about tungsten, or aero-tungsten carbide fiber?
+Weapons
+We have about 17 new guns, and 4 new melee weapons introduced in this mod. You'll find both the Illuminate and Independent Worlds have unique weaponry, such as the well known viroblade (Illuminate), modifications of stolen human technologies (Independent worlds), and more.
 
-    Apparel
-    The avali have their own selection of casual and combat apparel, alongside an custom textures for most vanilla and royalty armor.
+There also are 3 new turrets, and 2 new mortars with their own shells.
 
-    And these are just a few things... I could list a lot, but we don't want to be here all day, do we?
+Materials
+A small variety of materials have been added. You'll be familiar with the orange "Ferrogel" (also known as Aerogel), but what about tungsten, or aero-tungsten carbide fiber?
 
-    Credits:
+Apparel
+The avali have their own selection of casual and combat apparel, alongside an custom textures for most vanilla and royalty armor.
 
-    -Zentimental,Todd, and Aipi, for the amazing textures.
-    -LiQd, for helping me (Nesi) out a ton with the C#, and putting up with my constant questions.
-    -Cyasi, for the German translations of the mod
-    -Avali are by RyuujinZERO.
-  </description>
+And these are just a few things... I could list a lot, but we don't want to be here all day, do we?
+
+Credits:
+
+-Zentimental,Todd, and Aipi, for the amazing textures.
+-LiQd, for helping me (Nesi) out a ton with the C#, and putting up with my constant questions.
+-Cyasi, for the German translations of the mod
+-Avali are by RyuujinZERO.
+	</description>
   <modDependencies>
     <li>
       <packageId>RimVali.Core</packageId>

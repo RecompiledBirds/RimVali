@@ -7,7 +7,7 @@
     <resourceReadoutRoot>true</resourceReadoutRoot>
     <iconPath>avali/Things/Aerogel/BaseAerogel/Aerogel/Aerogel_a</iconPath>
   </ThingCategoryDef>
-
+  
   <ThingCategoryDef>
     <defName>AerielShells</defName>
     <label>A.E.R.I.E.L Rockets</label>
@@ -15,8 +15,8 @@
     <resourceReadoutRoot>true</resourceReadoutRoot>
     <iconPath>avali/buildings/turrets/AERIAL/Shells/AERIAL_ATOM</iconPath>
   </ThingCategoryDef>
-
-  <ThingCategoryDef>
+  
+    <ThingCategoryDef>
     <defName>AimsShells</defName>
     <label>AIMS Shells</label>
     <parent>AvaliResources</parent>

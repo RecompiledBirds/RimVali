@@ -7,7 +7,7 @@
       <verbClass>Verb_MeleeAttackDamage</verbClass>
       <meleeDamageDef>AmmoniaBite</meleeDamageDef>
     </verb>
-    <logEntryDef>MeleeAttack</logEntryDef>
+      <logEntryDef>MeleeAttack</logEntryDef>
     <combatLogRulesHit>Maneuver_Bite_MeleeHit</combatLogRulesHit>
     <combatLogRulesDeflect>Maneuver_Bite_MeleeDeflect</combatLogRulesDeflect>
     <combatLogRulesMiss>Maneuver_Bite_MeleeMiss</combatLogRulesMiss>

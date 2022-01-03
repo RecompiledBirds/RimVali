@@ -1,15 +1,14 @@
 ﻿using Verse;
-
 namespace AvaliMod
 {
-    public class SpawnThingProperties : CompProperties
+    public class thingSpawnerProps : CompProperties
     {
         public ThingDef thingToSpawn;
         public float daysToSpawn;
 
-        public SpawnThingProperties()
+        public thingSpawnerProps()
         {
-            compClass = typeof(SpawnThingComp);
+            this.compClass = typeof(spawnThingComp);
         }
     }
 }

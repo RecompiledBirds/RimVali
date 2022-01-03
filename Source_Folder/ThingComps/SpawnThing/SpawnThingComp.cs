@@ -1,30 +1,29 @@
 ﻿using Verse;
-
 namespace AvaliMod
 {
-    public class SpawnThingComp : ThingComp
+    public class spawnThingComp : ThingComp
     {
         private float thingProgress;
 
-        private SpawnThingProperties Props => (SpawnThingProperties)props;
-
+        private thingSpawnerProps Props
+        {
+            get
+            {
+                return (thingSpawnerProps)this.props;
+            }
+        }
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref thingProgress, "thingProgress", 0.0f, true);
+            Scribe_Values.Look<float>(ref thingProgress, "thingProgress", 0.0f, true);
         }
-
         public override void CompTick()
         {
-            thingProgress += (float)(1.0 / (Props.daysToSpawn * 60000.0));
-            if (thingProgress <= 1.0)
-            {
+            thingProgress += (float)(1.0 / ((double)this.Props.daysToSpawn * 60000.0));
+            if ((double)thingProgress <= 1.0)
                 return;
-            }
-
-            spawnThing(Props.thingToSpawn, parent.Position, parent.Map);
+            spawnThing(this.Props.thingToSpawn, this.parent.Position, this.parent.Map);
         }
-
         public void spawnThing(ThingDef thingDef, IntVec3 loc, Map map)
         {
             try
@@ -34,16 +33,15 @@ namespace AvaliMod
             }
             finally
             {
-                if (!parent.Destroyed)
+                if (!this.parent.Destroyed)
                 {
-                    parent.Destroy(DestroyMode.Vanish);
+                    this.parent.Destroy(DestroyMode.Vanish);
                 }
             }
         }
-
         public override string CompInspectStringExtra()
         {
-            return "Progress: " + thingProgress.ToStringPercent();
+            return (string)("Progress: " + thingProgress.ToStringPercent());
         }
     }
 }

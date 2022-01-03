@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef ParentName="BaseArtilleryBuilding">
+    <ThingDef ParentName="BaseArtilleryBuilding">
     <thingClass>AvaliMod.AERIALSYSTEM</thingClass>
     <graphicData>
       <texPath>avali/buildings/turrets/AERIAL/AERIAL_TURRET_BASE_3X3</texPath>
@@ -9,20 +9,23 @@
     <defName>Aerial</defName>
     <label>AERIAL System</label>
     <description>AERIAL is a high accuracy rocket system, that can hold up to six rockets, and fire two at once.</description>
-
+    
     <researchPrerequisites>
       <li>AERIELRES</li>
     </researchPrerequisites>
     <comps Inherit = "False">
       <li Class="CompProperties_Forbiddable"/>
-
+      
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
         <explosiveRadius>4.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveDamageType>OHGODOHFUCK</explosiveDamageType>
       </li>
-      <li Class="AvaliMod.AerielProps"/>
-
+     <li Class="AvaliMod.AerielProps"/>
+     <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
     </comps>
     <designationHotKey>Misc4</designationHotKey>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -33,12 +36,47 @@
         <li>Artillery_MannedMortar</li>
       </buildingTags>
     </building>
-    <uiIconPath>avali/buildings/turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
-    <uiIconScale>0.9</uiIconScale>
-
+  <uiIconPath>avali/buildings/turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
+  <uiIconScale>0.9</uiIconScale>
+  
   </ThingDef>
-
-  <ThingDef ParentName="BaseArtilleryWeapon">
+  
+  
+  <DamageDef Name="Bomb">
+    <defName>OHGODOHFUCK</defName>
+    <label>bomb</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} has died in an explosion.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <minDamageToFragment>0</minDamageToFragment>
+    <defaultDamage>9999</defaultDamage>
+    <defaultStoppingPower>200</defaultStoppingPower>
+    <defaultArmorPenetration>200</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>9999</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>9999</buildingDamageFactorPassable>
+    <plantDamageFactor>9999</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+  
+  
+  
+  
+  
+  
+  
+    <ThingDef ParentName="BaseArtilleryWeapon">
     <defName>AerialLauncher</defName>
     <label>AERIAL</label>
     <description>AERIAL launch system.</description>

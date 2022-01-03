@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ThingDef ParentName="BuildingBase">
+ <ThingDef ParentName="BuildingBase">
     <defName>AvaliBFG</defName>
     <size>(2,2)</size>
+	<drawerType>MapMeshAndRealTime</drawerType>
     <label>BFG turret</label>
     <description>This large turret, nicknamed the "BFG" is a sniper turret, designed to kill anything at long range.</description>
     <thingClass>Building_TurretGun</thingClass>
-    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>avali/buildings/turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -71,7 +71,7 @@
         <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
       </li>
     </comps>
-
+   
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
     <fillPercent>0.4</fillPercent>
@@ -103,8 +103,10 @@
       <li>AvaliTurrets</li>
     </researchPrerequisites>
   </ThingDef>
-
-  <ThingDef ParentName="BaseBullet">
+  
+  
+  
+   <ThingDef ParentName="BaseBullet">
     <defName>BFGBullet</defName>
     <label>BFG bullet</label>
     <graphicData>
@@ -115,15 +117,15 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>50</damageAmountBase>
       <speed>100</speed>
-      <stoppingPower>5</stoppingPower>
+       <stoppingPower>5</stoppingPower>
       <armorPenetrationBase>2</armorPenetrationBase>
-      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+       <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
       <soundExplode>MortarBomb_Explode</soundExplode>
       <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
       <soundAmbient>MortarRound_Ambient</soundAmbient>
     </projectile>
   </ThingDef>
-
+  
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>BFGGun</defName>
     <label>BFG</label>
@@ -159,4 +161,4 @@
       </li>
     </verbs>
   </ThingDef>
-</Defs>
+ </Defs>

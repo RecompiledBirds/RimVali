@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Modifies rimworld's bedroom thoughts so ours work properly. No impact on gameplay for humans/other races using vanilla thoughts. -->
+<!-- Modifies rimworld's bedroom thoughts so our's work properly. No impact on gameplay for humans/other races using vanilla thoughts. -->
 
 <Patch>
   <Operation Class="PatchOperationReplace">
