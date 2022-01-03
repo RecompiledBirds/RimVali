@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TerrainAffordanceDef>
+    <defName>IcySoil</defName>
+    <label>Ice</label>
+    <order>3200</order>
+  </TerrainAffordanceDef>
+</Defs>

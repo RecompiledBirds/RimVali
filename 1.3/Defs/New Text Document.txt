@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<MainButtonDef>
+    <defName>RVQLGUI</defName>
+    <label>QLine GUI</label>
+    <description>QLine GUI.</description>
+    <workerClass>RimValiCore.QLine.OpenGUIWindow</workerClass>
+    <order>79</order>
+    <minimized>True</minimized>
+    <iconPath>NesGUI/NGUILogo</iconPath>
+    <defaultHotKey></defaultHotKey>
+  </MainButtonDef>
+  </Defs>

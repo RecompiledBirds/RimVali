@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <IlluminateFactionName>Illuminate colony</IlluminateFactionName>
+  <IlluminateAirdrop>Illuminate airdrop</IlluminateAirdrop>
+  <AirdropEventDesc>An Illuminate airdrop has landed nearby!</AirdropEventDesc>
+  <IlluminateAirdropSend>An Illuminate airdrop is en route! It will land in: {TIME} hours! Be prepared!</IlluminateAirdropSend>
+  <AirdropSendMsg>Airdrop en route</AirdropSendMsg>
+  <HackedProject>Hacked project: {PROJECT}</HackedProject>
+ <UnlockedResearch>Tech now researchable: {PROJECT}</UnlockedResearch>
+</LanguageData> 

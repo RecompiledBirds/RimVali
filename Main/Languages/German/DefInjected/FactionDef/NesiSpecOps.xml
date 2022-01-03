@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <NesiSpecOps.label>Nesi's spec ops</NesiSpecOps.label> -->
+  <NesiSpecOps.label>Nesi's Spezialeinheiten</NesiSpecOps.label>
+  <!-- <NesiSpecOps.fixedName>Nesi's spec ops</NesiSpecOps.fixedName> -->
+  <NesiSpecOps.fixedName>Nesi's Spezialeinheiten</NesiSpecOps.fixedName>
+  <!-- <NesiSpecOps.pawnSingular>Nesi's spec ops avali</NesiSpecOps.pawnSingular> -->
+  <NesiSpecOps.pawnSingular>Nesi's Avali-Spezialeinheit</NesiSpecOps.pawnSingular>
+  <!-- <NesiSpecOps.pawnsPlural>Nesi's spec ops avali</NesiSpecOps.pawnsPlural> -->
+  <NesiSpecOps.pawnsPlural>Nesi's Avali-Spezialeinheiten</NesiSpecOps.pawnsPlural>
+</LanguageData>

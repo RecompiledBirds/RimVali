@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <PackTab>Pack</PackTab>
+  <Packmates>Packmates: </Packmates>
+  <PackNameLabel>Pack name: {PACKNAME}</PackNameLabel>
+  <NoPack>This pawn is not in a pack.</NoPack>
+  <PackSpeciality>Pack speciality: {SPECIALITY}</PackSpeciality>
+  <PackEffects>Effects:</PackEffects>
+  <PackLeaderLabel>Pack leader:</PackLeaderLabel>
+  <PackOpinionLabel>Pack opinion:</PackOpinionLabel>
+  <PackOpinionTooltip>Pack opinion of {PAWN}: {OPINION}</PackOpinionTooltip>
+</LanguageData>

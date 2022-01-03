@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <RefuelThing>Refuel {1_labelShort}</RefuelThing>
+  <AERIALShellSpaceLeft>Space used: {SPACE}</AERIALShellSpaceLeft>
+  <AERIALShellCapSetting>Aerial shell cap: {CAP}</AERIALShellCapSetting>
+</LanguageData>

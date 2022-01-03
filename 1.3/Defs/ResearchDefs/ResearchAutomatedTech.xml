@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+ <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>AvaliDrones</defName>
+     <label>Drones</label>
+     <description>These are highly advanced, automated robots, capable of carrying out automated tasks without a operator.</description>
+     <baseCost>2000</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>2.00</researchViewX>
+      <researchViewY>4.40</researchViewY>
+     <prerequisites>
+		   <li>AdvancedAvaliBionics</li>
+		</prerequisites>
+   </ResearchProjectDef>
+
+
+
+   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>MicroDrones</defName>
+     <label>Micro-drones</label>
+     <description>Swarms of mini drones, assisting the user in various tasks.</description>
+     <baseCost>2500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>3.00</researchViewX>
+    <researchViewY>4.40</researchViewY>
+
+
+     <prerequisites>
+       <li>AvaliDrones</li>
+     </prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>AvaliNanites</defName>
+     <label>Nanites</label>
+     <description>If micro-drone technologies were small, these are tiny. These tiny computer systems are basic, but when combined can help do many things, like prevent diseases.</description>
+     <baseCost>3000</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>4.00</researchViewX>
+    <researchViewY>4.40</researchViewY>
+
+
+     <prerequisites>
+       <li>MicroDrones</li>
+     </prerequisites>
+   </ResearchProjectDef>
+   
+   
+   
+   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>AvaliNanomachines</defName>
+     <label>Nano-machinery</label>
+     <description>Through the use of highly specialsed nanites composed of highly resistant materials, we may create self-healing structures, and more.</description>
+     <baseCost>5000</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>5.00</researchViewX>
+     <researchViewY>4.40</researchViewY>
+     <prerequisites>
+       <li>AvaliNanites</li>
+     </prerequisites>
+   </ResearchProjectDef>
+
+
+
+  <!-- Bionics -->
+       <ResearchProjectDef ParentName="BaseAvaliResearch">
+     <defName>BasicAvaliBionics</defName>
+     <label>Basic Robotics</label>
+     <description>Basic mechanical systems. These designs are good for making basic limb replacements.</description>
+     <baseCost>1400</baseCost>
+     <techLevel>Spacer</techLevel>
+    <researchViewX>0.00</researchViewX>
+  <researchViewY>4.60</researchViewY>
+   </ResearchProjectDef>
+   
+      <ResearchProjectDef ParentName="BaseAvaliResearch">
+     <defName>BasicAvaliImplants</defName>
+     <label>Basic Augments</label>
+     <description>These augments are designed to keep the user mostly alive. Nothing more, nothing less.</description>
+     <baseCost>600</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>1.00</researchViewX>
+  <researchViewY>4.95</researchViewY>
+     <prerequisites>
+			<li>BasicAvaliBionics</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+    <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>AvaliAdvCooling</defName>
+     <label>Advanced Augments</label>
+     <description>The few decrypted blueprints outlined in this database appear to be even better then current designs we have access to. We may want to decrypt the rest.</description>
+     <baseCost>500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>2.00</researchViewX>
+     <researchViewY>4.95</researchViewY>
+     <prerequisites>
+			<li>BasicAvaliImplants</li>
+      <li>MicroelectronicsBasics</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>AvaliEliteCooling</defName>
+     <label>Elite Augments</label>
+     <description>This database has some of, if not the most advanced augments ever designed.</description>
+     <baseCost>1500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>3.00</researchViewX>
+    <researchViewY>4.95</researchViewY>
+     <prerequisites>
+			<li>AvaliAdvCooling</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>AdvancedAvaliBionics</defName>
+     <label>Advanced Robotics</label>
+     <description>Newer, advanced motors allow for better designs, with higher ranges of motion, speed, and general enhancements.</description>
+     <baseCost>2000</baseCost>
+     <techLevel>Spacer</techLevel>
+    <researchViewX>1.00</researchViewX>
+  <researchViewY>4.35</researchViewY>
+     <prerequisites>
+			<li>BasicAvaliBionics</li>
+      <li>MicroelectronicsBasics</li>
+		</prerequisites>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
+     <defName>AvaliFighting</defName>
+     <label>Basic weapon augments</label>
+     <description>Weaponised augments. These make the user much more dangerous.</description>
+     <baseCost>2500</baseCost>
+     <techLevel>Spacer</techLevel>
+     <researchViewX>2.00</researchViewX>
+  <researchViewY>3.50</researchViewY>
+     <prerequisites>
+       <li>AdvancedAvaliBionics</li>
+     </prerequisites>
+   </ResearchProjectDef>
+
+
+
+
+</Defs>

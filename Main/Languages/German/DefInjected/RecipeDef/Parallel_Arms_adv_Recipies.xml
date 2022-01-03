@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- <InstallParallelArm.label>Install parallel arms</InstallParallelArm.label> -->
+  <InstallParallelArm.label>Parallele Arme implantieren</InstallParallelArm.label>
+  <!-- <InstallParallelArm.description>Install a a set of parallel arms.</InstallParallelArm.description> -->
+  <InstallParallelArm.description>Implantiere einen Satz paralleler Arme.</InstallParallelArm.description>
+  <!-- <InstallParallelArm.jobString>Installing set of parallel arms.</InstallParallelArm.jobString> -->
+  <InstallParallelArm.jobString>Implantiert einen Satz paralleler Arme.</InstallParallelArm.jobString>
+</LanguageData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <StableSettings>Stable.</StableSettings>
+  <PotentialIssuesSettings>Potential issues may occur.</PotentialIssuesSettings>
+  <UnstableSettings>Unstable.</UnstableSettings>
+  <DebugLabel>Debug and advanced settings</DebugLabel>
+  <ToggleDebug>Toggle debug mode</ToggleDebug>
+  <RVBuild>RimVali build: {BUILD}</RVBuild>
+  <RimValiModules>Modules:</RimValiModules>
+  <ResetPackLoss>Reset pack loss</ResetPackLoss>
+  <DebugSettings>Debug settings</DebugSettings>
+</LanguageData>
