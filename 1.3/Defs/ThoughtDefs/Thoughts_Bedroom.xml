@@ -2,7 +2,6 @@
 <Defs>
 
   <!-- Alone thoughts -->
-
   <ThoughtDef>
     <defName>AvaliSleptAlone</defName>
     <durationDays>1</durationDays>
@@ -60,14 +59,13 @@
       </li>
     </stages>
   </ThoughtDef>
-  
-  <!-- Shared room thoughts -->
 
+  <!-- Shared room thoughts -->
   <ThoughtDef>
-  <defName>AvaliSharedBedRoom</defName>
-  <durationDays>1</durationDays>
-  <stackLimit>1</stackLimit>
- <stages>
+    <defName>AvaliSharedBedRoom</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
       <li>
         <label>awful room</label>
         <description>I had to sleep in an awful room, but at least I wasn't alone.</description>
@@ -120,13 +118,13 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>AvaliSharingRoom</defName>
     <nullifyingTraits>
       <li>Psychopath</li>
     </nullifyingTraits>
-    <workerClass>AvaliMod.Shared_workRoom</workerClass>
+    <workerClass>AvaliMod.SharedRoomWorker</workerClass>
     <stackLimit>1</stackLimit>
     <stages>
       <li>

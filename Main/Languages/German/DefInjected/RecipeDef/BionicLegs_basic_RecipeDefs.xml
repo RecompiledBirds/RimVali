@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-  <!-- <InstallAvaliBasicBionicLeg.label>Install basic bionic leg</InstallAvaliBasicBionicLeg.label> -->
-    <InstallAvaliBasicBionicLeg.label>Einfaches bionisches Bein implantieren</InstallAvaliBasicBionicLeg.label>
-  <!-- <InstallAvaliBasicBionicLeg.description>Install a basic bionic leg.</InstallAvaliBasicBionicLeg.description> -->
-  <InstallAvaliBasicBionicLeg.description>Implantiere ein einfaches bionisches Bein.</InstallAvaliBasicBionicLeg.description>
-  <!-- <InstallAvaliBasicBionicLeg.jobString>Installing basic bionic leg.</InstallAvaliBasicBionicLeg.jobString> -->
-  <InstallAvaliBasicBionicLeg.jobString>Implantiert ein einfaches bionisches Bein.</InstallAvaliBasicBionicLeg.jobString>
-</LanguageData>

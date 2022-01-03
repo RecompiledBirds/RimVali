@@ -1,79 +1,74 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
- <ThingDef>
-      <thingClass>ThingWithComps</thingClass>
-      <category>Item</category>
-      <resourceReadoutPriority>Middle</resourceReadoutPriority>
-      <useHitPoints>true</useHitPoints>
-      <selectable>true</selectable>
-      <altitudeLayer>Item</altitudeLayer>
-      <defName>AvaliNanomachines</defName>
-     
-      <label>Nanomachines</label>
-      <stackLimit>75</stackLimit>
-      <comps>
-        <li Class="CompProperties_Forbiddable"/>
-        <li Class= "RimValiCore.HealableMaterial.HealableCompProps">
-          <amountHealed>20</amountHealed>
-		  <ticksBetweenHeal>60</ticksBetweenHeal>
-        </li>
-      </comps>
-      <alwaysHaulable>true</alwaysHaulable>
-      <drawGUIOverlay>true</drawGUIOverlay>
-      <rotatable>false</rotatable>
-      <description>A group of specialised nanomachines, capable of reshaping and reparing themselves.</description>
-    
-      <graphicData>
-        <texPath>avali/Things/Nanomachines/nanomachines</texPath>
+  <ThingDef>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <defName>AvaliNanomachines</defName>
+    <label>nanomachines</label>
+    <stackLimit>75</stackLimit>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class= "RimValiCore.HealableMaterial.HealableCompProps">
+        <amountHealed>20</amountHealed>
+        <ticksBetweenHeal>60</ticksBetweenHeal>
+      </li>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <description>A group of specialised nanomachines, capable of reshaping and reparing themselves.</description>
+    <graphicData>
+      <texPath>Avali/Things/Nanomachines/Nanomachines</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
-      </graphicData>
-      <techLevel>Industrial</techLevel>
-      <statBases>
-        <MarketValue>4000</MarketValue>
-        <Mass>1.5</Mass>
-        <MaxHitPoints>100.0</MaxHitPoints>
-        <DeteriorationRate>0.1</DeteriorationRate>
-        <MeleeWeapon_CooldownMultiplier>1</MeleeWeapon_CooldownMultiplier>
-        <SharpDamageMultiplier>8.9</SharpDamageMultiplier>
-        <StuffPower_Armor_Sharp>3.35</StuffPower_Armor_Sharp>
-        <StuffPower_Armor_Blunt>3.55</StuffPower_Armor_Blunt>
-        <BluntDamageMultiplier>3.45</BluntDamageMultiplier>
-        <StuffPower_Insulation_Cold>11</StuffPower_Insulation_Cold>
-        <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
-        
-      </statBases>
-      <thingCategories>
-        <li>AvaliResources</li>
-      </thingCategories>
-      <stuffProps>
-        <stuffAdjective>Nanomachines</stuffAdjective>
-        <categories>
-          <li>Metallic</li>
-          <li>Fabric</li>
-		  <li>Leathery</li>
-		  <li>Stony</li>
-        </categories>
-        <commonality>0.5</commonality>
-        <color>(255,255,255)</color>
-        <constructEffect>ConstructMetal</constructEffect>
-        <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
-        <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-        <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-		<statFactors>
-			<MaxHitPoints>10.0</MaxHitPoints>
-			<Beauty>1.2</Beauty>
-			<Flammability>0</Flammability>
-			<MarketValue>10.5</MarketValue>
-			<WorkToMake>2.2</WorkToMake>
-			<WorkToBuild>2.2</WorkToBuild>
-		</statFactors>
-        <statOffsets>
-          <Beauty>4</Beauty>
-        </statOffsets>
-      </stuffProps>
-      <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MarketValue>4000</MarketValue>
+      <Mass>1.5</Mass>
+      <MaxHitPoints>100.0</MaxHitPoints>
+      <DeteriorationRate>0.1</DeteriorationRate>
+      <MeleeWeapon_CooldownMultiplier>1</MeleeWeapon_CooldownMultiplier>
+      <SharpDamageMultiplier>8.9</SharpDamageMultiplier>
+      <StuffPower_Armor_Sharp>3.35</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>3.55</StuffPower_Armor_Blunt>
+      <BluntDamageMultiplier>3.45</BluntDamageMultiplier>
+      <StuffPower_Insulation_Cold>11</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
+    </statBases>
+    <thingCategories>
+      <li>AvaliResources</li>
+    </thingCategories>
+    <stuffProps>
+      <stuffAdjective>Nanomachines</stuffAdjective>
+      <categories>
+        <li>Metallic</li>
+        <li>Fabric</li>
+        <li>Leathery</li>
+        <li>Stony</li>
+      </categories>
+      <commonality>0.5</commonality>
+      <color>(255,255,255)</color>
+      <constructEffect>ConstructMetal</constructEffect>
+      <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>10.0</MaxHitPoints>
+        <Beauty>1.2</Beauty>
+        <Flammability>0</Flammability>
+        <MarketValue>10.5</MarketValue>
+        <WorkToMake>2.2</WorkToMake>
+        <WorkToBuild>2.2</WorkToBuild>
+      </statFactors>
+      <statOffsets>
+        <Beauty>4</Beauty>
+      </statOffsets>
+    </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
   </ThingDef>
-  
 </Defs>

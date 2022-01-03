@@ -65,10 +65,10 @@
   <!-- <AIMSRes.description>An advanced, more powerful mortar system. The AIMS mortar can fire shells designed for it, and has much better accuaracy than a regular mortar.</AIMSRes.description> -->
   <AIMSRes.description>Ein fortschrittlicher, leistungsfähigerer Mörser. Der AIMS-Mörser kann spezielle Projektile abfeuern und hat eine deutlich höhere Genauigkeit als ein normaler Mörser.</AIMSRes.description>
 
-  <!-- <AERIELRES.label>AERIEL System</AERIELRES.label> -->
-  <AERIELRES.label>AERIEL System</AERIELRES.label>
-  <!-- <AERIELRES.description>A highly advanced automated mortar system, fully capable of automatically selecting targets and lauching projectiles.</AERIELRES.description> -->
-  <AERIELRES.description>Ein hochmoderner und vollautomatisierter Mörser, dazu in der Lage, Ziele automatisch auszuwählen und Projektile abzufeuern.</AERIELRES.description>
+  <!-- <AERIALResearch.label>AERIAL System</AERIALResearch.label> -->
+  <AERIALResearch.label>AERIAL System</AERIALResearch.label>
+  <!-- <AERIALResearch.description>A highly advanced automated mortar system, fully capable of automatically selecting targets and lauching projectiles.</AERIALResearch.description> -->
+  <AERIALResearch.description>Ein hochmoderner und vollautomatisierter Mörser, dazu in der Lage, Ziele automatisch auszuwählen und Projektile abzufeuern.</AERIALResearch.description>
 
   <!-- <AvaliTurrets.label>Advanced Avali turrets</AvaliTurrets.label> -->
   <AvaliTurrets.label>Fortschrittlicher Avali-Geschützturm</AvaliTurrets.label>

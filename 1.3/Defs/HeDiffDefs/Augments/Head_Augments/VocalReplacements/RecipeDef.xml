@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <RecipeDef ParentName="SurgeryInstallImplantBase">
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
     <defName>InstallVocalReplacements</defName>
     <label>Install vocal replacements</label>
     <description>Install a vocal replacements.</description>

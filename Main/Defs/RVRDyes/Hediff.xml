@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
- <HediffDef>
+  <HediffDef>
     <defName>RVRDye</defName>
     <label>Dye</label>
     <hediffClass>HediffWithComps</hediffClass>
@@ -15,56 +15,56 @@
         <severityPerDay>-0.1</severityPerDay>
         <showHoursToRecover>false</showHoursToRecover>
       </li>
-      <li Class="RimValiCore.RVR.DyeCompProps"> 
+      <li Class="RimValiCore.RVR.DyeCompProps">
 
         <colors>
           <firstColor Class="ColorGenerator_Options">
-                <options>
-                  <li>
-                    <weight>10</weight>
-                    <min>(200, 200, 200)</min>
-                    <max>(255, 255, 255)</max>
-                  </li>
-                  <li>
-                    <weight>2</weight>
-                    <min>(220, 220, 220)</min>
-                    <max>(240, 240, 240)</max>
-                  </li>
-                  <li>
-                    <weight>5</weight>
-                      <min>RGBA(40, 40, 40, 255)</min>
-                     <max>RGBA(60, 60, 60, 255)</max>
-                  </li>
-                </options>
-              </firstColor>
-              <secondColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>(50, 50, 50)</min>
-                     <max>(200, 200, 200)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>RGBA(40, 40, 40, 255)</min>
-                     <max>RGBA(60, 60, 60, 255)</max>
-                   </li>
-                  </options>
-              </secondColor>
-              <thirdColor Class="ColorGenerator_Options">
-                <options>
-                   <li>
-                     <weight>10</weight>
-                     <min>(50, 50, 50)</min>
-                     <max>(200, 200, 200)</max>
-                   </li>
-                   <li>
-                     <weight>2</weight>
-                     <min>(40, 40, 40)</min>
-                     <max>(60, 60, 60)</max>
-                   </li>
-                  </options>
-              </thirdColor>
+            <options>
+              <li>
+                <weight>10</weight>
+                <min>(200, 200, 200)</min>
+                <max>(255, 255, 255)</max>
+              </li>
+              <li>
+                <weight>2</weight>
+                <min>(220, 220, 220)</min>
+                <max>(240, 240, 240)</max>
+              </li>
+              <li>
+                <weight>5</weight>
+                <min>RGBA(40, 40, 40, 255)</min>
+                <max>RGBA(60, 60, 60, 255)</max>
+              </li>
+            </options>
+          </firstColor>
+          <secondColor Class="ColorGenerator_Options">
+            <options>
+              <li>
+                <weight>10</weight>
+                <min>(50, 50, 50)</min>
+                <max>(200, 200, 200)</max>
+              </li>
+              <li>
+                <weight>2</weight>
+                <min>RGBA(40, 40, 40, 255)</min>
+                <max>RGBA(60, 60, 60, 255)</max>
+              </li>
+            </options>
+          </secondColor>
+          <thirdColor Class="ColorGenerator_Options">
+            <options>
+              <li>
+                <weight>10</weight>
+                <min>(50, 50, 50)</min>
+                <max>(200, 200, 200)</max>
+              </li>
+              <li>
+                <weight>2</weight>
+                <min>(40, 40, 40)</min>
+                <max>(60, 60, 60)</max>
+              </li>
+            </options>
+          </thirdColor>
         </colors>
       </li>
     </comps>

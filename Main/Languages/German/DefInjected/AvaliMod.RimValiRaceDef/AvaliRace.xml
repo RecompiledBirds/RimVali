@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <!-- <RimVali.label>Avali</RimVali.label> -->
   <RimVali.label>Avali</RimVali.label>
-  <!-- <RimVali.description>Cute, fluffy raptors with highly advanced tech. The primary in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</RimVali.description> -->
   <RimVali.description>Süße, flauschige Raptoren mit hochentwickelter Technologie. Der Hauptbestandteil ihrer Biologie ist Ammoniak, wodurch sie biologisch mit dem Menschen inkompatibel sind. Avali vertragen Hitze nicht gut, da der Siedepunkt ihres Blutes deutlich niedriger ist, als von menschlichem Blut. Jedoch können sie dafür problemlos in der Kälte überleben.</RimVali.description>
 
-  <!-- <RimVali.tools.0.label>teeth</RimVali.tools.0.label> -->
   <RimVali.tools.0.label>Zähne</RimVali.tools.0.label>
-  <!-- <RimVali.tools.1.label>Left Talons</RimVali.tools.1.label> -->
   <RimVali.tools.1.label>Linke Krallen</RimVali.tools.1.label>
-  <!-- <RimVali.tools.2.label>Right Talons</RimVali.tools.2.label>   -->
-  <RimVali.tools.2.label>Rechte Krallen</RimVali.tools.2.label>  
-  <!-- <RimVali.comps.2.slots.0.name>Temperature</RimVali.comps.2.slots.0.name> -->
+  <RimVali.tools.2.label>Rechte Krallen</RimVali.tools.2.label>
   <RimVali.comps.2.slots.0.name>Temperatur</RimVali.comps.2.slots.0.name>
-  <!-- <RimVali.comps.2.slots.1.name>Torso</RimVali.comps.2.slots.1.name> -->
   <RimVali.comps.2.slots.1.name>Oberkörper</RimVali.comps.2.slots.1.name>
-  <!-- <RimVali.comps.2.slots.2.name>Brain</RimVali.comps.2.slots.2.name> -->
   <RimVali.comps.2.slots.2.name>Gehirn</RimVali.comps.2.slots.2.name>
-
-
-  <!-- <RimVali.graphics.colorSets.0.name>Skin</RimVali.graphics.colorSets.0.name>
-  <RimVali.graphics.colorSets.1.name>Eye</RimVali.graphics.colorSets.1.name>
-  <RimVali.comps.2.slots.0.name>Temperature</RimVali.comps.2.slots.0.name>
-  <RimVali.comps.2.slots.1.name>Torso</RimVali.comps.2.slots.1.name>
-  <RimVali.comps.2.slots.2.name>Brain</RimVali.comps.2.slots.2.name> -->
 </LanguageData>

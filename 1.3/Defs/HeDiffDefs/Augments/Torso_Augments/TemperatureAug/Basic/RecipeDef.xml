@@ -2,11 +2,10 @@
 <Defs>
   <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallAvaliTemperatureImplantBasic</defName>
-    <label>Install basic Temperature Control Augment [TCA]</label>
-    <description>Install basic Temperature Control Augment [TCA].</description>
+    <label>Install basic Temperature Control Augment (T.C.A.)</label>
+    <description>Install basic Temperature Control Augment (T.C.A.).</description>
     <descriptionHyperlinks><ThingDef>AvaliBasicTempControl</ThingDef></descriptionHyperlinks>
-    <jobString>Installing basic Temperature Control Augment [TCA].</jobString>
-    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <jobString>Installing basic Temperature Control Augment (T.C.A.).</jobString>
     <ingredients>
       <li>
         <filter>

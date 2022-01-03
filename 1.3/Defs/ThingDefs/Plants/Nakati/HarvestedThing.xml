@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <ThingDef ParentName="PlantFoodRawBase">
+  <ThingDef ParentName="PlantFoodRawBase">
     <defName>NakatiBark</defName>
     <label>Nakati bark</label>
     <description>Nakati bark.</description>
     <soundInteract>Grain_Drop</soundInteract>
     <soundDrop>Grain_Drop</soundDrop>
     <graphicData>
-      <texPath>avali/Things/Plants/Nakati/Nakati_bark</texPath>
+      <texPath>Avali/Things/Plants/Nakati/Nakati_bark</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1.1</MarketValue>

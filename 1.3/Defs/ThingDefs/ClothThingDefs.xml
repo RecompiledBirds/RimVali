@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <ThingDef>
+  <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -21,7 +21,7 @@
     <description>A type of avali fabric, stored in neat, stackable pucks (similar to &lt;color=#0099ff&gt;aerogel&lt;/color&gt;).</description>
     <descriptionHyperlinks><ThingDef>AvaliAerogel</ThingDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>avali/Things/Cloth/NanoCarbon</texPath>
+      <texPath>Avali/Things/Cloth/NanoCarbon</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -51,9 +51,9 @@
     </stuffProps>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
   </ThingDef>
-  
-  
-  
+
+
+
   <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
@@ -71,7 +71,7 @@
     <rotatable>false</rotatable>
     <description>Avali nanofiber is very important. They use it in clothing, their tents, and more! It's fairly strong too, for a cloth-like material</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/Nanofibre</texPath>
+      <texPath>Avali/Things/Cloth/Nanofibre</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -85,8 +85,8 @@
       <StuffPower_Insulation_Cold>15</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>3.5</StuffPower_Insulation_Heat>
       <StuffPower_Armor_Sharp>0.7</StuffPower_Armor_Sharp>
-        <StuffPower_Armor_Blunt>0.6</StuffPower_Armor_Blunt>
-        <StuffPower_Armor_Heat>0.45</StuffPower_Armor_Heat>
+      <StuffPower_Armor_Blunt>0.6</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.45</StuffPower_Armor_Heat>
       <WorkToMake>1.1</WorkToMake>
       <WorkToBuild>1.1</WorkToBuild>
       <Beauty>1.1</Beauty>
@@ -106,12 +106,12 @@
       <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-      
+
       <statFactors>
         <MaxHitPoints>1.3</MaxHitPoints>
         <BedRestEffectiveness>1.1</BedRestEffectiveness>
-        
-         
+
+
         <MarketValue>1.2</MarketValue>
         <Mass>0.05</Mass>
         <WorkToMake>1.1</WorkToMake>
@@ -124,7 +124,7 @@
       </statOffsets>
     </stuffProps>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    
+
     <comps>
       <li>
         <compClass>CompColorable</compClass>
@@ -147,11 +147,11 @@
           <only>(0.9,0.9,0.9,1)</only>
         </li>
       </options>
-    
+
     </colorGeneratorInTraderStock>
   </ThingDef>
-  
-    <ThingDef>
+
+  <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -171,7 +171,7 @@
     <rotatable>false</rotatable>
     <description>Avali aeroweave. It's a terrible at conducting heat, which makes it an amazing insulator for clothing and such.</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/Aeroweave</texPath>
+      <texPath>Avali/Things/Cloth/Aeroweave</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -183,12 +183,12 @@
       <DeteriorationRate>0.2</DeteriorationRate>
       <MaxHitPoints>2.2</MaxHitPoints>
       <BedRestEffectiveness>1.25</BedRestEffectiveness>
-        <StuffPower_Insulation_Cold>19.5</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Cold>19.5</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>19.5</StuffPower_Insulation_Heat>
       <StuffPower_Armor_Sharp>0.9</StuffPower_Armor_Sharp>
-        <StuffPower_Armor_Blunt>0.7</StuffPower_Armor_Blunt>
-        <StuffPower_Armor_Heat>3.5</StuffPower_Armor_Heat>
-        
+      <StuffPower_Armor_Blunt>0.7</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>3.5</StuffPower_Armor_Heat>
+
       <WorkToMake>1.9</WorkToMake>
       <WorkToBuild>1.9</WorkToBuild>
     </statBases>
@@ -210,7 +210,7 @@
       <statFactors>
         <MaxHitPoints>2.2</MaxHitPoints>
         <BedRestEffectiveness>1.25</BedRestEffectiveness>
-        
+
         <MarketValue>2</MarketValue>
         <Mass>0.08</Mass>
         <WorkToMake>1.9</WorkToMake>
@@ -224,8 +224,8 @@
     </stuffProps>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
   </ThingDef>
-  
-      <ThingDef>
+
+  <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -245,7 +245,7 @@
     <rotatable>false</rotatable>
     <description>A special type of nano fiber, with carbon woven in. This version is more resistant to damage like bullets, but is stiff, slowing the wearer.</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/CarbonFiber</texPath>
+      <texPath>Avali/Things/Cloth/CarbonFiber</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -258,15 +258,15 @@
       <MaxHitPoints>2.2</MaxHitPoints>
       <WorkToMake>1.9</WorkToMake>
       <WorkToBuild>1.9</WorkToBuild>
-       <StuffPower_Insulation_Cold>20</StuffPower_Insulation_Cold>
-        <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
-        <StuffPower_Armor_Sharp>2.05</StuffPower_Armor_Sharp>
-        <StuffPower_Armor_Blunt>1.75</StuffPower_Armor_Blunt>
-        <StuffPower_Armor_Heat>1.3</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>20</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
+      <StuffPower_Armor_Sharp>2.05</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>1.75</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>1.3</StuffPower_Armor_Heat>
     </statBases>
     <equippedStatOffsets>
-        <MoveSpeed>-1.5</MoveSpeed>
-      </equippedStatOffsets>
+      <MoveSpeed>-1.5</MoveSpeed>
+    </equippedStatOffsets>
     <thingCategories>
       <li>AvaliResources</li>
     </thingCategories>
@@ -285,12 +285,12 @@
       <statFactors>
         <MaxHitPoints>2.85</MaxHitPoints>
         <BedRestEffectiveness>1.15</BedRestEffectiveness>
-        
+
         <MarketValue>2.2</MarketValue>
         <Mass>0.08</Mass>
         <WorkToMake>2.2</WorkToMake>
         <WorkToBuild>2.2</WorkToBuild>
-        
+
         <Beauty>1</Beauty>
         <Flammability>0.2</Flammability>
         <MoveSpeed>-1.5</MoveSpeed>
@@ -301,8 +301,8 @@
     </stuffProps>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
   </ThingDef>
-  
-  
+
+
   <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
@@ -323,13 +323,13 @@
     <rotatable>false</rotatable>
     <description>Tungsten-Aero fiber is a strong, resilient material made from a combination of aero tungsten carbide, and nano carbon fiber.</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/TungstenAero-Fiber</texPath>
+      <texPath>Avali/Things/Cloth/TungstenAero-Fiber</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <techLevel>Industrial</techLevel>
     <statBases>
-       <MaxHitPoints>200</MaxHitPoints>
+      <MaxHitPoints>200</MaxHitPoints>
       <MarketValue>10</MarketValue>
       <Mass>0.038</Mass>
       <Flammability>0</Flammability>
@@ -337,13 +337,13 @@
       <StuffPower_Armor_Sharp>2.05</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>0.7</StuffPower_Armor_Blunt>
       <StuffPower_Armor_Heat>2.9</StuffPower_Armor_Heat>
-        <StuffPower_Insulation_Cold>29</StuffPower_Insulation_Cold>
-        <StuffPower_Insulation_Heat>28</StuffPower_Insulation_Heat>
+      <StuffPower_Insulation_Cold>29</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>28</StuffPower_Insulation_Heat>
     </statBases>
-    
+
     <equippedStatOffsets>
-        <MoveSpeed>-1.5</MoveSpeed>
-      </equippedStatOffsets>
+      <MoveSpeed>-1.5</MoveSpeed>
+    </equippedStatOffsets>
     <thingCategories>
       <li>AvaliResources</li>
     </thingCategories>
@@ -361,7 +361,7 @@
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
       <statOffsets>
         <Beauty>2</Beauty>
-      
+
       </statOffsets>
     </stuffProps>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>

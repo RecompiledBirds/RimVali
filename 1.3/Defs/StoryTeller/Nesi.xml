@@ -4,8 +4,8 @@
     <defName>Nesi</defName>
     <label> &lt;color=#1D6A30&gt;N&lt;/color&gt;&lt;color=#1EA340&gt;e&lt;/color&gt;&lt;color=#10C03D&gt;s&lt;/color&gt;&lt;color=#15DB47&gt;i&lt;/color&gt;</label>
     <description>Nesi is interested in creating an interesting and unique story... even if that means making a few tragedies here and there.\nNesi often likes larger events, and can quickly change behaviours towards you. (Although not in a random way, like Randy.. there still are patterns, if you look for them.)\n &lt;color=#DC2020&gt;Nesi also thinks your colony would be better off with just Avali, don't you agree?&lt;/color&gt;</description>
-    <portraitLarge>avali/Storyteller/storyteller</portraitLarge>
-    <portraitTiny>avali/Storyteller/storyteller_small</portraitTiny>
+    <portraitLarge>Avali/Storyteller/Nesi</portraitLarge>
+    <portraitTiny>Avali/Storyteller/Nesi_Small</portraitTiny>
     <listOrder>40</listOrder>
     <comps>
       <li Class="AvaliMod.NesiStoryTellerProps">
@@ -17,7 +17,7 @@
           <points>
             <li>(1, 10)</li>
             <li>(3, 18)</li>
-            <li>(9,30)</li>
+            <li>(9, 30)</li>
           </points>
         </acceptFractionByDaysPassedCurve>
       </li>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+    <workAmount>7</workAmount>
+    <defName>WeaveNanoFiber</defName>
+    <label>Weave Nano-Fiber</label>
+    <description>Weave nano-fiber from cloth.</description>
+    <jobString>Weaving nano-fiber</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoFiber>8</AvaliNanoFiber>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>35</workAmount>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+    <defName>WeaveNanoFiberTwo</defName>
+    <label>Weave Nano-Fiber (40)</label>
+    <description>Weave nano-fiber from cloth.</description>
+    <jobString>Weaving nano-fiber</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoFiber>40</AvaliNanoFiber>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>70</workAmount>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+    <defName>WeaveNanoFiberThree</defName>
+    <label>Weave Nano-Fiber (80)</label>
+    <description>Weave nano-fiber from cloth.</description>
+    <jobString>Weaving nano-fiber</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoFiber>80</AvaliNanoFiber>
+    </products>
+  </RecipeDef>
+</Defs>

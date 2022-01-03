@@ -12,10 +12,10 @@
       </li>
     </comps>
   </ThingDef>
-  
+
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>avali/Things/Weapons/Melee/Scythe</texPath>
+      <texPath>Avali/Things/Weapons/Melee/Scythe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliScythe</defName>
@@ -69,14 +69,10 @@
       </recipeUsers>
     </recipeMaker>
   </ThingDef>
-  
-  
-  
-  
-   
+
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>avali/Things/Weapons/Melee/Axe</texPath>
+      <texPath>Avali/Things/Weapons/Melee/Axe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliAxe</defName>
@@ -130,11 +126,10 @@
       </recipeUsers>
     </recipeMaker>
   </ThingDef>
-  
-  
-   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>avali/Things/Weapons/Melee/Knife</texPath>
+      <texPath>Avali/Things/Weapons/Melee/Knife</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliKnife</defName>
@@ -188,13 +183,10 @@
       </recipeUsers>
     </recipeMaker>
   </ThingDef>
-  
-  
-  
-  
+
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>avali/Things/Weapons/Melee/Spear</texPath>
+      <texPath>Avali/Things/Weapons/Melee/Spear</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliSpear</defName>
@@ -248,10 +240,10 @@
       </recipeUsers>
     </recipeMaker>
   </ThingDef>
-  
-      <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
+
+  <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>avali/Things/Weapons/Melee/Viroblade</texPath>
+      <texPath>Avali/Things/Weapons/Melee/Viroblade</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliViroblade</defName>

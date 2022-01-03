@@ -3,14 +3,14 @@
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>DroneMining</defName>
     <graphicData>
-      <texPath>avali/Things/Cybernetics/torso</texPath>
+      <texPath>Avali/Things/Cybernetics/Torso</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <techHediffsTags>
       <li>AdvancedAvali</li>
     </techHediffsTags>
-    
+
     <label>Micro drone swarm (Mining)</label>
     <description>A pod containing a micro-drone swarm. When installed onto a pawn, they gain the ability to summon micro-drones from their body to assist them with certain tasks. Sadly enough these swarms are very resource intensive and as such can only be assigned to a singular task. This swarm has been made with mining in mind.</description>
     <descriptionHyperlinks><RecipeDef>InstallDM</RecipeDef></descriptionHyperlinks>

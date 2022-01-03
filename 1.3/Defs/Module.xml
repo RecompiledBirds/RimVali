@@ -4,7 +4,7 @@
     <defName>RimValiCore</defName>
     <name>RimVali: Far from avalon</name>
   </AvaliMod.ModuleDef>
-  
+
   <AvaliMod.CreditDef>
     <defName>ArtistCredits</defName>
     <title>The artists, who made the amazing textures:</title>
@@ -14,7 +14,7 @@
       <li>Aipi avali (@AipiTheAvali on twitter)</li>
     </names>
   </AvaliMod.CreditDef>
-  
+
   <AvaliMod.CreditDef>
     <defName>ProgrammerCredits</defName>
     <title>Programmers, who wrote the stuff that makes the mod:</title>
@@ -24,8 +24,8 @@
       <li>Toby</li>
     </names>
   </AvaliMod.CreditDef>
-  
-    <AvaliMod.CreditDef>
+
+  <AvaliMod.CreditDef>
     <defName>TesterCredits</defName>
     <title>The testers, who put up with all the bugs:</title>
     <names>
@@ -35,7 +35,7 @@
       <li>Ammery</li>
       <li>Axyl</li>
       <li>Anarchy (@AnarchyAvali on twitter)</li>
-      
+
       <li>Ciraus</li>
       <li>CliffracerX</li>
       <li>CoastalCookie</li>
@@ -44,50 +44,50 @@
       <li>Cobalt</li>
       <li>Cyasi</li>
       <li>Caketaco</li>
-      
+
       <li>Diamond_</li>
       <li>Dwaggy</li>
       <li>Danny (@DannyAvali on twitter/twitch)</li>
-      
+
       <li>Ei'Kuni</li>
       <li>Eilani (SomeFoxy)</li>
       <li>Ewari the Avali</li>
-      
-       <li>Featherduster</li>
-       
-       <li>Glitch</li>
-      
+
+      <li>Featherduster</li>
+
+      <li>Glitch</li>
+
       <li>Hyō</li>
       <li>Halycon</li>
       <li>Happysammon</li>
-       
+
       <li>ib</li>
-      
-      
+
+
       <li>Jaffer Roshak (@JafferRoshak on twitter)</li>
-      
+
       <li>Ketzy</li>
-        <li>Kosolaper</li>
-       <li>K'braid (@Braiden_Krahn on twitter)</li>
-       
+      <li>Kosolaper</li>
+      <li>K'braid (@Braiden_Krahn on twitter)</li>
+
       <li>Lucia the Warmongering Avali</li>
-      
+
       <li>miniusAreas</li>
       <li>Meta</li>
-      
+
       <li>Nicolain08</li>
       <li>Nova_</li>
-      
+
       <li>Positive_Sum</li>
       <li>Psyra</li>
       <li>(PC)DeadRewind</li>
-      
+
       <li>Rvell</li>
       <li>RitualNeo (@RitualNeo on twitter/twitch)</li>
       <li>Reddawn</li>
       <li>RobotDeer</li>
       <li>(R҉҉E̷̴͘D҉̧͠A͝C̀͢T̨É͘͡D͘͜)̧͘</li>
-      
+
       <li>Shibi_Cherry</li>
       <li>SlowVelcrow</li>
       <li>SomeRandomOwl</li>
@@ -96,29 +96,29 @@
       <li>Seb, Spooky boi</li>
       <li>SoulblazerRP/Eimilian (@SoulblazerRP on twitter/youtube)</li>
       <li>Severus Akanis</li>
-      
-       
+
+
       <li>TheHopelessThrumbo</li>
       <li>Tilla Siren</li>
-      
+
       <li>V Aƚԋҽɾσɳ</li>
       <li>Vaskyr</li>
-      
+
       <li>Xavier (Dusty)</li>
-      
+
       <li>ZukoTheAvali</li>
     </names>
   </AvaliMod.CreditDef>
-  
+
   <AvaliMod.CreditDef>
-      <defName>Writers</defName>
-      <title>Writers</title>
-      <names>
-        <li>Ranade the Gay Syndicalist</li>
-        <li>Lambda</li>
-      </names>
-    </AvaliMod.CreditDef>
-  
+    <defName>Writers</defName>
+    <title>Writers</title>
+    <names>
+      <li>Ranade the Gay Syndicalist</li>
+      <li>Lambda</li>
+    </names>
+  </AvaliMod.CreditDef>
+
   <AvaliMod.CreditDef>
     <defName>Balancers</defName>
     <title>Designers (AKA you balanced whatever Nesi made)</title>
@@ -127,49 +127,49 @@
       <li>aLuhminium</li>
     </names>
   </AvaliMod.CreditDef>
-  
-   <AvaliMod.CreditDef>
-     <defName>ContributorCredits</defName>
-     <title>Contributors</title>
-     <names>
-       <li>DimasW</li>
-       <li>Danny</li>
-       <li>K'braid</li>
-       <li>Cyasi</li>
-     </names>
-   </AvaliMod.CreditDef>
-   
-   
-   
-   
-   <AvaliMod.CreditDef>
-      <defName>ThankYouAll</defName>
-      <title>Thank you all</title>
-      <names>
-        <li>It's been a long.. what is it,</li>
-        <li>3 years now? We hope to have many </li>
-        <li>more with you all and most of all..</li>
-        <li>We hope you enjoy(ed) the mod.</li>
-        <li>Thank you for playing.</li>
-        <li>- Nesi and The RimVali Team</li>
-      </names>
-    </AvaliMod.CreditDef>
-    
-    <AvaliMod.CreditDef>
-      <defName>Nesi</defName>
-      <title>From Nesi</title>
-      <names>
-        <li>Hey! You probably wanna get back to your game, so..</li>
-        <li>feel free to skip this.</li>
-        <li>I can't believe it's been 3 years since we started</li>
-        <li>this project! I'm so glad this thing has been possible.</li>
-        <li>Thank you to everyone here. For enabling this, and all</li>
-        <li>my other projects.</li>
-        <li>Thank you to the other devs, thank you to the contributors,</li>
-        <li>and thank you to the players.</li>
-        <li>You all made this possible.</li>
-        <li>- Nesi</li>
-      </names>
-    </AvaliMod.CreditDef>
-    
+
+  <AvaliMod.CreditDef>
+    <defName>ContributorCredits</defName>
+    <title>Contributors</title>
+    <names>
+      <li>DimasW</li>
+      <li>Danny</li>
+      <li>K'braid</li>
+      <li>Cyasi</li>
+    </names>
+  </AvaliMod.CreditDef>
+
+
+
+
+  <AvaliMod.CreditDef>
+    <defName>ThankYouAll</defName>
+    <title>Thank you all</title>
+    <names>
+      <li>It's been a long.. what is it,</li>
+      <li>3 years now? We hope to have many </li>
+      <li>more with you all and most of all..</li>
+      <li>We hope you enjoy(ed) the mod.</li>
+      <li>Thank you for playing.</li>
+      <li>- Nesi and The RimVali Team</li>
+    </names>
+  </AvaliMod.CreditDef>
+
+  <AvaliMod.CreditDef>
+    <defName>Nesi</defName>
+    <title>From Nesi</title>
+    <names>
+      <li>Hey! You probably wanna get back to your game, so..</li>
+      <li>feel free to skip this.</li>
+      <li>I can't believe it's been 3 years since we started</li>
+      <li>this project! I'm so glad this thing has been possible.</li>
+      <li>Thank you to everyone here. For enabling this, and all</li>
+      <li>my other projects.</li>
+      <li>Thank you to the other devs, thank you to the contributors,</li>
+      <li>and thank you to the players.</li>
+      <li>You all made this possible.</li>
+      <li>- Nesi</li>
+    </names>
+  </AvaliMod.CreditDef>
+
 </Defs>

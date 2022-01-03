@@ -3,14 +3,14 @@
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>AvaliASR</defName>
     <graphicData>
-      <texPath>avali/Things/Cybernetics/torso</texPath>
+      <texPath>Avali/Things/Cybernetics/Torso</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
     <techHediffsTags>
       <li>BasicAvali</li>
     </techHediffsTags>
-    
+
     <label>Autophagic system rewrite augment</label>
     <description>An autophagic system rewrite augment. This augment, as the name suggests will rewrite functions of the wearer’s autophagic system. Altering the body’s lymph nodes to generate new products from cell waste which are then redistributed throughout the body. Generally improving most of the bodily functions in some way or another.</description>
     <descriptionHyperlinks><RecipeDef>InstallAvaliTemperatureImplantBasic</RecipeDef></descriptionHyperlinks>

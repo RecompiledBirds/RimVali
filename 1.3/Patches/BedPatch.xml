@@ -1,50 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <Operation Class="PatchOperationSequence">
-      <operations>
-      
-       <li Class="PatchOperationAdd">
-           <xpath>/Defs/ThingDef[defName="Bed"]/comps/li[1]/linkableFacilities</xpath>
-    <value>
-      <li>IlluminateEndTable</li>
-   
-    </value>
-        </li>
-        <li Class="PatchOperationAdd">
-           <xpath>/Defs/ThingDef[defName="DoubleBed"]/comps/li[1]/linkableFacilities</xpath>
-    <value>
-      <li>IlluminateEndTable</li>
-   
-    </value>
-        </li>
-       <li Class="PatchOperationAdd">
-           <xpath>/Defs/ThingDef[defName="RoyalBed"]/comps/li[1]/linkableFacilities</xpath>
-    <value>
-      <li>IlluminateEndTable</li>
-   
-    </value>
-        </li>
-        <li Class="PatchOperationAdd">
-           <xpath>/Defs/ThingDef[defName="HospitalBed"]/comps/li[1]/linkableFacilities</xpath>
-    <value>
-      <li>IlluminateEndTable</li>
-   
-    </value>
-        </li>
-         <li Class="PatchOperationAdd">
-           <xpath>/Defs/ThingDef[defName="Bedroll"]/comps/li[1]/linkableFacilities</xpath>
-    <value>
-      <li>IlluminateEndTable</li>
-   
-    </value>
-        </li>
-         <li Class="PatchOperationAdd">
-           <xpath>/Defs/ThingDef[defName="BedrollDouble"]/comps/li[1]/linkableFacilities</xpath>
-    <value>
-      <li>IlluminateEndTable</li>
-   
-    </value>
-        </li>
-      </operations>
+    <operations>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Bed"]/comps/li[1]/linkableFacilities</xpath>
+        <value>
+          <li>IlluminateEndTable</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="DoubleBed"]/comps/li[1]/linkableFacilities</xpath>
+        <value>
+          <li>IlluminateEndTable</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="RoyalBed"]/comps/li[1]/linkableFacilities</xpath>
+        <value>
+          <li>IlluminateEndTable</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="HospitalBed"]/comps/li[1]/linkableFacilities</xpath>
+        <value>
+          <li>IlluminateEndTable</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="Bedroll"]/comps/li[1]/linkableFacilities</xpath>
+        <value>
+          <li>IlluminateEndTable</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="BedrollDouble"]/comps/li[1]/linkableFacilities</xpath>
+        <value>
+          <li>IlluminateEndTable</li>
+        </value>
+      </li>
+    </operations>
   </Operation>
 </Patch>

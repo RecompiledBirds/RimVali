@@ -5,9 +5,9 @@
     <label>Avali turret</label>
     <description>A lightweight railgun turret, designed for long range combat. It is somewhat less durrable than it's human-built counterparts, but has great long range accuracy.</description>
     <thingClass>Building_TurretGun</thingClass>
-	<drawerType>MapMeshAndRealTime</drawerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>avali/buildings/turrets/basic_turret_base</texPath>
+      <texPath>Avali/Buildings/Turrets/BasicTurret_Base</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
       <damageData>
@@ -18,7 +18,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/buildings/turrets/turret_image</uiIconPath>
+    <uiIconPath>Avali/Buildings/Turrets/BasicTurret_Image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -113,17 +113,17 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>25</damageAmountBase>
       <speed>90</speed>
-       <stoppingPower>1</stoppingPower>
+      <stoppingPower>1</stoppingPower>
       <armorPenetrationBase>0.3</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>AvaliBasicTurretGun</defName>
     <label>Basic avali turret gun</label>
     <description>A automatic railgun, made to be mounted to an avali turret.</description>
     <graphicData>
-      <texPath>avali/buildings/turrets/basic_turret_head</texPath>
+      <texPath>Avali/Buildings/Turrets/BasicTurret_Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.5</drawSize>
     </graphicData>
@@ -152,20 +152,16 @@
       </li>
     </verbs>
   </ThingDef>
-  
-  
-  
-  
-  
-   <ThingDef ParentName="BuildingBase">
+
+  <ThingDef ParentName="BuildingBase">
     <defName>AvaliMiniGunTurret</defName>
-	<drawerType>MapMeshAndRealTime</drawerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <size>(2,2)</size>
     <label>Avali minigun turret</label>
     <description>A heavy turret, with two avali miniguns onboard. Due to also being a railgun of avali design, it performs best at long range.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>avali/buildings/turrets/Avali_Turret_Base_2x2</texPath>
+      <texPath>Avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -176,7 +172,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/buildings/turrets/Brrrt_image</uiIconPath>
+    <uiIconPath>Avali/Buildings/Turrets/Brrrt_image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -275,13 +271,13 @@
       <armorPenetrationBase>0.2</armorPenetrationBase>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>AvaliMiniGunTurretGun</defName>
     <label>Basic avali turret gun</label>
     <description>A automatic railgun, made to be mounted to an avali turret.</description>
     <graphicData>
-      <texPath>avali/buildings/turrets/Avali_Turret_Brrt</texPath>
+      <texPath>Avali/Buildings/Turrets/Avali_Turret_Brrt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1,0.5)</drawSize>
     </graphicData>

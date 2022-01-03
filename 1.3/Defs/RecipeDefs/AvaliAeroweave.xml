@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
+    <workAmount>30</workAmount>
+    <defName>WeaveFerroweave</defName>
+    <label>Weave Ferroweave</label>
+    <description>Weave nano-fiber and ferrogel together to make a hybrid: ferroweave.</description>
+    <jobString>Weaving Ferroweave</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroweave>10</AvaliAeroweave>
+    </products>
+  </RecipeDef>
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
+    <workAmount>150</workAmount>
+    <defName>WeaveFerroweaveTwo</defName>
+    <label>Weave Ferroweave (25)</label>
+    <description>Weave nano-fiber and ferrogel together to make a hybrid: ferroweave.</description>
+    <jobString>Weaving Ferroweave</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroweave>50</AvaliAeroweave>
+    </products>
+  </RecipeDef>
+  <RecipeDef>
+    <researchPrerequisites>
+      <li>AeroWeaveResearch</li>
+    </researchPrerequisites>
+    <workAmount>300</workAmount>
+    <defName>WeaveFerroweaveThree</defName>
+    <label>Weave Ferroweave (100)</label>
+    <description>Weave nano-fiber and ferrogel together to make a hybrid: ferroweave.</description>
+    <jobString>Weaving Ferroweave</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAeroweave>100</AvaliAeroweave>
+    </products>
+  </RecipeDef>
+</Defs>

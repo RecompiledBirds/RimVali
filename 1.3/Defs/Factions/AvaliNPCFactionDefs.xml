@@ -1,63 +1,61 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-<FactionDef ParentName="FactionBase">
-  <defName>AvaliFaction</defName>
-  <label>Avali Pack</label>
-  <description>A pack of avali.</description>
-  <pawnSingular>Avali</pawnSingular>
-  <pawnsPlural>Avali</pawnsPlural>
-  <settlementGenerationWeight>1</settlementGenerationWeight>
-  <requiredCountAtGameStart>1</requiredCountAtGameStart>
-  <canMakeRandomly>true</canMakeRandomly>
-  <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
-  <configurationListOrderPriority>20</configurationListOrderPriority>
-  <canSiege>true</canSiege>
-  <canStageAttacks>true</canStageAttacks>
-  <leaderTitle>Pack Leader</leaderTitle>
-  <colorSpectrum>
-				<li>(1, 0.52, 0.05)</li>
-        <li>(1, 1, 1)</li>
-        <li>(0,0,0)</li>
-        <li>(0,1,0)</li>
-        <li>(1,0,0)</li>
-        <li>(0,0,1)</li>
-		</colorSpectrum>
+  <FactionDef ParentName="FactionBase">
+    <defName>AvaliFaction</defName>
+    <label>Avali Pack</label>
+    <description>A pack of avali.</description>
+    <pawnSingular>Avali</pawnSingular>
+    <pawnsPlural>Avali</pawnsPlural>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>20</configurationListOrderPriority>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>Pack Leader</leaderTitle>
+    <colorSpectrum>
+      <li>(1, 0.52, 0.05)</li>
+      <li>(1, 1, 1)</li>
+      <li>(0,0,0)</li>
+      <li>(0,1,0)</li>
+      <li>(1,0,0)</li>
+      <li>(0,0,1)</li>
+    </colorSpectrum>
 
-  <factionNameMaker>NamerFactionOutlander</factionNameMaker>
-  <settlementNameMaker>AvaliFactionBaseNamer</settlementNameMaker>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>AvaliFactionBaseNamer</settlementNameMaker>
 
-  <techLevel>Spacer</techLevel>
-  
-  <backstoryCategories>
-    <li>RimValiBackstories</li>
-  </backstoryCategories>
+    <techLevel>Spacer</techLevel>
 
-  
-  <caravanTraderKinds>
-    <li>Caravan_Outlander_BulkGoods</li>
-    <li>Caravan_Outlander_Exotic</li>
-    <li>AvaliResourceTrader</li>
-  
-  </caravanTraderKinds>
-  
-  <visitorTraderKinds>
-    <li>Visitor_Outlander_Standard</li>
-  </visitorTraderKinds>
-  <baseTraderKinds>
-    <li>Base_Outlander_Standard</li>
-  </baseTraderKinds>
-  
-  <allowedArrivalTemperatureRange>-200~8</allowedArrivalTemperatureRange>
-  
-  <maxPawnCostPerTotalPointsCurve>
-    <points>
-      <li>(0, 35)</li>
-      <li>(70, 50)</li>
-      <li>(700, 100)</li>
-      <li>(1300, 150)</li>
-      <li>(10000, 10000)</li>
-    </points>
-  </maxPawnCostPerTotalPointsCurve>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_Exotic</li>
+      <li>AvaliResourceTrader</li>
+    </caravanTraderKinds>
+
+    <visitorTraderKinds>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Outlander_Standard</li>
+    </baseTraderKinds>
+
+    <allowedArrivalTemperatureRange>-200~8</allowedArrivalTemperatureRange>
+
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0, 35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(10000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
     <pawnGroupMakers>
       <li>
         <kindDef>Combat</kindDef>
@@ -100,17 +98,12 @@
           <AvaliTownGuard>100</AvaliTownGuard>
           <AvaliTownCouncilman>600</AvaliTownCouncilman>
           <SoldierAvali>270</SoldierAvali>
-           <AvaliMelee>250</AvaliMelee>
+          <AvaliMelee>250</AvaliMelee>
           <EnhancedSoliderAvali>300</EnhancedSoliderAvali>
         </options>
       </li>
     </pawnGroupMakers>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-</FactionDef>
-
-
-
-
-  
+    <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>Avali/WorldIcons/Town</factionIconPath>
+  </FactionDef>
 </Defs>

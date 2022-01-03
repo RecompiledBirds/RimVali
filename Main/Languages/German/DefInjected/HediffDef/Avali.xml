@@ -10,7 +10,7 @@
   <AvaliBiologyControl.comps.1.showText.1.textToShow>quietsch</AvaliBiologyControl.comps.1.showText.1.textToShow>
   <!-- <AvaliBiologyControl.comps.1.showText.2.textToShow>peep</AvaliBiologyControl.comps.1.showText.2.textToShow> -->
   <AvaliBiologyControl.comps.1.showText.2.textToShow>piep</AvaliBiologyControl.comps.1.showText.2.textToShow>
-  
+
   <!-- <AmmoniaBurn.label>Ammonia Burn</AmmoniaBurn.label> -->
   <AmmoniaBurn.label>Ammoniak Verbrennung</AmmoniaBurn.label>
   <!-- <AmmoniaBurn.description>A "burn" caused by exposure to ammonia.</AmmoniaBurn.description> -->
@@ -27,7 +27,7 @@
   <AmmoniaBurn.injuryProps.destroyedOutLabel>herausgebrannt (Ammoniak)</AmmoniaBurn.injuryProps.destroyedOutLabel>
   <!-- <AmmoniaBurn.labelNounPretty>{0} in the {1}</AmmoniaBurn.labelNounPretty> -->
   <AmmoniaBurn.labelNounPretty>eine Verbrennung (Ammoniak) am Körperteil '{1}'</AmmoniaBurn.labelNounPretty>
-  
+
   <!-- <AmmoniaPoisoning.label>Ammonia poisoning</AmmoniaPoisoning.label> -->
   <AmmoniaPoisoning.label>Ammoniakvergiftung</AmmoniaPoisoning.label>
   <!-- <AmmoniaPoisoning.description>Ammonia in the blood stream. Ammonia is toxic to most, if not all earth-like organisms, and can cause several health issues.</AmmoniaPoisoning.description> -->

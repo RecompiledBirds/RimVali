@@ -26,9 +26,9 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
-  <nullifyingTraits>
+    <nullifyingTraits>
       <li>Psychopath</li>
     </nullifyingTraits>
     <defName>SharedRoomWithPack</defName>
@@ -42,9 +42,9 @@
       </li>
     </stages>
   </ThoughtDef>
-  
-   <ThoughtDef>
-   <nullifyingTraits>
+
+  <ThoughtDef>
+    <nullifyingTraits>
       <li>Psychopath</li>
     </nullifyingTraits>
     <defName>BedroomWithoutPack</defName>

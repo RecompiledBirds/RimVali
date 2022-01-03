@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LanguageData>  
+<LanguageData>
   <!-- SpecOps armor -->
 
   <!-- <AvaliSpecOpsArmor.label>Avali spec ops armor</AvaliSpecOpsArmor.label> -->
   <AvaliSpecOpsArmor.label>Spezialeinheiten-Panzerung</AvaliSpecOpsArmor.label>
   <!-- <AvaliSpecOpsArmor.description>A combat suit. [placeholder]</AvaliSpecOpsArmor.description> -->
   <AvaliSpecOpsArmor.description>Ein Kampfanzug. [placeholder]</AvaliSpecOpsArmor.description>
-
 
   <!-- spec ops helm -->
 
@@ -15,7 +14,6 @@
   <!-- <AvaliSpecOpsHelm.description>An avali spec ops helmet. [placeholder]</AvaliSpecOpsHelm.description> -->
   <AvaliSpecOpsHelm.description>Ein Helm für Avali Spezialeinheiten. [placeholder]</AvaliSpecOpsHelm.description>
 
-
   <!-- Scout helm -->
 
   <!-- <AvaliScoutHelmet.label>Avali scout helmet</AvaliScoutHelmet.label> -->
@@ -23,14 +21,12 @@
   <!-- <AvaliScoutHelmet.description>An avali scout helmet. [placeholder]</AvaliScoutHelmet.description> -->
   <AvaliScoutHelmet.description>Ein Helm dür Avali Erkunder. [placeholder]</AvaliScoutHelmet.description>
 
-
   <!-- Combat helm -->
 
   <!-- <AvaliCombatHelmet.label>Avali combat helmet</AvaliCombatHelmet.label> -->
   <AvaliCombatHelmet.label>Avali Kampfhelm</AvaliCombatHelmet.label>
   <!-- <AvaliCombatHelmet.description>An avali combat helmet. [placeholder]</AvaliCombatHelmet.description> -->
   <AvaliCombatHelmet.description>Ein Avali Kampfhelm. [placeholder]</AvaliCombatHelmet.description>
-  
 
   <!-- Combat armor -->
 
@@ -39,14 +35,12 @@
   <!-- <AvaliCombatArmor.description>A Illuminate combat suit.</AvaliCombatArmor.description> -->
   <AvaliCombatArmor.description>Eine Illuminate-Kampfrüstung.</AvaliCombatArmor.description>
 
-
   <!-- Scout armor -->
 
   <!-- <AvaliScoutArmor.label>Avali scout armor</AvaliScoutArmor.label> -->
   <AvaliScoutArmor.label>Avali Späherrüstung</AvaliScoutArmor.label>
   <!-- <AvaliScoutArmor.description>A combat suit. [placeholder]</AvaliScoutArmor.description> -->
   <AvaliScoutArmor.description>Eine Späherrüstung. [placeholder]</AvaliScoutArmor.description>
-
 
   <!-- Nezai -->
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="BaseAvaliPlant">
-    <defName>RIMVALI_Soog</defName>
+    <defName>RimValiSoog</defName>
     <label>Soog</label>
     <description>This plant is a drug for avali.</description>
     <statBases>
@@ -9,7 +9,7 @@
       <Nutrition>0.2</Nutrition>
     </statBases>
     <graphicData>
-      <texPath>avali/Things/Plants/Soog/avali_soog_plant</texPath>
+      <texPath>Avali/Things/Plants/Soog/avali_soog_plant</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <ingestible />
@@ -17,9 +17,9 @@
       <dieIfLeafless>true</dieIfLeafless>
       <maxMeshCount>4</maxMeshCount>
       <harvestTag>Standard</harvestTag>
-      <harvestedThingDef>RIMVALI_RawSoog</harvestedThingDef>
+      <harvestedThingDef>RimValiRawSoog</harvestedThingDef>
       <harvestYield>6</harvestYield>
-      <immatureGraphicPath>avali/Things/Plants/Soog/avali_soog_plant</immatureGraphicPath>
+      <immatureGraphicPath>Avali/Things/Plants/Soog/avali_soog_plant</immatureGraphicPath>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.3~0.8</visualSizeRange>

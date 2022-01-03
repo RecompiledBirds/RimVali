@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-   <PawnKindDef ParentName="BaseIWAvali" Name="BaseTribalAvali">
-     <defName>IWTribalAvaliVillager</defName>
-     <label>Tribal avali villager</label>
-     <combatPower>5</combatPower>
+  <PawnKindDef ParentName="BaseIWAvali" Name="BaseTribalAvali">
+    <defName>IWTribalAvaliVillager</defName>
+    <label>Tribal avali villager</label>
+    <combatPower>5</combatPower>
     <baseRecruitDifficulty>0.6</baseRecruitDifficulty>
     <backstoryCategories>
       <li>RimValiIWTribalStories</li>
@@ -42,41 +42,41 @@
         </li>
       </subOptionsChooseOne>
     </inventoryOptions>
-   </PawnKindDef>
-   
-   
-   
-      <PawnKindDef ParentName = "BaseTribalAvali">
-     <defName>IWTribeLeader</defName>
-     <label>Avali tribe Leader</label>
-     <combatPower>5</combatPower>
-     <factionLeader>true</factionLeader>
-     <minGenerationAge>20</minGenerationAge>
-     <isFighter>true</isFighter>
-     <gearHealthRange>0.5~1</gearHealthRange>
-     <itemQuality>Good</itemQuality>
-     <weaponMoney>200~700</weaponMoney>
-     <weaponTags>
-       <li>NeolithicMeleeBasic</li>
+  </PawnKindDef>
+
+
+
+  <PawnKindDef ParentName = "BaseTribalAvali">
+    <defName>IWTribeLeader</defName>
+    <label>Avali tribe Leader</label>
+    <combatPower>5</combatPower>
+    <factionLeader>true</factionLeader>
+    <minGenerationAge>20</minGenerationAge>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.5~1</gearHealthRange>
+    <itemQuality>Good</itemQuality>
+    <weaponMoney>200~700</weaponMoney>
+    <weaponTags>
+      <li>NeolithicMeleeBasic</li>
       <li>MedievalMeleeDecent</li>
       <li>Neolithic</li>
-     </weaponTags>
-     <apparelMoney>500~5000</apparelMoney>
-     <apparelTags>
-         <li>Neolithic</li>
-     </apparelTags>
-     <techHediffsChance>1.2</techHediffsChance>
-     <techHediffsMoney>800~2300</techHediffsMoney>
-       <techHediffsTags>
-         <li>Simple</li>
-       </techHediffsTags>
-   </PawnKindDef>
-   
-   
-    <PawnKindDef ParentName="BaseTribalAvali">
-     <defName>IWTribalAvaliWarrior</defName>
-     <label>Tribal avali warrior</label>
-     <combatPower>15</combatPower>
+    </weaponTags>
+    <apparelMoney>500~5000</apparelMoney>
+    <apparelTags>
+      <li>Neolithic</li>
+    </apparelTags>
+    <techHediffsChance>1.2</techHediffsChance>
+    <techHediffsMoney>800~2300</techHediffsMoney>
+    <techHediffsTags>
+      <li>Simple</li>
+    </techHediffsTags>
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="BaseTribalAvali">
+    <defName>IWTribalAvaliWarrior</defName>
+    <label>Tribal avali warrior</label>
+    <combatPower>15</combatPower>
     <baseRecruitDifficulty>0.6</baseRecruitDifficulty>
     <isFighter>true</isFighter>
     <gearHealthRange>0.2~1</gearHealthRange>
@@ -115,5 +115,5 @@
         </li>
       </subOptionsChooseOne>
     </inventoryOptions>
-   </PawnKindDef>
+  </PawnKindDef>
 </Defs>

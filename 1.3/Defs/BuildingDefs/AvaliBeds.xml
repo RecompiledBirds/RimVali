@@ -11,7 +11,7 @@
     <passability>PassThroughOnly</passability>
     <canOverlapZones>false</canOverlapZones>
     <graphicData>
-      <texPath>avali/Beds/avali_bed</texPath>
+      <texPath>Avali/Beds/AvaliBed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.2</drawSize>
     </graphicData>
@@ -73,7 +73,7 @@
     <passability>PassThroughOnly</passability>
     <canOverlapZones>false</canOverlapZones>
     <graphicData>
-      <texPath>avali/Beds/avali_pillows_s</texPath>
+      <texPath>Avali/Beds/AvaliPillowsSmall</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>2</drawSize>
     </graphicData>
@@ -135,7 +135,7 @@
     <passability>PassThroughOnly</passability>
     <canOverlapZones>false</canOverlapZones>
     <graphicData>
-      <texPath>avali/Beds/avali_pillows_m</texPath>
+      <texPath>Avali/Beds/AvaliPillowsMedium</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>2</drawSize>
     </graphicData>
@@ -197,7 +197,7 @@
     <passability>PassThroughOnly</passability>
     <canOverlapZones>false</canOverlapZones>
     <graphicData>
-      <texPath>avali/Beds/avali_pillows_l</texPath>
+      <texPath>Avali/Beds/AvaliPillowsLarge</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>3</drawSize>
     </graphicData>

@@ -2,11 +2,10 @@
 <Defs>
   <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
     <defName>InstallAvaliTemperatureImplantElite</defName>
-    <label>Install Elite Temperature Control Augment [TCA]</label>
-    <description>Install Elite Temperature Control Augment [TCA].</description>
+    <label>Install Elite Temperature Control Augment (T.C.A.)</label>
+    <description>Install Elite Temperature Control Augment (T.C.A.).</description>
     <descriptionHyperlinks><ThingDef>AvaliEliteTempControl</ThingDef></descriptionHyperlinks>
-    <jobString>Installing Elite Temperature Control Augment [TCA].</jobString>
-    <ignoreIllegalLabelCharacterConfigError>True</ignoreIllegalLabelCharacterConfigError>
+    <jobString>Installing Elite Temperature Control Augment (T.C.A.).</jobString>
     <ingredients>
       <li>
         <filter>

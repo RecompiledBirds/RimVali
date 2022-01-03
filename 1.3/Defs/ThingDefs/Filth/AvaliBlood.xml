@@ -20,7 +20,7 @@
       <canFilthAttach>true</canFilthAttach>
     </filth>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseGas">
     <defName>Gas_Neo</defName>
     <label>smoke</label>
@@ -36,7 +36,7 @@
       <rotationSpeed>10</rotationSpeed>
     </gas>
   </ThingDef>
-    <ThingDef ParentName="BaseGas">
+  <ThingDef ParentName="BaseGas">
     <defName>Gas_NeoTwo</defName>
     <label>smoke</label>
     <graphicData>

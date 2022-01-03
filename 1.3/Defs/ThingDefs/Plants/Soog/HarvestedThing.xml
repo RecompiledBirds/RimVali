@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <ThingDef ParentName="PlantFoodRawBase">
-    <defName>RIMVALI_RawSoog</defName>
+  <ThingDef ParentName="PlantFoodRawBase">
+    <defName>RimValiRawSoog</defName>
     <label>Raw soog</label>
     <description>This is raw soog.</description>
     <soundInteract>Grain_Drop</soundInteract>
     <soundDrop>Grain_Drop</soundDrop>
     <graphicData>
-      <texPath>avali/Things/Plants/Soog/avali_soog_raw</texPath>
+      <texPath>Avali/Things/Plants/Soog/avali_soog_raw</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1.1</MarketValue>

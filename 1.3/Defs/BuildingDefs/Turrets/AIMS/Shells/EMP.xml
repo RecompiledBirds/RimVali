@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  
-      <ThingDef ParentName="MakeableAIMSShellBase">
+  <ThingDef ParentName="MakeableAIMSShellBase">
     <defName>AIMSEMP</defName>
     <label>AIMS EMP shell</label>
     <description>A shell with an onboard EMP device. Can be fired from an AIMS system.</description>
     <graphicData>
-      <texPath>avali/buildings/turrets/AIMS/Shells/AIMS_EMP</texPath>
+      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_EMP</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -30,12 +28,12 @@
       <researchPrerequisite>AIMSRes</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseBullet">
     <defName>AIMS_EMP_SHELL</defName>
     <label>high-explosive shell</label>
     <graphicData>
-      <texPath>avali/buildings/turrets/AIMS/Shells/AIMS_EMP_launched</texPath>
+      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_EMP_launched</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>

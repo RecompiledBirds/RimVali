@@ -14,7 +14,7 @@
     <isFighter>false</isFighter>
     <gearHealthRange>0.2~1</gearHealthRange>
     <apparelMoney>100~300</apparelMoney>
-	 
+
     <apparelTags>
       <li>AvaliApparel</li>
     </apparelTags>
@@ -48,288 +48,285 @@
         </li>
       </subOptionsChooseOne>
     </inventoryOptions>
-   </PawnKindDef>
-   
-   <PawnKindDef ParentName = "AvaliVillager">
-     <defName>AvaliTownCouncilman</defName>
-     <label>Avali Pack Leader</label>
-     <combatPower>53</combatPower>
-     <factionLeader>true</factionLeader>
-     <minGenerationAge>20</minGenerationAge>
-     <isFighter>false</isFighter>
-     <gearHealthRange>0.5~1</gearHealthRange>
-     <itemQuality>Good</itemQuality>
-     <weaponMoney>200~700</weaponMoney>
-     <backstoryCategories>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName = "AvaliVillager">
+    <defName>AvaliTownCouncilman</defName>
+    <label>Avali Pack Leader</label>
+    <combatPower>53</combatPower>
+    <factionLeader>true</factionLeader>
+    <minGenerationAge>20</minGenerationAge>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.5~1</gearHealthRange>
+    <itemQuality>Good</itemQuality>
+    <weaponMoney>200~700</weaponMoney>
+    <backstoryCategories>
       <li>RimValiBackstories</li>
     </backstoryCategories>
-     <weaponTags>
-       <li>AvaliWeapons</li>
-     </weaponTags>
-     <apparelMoney>500~1000</apparelMoney>
-     <apparelTags>
-       <li>BeltDefensePop</li>
-       <li>IndustrialMilitaryBasic</li>
-       <li>AvaliApparel</li>
-     </apparelTags>
-     <techHediffsChance>1.2</techHediffsChance>
-     <techHediffsMoney>800~2300</techHediffsMoney>
-       <techHediffsTags>
-         <li>Advanced</li>
-       </techHediffsTags>
-   </PawnKindDef>
-   
-   
-   
-   
-   
-   
-   
-   <PawnKindDef ParentName = "AvaliVillager">
-     <defName>AvaliTrader</defName>
-     <label>Pack Trader</label>
-     <defaultFactionType>AvaliFaction</defaultFactionType>
-     <trader>true</trader>
-   </PawnKindDef>
-   <PawnKindDef ParentName="BaseAvali" Name="AvaliSolider">
-     <defName>SoldierAvali</defName>
-     <label>Avali Soldier</label>
-     <combatPower>120</combatPower>
-     <isFighter>true</isFighter>
-     <baseRecruitDifficulty>0.73</baseRecruitDifficulty>
-     <defaultFactionType>AvaliFaction</defaultFactionType>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <invNutrition>5</invNutrition>
-     <itemQuality>Excellent</itemQuality>
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>40</maxGenerationAge>
-     <gearHealthRange>1.2~2.4</gearHealthRange>
-     <apparelTags>
-       <li>Avali</li>
-     </apparelTags>
-     <apparelMoney>750~1500</apparelMoney>
-     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
-     <weaponMoney>300~700</weaponMoney>
-     <weaponTags>
-       <li>AvaliWeapons</li>
-     </weaponTags>
-     <techHediffsMoney>2000~3000</techHediffsMoney>
-     <techHediffsTags>
-       <li>Simple</li>
-       <li>Advanced</li>
-     </techHediffsTags>
-     <techHediffsChance>1</techHediffsChance>
-     <inventoryOptions>
-       <skipChance>0.5</skipChance>
-       <subOptionsChooseOne>
-         <li>
-           <thingDef>Silver</thingDef>
-           <countRange>100~200</countRange>
-         </li>
-         <li>
-         <thingDef>MedicineIndustrial</thingDef>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <apparelMoney>500~1000</apparelMoney>
+    <apparelTags>
+      <li>BeltDefensePop</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>AvaliApparel</li>
+    </apparelTags>
+    <techHediffsChance>1.2</techHediffsChance>
+    <techHediffsMoney>800~2300</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+  </PawnKindDef>
+
+
+
+
+
+
+
+  <PawnKindDef ParentName = "AvaliVillager">
+    <defName>AvaliTrader</defName>
+    <label>Pack Trader</label>
+    <defaultFactionType>AvaliFaction</defaultFactionType>
+    <trader>true</trader>
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseAvali" Name="AvaliSolider">
+    <defName>SoldierAvali</defName>
+    <label>Avali Soldier</label>
+    <combatPower>120</combatPower>
+    <isFighter>true</isFighter>
+    <baseRecruitDifficulty>0.73</baseRecruitDifficulty>
+    <defaultFactionType>AvaliFaction</defaultFactionType>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+    <invNutrition>5</invNutrition>
+    <itemQuality>Excellent</itemQuality>
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>40</maxGenerationAge>
+    <gearHealthRange>1.2~2.4</gearHealthRange>
+    <apparelTags>
+      <li>Avali</li>
+    </apparelTags>
+    <apparelMoney>750~1500</apparelMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponMoney>300~700</weaponMoney>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <techHediffsMoney>2000~3000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Simple</li>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>1</techHediffsChance>
+    <inventoryOptions>
+      <skipChance>0.5</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>Silver</thingDef>
+          <countRange>100~200</countRange>
+        </li>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
           <countRange>1~2</countRange>
-         </li>
-       </subOptionsChooseOne>
-     </inventoryOptions>
-   </PawnKindDef>
-   <PawnKindDef ParentName="BaseAvali">
-     <defName>AvaliRocketeer</defName>
-     <label>Avali Solider</label>
-     <combatPower>100000000</combatPower>
-     <defaultFactionType>AvaliFaction</defaultFactionType>
-     <baseRecruitDifficulty>0.4</baseRecruitDifficulty>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <isFighter>true</isFighter>
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>50</maxGenerationAge>
-     <gearHealthRange>0.9~2.5</gearHealthRange>
-     <apparelMoney>1000~9000</apparelMoney>
-     <apparelTags>
-       <li>AvaliArmor</li>
-     </apparelTags>
-     <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
-     <weaponMoney>2020~2000</weaponMoney>
-     <weaponTags>
-       <li>AvaliRocketeerWeapon</li>
-     </weaponTags>
-     <techHediffsMoney>5000~8000</techHediffsMoney>
-     <techHediffsTags>
-       <li>Advanced</li>
-     </techHediffsTags>
-     <techHediffsChance>2</techHediffsChance>
-     <invNutrition>5</invNutrition>
-   </PawnKindDef>###
-   
-   
-   <PawnKindDef ParentName="BaseAvali">
-     <defName>AvaliTownGuard</defName>
-     <label>Avali Soldier</label>
-     <combatPower>140</combatPower>
-     <defaultFactionType>AvaliFaction</defaultFactionType>
-     <baseRecruitDifficulty>0.55</baseRecruitDifficulty>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <isFighter>true</isFighter>
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>50</maxGenerationAge>
-     <gearHealthRange>0.9~2.5</gearHealthRange>
-     <apparelMoney>2000~9000</apparelMoney>
-     <apparelTags>
-       <li>AvaliArmor</li>
-     </apparelTags>
-     <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
-     <weaponMoney>200~400</weaponMoney>
-     <weaponTags>
-       <li>AvaliWeapons</li>
-     </weaponTags>
-     <techHediffsMoney>5000~8000</techHediffsMoney>
-     <techHediffsTags>
-       <li>Advanced</li>
-     </techHediffsTags>
-     <techHediffsChance>2</techHediffsChance>
-     <invNutrition>5</invNutrition>
-   </PawnKindDef>
-   
-   
-   
-   <pawnKindDef ParentName="BaseAvali">
-     <defName>AvaliSniper</defName>
-     <label>Avali Sniper</label>
-     <combatPower>170</combatPower>
-     <isFighter>true</isFighter>
-     <baseRecruitDifficulty>0.43</baseRecruitDifficulty>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <invNutrition>4</invNutrition>
-     <itemQuality>Excellent</itemQuality>
-     
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>45</maxGenerationAge>
-     <gearHealthRange>1~2.3</gearHealthRange>
-     <apparelTags>
-       <li>AvaliSpecOps</li>
-       <li>AvaliArmor</li>
-     </apparelTags>
-     <apparelMoney>1000~5000</apparelMoney>
-     <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
-     <weaponMoney>1700~2000</weaponMoney>
-     <weaponTags>
-       <li>AvaliRifle</li>
-       <li>SniperRifle</li>
-     </weaponTags>
-     <techHediffsMoney>1000~2000</techHediffsMoney>
-     <techHediffsTags>
-       <li>Advanced</li>
-     </techHediffsTags>
-     <techHediffsChance>2.4</techHediffsChance>
-     <inventoryOptions>
-       <skipChance>1</skipChance>
-       <subOptionsChooseOne>
-         <li>
-           <thingDef>Silver</thingDef>
-           <countRange>100~400</countRange>
-         </li>
-         <li>
-           <thingDef>MedicineIndustrial</thingDef>
-           <countRange>1~2</countRange>
-         </li>
-       </subOptionsChooseOne>
-     </inventoryOptions>
-   </pawnKindDef>
-      <pawnKindDef ParentName="BaseAvali">
-     <defName>AvaliMelee</defName>
-     <label>Avali Fighter</label>
-     <isFighter>true</isFighter>
-     <combatPower>170</combatPower>
-     <baseRecruitDifficulty>0.43</baseRecruitDifficulty>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <invNutrition>4</invNutrition>
-     <itemQuality>Excellent</itemQuality>
-     
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>45</maxGenerationAge>
-     <gearHealthRange>1~2.3</gearHealthRange>
-     <apparelTags>
-       <li>Avali</li>
-       <li>AvaliScout</li>
-     </apparelTags>
-     <apparelMoney>1500~7000</apparelMoney>
-     <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
-     <weaponMoney>1000~3000</weaponMoney>
-     <weaponTags>
-       <li>AvaliMelee</li>
-     </weaponTags>
-     <techHediffsMoney>1000~2000</techHediffsMoney>
-     <techHediffsTags>
-       <li>Advanced</li>
-     </techHediffsTags>
-     <techHediffsChance>2.4</techHediffsChance>
-     <inventoryOptions>
-       <skipChance>1</skipChance>
-       <subOptionsChooseOne>
-         <li>
-           <thingDef>Silver</thingDef>
-           <countRange>100~300</countRange>
-         </li>
-         <li>
-           <thingDef>MedicineIndustrial</thingDef>
-           <countRange>1~2</countRange>
-         </li>
-       </subOptionsChooseOne>
-     </inventoryOptions>
-   </pawnKindDef>
-   
-   <PawnKindDef ParentName="BaseAvali">
-     <defName>EnhancedSoliderAvali</defName>
-     <label>Enhanced Avali Soilder</label>
-     <combatPower>200</combatPower>
-     <isFighter>true</isFighter>
-     <baseRecruitDifficulty>0.73</baseRecruitDifficulty>
-     <defaultFactionType>AvaliFaction</defaultFactionType>
-     <backstoryCategories>
-       <li>RimValiBackstories</li>
-     </backstoryCategories>
-     <invNutrition>5</invNutrition>
-     <itemQuality>Excellent</itemQuality>
-     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
-     <maxGenerationAge>40</maxGenerationAge>
-     <gearHealthRange>1.2~2.4</gearHealthRange>
-     <apparelTags>
-       <li>AvaliSpecOps</li>
-     </apparelTags>
-     <apparelMoney>5000~9000</apparelMoney>
-     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
-     <weaponMoney>700~1400</weaponMoney>
-     <weaponTags>
-       <li>AvaliWeapons</li>
-     </weaponTags>
-     <techHediffsMoney>5000~99999</techHediffsMoney>
-     <techHediffsTags>
-       <li>Advanced</li>
-       <li>Spacer</li>
-     </techHediffsTags>
-     <techHediffsChance>100</techHediffsChance>
-     <inventoryOptions>
-       <skipChance>0.25</skipChance>
-       <subOptionsChooseOne>
-         <li>
-           <thingDef>Silver</thingDef>
-           <countRange>250~500</countRange>
-         </li>
-         <li>
-         <thingDef>MedicineIndustrial</thingDef>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="BaseAvali">
+    <defName>AvaliRocketeer</defName>
+    <label>Avali Solider</label>
+    <combatPower>100000000</combatPower>
+    <defaultFactionType>AvaliFaction</defaultFactionType>
+    <baseRecruitDifficulty>0.4</baseRecruitDifficulty>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+    <isFighter>true</isFighter>
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>50</maxGenerationAge>
+    <gearHealthRange>0.9~2.5</gearHealthRange>
+    <apparelMoney>1000~9000</apparelMoney>
+    <apparelTags>
+      <li>AvaliArmor</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
+    <weaponMoney>2020~2000</weaponMoney>
+    <weaponTags>
+      <li>AvaliRocketeerWeapon</li>
+    </weaponTags>
+    <techHediffsMoney>5000~8000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>2</techHediffsChance>
+    <invNutrition>5</invNutrition>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseAvali">
+    <defName>AvaliTownGuard</defName>
+    <label>Avali Soldier</label>
+    <combatPower>140</combatPower>
+    <defaultFactionType>AvaliFaction</defaultFactionType>
+    <baseRecruitDifficulty>0.55</baseRecruitDifficulty>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+    <isFighter>true</isFighter>
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>50</maxGenerationAge>
+    <gearHealthRange>0.9~2.5</gearHealthRange>
+    <apparelMoney>2000~9000</apparelMoney>
+    <apparelTags>
+      <li>AvaliArmor</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
+    <weaponMoney>200~400</weaponMoney>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <techHediffsMoney>5000~8000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>2</techHediffsChance>
+    <invNutrition>5</invNutrition>
+  </PawnKindDef>
+
+  <pawnKindDef ParentName="BaseAvali">
+    <defName>AvaliSniper</defName>
+    <label>Avali Sniper</label>
+    <combatPower>170</combatPower>
+    <isFighter>true</isFighter>
+    <baseRecruitDifficulty>0.43</baseRecruitDifficulty>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+    <invNutrition>4</invNutrition>
+    <itemQuality>Excellent</itemQuality>
+
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>45</maxGenerationAge>
+    <gearHealthRange>1~2.3</gearHealthRange>
+    <apparelTags>
+      <li>AvaliSpecOps</li>
+      <li>AvaliArmor</li>
+    </apparelTags>
+    <apparelMoney>1000~5000</apparelMoney>
+    <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+    <weaponMoney>1700~2000</weaponMoney>
+    <weaponTags>
+      <li>AvaliRifle</li>
+      <li>SniperRifle</li>
+    </weaponTags>
+    <techHediffsMoney>1000~2000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>2.4</techHediffsChance>
+    <inventoryOptions>
+      <skipChance>1</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>Silver</thingDef>
+          <countRange>100~400</countRange>
+        </li>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1~2</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+  </pawnKindDef>
+  <pawnKindDef ParentName="BaseAvali">
+    <defName>AvaliMelee</defName>
+    <label>Avali Fighter</label>
+    <isFighter>true</isFighter>
+    <combatPower>170</combatPower>
+    <baseRecruitDifficulty>0.43</baseRecruitDifficulty>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+    <invNutrition>4</invNutrition>
+    <itemQuality>Excellent</itemQuality>
+
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>45</maxGenerationAge>
+    <gearHealthRange>1~2.3</gearHealthRange>
+    <apparelTags>
+      <li>Avali</li>
+      <li>AvaliScout</li>
+    </apparelTags>
+    <apparelMoney>1500~7000</apparelMoney>
+    <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+    <weaponMoney>1000~3000</weaponMoney>
+    <weaponTags>
+      <li>AvaliMelee</li>
+    </weaponTags>
+    <techHediffsMoney>1000~2000</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>2.4</techHediffsChance>
+    <inventoryOptions>
+      <skipChance>1</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>Silver</thingDef>
+          <countRange>100~300</countRange>
+        </li>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1~2</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+  </pawnKindDef>
+
+  <PawnKindDef ParentName="BaseAvali">
+    <defName>EnhancedSoliderAvali</defName>
+    <label>Enhanced Avali Soilder</label>
+    <combatPower>200</combatPower>
+    <isFighter>true</isFighter>
+    <baseRecruitDifficulty>0.73</baseRecruitDifficulty>
+    <defaultFactionType>AvaliFaction</defaultFactionType>
+    <backstoryCategories>
+      <li>RimValiBackstories</li>
+    </backstoryCategories>
+    <invNutrition>5</invNutrition>
+    <itemQuality>Excellent</itemQuality>
+    <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
+    <maxGenerationAge>40</maxGenerationAge>
+    <gearHealthRange>1.2~2.4</gearHealthRange>
+    <apparelTags>
+      <li>AvaliSpecOps</li>
+    </apparelTags>
+    <apparelMoney>5000~9000</apparelMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponMoney>700~1400</weaponMoney>
+    <weaponTags>
+      <li>AvaliWeapons</li>
+    </weaponTags>
+    <techHediffsMoney>5000~99999</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+      <li>Spacer</li>
+    </techHediffsTags>
+    <techHediffsChance>100</techHediffsChance>
+    <inventoryOptions>
+      <skipChance>0.25</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>Silver</thingDef>
+          <countRange>250~500</countRange>
+        </li>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
           <countRange>4~6</countRange>
-         </li>
-       </subOptionsChooseOne>
-     </inventoryOptions>
-   </PawnKindDef>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+  </PawnKindDef>
 </Defs>

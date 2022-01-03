@@ -9,7 +9,7 @@
       <Nutrition>0.2</Nutrition>
     </statBases>
     <graphicData>
-      <texPath>avali/Things/Plants/Piru/PiruPlantFull</texPath>
+      <texPath>Avali/Things/Plants/Piru/PiruPlantFull</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <ingestible />
@@ -19,7 +19,7 @@
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>PiruFlour</harvestedThingDef>
       <harvestYield>6</harvestYield>
-      <immatureGraphicPath>avali/Things/Plants/Piru/PiruPlant</immatureGraphicPath>
+      <immatureGraphicPath>Avali/Things/Plants/Piru/PiruPlant</immatureGraphicPath>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.3~0.8</visualSizeRange>

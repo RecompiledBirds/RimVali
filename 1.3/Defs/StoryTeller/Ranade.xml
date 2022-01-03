@@ -2,12 +2,11 @@
 <Defs>
   <StorytellerDef ParentName="BaseStoryteller">
     <defName>RanadeStoryTeller</defName>
-    <label>&lt;color=#56CC2D&gt;Ranade the Raconteur
-&lt;/color&gt;</label>
+    <label>&lt;color=#56CC2D&gt;Ranade the Raconteur&lt;/color&gt;</label>
     <description>There are two things that Ranade enjoys in life: A good story and some men. Whilst the latter doesn’t apply here, the former certainly does. He’ll happily offer or drag you through multiple quests, all in the name of teaching your colonists some hardship and perhaps showing some conflict on the way there. His thoughts are all on a continuous story and preferably gray areas.\n  &lt;color=#56CC2D&gt;He doesn’t care about you having non-Avali colonists, but he may be a tad biased towards more independent causes.&lt;/color&gt;</description>
-    
-    <portraitLarge>avali/Storyteller/ranade_storyteller</portraitLarge>
-    <portraitTiny>avali/Storyteller/ranade_storyteller_square</portraitTiny>
+
+    <portraitLarge>Avali/Storyteller/Ranade</portraitLarge>
+    <portraitTiny>Avali/Storyteller/Ranade_Squared</portraitTiny>
     <listOrder>40</listOrder>
     <comps>
       <li Class="AvaliMod.ToddStoryTellerProps">
@@ -19,7 +18,7 @@
           <points>
             <li>(1, 15)</li>
             <li>(3, 23)</li>
-            <li>(9,40)</li>
+            <li>(9, 40)</li>
           </points>
         </acceptFractionByDaysPassedCurve>
       </li>

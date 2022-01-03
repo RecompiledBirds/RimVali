@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <defName>RimValiPrintAerogel</defName>
+    <label>Print aerogel</label>
+    <description>Create aerogel by re-assembling the ingredients at a near-atomic level.</description>
+    <jobString>Printing aerogel</jobString>
+    <workAmount>10</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAerogel>10</AvaliAerogel>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RimValiPrintAerogelTwo</defName>
+    <label>Print aerogel (20)</label>
+    <description>Create aerogel by re-assembling the ingredients at a near-atomic level.</description>
+    <jobString>Printing aerogel</jobString>
+    <workAmount>50</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAerogel>20</AvaliAerogel>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RimValiPrintAerogelThree</defName>
+    <label>Print aerogel (40)</label>
+    <description>Create aerogel by re-assembling the ingredients at a near-atomic level.</description>
+    <jobString>Printing aerogel</jobString>
+    <workAmount>50</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliAerogel>40</AvaliAerogel>
+    </products>
+  </RecipeDef>
+</Defs>

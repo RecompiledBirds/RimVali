@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveNanoCarbonFiber</defName>
+    <label>Weave nano carbon fiber</label>
+    <description>Weave nano carbon fiber.</description>
+    <jobString>Weaving nano carbon fiber.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbonFiber>5</AvaliNanoCarbonFiber>
+    </products>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveNanoCarbonFiberTwo</defName>
+    <label>Weave nano carbon fiber</label>
+    <description>Weave nano carbon fiber (x10).</description>
+    <jobString>Weaving nano carbon fiber (x10).</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbonFiber>25</AvaliNanoCarbonFiber>
+    </products>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>WeaveNanoCarbonFiberThree</defName>
+    <label>Weave nano carbon fiber</label>
+    <description>Weave nano carbon fiber (x50).</description>
+    <jobString>Weaving nano carbon fiber (x50).</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoFiber</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbonFiber>50</AvaliNanoCarbonFiber>
+    </products>
+    <researchPrerequisites>
+      <li>NanoFibreResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+</Defs>

@@ -1,8 +1,7 @@
-
 <Defs>
-    <StatDef>
+  <StatDef>
     <defName>ExplodeBombRadius</defName>
-    <label>Explosion [Bomb] radius</label>
+    <label>Explosion (Bomb) radius</label>
     <description>The area affected when this detonates.</description>
     <category>Apparel</category>
     <minValue>0</minValue>
@@ -22,10 +21,10 @@
       </li>
     </parts>
   </StatDef>
-  
+
   <StatDef>
     <defName>ExplodeFireRadius</defName>
-    <label>Explosion [Fire] radius</label>
+    <label>Explosion (Fire) radius</label>
     <description>The area affected when this detonates.</description>
     <category>Apparel</category>
     <minValue>0</minValue>
@@ -45,10 +44,10 @@
       </li>
     </parts>
   </StatDef>
-  
+
   <StatDef>
     <defName>ExplodeEMPRadius</defName>
-    <label>Explosion [EMP] radius</label>
+    <label>Explosion (EMP) radius</label>
     <description>The area affected when this detonates.</description>
     <category>Apparel</category>
     <minValue>0</minValue>
@@ -68,11 +67,11 @@
       </li>
     </parts>
   </StatDef>
-  
+
   <StatDef>
     <defName>KillOnExplosion</defName>
     <label>Kills pawn on explosion</label>
-    <description>If this apparel has is GUARANTEED to kill the pawn when exploding [0 = no, 1 = yes].</description>
+    <description>If this apparel has is GUARANTEED to kill the pawn when exploding (0 = no, 1 = yes).</description>
     <category>Apparel</category>
     <minValue>0</minValue>
     <toStringStyle>FloatOne</toStringStyle>
@@ -91,5 +90,5 @@
       </li>
     </parts>
   </StatDef>
-  
+
 </Defs>

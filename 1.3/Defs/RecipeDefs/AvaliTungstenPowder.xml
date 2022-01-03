@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <defName>RimValiPowderTungsten</defName>
+    <label>Sinter Tungsten</label>
+    <description>Turn raw, unusable tungsten into tungsten carbide, which has more use.</description>
+    <jobString>Sintering tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <workAmount>50</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungsten</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliTungstenPowder>8</AvaliTungstenPowder>
+    </products>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
+  </RecipeDef>
+  <RecipeDef>
+    <workAmount>250</workAmount>
+    <defName>RimValiPowderTungstenTwo</defName>
+    <label>Sinter Tungsten (16)</label>
+    <description>Turn raw, unusable tungsten into tungsten carbide, which has more use.</description>
+    <jobString>Sintering tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungsten</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliTungstenPowder>16</AvaliTungstenPowder>
+    </products>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
+  </RecipeDef>
+  <RecipeDef>
+    <workAmount>500</workAmount>
+    <defName>RimValiPowderTungstenThree</defName>
+    <label>Sinter Tungsten (40)</label>
+    <description>Turn raw, unusable tungsten into tungsten carbide, which has more use.</description>
+    <jobString>Sintering tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungsten</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliTungstenPowder>40</AvaliTungstenPowder>
+    </products>
+    <researchPrerequisite>TungstenProcessingBasic</researchPrerequisite>
+  </RecipeDef>
+</Defs>

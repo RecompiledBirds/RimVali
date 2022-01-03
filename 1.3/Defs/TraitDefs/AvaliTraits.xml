@@ -14,9 +14,9 @@
         </statOffsets>
       </li>
     </degreeDatas>
-     <conflictingTraits>
-       <li>Kind</li>
-       <li>Psychopath</li>
-     </conflictingTraits>
+    <conflictingTraits>
+      <li>Kind</li>
+      <li>Psychopath</li>
+    </conflictingTraits>
   </TraitDef>
 </Defs>

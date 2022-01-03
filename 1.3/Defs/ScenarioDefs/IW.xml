@@ -1,75 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <ScenarioDef>
+    <defName>IWAvaliScenario</defName>
+    <label>Independent worlds tribe</label>
+    <description>A small tribe of avali</description>
+    <scenario>
+      <summary>Similar to the classic rimworld tribal experience, but with avali.</summary>
+      <description>After a series of raids forced your pack to flee, you find yourself here.. (Note: These avali have modified stats, designed to be stronger, but also slower.)</description>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>IWPlayerColony</factionDef>
+      </playerFaction>
+      <parts>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>5</pawnCount>
+          <pawnChoiceCount>6</pawnChoiceCount>
+        </li>
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Standing</method>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>150</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>5</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>IWRifle</thingDef>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>50</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>100</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>300</count>
+        </li>
 
-<ScenarioDef>
-  <defName>IWAvaliScenario</defName>
-  <label>Independent worlds tribe</label>
-  <description>A small tribe of avali</description>
-	<scenario>
-		<summary>Similar to the classic rimworld tribal experience, but with avali.</summary>
-		<description>After a series of raids forced your pack to flee, you find yourself here.. (Note: These avali have modified stats, designed to be stronger, but also slower.)</description>
-		<playerFaction>
-			<def>PlayerFaction</def>
-			<factionDef>IWPlayerColony</factionDef>
-		</playerFaction>
-		<parts>
-			<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
-				<def>ConfigPage_ConfigureStartingPawns</def>
-				<pawnCount>5</pawnCount>
-				<pawnChoiceCount>6</pawnChoiceCount>
-			</li>
-			<li Class="ScenPart_PlayerPawnsArriveMethod">
-				<def>PlayerPawnsArriveMethod</def>
-				<method>Standing</method>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>Silver</thingDef>
-				<count>150</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>MedicineIndustrial</thingDef>
-				<count>5</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>ComponentIndustrial</thingDef>
-				<count>30</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>IWRifle</thingDef>
-			</li>
-			<li Class="ScenPart_ScatterThingsNearPlayerStart">
-				<def>ScatterThingsNearPlayerStart</def>
-				<thingDef>Steel</thingDef>
-				<count>50</count>
-			</li>
-			<li Class="ScenPart_ScatterThingsNearPlayerStart">
-				<def>ScatterThingsNearPlayerStart</def>
-				<thingDef>WoodLog</thingDef>
-				<count>100</count>
-			</li>
-			<li Class="ScenPart_ScatterThingsAnywhere">
-				<def>ScatterThingsAnywhere</def>
-				<thingDef>Steel</thingDef>
-				<count>300</count>
-			</li>
-
-			<li Class="ScenPart_ScatterThingsAnywhere">
-				<def>ScatterThingsAnywhere</def>
-				<thingDef>MealSurvivalPack</thingDef>
-				<count>7</count>
-			</li>
-			<li Class="ScenPart_GameStartDialog">
-				<def>GameStartDialog</def>
-				<text>After a series of raids forced your pack to flee your home, you find yourself here.. will you survive?
-        </text>
-				<textKey>GameStartDialog</textKey>
-				<closeSound>GameStartSting</closeSound>
-			</li>
-		</parts>
-	</scenario>
-</ScenarioDef>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>7</count>
+        </li>
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>After a series of raids forced your pack to flee your home, you find yourself here.. will you survive?
+          </text>
+          <textKey>GameStartDialog</textKey>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
 </Defs>

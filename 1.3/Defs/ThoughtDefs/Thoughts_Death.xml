@@ -19,7 +19,7 @@
       </li>
     </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef ParentName="DeathMemoryFamily">
     <defName>AvaliKitDied</defName>
     <stages>
@@ -28,9 +28,9 @@
         <description>My kit died.</description>
         <baseMoodEffect>-30</baseMoodEffect>
       </li>
-    </stages>  
+    </stages>
   </ThoughtDef>
-  
+
   <ThoughtDef>
     <defName>MateDied</defName>
     <stages>

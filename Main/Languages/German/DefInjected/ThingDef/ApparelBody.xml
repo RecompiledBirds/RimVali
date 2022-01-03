@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LanguageData>  
+<LanguageData>
   <!-- <AvaliTDW.label>Avali traditional wear</AvaliTDW.label> -->
   <AvaliTDW.label>Traditionelle Avali Kleidung</AvaliTDW.label>
   <!-- <AvaliTDW.description>Traditional avali clothing. It's lightweight, and comfortable. It also has some chimes on it, which the avali like.</AvaliTDW.description> -->
   <AvaliTDW.description>Traditionelle Avali Kleidung. Es ist leicht, bequem und es sind ein paar Windspiele angenäht, die Avali mögen.</AvaliTDW.description>
-
 
   <!-- HUD -->
 
@@ -13,14 +12,12 @@
   <!-- <AvaliHUD.description>An avali HUD. [placeholder]</AvaliHUD.description> -->
   <AvaliHUD.description>Ein Avali HUD. [placeholder]</AvaliHUD.description>
 
-
   <!-- Headress -->
 
   <!-- <AvaliHeadress.label>Avali traditional headress</AvaliHeadress.label> -->
   <AvaliHeadress.label>Traditioneller Avali Kopfschmuck</AvaliHeadress.label>
   <!-- <AvaliHeadress.description>An avali headress. [placeholder]</AvaliHeadress.description> -->
   <AvaliHeadress.description>Ein Avali Kopfschmuck. [placeholder]</AvaliHeadress.description>
-
 
   <!-- Hood -->
 
@@ -29,14 +26,12 @@
   <!-- <AvaliHood.description>An avali hood. [placeholder]</AvaliHood.description> -->
   <AvaliHood.description>Eine Avali Kapuze. [placeholder]</AvaliHood.description>
 
-
   <!-- bell cloak -->
 
   <!-- <AvaliBellCloak.label>Avali bell cloak</AvaliBellCloak.label> -->
   <AvaliBellCloak.label>Avali Umhang</AvaliBellCloak.label>
   <!-- <AvaliBellCloak.description>An avali cloak. [placeholder]</AvaliBellCloak.description> -->
   <AvaliBellCloak.description>Ein Avali Umhang. [placeholder]</AvaliBellCloak.description>
-
 
   <!-- Thermal wraps -->
 

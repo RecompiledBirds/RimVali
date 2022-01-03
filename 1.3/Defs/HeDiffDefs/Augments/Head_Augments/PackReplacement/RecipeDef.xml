@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <RecipeDef ParentName="SurgeryInstallImplantBase">
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
     <defName>InstallPackReplacementAI</defName>
     <label>Install pack replacement chip</label>
     <description>Install apack replacement chip</description>

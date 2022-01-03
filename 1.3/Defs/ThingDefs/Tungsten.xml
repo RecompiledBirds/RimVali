@@ -20,14 +20,14 @@
     <rotatable>false</rotatable>
     <deepCommonality>1</deepCommonality>
     <deepCountPerPortion>9</deepCountPerPortion>
-     <deepLumpSizeRange>
+    <deepLumpSizeRange>
       <min>10</min>
       <max>35</max>
     </deepLumpSizeRange>
     <description>Tungsten. A reddish-grayish ore. Avali commonly use it, especially in their rail weapons, as a bullet/projectile. However, it can't be used in this form.</description>
     <descriptionHyperlinks><ThingDef>AvaliTungstenPowder</ThingDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>avali/Things/Tungsten/TungstenOre</texPath>
+      <texPath>Avali/Things/Tungsten/TungstenOre</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -41,8 +41,8 @@
       <li>AvaliResources</li>
     </thingCategories>
   </ThingDef>
-  
-  
+
+
   <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
@@ -61,9 +61,9 @@
     <drawGUIOverlay>true</drawGUIOverlay>
     <rotatable>false</rotatable>
     <description>Crushed tungsten; it's ready for the heat and pressure treatment to mold it now.</description>
-          <descriptionHyperlinks><ThingDef>AvaliTungsten</ThingDef></descriptionHyperlinks>
+    <descriptionHyperlinks><ThingDef>AvaliTungsten</ThingDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>avali/Things/Tungsten/TungstenPowder</texPath>
+      <texPath>Avali/Things/Tungsten/TungstenPowder</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -134,72 +134,71 @@
       <mineableScatterLumpSizeRange>15~35</mineableScatterLumpSizeRange>
     </building>
   </ThingDef>
-  
-  
-    <ThingDef>
-      <thingClass>ThingWithComps</thingClass>
-      <category>Item</category>
-      <resourceReadoutPriority>Middle</resourceReadoutPriority>
-      <useHitPoints>false</useHitPoints>
-      <selectable>true</selectable>
-      <altitudeLayer>Item</altitudeLayer>
-      <defName>AeroTungstenCarbide</defName>
-   
-      <label>Aero-Tungsten Carbide</label>
-      <stackLimit>75</stackLimit>
-      <comps>
-        <li Class="CompProperties_Forbiddable"/>
-      </comps>
-      <alwaysHaulable>true</alwaysHaulable>
-      <drawGUIOverlay>true</drawGUIOverlay>
-      <rotatable>false</rotatable>
-      <description>A supermaterial. This material is a hybrid of tungsten and aerogel, to make one of the strongest resources avali have ever made.</description>
-      <descriptionHyperlinks><ThingDef>AvaliTungsten</ThingDef></descriptionHyperlinks>
-      <graphicData>
-        <texPath>avali/Things/Tungsten/AeroTungsten</texPath>
+
+  <ThingDef>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>false</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <defName>AeroTungstenCarbide</defName>
+
+    <label>Aero-Tungsten Carbide</label>
+    <stackLimit>75</stackLimit>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <description>A supermaterial. This material is a hybrid of tungsten and aerogel, to make one of the strongest resources avali have ever made.</description>
+    <descriptionHyperlinks><ThingDef>AvaliTungsten</ThingDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Avali/Things/Tungsten/AeroTungsten</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
-      </graphicData>
-      <techLevel>Industrial</techLevel>
-      <statBases>
-        <MarketValue>20</MarketValue>
-        <Mass>1.5</Mass>
-        <MaxHitPoints>0.8</MaxHitPoints>
-          <MeleeWeapon_CooldownMultiplier>1</MeleeWeapon_CooldownMultiplier>
-          <SharpDamageMultiplier>2.7</SharpDamageMultiplier>
-          <StuffPower_Armor_Sharp>2.35</StuffPower_Armor_Sharp>
-          <StuffPower_Armor_Blunt>2.55</StuffPower_Armor_Blunt>
-          <BluntDamageMultiplier>2.45</BluntDamageMultiplier>
-        <StuffPower_Insulation_Cold>11</StuffPower_Insulation_Cold>
-        <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
-        
-      </statBases>
-      <thingCategories>
-        <li>AvaliResources</li>
-      </thingCategories>
-      <stuffProps>
-        <stuffAdjective>Aero-Tungsten Carbide</stuffAdjective>
-        <categories>
-          <li>Metallic</li>
-        </categories>
-        <commonality>0.5</commonality>
-        <color>(255,255,255)</color>
-        <constructEffect>ConstructMetal</constructEffect>
-        <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
-        <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
-        <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
-        <statFactors>
-          <MaxHitPoints>8.5</MaxHitPoints>
-          <Beauty>1.2</Beauty>
-          <Flammability>0</Flammability>
-          <MarketValue>0.6</MarketValue>
-          <WorkToMake>5.2</WorkToMake>
-          <WorkToBuild>5.2</WorkToBuild>
-        </statFactors>
-        <statOffsets>
-          <Beauty>4</Beauty>
-        </statOffsets>
-      </stuffProps>
-      <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MarketValue>20</MarketValue>
+      <Mass>1.5</Mass>
+      <MaxHitPoints>0.8</MaxHitPoints>
+      <MeleeWeapon_CooldownMultiplier>1</MeleeWeapon_CooldownMultiplier>
+      <SharpDamageMultiplier>2.7</SharpDamageMultiplier>
+      <StuffPower_Armor_Sharp>2.35</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>2.55</StuffPower_Armor_Blunt>
+      <BluntDamageMultiplier>2.45</BluntDamageMultiplier>
+      <StuffPower_Insulation_Cold>11</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
+
+    </statBases>
+    <thingCategories>
+      <li>AvaliResources</li>
+    </thingCategories>
+    <stuffProps>
+      <stuffAdjective>Aero-Tungsten Carbide</stuffAdjective>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <commonality>0.5</commonality>
+      <color>(255,255,255)</color>
+      <constructEffect>ConstructMetal</constructEffect>
+      <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>8.5</MaxHitPoints>
+        <Beauty>1.2</Beauty>
+        <Flammability>0</Flammability>
+        <MarketValue>0.6</MarketValue>
+        <WorkToMake>5.2</WorkToMake>
+        <WorkToBuild>5.2</WorkToBuild>
+      </statFactors>
+      <statOffsets>
+        <Beauty>4</Beauty>
+      </statOffsets>
+    </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
   </ThingDef>
 </Defs>

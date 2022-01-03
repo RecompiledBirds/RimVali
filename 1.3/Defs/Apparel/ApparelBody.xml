@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
-  
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliTDW</defName>
     <label>Avali traditional wear</label>
@@ -11,9 +9,8 @@
         <Crafting>1</Crafting>
       </skillRequirements>
     </recipeMaker>
-   
     <graphicData>
-      <texPath>avali/Things/Apparel/TraditionalWear/TraditionalWear_Avali_south</texPath>
+      <texPath>Avali/Things/Apparel/TraditionalWear/TraditionalWear_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.00</drawSize>
       <shaderType>CutoutComplex</shaderType>
@@ -33,11 +30,10 @@
       <Mass>0.2</Mass>
       <StuffEffectMultiplierArmor>0.22</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
-	  <StuffEffectMultiplierInsulation_Heat>0.6</StuffEffectMultiplierInsulation_Heat>
+      <StuffEffectMultiplierInsulation_Heat>0.6</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.5</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-    
     </equippedStatOffsets>
     <apparel>
       <bodyPartGroups>
@@ -45,7 +41,7 @@
         <li>Torso</li>
         <li>Legs</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/TraditionalWear/TraditionalWear</wornGraphicPath>
+      <wornGraphicPath>Avali/Things/Apparel/TraditionalWear/TraditionalWear</wornGraphicPath>
       <useWornGraphicMask>true</useWornGraphicMask>
       <layers>
         <li>OnSkin</li>
@@ -59,23 +55,16 @@
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel" />
   </ThingDef>
-    
- 
-  
-  
-  
-  
-  
-    <!-- HUD -->
-   <ThingDef ParentName="ApparelMakeableBase">
+
+  <!-- HUD -->
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHUD</defName>
-      
     <label>Avali HUD</label>
     <description>An Avali HUD. Attached to the side of an Avali’s head, this piece sports three important components: A small antenna to relay and receive information, a hard translucent visor and most importantly of all a matrix of miniscule LASERs at the base of the visor. Whilst these can feed the Avali a lot of information, they sadly can only keep to one color and have to keep 2D as well.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-       <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
+      <researchPrerequisite>AvaliBasicTechGear</researchPrerequisite>
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -84,7 +73,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/HUD/hud_south</texPath>
+      <texPath>Avali/Things/Apparel/HUD/HUD_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -103,7 +92,7 @@
     <equippedStatOffsets>
       <ShootingAccuracyPawn>+0.2</ShootingAccuracyPawn>
       <ResearchSpeed>0.35</ResearchSpeed>
-	  <AimingDelayFactor>-0.25</AimingDelayFactor>
+      <AimingDelayFactor>-0.25</AimingDelayFactor>
     </equippedStatOffsets>
     <costList>
       <ComponentSpacer>5</ComponentSpacer>
@@ -115,7 +104,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/HUD/hud</wornGraphicPath>
+      <wornGraphicPath>Avali/Things/Apparel/HUD/HUD</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -152,13 +141,11 @@
     <thingSetMakerTags>
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
-
   </ThingDef>
-  
-  
+
   <!-- Headress -->
   <ThingDef ParentName="ApparelMakeableBase">
-    <defName>AvaliHeadress</defName>
+    <defName>AvaliHeaddress</defName>
     <label>Avali traditional headress</label>
     <description>A small traditional avali headdress. Sporting simple strings with chimes attached to them, they go around the upper ears only to meet at a single point on the back of the head before then branching off to allow for more chimes on the front and back of the head. Both for beautiful sounds and echolocation; the chimes make up the majority of this headdress.</description>
     <techLevel>Spacer</techLevel>
@@ -175,7 +162,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/avaliHeadress/headress_south</texPath>
+      <texPath>Avali/Things/Apparel/AvaliHeaddress/Headdress_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -187,7 +174,6 @@
       <Flammability>0.02</Flammability>
       <EquipDelay>1</EquipDelay>
     </statBases>
-    
     <equippedStatOffsets>
       <SocialImpact>0.125</SocialImpact>
     </equippedStatOffsets>
@@ -203,7 +189,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/avaliHeadress/headress</wornGraphicPath>
+      <wornGraphicPath>Avali/Things/Apparel/AvaliHeaddress/Headdress</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -220,9 +206,9 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
+
   <!-- Hood -->
-<ThingDef ParentName="ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHood</defName>
     <label>Avali hood</label>
     <description>A large Avali hood. Going over their head, this hood covers most of it. Only leaving their eyes and ear-tips visible. Whether this is for concealing purposes, simple matter of taste or perhaps something more religious shouldn’t really matter as it serves for all pretty well. In the end it’s just a simple hood, and perhaps you should just use it to protect your pawns from the environment.</description>
@@ -237,7 +223,7 @@
         <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-        <costStuffCount>25</costStuffCount>
+    <costStuffCount>25</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -247,7 +233,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/avaliHood/hood_south</texPath>
+      <texPath>Avali/Things/Apparel/AvaliHood/Hood_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -256,13 +242,12 @@
       <WorkToMake>1000</WorkToMake>
       <MaxHitPoints>120</MaxHitPoints>
       <Mass>0.04</Mass>
-	  <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
       <Flammability>0.02</Flammability>
       <EquipDelay>1</EquipDelay>
     </statBases>
-    
     <equippedStatOffsets>
     </equippedStatOffsets>
     <costList>
@@ -271,7 +256,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/avaliHood/hood</wornGraphicPath>
+      <wornGraphicPath>Avali/Things/Apparel/AvaliHood/Hood</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -288,19 +273,15 @@
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
-  
-  
-  
+
   <!-- bell cloak -->
-<ThingDef ParentName="ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliBellCloak</defName>
     <label>Avali bell cloak</label>
     <description>An Avali bell cloak. Large bulbous sheets of fabric or leather attached to the neck of an Avali with a simple belt. These cloaks are commonly used by Avali who either travel around a lot or who want to wear something whilst still being able to wear stuff under it. Other than that these cloaks offer decent protection to the environment but only from small debris and particles.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
-     <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <skillRequirements>
         <Crafting>3</Crafting>
       </skillRequirements>
@@ -308,7 +289,7 @@
         <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-         <costStuffCount>65</costStuffCount>
+    <costStuffCount>65</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -318,7 +299,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/bellCloak/cloak_Avali_south</texPath>
+      <texPath>Avali/Things/Apparel/BellCloak/Cloak_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -327,16 +308,14 @@
       <WorkToMake>11200</WorkToMake>
       <MaxHitPoints>180</MaxHitPoints>
       <Mass>0.6</Mass>
-	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.9</StuffEffectMultiplierInsulation_Heat>
       <Flammability>0.02</Flammability>
       <EquipDelay>4</EquipDelay>
     </statBases>
-    
     <equippedStatOffsets>
     </equippedStatOffsets>
-
     <apparel>
       <bodyPartGroups>
         <li>Torso</li>
@@ -345,7 +324,7 @@
         <li>Arms</li>
         <li>Legs</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/bellCloak/cloak</wornGraphicPath>
+      <wornGraphicPath>Avali/Things/Apparel/BellCloak/Cloak</wornGraphicPath>
       <layers>
         <li>Shell</li>
       </layers>
@@ -358,16 +337,12 @@
       </defaultOutfitTags>
       <useDeflectMetalEffect>false</useDeflectMetalEffect>
     </apparel>
-   <colorGenerator Class="ColorGenerator_StandardApparel" />
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
     <thingSetMakerTags>
       <li>RewardStandardHighFreq</li>
     </thingSetMakerTags>
   </ThingDef>
-  
-  
-  
-  
-  
+
   <!-- Thermal wraps -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliThermalWraps</defName>
@@ -384,7 +359,7 @@
         <li>AvaliNanoLoom</li>
       </recipeUsers>
     </recipeMaker>
-        <costStuffCount>55</costStuffCount>
+    <costStuffCount>55</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
       <li>Leathery</li>
@@ -394,7 +369,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/thermalWraps/wraps_Avali_south</texPath>
+      <texPath>Avali/Things/Apparel/ThermalWraps/ThermalWraps_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -403,17 +378,16 @@
       <WorkToMake>17500</WorkToMake>
       <MaxHitPoints>250</MaxHitPoints>
       <Mass>0.9</Mass>
-	  <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>1.0</StuffEffectMultiplierInsulation_Heat>
       <Flammability>0.02</Flammability>
       <EquipDelay>2</EquipDelay>
     </statBases>
-    
     <equippedStatOffsets>
-         <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>15</ComfyTemperatureMax>
-          <Flammability>20</Flammability>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+      <ComfyTemperatureMax>15</ComfyTemperatureMax>
+      <Flammability>20</Flammability>
     </equippedStatOffsets>
     <costList>
       <AvaliAeroweave>30</AvaliAeroweave>
@@ -426,7 +400,7 @@
         <li>Arms</li>
         <li>Legs</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/thermalWraps/wraps</wornGraphicPath>
+      <wornGraphicPath>Avali/Things/Apparel/ThermalWraps/ThermalWraps</wornGraphicPath>
       <layers>
         <li>Shell</li>
       </layers>
