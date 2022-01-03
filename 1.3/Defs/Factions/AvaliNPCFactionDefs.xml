@@ -9,6 +9,8 @@
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>20</configurationListOrderPriority>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>Pack Leader</leaderTitle>
@@ -29,6 +31,7 @@
     <backstoryCategories>
       <li>RimValiBackstories</li>
     </backstoryCategories>
+
 
     <caravanTraderKinds>
       <li>Caravan_Outlander_BulkGoods</li>

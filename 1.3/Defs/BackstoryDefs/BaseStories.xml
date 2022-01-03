@@ -35,8 +35,8 @@
     <enabledWorkTypes>
       <li>Commoner</li>
     </enabledWorkTypes>
-  </RimValiCore.RVR.RVRBackstory>
 
+  </RimValiCore.RVR.RVRBackstory>
   <RimValiCore.RVR.RVRBackstory Name="HoloValiBase">
     <defName>AvaliHologram</defName>
     <title>Holo-vali</title>

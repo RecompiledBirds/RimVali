@@ -6,6 +6,30 @@ using Verse;
 
 namespace AvaliMod
 {
+    public class ToddStoryTellerProps : StorytellerCompProperties
+    {
+        public SimpleCurve acceptFractionByDaysPassedCurve;
+
+        public SimpleCurve acceptPercentFactorPerProgressScoreCurve;
+
+        public SimpleCurve acceptPercentFactorPerThreatPointsCurve;
+
+        public int maxIncidents = 5;
+
+        public int minIncidents = 1;
+
+        public float minSpacingDays;
+
+        public float offDays;
+        public float onDays;
+
+        public ToddStoryTellerProps()
+        {
+            compClass = typeof(ToddStoryTeller);
+        }
+    }
+
+
     public class ToddStoryTeller : StorytellerComp
     {
         protected ToddStoryTellerProps Props => (ToddStoryTellerProps)props;
@@ -19,24 +43,24 @@ namespace AvaliMod
             }
         }
 
-        private float RatioAvaliToNonAvali => CountPawnsAvali / (float)CountPawnsNotAvali;
-        private float RatioNonAvaliToAvali => CountPawnsNotAvali / (float)CountPawnsAvali;
+        private float ratioAvaliToNonAvali => countPawnsavali / countPawnsNotavali;
+        private float ratioNonAvaliToAvali => countPawnsNotavali / countPawnsavali;
 
-        private static int CountPawnsAvali
+        private int countPawnsavali
         {
             get
             {
-                return RimValiCore.RimValiUtility
-                    .AllPawnsOfFactionSpawned(Faction.OfPlayer).Count(pawn => pawn.def == AvaliDefs.RimVali);
+                return RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
+                    .Where(pawn => pawn.def == AvaliDefs.RimVali).Count();
             }
         }
 
-        private static int CountPawnsNotAvali
+        private int countPawnsNotavali
         {
             get
             {
-                return RimValiCore.RimValiUtility
-                    .AllPawnsOfFactionSpawned(Faction.OfPlayer).Count(pawn => pawn.def != AvaliDefs.RimVali);
+                return RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
+                    .Where(pawn => pawn.def != AvaliDefs.RimVali).Count();
             }
         }
 
@@ -84,17 +108,15 @@ namespace AvaliMod
                         break;
                 }
 
-                if (inc == null)
+                if (inc != null)
                 {
-                    continue;
-                }
+                    if (new Random(Find.World.ConstantRandSeed).Next(1, 5) == 3)
+                    {
+                        UpdateState();
+                    }
 
-                if (new Random(Find.World.ConstantRandSeed).Next(1, 5) == 3)
-                {
-                    UpdateState();
+                    yield return inc;
                 }
-
-                yield return inc;
             }
 
             //return base.MakeIntervalIncidents(target);
@@ -135,7 +157,7 @@ namespace AvaliMod
                     }
                     else
                     {
-                        StorytellerData.state -= 1;
+                        StorytellerData.state = StorytellerData.state - 1;
                         if (StorytellerData.state == 0)
                         {
                             StorytellerData.daysSpentNice = GenDate.DaysPassed;
@@ -208,12 +230,12 @@ namespace AvaliMod
                 new Random(Find.World.ConstantRandSeed).Next(1,
                     (int)StorytellerUtilityPopulation.AdjustedPopulation *
                     new Random(Find.World.ConstantRandSeed).Next(1, 3)) *
-                (HasPawnsNotAvali ? RatioNonAvaliToAvali * 2 : 1);
+                (HasPawnsNotAvali ? ratioNonAvaliToAvali * 2 : 1);
 
-            if (HasPawnsNotAvali && RatioNonAvaliToAvali > 5)
+            if (HasPawnsNotAvali && ratioNonAvaliToAvali > 5)
             {
                 int multiplier = def.category == IncidentCategoryDefOf.ThreatSmall ? 10 : 5;
-                parms.points *= RatioAvaliToNonAvali * multiplier;
+                parms.points *= ratioAvaliToNonAvali * multiplier;
             }
 
             return new FiringIncident(def, this, parms) { parms = parms };
@@ -232,7 +254,7 @@ namespace AvaliMod
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
 
-            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1,
+            parms.points = parms.points * new Random(Find.World.ConstantRandSeed).Next(1,
                 (int)StorytellerUtilityPopulation.AdjustedPopulation *
                 new Random(Find.World.ConstantRandSeed).Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
@@ -261,7 +283,7 @@ namespace AvaliMod
                 x.category == IncidentCategoryDefOf.Misc || x.category == IncidentCategoryDefOf.ThreatSmall));
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
-            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1,
+            parms.points = parms.points * new Random(Find.World.ConstantRandSeed).Next(1,
                 (int)StorytellerUtilityPopulation.AdjustedPopulation *
                 new Random(Find.World.ConstantRandSeed).Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
@@ -292,7 +314,7 @@ namespace AvaliMod
                 x.category == IncidentCategoryDefOf.AllyAssistance));
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
-            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1,
+            parms.points = parms.points * new Random(Find.World.ConstantRandSeed).Next(1,
                 (int)StorytellerUtilityPopulation.AdjustedPopulation *
                 new Random(Find.World.ConstantRandSeed).Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
@@ -303,8 +325,8 @@ namespace AvaliMod
                 parms.pawnKind = AvaliDefs.RimValiColonist;
             }
 
-            parms.points = RatioAvaliToNonAvali > 2
-                ? parms.points * (RatioAvaliToNonAvali * StorytellerUtilityPopulation.AdjustedPopulation)
+            parms.points = ratioAvaliToNonAvali > 2
+                ? parms.points * (ratioAvaliToNonAvali * StorytellerUtilityPopulation.AdjustedPopulation)
                 : parms.points;
             if (!def.Worker.CanFireNow(parms2))
             {

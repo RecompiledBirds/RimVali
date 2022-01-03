@@ -42,6 +42,7 @@
     </thingCategories>
   </ThingDef>
 
+
   <ThingDef>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>

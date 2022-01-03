@@ -44,6 +44,8 @@
     </inventoryOptions>
   </PawnKindDef>
 
+
+
   <PawnKindDef ParentName = "BaseTribalAvali">
     <defName>IWTribeLeader</defName>
     <label>Avali tribe Leader</label>
@@ -69,6 +71,7 @@
       <li>Simple</li>
     </techHediffsTags>
   </PawnKindDef>
+
 
   <PawnKindDef ParentName="BaseTribalAvali">
     <defName>IWTribalAvaliWarrior</defName>

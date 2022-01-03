@@ -3,7 +3,7 @@ using Verse;
 
 namespace AvaliMod
 {
-    public class ToddStoryTellerProps : StorytellerCompProperties
+    public class ToddStorytellerProps : StorytellerCompProperties
     {
         public SimpleCurve acceptFractionByDaysPassedCurve;
 
@@ -20,7 +20,7 @@ namespace AvaliMod
         public float offDays;
         public float onDays;
 
-        public ToddStoryTellerProps()
+        public ToddStorytellerProps()
         {
             compClass = typeof(ToddStoryTeller);
         }

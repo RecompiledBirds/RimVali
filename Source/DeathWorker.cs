@@ -29,7 +29,6 @@ namespace AvaliMod
 
             Pawn pawn = corpse.InnerPawn;
             AvaliPack pack = RimValiUtility.Driver.GetCurrentPack(pawn);
-
             if (pack == null)
             {
                 return;
@@ -40,10 +39,9 @@ namespace AvaliMod
                 Log.Message("The pawn had a pack");
             }
 
-            //Log.Message(GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x).ToString());
             var deathDate = new DeathDate(pawn)
             {
-                day = GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x)
+                day = GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x),
             };
             if (corpse.InnerPawn != null && enableDebug)
             {

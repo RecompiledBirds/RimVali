@@ -163,7 +163,7 @@ namespace AvaliMod
                                 new GUIContent
                                 {
                                     text =
-                                        $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}"
+                                        $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}",
                                 });
 
 

@@ -9,6 +9,8 @@
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <canMakeRandomly>true</canMakeRandomly>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>20</configurationListOrderPriority>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>Pack Leader</leaderTitle>
@@ -20,32 +22,26 @@
       <li>(1,0,0)</li>
       <li>(0,0,1)</li>
     </colorSpectrum>
-
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>AvaliFactionBaseNamer</settlementNameMaker>
     <techLevel>Neolithic</techLevel>
-
     <backstoryCategories>
       <li>RimValiBackstories</li>
       <li>Tribal</li>
     </backstoryCategories>
-
     <caravanTraderKinds>
       <li>Caravan_Neolithic_BulkGoods</li>
       <li>Caravan_Neolithic_WarMerchant</li>
       <li>Caravan_Neolithic_Slaver</li>
       <li>Caravan_Neolithic_ShamanMerchant</li>
     </caravanTraderKinds>
-
     <visitorTraderKinds>
       <li>Visitor_Outlander_Standard</li>
     </visitorTraderKinds>
     <baseTraderKinds>
       <li>Base_Outlander_Standard</li>
     </baseTraderKinds>
-
     <allowedArrivalTemperatureRange>-200~8</allowedArrivalTemperatureRange>
-
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(0, 35)</li>
@@ -91,8 +87,8 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
-    <factionIconPath>Avali/Symbols/Rimvali_Logo_2</factionIconPath>
+    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>avali/Symbols/Rimvali_Logo_2</factionIconPath>
   </FactionDef>
 
   <FactionDef ParentName="FactionBase">
@@ -103,6 +99,8 @@
     <pawnsPlural>Avali</pawnsPlural>
     <settlementGenerationWeight>0.2</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>20</configurationListOrderPriority>
     <canMakeRandomly>true</canMakeRandomly>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
@@ -117,30 +115,23 @@
     </colorSpectrum>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>AvaliFactionBaseNamer</settlementNameMaker>
-
     <techLevel>Spacer</techLevel>
-
     <backstoryCategories>
       <li>AvaliBackstories</li>
       <li>Outlander</li>
     </backstoryCategories>
-
     <caravanTraderKinds>
       <li>Caravan_Outlander_BulkGoods</li>
       <li>Caravan_Outlander_Exotic</li>
       <li>AvaliResourceTrader</li>
-
     </caravanTraderKinds>
-
     <visitorTraderKinds>
       <li>Visitor_Outlander_Standard</li>
     </visitorTraderKinds>
     <baseTraderKinds>
       <li>Base_Outlander_Standard</li>
     </baseTraderKinds>
-
     <allowedArrivalTemperatureRange>-200~8</allowedArrivalTemperatureRange>
-
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(0, 35)</li>
@@ -192,5 +183,4 @@
     <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
     <factionIconPath>Avali/Symbols/Vali_Angy_Tribe_Logo</factionIconPath>
   </FactionDef>
-
 </Defs>

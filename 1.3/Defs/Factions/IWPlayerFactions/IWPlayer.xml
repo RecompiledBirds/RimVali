@@ -14,14 +14,12 @@
     </backstoryCategories>
     <factionIconPath>Avali/WorldIcons/Town</factionIconPath>
     <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
-
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
     <startingResearchTags>
       <li>ClassicStart</li>
     </startingResearchTags>
-
     <apparelStuffFilter>
       <thingDefs>
         <li>Synthread</li>

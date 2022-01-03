@@ -94,7 +94,7 @@ namespace AvaliMod
                     building_TurretGun.gun.TryGetComp<AERIALChangeableProjectile>()
                         .NewLoadShell(actor.CurJob.targetB.Thing.def, 1);
                     actor.carryTracker.innerContainer.ClearAndDestroyContents();
-                }
+                },
             };
             //yield return gotoTurret;
         }

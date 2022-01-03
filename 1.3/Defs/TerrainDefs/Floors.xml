@@ -24,22 +24,18 @@
     <defName>ScrapTile</defName>
     <label>Scrap floor</label>
   </DesignatorDropdownGroupDef>
-
   <DesignatorDropdownGroupDef>
     <defName>ShingleFloors</defName>
     <label>Shingle floor</label>
   </DesignatorDropdownGroupDef>
-
   <DesignatorDropdownGroupDef>
     <defName>WeaveFloors</defName>
     <label>Shingle floor</label>
   </DesignatorDropdownGroupDef>
-
   <DesignatorDropdownGroupDef>
     <defName>DiamondFloors</defName>
     <label>Diamond floor</label>
   </DesignatorDropdownGroupDef>
-
   <DesignatorDropdownGroupDef>
     <defName>ChaosFloor</defName>
     <label>Chaos floor</label>
@@ -48,7 +44,6 @@
     <defName>FlowerFloor</defName>
     <label>Flower floor</label>
   </DesignatorDropdownGroupDef>
-
   <DesignatorDropdownGroupDef>
     <defName>RoomFloor</defName>
     <label>"Room" pattern floor</label>
@@ -126,6 +121,7 @@
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
+
 
   <TerrainDef Name="AvaliFloorBase" Abstract="True">
     <layerable>true</layerable>
@@ -306,6 +302,9 @@
     </tags>
     <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
   </TerrainDef>
+
+
+
 
   <TerrainDef ParentName="TileMetalBase">
     <defName>AeroTungstenTile</defName>

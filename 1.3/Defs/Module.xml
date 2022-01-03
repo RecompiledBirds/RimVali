@@ -21,6 +21,7 @@
     <names>
       <li>LiQd</li>
       <li>Nesi (@Nesi_The_Avali on twitter)</li>
+      <li>Toby</li>
     </names>
   </AvaliMod.CreditDef>
 
@@ -62,6 +63,7 @@
 
       <li>ib</li>
 
+
       <li>Jaffer Roshak (@JafferRoshak on twitter)</li>
 
       <li>Ketzy</li>
@@ -95,6 +97,7 @@
       <li>SoulblazerRP/Eimilian (@SoulblazerRP on twitter/youtube)</li>
       <li>Severus Akanis</li>
 
+
       <li>TheHopelessThrumbo</li>
       <li>Tilla Siren</li>
 
@@ -104,6 +107,24 @@
       <li>Xavier (Dusty)</li>
 
       <li>ZukoTheAvali</li>
+    </names>
+  </AvaliMod.CreditDef>
+
+  <AvaliMod.CreditDef>
+    <defName>Writers</defName>
+    <title>Writers</title>
+    <names>
+      <li>Ranade the Gay Syndicalist</li>
+      <li>Lambda</li>
+    </names>
+  </AvaliMod.CreditDef>
+
+  <AvaliMod.CreditDef>
+    <defName>Balancers</defName>
+    <title>Designers (AKA you balanced whatever Nesi made)</title>
+    <names>
+      <li>Ciraus</li>
+      <li>aLuhminium</li>
     </names>
   </AvaliMod.CreditDef>
 
@@ -118,15 +139,37 @@
     </names>
   </AvaliMod.CreditDef>
 
+
+
+
   <AvaliMod.CreditDef>
     <defName>ThankYouAll</defName>
     <title>Thank you all</title>
     <names>
-      <li>It was a long year and a half,</li>
-      <li>thank you all for staying with us.</li>
-      <li>I hope it was worth the wait, and</li>
-      <li>I hope you enjoy(ed) the mod.</li>
+      <li>It's been a long.. what is it,</li>
+      <li>3 years now? We hope to have many </li>
+      <li>more with you all and most of all..</li>
+      <li>We hope you enjoy(ed) the mod.</li>
+      <li>Thank you for playing.</li>
+      <li>- Nesi and The RimVali Team</li>
+    </names>
+  </AvaliMod.CreditDef>
+
+  <AvaliMod.CreditDef>
+    <defName>Nesi</defName>
+    <title>From Nesi</title>
+    <names>
+      <li>Hey! You probably wanna get back to your game, so..</li>
+      <li>feel free to skip this.</li>
+      <li>I can't believe it's been 3 years since we started</li>
+      <li>this project! I'm so glad this thing has been possible.</li>
+      <li>Thank you to everyone here. For enabling this, and all</li>
+      <li>my other projects.</li>
+      <li>Thank you to the other devs, thank you to the contributors,</li>
+      <li>and thank you to the players.</li>
+      <li>You all made this possible.</li>
       <li>- Nesi</li>
     </names>
   </AvaliMod.CreditDef>
+
 </Defs>

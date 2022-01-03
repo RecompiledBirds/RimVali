@@ -18,8 +18,9 @@
     <defaultFactionType>RimValiPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
     <apparelTags>
-      <li>Avali</li>
-      <li>Spacer</li>
+      <li>AvaliApparel</li>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <techHediffsMoney>
@@ -47,9 +48,6 @@
     <label>Colonist</label>
     <defaultFactionType>RimValiPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
-    <apparelTags>
-      <li>Spacer</li>
-    </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <techHediffsMoney>
       <min>100</min>
@@ -68,9 +66,6 @@
     </techHediffsTags>
     <defaultFactionType>NeoPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
-    <apparelTags>
-      <li>Spacer</li>
-    </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <apparelMoney>100~200</apparelMoney>
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
@@ -84,9 +79,6 @@
     </techHediffsTags>
     <defaultFactionType>EimilPlayerColony</defaultFactionType>
     <chemicalAddictionChance>0.02</chemicalAddictionChance>
-    <apparelTags>
-      <li>Spacer</li>
-    </apparelTags>
     <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
     <apparelMoney>100~200</apparelMoney>
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>

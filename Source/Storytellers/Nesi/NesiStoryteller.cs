@@ -8,7 +8,7 @@ namespace AvaliMod
 {
     public class NesiStoryTeller : StorytellerComp
     {
-        protected NesiStoryTellerProps Props => (NesiStoryTellerProps)props;
+        protected NesiStorytellerProps Props => (NesiStorytellerProps)props;
 
         private static bool HasPawnsNotAvali
         {
@@ -19,8 +19,8 @@ namespace AvaliMod
             }
         }
 
-        private static float RatioAvaliToNonAvali => CountPawnsAvali / (float)CountPawnsNotAvali;
-        private static float RatioNonAvaliToAvali => CountPawnsNotAvali / (float)CountPawnsAvali;
+        private static float RatioAvaliToNonAvali => (float)CountPawnsAvali / CountPawnsNotAvali;
+        private static float RatioNonAvaliToAvali => (float)CountPawnsNotAvali / CountPawnsAvali;
 
         private static int CountPawnsAvali
         {
@@ -81,6 +81,8 @@ namespace AvaliMod
                         inc = GenFriendly(target);
                         break;
                     case StorytellerState.Calm:
+                    case StorytellerState.HyperAggressive:
+                    default:
                         break;
                 }
 
@@ -146,6 +148,7 @@ namespace AvaliMod
                 }
 
                 // FIXME: Weird use of | instead of ||?
+                // Currently checks if state is -1/Hunting
                 if (StorytellerData.state == (StorytellerState.Aggressive | StorytellerState.HyperAggressive) &&
                     new Random(Find.World.ConstantRandSeed).Next(1, 10) == 2)
                 {

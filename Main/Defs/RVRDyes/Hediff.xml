@@ -15,8 +15,8 @@
         <severityPerDay>-0.1</severityPerDay>
         <showHoursToRecover>false</showHoursToRecover>
       </li>
-      <!-- Not Implemented
-      <li Class="AvaliMod.DyeCompProps"> 
+      <li Class="RimValiCore.RVR.DyeCompProps">
+
         <colors>
           <firstColor Class="ColorGenerator_Options">
             <options>
@@ -67,7 +67,6 @@
           </thirdColor>
         </colors>
       </li>
-      -->
     </comps>
   </HediffDef>
 </Defs>

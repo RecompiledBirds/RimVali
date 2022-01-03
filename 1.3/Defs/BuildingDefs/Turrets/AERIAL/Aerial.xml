@@ -9,13 +9,11 @@
     <defName>Aerial</defName>
     <label>AERIAL System</label>
     <description>AERIAL is a high accuracy rocket system, that can hold up to six rockets, and fire two at once.</description>
-
     <researchPrerequisites>
       <li>AERIALRES</li>
     </researchPrerequisites>
     <comps Inherit="False">
       <li Class="CompProperties_Forbiddable"/>
-
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>
         <explosiveRadius>4.9</explosiveRadius>
@@ -38,9 +36,7 @@
     </building>
     <uiIconPath>Avali/Buildings/Turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
     <uiIconScale>0.9</uiIconScale>
-
   </ThingDef>
-
 
   <DamageDef Name="Bomb">
     <defName>OHGODOHFUCK</defName>
@@ -69,12 +65,6 @@
     <soundExplosion>Explosion_Bomb</soundExplosion>
     <combatLogRules>Damage_Bomb</combatLogRules>
   </DamageDef>
-
-
-
-
-
-
 
   <ThingDef ParentName="BaseArtilleryWeapon">
     <defName>AerialLauncher</defName>

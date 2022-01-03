@@ -55,6 +55,7 @@
           <thingDef>Steel</thingDef>
           <count>300</count>
         </li>
+
         <li Class="ScenPart_ScatterThingsAnywhere">
           <def>ScatterThingsAnywhere</def>
           <thingDef>MealSurvivalPack</thingDef>

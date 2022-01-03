@@ -17,7 +17,7 @@
     <gearHealthRange>0.2~1</gearHealthRange>
     <apparelMoney>500~700</apparelMoney>
     <apparelTags>
-      <li>Avali</li>
+      <li>AvaliApparel</li>
       <li>IndustrialAdvanced</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.3</apparelAllowHeadgearChance>
@@ -54,6 +54,7 @@
     </inventoryOptions>
   </PawnKindDef>
 
+
   <PawnKindDef ParentName="IWTechAvaliBase">
     <defName>IWAvaliSoldier</defName>
     <label>Avali Soldier</label>
@@ -84,6 +85,8 @@
     <techHediffsChance>2</techHediffsChance>
     <invNutrition>5</invNutrition>
   </PawnKindDef>
+
+
 
   <PawnKindDef ParentName = "IWTechAvaliBase">
     <defName>IWTechAvaliLeader</defName>

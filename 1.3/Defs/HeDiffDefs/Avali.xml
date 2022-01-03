@@ -10,7 +10,6 @@
         </conflictingHediffs>
         <showConflicts>false</showConflicts>
       </li>
-
       <li Class="AvaliMod.ShowTextProps">
         <showText>
           <li>
@@ -22,7 +21,6 @@
             <mustBeAwake>true</mustBeAwake>
             <genderLocked>false</genderLocked>
           </li>
-
           <li>
             <textToShow>squeak</textToShow>
             <randomDays>2</randomDays>
@@ -32,7 +30,6 @@
             <mustBeAwake>true</mustBeAwake>
             <genderLocked>false</genderLocked>
           </li>
-
           <li>
             <textToShow>peep</textToShow>
             <randomDays>2</randomDays>
@@ -43,7 +40,6 @@
             <genderLocked>false</genderLocked>
           </li>
         </showText>
-
       </li>
     </comps>
     <description>Control</description>
@@ -55,6 +51,7 @@
       </li>
     </stages>
   </HediffDef>
+
 
   <HediffDef>
     <defName>TestHediffOne</defName>

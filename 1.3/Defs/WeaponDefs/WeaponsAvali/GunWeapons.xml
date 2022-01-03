@@ -122,7 +122,6 @@
       <ComponentIndustrial>3</ComponentIndustrial>
       <AvaliTungstenPowder>5</AvaliTungstenPowder>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>AvaliBasicWeapons</researchPrerequisite>
       <skillRequirements>
@@ -208,7 +207,6 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-
     <recipeMaker>
       <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
       <skillRequirements>
@@ -296,7 +294,6 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-
     <recipeMaker>
       <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
       <skillRequirements>
@@ -383,7 +380,6 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-
     <recipeMaker>
       <researchPrerequisite>AvaliAdvancedGuns</researchPrerequisite>
       <skillRequirements>
@@ -404,9 +400,7 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>33</damageAmountBase>
       <speed>183</speed>
-
       <stoppingPower>2</stoppingPower>
-
       <armorPenetrationBase>0.54</armorPenetrationBase>
     </projectile>
   </ThingDef>

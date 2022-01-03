@@ -60,11 +60,13 @@ namespace AvaliMod
             if (!RimValiUtility.Driver.Packs.EnumerableNullOrEmpty())
             {
                 foreach (AvaliPack pack in RimValiUtility.Driver.Packs)
-                foreach (Pawn pawn in pack.GetAllNonNullPawns)
                 {
-                    var packComp = pawn.TryGetComp<PackComp>();
-                    AvaliPack pawnPack = RimValiUtility.Driver.GetCurrentPack(pawn);
-                    GivePackThoughts(pawnPack, packComp);
+                    foreach (Pawn pawn in pack.GetAllNonNullPawns)
+                    {
+                        var packComp = pawn.TryGetComp<PackComp>();
+                        AvaliPack pawnPack = RimValiUtility.Driver.GetCurrentPack(pawn);
+                        GivePackThoughts(pawnPack, packComp);
+                    }
                 }
             }
         }
@@ -87,7 +89,6 @@ namespace AvaliMod
             UpdatePawns();
             threadRunning = false;
         }
-
 
         public override void WorldComponentTick()
         {

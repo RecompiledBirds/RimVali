@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -350,15 +350,12 @@ namespace AvaliMod
             return stringBuilder.ToString().TrimEndNewlines();
         }
 
-        // Token: 0x06007DD6 RID: 32214 RVA: 0x0005490D File Offset: 0x00052B0D
         public override void Draw()
         {
             top.DrawTurret(Vector3.zero, 0.0f);
             base.Draw();
         }
 
-
-        // Token: 0x06007DD8 RID: 32216 RVA: 0x00054920 File Offset: 0x00052B20
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo gizmo in base.GetGizmos())
@@ -461,14 +458,12 @@ namespace AvaliMod
             }
         }
 
-        // Token: 0x06007DD9 RID: 32217 RVA: 0x00258AB0 File Offset: 0x00256CB0
         private void ExtractShell()
         {
             GenPlace.TryPlaceThing(gun.TryGetComp<AERIALChangeableProjectile>().NewRemoveShell(), Position, Map,
                 ThingPlaceMode.Near);
         }
 
-        // Token: 0x06007DDA RID: 32218 RVA: 0x00054930 File Offset: 0x00052B30
         private void ResetForcedTarget()
         {
             forcedTarget = LocalTargetInfo.Invalid;
@@ -479,7 +474,6 @@ namespace AvaliMod
             }
         }
 
-        // Token: 0x06007DDB RID: 32219 RVA: 0x00054954 File Offset: 0x00052B54
         private void ResetCurrentTarget()
         {
             currentTargetInt = LocalTargetInfo.Invalid;
@@ -487,7 +481,6 @@ namespace AvaliMod
         }
 
 
-        // Token: 0x06007DDD RID: 32221 RVA: 0x00258AEC File Offset: 0x00256CEC
         private void UpdateGunVerbs()
         {
             List<Verb> allVerbs = gun.TryGetComp<CompEquippable>().AllVerbs;

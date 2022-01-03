@@ -22,7 +22,6 @@ namespace AvaliMod
             //  AvaliDefs.RimVali.race.baseHealthScale = RimValiMod.settings.healthScale;
             //  AvaliDefs.IWAvaliRace.race.baseHealthScale = RimValiMod.settings.healthScale;
 
-
             moduleDefs = DefDatabase<ModuleDef>.AllDefs;
 
             foreach (ModuleDef module in moduleDefs)

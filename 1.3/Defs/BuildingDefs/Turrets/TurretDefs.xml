@@ -153,13 +153,17 @@
     </verbs>
   </ThingDef>
 
+
+
+
+
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliMiniGunTurret</defName>
+    <drawerType>MapMeshAndRealTime</drawerType>
     <size>(2,2)</size>
     <label>Avali minigun turret</label>
     <description>A heavy turret, with two avali miniguns onboard. Due to also being a railgun of avali design, it performs best at long range.</description>
     <thingClass>Building_TurretGun</thingClass>
-    <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>Avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>

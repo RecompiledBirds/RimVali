@@ -49,7 +49,6 @@ namespace AvaliMod
             }
         }
 
-
         public int GetPackCount(Pawn pawn)
         {
             if (!packCounter.ContainsKey(pawn))

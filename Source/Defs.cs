@@ -7,6 +7,9 @@ namespace AvaliMod
     [DefOf]
     public static class AvaliDefs
     {
+        //TerrainAffordance defs
+        public static TerrainAffordanceDef IcySoil;
+
         //Body & BodyTypeDefs
         public static BodyTypeDef Avali;
         public static BodyDef RimValiBody;
@@ -54,7 +57,7 @@ namespace AvaliMod
 
         public static IncidentDef VolcanicWinter;
 
-        //A vanilla category i need
+        //A vanilla category I need
         public static ThingCategoryDef BuildingsSpecial;
 
         //HediffDefs

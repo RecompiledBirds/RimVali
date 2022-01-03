@@ -70,6 +70,10 @@
     </recipeMaker>
   </ThingDef>
 
+
+
+
+
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
       <texPath>Avali/Things/Weapons/Melee/Axe</texPath>
@@ -127,6 +131,7 @@
     </recipeMaker>
   </ThingDef>
 
+
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
       <texPath>Avali/Things/Weapons/Melee/Knife</texPath>
@@ -183,6 +188,9 @@
       </recipeUsers>
     </recipeMaker>
   </ThingDef>
+
+
+
 
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>

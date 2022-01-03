@@ -16,7 +16,7 @@
     <apparelMoney>100~300</apparelMoney>
 
     <apparelTags>
-      <li>Avali</li>
+      <li>AvaliApparel</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.3</apparelAllowHeadgearChance>
     <weaponMoney>350~700</weaponMoney>
@@ -70,7 +70,7 @@
     <apparelTags>
       <li>BeltDefensePop</li>
       <li>IndustrialMilitaryBasic</li>
-      <li>Avali</li>
+      <li>AvaliApparel</li>
     </apparelTags>
     <techHediffsChance>1.2</techHediffsChance>
     <techHediffsMoney>800~2300</techHediffsMoney>
@@ -78,6 +78,12 @@
       <li>Advanced</li>
     </techHediffsTags>
   </PawnKindDef>
+
+
+
+
+
+
 
   <PawnKindDef ParentName = "AvaliVillager">
     <defName>AvaliTrader</defName>

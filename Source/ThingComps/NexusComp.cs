@@ -40,7 +40,7 @@ namespace AvaliMod
                     defaultDesc = "CommandStopForceAttackDesc".Translate(),
                     icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack"),
                     action = delegate { AerialIsEnabled = !AerialIsEnabled; },
-                    hotKey = KeyBindingDefOf.Misc5
+                    hotKey = KeyBindingDefOf.Misc5,
                 };
                 yield return command_Action;
             }

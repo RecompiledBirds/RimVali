@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
   <ThingDef ParentName="MakeableAERIALShellBase">
     <defName>AERIALEMPShell</defName>
     <label>AERIAL EMP rocket</label>
@@ -53,5 +51,4 @@
       <soundAmbient>MortarRound_Ambient</soundAmbient>
     </projectile>
   </ThingDef>
-
 </Defs>

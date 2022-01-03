@@ -26,7 +26,6 @@
           <li>Dresser</li>
           <li>EndTable</li>
           <li>IlluminateEndTable</li>
-
         </linkableFacilities>
       </li>
     </comps>
@@ -104,5 +103,4 @@
     </researchPrerequisites>
     <uiIconScale>0.90</uiIconScale>
   </ThingDef>
-
 </Defs>

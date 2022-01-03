@@ -3,7 +3,7 @@ using Verse;
 
 namespace AvaliMod
 {
-    public class NesiStoryTellerProps : StorytellerCompProperties
+    public class NesiStorytellerProps : StorytellerCompProperties
     {
         public SimpleCurve acceptFractionByDaysPassedCurve;
 
@@ -20,7 +20,7 @@ namespace AvaliMod
         public float offDays;
         public float onDays;
 
-        public NesiStoryTellerProps()
+        public NesiStorytellerProps()
         {
             compClass = typeof(NesiStoryTeller);
         }

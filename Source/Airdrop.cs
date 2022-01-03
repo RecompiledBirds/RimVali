@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -92,7 +92,7 @@ namespace AvaliMod
             GenDate.DayOfYear(ticks, Find.WorldGrid.LongLatOf(map.Tile).x);
             var thingList = new List<Thing>
             {
-                ThingMaker.MakeThing(AvaliDefs.AvaliNexus)
+                ThingMaker.MakeThing(AvaliDefs.AvaliNexus),
             };
 
             Scribe_Values.Look(ref hasDropped, "hasDropped");

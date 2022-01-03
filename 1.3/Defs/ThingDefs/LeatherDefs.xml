@@ -7,14 +7,12 @@
     <graphicData>
       <color>(216,191,216)</color>
     </graphicData>
-
     <statBases>
       <MarketValue>4.3</MarketValue>
       <StuffPower_Armor_Sharp>0.78</StuffPower_Armor_Sharp>
       <StuffPower_Insulation_Cold>8</StuffPower_Insulation_Cold>
       <StuffPower_Insulation_Heat>4</StuffPower_Insulation_Heat>
     </statBases>
-
     <stuffProps>
       <color>(216,191,216)</color>
       <commonality>0.02</commonality>

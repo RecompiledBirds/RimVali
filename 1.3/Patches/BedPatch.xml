@@ -2,7 +2,6 @@
 <Patch>
   <Operation Class="PatchOperationSequence">
     <operations>
-
       <li Class="PatchOperationAdd">
         <xpath>/Defs/ThingDef[defName="Bed"]/comps/li[1]/linkableFacilities</xpath>
         <value>

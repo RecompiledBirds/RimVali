@@ -74,7 +74,6 @@
       <Steel>20</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
@@ -82,7 +81,6 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
-
 
   <!-- Semi-auto -->
   <ThingDef ParentName="BaseBullet">
@@ -159,7 +157,6 @@
       <Steel>75</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>BlowbackOperation</researchPrerequisite>
       <skillRequirements>
@@ -168,10 +165,7 @@
     </recipeMaker>
   </ThingDef>
 
-
   <!-- Rifle -->
-
-
   <ThingDef ParentName="BaseBullet">
     <defName>IWRifleBullet</defName>
     <label>Avali bullet</label>
@@ -216,7 +210,6 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>IWRifleBullet</defaultProjectile>
         <warmupTime>1.3</warmupTime>
-
         <range>37</range>
         <soundCast>Shot_Autopistol</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
@@ -246,7 +239,6 @@
       <Steel>50</Steel>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>
@@ -254,6 +246,7 @@
       </skillRequirements>
     </recipeMaker>
   </ThingDef>
+
 
   <!--Assault Rifle -->
   <ThingDef ParentName="BaseBullet">
@@ -331,7 +324,6 @@
       <Steel>55</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>PrecisionRifling</researchPrerequisite>
       <skillRequirements>
@@ -416,7 +408,6 @@
       <Steel>125</Steel>
       <ComponentIndustrial>17</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>GasOperation</researchPrerequisite>
       <skillRequirements>
@@ -501,7 +492,6 @@
       <Steel>200</Steel>
       <ComponentIndustrial>22</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>MultibarrelWeapons</researchPrerequisite>
       <skillRequirements>
@@ -586,7 +576,6 @@
       <Steel>100</Steel>
       <ComponentIndustrial>7</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>GasOperation</researchPrerequisite>
       <skillRequirements>
@@ -669,7 +658,6 @@
       <Steel>250</Steel>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>PrecisionRifling</researchPrerequisite>
       <skillRequirements>
@@ -752,7 +740,6 @@
       <Steel>25</Steel>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
-
     <recipeMaker>
       <researchPrerequisite>Gunsmithing</researchPrerequisite>
       <skillRequirements>

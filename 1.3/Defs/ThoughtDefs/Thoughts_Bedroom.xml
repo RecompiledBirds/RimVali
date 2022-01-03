@@ -2,7 +2,6 @@
 <Defs>
 
   <!-- Alone thoughts -->
-
   <ThoughtDef>
     <defName>AvaliSleptAlone</defName>
     <durationDays>1</durationDays>
@@ -62,7 +61,6 @@
   </ThoughtDef>
 
   <!-- Shared room thoughts -->
-
   <ThoughtDef>
     <defName>AvaliSharedBedRoom</defName>
     <durationDays>1</durationDays>
@@ -126,7 +124,7 @@
     <nullifyingTraits>
       <li>Psychopath</li>
     </nullifyingTraits>
-    <workerClass>AvaliMod.SharedRoomWorker</workerClass>
+    <workerClass>AvaliMod.Shared_workRoom</workerClass>
     <stackLimit>1</stackLimit>
     <stages>
       <li>
