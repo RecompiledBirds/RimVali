@@ -26,7 +26,7 @@
       <Chemfuel>30</Chemfuel>
     </costList>
     <recipeMaker>
-      <researchPrerequisite>AERIALRES</researchPrerequisite>
+      <researchPrerequisite>AERIALResearch</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 

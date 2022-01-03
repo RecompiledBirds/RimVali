@@ -1,4 +1,4 @@
-﻿using Verse;
+using Verse;
 
 namespace AvaliMod
 {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimValiCore;
@@ -19,6 +19,7 @@ namespace AvaliMod
 
     public class AvaliPackHediffComp : HediffComp
     {
+        // FIXME: tick never gets incremented
         private readonly int tick = 0;
 
         public AvaliPackHediffCompProps Props => (AvaliPackHediffCompProps)props;

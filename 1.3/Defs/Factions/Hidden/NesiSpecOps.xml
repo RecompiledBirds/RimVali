@@ -67,8 +67,8 @@
         </options>
       </li>
     </pawnGroupMakers>
-
   </FactionDef>
+
   <PawnKindDef ParentName="BaseAvali">
     <defName>NesiSpecOps</defName>
     <label>Nesi's Spec Ops Avali</label>

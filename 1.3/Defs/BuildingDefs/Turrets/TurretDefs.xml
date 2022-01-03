@@ -153,10 +153,6 @@
     </verbs>
   </ThingDef>
 
-
-
-
-
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliMiniGunTurret</defName>
     <drawerType>MapMeshAndRealTime</drawerType>

@@ -14,7 +14,7 @@
       <DeteriorationRate>1.5</DeteriorationRate>
     </statBases>
     <thingCategories>
-      <li>AerielShells</li>
+      <li>AerialShells</li>
     </thingCategories>
     <tradeTags>
       <li>MortarShell</li>
@@ -64,7 +64,7 @@
       <Uranium>10</Uranium>
     </costList>
     <recipeMaker>
-      <researchPrerequisite>AERIALRES</researchPrerequisite>
+      <researchPrerequisite>AERIALResearch</researchPrerequisite>
     </recipeMaker>
   </ThingDef>
 

@@ -2,10 +2,8 @@
 <LanguageData>
   <!-- <AvaliResources.label>Avali items</AvaliResources.label> -->
   <AvaliResources.label>Avali Gegenstände</AvaliResources.label>
-
   <!-- <AerialShells.label>A.E.R.I.E.L Rockets</AerialShells.label> -->
-  <AerialShells.label>A.E.R.I.E.L Raketen</AerialShells.label>
-
+  <AerialShells.label>A.E.R.I.A.L Raketen</AerialShells.label>
   <!-- <AimsShells.label>AIMS Shells</AimsShells.label> -->
   <AimsShells.label>AIMS Granaten</AimsShells.label>
 </LanguageData>

@@ -172,7 +172,7 @@
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="BaseAdvAvaliResearch">
-    <defName>AERIALRES</defName>
+    <defName>AERIALResearch</defName>
     <label>AERIAL System</label>
     <description>A highly advanced automated mortar system, fully capable of automatically selecting targets and lauching projectiles.</description>
     <researchViewX>6.00</researchViewX>

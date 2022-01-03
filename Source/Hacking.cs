@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RimValiCore.RVR;
 using RimWorld;
 using RimWorld.Planet;
-using UnityEngine;
 using Verse;
+using Random = UnityEngine.Random;
 
 namespace AvaliMod
 {
@@ -12,17 +13,19 @@ namespace AvaliMod
     {
         public static bool AllPrerequisitesDone(this ResearchProjectDef def)
         {
-            return def.prerequisites == null || !def.prerequisites.Any(prerequisite => !prerequisite.IsFinished);
+            return def.prerequisites == null || def.prerequisites.All(prerequisite => prerequisite.IsFinished);
         }
     }
 
     public class HackingGameComp : WorldComponent
     {
         public Dictionary<ResearchProjectDef, bool> hackProjects = new Dictionary<ResearchProjectDef, bool>();
+        public List<string> techLvls;
         private int tick;
 
         public HackingGameComp(World world) : base(world)
         {
+            techLvls = Enum.GetNames(typeof(TechLevel)).ToList();
         }
 
         public List<ResearchProjectDef> GetAllUnhacked
@@ -78,21 +81,22 @@ namespace AvaliMod
             Find.LetterStack.ReceiveLetter(choiceLetter);
         }
 
-        public void HackRes(ResearchProjectDef def)
+        public void HackResearch(ResearchProjectDef def)
         {
-            if (def.AllPrerequisitesDone())
+            if (!def.AllPrerequisitesDone())
             {
-                hackProjects.Add(def, true);
-                SendMessage(def);
+                return;
             }
+
+            hackProjects.Add(def, true);
+            SendMessage(def);
         }
 
         public override void WorldComponentTick()
         {
             if (Find.ResearchManager.currentProj != null)
             {
-                tick++;
-                if (tick == GenDate.TicksPerDay * 5)
+                if (++tick >= GenDate.TicksPerDay * 5)
                 {
                     if (Random.Range(0, 100) < RimValiMod.settings.hackChance)
                     {
@@ -104,7 +108,7 @@ namespace AvaliMod
 
                         if (def != null)
                         {
-                            HackRes(def);
+                            HackResearch(def);
                         }
                     }
 

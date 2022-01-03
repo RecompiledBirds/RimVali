@@ -32,7 +32,7 @@ namespace AvaliMod
         {
             if (HasAERIAL)
             {
-                var command_Action = new Command_Action
+                yield return new Command_Action
                 {
                     defaultLabel = AerialIsEnabled
                         ? "NexusDisableDefense".Translate()
@@ -42,7 +42,6 @@ namespace AvaliMod
                     action = delegate { AerialIsEnabled = !AerialIsEnabled; },
                     hotKey = KeyBindingDefOf.Misc5,
                 };
-                yield return command_Action;
             }
         }
     }

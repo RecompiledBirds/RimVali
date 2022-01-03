@@ -78,6 +78,7 @@ namespace AvaliMod
             bool mustBeAwake = showTextClasses[item].mustBeAwake;
             bool mustBeAsleep = showTextClasses[item].mustBeAsleep;
             bool mustBeSharingRoomWithPack = showTextClasses[item].mustBeSharingRoomWithPack;
+            PawnRelationDef relationDef = showTextClasses[item].relationDef;
 
             Pawn pawn = parent.pawn;
             Map map = pawn.Map;
@@ -109,12 +110,10 @@ namespace AvaliMod
         public override void CompPostTick(ref float severityAdjustment)
         {
             int itemToGet = random.Next(0, ShowTexts.Count);
-            if (LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().textEnabled)
+            if (LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().textEnabled &&
+                random.Next(0, 5) == 4)
             {
-                if (random.Next(0, 5) == 4)
-                {
-                    ShowText(ShowTexts, itemToGet);
-                }
+                ShowText(ShowTexts, itemToGet);
             }
         }
     }

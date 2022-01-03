@@ -9,7 +9,7 @@ namespace AvaliMod
 {
     // //This patch helps with automatic resizing, and apparel graphics
     [HarmonyPatch(typeof(ApparelGraphicRecordGetter), nameof(ApparelGraphicRecordGetter.TryGetGraphicApparel))]
-    public static class HeadwearPatch
+    public static class ApparelGraphicsPatch
     {
         [HarmonyPostfix]
         public static void Patch(ref Apparel apparel, ref BodyTypeDef bodyType, ref ApparelGraphicRecord rec)

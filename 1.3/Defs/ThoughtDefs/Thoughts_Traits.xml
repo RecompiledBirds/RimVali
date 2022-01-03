@@ -3,7 +3,7 @@
   <ThoughtDef>
     <defName>AvaliLikesCybernetics</defName>
     <!-- Was `AvaliMod.AvaliThoughts.ThoughtWorker_CyberneticAvali` but that doesn't exist. -->
-    <workerClass>AvaliMod.AvaliThoughts.ThoughtWorker_CyberneticAvali</workerClass>
+    <workerClass>ThoughtWorker_HasAddedBodyPart</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
 
     <stages>

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using RimValiCore.RVR;
 using Verse;
@@ -25,10 +25,8 @@ namespace AvaliMod
                     return potentialRaces;
                 }
 
-                potentialRaces = DefDatabase<ThingDef>.AllDefs.Where(x =>
+                return potentialRaces = DefDatabase<ThingDef>.AllDefs.Where(x =>
                     x.race != null && x.comps.Any(comp => comp.compClass == typeof(PackComp))).ToList();
-
-                return potentialRaces;
             }
         }
     }

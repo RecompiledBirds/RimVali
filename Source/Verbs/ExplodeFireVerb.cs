@@ -1,13 +1,13 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
-
 namespace AvaliMod
 {
     public class Verb_Fire : Verb
     {
         protected override bool TryCastShot()
         {
-            Flame(ReloadableCompSource);
+            Verb_Fire.Flame(this.ReloadableCompSource);
             return true;
         }
 
@@ -20,10 +20,7 @@ namespace AvaliMod
         public static void Flame(CompReloadable comp)
         {
             if (comp == null || !comp.CanBeUsed)
-            {
                 return;
-            }
-
             ThingWithComps parent = comp.parent;
             Pawn wearer = comp.Wearer;
 

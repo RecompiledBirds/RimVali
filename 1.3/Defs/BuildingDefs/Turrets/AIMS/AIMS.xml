@@ -9,18 +9,15 @@
     <defName>AvaliAIMS</defName>
     <label>AIMS</label>
     <description>AIMS is an improved mortar system, designed for accuracy.</description>
-
     <costList>
       <Steel>300</Steel>
       <Plasteel>5</Plasteel>
       <AvaliTungstenPowder>40</AvaliTungstenPowder>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
-
     <researchPrerequisites>
       <li>AIMSRes</li>
     </researchPrerequisites>
-
     <comps>
       <li Class="CompProperties_Explosive">
         <wickTicks>240</wickTicks>

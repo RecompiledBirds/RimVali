@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- NanoCarbon -->
+  <RecipeDef>
+    <defName>RefineAvaliCarbon</defName>
+    <label>Refine carbon (5)</label>
+    <description>Extract refined carbon from the resources used.</description>
+    <jobString>Refining carbon</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbon>5</AvaliNanoCarbon>
+    </products>
+    <researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RefineAvaliCarbonTwo</defName>
+    <label>Refine carbon (25)</label>
+    <description>Extract refined carbon from the resources used.</description>
+    <jobString>Refining carbon</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbon>25</AvaliNanoCarbon>
+    </products>
+    <researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>RefineAvaliCarbonThree</defName>
+    <label>Refine carbon (50)</label>
+    <description>Extract refined carbon from the resources used.</description>
+    <jobString>Refining carbon</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AvaliNanoCarbon>50</AvaliNanoCarbon>
+    </products>
+    <researchPrerequisites>
+      <li>NanoCarbonResearch</li>
+    </researchPrerequisites>
+  </RecipeDef>
+</Defs>

@@ -32,12 +32,10 @@
       <li>RimValiBackstories</li>
     </backstoryCategories>
 
-
     <caravanTraderKinds>
       <li>Caravan_Outlander_BulkGoods</li>
       <li>Caravan_Outlander_Exotic</li>
       <li>AvaliResourceTrader</li>
-
     </caravanTraderKinds>
 
     <visitorTraderKinds>

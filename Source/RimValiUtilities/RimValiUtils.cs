@@ -1,29 +1,32 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using RimValiCore;
 using RimWorld;
 using Verse;
+using Enumerable = System.Linq.Enumerable;
 
 namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Kio 1.0.3";
+        public static string build = "Kisu 1.1.0";
 
         private static AvaliPackDriver driver;
         private static AvaliUpdater thoughtDriver;
         public static IEnumerable<ModuleDef> foundModules = new List<ModuleDef>();
 
         public static string FoundModulesString =>
-            "RimValiModules".TranslateSimple() + "\n" + string.Join("\n", foundModules.Select(module => module.name));
+            "RimValiModules".TranslateSimple() + "\n" +
+            string.Join("\n", Enumerable.Select(foundModules, module => module.name));
 
 
         public static HashSet<Pawn> PawnsInWorld
         {
             get
             {
-                return RimValiCore.RimValiUtility.AllPawnsOfRaceInWorld(RimValiDefChecks.PotentialPackRaces)
-                    .Where(x => !x.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) && x.Spawned).ToHashSet();
+                return Enumerable.ToHashSet(Enumerable.Where(
+                    RimValiCore.RimValiUtility.AllPawnsOfRaceInWorld(RimValiDefChecks.PotentialPackRaces),
+                    x => !x.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) && x.Spawned));
             }
         }
 
@@ -67,8 +70,8 @@ namespace AvaliMod
             foreach (Pawn pawn in pack.GetAllNonNullPawns)
             {
                 var list = new List<SkillRecord>();
-                foreach (SkillRecord skillRecord in pawn.skills.skills.Where(x =>
-                             DefDatabase<AvaliPackSkillDef>.AllDefs.Any(y => y.skill == x.def)))
+                foreach (SkillRecord skillRecord in Enumerable.Where(pawn.skills.skills, x =>
+                             Enumerable.Any(DefDatabase<AvaliPackSkillDef>.AllDefs, y => y.skill == x.def)))
                 {
                     list.Add(skillRecord);
                     foreach (SkillRecord skill in list)
@@ -101,7 +104,7 @@ namespace AvaliMod
                     }
 
                     IEnumerable<SkillRecord> records =
-                        pawn.skills.skills.Where(SkillRec => !avoidSkills.Contains(SkillRec.def));
+                        Enumerable.Where(pawn.skills.skills, SkillRec => !avoidSkills.Contains(SkillRec.def));
                     if (!records.EnumerableNullOrEmpty())
                     {
                         foreach (SkillRecord skillRecord in records)
@@ -139,10 +142,11 @@ namespace AvaliMod
         {
             Room room = pawn.GetRoom();
             AvaliPack avaliPack = pawn.GetPackWithoutSelf();
-            return room != null && avaliPack != null && room.ContainedBeds.Count() > 0 && room.ContainedBeds.Any(bed =>
-                bed.OwnersForReading != null && bed.OwnersForReading.Any(p =>
-                    p != pawn && !avaliPack.GetAllNonNullPawns.EnumerableNullOrEmpty() &&
-                    avaliPack.GetAllNonNullPawns.Contains(p)));
+            return room != null && avaliPack != null && Enumerable.Count(room.ContainedBeds) > 0 &&
+                   room.ContainedBeds.Any(bed =>
+                       bed.OwnersForReading != null && bed.OwnersForReading.Any(p =>
+                           p != pawn && !avaliPack.GetAllNonNullPawns.EnumerableNullOrEmpty() &&
+                           avaliPack.GetAllNonNullPawns.Contains(p)));
         }
 
         public static bool CheckIfPackmatesInRoom(this Pawn pawn)

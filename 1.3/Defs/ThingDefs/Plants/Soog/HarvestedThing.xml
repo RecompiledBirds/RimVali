@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="PlantFoodRawBase">
+    <defName>RimValiRawSoog</defName>
+    <label>Raw soog</label>
+    <description>This is raw soog.</description>
+    <soundInteract>Grain_Drop</soundInteract>
+    <soundDrop>Grain_Drop</soundDrop>
+    <graphicData>
+      <texPath>Avali/Things/Plants/Soog/avali_soog_raw</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>1.1</MarketValue>
+    </statBases>
+    <ingestible>
+      <foodType>Seed</foodType>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>40</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

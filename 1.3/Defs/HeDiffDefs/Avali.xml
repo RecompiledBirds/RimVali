@@ -52,7 +52,6 @@
     </stages>
   </HediffDef>
 
-
   <HediffDef>
     <defName>TestHediffOne</defName>
     <label>TestHediffOne</label>

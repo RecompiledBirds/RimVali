@@ -10,7 +10,7 @@
     <label>AERIAL System</label>
     <description>AERIAL is a high accuracy rocket system, that can hold up to six rockets, and fire two at once.</description>
     <researchPrerequisites>
-      <li>AERIALRES</li>
+      <li>AERIALResearch</li>
     </researchPrerequisites>
     <comps Inherit="False">
       <li Class="CompProperties_Forbiddable"/>
@@ -19,7 +19,7 @@
         <explosiveRadius>4.9</explosiveRadius>
         <explosiveDamageType>OHGODOHFUCK</explosiveDamageType>
       </li>
-      <li Class="AvaliMod.AERIALProps"/>
+      <li Class="AvaliMod.AerialProps"/>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>300</basePowerConsumption>

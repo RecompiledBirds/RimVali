@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Aero-Tungsten Carbide -->
+  <RecipeDef>
+    <workAmount>100</workAmount>
+    <defName>ForgeAeroTungsten</defName>
+    <label>Forge Aero-Tungsten Carbide(25)</label>
+    <description>Create a supermaterial, forged from Aerogel, Tungsten, and several other resources.</description>
+    <jobString>Forging Aero-Tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungstenPowder</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <products>
+      <AeroTungstenCarbide>25</AeroTungstenCarbide>
+    </products>
+    <researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>500</workAmount>
+    <defName>ForgeAeroTungstenTwo</defName>
+    <label>Forge Aero-Tungsten Carbide(50)</label>
+    <description>Create a supermaterial, forged from Aerogel, Tungsten, and several other resources.</description>
+    <jobString>Forging Aero-Tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungstenPowder</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <products>
+      <AeroTungstenCarbide>50</AeroTungstenCarbide>
+    </products>
+    <researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
+  </RecipeDef>
+
+  <RecipeDef>
+    <workAmount>1000</workAmount>
+    <defName>ForgeAeroTungstenThree</defName>
+    <label>Forge Aero-Tungsten Carbide(125)</label>
+    <description>Create a supermaterial, forged from Aerogel, Tungsten, and several other resources.</description>
+    <jobString>Forging Aero-Tungsten</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliAerogel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliTungstenPowder</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>AvaliNanoCarbon</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+    </ingredients>
+    <products>
+      <AeroTungstenCarbide>125</AeroTungstenCarbide>
+    </products>
+    <researchPrerequisites>
+      <li>AvaliAeroTungsten</li>
+    </researchPrerequisites>
+  </RecipeDef>
+</Defs>

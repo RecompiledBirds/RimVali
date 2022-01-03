@@ -54,7 +54,6 @@
     </inventoryOptions>
   </PawnKindDef>
 
-
   <PawnKindDef ParentName="IWTechAvaliBase">
     <defName>IWAvaliSoldier</defName>
     <label>Avali Soldier</label>
@@ -86,9 +85,7 @@
     <invNutrition>5</invNutrition>
   </PawnKindDef>
 
-
-
-  <PawnKindDef ParentName = "IWTechAvaliBase">
+  <PawnKindDef ParentName="IWTechAvaliBase">
     <defName>IWTechAvaliLeader</defName>
     <label>Avali Pack Leader</label>
     <combatPower>5</combatPower>

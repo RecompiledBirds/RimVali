@@ -53,7 +53,8 @@
     <Compile Include="Hacking.cs" />
     <Compile Include="HarmonyPatches\Credits.cs" />
     <Compile Include="HarmonyPatches\EggFactionPicker.cs" />
-    <Compile Include="HarmonyPatches\HeadwearPatch.cs" />
+    <Compile Include="HarmonyPatches\ApparelGraphicsPatch.cs" />
+    <Compile Include="HarmonyPatches\PlantUtilityPatches.cs" />
     <Compile Include="HarmonyPatches\RimValiPatches.cs" />
     <Compile Include="HarmonyPatches\WorkableTemperatureApplies.cs" />
     <Compile Include="HediffStuff\AddHediff.cs" />

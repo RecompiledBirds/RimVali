@@ -38,7 +38,6 @@
     </recipeMaker>
   </ThingDef>
 
-
   <ThingDef ParentName="MakeableAIMSShellBase">
     <defName>AIMSHE</defName>
     <label>AIMS HE shell</label>
@@ -88,8 +87,4 @@
       <soundAmbient>MortarRound_Ambient</soundAmbient>
     </projectile>
   </ThingDef>
-
-
-
-
 </Defs>
