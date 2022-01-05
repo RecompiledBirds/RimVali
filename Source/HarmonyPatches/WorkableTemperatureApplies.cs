@@ -10,7 +10,7 @@ namespace AvaliMod
         typeof(ThingDef), typeof(Map), typeof(IntVec3))]
     public static class WorkableTemperatureApplies
     {
-        [HarmonyPatch]
+        [HarmonyPostfix]
         public static void TemperaturePatch(ThingDef thingDef, ref bool __result)
         {
             // Result is already true. We only ever set it to false.

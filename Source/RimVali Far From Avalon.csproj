@@ -56,6 +56,7 @@
     <Compile Include="HarmonyPatches\ApparelGraphicsPatch.cs" />
     <Compile Include="HarmonyPatches\PlantUtilityPatches.cs" />
     <Compile Include="HarmonyPatches\RimValiPatches.cs" />
+    <Compile Include="HarmonyPatches\TicksPerMove_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkableTemperatureApplies.cs" />
     <Compile Include="HediffStuff\AddHediff.cs" />
     <Compile Include="HediffStuff\Conflicts\ConflictsWithComp.cs" />
