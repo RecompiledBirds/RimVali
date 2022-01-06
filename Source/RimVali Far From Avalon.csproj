@@ -54,6 +54,7 @@
     <Compile Include="HarmonyPatches\Credits.cs" />
     <Compile Include="HarmonyPatches\EggFactionPicker.cs" />
     <Compile Include="HarmonyPatches\ApparelGraphicsPatch.cs" />
+    <Compile Include="HarmonyPatches\MovementTicksAddOn_Patch.cs" />
     <Compile Include="HarmonyPatches\PlantUtilityPatches.cs" />
     <Compile Include="HarmonyPatches\RimValiPatches.cs" />
     <Compile Include="HarmonyPatches\TicksPerMove_Patch.cs" />

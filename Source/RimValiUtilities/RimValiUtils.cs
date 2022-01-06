@@ -417,6 +417,15 @@ namespace AvaliMod
             }
         }
 
+        public static bool IsAvali(this Pawn pawn)
+        {
+            return pawn.def == AvaliDefs.RimVali;
+        }
+
+        public static bool IsPackBroken(this Pawn pawn)
+        {
+            return pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken);
+        }
 
         [DebugAction("RimVali", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void ResetPacks()

@@ -240,7 +240,14 @@ namespace AvaliMod
                     }
                     else
                     {
-                        Widgets.Label(rect, "NoPack".Translate());
+                        if (pawn.IsPackBroken())
+                        {
+                            Widgets.Label(rect, "PackBroken".Translate(pawn.Name.ToStringShort.Named("PAWN")));
+                        }
+                        else
+                        {
+                            Widgets.Label(rect, "NoPack".Translate());
+                        }
                     }
                 }
             }

@@ -9,4 +9,5 @@
   <PackLeaderLabel>Pack leader:</PackLeaderLabel>
   <PackOpinionLabel>Pack opinion:</PackOpinionLabel>
   <PackOpinionTooltip>Pack opinion of {PAWN}: {OPINION}</PackOpinionTooltip>
+  <PackBroken>{PAWN} is pack broken, and will not join a pack.</PackBroken>
 </LanguageData>

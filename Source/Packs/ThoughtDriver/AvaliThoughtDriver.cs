@@ -73,13 +73,16 @@ namespace AvaliMod
 
         private void GivePackThoughts(AvaliPack pawnPack, PackComp packComp)
         {
-            foreach (Pawn packmate in pawnPack.GetAllNonNullPawns.Where(x => x.Alive() && x != pawnPack.leaderPawn))
+            if (pawnPack != null && packComp != null)
             {
-                var thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
-                if (packmate != null && pawnPack.leaderPawn != null &&
-                    !thought_Memory2.TryMergeWithExistingMemory(out bool _))
+                foreach (Pawn packmate in pawnPack.GetAllNonNullPawns.Where(x => x.Alive() && x != pawnPack.leaderPawn))
                 {
-                    packmate.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, pawnPack.leaderPawn);
+                    var thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
+                    if (packmate != null && pawnPack.leaderPawn != null &&
+                        !thought_Memory2.TryMergeWithExistingMemory(out bool _))
+                    {
+                        packmate.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, pawnPack.leaderPawn);
+                    }
                 }
             }
         }

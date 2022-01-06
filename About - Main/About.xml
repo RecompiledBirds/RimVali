@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>RimVali: Beta</name>
+  <name>RimVali: Far From Avalon</name>
   <author>Nesi The Avali, Zentimental, LiQd, Todd, Aipi, Cyasi, and Ranade</author>
   <supportedVersions>
     <li>1.3</li>
   </supportedVersions>
   <packageId>NeziTheAvali.RimVali</packageId>
   <description>
-	-- The RimVali Beta Builds! --
-  
     Welcome!
 
     Welcome to RimVali: Far From Avalon! This mod is designed to be a large-scale avali mod, adding new mechanics, items, weapons, research, factions, materials, and so much more.

@@ -144,11 +144,11 @@ namespace AvaliMod
         {
             return pawnsThatHavePacks.Contains(pawn);
         }
-
+        List<Pawn> pawns = new List<Pawn>();
+        List<int> ints = new List<int>();
         public override void ExposeData()
         {
-            var pawns = new List<Pawn>();
-            var ints = new List<int>();
+            
             Scribe_Collections.Look(ref pawnsThatHavePacks, "pawnsThatHavePacks", LookMode.Reference);
             Scribe_Collections.Look(ref packCounter, "packCounter", LookMode.Reference, LookMode.Value, ref pawns,
                 ref ints);

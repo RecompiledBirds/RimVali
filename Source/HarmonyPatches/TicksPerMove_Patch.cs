@@ -3,13 +3,17 @@ using HarmonyLib;
 using Verse;
 using UnityEngine;
 
-namespace AvaliMod.HarmonyPatches
+namespace AvaliMod
 {
     [HarmonyPatch(typeof(Pawn), "TicksPerMove")]
     public static class TicksPerMove_Patch
     {
-        public static void Prefix(bool diagonal, Pawn __instance, ref int __result)
+        public static void Postfix(bool diagonal, Pawn __instance, ref int __result)
         {
+            if (!__instance.IsAvali())
+            {
+				return;
+            }
             float baseSpeed = __instance.GetStatValue(StatDefOf.MoveSpeed);
             if (RestraintsUtility.InRestraints(__instance))
             {
@@ -31,11 +35,13 @@ namespace AvaliMod.HarmonyPatches
 				if (IsRoofed(__instance))
 				{
 					final /=GetWeatherMoveSpeed(__instance);
+					final /= Mathf.Lerp(1f, 3.5f, __instance.Map.snowGrid.GetDepth(__instance.Position));
 				}
 				if (diagonal)
 				{
 					final *= 1.41421f;
 				}
+
 			}
 			__result = Mathf.Clamp(Mathf.RoundToInt(final), 1, 450);
 		}

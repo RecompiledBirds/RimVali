@@ -84,10 +84,10 @@
     <maxGenerationAge>40</maxGenerationAge>
     <gearHealthRange>1.2~2.4</gearHealthRange>
     <apparelTags>
-      <li>AvaliSpecOps</li>
+      <li>AvaliArmour</li>
     </apparelTags>
     <apparelMoney>5000~9999999</apparelMoney>
-    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
     <weaponMoney>700~99999999</weaponMoney>
     <weaponTags>
       <li>AvaliWeapons</li>
