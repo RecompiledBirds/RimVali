@@ -81,8 +81,11 @@
     </stuffCategories>
     <costStuffCount>30</costStuffCount>
     <costList>
-      <Steel>70</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <Steel>300</Steel>
+      <Plasteel>30</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <AvaliTungstenPowder>30</AvaliTungstenPowder>
+      <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>

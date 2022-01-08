@@ -38,7 +38,7 @@
     <uiIconScale>0.9</uiIconScale>
   </ThingDef>
 
-  <DamageDef Name="Bomb">
+  <DamageDef ParentName="Bomb">
     <defName>OHGODOHFUCK</defName>
     <label>bomb</label>
     <workerClass>DamageWorker_AddInjury</workerClass>

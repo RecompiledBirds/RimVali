@@ -146,7 +146,7 @@
   <!-- Headress -->
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHeaddress</defName>
-    <label>Avali traditional headress</label>
+    <label>Avali traditional headdress</label>
     <description>A small traditional avali headdress. Sporting simple strings with chimes attached to them, they go around the upper ears only to meet at a single point on the back of the head before then branching off to allow for more chimes on the front and back of the head. Both for beautiful sounds and echolocation; the chimes make up the majority of this headdress.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>

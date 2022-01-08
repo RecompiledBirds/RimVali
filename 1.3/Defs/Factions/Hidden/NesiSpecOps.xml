@@ -82,7 +82,7 @@
     <itemQuality>Excellent</itemQuality>
     <backstoryCryptosleepCommonality>0.0</backstoryCryptosleepCommonality>
     <maxGenerationAge>40</maxGenerationAge>
-    <gearHealthRange>1.2~2.4</gearHealthRange>
+    <gearHealthRange>0.0~1.0</gearHealthRange>
     <apparelTags>
       <li>AvaliArmour</li>
     </apparelTags>

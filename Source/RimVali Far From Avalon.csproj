@@ -41,12 +41,6 @@
     <ApplicationIcon>img.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RimValiCore">
-      <HintPath>..\..\RimValiCore\1.3\Assemblies\RimValiCore.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Airdrop.cs" />
     <Compile Include="DeathWorker.cs" />
     <Compile Include="Defs.cs" />
@@ -54,7 +48,7 @@
     <Compile Include="HarmonyPatches\Credits.cs" />
     <Compile Include="HarmonyPatches\EggFactionPicker.cs" />
     <Compile Include="HarmonyPatches\ApparelGraphicsPatch.cs" />
-    <Compile Include="HarmonyPatches\MovementTicksAddOn_Patch.cs" />
+    <Compile Include="HarmonyPatches\Holovali_Patches.cs" />
     <Compile Include="HarmonyPatches\PlantUtilityPatches.cs" />
     <Compile Include="HarmonyPatches\RimValiPatches.cs" />
     <Compile Include="HarmonyPatches\TicksPerMove_Patch.cs" />
@@ -135,5 +129,11 @@
       <IncludeAssets>compile</IncludeAssets>
       <Version>2.1.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="RimValiCore">
+      <HintPath>..\..\RimValiCore\1.3\Assemblies\RimValiCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 </Project>

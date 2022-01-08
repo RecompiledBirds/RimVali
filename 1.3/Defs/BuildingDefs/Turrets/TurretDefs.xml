@@ -235,7 +235,8 @@
     <costList>
       <Steel>500</Steel>
       <AvaliTungstenPowder>10</AvaliTungstenPowder>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>

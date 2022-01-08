@@ -48,6 +48,9 @@
       <li>Social</li>
       <li>Commoner</li>
     </enabledWorkTypes>
+    <tags>
+      <li>Holovali</li>
+    </tags>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>
@@ -208,6 +211,7 @@
         </colorGenerator>
       </li>
     </colorGenOverrides>
+    <globalChance>100</globalChance>
     <skillGains>
       <li>
         <skill>Intellectual</skill>

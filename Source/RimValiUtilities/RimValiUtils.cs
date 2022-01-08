@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimValiCore;
+using RimValiCore.RVR;
 using RimWorld;
 using Verse;
 using Enumerable = System.Linq.Enumerable;
@@ -424,7 +425,7 @@ namespace AvaliMod
 
         public static bool IsPackBroken(this Pawn pawn)
         {
-            return pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken);
+            return pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken) || pawn.story.AllBackstories.Any(x=>x.GetTags().Contains("PackBroken"));
         }
 
         [DebugAction("RimVali", allowedGameStates = AllowedGameStates.PlayingOnMap)]
