@@ -1,4 +1,4 @@
-<AvaliMod.RVRBackstory>
+<RimValiCore.RVR.RVRBackstory>
   <defName>The internal name of the backstory- used for code reference, should be unique</defName>
   <title></title>
   <shortTitle>not required. gives rw an alternative short title.</shortTitle>
@@ -101,4 +101,4 @@
 
   </colorGenOverrides>
 
-</AvaliMod.RVRBackstory>
+</RimValiCore.RVR.RVRBackstory>
