@@ -64,7 +64,7 @@
     <Compile Include="MentalBreaks\PackBreakWorker.cs" />
     <Compile Include="MentalBreaks\PackLossWorker.cs" />
     <Compile Include="ModuleDef.cs" />
-    <Compile Include="ModuleFinder.cs" />
+    <Compile Include="RVFFAInit.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackDiverMapComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackProps.cs" />

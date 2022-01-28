@@ -18,7 +18,7 @@ namespace AvaliMod
 
             if (!hasCollectedModules)
             {
-                ModuleFinder.Startup();
+                RVFFAInit.Startup();
                 hasCollectedModules = true;
             }
 
@@ -238,7 +238,7 @@ namespace AvaliMod
             if (windowToShow == SettingsWindow.Debug)
             {
                 listing_Standard.Begin(TopLeft);
-                ModuleFinder.Startup();
+                RVFFAInit.Startup();
                 listing_Standard.Label("DebugSettings");
                 listing_Standard.GapLine(10);
                 listing_Standard.CheckboxLabeled("ToggleDebug".Translate(), ref settings.enableDebugMode);

@@ -59,7 +59,7 @@ namespace AvaliMod
                 num *= Props.acceptPercentFactorPerProgressScoreCurve.Evaluate(
                     StorytellerUtility.GetProgressScore(target));
             }
-
+            
             int incCount = IncidentCycleUtility.IncidentCountThisInterval(target,
                 Find.Storyteller.storytellerComps.IndexOf(this), Props.minDaysPassed, Props.onDays, Props.offDays,
                 Props.minSpacingDays, Props.minIncidents, Props.maxIncidents, num);

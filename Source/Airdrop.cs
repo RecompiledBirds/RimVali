@@ -9,7 +9,6 @@ using Random = UnityEngine.Random;
 namespace AvaliMod
 {
     #region settings stuff
-
     [StaticConstructorOnStartup]
     public static class AirdropResearchManager
     {

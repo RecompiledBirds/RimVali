@@ -7,7 +7,7 @@ namespace AvaliMod
     [StaticConstructorOnStartup]
     public static class RimValiPatches
     {
-        static RimValiPatches()
+        public static void Initalize()
         {
             var rimValiHarmony = new Harmony("RimVali.FarFromAvalon");
             Log.Message("[RimVali: Far From Avalon] Started patches.");

@@ -9,7 +9,7 @@
 	</RimValiCore.QLine.QL_Quest>
 <MainButtonDef>
     <defName>QuestQUI</defName>
-    <label>QLine</label>
+    <label>NesGUI/RimGUI designer</label>
     <description>Open GUI designer.</description>
     <workerClass>RimValiCore.QLine.OpenGUIWindow</workerClass>
     <order>79</order>

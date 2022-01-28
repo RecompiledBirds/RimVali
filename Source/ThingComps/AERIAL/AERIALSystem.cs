@@ -395,11 +395,13 @@ namespace AvaliMod
 
             if (CanSetForcedTarget)
             {
+                var compChangeableProjectile = gun.TryGetComp<AERIALChangeableProjectile>();
+
                 var command_VerbTarget = new Command_VerbTarget
                 {
                     defaultLabel = "CommandSetForceAttackTarget".Translate(),
                     defaultDesc = "CommandSetForceAttackTargetDesc".Translate(),
-                    icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack"),
+                    icon = compChangeableProjectile!=null ? ContentFinder<Texture2D>.Get(compChangeableProjectile.Projectile.graphicData.texPath) : ContentFinder<Texture2D>.Get("UI/Commands/Attack"),
                     verb = AttackVerb,
                     hotKey = KeyBindingDefOf.Misc4,
                     drawRadius = false,
