@@ -42,49 +42,9 @@ namespace AvaliMod
             {
                 if (!RimValiUtility.FoundModulesString.ToLower().Contains(module.name.ToLower()))
                 {
-                    Log.Message(module.name);
                     RimValiUtility.foundModules.Append(module);
 
-                    if (RimValiMod.settings.liteMode)
-                    {
-                        AvaliDefs.AvaliNanoForge.thingCategories = new List<ThingCategoryDef>
-                            { AvaliDefs.BuildingsSpecial };
-                        AvaliDefs.AvaliNanoForge.PostLoad();
-                        AvaliDefs.AvaliNanoForge.ResolveReferences();
-
-                        AvaliDefs.AvaliNanoLoom.thingCategories = new List<ThingCategoryDef>
-                            { AvaliDefs.BuildingsSpecial };
-                        AvaliDefs.AvaliNanoLoom.PostLoad();
-                        AvaliDefs.AvaliNanoLoom.ResolveReferences();
-
-                        AvaliDefs.AvaliResearchBench.thingCategories = new List<ThingCategoryDef>
-                            { AvaliDefs.BuildingsSpecial };
-                        AvaliDefs.AvaliResearchBench.PostLoad();
-                        AvaliDefs.AvaliResearchBench.ResolveReferences();
-                        AvaliDefs.AvaliResearchBench.designationCategory.PostLoad();
-                        AvaliDefs.AvaliResearchBench.designationCategory.ResolveReferences();
-                        foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x =>
-                                     x.IsWeapon && x.modContentPack.PackageId.ToLower() == "nezitheavali.rimvali"))
-                        {
-                            def.recipeMaker = new RecipeMakerProperties();
-                            def.weaponTags = new List<string>();
-                            def.tradeTags = new List<string>();
-
-                            def.PostLoad();
-                            def.ResolveReferences();
-                        }
-
-                        foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where(x =>
-                                     x.IsApparel && x.modContentPack.PackageId.ToLower() == "nezitheavali.rimvali"))
-                        {
-                            def.recipeMaker = new RecipeMakerProperties();
-                            def.weaponTags = new List<string>();
-                            def.tradeTags = new List<string>();
-
-                            def.PostLoad();
-                            def.ResolveReferences();
-                        }
-                    }
+                   
                 }
             }
         }

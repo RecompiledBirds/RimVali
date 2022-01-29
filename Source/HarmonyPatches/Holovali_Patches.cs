@@ -15,7 +15,7 @@ namespace AvaliMod
     {
         public static bool Prefix(Thing __instance, DamageInfo dinfo, ref DamageWorker.DamageResult __result)
         {
-            if(__instance is Pawn p && p.story.AllBackstories.Any(x =>x.GetTags().Contains("Holovali")))
+            if(__instance is Pawn p && p.RaceProps.Humanlike&&p.story.AllBackstories.Any(x =>x.GetTags().Contains("Holovali")))
             {
                 if (dinfo.Def == DamageDefOf.EMP)
                 {
