@@ -98,6 +98,7 @@ namespace AvaliMod
         private float GenerateAcceptFraction(IIncidentTarget target)
         {
             var acceptFraction = 1f;
+
             if (Props.acceptFractionByDaysPassedCurve != null)
             {
                 acceptFraction *= Props.acceptFractionByDaysPassedCurve.Evaluate(GenDate.DaysPassedFloat);
@@ -114,39 +115,47 @@ namespace AvaliMod
                 acceptFraction *= Props.acceptPercentFactorPerProgressScoreCurve.Evaluate(
                     StorytellerUtility.GetProgressScore(target));
             }
+
             return acceptFraction;
         }
 
         private void UpdateState()
         {
+            StorytellerState currentState = StorytellerData.state;
+            int currentDaysPassed = GenDate.DaysPassed;
+            int daysSinceLastStateUpdate = StorytellerData.dayLastUpdated;
+
             //Make sure we're not on the hunting->aggressive route, and we've given the current state time to do it's job.
-            if (StorytellerData.state != StorytellerState.Hunting &&
-                GenDate.DaysPassed > StorytellerData.dayLastUpdated + 5)
+            if (currentState != StorytellerState.Hunting &&
+                currentDaysPassed > daysSinceLastStateUpdate + 5)
             {
-                if (HasPawnsNotAvali && new Random(Find.World.ConstantRandSeed).Next(0, 2) == 1 &&
-                    StorytellerData.state <= 0)
+                int daysBeingNice = StorytellerData.daysSpentNice;
+                int daysSinceLastHunt = StorytellerData.daysPassedSinceLastHunt;
+                Random worldRandomGenerator = new Random(Find.World.ConstantRandSeed);
+
+                if (HasPawnsNotAvali &&
+                worldRandomGenerator.Next(0, 2) == 1 &&
+                currentState <= StorytellerState.Neutral)
                 {
-                    StorytellerData.daysPassedSinceLastHunt = GenDate.DaysPassed;
-                    StorytellerData.state = StorytellerState.Hunting;
-                    StorytellerData.dayLastUpdated = GenDate.DaysPassed;
+                    UpdateDaysAndStateToHunting();
                     return;
                 }
 
-                if (GenDate.DaysPassed > StorytellerData.daysPassedSinceLastHunt +
-                    new Random(Find.World.ConstantRandSeed).Next(2, 4) && StorytellerData.state <= 0 &&
-                    new Random(Find.World.ConstantRandSeed).Next(1, 10) == 2)
+                if (currentDaysPassed > (daysSinceLastHunt +
+                   worldRandomGenerator.Next(2, 4)) && 
+                    currentState <= StorytellerState.Neutral &&
+                    worldRandomGenerator.Next(1, 10) == 2)
                 {
-                    StorytellerData.daysPassedSinceLastHunt = GenDate.DaysPassed;
-                    StorytellerData.state = StorytellerState.Hunting;
-                    StorytellerData.dayLastUpdated = GenDate.DaysPassed;
+                    UpdateDaysAndStateToHunting();
                     return;
                 }
 
-                if (GenDate.DaysPassed > StorytellerData.daysSpentNice +
-                    new Random(Find.World.ConstantRandSeed).Next(0, 4) && StorytellerData.state > 0)
+                if (currentDaysPassed > daysBeingNice +
+                    worldRandomGenerator.Next(0, 4) && 
+                    currentState > StorytellerState.Neutral)
                 {
                     StorytellerData.state -= 1;
-                    if (StorytellerData.state == 0)
+                    if (StorytellerData.state == StorytellerState.Neutral)
                     {
                         StorytellerData.daysSpentNice = GenDate.DaysPassed;
                     }
@@ -155,22 +164,30 @@ namespace AvaliMod
                     return;
                 }
 
-                if (StorytellerData.state == 0 && new Random(Find.World.ConstantRandSeed).Next(1, 10) == 2)
+                if (
+                currentState == StorytellerState.Neutral &&
+                worldRandomGenerator.Next(1, 10) == 2)
                 {
-                    StorytellerData.state += new Random(Find.World.ConstantRandSeed).Next(-1, 2);
+                    StorytellerData.state += worldRandomGenerator.Next(-1, 2);
                     StorytellerData.dayLastUpdated = GenDate.DaysPassed;
                     return;
                 }
 
-                // FIXME: Weird use of | instead of ||?
                 // Currently checks if state is -1/Hunting
-                if (StorytellerData.state == (StorytellerState.Aggressive | StorytellerState.HyperAggressive) &&
-                    new Random(Find.World.ConstantRandSeed).Next(1, 10) == 2)
+                if (currentState == StorytellerState.Hunting &&
+                    worldRandomGenerator.Next(1, 10) == 2)
                 {
-                    StorytellerData.state += new Random(Find.World.ConstantRandSeed).Next(0, 1);
+                    StorytellerData.state += worldRandomGenerator.Next(0, 1);
                     StorytellerData.dayLastUpdated = GenDate.DaysPassed;
                 }
             }
+        }
+
+        private static void UpdateDaysAndStateToHunting()
+        {
+            StorytellerData.daysPassedSinceLastHunt = GenDate.DaysPassed;
+            StorytellerData.state = StorytellerState.Hunting;
+            StorytellerData.dayLastUpdated = GenDate.DaysPassed;
         }
 
         #region Incident gen
