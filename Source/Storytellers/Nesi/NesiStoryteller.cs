@@ -42,51 +42,28 @@ namespace AvaliMod
 
         public override IEnumerable<FiringIncident> MakeIntervalIncidents(IIncidentTarget target)
         {
-            var num = 1f;
-            if (Props.acceptFractionByDaysPassedCurve != null)
-            {
-                num *= Props.acceptFractionByDaysPassedCurve.Evaluate(GenDate.DaysPassedFloat);
-            }
+            int incidentCount = GetIncidentCount(target);
 
-            if (Props.acceptPercentFactorPerThreatPointsCurve != null)
+            foreach (int _ in Enumerable.Range(0,incidentCount))
             {
-                num *= Props.acceptPercentFactorPerThreatPointsCurve.Evaluate(
-                    StorytellerUtility.DefaultThreatPointsNow(target));
-            }
-
-            if (Props.acceptPercentFactorPerProgressScoreCurve != null)
-            {
-                num *= Props.acceptPercentFactorPerProgressScoreCurve.Evaluate(
-                    StorytellerUtility.GetProgressScore(target));
-            }
-            
-            int incCount = IncidentCycleUtility.IncidentCountThisInterval(target,
-                Find.Storyteller.storytellerComps.IndexOf(this), Props.minDaysPassed, Props.onDays, Props.offDays,
-                Props.minSpacingDays, Props.minIncidents, Props.maxIncidents, num);
-            for (var i = 0; i < incCount; i++)
-            {
-                FiringIncident inc = null;
+                FiringIncident incident = null;
                 switch (StorytellerData.state)
                 {
                     case StorytellerState.Aggressive:
-                        inc = GenAgressiveIncident(target);
+                        incident = GenAgressiveIncident(target);
                         break;
                     case StorytellerState.Hunting:
-                        inc = GenHunting(target);
+                        incident = GenHunting(target);
                         break;
                     case StorytellerState.Neutral:
-                        inc = GenNeutral(target);
+                        incident = GenNeutral(target);
                         break;
                     case StorytellerState.Friendly:
-                        inc = GenFriendly(target);
-                        break;
-                    case StorytellerState.Calm:
-                    case StorytellerState.HyperAggressive:
-                    default:
+                        incident = GenFriendly(target);
                         break;
                 }
 
-                if (inc == null)
+                if (incident == null)
                 {
                     continue;
                 }
@@ -96,10 +73,48 @@ namespace AvaliMod
                     UpdateState();
                 }
 
-                yield return inc;
+                yield return incident;
             }
 
             //return base.MakeIntervalIncidents(target);
+        }
+
+        private int GetIncidentCount(IIncidentTarget target)
+        {
+            float acceptFraction = GenerateAcceptFraction(target);
+            return IncidentCycleUtility.IncidentCountThisInterval(
+                target,
+                Find.Storyteller.storytellerComps.IndexOf(this),
+                Props.minDaysPassed,
+                Props.onDays,
+                Props.offDays,
+                Props.minSpacingDays,
+                Props.minIncidents,
+                Props.maxIncidents,
+                acceptFraction
+                );
+        }
+
+        private float GenerateAcceptFraction(IIncidentTarget target)
+        {
+            var acceptFraction = 1f;
+            if (Props.acceptFractionByDaysPassedCurve != null)
+            {
+                acceptFraction *= Props.acceptFractionByDaysPassedCurve.Evaluate(GenDate.DaysPassedFloat);
+            }
+
+            if (Props.acceptPercentFactorPerThreatPointsCurve != null)
+            {
+                acceptFraction *= Props.acceptPercentFactorPerThreatPointsCurve.Evaluate(
+                    StorytellerUtility.DefaultThreatPointsNow(target));
+            }
+
+            if (Props.acceptPercentFactorPerProgressScoreCurve != null)
+            {
+                acceptFraction *= Props.acceptPercentFactorPerProgressScoreCurve.Evaluate(
+                    StorytellerUtility.GetProgressScore(target));
+            }
+            return acceptFraction;
         }
 
         private void UpdateState()
