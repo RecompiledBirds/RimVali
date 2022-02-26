@@ -289,7 +289,7 @@ namespace AvaliMod
 
         public static AvaliPack EiCreatePack(Pawn pawn)
         {
-            var PawnPack = new AvaliPack(pawn);
+            var PawnPack = new AvaliPack(pawn,Driver.GetNewPackID());
             if (RimValiMod.settings.enableDebugMode)
             {
                 Log.Message("Creating pack: " + PawnPack.name);
@@ -384,7 +384,7 @@ namespace AvaliMod
             AvaliPack pack = Driver.GetCurrentPack(pawn);
             if (pack != null)
             {
-                var returnPack = new AvaliPack(pawn);
+                var returnPack = new AvaliPack(pawn,pack.ID);
                 returnPack.pawns.AddRange(pack.pawns);
                 returnPack.pawns.Remove(pawn);
                 returnPack.name = pack.name;

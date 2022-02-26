@@ -60,17 +60,27 @@ namespace AvaliMod
         public Pawn leaderPawn;
         public string name = "NoName";
         public HashSet<Pawn> pawns = new HashSet<Pawn>();
+        private int id;
+
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+        }
 
         public AvaliPack()
         {
         }
 
-        public AvaliPack(Pawn leader)
+        public AvaliPack(Pawn leader, int id)
         {
             leaderPawn = leader;
             faction = leader.Faction;
             name = leader.Name.ToStringShort + "'s pack";
             pawns.Add(leader);
+            this.id= id;
         }
 
         public HashSet<Pawn> GetAllNonNullPawns
@@ -81,7 +91,7 @@ namespace AvaliMod
 
         public new string GetUniqueLoadID()
         {
-            return "pack_" + GetHashCode();
+            return $"pack_{id}";
         }
 
 
@@ -93,6 +103,7 @@ namespace AvaliMod
             Scribe_References.Look(ref faction, "faction");
             Scribe_Collections.Look(ref deathDates, "deathDates", LookMode.Deep, Array.Empty<object>());
             Scribe_Deep.Look(ref creationDate, "cDate");
+            Scribe_Values.Look(ref id, "id");
         }
 
         public void UpdateHediffForAllMembers()

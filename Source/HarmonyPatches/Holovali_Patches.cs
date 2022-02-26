@@ -39,7 +39,7 @@ namespace AvaliMod
     {
         public static bool Prefix(Need_Rest __instance)
         {
-            object pawn = __instance.GetType().GetField("pawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(__instance);
+            object pawn = typeof(Need_Rest).GetField("pawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(__instance);
             if (pawn is Pawn p && p.RaceProps.Humanlike && p.story.AllBackstories.Any(x => x.GetTags().Contains("Holovali")))
             {
                 __instance.CurLevel = __instance.MaxLevel;
@@ -54,7 +54,7 @@ namespace AvaliMod
     {
         public static bool Prefix(Need_Food __instance)
         {
-            object pawn = __instance.GetType().GetField("pawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(__instance);
+            object pawn =typeof(Need_Food).GetField("pawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(__instance);
             if (pawn is Pawn p && p.RaceProps.Humanlike && p.story.AllBackstories.Any(x => x.GetTags().Contains("Holovali")))
             {
                 __instance.CurLevel = __instance.MaxLevel;

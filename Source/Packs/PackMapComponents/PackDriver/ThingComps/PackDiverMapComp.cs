@@ -30,6 +30,7 @@ namespace AvaliMod
 
         private List<Pawn> pawnsThatHavePacks = new List<Pawn>();
         private bool ThreadIsActive;
+        private int nextID;
 
         public HashSet<Pawn> workingPawnHashset = new HashSet<Pawn>();
 
@@ -58,6 +59,8 @@ namespace AvaliMod
 
             return packCounter[pawn];
         }
+
+        public int GetNewPackID()=>  nextID++;
 
         public void AddToPackCount(Pawn pawn)
         {
