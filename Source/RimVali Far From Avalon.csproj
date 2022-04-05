@@ -64,6 +64,10 @@
     <Compile Include="MentalBreaks\PackBreakWorker.cs" />
     <Compile Include="MentalBreaks\PackLossWorker.cs" />
     <Compile Include="ModuleDef.cs" />
+    <Compile Include="PacksV2\Dates.cs" />
+    <Compile Include="PacksV2\Pack.cs" />
+    <Compile Include="PacksV2\PackJoinWorker.cs" />
+    <Compile Include="PacksV2\PacksV2WorldComponent.cs" />
     <Compile Include="RVFFAInit.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackDiverMapComp.cs" />
@@ -136,4 +140,5 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
 </Project>

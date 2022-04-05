@@ -20,7 +20,7 @@
  
   <!-- Pack joining -->
   <AvaliPackJoinLabel>{JOINER} has joined {INVITER}'s pack!</AvaliPackJoinLabel>
-  <AvaliPackJoinDescription>{INVITER} invited {JOINER} to {PACK}. {JOINER} accepted the offer, and has joined {PACK}.</AvaliPackJoinDescription>
+  <AvaliPackJoinDescription>{JOINER} was invited to join {INVITER}'s pack, and has joined {PACK}.</AvaliPackJoinDescription>
   
   <!-- Pack broken -->
   <PawnsCanBePackBroken>Pawns can be pack broken</PawnsCanBePackBroken>

@@ -13,23 +13,8 @@ namespace AvaliMod
         private int fertilizationCount;
         private Pawn fertilizedBy;
 
-        private bool Active
-        {
-            get
-            {
-                if (this.parent is Pawn parent)
-                {
-                    return (!Props.eggLayFemaleOnly || parent.gender == Gender.Female) &&
-                           parent.ageTracker.CurLifeStage.milkable;
-                }
-
-                return true;
-            }
-        }
-
+        private bool Active=> !(this.parent is Pawn parent) || parent.gender==Gender.Female && parent.ageTracker.CurLifeStage.milkable;
         public bool CanLayNow => Active && eggProgress >= 1.0;
-
-        public bool FullyFertilized => fertilizationCount >= Props.eggFertilizationCountMax;
 
 
         public EggLayerProps Props => (EggLayerProps)props;
@@ -49,22 +34,13 @@ namespace AvaliMod
                 return;
             }
 
-            var num = (float)(1.0 / (Props.eggLayIntervalDays * GenDate.TicksPerDay));
-            if (this.parent is Pawn parent)
-            {
-                num *= PawnUtility.BodyResourceGrowthSpeed(parent);
-            }
+            var num = (float)(1.0 / (GenDate.TicksPerDay));
 
-            eggProgress += num;
-            if (eggProgress > 1.0)
-            {
-                eggProgress = 1f;
-            }
+            eggProgress = (eggProgress + num)>1.0f ? eggProgress+num : 1.0f;
         }
 
         public void Fertilize(Pawn male)
         {
-            fertilizationCount = Props.eggFertilizationCountMax;
             fertilizedBy = male;
         }
 
@@ -76,18 +52,12 @@ namespace AvaliMod
             }
 
             eggProgress = 0.0f;
-            int randomInRange = Props.eggCountRange.RandomInRange;
-            if (randomInRange == 0)
-            {
-                return null;
-            }
-
             var thing = new Thing();
 
             if (fertilizationCount > 0)
             {
                 thing = ThingMaker.MakeThing(Props.eggFertilizedDef);
-                fertilizationCount = Mathf.Max(0, fertilizationCount - randomInRange);
+                fertilizationCount = Mathf.Max(0, fertilizationCount - 1);
             }
 
             return thing;

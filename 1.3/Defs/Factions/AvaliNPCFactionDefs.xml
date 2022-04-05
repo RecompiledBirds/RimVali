@@ -11,6 +11,7 @@
     <canMakeRandomly>true</canMakeRandomly>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>20</configurationListOrderPriority>
+	<allowedCultures><li>Astropolitan</li></allowedCultures>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>Pack Leader</leaderTitle>

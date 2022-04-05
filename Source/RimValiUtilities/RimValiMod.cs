@@ -281,7 +281,7 @@ namespace AvaliMod
             }
 
             #endregion
-
+            listing_Standard.CheckboxLabeled($"Enhanced mode", ref settings.unstable, "Enables new features. Disabled by default to preserve old saves.");
             if (windowToShow != SettingsWindow.Pawns)
             {
                 listing_Standard.End();

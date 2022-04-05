@@ -10,7 +10,7 @@ namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Kisu 1.1.0";
+        public static string build = "Eiku 1.2.0";
 
         private static AvaliPackDriver driver;
         private static AvaliUpdater thoughtDriver;

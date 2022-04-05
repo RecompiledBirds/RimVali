@@ -11,6 +11,7 @@
     <fixedName>Nesi's spec ops</fixedName>
     <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
     <techLevel>Spacer</techLevel>
+	<allowedCultures><li>Astropolitan</li></allowedCultures>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(0, 1000)</li>

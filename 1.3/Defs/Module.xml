@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RimValiCore.QLine.QL_Quest>
+<!--	<RimValiCore.QLine.QL_Quest>
 		<defName>testQuest</defName>
 		<questAction>RimValiCore.QLine.PrototypeWorker</questAction>
 		<label>test quest</label>
 		<description>test quest</description>
-	</RimValiCore.QLine.QL_Quest>
-<!--<MainButtonDef>
+	</RimValiCore.QLine.QL_Quest>-->
+<MainButtonDef>
     <defName>QuestQUI</defName>
     <label>QLine</label>
     <description>Open GUI designer.</description>
@@ -17,7 +17,7 @@
     <iconPath>NesGUI/NGUILogo</iconPath>
     <defaultHotKey></defaultHotKey>
   </MainButtonDef>
--->
+
 
 
   <AvaliMod.ModuleDef>

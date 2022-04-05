@@ -13,6 +13,7 @@
     <configurationListOrderPriority>20</configurationListOrderPriority>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
+	<allowedCultures><li>Astropolitan</li></allowedCultures>
     <leaderTitle>Pack Leader</leaderTitle>
     <colorSpectrum>
       <li>(1, 0.52, 0.05)</li>
@@ -100,6 +101,7 @@
     <settlementGenerationWeight>0.2</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+	<allowedCultures><li>Astropolitan</li></allowedCultures>
     <configurationListOrderPriority>20</configurationListOrderPriority>
     <canMakeRandomly>true</canMakeRandomly>
     <canSiege>true</canSiege>

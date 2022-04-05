@@ -16,6 +16,7 @@
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+	<allowedCultures><li>Astropolitan</li></allowedCultures>
     <startingResearchTags>
       <li>ClassicStart</li>
     </startingResearchTags>

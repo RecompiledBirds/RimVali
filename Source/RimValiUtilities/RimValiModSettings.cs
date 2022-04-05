@@ -20,7 +20,6 @@ namespace AvaliMod
         public int IlluminateAvaliMinTemp;
         public int IWAvaliMaxTemp;
         public int IWAvaliMinTemp;
-        public bool liteMode;
         public bool mapCompOn;
         public int maxPackSize;
         public int packBrokenChance;
@@ -34,6 +33,7 @@ namespace AvaliMod
         public int stageTwoDaysPackloss;
         public bool textEnabled;
         public int ticksBetweenPackUpdate;
+        public bool unstable;
 
         public RimValiModSettings()
         {
@@ -62,7 +62,7 @@ namespace AvaliMod
             IlluminateAvaliMinTemp = -30;
             IWAvaliMaxTemp = 25;
             IWAvaliMinTemp = -5;
-            liteMode = false;
+            unstable = false;
         }
 
         public override void ExposeData()
@@ -95,7 +95,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref packBrokenChance, "packBrokenChance", 5, true);
             Scribe_Values.Look(ref ticksBetweenPackUpdate, "ticksBetweenPackUpdate", 120, true);
             Scribe_Values.Look(ref canGetPackBroken, "canGetPackBroken", true, true);
-            Scribe_Values.Look(ref liteMode, "liteMode", false, true);
+            Scribe_Values.Look(ref unstable, "unstable", false, true);
             base.ExposeData();
         }
     }

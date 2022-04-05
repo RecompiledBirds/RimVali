@@ -92,5 +92,8 @@ namespace AvaliMod
 
         //Pawn Kinds
         public static PawnKindDef RimValiColonist;
+
+        //Interaction Defs
+        public static InteractionDef DeclinePackJoin;
     }
 }

@@ -36,6 +36,12 @@ namespace AvaliMod
 
         public AvaliPackDriver(World world) : base(world)
         {
+            if (!RimValiMod.settings.unstable)
+            {
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("Enhanced mode is disabled!",
+                   "Enhanced mode is disabled. This means you will not be using the most up-to-date features.\n\nThis mode has been made to allow users to preserve old saves, and is disabled by default. \n\nFor the most up-to-date experience, it is recommended you enable unstable mode in the mod's settings (RimVali: Far From Avalon > Enhanced mode).\n\nHave a nice day!", AvaliDefs.IlluminateAirdrop);
+                Find.LetterStack.ReceiveLetter(choiceLetter);
+            }
             ResetPacks();
         }
 
@@ -107,12 +113,7 @@ namespace AvaliMod
 
         public AvaliPack GetCurrentPack(Pawn pawn)
         {
-            if (currentPack.ContainsKey(pawn) && currentPack[pawn] != -1)
-            {
-                return packs[currentPack[pawn]];
-            }
-
-            return null;
+            return currentPack.ContainsKey(pawn) && currentPack[pawn] != -1 ? packs[currentPack[pawn]]: null;
         }
 
         public void AddPawnToPack(Pawn pawn, ref AvaliPack pack)
@@ -208,42 +209,44 @@ namespace AvaliMod
 
         public override void WorldComponentTick()
         {
-            try
+            if (!RimValiMod.settings.unstable)
             {
-                workingPawnHashset = RimValiUtility.PawnsInWorld;
-                if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
+                try
                 {
-                    if (multiThreaded && CanStartNextThread)
+                    workingPawnHashset = RimValiUtility.PawnsInWorld;
+                    if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
                     {
-                        ThreadIsActive = true;
-                        var packTask = new Task(UpdatePacks);
-                        packTask.Start();
+                        if (multiThreaded && CanStartNextThread)
+                        {
+                            ThreadIsActive = true;
+                            var packTask = new Task(UpdatePacks);
+                            packTask.Start();
+                        }
+                        else
+                        {
+                            UpdatePacks();
+                        }
+
+                        onTick = tickTime;
                     }
                     else
                     {
-                        UpdatePacks();
+                        onTick--;
+                    }
+                }
+                catch (Exception e)
+                {
+                    if (!hasKickedBack)
+                    {
+                        hasKickedBack = true;
+                        tickTime += 60000;
+                        Log.Warning(
+                            "Kio pack handler has encountered an error, kicking back ticks between update by 60000");
                     }
 
-                    onTick = tickTime;
-                }
-                else
-                {
-                    onTick--;
+                    Log.Error(e.ToString());
                 }
             }
-            catch (Exception e)
-            {
-                if (!hasKickedBack)
-                {
-                    hasKickedBack = true;
-                    tickTime += 60000;
-                    Log.Warning(
-                        "Kio pack handler has encountered an error, kicking back ticks between update by 60000");
-                }
-
-                Log.Error(e.ToString());
-            }
-
             base.WorldComponentTick();
         }
     }

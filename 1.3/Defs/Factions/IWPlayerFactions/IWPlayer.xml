@@ -12,6 +12,7 @@
       <li>RimValiBackstories</li>
       <li>Tribal</li>
     </backstoryCategories>
+	<allowedCultures><li>Astropolitan</li></allowedCultures>
     <factionIconPath>Avali/WorldIcons/Town</factionIconPath>
     <settlementTexturePath>Avali/WorldIcons/Town</settlementTexturePath>
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>

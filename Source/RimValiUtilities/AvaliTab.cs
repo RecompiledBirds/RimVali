@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using Rimvali.Rewrite.Packs;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -48,6 +49,11 @@ namespace AvaliMod
             return pack.name;
         }
 
+        public virtual string GetPackName(Rect rect, Pack pack)
+        {
+            return pack.Name;
+        }
+
         protected override void FillTab()
         {
             bool debugSquares = RimValiMod.settings.enableDebugMode;
@@ -85,62 +91,65 @@ namespace AvaliMod
             try
             {
                 {
-                    Pawn pawn = SelPawn;
-                    AvaliPack pack = RimValiUtility.Driver.GetCurrentPack(pawn);
-                    var rectPosY = 0f;
-
-                    if (pack != null && pack.GetAllNonNullPawns.Count > 1)
+                    if (RimValiMod.settings.unstable)
                     {
-                        var effects = "";
-                        var packSpecialityName = "NONE";
-                        var listCount = 0;
-                        if (pack.GetPackSkillDef() != null)
-                        {
-                            AvaliPackSkillDef skillDef = pack.GetPackSkillDef();
+                        PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
+                        Pawn pawn = SelPawn;
+                        Pack pack = packsComp.GetPack(pawn);
+                        var rectPosY = 0f;
 
-                            if (skillDef != null)
+                        if (pack != null && pack.GetPawns.Count > 0)
+                        {
+                            var effects = "";
+                            var packSpecialityName = "NONE";
+                            var listCount = 0;
+                            /*
+                            if (pack.GetPackSkillDef() != null)
                             {
-                                listCount = skillDef.effectList.Count;
-                                packSpecialityName = skillDef.specialityLabel;
-                                foreach (string str in skillDef.effectList)
+                                AvaliPackSkillDef skillDef = pack.GetPackSkillDef();
+
+                                if (skillDef != null)
                                 {
-                                    effects = $"{effects} {str}\n";
+                                    listCount = skillDef.effectList.Count;
+                                    packSpecialityName = skillDef.specialityLabel;
+                                    foreach (string str in skillDef.effectList)
+                                    {
+                                        effects = $"{effects} {str}\n";
+                                    }
                                 }
                             }
-                        }
-
-                        Text.Font = GameFont.Medium;
-                        var PackNameRect = new Rect(outRect.xMin, rectPosY, packMembersRectSize, 30f);
-                        new Rect(outRect.xMax - 30f, rectPosY, 30f, 30f);
-                        Widgets.DrawLineHorizontal(0f, PackNameRect.yMax + 10f, rect.width);
-                        Text.Font = GameFont.Small;
-                        rectPosY = PackNameRect.yMax + 10f;
-                        rectPosY += 20f;
-
-
-                        var packMemberListViewRect = new Rect(pawnListRect.x - 5, pawnListRect.y - 10,
-                            pawnListRect.width - 5, pack.GetAllNonNullPawns.Count * 30f);
-
-                        string packcount = pack.GetAllNonNullPawns.Count + "/" + maxSize;
+                            */
+                            Text.Font = GameFont.Medium;
+                            var PackNameRect = new Rect(outRect.xMin, rectPosY, packMembersRectSize, 30f);
+                            new Rect(outRect.xMax - 30f, rectPosY, 30f, 30f);
+                            Widgets.DrawLineHorizontal(0f, PackNameRect.yMax + 10f, rect.width);
+                            Text.Font = GameFont.Small;
+                            rectPosY = PackNameRect.yMax + 10f;
+                            rectPosY += 20f;
 
 
-                        float num = rectPosY;
-                        float y = membersScrollPos.y;
-                        float num2 = membersScrollPos.y + pawnListRect.height;
+                            var packMemberListViewRect = new Rect(pawnListRect.x - 5, pawnListRect.y - 10,
+                                pawnListRect.width - 5, pack.GetPawns.Count * 30f);
 
-                        void drawLabels()
-                        {
-                            //Count
-                            Widgets.Label(countRect, packcount);
-                            num = rectPosY;
-                            y = membersScrollPos.y;
-                            num2 = membersScrollPos.y + pawnListRect.height;
-                            Widgets.BeginScrollView(pawnListRect, ref membersScrollPos, packMemberListViewRect);
+                            string packcount = pack.GetAllPawns.Count + "/" + maxSize;
+
+
+                            float num = rectPosY;
+                            float y = membersScrollPos.y;
+                            float num2 = membersScrollPos.y + pawnListRect.height;
+
+                            void drawLabels()
                             {
-                                foreach (Pawn p in pack.GetAllNonNullPawns)
+                                //Count
+                                Widgets.Label(countRect, packcount);
+                                num = rectPosY;
+                                y = membersScrollPos.y;
+                                num2 = membersScrollPos.y + pawnListRect.height;
+                                Widgets.BeginScrollView(pawnListRect, ref membersScrollPos, packMemberListViewRect);
                                 {
-                                    if (p != pack.leaderPawn)
+                                    foreach (Pawn p in pack.GetPawns)
                                     {
+
                                         var rowHeight = 30f;
                                         if (num > y - rowHeight && num < num2)
                                         {
@@ -150,103 +159,272 @@ namespace AvaliMod
                                         num += rowHeight;
                                     }
                                 }
-                            }
-                            Widgets.EndScrollView();
+                                Widgets.EndScrollView();
 
-                            Widgets.Label(packNameRect, GetPackName(rect, pack));
-                            if (Widgets.ButtonImage(changeNameRect, UIResources.Rename))
-                            {
-                                Find.WindowStack.Add(new Dialog_NamePack(pawn));
-                            }
-
-                            Widgets.Label(packTypeRect,
-                                new GUIContent
+                                Widgets.Label(packNameRect, GetPackName(rect, pack));
+                                if (Widgets.ButtonImage(changeNameRect, UIResources.Rename))
                                 {
-                                    text =
-                                        $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}",
-                                });
-
-
-                            float opinion = RimValiUtility.GetAveragePackOpinion(pack, pawn);
-                            if (opinion > 0)
-                            {
-                                Widgets.FillableBar(pawnLikedFillRect, opinion / 100);
-                            }
-                            else
-                            {
-                                Widgets.FillableBar(pawnLikedFillRect, -opinion / 100, UIResources.NegativePackOP);
-                            }
-
-                            string name = pawn.Name.ToStringShort;
-                            Widgets.DrawHighlightIfMouseover(pawnLikedFillRect);
-                            Widgets.Label(pawnLikedLabelRect, "PackOpinionLabel".Translate());
-                            var builder = new StringBuilder();
-                            builder.AppendLine("PackOpinionTooltip".Translate(opinion.Named("OPINION"),
-                                name.Named("PAWN")));
-                            builder.AppendLine();
-                            foreach (Pawn p in pack.GetAllNonNullPawns)
-                            {
-                                if (p != pawn)
-                                {
-                                    builder.AppendLine($"{p.Name.ToStringShort}: {p.relations.OpinionOf(pawn)}");
+                                    Find.WindowStack.Add(new Dialog_NamePack(pawn));
                                 }
-                            }
 
-                            TooltipHandler.TipRegion(pawnLikedFillRect, builder.ToString());
-                            builder.Clear();
+                                Widgets.Label(packTypeRect,
+                                    new GUIContent
+                                    {
+                                        text =
+                                            $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}",
+                                    });
 
-                            Widgets.Label(packLeaderLabelRect, "PackLeaderLabel".Translate());
-                            Widgets.Label(leaderNameRect, pack.leaderPawn.Name.ToStringShort);
-                            if (Widgets.ButtonInvisible(leaderNameRect) && Current.ProgramState == ProgramState.Playing)
-                            {
-                                if (pack.leaderPawn.Dead)
+
+                                float opinion = pack.GetAvgOpinionOf(pawn);
+                                if (opinion > 0)
                                 {
-                                    Messages.Message(
-                                        "MessageCantSelectDeadPawn"
-                                            .Translate(pack.leaderPawn.LabelShort, pack.leaderPawn).CapitalizeFirst(),
-                                        MessageTypeDefOf.RejectInput, false);
-                                }
-                                else if (pack.leaderPawn.Spawned)
-                                {
-                                    CameraJumper.TryJumpAndSelect(pack.leaderPawn);
+                                    Widgets.FillableBar(pawnLikedFillRect, opinion / 100);
                                 }
                                 else
                                 {
-                                    Messages.Message(
-                                        "MessageCantSelectOffMapPawn"
-                                            .Translate(pack.leaderPawn.LabelShort, pack.leaderPawn).CapitalizeFirst(),
-                                        MessageTypeDefOf.RejectInput, false);
+                                    Widgets.FillableBar(pawnLikedFillRect, -opinion / 100, UIResources.NegativePackOP);
+                                }
+
+                                string name = pawn.Name.ToStringShort;
+                                Widgets.DrawHighlightIfMouseover(pawnLikedFillRect);
+                                Widgets.Label(pawnLikedLabelRect, "PackOpinionLabel".Translate());
+                                var builder = new StringBuilder();
+                                builder.AppendLine("PackOpinionTooltip".Translate(opinion.Named("OPINION"),
+                                    name.Named("PAWN")));
+                                builder.AppendLine();
+                                foreach (Pawn p in pack.GetAllPawns)
+                                {
+                                    if (p != pawn)
+                                    {
+                                        builder.AppendLine($"{p.Name.ToStringShort}: {p.relations.OpinionOf(pawn)}");
+                                    }
+                                }
+
+                                TooltipHandler.TipRegion(pawnLikedFillRect, builder.ToString());
+                                builder.Clear();
+
+
+                                Widgets.Label(packLeaderLabelRect, "PackLeaderLabel".Translate());
+                                Widgets.Label(leaderNameRect, pack.Leader.Name.ToStringShort);
+                                if (Widgets.ButtonInvisible(leaderNameRect) && Current.ProgramState == ProgramState.Playing)
+                                {
+                                    if (pack.Leader.Dead)
+                                    {
+                                        Messages.Message(
+                                            "MessageCantSelectDeadPawn"
+                                                .Translate(pack.Leader.LabelShort, pack.Leader).CapitalizeFirst(),
+                                            MessageTypeDefOf.RejectInput, false);
+                                    }
+                                    else if (pack.Leader.Spawned)
+                                    {
+                                        CameraJumper.TryJumpAndSelect(pack.Leader);
+                                    }
+                                    else
+                                    {
+                                        Messages.Message(
+                                            "MessageCantSelectOffMapPawn"
+                                                .Translate(pack.Leader.LabelShort, pack.Leader).CapitalizeFirst(),
+                                            MessageTypeDefOf.RejectInput, false);
+                                    }
                                 }
                             }
-                        }
 
 
-                        //Makes it easier to see the GUI layout
-                        if (debugSquares)
-                        {
-                            Widgets.DrawBoxSolid(pawnListRect, Color.red);
-                            Widgets.DrawBoxSolid(pawnLikedLabelRect, Color.blue);
-                            Widgets.DrawBoxSolid(packNameRect, Color.magenta);
-                            Widgets.DrawBoxSolid(packTypeRect, Color.green);
-                            Widgets.DrawBoxSolid(countRect, Color.cyan);
-                            Widgets.DrawBoxSolid(pawnLikedFillRect, Color.black);
-                            Widgets.DrawBoxSolid(packRelationsRect, Color.grey);
-                            Widgets.DrawBoxSolid(leaderNameRect, Color.yellow);
-                            Widgets.DrawBoxSolid(changeNameRect, Color.red);
-                            Widgets.DrawBoxSolid(packLeaderLabelRect, Color.blue);
-                        }
+                            //Makes it easier to see the GUI layout
+                            if (debugSquares)
+                            {
+                                Widgets.DrawBoxSolid(pawnListRect, Color.red);
+                                Widgets.DrawBoxSolid(pawnLikedLabelRect, Color.blue);
+                                Widgets.DrawBoxSolid(packNameRect, Color.magenta);
+                                Widgets.DrawBoxSolid(packTypeRect, Color.green);
+                                Widgets.DrawBoxSolid(countRect, Color.cyan);
+                                Widgets.DrawBoxSolid(pawnLikedFillRect, Color.black);
+                                Widgets.DrawBoxSolid(packRelationsRect, Color.grey);
+                                Widgets.DrawBoxSolid(leaderNameRect, Color.yellow);
+                                Widgets.DrawBoxSolid(changeNameRect, Color.red);
+                                Widgets.DrawBoxSolid(packLeaderLabelRect, Color.blue);
+                            }
 
-                        drawLabels();
-                    }
-                    else
-                    {
-                        if (pawn.IsPackBroken())
-                        {
-                            Widgets.Label(rect, "PackBroken".Translate(pawn.Name.ToStringShort.Named("PAWN")));
+                            drawLabels();
                         }
                         else
                         {
-                            Widgets.Label(rect, "NoPack".Translate());
+                            if (pawn.IsPackBroken())
+                            {
+                                Widgets.Label(rect, "PackBroken".Translate(pawn.Name.ToStringShort.Named("PAWN")));
+                            }
+                            else
+                            {
+                                Widgets.Label(rect, "NoPack".Translate());
+                            }
+                        }
+                    }
+                else
+                {
+                        Pawn pawn = SelPawn;
+                        AvaliPack pack = RimValiUtility.Driver.GetCurrentPack(pawn);
+                        var rectPosY = 0f;
+
+                        if (pack != null && pack.GetAllNonNullPawns.Count > 1)
+                        {
+                            var effects = "";
+                            var packSpecialityName = "NONE";
+                            var listCount = 0;
+                            if (pack.GetPackSkillDef() != null)
+                            {
+                                AvaliPackSkillDef skillDef = pack.GetPackSkillDef();
+
+                                if (skillDef != null)
+                                {
+                                    listCount = skillDef.effectList.Count;
+                                    packSpecialityName = skillDef.specialityLabel;
+                                    foreach (string str in skillDef.effectList)
+                                    {
+                                        effects = $"{effects} {str}\n";
+                                    }
+                                }
+                            }
+
+                            Text.Font = GameFont.Medium;
+                            var PackNameRect = new Rect(outRect.xMin, rectPosY, packMembersRectSize, 30f);
+                            new Rect(outRect.xMax - 30f, rectPosY, 30f, 30f);
+                            Widgets.DrawLineHorizontal(0f, PackNameRect.yMax + 10f, rect.width);
+                            Text.Font = GameFont.Small;
+                            rectPosY = PackNameRect.yMax + 10f;
+                            rectPosY += 20f;
+
+
+                            var packMemberListViewRect = new Rect(pawnListRect.x - 5, pawnListRect.y - 10,
+                                pawnListRect.width - 5, pack.GetAllNonNullPawns.Count * 30f);
+
+                            string packcount = pack.GetAllNonNullPawns.Count + "/" + maxSize;
+
+
+                            float num = rectPosY;
+                            float y = membersScrollPos.y;
+                            float num2 = membersScrollPos.y + pawnListRect.height;
+
+                            void drawLabels()
+                            {
+                                //Count
+                                Widgets.Label(countRect, packcount);
+                                num = rectPosY;
+                                y = membersScrollPos.y;
+                                num2 = membersScrollPos.y + pawnListRect.height;
+                                Widgets.BeginScrollView(pawnListRect, ref membersScrollPos, packMemberListViewRect);
+                                {
+                                    foreach (Pawn p in pack.GetAllNonNullPawns)
+                                    {
+                                        if (p != pack.leaderPawn)
+                                        {
+                                            var rowHeight = 30f;
+                                            if (num > y - rowHeight && num < num2)
+                                            {
+                                                DrawMemberRow(num, pawnListRect.width, p);
+                                            }
+
+                                            num += rowHeight;
+                                        }
+                                    }
+                                }
+                                Widgets.EndScrollView();
+
+                                Widgets.Label(packNameRect, GetPackName(rect, pack));
+                                if (Widgets.ButtonImage(changeNameRect, UIResources.Rename))
+                                {
+                                    Find.WindowStack.Add(new Dialog_NamePack(pawn));
+                                }
+
+                                Widgets.Label(packTypeRect,
+                                    new GUIContent
+                                    {
+                                        text =
+                                            $"{"PackSpeciality".Translate(packSpecialityName.Named("SPECIALITY"))} \n\n{"PackEffects".Translate()} \n{effects}",
+                                    });
+
+
+                                float opinion = RimValiUtility.GetAveragePackOpinion(pack, pawn);
+                                if (opinion > 0)
+                                {
+                                    Widgets.FillableBar(pawnLikedFillRect, opinion / 100);
+                                }
+                                else
+                                {
+                                    Widgets.FillableBar(pawnLikedFillRect, -opinion / 100, UIResources.NegativePackOP);
+                                }
+
+                                string name = pawn.Name.ToStringShort;
+                                Widgets.DrawHighlightIfMouseover(pawnLikedFillRect);
+                                Widgets.Label(pawnLikedLabelRect, "PackOpinionLabel".Translate());
+                                var builder = new StringBuilder();
+                                builder.AppendLine("PackOpinionTooltip".Translate(opinion.Named("OPINION"),
+                                    name.Named("PAWN")));
+                                builder.AppendLine();
+                                foreach (Pawn p in pack.GetAllNonNullPawns)
+                                {
+                                    if (p != pawn)
+                                    {
+                                        builder.AppendLine($"{p.Name.ToStringShort}: {p.relations.OpinionOf(pawn)}");
+                                    }
+                                }
+
+                                TooltipHandler.TipRegion(pawnLikedFillRect, builder.ToString());
+                                builder.Clear();
+
+
+                                Widgets.Label(packLeaderLabelRect, "PackLeaderLabel".Translate());
+                                Widgets.Label(leaderNameRect, pack.leaderPawn.Name.ToStringShort);
+                                if (Widgets.ButtonInvisible(leaderNameRect) && Current.ProgramState == ProgramState.Playing)
+                                {
+                                    if (pack.leaderPawn.Dead)
+                                    {
+                                        Messages.Message(
+                                            "MessageCantSelectDeadPawn"
+                                                .Translate(pack.leaderPawn.LabelShort, pack.leaderPawn).CapitalizeFirst(),
+                                            MessageTypeDefOf.RejectInput, false);
+                                    }
+                                    else if (pack.leaderPawn.Spawned)
+                                    {
+                                        CameraJumper.TryJumpAndSelect(pack.leaderPawn);
+                                    }
+                                    else
+                                    {
+                                        Messages.Message(
+                                            "MessageCantSelectOffMapPawn"
+                                                .Translate(pack.leaderPawn.LabelShort, pack.leaderPawn).CapitalizeFirst(),
+                                            MessageTypeDefOf.RejectInput, false);
+                                    }
+                                }
+                            }
+
+
+                            //Makes it easier to see the GUI layout
+                            if (debugSquares)
+                            {
+                                Widgets.DrawBoxSolid(pawnListRect, Color.red);
+                                Widgets.DrawBoxSolid(pawnLikedLabelRect, Color.blue);
+                                Widgets.DrawBoxSolid(packNameRect, Color.magenta);
+                                Widgets.DrawBoxSolid(packTypeRect, Color.green);
+                                Widgets.DrawBoxSolid(countRect, Color.cyan);
+                                Widgets.DrawBoxSolid(pawnLikedFillRect, Color.black);
+                                Widgets.DrawBoxSolid(packRelationsRect, Color.grey);
+                                Widgets.DrawBoxSolid(leaderNameRect, Color.yellow);
+                                Widgets.DrawBoxSolid(changeNameRect, Color.red);
+                                Widgets.DrawBoxSolid(packLeaderLabelRect, Color.blue);
+                            }
+
+                            drawLabels();
+                        }
+                        else
+                        {
+                            if (pawn.IsPackBroken())
+                            {
+                                Widgets.Label(rect, "PackBroken".Translate(pawn.Name.ToStringShort.Named("PAWN")));
+                            }
+                            else
+                            {
+                                Widgets.Label(rect, "NoPack".Translate());
+                            }
                         }
                     }
                 }

@@ -1,3 +1,4 @@
+using Rimvali.Rewrite.Packs;
 using RimWorld;
 using Verse;
 
@@ -7,13 +8,27 @@ namespace AvaliMod
     {
         protected override ThoughtState CurrentStateInternal(Pawn pawn)
         {
-            var avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-            if (RimValiUtility.Driver != null && RimValiUtility.Driver.HasPack(pawn) && avaliThoughtDriver != null &&
-                pawn.Awake() && pawn.CheckIfPackmatesInRoom())
+            if (!RimValiMod.settings.unstable)
             {
-                return ThoughtState.ActiveDefault;
+                var avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
+                if (RimValiUtility.Driver != null && RimValiUtility.Driver.HasPack(pawn) && avaliThoughtDriver != null &&
+                    pawn.Awake() && pawn.CheckIfPackmatesInRoom())
+                {
+                    return ThoughtState.ActiveDefault;
+                }
             }
+            else
+            {
+                var avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
+                PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
+                Pack pack = packsComp.GetPack(pawn);
 
+                if (pack != null && avaliThoughtDriver != null && pawn.Awake() && pack.CheckIfPackmatesInRoom(pawn))
+                {
+                    return ThoughtState.ActiveDefault;
+                }
+
+            }
             return ThoughtState.Inactive;
         }
     }

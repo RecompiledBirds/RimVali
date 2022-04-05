@@ -59,6 +59,7 @@
           <li>Dresser</li>
         </linkableFacilities>
       </li>
+      <li Class="RimValiCore.TwoDBedPatchExtension.ResizedBedCompProperties"/>
     </comps>
   </ThingDef>
 
@@ -121,6 +122,7 @@
           <li>Dresser</li>
         </linkableFacilities>
       </li>
+		<li Class="RimValiCore.TwoDBedPatchExtension.ResizedBedCompProperties"/>
     </comps>
   </ThingDef>
 
@@ -183,6 +185,7 @@
           <li>Dresser</li>
         </linkableFacilities>
       </li>
+		<li Class="RimValiCore.TwoDBedPatchExtension.ResizedBedCompProperties"/>
     </comps>
   </ThingDef>
 
@@ -245,6 +248,7 @@
           <li>Dresser</li>
         </linkableFacilities>
       </li>
+		<li Class="RimValiCore.TwoDBedPatchExtension.ResizedBedCompProperties"/>
     </comps>
   </ThingDef>
 </Defs>

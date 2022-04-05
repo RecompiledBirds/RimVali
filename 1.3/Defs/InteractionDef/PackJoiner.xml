@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<InteractionDef>
+		<defName>AvaliJoinPackAttempt</defName>
+		<label>try to join pack</label>
+		<symbol>Things/Mote/SpeechSymbols/BuildRapport</symbol>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>45</initiatorXpGainAmount>
+		<workerClass>Rimvali.Rewrite.Packs.PackJoinWorker</workerClass>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] invited [RECIPIENT_nameDef] to their pack.</li>
+			</rulesStrings>
+		</logRulesInitiator>
+	</InteractionDef>
+	
+	<InteractionDef>
+		<defName>DeclinePackJoin</defName>
+		<label>pack invitation declined</label>
+		<symbol>Things/Mote/SpeechSymbols/BuildRapport</symbol>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>45</initiatorXpGainAmount>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] declined [RECIPIENT_nameDef]'s invitation to their pack.</li>
+			</rulesStrings>
+		</logRulesInitiator>
+	</InteractionDef>
+</Defs>

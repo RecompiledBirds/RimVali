@@ -16,7 +16,7 @@
     </north>
     <south>
       <position>(0,0.4)</position>
-      <layer>0.0</layer>
+      <layer>0.029</layer>
       <size>0.8</size>
     </south>
     <west>
@@ -38,7 +38,7 @@
     </north>
     <south>
       <position>(0,0.4)</position>
-      <layer>-0.035</layer>
+      <layer>0.029</layer>
       <size>0.8</size>
     </south>
     <west>
@@ -170,7 +170,7 @@
     </north>
     <south>
       <position>(0,0.4)</position>
-      <layer>0.0</layer>
+      <layer>0.03</layer>
       <size>0.8</size>
     </south>
   </RimValiCore.RVR.RenderableDef>
@@ -209,7 +209,7 @@
     </north>
     <south>
       <position>(0,0.4)</position>
-      <layer>0</layer>
+      <layer>0.03</layer>
       <size>0.8</size>
     </south>
   </RimValiCore.RVR.RenderableDef>
@@ -347,7 +347,7 @@
     </north>
     <south>
       <position>(0,0.4)</position>
-      <layer>-0.027</layer>
+      <layer>0.027</layer>
       <size>0.8</size>
     </south>
     <west>
@@ -426,9 +426,6 @@
       </li>
       <!-- That's off by default, don't worry. I don't even know if it actually works.. -->
       <li Class="AvaliMod.EggLayerProps">
-        <eggLayIntervalDays>30</eggLayIntervalDays>
-        <eggCountRange>1</eggCountRange>
-        <eggFertilizationCountMax>1</eggFertilizationCountMax>
         <eggFertilizedDef>AvaliEgg</eggFertilizedDef>
       </li>
     </comps>

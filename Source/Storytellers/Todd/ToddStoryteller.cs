@@ -32,37 +32,27 @@ namespace AvaliMod
 
     public class ToddStoryTeller : StorytellerComp
     {
+
+        public override void Initialize()
+        {
+            random = new Random(Find.World.ConstantRandSeed);
+            base.Initialize();
+        }
         protected ToddStoryTellerProps Props => (ToddStoryTellerProps)props;
 
-        private bool HasPawnsNotAvali
-        {
-            get
-            {
-                return RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Any(pawn => pawn.RaceProps.Humanlike && pawn.def != AvaliDefs.RimVali);
-            }
-        }
+        private bool hasPawnsNotAvali;
 
-        private float ratioAvaliToNonAvali => countPawnsavali / countPawnsNotavali;
-        private float ratioNonAvaliToAvali => countPawnsNotavali / countPawnsavali;
+        private Random random = null;
 
-        private int countPawnsavali
-        {
-            get
-            {
-                return RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Where(pawn => pawn.def == AvaliDefs.RimVali).Count();
-            }
-        }
+        private int countNotAvali;
+        private int countAvali;
 
-        private int countPawnsNotavali
-        {
-            get
-            {
-                return RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Where(pawn => pawn.def != AvaliDefs.RimVali).Count();
-            }
-        }
+
+        private float ratioAvaliToNonAvali => countAvali / countNotAvali;
+        private float ratioNonAvaliToAvali => countNotAvali / countAvali;
+
+
+
 
         public override IEnumerable<FiringIncident> MakeIntervalIncidents(IIncidentTarget target)
         {
@@ -110,7 +100,7 @@ namespace AvaliMod
 
                 if (inc != null)
                 {
-                    if (new Random(Find.World.ConstantRandSeed).Next(1, 5) == 3)
+                    if (random.Next(1, 5) == 3)
                     {
                         UpdateState();
                     }
@@ -122,13 +112,27 @@ namespace AvaliMod
             //return base.MakeIntervalIncidents(target);
         }
 
+        bool firstUpdate = false;
+        private int daysSinceLastPawnUpdate = 0;
         private void UpdateState()
         {
+            if ((GenDate.DaysPassed % 2 == 0 && GenDate.DaysPassed-daysSinceLastPawnUpdate!=0) || !firstUpdate)
+            {
+                firstUpdate = true;
+                daysSinceLastPawnUpdate = GenDate.DaysPassed;
+                countAvali = RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
+                    .Where(pawn => pawn.def == AvaliDefs.RimVali).Count();
+                countNotAvali = RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
+                    .Where(pawn => pawn.def != AvaliDefs.RimVali).Count();
+                hasPawnsNotAvali= RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
+                    .Any(pawn => pawn.RaceProps.Humanlike && pawn.def != AvaliDefs.RimVali);
+
+            }
             //Make sure we're not on the hunting->aggressive route, and we've given the current state time to do it's job.
             if (StorytellerData.state != StorytellerState.Hunting &&
                 GenDate.DaysPassed > StorytellerData.dayLastUpdated + 8)
             {
-                if (HasPawnsNotAvali && new Random(Find.World.ConstantRandSeed).Next(0, 3) == 1 &&
+                if (hasPawnsNotAvali && random.Next(0, 3) == 1 &&
                     StorytellerData.state <= 0)
                 {
                     StorytellerData.daysPassedSinceLastHunt = GenDate.DaysPassed;
@@ -138,8 +142,8 @@ namespace AvaliMod
                 }
 
                 if (GenDate.DaysPassed > StorytellerData.daysPassedSinceLastHunt +
-                    new Random(Find.World.ConstantRandSeed).Next(2, 4) && StorytellerData.state <= 0 &&
-                    new Random(Find.World.ConstantRandSeed).Next(1, 10) == 2)
+                   random.Next(2, 4) && StorytellerData.state <= 0 &&
+                    random.Next(1, 10) == 2)
                 {
                     StorytellerData.daysPassedSinceLastHunt = GenDate.DaysPassed;
                     StorytellerData.state = StorytellerState.Hunting;
@@ -148,9 +152,9 @@ namespace AvaliMod
                 }
 
                 if (GenDate.DaysPassed > StorytellerData.daysSpentNice +
-                    new Random(Find.World.ConstantRandSeed).Next(0, 4) && StorytellerData.state > 0)
+                    random.Next(0, 4) && StorytellerData.state > 0)
                 {
-                    if (new Random().Next(1, 10) == 5)
+                    if (random.Next(1, 10) == 5)
                     {
                         StorytellerData.state = StorytellerState.Aggressive;
                         StorytellerData.daysSpentNice = GenDate.DaysPassed;
@@ -170,16 +174,16 @@ namespace AvaliMod
 
                 if (StorytellerData.state == 0 && new Random(Find.World.ConstantRandSeed).Next(1, 6) == 2)
                 {
-                    if (new Random().Next(1, 30) == 10)
+                    if (random.Next(1, 30) == 10)
                     {
                         StorytellerData.state =
-                            (StorytellerState)new Random(Find.World.ConstantRandSeed).Next(
+                            (StorytellerState)random.Next(
                                 (int)StorytellerState.Aggressive,
                                 (int)StorytellerState.Neutral);
                     }
                     else
                     {
-                        StorytellerData.state += new Random(Find.World.ConstantRandSeed).Next(-1, 1);
+                        StorytellerData.state += random.Next(-1, 1);
                     }
 
                     StorytellerData.dayLastUpdated = GenDate.DaysPassed;
@@ -187,10 +191,10 @@ namespace AvaliMod
                 }
 
                 if (StorytellerData.state == (StorytellerState.Aggressive | StorytellerState.HyperAggressive) &&
-                    new Random(Find.World.ConstantRandSeed).Next(1, 10) == 2)
+                    random.Next(1, 10) == 2)
                 {
                     StorytellerData.state =
-                        (StorytellerState)new Random(Find.World.ConstantRandSeed).Next((int)StorytellerState.Aggressive,
+                        (StorytellerState)random.Next((int)StorytellerState.Aggressive,
                             (int)StorytellerState.Neutral);
                     StorytellerData.dayLastUpdated = GenDate.DaysPassed;
                 }
@@ -220,7 +224,7 @@ namespace AvaliMod
                 return null;
             }
 
-            parms.faction = HasPawnsNotAvali
+            parms.faction = hasPawnsNotAvali
                 ? Find.FactionManager.FirstFactionOfDef(AvaliDefs.NesiSpecOps)
                 : parms.faction;
             defs.AddRange(DefDatabase<IncidentDef>.AllDefs.Where(x =>
@@ -230,9 +234,9 @@ namespace AvaliMod
                 new Random(Find.World.ConstantRandSeed).Next(1,
                     (int)StorytellerUtilityPopulation.AdjustedPopulation *
                     new Random(Find.World.ConstantRandSeed).Next(1, 3)) *
-                (HasPawnsNotAvali ? ratioNonAvaliToAvali * 2 : 1);
+                (hasPawnsNotAvali ? ratioNonAvaliToAvali * 2 : 1);
 
-            if (HasPawnsNotAvali && ratioNonAvaliToAvali > 5)
+            if (hasPawnsNotAvali && ratioNonAvaliToAvali > 5)
             {
                 int multiplier = def.category == IncidentCategoryDefOf.ThreatSmall ? 10 : 5;
                 parms.points *= ratioAvaliToNonAvali * multiplier;
