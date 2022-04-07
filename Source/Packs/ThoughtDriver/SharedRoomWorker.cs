@@ -8,7 +8,7 @@ namespace AvaliMod
     {
         protected override ThoughtState CurrentStateInternal(Pawn pawn)
         {
-            if (!RimValiMod.settings.unstable)
+            if (!PacksV2WorldComponent.EnhancedMode)
             {
                 var avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
                 if (RimValiUtility.Driver != null && RimValiUtility.Driver.HasPack(pawn) && avaliThoughtDriver != null &&

@@ -3,7 +3,7 @@
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>ParallelArm</defName>
     <graphicData>
-      <texPath>Avali/Things/Cybernetics/Arm</texPath>
+      <texPath>avali/Things/Cybernetics/Arm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

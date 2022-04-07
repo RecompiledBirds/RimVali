@@ -67,7 +67,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>Avali/Floors/r_o_o_m_s</texturePath>
+    <texturePath>avali/Floors/r_o_o_m_s</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -107,7 +107,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>Avali/Floors/flower_floor</texturePath>
+    <texturePath>avali/Floors/flower_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -156,7 +156,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>Avali/Floors/chaos</texturePath>
+    <texturePath>avali/Floors/chaos</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -189,7 +189,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>Avali/Floors/diamond</texturePath>
+    <texturePath>avali/Floors/diamond</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -222,7 +222,7 @@
       <Steel>2</Steel>
     </costList>
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>Avali/Floors/scrap_floor</texturePath>
+    <texturePath>avali/Floors/scrap_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -255,7 +255,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>Avali/Floors/shingles</texturePath>
+    <texturePath>avali/Floors/shingles</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -288,7 +288,7 @@
     </costList>
 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>Avali/Floors/weave_floor</texturePath>
+    <texturePath>avali/Floors/weave_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>

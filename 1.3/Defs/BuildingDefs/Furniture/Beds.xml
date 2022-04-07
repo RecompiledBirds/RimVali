@@ -5,7 +5,7 @@
     <label>Avali hammock</label>
     <description>A cozy hammock suspended between two poles specially designed for resting and Avali in mind.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Furniture/hammock_bed</texPath>
+      <texPath>avali/Buildings/Furniture/hammock_bed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,2)</drawSize>
@@ -52,7 +52,7 @@
     <label>Avali bed</label>
     <description>A cozy mattress and sheets on a frame for resting. Inspired by its Terran counterparts, this model has been redesigned to better suit an Avali's smaller stature.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Furniture/casket_bed</texPath>
+      <texPath>avali/Buildings/Furniture/casket_bed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(1,2)</drawSize>

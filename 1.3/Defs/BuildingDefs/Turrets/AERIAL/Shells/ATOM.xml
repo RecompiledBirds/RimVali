@@ -43,7 +43,7 @@
     <label>AERIAL ATOM rocket</label>
     <description>A highly explosive and devastating rocket, launched from AERIAL.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_ATOM</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/Shells/AERIAL_ATOM</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -72,7 +72,7 @@
     <defName>AERIAL_ATOM_SHELL</defName>
     <label>ATOM shell</label>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_ATOM_LAUNCHED</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/Shells/AERIAL_ATOM_LAUNCHED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>

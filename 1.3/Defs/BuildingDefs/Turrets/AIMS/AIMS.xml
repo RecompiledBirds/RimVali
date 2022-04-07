@@ -3,7 +3,7 @@
   <ThingDef ParentName="BaseArtilleryBuilding">
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/mortar_base</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/mortar_base</texPath>
       <drawSize>(2,2)</drawSize>
     </graphicData>
     <defName>AvaliAIMS</defName>
@@ -36,7 +36,7 @@
       <turretBurstWarmupTime>7.0</turretBurstWarmupTime>
       <turretBurstCooldownTime>30.0</turretBurstCooldownTime>
     </building>
-    <uiIconPath>Avali/Buildings/Turrets/AIMS/AIMS_GUI_IMAGE</uiIconPath>
+    <uiIconPath>avali/Buildings/Turrets/AIMS/AIMS_GUI_IMAGE</uiIconPath>
     <uiIconScale>0.9</uiIconScale>
   </ThingDef>
 
@@ -45,7 +45,7 @@
     <label>AIMS</label>
     <description>AIMS launch system.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/AIMS</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/AIMS</texPath>
     </graphicData>
     <weaponTags>
       <li>Artillery_BaseDestroyer</li>

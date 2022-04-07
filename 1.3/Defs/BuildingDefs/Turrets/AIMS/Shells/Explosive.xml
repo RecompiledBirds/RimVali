@@ -43,7 +43,7 @@
     <label>AIMS HE shell</label>
     <description>A shell filled with high explosives. Can be fired from an AIMS system.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_HE</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/Shells/AIMS_HE</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -70,7 +70,7 @@
     <defName>AIMS_HE_SHELL</defName>
     <label>high-explosive shell</label>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_HE_launched</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/Shells/AIMS_HE_launched</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>

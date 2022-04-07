@@ -16,6 +16,25 @@ namespace Rimvali.Rewrite.Packs
         private List<Pack> packs = new List<Pack>();
         private Dictionary<Pawn, int> pawnPacks = new Dictionary<Pawn, int>();
         private int nextID;
+        private static bool enabled = false;
+        private static bool ranWarn = false;
+        /// <summary>
+        /// Determine wether or not we should enable the new system.
+        /// </summary>
+        public static bool EnhancedMode
+        {
+            get
+            {
+                if (!ranWarn && (!(Find.GameInfo.RealPlayTimeInteracting < 10 ||enabled)))
+                {
+                    ranWarn = true;
+                    ChoiceLetter choiceLetter = LetterMaker.MakeLetter("EnhancedModeTitle".Translate(),
+                       "EnhancedModeDesc".Translate(), AvaliDefs.IlluminateAirdrop);
+                    Find.LetterStack.ReceiveLetter(choiceLetter);
+                }
+                return (Find.GameInfo.RealPlayTimeInteracting < 10 || enabled) && RimValiMod.settings.unstable;
+            }
+        }
 
         /// <summary>
         /// Get an ID for a pack.
@@ -30,6 +49,11 @@ namespace Rimvali.Rewrite.Packs
 
         public PacksV2WorldComponent(World world) : base(world)
         {
+            enabled = false;
+            ranWarn = false;
+            bool dateHasPassed = DateTime.Today.Day >= 1 && DateTime.Today.Month >= 5 && DateTime.Today.Year >= 2021;
+            if (Find.GameInfo.RealPlayTimeInteracting < 10 || dateHasPassed)
+                enabled = true;
         }
 
         
@@ -82,6 +106,8 @@ namespace Rimvali.Rewrite.Packs
             base.FinalizeInit();
         }
 
+        
+
         int ticks = 1;
         int calculatedTicks =1000;
         int evalTicks = 1000;
@@ -100,10 +126,11 @@ namespace Rimvali.Rewrite.Packs
         Random random = new Random();
         public override void WorldComponentUpdate()
         {
-            if (RimValiMod.settings.unstable)
+            if (EnhancedMode)
             {
                 if (ticks == 0 || reevaluateSpeed)
                 {
+                    //Start the timer if told to reevaluate function speed.
                     if (reevaluateSpeed)
                         packTimeWatcher.Start();
                     Dictionary<Faction, List<Pack>> cachedFactionPacks = new Dictionary<Faction, List<Pack>>();
@@ -112,29 +139,21 @@ namespace Rimvali.Rewrite.Packs
                         if (!cachedFactionPacks.ContainsKey(pawn.Faction))
                             cachedFactionPacks[pawn.Faction] = packs.Where(x => x.Faction == pawn.Faction).ToList();
 
-
-                        if (packs.EnumerableNullOrEmpty() || cachedFactionPacks[pawn.Faction].NullOrEmpty())
+                        bool anyFactionPacksAcceptable = (!cachedFactionPacks[pawn.Faction].NullOrEmpty() && cachedFactionPacks[pawn.Faction].Any(x => x.GetAllPawns.Count < RimValiMod.settings.maxPackSize));
+                        bool hasPack = PawnHasPack(pawn);
+                        if (!hasPack && (packs.EnumerableNullOrEmpty() || !anyFactionPacksAcceptable) || random.Next(0, 12) == 2)
                         {
                             Pack pack = new Pack(pawn.Faction, pawn, GetID);
                             AddPack(pack, pawn);
                             cachedFactionPacks[pawn.Faction].Add(pack);
                         }
-                        else
-                        {
-                            if(!PawnHasPack(pawn) && !cachedFactionPacks[pawn.Faction].Any(x=>x.GetAllPawns.Count<RimValiMod.settings.maxPackSize) || random.Next(0, 12) == 2)
-                            {
-                                Pack pack = new Pack(pawn.Faction, pawn, GetID);
-                                AddPack(pack, pawn);
-                                cachedFactionPacks[pawn.Faction].Add(pack);
-                            }
-                        }
                     }
+
+                    //If told to reevaluate speed, stop the stopwatch, calculate the ticks between each run, and reset the stopwatch.
                     if (reevaluateSpeed)
                     {
                         packTimeWatcher.Stop();
-                        Log.Message($"Evaluated stopwatch time: {packTimeWatcher.ElapsedTicks}ms");
                         calculatedTicks = (int)(packTimeWatcher.ElapsedTicks/5);
-                        Log.Message($"Pack updates will be every: {calculatedTicks} ticks");
                         packTimeWatcher.Reset();
                         reevaluateSpeed = false;
                     }
@@ -142,6 +161,7 @@ namespace Rimvali.Rewrite.Packs
                 }
                 ticks--;
 
+                //Ask for speed evaluation every 1000 ticks
                 if (evalTicks == 0)
                 {
                     evalTicks = 1000;
@@ -169,18 +189,11 @@ namespace Rimvali.Rewrite.Packs
             Scribe_Collections.Look(ref packs, "packs",LookMode.Deep);
             Scribe_Values.Look(ref nextID, "nextID");
             Scribe_Collections.Look(ref pawnPacks, "pawnPacks", LookMode.Reference, LookMode.Value);
+            Scribe_Values.Look(ref enabled, "enabled");
+            bool dateHasPassed = DateTime.Today.Day >= 1 && DateTime.Today.Month >= 5 && DateTime.Today.Year >= 2021;
+            if(dateHasPassed)
+                enabled= true;
         }
 
-    }
-    public class PackTimer : Alert
-    {
-        public override AlertReport GetReport()
-        {
-            // $"{"AirdropInStart".Translate()} {AirDropHandler.timeToDrop / AirDropHandler.ticksInAnHour} {"AirdropInEnd".Translate()}";
-
-            defaultLabel =Find.World.GetComponent<PacksV2WorldComponent>().CalculatedTickTime.ToString();
-
-            return  AlertReport.Active;
-        }
     }
 }

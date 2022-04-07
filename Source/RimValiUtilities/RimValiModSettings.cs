@@ -62,7 +62,7 @@ namespace AvaliMod
             IlluminateAvaliMinTemp = -30;
             IWAvaliMaxTemp = 25;
             IWAvaliMinTemp = -5;
-            unstable = false;
+            unstable = true;
         }
 
         public override void ExposeData()

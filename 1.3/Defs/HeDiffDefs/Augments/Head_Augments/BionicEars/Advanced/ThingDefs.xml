@@ -3,7 +3,7 @@
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>AvaliAdvancedBionicEar</defName>
     <graphicData>
-      <texPath>Avali/Things/Cybernetics/Ear</texPath>
+      <texPath>avali/Things/Cybernetics/Ear</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

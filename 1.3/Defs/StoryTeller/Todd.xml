@@ -5,8 +5,8 @@
     <label>&lt;color=#1F85DE&gt;To'vali the Trickster&lt;/color&gt;</label>
     <description>To'vali loves chaos and battles. He will lead you into a false sense of security, with mild events and down time, before attempting to crush you with the world. The idea of having your colonists fight to your last resource entertains him. But he will gladly reward your for your sacrifices, with a few stings attached of course.\n  &lt;color=#DC2020&gt;To'vali is not a fan of watching humans win, however.&lt;/color&gt;</description>
 
-    <portraitLarge>Avali/Storyteller/Trickster_Todd_Squared</portraitLarge>
-    <portraitTiny>Avali/Storyteller/Trickster_Todd</portraitTiny>
+    <portraitLarge>avali/Storyteller/Trickster_Todd_Squared</portraitLarge>
+    <portraitTiny>avali/Storyteller/Trickster_Todd</portraitTiny>
     <listOrder>40</listOrder>
     <comps>
       <li Class="AvaliMod.ToddStoryTellerProps">

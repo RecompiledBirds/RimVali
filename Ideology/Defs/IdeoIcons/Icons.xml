@@ -2,7 +2,7 @@
 <Defs>
   <IdeoIconDef>
     <defName>AvaliLogo</defName>
-    <iconPath>Avali/Symbols/avali_ideo_one</iconPath>
+    <iconPath>avali/Symbols/avali_ideo_one</iconPath>
     <memes>
       <li>Transhumanist</li>
     </memes>
@@ -10,7 +10,7 @@
 
   <IdeoIconDef>
     <defName>AvaliIlluminateLogo</defName>
-    <iconPath>Avali/Symbols/avali_ideo_illuminate</iconPath>
+    <iconPath>avali/Symbols/avali_ideo_illuminate</iconPath>
     <memes>
       <li>Transhumanist</li>
     </memes>
@@ -18,7 +18,7 @@
 
   <IdeoIconDef>
     <defName>AvaliLogoTwo</defName>
-    <iconPath>Avali/Symbols/avali_ideo_two</iconPath>
+    <iconPath>avali/Symbols/avali_ideo_two</iconPath>
     <memes>
       <li>Transhumanist</li>
       <li>Individualist</li>
@@ -27,7 +27,7 @@
 
   <IdeoIconDef>
     <defName>AvaliLogoThree</defName>
-    <iconPath>Avali/Symbols/avali_ideo_collectivist</iconPath>
+    <iconPath>avali/Symbols/avali_ideo_collectivist</iconPath>
     <memes>
       <li>Transhumanist</li>
       <li>Collectivist</li>
@@ -36,7 +36,7 @@
 
   <IdeoIconDef>
     <defName>AvaliLogoCannibalism</defName>
-    <iconPath>Avali/Symbols/avali_ideo_angy</iconPath>
+    <iconPath>avali/Symbols/avali_ideo_angy</iconPath>
     <memes>
       <li>Transhumanist</li>
       <li>Cannibal</li>
@@ -45,7 +45,7 @@
 
   <IdeoIconDef>
     <defName>AvaliLogoPirate</defName>
-    <iconPath>Avali/Symbols/avali_ideo_pirate</iconPath>
+    <iconPath>avali/Symbols/avali_ideo_pirate</iconPath>
     <memes>
       <li>Transhumanist</li>
       <li>Raider</li>

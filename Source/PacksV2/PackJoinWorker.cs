@@ -10,6 +10,10 @@ namespace Rimvali.Rewrite.Packs
 {
     public class PackJoinWorker : InteractionWorker
     {
+        public static void AddPostJoinAction(Pawn joiner, Pack packJoined)
+        {
+
+        }
         
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, out string letterText, out string letterLabel, out LetterDef letterDef, out LookTargets lookTargets)
         {
@@ -66,7 +70,7 @@ namespace Rimvali.Rewrite.Packs
             bool bothAreAvali = initiator.def == AvaliDefs.RimVali && recipient.def == AvaliDefs.RimVali;
             
             //Check both are avali, unstable mode is on, initator has a pack, recipient does not, both are of the same faction, and initator's pack has space.
-            if (recipient.IsPackBroken() || packsComp.PawnHasPack(recipient) || !bothAreAvali || !RimValiMod.settings.unstable || initiator.Faction != recipient.Faction || !initatiorPackHasSpace)
+            if (recipient.IsPackBroken() || packsComp.PawnHasPack(recipient) || !bothAreAvali || !PacksV2WorldComponent.EnhancedMode || initiator.Faction != recipient.Faction || !initatiorPackHasSpace)
                 return 0f;
             
             //This is important for day 0 pack creation.

@@ -47,7 +47,7 @@ namespace AvaliMod
         }
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (!RimValiMod.settings.unstable)
+            if (!PacksV2WorldComponent.EnhancedMode)
             {
                 if (RimValiUtility.Driver == null || !RimValiUtility.Driver.PawnHasPack(p))
                 {
@@ -118,6 +118,8 @@ namespace AvaliMod
             }
             else
             {
+                if (p.def != AvaliDefs.RimVali)
+                    return ThoughtState.Inactive;
                 PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
                 var packComp = p.TryGetComp<PackComp>();
                 var thoughtComp = p.TryGetComp<AvaliThoughtDriver>();

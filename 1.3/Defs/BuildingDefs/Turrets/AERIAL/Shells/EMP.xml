@@ -5,7 +5,7 @@
     <label>AERIAL EMP rocket</label>
     <description>A rocket with an onboard EMP device, made to be launched from the AERIAL system.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_EMP</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/Shells/AERIAL_EMP</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -34,7 +34,7 @@
     <defName>AERIAL_EMP_SHELL</defName>
     <label>EMP shell</label>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_EMP_LAUNCHED</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/Shells/AERIAL_EMP_LAUNCHED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>

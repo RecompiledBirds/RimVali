@@ -3,7 +3,7 @@
   <ThingDef>
     <defName>VenomTeeth</defName>
     <graphicData>
-      <texPath>Avali/Things/Cybernetics/Head</texPath>
+      <texPath>avali/Things/Cybernetics/Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

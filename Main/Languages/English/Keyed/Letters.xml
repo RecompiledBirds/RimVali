@@ -7,4 +7,8 @@
   <AirdropSendMsg>Airdrop en route</AirdropSendMsg>
   <HackedProject>Hacked project: {PROJECT}</HackedProject>
  <UnlockedResearch>Tech now researchable: {PROJECT}</UnlockedResearch>
+ 
+ <EnhancedModeTitle>Enhanced mode/Packs V2 is disabled!</EnhancedModeTitle>
+ <EnhancedModeDesc>Enhanced mode is disabled. This means you will not be using the most up-to-date features.\n\nThis is either because you were detected to be playing an old save, or have disabled it in the options menu.
+ \nPlease note that bug reports regarding the pack system are not accepted unless it is enabled, due to the fact they are from the old pack system. (The purpose of this mode is to preserve old saves.)\n\nHave a nice day!\n - The RimVali team</EnhancedModeDesc>
 </LanguageData> 

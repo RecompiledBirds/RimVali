@@ -91,7 +91,7 @@ namespace AvaliMod
             try
             {
                 {
-                    if (RimValiMod.settings.unstable)
+                    if (PacksV2WorldComponent.EnhancedMode)
                     {
                         PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
                         Pawn pawn = SelPawn;

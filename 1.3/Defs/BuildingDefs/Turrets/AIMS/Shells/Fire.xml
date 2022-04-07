@@ -5,7 +5,7 @@
     <label>AIMS incendiary shell</label>
     <description>A shell filled with highly flammable materials. Can be fired from an AIMS system.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_INC</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/Shells/AIMS_INC</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -32,7 +32,7 @@
     <defName>AIMS_INC_SHELL</defName>
     <label>high-explosive shell</label>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_INC_launched</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/Shells/AIMS_INC_launched</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>

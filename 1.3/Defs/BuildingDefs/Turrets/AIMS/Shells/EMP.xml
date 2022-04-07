@@ -5,7 +5,7 @@
     <label>AIMS EMP shell</label>
     <description>A shell with an onboard EMP device. Can be fired from an AIMS system.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_EMP</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/Shells/AIMS_EMP</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -33,7 +33,7 @@
     <defName>AIMS_EMP_SHELL</defName>
     <label>high-explosive shell</label>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AIMS/Shells/AIMS_EMP_launched</texPath>
+      <texPath>avali/Buildings/Turrets/AIMS/Shells/AIMS_EMP_launched</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>

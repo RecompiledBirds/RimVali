@@ -11,7 +11,6 @@ namespace AvaliMod
 
         public override void Initialize()
         {
-            random = new Random(Find.World.ConstantRandSeed);
             base.Initialize();
         }
 
@@ -31,6 +30,10 @@ namespace AvaliMod
 
         public override IEnumerable<FiringIncident> MakeIntervalIncidents(IIncidentTarget target)
         {
+            if(random == null)
+                random = new Random(Find.World.ConstantRandSeed);
+
+
             var num = 1f;
             if (Props.acceptFractionByDaysPassedCurve != null)
             {
@@ -189,9 +192,9 @@ namespace AvaliMod
 
 
             parms.points *=
-                new Random(Find.World.ConstantRandSeed).Next(1,
+                random.Next(1,
                     (int)StorytellerUtilityPopulation.AdjustedPopulation *
-                    new Random(Find.World.ConstantRandSeed).Next(1, 3)) *
+                    random.Next(1, 3)) *
                 (hasPawnsNotAvali ? ratioNonAvaliToAvali * 2 : 1);
 
             if (hasPawnsNotAvali && ratioNonAvaliToAvali > 6)
@@ -222,16 +225,16 @@ namespace AvaliMod
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
 
-            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1,
+            parms.points *= random.Next(1,
                 (int)StorytellerUtilityPopulation.AdjustedPopulation *
-                new Random(Find.World.ConstantRandSeed).Next(1, 3));
+                random.Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
             if (!def.Worker.CanFireNow(parms2))
             {
                 return null;
             }
 
-            if (new Random(Find.World.ConstantRandSeed).Next(1, 2) == 2)
+            if (random.Next(1, 2) == 2)
             {
                 StorytellerData.state = StorytellerState.Aggressive;
             }
@@ -250,12 +253,12 @@ namespace AvaliMod
             defs.AddRange(DefDatabase<IncidentDef>.AllDefs.Where(x => x.category == IncidentCategoryDefOf.Misc));
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
-            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1,
+            parms.points *= random.Next(1,
                 (int)StorytellerUtilityPopulation.AdjustedPopulation *
-                new Random(Find.World.ConstantRandSeed).Next(1, 3));
+                random.Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
             if (def == AvaliDefs.RefugeePodCrash || def == AvaliDefs.WildManWandersIn ||
-                new Random(Find.World.ConstantRandSeed).Next(1, 5) == 2)
+                random.Next(1, 5) == 2)
             {
                 parms.faction = Find.FactionManager.FirstFactionOfDef(AvaliDefs.AvaliFaction);
                 parms.pawnKind = AvaliDefs.RimValiColonist;
@@ -281,12 +284,12 @@ namespace AvaliMod
                 x.category == IncidentCategoryDefOf.AllyAssistance));
             IncidentDef def = defs.RandomElement();
             IncidentParms parms = GenerateParms(def.category, targ);
-            parms.points *= new Random(Find.World.ConstantRandSeed).Next(1,
+            parms.points *= random.Next(1,
                 (int)StorytellerUtilityPopulation.AdjustedPopulation *
-                new Random(Find.World.ConstantRandSeed).Next(1, 3));
+                random.Next(1, 3));
             IncidentParms parms2 = GenerateParms(def.category, targ);
             if (def.category == IncidentCategoryDefOf.OrbitalVisitor ||
-                new Random(Find.World.ConstantRandSeed).Next(1, 5) == 2)
+                random.Next(1, 5) == 2)
             {
                 parms.faction = Find.FactionManager.FirstFactionOfDef(AvaliDefs.AvaliFaction);
                 parms.pawnKind = AvaliDefs.RimValiColonist;

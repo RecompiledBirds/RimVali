@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Rimvali.Rewrite.Packs;
 using RimWorld.Planet;
 using Verse;
 
@@ -36,12 +37,6 @@ namespace AvaliMod
 
         public AvaliPackDriver(World world) : base(world)
         {
-            if (!RimValiMod.settings.unstable)
-            {
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter("Enhanced mode is disabled!",
-                   "Enhanced mode is disabled. This means you will not be using the most up-to-date features.\n\nThis mode has been made to allow users to preserve old saves, and is disabled by default. \n\nFor the most up-to-date experience, it is recommended you enable unstable mode in the mod's settings (RimVali: Far From Avalon > Enhanced mode).\n\nHave a nice day!", AvaliDefs.IlluminateAirdrop);
-                Find.LetterStack.ReceiveLetter(choiceLetter);
-            }
             ResetPacks();
         }
 
@@ -209,7 +204,7 @@ namespace AvaliMod
 
         public override void WorldComponentTick()
         {
-            if (!RimValiMod.settings.unstable)
+            if (!PacksV2WorldComponent.EnhancedMode)
             {
                 try
                 {

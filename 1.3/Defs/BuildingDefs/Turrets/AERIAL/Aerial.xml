@@ -3,7 +3,7 @@
   <ThingDef ParentName="BaseArtilleryBuilding">
     <thingClass>AvaliMod.AERIALSYSTEM</thingClass>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/AERIAL_TURRET_BASE_3X3</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/AERIAL_TURRET_BASE_3X3</texPath>
       <drawSize>(3,3)</drawSize>
     </graphicData>
     <defName>Aerial</defName>
@@ -34,7 +34,7 @@
         <li>Artillery_MannedMortar</li>
       </buildingTags>
     </building>
-    <uiIconPath>Avali/Buildings/Turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
+    <uiIconPath>avali/Buildings/Turrets/AERIAL/AERIAL_GUI_IMAGE</uiIconPath>
     <uiIconScale>0.9</uiIconScale>
   </ThingDef>
 
@@ -71,7 +71,7 @@
     <label>AERIAL</label>
     <description>AERIAL launch system.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/AERIAL_TURRET</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/AERIAL_TURRET</texPath>
       <drawSize>(3,3)</drawSize>
     </graphicData>
     <weaponTags>

@@ -281,7 +281,10 @@ namespace AvaliMod
             }
 
             #endregion
-            listing_Standard.CheckboxLabeled($"Enhanced mode", ref settings.unstable, "Enables new features. Disabled by default to preserve old saves.");
+            bool dateHasPassed = DateTime.Today.Day >= 1 && DateTime.Today.Month >= 5 && DateTime.Today.Year >= 2021;
+            if(!dateHasPassed)
+                listing_Standard.CheckboxLabeled($"Enhanced mode", ref settings.unstable, "Enables new features. Disabled by default to preserve old saves.");
+            
             if (windowToShow != SettingsWindow.Pawns)
             {
                 listing_Standard.End();

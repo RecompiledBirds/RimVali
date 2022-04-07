@@ -21,7 +21,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Avali/Things/Apparel/SpecOpsArmor/SpecOpsArmor_Avali_south</texPath>
+      <texPath>avali/Things/Apparel/SpecOpsArmor/SpecOpsArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -65,7 +65,7 @@
         <li>AvaliSpecOps</li>
         <li>EVA</li>
       </tags>
-      <wornGraphicPath>Avali/Things/Apparel/SpecOpsArmor/SpecOpsArmor</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/SpecOpsArmor/SpecOpsArmor</wornGraphicPath>
       <layers>
         <li>Middle</li>
         <li>Shell</li>
@@ -122,7 +122,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Avali/Things/Apparel/SpecOpsHelmet/SpecOpsHelmet_south</texPath>
+      <texPath>avali/Things/Apparel/SpecOpsHelmet/SpecOpsHelmet_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -163,7 +163,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>Avali/Things/Apparel/SpecOpsHelmet/SpecOpsHelmet</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/SpecOpsHelmet/SpecOpsHelmet</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -219,7 +219,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Avali/Things/Apparel/ScoutHelmet/ScoutHelmet_south</texPath>
+      <texPath>avali/Things/Apparel/ScoutHelmet/ScoutHelmet_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -258,7 +258,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>Avali/Things/Apparel/ScoutHelmet/ScoutHelmet</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/ScoutHelmet/ScoutHelmet</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -314,7 +314,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Avali/Things/Apparel/CombatHelmet/CombatHelmet_south</texPath>
+      <texPath>avali/Things/Apparel/CombatHelmet/CombatHelmet_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -351,7 +351,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>Avali/Things/Apparel/CombatHelmet/CombatHelmet</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/CombatHelmet/CombatHelmet</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -406,7 +406,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Avali/Things/Apparel/CombatArmor/CombatArmor_Avali_south</texPath>
+      <texPath>avali/Things/Apparel/CombatArmor/CombatArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -447,7 +447,7 @@
         <li>Arms</li>
         <li>Legs</li>
       </bodyPartGroups>
-      <wornGraphicPath>Avali/Things/Apparel/CombatArmor/CombatArmor</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/CombatArmor/CombatArmor</wornGraphicPath>
       <layers>
         <li>Middle</li>
         <li>Shell</li>
@@ -504,7 +504,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Avali/Things/Apparel/ScoutArmor/ScoutArmor_Avali_south</texPath>
+      <texPath>avali/Things/Apparel/ScoutArmor/ScoutArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -540,7 +540,7 @@
         <li>Arms</li>
         <li>Legs</li>
       </bodyPartGroups>
-      <wornGraphicPath>Avali/Things/Apparel/ScoutArmor/ScoutArmor</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/ScoutArmor/ScoutArmor</wornGraphicPath>
       <layers>
         <li>Middle</li>
         <li>Shell</li>
@@ -594,7 +594,7 @@
       </skillRequirements>
     </recipeMaker>
     <graphicData>
-      <texPath>Avali/Things/Apparel/NezaiArmor/NezaiArmor_Avali_south</texPath>
+      <texPath>avali/Things/Apparel/NezaiArmor/NezaiArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tradeTags>
@@ -634,7 +634,7 @@
         <li>Arms</li>
         <li>Legs</li>
       </bodyPartGroups>
-      <wornGraphicPath>Avali/Things/Apparel/NezaiArmor/NezaiArmor</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/NezaiArmor/NezaiArmor</wornGraphicPath>
       <layers>
         <li>Middle</li>
         <li>Shell</li>

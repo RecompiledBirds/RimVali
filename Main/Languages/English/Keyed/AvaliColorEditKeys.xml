@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<RimVali_ColorSet_Skin>Feather Colors</RimVali_ColorSet_Skin>
+	<RimVali_ColorSet_Eye>Eye Color</RimVali_ColorSet_Eye>
+	
+	<RimVali_Skin_First>Primary</RimVali_Skin_First>
+	<RimVali_Skin_Second>Secondary</RimVali_Skin_Second>
+	<RimVali_Skin_Third>Markings</RimVali_Skin_Third>
+	
+	<RimVali_Eye_First>Eye Color</RimVali_Eye_First>
+	<RimVali_Eye_Second>Unused</RimVali_Eye_Second>
+	<RimVali_Eye_Third>Unused</RimVali_Eye_Third>
+</LanguageData>

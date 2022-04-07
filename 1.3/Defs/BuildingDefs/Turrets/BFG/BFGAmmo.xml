@@ -20,7 +20,7 @@
     <rotatable>false</rotatable>
     <description>Ammunition for the BFG Railgun.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/BFG/BFG_sabot</texPath>
+      <texPath>avali/Buildings/Turrets/BFG/BFG_sabot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

@@ -8,7 +8,7 @@
     <description>This large turret, nicknamed the "BFG" is a sniper turret, designed to kill anything at long range.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
+      <texPath>avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -19,7 +19,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>Avali/Buildings/Turrets/BFG/BFG_GUI_IMG</uiIconPath>
+    <uiIconPath>avali/Buildings/Turrets/BFG/BFG_GUI_IMG</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -111,7 +111,7 @@
     <defName>BFGBullet</defName>
     <label>BFG bullet</label>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/BFG/BFG_sabot_launched</texPath>
+      <texPath>avali/Buildings/Turrets/BFG/BFG_sabot_launched</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -132,7 +132,7 @@
     <label>BFG</label>
     <description>BFG</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/BFG/BFG_turret</texPath>
+      <texPath>avali/Buildings/Turrets/BFG/BFG_turret</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.5</drawSize>
     </graphicData>

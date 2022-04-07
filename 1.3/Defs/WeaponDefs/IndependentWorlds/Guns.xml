@@ -5,7 +5,7 @@
     <defName>IWPistolBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -22,7 +22,7 @@
     <label>Independent Worlds Pistol</label>
     <description>A simple non-Illuminate pistol. Whilst dealing less damage and having a slightly shorter range when compared to its Terran counterpart, it makes up for this by using coil technology for a better firing rate and more medium range viability.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Pistol_IndependentWorlds</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Pistol_IndependentWorlds</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -87,7 +87,7 @@
     <defName>IWSemiAutoBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -105,7 +105,7 @@
     <label>Independent Worlds battle rifle</label>
     <description>A popular non-Illuminate battle rifle. The design of these simple rifles has quickly spread throughout the Rimworld to offer Avali both defensive and hunting capacities. Together with a regular old blowback-action design and its fast but small bullet, it brings a decent fire-rate and equally decent range to the table.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/vali_Primitive_semiauto</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/vali_Primitive_semiauto</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -170,7 +170,7 @@
     <defName>IWRifleBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -187,7 +187,7 @@
     <label>Independent Worlds rifle</label>
     <description>A bolt-action non-Illuminate rifle. Whilst this weapon has a lower fire-rate when compared to its semi-auto packmate, it quickly proves itself when competing for range and accuracy against it. This causes the weapon to still attract Avali sharpshooters that seek something reliable and simple to arm themselves with.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Rifle</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Rifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -253,7 +253,7 @@
     <defName>IWAssaultRifleBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -270,7 +270,7 @@
     <label>Independent Worlds battle rifle</label>
     <description>A non-Illuminate assault rifle. Choosing fire-power over accuracy, this weapon releases a burst of four shots before the user has to zero in again due to recoil. Whilst it doesn’t receive the same love from Avali sharpshooters that the other rifles receive, it certainly finds its favour by Avali who prefer more suppressing fire.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Assault_Rifle</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Assault_Rifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -337,7 +337,7 @@
     <defName>IWMGBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -354,7 +354,7 @@
     <label>Independent Worlds light machine gun</label>
     <description>A rapid-fire non-Illuminate LMG. Throwing away more popular doctrines of accuracy and controllability. This weapon is capable of firing enough projectiles to make a certain area wholly suppressed. Whilst it certainly has this high fire-power, this comes at the expense of the Avali wielder who needs time to zero it in again after usage.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Vali_Independent_MG</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Independent_MG</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -421,7 +421,7 @@
     <defName>IWGPMGBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -438,7 +438,7 @@
     <label>Independent Worlds machine gun</label>
     <description>A more general purpose non-Illuminate machine gun. When compared to its lighter packmate, this machine gun already comes with more accuracy and a heavier bullet. Whilst this may be the case, it generally has less range compared to it and the advised burst is also lowered for more controllability.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_GPMG</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_GPMG</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -505,7 +505,7 @@
     <defName>IWSMGBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -522,7 +522,7 @@
     <label>Independent Worlds sub-machine gun</label>
     <description>A regular old non-Illuminate SMG. Whilst generally better in close quarters or when closing in on your target, its fire-rate is the thing that makes up for this fact. This weapon is best used in shorter ranges or maybe just a way to protect yourself from melee based attackers, or an alternative to melee attacks of your own.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_AngryTube</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_AngryTube</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -589,7 +589,7 @@
     <defName>IWRailRifleBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -606,7 +606,7 @@
     <label>Independent Worlds rail rifle</label>
     <description>A non-Illuminate Anti-Tank rail rifle. Together with its lengthy coil system and its dense projectile, this rifle will punch a hole through most armoured targets and will do the same to unarmoured targets — with overpenetration, mind you.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Railrifle</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Railrifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -671,7 +671,7 @@
     <defName>IWRevolverBullet</defName>
     <label>Avali bullet</label>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -688,7 +688,7 @@
     <label>Independent Worlds revolver</label>
     <description>A Terran influenced non-Illuminate revolver. Despite its non-Avali nature, this cylinder shooter still shouldn’t be mistaken for a kit’s toy to the same kin that designed it. Sporting short range accuracy and a punchy bullet, it’s a good weapon for an Avali that wants an easy to both maintain and make weapon.</description>
     <graphicData>
-      <texPath>Avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Revolver</texPath>
+      <texPath>avali/Things/Weapons/Guns/IWWeapons/Vali_Primitive_Revolver</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>

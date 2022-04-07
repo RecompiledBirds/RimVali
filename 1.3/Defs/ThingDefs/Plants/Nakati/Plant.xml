@@ -9,7 +9,7 @@
       <Nutrition>0.2</Nutrition>
     </statBases>
     <graphicData>
-      <texPath>Avali/Things/Plants/Nakati/NakatiPlantFull</texPath>
+      <texPath>avali/Things/Plants/Nakati/NakatiPlantFull</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <ingestible />
@@ -19,7 +19,7 @@
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>NakatiBark</harvestedThingDef>
       <harvestYield>6</harvestYield>
-      <immatureGraphicPath>Avali/Things/Plants/Nakati/NakatiPlant</immatureGraphicPath>
+      <immatureGraphicPath>avali/Things/Plants/Nakati/NakatiPlant</immatureGraphicPath>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.3~0.8</visualSizeRange>

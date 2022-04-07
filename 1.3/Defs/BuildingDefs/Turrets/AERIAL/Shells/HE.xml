@@ -6,7 +6,7 @@
     <label>AERIAL HE rocket</label>
     <description>A highly explosive rocket, launched from an AERIAL system.</description>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_HE</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/Shells/AERIAL_HE</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -34,7 +34,7 @@
     <defName>AERIAL_HE_SHELL</defName>
     <label>high-explosive shell</label>
     <graphicData>
-      <texPath>Avali/Buildings/Turrets/AERIAL/Shells/AERIAL_HE_LAUNCHED</texPath>
+      <texPath>avali/Buildings/Turrets/AERIAL/Shells/AERIAL_HE_LAUNCHED</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>

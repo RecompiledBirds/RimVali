@@ -15,7 +15,7 @@
 
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>Avali/Things/Weapons/Melee/Scythe</texPath>
+      <texPath>avali/Things/Weapons/Melee/Scythe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliScythe</defName>
@@ -72,7 +72,7 @@
 
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>Avali/Things/Weapons/Melee/Axe</texPath>
+      <texPath>avali/Things/Weapons/Melee/Axe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliAxe</defName>
@@ -129,7 +129,7 @@
 
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>Avali/Things/Weapons/Melee/Knife</texPath>
+      <texPath>avali/Things/Weapons/Melee/Knife</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliKnife</defName>
@@ -186,7 +186,7 @@
 
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>Avali/Things/Weapons/Melee/Spear</texPath>
+      <texPath>avali/Things/Weapons/Melee/Spear</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliSpear</defName>
@@ -243,7 +243,7 @@
 
   <ThingDef ParentName="AvaliMeleeWeapon_Sharp_Quality">
     <graphicData>
-      <texPath>Avali/Things/Weapons/Melee/Viroblade</texPath>
+      <texPath>avali/Things/Weapons/Melee/Viroblade</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <defName>AvaliViroblade</defName>

@@ -20,7 +20,7 @@
     <rotatable>false</rotatable>
     <description>Often mistranslated to aerogel, ferrogel is the base building block of many avali technologies. It's been made in neat, stackable pucks for easy storage.</description>
     <graphicData>
-      <texPath>Avali/Things/Aerogel/BaseAerogel/Aerogel</texPath>
+      <texPath>avali/Things/Aerogel/BaseAerogel/Aerogel</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
