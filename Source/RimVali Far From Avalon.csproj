@@ -68,6 +68,7 @@
     <Compile Include="PacksV2\Pack.cs" />
     <Compile Include="PacksV2\PackJoinWorker.cs" />
     <Compile Include="PacksV2\PacksV2WorldComponent.cs" />
+    <Compile Include="RitualOutcomeWorker\RitualAttachableOutcomeEffectWorker_RandomAvaliRecruit.cs" />
     <Compile Include="RVFFAInit.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackComp.cs" />
     <Compile Include="Packs\PackMapComponents\PackDriver\ThingComps\PackDiverMapComp.cs" />

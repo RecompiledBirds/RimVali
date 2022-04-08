@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RitualAttachableOutcomeEffectDef>
+		<defName>RandomAvaliRecruit</defName>
+		<label>random Avali recruit</label>
+		<effectDesc>50% chance of random Avali recruit of the same ideoligion joining your colony.</effectDesc>
+		<letterInfoText>A wanderer has arrived and wants to join your colony.</letterInfoText>
+		<workerClass>AvaliMod.RitualAttachableOutcomeEffectWorker_RandomAvaliRecruit</workerClass>
+		<disallowedRituals>
+		  <li>FuneralStandard</li>
+		  <li>FuneralNoCorpse</li>
+		</disallowedRituals>
+	  </RitualAttachableOutcomeEffectDef>
+</Defs>
