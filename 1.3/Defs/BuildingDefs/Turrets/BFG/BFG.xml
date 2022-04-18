@@ -5,7 +5,7 @@
     <size>(2,2)</size>
     <drawerType>MapMeshAndRealTime</drawerType>
     <label>BFG turret</label>
-    <description>A very heavy railturret. No-one was truly prepared for what one would be able to find on the Rim, predators were always expected, but Mechanoids and other highly armoured creatures sometimes proved to be difficult to be taken out with normal Avali weapons. Because of that fact, this weapon was designed. Sporting a highly accurate railgun, it is able to take rip off most limbs with a single shot and frequently makes short work of its targets. Because of its large size and overwhelming power, it has quite comically been nicknamed as the "BFG".</description>
+    <description>A very heavy railturret. No-one was truly prepared for what one would be able to find on the Rim, predators were always expected, but Mechanoids and other highly armoured creatures sometimes proved to be difficult to be taken out with normal Avali weapons. Because of that fact, this weapon was designed. Sporting a highly accurate railgun, it is able to rip off most limbs with a single shot and frequently makes short work of its targets. Because of its large size and overwhelming power, it has quite comically been nicknamed as the "BFG".</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
       <texPath>avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
