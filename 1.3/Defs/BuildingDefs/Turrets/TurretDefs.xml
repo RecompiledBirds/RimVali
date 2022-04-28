@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="BuildingBase">
+	<designationCategory>RimVali_AvaliSecurity</designationCategory>
     <defName>AvaliBasicTurret</defName>
     <label>Avali turret</label>
     <description>A lightweight railgun turret, designed for long range combat. It is somewhat less durrable than it's human-built counterparts, but has great long range accuracy.</description>
@@ -83,7 +84,6 @@
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>Security</designationCategory>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <building>
       <combatPower>30</combatPower>
@@ -155,6 +155,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>AvaliMiniGunTurret</defName>
+	  <designationCategory>RimVali_AvaliSecurity</designationCategory>
     <drawerType>MapMeshAndRealTime</drawerType>
     <size>(2,2)</size>
     <label>Avali minigun turret</label>
@@ -239,7 +240,6 @@
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>Security</designationCategory>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <building>
       <combatPower>45</combatPower>   <!-- same as a scavenger -->

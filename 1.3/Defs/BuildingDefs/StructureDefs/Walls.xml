@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="BuildingBase">
+    <designationCategory>RimVali_AvaliFurniture</designationCategory>
     <defName>AvaliWall</defName>
     <label>tent wall</label>
     <description>An impassable wall. Capable of holding up a roof.</description>
@@ -48,7 +49,6 @@
     <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded> <!-- Best affordance needed for stone -->
     <holdsRoof>true</holdsRoof>
-    <designationCategory>Structure</designationCategory>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
     <blockLight>true</blockLight>
     <canOverlapZones>false</canOverlapZones>

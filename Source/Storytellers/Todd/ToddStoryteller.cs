@@ -35,7 +35,6 @@ namespace AvaliMod
 
         public override void Initialize()
         {
-            random = new Random(Find.World.ConstantRandSeed);
             base.Initialize();
         }
         protected ToddStoryTellerProps Props => (ToddStoryTellerProps)props;
@@ -56,6 +55,8 @@ namespace AvaliMod
 
         public override IEnumerable<FiringIncident> MakeIntervalIncidents(IIncidentTarget target)
         {
+            if(random==null)
+                random = new Random(Find.World.ConstantRandSeed);
             var num = 1f;
             if (Props.acceptFractionByDaysPassedCurve != null)
             {

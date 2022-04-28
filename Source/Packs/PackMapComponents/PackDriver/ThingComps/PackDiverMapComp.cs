@@ -15,8 +15,6 @@ namespace AvaliMod
 
         private readonly Dictionary<Pawn, int> currentPack = new Dictionary<Pawn, int>();
 
-        private readonly bool multiThreaded =
-            LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
 
         private readonly bool packsEnabled =
             LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packsEnabled;
@@ -127,7 +125,6 @@ namespace AvaliMod
             }
 
             currentPack[pawn] = packs.IndexOf(pack);
-            Log.Message($"Set packID for {pawn.Name.ToStringShort}: {packs.IndexOf(pack)}");
         }
 
         private void RemovePawnFromPack(Pawn pawn, ref AvaliPack pack)
@@ -211,7 +208,7 @@ namespace AvaliMod
                     workingPawnHashset = RimValiUtility.PawnsInWorld;
                     if (onTick == 0 && packsEnabled && Find.CurrentMap != null)
                     {
-                        if (multiThreaded && CanStartNextThread)
+                        if (CanStartNextThread)
                         {
                             ThreadIsActive = true;
                             var packTask = new Task(UpdatePacks);

@@ -254,32 +254,26 @@ namespace AvaliMod
             if (!Spawned || holdFire && CanToggleHoldFire ||
                 AttackVerb.ProjectileFliesOverhead() && Map.roofGrid.Roofed(Position) || !AttackVerb.Available())
             {
-                //Log.Message($"reset current targ. \n SPAWNED: {base.Spawned} \n HOLDING FIRE: {holdFire && CanToggleHoldFire}\n ROOFED: {AttackVerb.ProjectileFliesOverhead() && base.Map.roofGrid.Roofed(base.Position)} \n VERB AVALIBLE: {AttackVerb.Available()}");
                 ResetCurrentTarget();
                 return;
             }
 
-            //Log.Message($"Is forced targ valid: {forcedTarget.IsValid}");
             if (forcedTarget.IsValid)
-                //Log.Message("forced target is valid");
             {
                 currentTargetInt = forcedTarget;
             }
             else
-                //Log.Message("trying to find new target");
             {
                 currentTargetInt = TryFindNewTarget();
             }
 
             if (currentTargetInt.IsValid)
-                //Log.Message("current target is valid");
             {
                 SoundDefOf.TurretAcquireTarget.PlayOneShot(new TargetInfo(Position, Map));
             }
 
             if (!currentTargetInt.IsValid)
             {
-                //Log.Message("reset current target, invalid");
                 ResetCurrentTarget();
                 return;
             }
@@ -292,7 +286,6 @@ namespace AvaliMod
 
             if (canBeginBurstImmediately)
             {
-                //Log.Message("beginBurst");
                 BeginBurst();
 
                 return;
@@ -300,7 +293,6 @@ namespace AvaliMod
 
             gun.TryGetComp<AERIALChangeableProjectile>().loadedShells
                 .RemoveAt(gun.TryGetComp<AERIALChangeableProjectile>().loadedShells.Count - 1);
-            Log.Message($"{gun.TryGetComp<AERIALChangeableProjectile>().loadedShells.Count}");
             burstWarmupTicksLeft = 1;
         }
 

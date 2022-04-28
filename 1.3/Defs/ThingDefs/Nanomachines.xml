@@ -51,7 +51,7 @@
         <li>Leathery</li>
         <li>Stony</li>
       </categories>
-      <commonality>0.5</commonality>
+      <commonality>0.0</commonality>
       <color>(255,255,255)</color>
       <constructEffect>ConstructMetal</constructEffect>
       <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
@@ -64,6 +64,7 @@
         <MarketValue>10.5</MarketValue>
         <WorkToMake>2.2</WorkToMake>
         <WorkToBuild>2.2</WorkToBuild>
+		<MarketValue>350</MarketValue>
       </statFactors>
       <statOffsets>
         <Beauty>4</Beauty>

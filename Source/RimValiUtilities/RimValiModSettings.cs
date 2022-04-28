@@ -24,7 +24,6 @@ namespace AvaliMod
         public int maxPackSize;
         public int packBrokenChance;
         public bool packLossEnabled;
-        public bool packMultiThreading;
         public int packOpReq;
         public bool packsEnabled;
         public bool packThoughtsEnabled;
@@ -42,7 +41,6 @@ namespace AvaliMod
             enabledRaces = new Dictionary<string, bool>();
             healthScale = 1.3f;
             packLossEnabled = true;
-            packMultiThreading = true;
             packOpReq = 30;
             maxPackSize = 5;
             mapCompOn = true;
@@ -74,7 +72,6 @@ namespace AvaliMod
             Scribe_Values.Look(ref checkOtherRaces, "checkOtherRaces", true, true);
             Scribe_Values.Look(ref allowAllRaces, "allowAllRaces", false, true);
             Scribe_Values.Look(ref enableAirdrops, "airdropsEnabled", true, true);
-            Scribe_Values.Look(ref packMultiThreading, "threading", true, true);
             Scribe_Values.Look(ref maxPackSize, "maxPackSize", 5, true);
             Scribe_Values.Look(ref avaliRequiredForDrop, "avaliRequiredForDrop", 5, true);
             Scribe_Values.Look(ref avaliLayEggs, "avaliLayEggs", false, true);

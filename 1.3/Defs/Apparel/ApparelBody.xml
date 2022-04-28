@@ -70,7 +70,7 @@
    <ThingDef ParentName="ApparelMakeableBase">
     <defName>AvaliHUD</defName>
       
-    <label>Avali HUD [placeholder]</label>
+    <label>Avali HUD</label>
     <description>An Avali HUD. Attached to the side of an Avali’s head, this piece sports three important components: A small antenna to relay and receive information, a hard translucent visor, and- most importantly of all- and a matrix of miniscule LASERs at the base of the visor. Whilst these can feed the Avali a lot of information, they sadly can only keep to one color and have to keep 2D as well.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>

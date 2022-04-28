@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Rimvali.Rewrite.Packs;
 using RimValiCore;
 using RimWorld;
 using RimWorld.Planet;
@@ -13,8 +15,6 @@ namespace AvaliMod
         private readonly bool mapCompOn =
             LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().mapCompOn;
 
-        private readonly bool multiThreaded =
-            LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packMultiThreading;
 
         private int onTick;
         public HashSet<Pawn> pawns = new HashSet<Pawn>();
@@ -93,30 +93,79 @@ namespace AvaliMod
             threadRunning = false;
         }
 
+        int fails = 0;
+        private void UpdateV2()
+        {
+            //A simple check to stop if we are having repetitive issues.
+            if (fails >= 5)
+                return;
+            try
+            {
+                PacksV2WorldComponent packsComponent = Find.World.GetComponent<PacksV2WorldComponent>();
+                if (packsComponent == null || packsComponent.PacksReadOnly.EnumerableNullOrEmpty())
+                    return;
+
+                foreach (Pack pack in packsComponent.PacksReadOnly)
+                {
+                    if (pack != null && !pack.GetAllPawns.EnumerableNullOrEmpty())
+                    {
+                        IEnumerable<Pawn> pawns = pack.GetAllPawns.Where(x => x.Alive() && x != pack.Leader);
+                        if (!pawns.EnumerableNullOrEmpty())
+                        {
+                            foreach (Pawn pawn in pawns)
+                            {
+                                var packComp = pawn.TryGetComp<PackComp>();
+                                var thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
+                                if (pawn != null && pack.Leader != null && !thought_Memory2.TryMergeWithExistingMemory(out bool _))
+                                {
+                                    pawn.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, pack.Leader);
+                                }
+                            }
+                        }
+                    }
+                }
+                fails = 0;
+            }
+            catch(Exception error)
+            {
+                Log.ErrorOnce($"{error}",1);
+                fails++;
+            }
+        }
+
+        
+
         public override void WorldComponentTick()
         {
-            if (RimValiMod.settings.packThoughtsEnabled && mapCompOn && !(RimValiUtility.Driver.Packs == null) &&
-                RimValiUtility.Driver.Packs.Count > 0)
+            if (!PacksV2WorldComponent.EnhancedMode)
             {
-                if (onTick == 120)
+                if (RimValiMod.settings.packThoughtsEnabled && mapCompOn && !(RimValiUtility.Driver.Packs == null) &&
+                    RimValiUtility.Driver.Packs.Count > 0)
                 {
-                    pawns = RimValiUtility.PawnsInWorld;
-                    if (multiThreaded && CanStartNextThread)
+                    if (onTick == 120)
                     {
-                        threadRunning = true;
-                        ThreadStart packThreadRef = UpdateThreaded;
-                        var packThread = new Thread(packThreadRef);
-                        packThread.Start();
-                    }
-                    else
-                    {
-                        UpdatePawns();
+                        pawns = RimValiUtility.PawnsInWorld;
+                        if (CanStartNextThread)
+                        {
+                            threadRunning = true;
+                            ThreadStart packThreadRef = UpdateThreaded;
+                            var packThread = new Thread(packThreadRef);
+                            packThread.Start();
+                        }
+                        else
+                        {
+                            UpdatePawns();
+                        }
+
+                        onTick = 0;
                     }
 
-                    onTick = 0;
+                    onTick++;
                 }
-
-                onTick++;
+            }
+            else
+            {
+                UpdateV2();
             }
         }
     }

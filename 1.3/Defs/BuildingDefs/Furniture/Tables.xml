@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="TableGatherSpotBase">
+	<designationCategory>RimVali_AvaliFurniture</designationCategory>
     <defName>Illuminate2x2Table</defName>
     <label>2x2 Avali table</label>
     <graphicData>
@@ -28,6 +29,7 @@
   </ThingDef>
 
   <ThingDef ParentName="TableGatherSpotBase">
+	<designationCategory>RimVali_AvaliFurniture</designationCategory>
     <defName>Illuminate2x4Table</defName>
     <label>2x4 Avali table</label>
     <graphicData>

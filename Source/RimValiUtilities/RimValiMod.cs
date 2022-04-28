@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using Verse;
 
@@ -34,12 +35,8 @@ namespace AvaliMod
                 Log.Error("RIMVALI CORE IS NOT LOADED. THIS WILL CRASH THE GAME");
             }
 
+            
             settings = GetSettings<RimValiModSettings>();
-
-            if (settings.packMultiThreading)
-            {
-                Log.Message("!---RIMVALI PACK MULTITHREADING IS ACTIVE.---!");
-            }
         }
 
         public static string GetDir { get; private set; }
@@ -121,21 +118,7 @@ namespace AvaliMod
                 listing_Standard.Label("TicksBetweenPackUpdates".Translate());
                 int.TryParse(listing_Standard.TextEntry(settings.ticksBetweenPackUpdate.ToString()),
                     out settings.ticksBetweenPackUpdate);
-                bool threading = listing_Standard.ButtonText("MultithreadingCheck".Translate() + " " +
-                                                             ((Func<string>)delegate
-                                                             {
-                                                                 if (settings.packMultiThreading)
-                                                                 {
-                                                                     return "Y";
-                                                                 }
 
-                                                                 return "N";
-                                                                 ;
-                                                             })());
-                if (threading)
-                {
-                    windowToShow = SettingsWindow.Threading;
-                }
 
                 settings.packOpReq = (int)listing_Standard.Slider(settings.packOpReq, 0, 100);
                 listing_Standard.Gap();
@@ -254,32 +237,7 @@ namespace AvaliMod
 
             #region Multithreading warn
 
-            //Multithreading reboot warn
-            if (windowToShow == SettingsWindow.Threading)
-            {
-                listing_Standard.Begin(rect);
-                listing_Standard.Label("MultiThreadWarnLabel".Translate());
-                listing_Standard.Label("MultiThreadWarnDesc".Translate());
-                bool ready = listing_Standard.ButtonText("MultiThreadYes".Translate());
-                bool goBack = listing_Standard.ButtonText("MultiThreadNo".Translate());
-                if (ready)
-                {
-                    void UpdateBool(ref bool val)
-                    {
-                        val = !val;
-                    }
-
-                    UpdateBool(ref settings.packMultiThreading);
-                    settings.Write();
-                    GenCommandLine.Restart();
-                }
-
-                if (goBack)
-                {
-                    windowToShow = SettingsWindow.Main;
-                }
-            }
-
+            
             #endregion
             bool dateHasPassed = DateTime.Today.Day >= 1 && DateTime.Today.Month >= 5 && DateTime.Today.Year >= 2021;
             if(!dateHasPassed)

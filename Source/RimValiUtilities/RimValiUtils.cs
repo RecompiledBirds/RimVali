@@ -238,13 +238,11 @@ namespace AvaliMod
                     }
                     else
                     {
-                        Log.Message("packs to use fail");
                         CreatePack(pawn, "packs list was null or empty");
                     }
                 }
                 else
                 {
-                    Log.Message("normal fail");
                     CreatePack(pawn, "packs list was null or empty");
                 }
             }

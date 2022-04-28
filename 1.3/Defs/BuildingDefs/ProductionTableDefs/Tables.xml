@@ -2,6 +2,7 @@
 <Defs>
   <!-- Nano-Forge -->
   <ThingDef ParentName="BenchBase">
+	<designationCategory>RimVali_AvaliFurniture</designationCategory>
     <defName>AvaliNanoForge</defName>
     <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories Inherit="false">
@@ -86,7 +87,6 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>Production</designationCategory>
     <inspectorTabs>
       <li>ITab_Bills</li>
     </inspectorTabs>
@@ -94,6 +94,7 @@
 
   <!-- Research bench -->
   <ThingDef ParentName="BenchBase">
+	<designationCategory>RimVali_AvaliFurniture</designationCategory>
     <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories Inherit="false">
       <li>BuildingsProduction</li>
@@ -154,7 +155,6 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>Production</designationCategory>
     <surfaceType>Item</surfaceType>
     <designationHotKey>Misc4</designationHotKey>
     <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
@@ -225,6 +225,7 @@
 
   <!-- Nano-loom -->
   <ThingDef ParentName="BenchBase">
+	<designationCategory>RimVali_AvaliFurniture</designationCategory>
     <minifiedDef>MinifiedThing</minifiedDef>
     <defName>AvaliNanoLoom</defName>
     <label>Avali Nano-Printing Loom</label>
@@ -302,7 +303,6 @@
     <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <hasInteractionCell>true</hasInteractionCell>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>Production</designationCategory>
     <inspectorTabs>
       <li>ITab_Bills</li>
     </inspectorTabs>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="BaseArtilleryBuilding">
+	<designationCategory>RimVali_AvaliSecurity</designationCategory>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>avali/Buildings/Turrets/AIMS/mortar_base</texPath>

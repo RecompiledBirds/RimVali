@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RimValiCore.RVR.PrefdefinedPawnDefs>
+		<defName>PlaceAvali</defName>
+		<race>RimVali</race>
+		<usesSetTexture>true</usesSetTexture>
+		<textureIndex>0</textureIndex>
+		<usesSetMask>true</usesSetMask>
+		<maskIndex>0</maskIndex>
+
+		<definedColorSets>
+			<li>
+				<name>Skin</name>
+				<colorOne>RGBA(0,117,111,255)</colorOne>
+				<colorTwo>RGBA(159,175,175,255)</colorTwo>
+				<colorThree>RGBA(0,204,120,255)</colorThree>
+			</li>
+			<li>
+				<name>Eye</name>
+				<colorOne>RGBA(139,181,117,255)</colorOne>
+				
+				<!--Not actually used-->
+				<colorTwo>RGBA(159,175,175,255)</colorTwo>
+				<colorThree>RGBA(0,204,120,255)</colorThree>
+			</li>
+		</definedColorSets>
+
+		<chanceToOccur>50</chanceToOccur>
+	</RimValiCore.RVR.PrefdefinedPawnDefs>
+	
+</Defs>

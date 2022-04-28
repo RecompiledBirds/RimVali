@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="BedWithQualityBase">
+	<designationCategory>RimVali_AvaliFurniture</designationCategory>
     <defName>AvaliHammock</defName>
     <label>Avali hammock</label>
     <description>A cozy hammock suspended between two poles specially designed for resting and Avali in mind.</description>
@@ -48,6 +49,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BedWithQualityBase">
+	<designationCategory>RimVali_AvaliFurniture</designationCategory>
     <defName>AvaliBed</defName>
     <label>Avali bed</label>
     <description>A cozy mattress and sheets on a frame for resting. Inspired by its Terran counterparts, this model has been redesigned to better suit an Avali's smaller stature.</description>

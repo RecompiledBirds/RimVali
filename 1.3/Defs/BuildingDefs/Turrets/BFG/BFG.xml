@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="BuildingBase">
+	<designationCategory>RimVali_AvaliSecurity</designationCategory>
     <defName>AvaliBFG</defName>
     <size>(2,2)</size>
     <drawerType>MapMeshAndRealTime</drawerType>
@@ -88,7 +89,6 @@
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <designationCategory>Security</designationCategory>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     <building>
       <combatPower>60</combatPower>   <!-- same as a scavenger -->

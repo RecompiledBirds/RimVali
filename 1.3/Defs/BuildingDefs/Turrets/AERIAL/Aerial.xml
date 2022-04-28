@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="BaseArtilleryBuilding">
+	<designationCategory>RimVali_AvaliSecurity</designationCategory>
     <thingClass>AvaliMod.AERIALSYSTEM</thingClass>
     <graphicData>
       <texPath>avali/Buildings/Turrets/AERIAL/AERIAL_TURRET_BASE_3X3</texPath>

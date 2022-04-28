@@ -36,7 +36,7 @@ namespace AvaliMod
         public void UpdatePackLossv2(Pawn pawn, PackComp packComp, PacksV2WorldComponent packsV2WorldComponent)
         {
             Pack pack = packsV2WorldComponent.GetPack(pawn);
-            if (packComp.ticksSinceLastInPack == 0 && (pack == null || pack.GetAllPawns.Count > 1))
+            if (packComp.ticksSinceLastInPack == 0 && (pack == null || pack.GetAllPawns.Count == 1))
             {
                 packComp.inPack = false;
             }
@@ -118,13 +118,13 @@ namespace AvaliMod
             }
             else
             {
-                if (p.def != AvaliDefs.RimVali)
+                if (p.def != AvaliDefs.RimVali || !RimValiMod.settings.packLossEnabled || p.IsPackBroken())
                     return ThoughtState.Inactive;
                 PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
                 var packComp = p.TryGetComp<PackComp>();
                 var thoughtComp = p.TryGetComp<AvaliThoughtDriver>();
 
-                if (packsComp.PawnHasPackWithMembers(p) || !RimValiMod.settings.packLossEnabled || p.health.hediffSet.hediffs.Any(x => thoughtComp.Props.packLossPreventers.Contains(x.def)))
+                if (packsComp.PawnHasPackWithMembers(p) || p.health.hediffSet.hediffs.Any(x => thoughtComp.Props.packLossPreventers.Contains(x.def)))
                     return ThoughtState.Inactive;
 
                 UpdatePackLossv2(p, packComp, packsComp);
@@ -137,15 +137,40 @@ namespace AvaliMod
 
                 bool stageTwoHasPassed = timeAlone >= GenDate.TicksPerDay * stageTwo;
 
+                if (timeAlone >= GenDate.TicksPerDay * stageThree)
+                {
+                    if (packComp.lastDay + 3 < GenDate.DaysPassed)
+                    {
+                        if (new Random().Next(0, 100) < RimValiMod.settings.packBrokenChance && RimValiMod.settings.canGetPackBroken &&
+                            !p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
+                        {
+                            p.story.traits.GainTrait(new Trait(AvaliDefs.AvaliPackBroken));
+                        }
+
+                        packComp.lastDay = GenDate.DaysPassed;
+                    }
+
+
+                    return ThoughtState.ActiveAtStage(2);
+                }
+
                 if (stageTwoHasPassed)
                 {
-                    if (new Random().Next(0, 100) < RimValiMod.settings.packBrokenChance && RimValiMod.settings.canGetPackBroken && !p.IsPackBroken())
+                    if (packComp.lastDay + 3 >= GenDate.DaysPassed)
+                    {
+                        return ThoughtState.ActiveAtStage(1);
+                    }
+
+                    if (new Random().Next(0, 100) < RimValiMod.settings.packBrokenChance && RimValiMod.settings.canGetPackBroken &&
+                        !p.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
                     {
                         p.story.traits.GainTrait(new Trait(AvaliDefs.AvaliPackBroken));
                     }
-                    packComp.lastDay = GenDate.DaysPassed;
-                }
 
+                    packComp.lastDay = GenDate.DaysPassed;
+
+                    return ThoughtState.ActiveAtStage(1);
+                }
 
                 if (timeAlone >= GenDate.TicksPerDay * stageThree)
                 {

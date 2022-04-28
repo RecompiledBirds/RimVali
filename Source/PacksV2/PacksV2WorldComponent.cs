@@ -14,10 +14,21 @@ namespace Rimvali.Rewrite.Packs
     public class PacksV2WorldComponent : WorldComponent
     {
         private List<Pack> packs = new List<Pack>();
+        private List<Pawn> workingPawnList = new List<Pawn>();
+        private List<int> workingIDList = new List<int>();
         private Dictionary<Pawn, int> pawnPacks = new Dictionary<Pawn, int>();
         private int nextID;
         private static bool enabled = false;
         private static bool ranWarn = false;
+
+
+        public List<Pack> PacksReadOnly
+        {
+            get
+            {
+                return packs;
+            }
+        }
         /// <summary>
         /// Determine wether or not we should enable the new system.
         /// </summary>
@@ -134,21 +145,27 @@ namespace Rimvali.Rewrite.Packs
                     if (reevaluateSpeed)
                         packTimeWatcher.Start();
                     Dictionary<Faction, List<Pack>> cachedFactionPacks = new Dictionary<Faction, List<Pack>>();
-                    foreach (Pawn pawn in RimValiUtility.PawnsInWorld)
+                    IEnumerable<Pawn> pawns = RimValiUtility.PawnsInWorld;
+                    if (!pawns.EnumerableNullOrEmpty())
                     {
-                        if (!cachedFactionPacks.ContainsKey(pawn.Faction))
-                            cachedFactionPacks[pawn.Faction] = packs.Where(x => x.Faction == pawn.Faction).ToList();
-
-                        bool anyFactionPacksAcceptable = (!cachedFactionPacks[pawn.Faction].NullOrEmpty() && cachedFactionPacks[pawn.Faction].Any(x => x.GetAllPawns.Count < RimValiMod.settings.maxPackSize));
-                        bool hasPack = PawnHasPack(pawn);
-                        if (!hasPack && (packs.EnumerableNullOrEmpty() || !anyFactionPacksAcceptable) || random.Next(0, 12) == 2)
+                        foreach (Pawn pawn in pawns)
                         {
-                            Pack pack = new Pack(pawn.Faction, pawn, GetID);
-                            AddPack(pack, pawn);
-                            cachedFactionPacks[pawn.Faction].Add(pack);
+                            if (pawn != null && pawn.Faction != null)
+                            {
+                                if (!cachedFactionPacks.ContainsKey(pawn.Faction))
+                                    cachedFactionPacks[pawn.Faction] = packs.Where(x => x.Faction == pawn.Faction).ToList();
+
+                                bool anyFactionPacksAcceptable = (!cachedFactionPacks[pawn.Faction].NullOrEmpty() && cachedFactionPacks[pawn.Faction].Any(x => x.GetAllPawns.Count < RimValiMod.settings.maxPackSize));
+                                bool hasPack = PawnHasPack(pawn);
+                                if (!hasPack && (packs.EnumerableNullOrEmpty() || !anyFactionPacksAcceptable) || random.Next(0, 12) == 2)
+                                {
+                                    Pack pack = new Pack(pawn.Faction, pawn, GetID);
+                                    AddPack(pack, pawn);
+                                    cachedFactionPacks[pawn.Faction].Add(pack);
+                                }
+                            }
                         }
                     }
-
                     //If told to reevaluate speed, stop the stopwatch, calculate the ticks between each run, and reset the stopwatch.
                     if (reevaluateSpeed)
                     {
@@ -188,7 +205,7 @@ namespace Rimvali.Rewrite.Packs
         {
             Scribe_Collections.Look(ref packs, "packs",LookMode.Deep);
             Scribe_Values.Look(ref nextID, "nextID");
-            Scribe_Collections.Look(ref pawnPacks, "pawnPacks", LookMode.Reference, LookMode.Value);
+            Scribe_Collections.Look(ref pawnPacks, "pawnPacks", LookMode.Reference, LookMode.Value, ref workingPawnList, ref workingIDList);
             Scribe_Values.Look(ref enabled, "enabled");
             bool dateHasPassed = DateTime.Today.Day >= 1 && DateTime.Today.Month >= 5 && DateTime.Today.Year >= 2021;
             if(dateHasPassed)

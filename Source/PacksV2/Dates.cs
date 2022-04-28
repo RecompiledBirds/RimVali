@@ -23,7 +23,6 @@ namespace Rimvali.Rewrite.Packs
             }
             catch
             {
-                Log.Message("Not on a map yet!");
             }
         }
 
