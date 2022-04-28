@@ -4,7 +4,7 @@
 	<designationCategory>RimVali_AvaliSecurity</designationCategory>
     <defName>AvaliBasicTurret</defName>
     <label>Avali turret</label>
-    <description>A lightweight railgun turret, designed for long range combat. It is somewhat less durrable than it's human-built counterparts, but has great long range accuracy.</description>
+    <description>A lightweight railgun turret. Whilst being less durable and generally having a lower fire-rate when compared to its Terran counterpart. It benefits from having a farther reach, longer range and better stopping power instead. Generally, it is favoured by Avali colonists for its usage as a cheap sniping turret to support the colony's defenses.</description>
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
@@ -29,7 +29,7 @@
       <li>BuildingsSecurity</li>
     </thingCategories>
     <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
+      <MaxHitPoints>80</MaxHitPoints>
       <Flammability>0.7</Flammability>
       <WorkToBuild>1800</WorkToBuild>
       <Mass>5.5</Mass>
@@ -121,7 +121,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>AvaliBasicTurretGun</defName>
     <label>Basic avali turret gun</label>
-    <description>A automatic railgun, made to be mounted to an avali turret.</description>
+    <description>An automatic railgun, made to be mounted to an Avali turret.</description>
     <graphicData>
       <texPath>avali/Buildings/Turrets/BasicTurret_Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -159,7 +159,7 @@
     <drawerType>MapMeshAndRealTime</drawerType>
     <size>(2,2)</size>
     <label>Avali minigun turret</label>
-    <description>A heavy turret, with two avali miniguns onboard. Due to also being a railgun of avali design, it performs best at long range.</description>
+    <description>A heavy minigun turret. Like its handheld counterpart, this turret is equipped with cartridge based rotary cannons. But unlike the handheld version, it sports a deadly accuracy together with its overwhelming firepower. These turrets were inspired by the historic reusage of ship mounted weapons for colony defense, but after a diktat by the Illuminate government that told everyone to stop cannibalizing the colony ships, these were quickly designed as an alternative.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
       <texPath>avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
@@ -276,7 +276,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>AvaliMiniGunTurretGun</defName>
     <label>Basic avali turret gun</label>
-    <description>A automatic railgun, made to be mounted to an avali turret.</description>
+    <description>A set of miniguns, made to be mounted to an Avali turret.</description>
     <graphicData>
       <texPath>avali/Buildings/Turrets/Avali_Turret_Brrt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
