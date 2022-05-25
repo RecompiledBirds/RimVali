@@ -10,7 +10,7 @@ namespace AvaliMod
     {
         public static void Postfix(bool diagonal, Pawn __instance, ref int __result)
         {
-            if (!__instance.IsAvali())
+            if (!AvaliDefs.IsAvali(__instance))
             {
 				return;
             }
@@ -60,7 +60,7 @@ namespace AvaliMod
 		public static float GetWeatherMoveSpeed(Pawn pawn)
         {
 			WeatherManager weatherManager = pawn.Map.weatherManager;
-            if (pawn.def != AvaliDefs.RimVali)
+            if (!AvaliDefs.IsAvali(pawn))
             {
 				return Mathf.Lerp(weatherManager.lastWeather.moveSpeedMultiplier, weatherManager.curWeather.moveSpeedMultiplier, weatherManager.TransitionLerpFactor);
             }

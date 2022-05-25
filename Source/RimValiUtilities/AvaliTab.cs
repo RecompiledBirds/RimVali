@@ -39,11 +39,6 @@ namespace AvaliMod
         public override bool IsVisible { get; } =
             LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packsEnabled;
 
-        public virtual AvaliPack GetPack(Pawn pawn)
-        {
-            return RimValiUtility.Driver.GetCurrentPack(pawn);
-        }
-
         public virtual string GetPackName(Rect rect, AvaliPack pack)
         {
             return pack.name;
@@ -96,6 +91,8 @@ namespace AvaliMod
                         PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
                         Pawn pawn = SelPawn;
                         Pack pack = packsComp.GetPack(pawn);
+
+                        RimValiUtility.LogAnaylitics($"pawn {pawn.Name.ToStringShort} can find pack: {pack!=null}");
                         var rectPosY = 0f;
 
                         if (pack != null && pack.GetPawns.Count > 0)

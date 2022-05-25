@@ -143,7 +143,7 @@ namespace AvaliMod
         private bool GetReady()
         {
             map = Current.Game.CurrentMap;
-            if (RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) < avaliReq ||
+            if (RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.AvaliRaces) < avaliReq ||
                 hasDropped || !map.IsPlayerHome)
             {
                 return false;
@@ -173,7 +173,7 @@ namespace AvaliMod
 
             map = Current.Game.CurrentMap;
             if (timeToDrop <= 0 &&
-                RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.RimVali) >= avaliReq &&
+                RimValiCore.RimValiUtility.PawnOfRaceCount(Faction.OfPlayer, AvaliDefs.AvaliRaces) >= avaliReq &&
                 !hasDropped && map.IsPlayerHome)
             {
                 SendDrop();

@@ -63,6 +63,7 @@ namespace AvaliMod
 
         public void AddToPackCount(Pawn pawn)
         {
+            
             if (!packCounter.ContainsKey(pawn))
             {
                 packCounter.Add(pawn, 0);
@@ -111,6 +112,8 @@ namespace AvaliMod
 
         public void AddPawnToPack(Pawn pawn, ref AvaliPack pack)
         {
+            if (RimValiMod.settings.advancedAnaylitics)
+                Log.Message($"[RIMVALI ANAYLITICS]: Adding {pawn.Name.ToStringShort} to pack: {pack.name}");
             pack.pawns.Add(pawn);
             AddToPackCount(pawn);
             pawnsThatHavePacks.Add(pawn);

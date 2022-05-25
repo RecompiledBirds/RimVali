@@ -1,5 +1,7 @@
 using RimValiCore.RVR;
 using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace AvaliMod
@@ -7,6 +9,19 @@ namespace AvaliMod
     [DefOf]
     public static class AvaliDefs
     {
+        public  static bool IsAvali(Pawn pawn)
+        {
+            return AvaliRaces.Contains(pawn.def);
+        }
+         static AvaliDefs()
+        {
+            avaliDefs = DefDatabase<RimValiRaceDef>.AllDefs.Where(x => x.defName == "RimVali").ToList();
+        }
+
+        private static List<RimValiRaceDef> avaliDefs = new List<RimValiRaceDef>();
+
+        public static List<RimValiRaceDef> AvaliRaces => avaliDefs;
+
         //TerrainAffordance defs
         public static TerrainAffordanceDef IcySoil;
 
@@ -26,8 +41,6 @@ namespace AvaliMod
         //Trait defs
         public static TraitDef AvaliPackBroken;
 
-        //Race defs
-        public static RimValiRaceDef RimVali;
 
         //Stat defs
         public static StatDef ExplodeBombRadius;

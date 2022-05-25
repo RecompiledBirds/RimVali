@@ -11,7 +11,7 @@ namespace AvaliMod
         {
             var thoughts = new List<Thought>();
             pawn.needs.mood.thoughts.GetAllMoodThoughts(thoughts);
-            if (pawn.def == AvaliDefs.RimVali && thoughts.Any(x => x.def == AvaliDefs.AvaliPackLoss) ||
+            if (AvaliDefs.IsAvali(pawn) && thoughts.Any(x => x.def == AvaliDefs.AvaliPackLoss) ||
                 pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken))
             {
                 return base.BreakCanOccur(pawn) && true;

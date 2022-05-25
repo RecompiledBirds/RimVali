@@ -80,6 +80,7 @@ namespace AvaliMod
                 Props.minSpacingDays, Props.minIncidents, Props.maxIncidents, num);
             for (var i = 0; i < incCount; i++)
             {
+                RimValiUtility.LogAnaylitics("Storyteller-Todd: Firing incident(s)");
                 FiringIncident inc = null;
                 switch (StorytellerData.state)
                 {
@@ -98,19 +99,18 @@ namespace AvaliMod
                     case StorytellerState.Calm:
                         break;
                 }
-
+                RimValiUtility.LogAnaylitics("Storyteller-Todd: Generated incident");
                 if (inc != null)
                 {
                     if (random.Next(1, 5) == 3)
                     {
+                        RimValiUtility.LogAnaylitics("Storyteller-Todd: Updating state.");
                         UpdateState();
                     }
 
                     yield return inc;
                 }
             }
-
-            //return base.MakeIntervalIncidents(target);
         }
 
         bool firstUpdate = false;
@@ -122,11 +122,11 @@ namespace AvaliMod
                 firstUpdate = true;
                 daysSinceLastPawnUpdate = GenDate.DaysPassed;
                 countAvali = RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Where(pawn => pawn.def == AvaliDefs.RimVali).Count();
+                    .Where(pawn => AvaliDefs.IsAvali(pawn)).Count();
                 countNotAvali = RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Where(pawn => pawn.def != AvaliDefs.RimVali).Count();
+                    .Where(pawn => !AvaliDefs.IsAvali(pawn)).Count();
                 hasPawnsNotAvali= RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Any(pawn => pawn.RaceProps.Humanlike && pawn.def != AvaliDefs.RimVali);
+                    .Any(pawn => pawn.RaceProps.Humanlike && !AvaliDefs.IsAvali(pawn));
 
             }
             //Make sure we're not on the hunting->aggressive route, and we've given the current state time to do it's job.

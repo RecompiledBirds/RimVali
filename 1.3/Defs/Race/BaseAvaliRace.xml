@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimValiCore.RVR.RimValiRaceDef Name="BaseAvaliRace" Abstract="True" ParentName="BasePawn">
+    <thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <inspectorTabs>
+      <li>AvaliMod.AvaliTab</li>
+    </inspectorTabs>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+      <!--Cool things, these handle alot of the pack systems.-->
+      <!-- Just don't remove any lines from these, please.-->
+      <li Class="AvaliMod.AvaliDriverThoughtProps">
+        <inSameRoomThought>AvaliSharingRoom</inSameRoomThought>
+        <sharedBedroomThought>SharedRoomWithPack</sharedBedroomThought>
+        <sleptApartThought>BedroomWithoutPack</sleptApartThought>
+        <packLossPreventers>
+          <li>PackReplacementAI</li>
+        </packLossPreventers>
+      </li>
+      <li Class="AvaliMod.PackProps">
+        <racesInPacks>
+          <li>RimVali</li>
+        </racesInPacks>
+        <aloneThought>AvaliPackLoss</aloneThought>
+        <togetherThought>AvaliPackmateThought</togetherThought>
+        <deathThought>PackMateDied</deathThought>
+      </li>
+      <!-- That's off by default, don't worry. I don't even know if it actually works.. -->
+      <li Class="AvaliMod.EggLayerProps">
+        <eggFertilizedDef>AvaliEgg</eggFertilizedDef>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+	  <bodyTypes>
+		  <li>Avali</li>
+	  </bodyTypes>
+	  <corpseThingCategories>
+		  <li>CorpsesHumanlike</li>
+	  </corpseThingCategories>
+	  <raceInsertion>
+		  <!-- globalChance and chance stack! -->
+		  <!--A global chance of 100 and 50 = 50, but a global chance of 50 and a chance of 50 = 25  -->
+		  <globalChance>100</globalChance>
+		  <entries>
+			  <li>
+				  <pawnkind>AvaliVillager</pawnkind>
+				  <chance>50</chance>
+				  <isSlave>true</isSlave>
+				  <isRefugee>true</isRefugee>
+				  <isWanderer>true</isWanderer>
+				  <isVillager>true</isVillager>
+			  </li>
+		  </entries>
+	  </raceInsertion>
+	  <replaceableThoughts>
+		  <li>
+			  <thoughtToReplace>NonAvaliAteEgg</thoughtToReplace>
+			  <replacementThought>AvaliAteEgg</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MySonDied</thoughtToReplace>
+			  <replacementThought>AvaliKitDied</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyDaughterDied</thoughtToReplace>
+			  <replacementThought>AvaliKitDied</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyHusbandDied</thoughtToReplace>
+			  <replacementThought>MateDied</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyWifeDied</thoughtToReplace>
+			  <replacementThought>MateDied</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MySonLost</thoughtToReplace>
+			  <replacementThought>KitLost</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyDaughterLost</thoughtToReplace>
+			  <replacementThought>KitLost</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyHusbandLost</thoughtToReplace>
+			  <replacementThought>MateLost</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyWifeLost</thoughtToReplace>
+			  <replacementThought>MateLost</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyMotherLost</thoughtToReplace>
+			  <replacementThought>MyParentLost</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>MyFatherLost</thoughtToReplace>
+			  <replacementThought>MyParentLost</replacementThought>
+		  </li>
+		  <li>
+			  <thoughtToReplace>SnowyWeather</thoughtToReplace>
+			  <replacementThought>AvaliSnowy</replacementThought>
+		  </li>
+	  </replaceableThoughts>
+	  <cannibalismThoughts>
+		  <thoughts>
+			  <li>
+				  <race>RimVali</race>
+				  <ateCooked>AvaliAteAvaliAsIngredient</ateCooked>
+				  <ateRaw>AvaliAteAvaliDirect</ateRaw>
+				  <ateCookedCannibal>AvaliAteAvaliMeatAsIngredientCannibal</ateCookedCannibal>
+				  <ateRawCannibal>AvaliAteAvaliMeatDirectCannibal</ateRawCannibal>
+			  </li>
+		  </thoughts>
+		  <careAbountUndefinedRaces>false</careAbountUndefinedRaces>
+	  </cannibalismThoughts>
+
+	  <restrictions>
+		  <disabledTraits>
+			  <li>BodyPurist</li>
+			  <li>Transhumanist</li>
+		  </disabledTraits>
+		  <thoughtBlacklist>
+			  <li>EnvironmentDark</li>
+			  <li>Naked</li>
+
+			  <li>SleptInBedroom</li>
+			  <li>SleptInBarracks</li>
+
+			  <li>SleepDisturbed</li>
+			  <li>SharedBed</li>
+			  <li>ObservedLayingCorpse</li>
+
+
+			  <li>ButcheredHumanlikeCorpse</li>
+			  <li>KnowButcheredHumanlikeCorpse</li>
+		  </thoughtBlacklist>
+
+		  <modContentRestrictionsApparelWhiteList>
+			  <li>ludeon.rimworld</li>
+			  <li>ludeon.rimworld.royalty</li>
+		  </modContentRestrictionsApparelWhiteList>
+
+		  <modContentRestrictionsApparelList>
+			  <li>NeziTheAvali.RimVali</li>
+		  </modContentRestrictionsApparelList>
+
+		  <modResearchRestrictionsList>
+			  <li>nezitheavali.rimvali</li>
+		  </modResearchRestrictionsList>
+
+		  <modTraitRestrictions>
+			  <li>nezitheavali.rimvali</li>
+		  </modTraitRestrictions>
+
+		  <modBuildingRestrictions>
+			  <li>nezitheavali.rimvali</li>
+		  </modBuildingRestrictions>
+
+		  <bedDefs>
+			  <li>AvalipillowsThree</li>
+			  <li>AvalipillowsTwo</li>
+			  <li>AvalipillowsOne</li>
+			  <li>AvaliPillowBed</li>
+			  <li>AvaliBed</li>
+			  <li>AvaliHammock</li>
+		  </bedDefs>
+		  <bodyTypes>
+			  <li>Avali</li>
+		  </bodyTypes>
+		  <canOnlyUseApprovedApparel>true</canOnlyUseApprovedApparel>
+	  </restrictions>
+	  <race>
+		  <thinkTreeMain>Humanlike</thinkTreeMain>
+		  <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+		  <intelligence>Humanlike</intelligence>
+		  <makesFootprints>true</makesFootprints>
+		  <lifeExpectancy>100</lifeExpectancy>
+		  <deathActionWorkerClass>AvaliMod.DeathActionWorker_Test</deathActionWorkerClass>
+		  <leatherDef>Leather_RimVali</leatherDef>
+		  <nameGenerator>AvaliPersonNamer</nameGenerator>
+		  <body>RimValiBody</body>
+		  <baseBodySize>0.6</baseBodySize>
+		  <baseHungerRate>0.6</baseHungerRate>
+		  <baseHealthScale>1.3</baseHealthScale>
+		  <meatColor>(238,203,242)</meatColor>
+		  <bloodDef>AvaliBlood</bloodDef>
+		  <fleshType>AvaliFlesh</fleshType>
+		  <foodType>OmnivoreHuman</foodType>
+		  <gestationPeriodDays>30</gestationPeriodDays>
+		  <litterSizeCurve>
+			  <points>
+				  <li>(0.5, 0)</li>
+				  <li>(1, 1)</li>
+				  <li>(1.01, 0.01)</li>
+				  <li>(2, 0)</li>
+			  </points>
+		  </litterSizeCurve>
+		  <lifeStageAges>
+			  <li>
+				  <def>HumanlikeBaby</def>
+				  <minAge>0</minAge>
+			  </li>
+			  <li>
+				  <def>HumanlikeToddler</def>
+				  <minAge>2.5</minAge>
+			  </li>
+			  <li>
+				  <def>HumanlikeChild</def>
+				  <minAge>6</minAge>
+			  </li>
+			  <li>
+				  <def>HumanlikeTeenager</def>
+				  <minAge>14</minAge>
+			  </li>
+			  <li>
+				  <def>HumanlikeAdult</def>
+				  <minAge>20</minAge>
+			  </li>
+		  </lifeStageAges>
+		  <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+		  <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+		  <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+		  <specialShadowData>
+			  <volume>(0.3, 0.8, 0.4)</volume>
+			  <offset>(0,0,-0.3)</offset>
+		  </specialShadowData>
+		  <ageGenerationCurve>
+			  <points>
+				  <li>(14,0)</li>
+				  <li>(20,100)</li>
+				  <li>(35,90)</li>
+				  <li>(50,30)</li>
+				  <li>(70,8)</li>
+				  <li>(85,3)</li>
+				  <li>(100,1)</li>
+				  <li>(120,0)</li>
+			  </points>
+		  </ageGenerationCurve>
+		  <hediffGiverSets>
+			  <li>OrganicStandard</li>
+			  <li>AvaliBio</li>
+		  </hediffGiverSets>
+	  </race>
+	  <recipes>
+
+		  <!-- Normal -->
+
+		  <li>InstallArchotechEye</li>
+		  <li>InstallArchotechArm</li>
+		  <li>InstallArchotechLeg</li>
+		  <li>InstallPowerClaw</li>
+		  <li>InstallBionicSpine</li>
+		  <li>InstallBionicHeart</li>
+		  <li>InstallBionicStomach</li>
+		  <li>InstallSimpleProstheticHeart</li>
+		  <li>InstallCochlearImplant</li>
+		  <li>InstallWoodenFoot</li>
+		  <li>InstallDenture</li>
+		  <li>InstallJoywire</li>
+		  <li>InstallPainstopper</li>
+		  <li>ExciseCarcinoma</li>
+		  <li>AdministerMechSerumHealer</li>
+		  <li>Anesthetize</li>
+		  <li>RemoveBodyPart</li>
+		  <li>Euthanize</li>
+
+		  <!-- Arms -->
+
+		  <li>InstallAvaliBasicBionicArm</li>
+		  <li>InstallAvaliAdvancedBionicArm</li>
+
+		  <!-- Legs -->
+
+		  <li>InstallAvaliAdvancedBionicLeg</li>
+		  <li>InstallAvaliBasicBionicLeg</li>
+
+		  <!-- Temperature -->
+
+		  <li>InstallAvaliTemperatureImplantBasic</li>
+		  <li>InstallAvaliTemperatureImplantElite</li>
+		  <li>InstallAvaliTemperatureImplantAdv</li>
+
+		  <!-- Tail -->
+		  <li>RimValiInstallPegTail</li>
+		  <li>InstallTailStiffeningAugment</li>
+		  <li>InstallNaturalAvaliTail</li>
+		  <li>InstallAvaliAdvancedBionicTail</li>
+		  <li>InstallAvaliBasicBionicTail</li>
+
+		  <!-- Head -->
+		  <li>InstallVenomTeeth</li>
+
+		  <!-- Brain -->
+		  <li>InstallPE</li>
+
+		  <!-- Royalty -->
+		  <li>CureBloodRot</li>
+		  <li>CureAbasia</li>
+	  </recipes>
+	  <hasHair>false</hasHair>
+  </RimValiCore.RVR.RimValiRaceDef>
+</Defs>

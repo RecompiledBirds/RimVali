@@ -67,7 +67,7 @@ namespace Rimvali.Rewrite.Packs
         {
             PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
             bool initatiorPackHasSpace = packsComp.PawnHasPack(initiator) && packsComp.GetPack(initiator).GetAllPawns.Count < RimValiMod.settings.maxPackSize;
-            bool bothAreAvali = initiator.def == AvaliDefs.RimVali && recipient.def == AvaliDefs.RimVali;
+            bool bothAreAvali = AvaliDefs.IsAvali(initiator) && AvaliDefs.IsAvali(recipient);
             
             //Check both are avali, unstable mode is on, initator has a pack, recipient does not, both are of the same faction, and initator's pack has space.
             if (recipient.IsPackBroken() || packsComp.PawnHasPack(recipient) || !bothAreAvali || !PacksV2WorldComponent.EnhancedMode || initiator.Faction != recipient.Faction || !initatiorPackHasSpace)

@@ -10,7 +10,7 @@ namespace AvaliMod
 {
     public static class RimValiUtility
     {
-        public static string build = "Eiku 1.2.0";
+        public static string build = "Eisu 1.3.0";
 
         private static AvaliPackDriver driver;
         private static AvaliUpdater thoughtDriver;
@@ -20,7 +20,11 @@ namespace AvaliMod
             "RimValiModules".TranslateSimple() + "\n" +
             string.Join("\n", Enumerable.Select(foundModules, module => module.name));
 
-
+        public static void LogAnaylitics(object message, bool otherEvaluation=true)
+        {
+            if (RimValiMod.settings.advancedAnaylitics&&otherEvaluation)
+                Log.Message($"[RIMVALI ANAYLITICS]: {message}");
+        }
         public static HashSet<Pawn> PawnsInWorld
         {
             get
@@ -416,10 +420,6 @@ namespace AvaliMod
             }
         }
 
-        public static bool IsAvali(this Pawn pawn)
-        {
-            return pawn.def == AvaliDefs.RimVali;
-        }
 
         public static bool IsPackBroken(this Pawn pawn)
         {

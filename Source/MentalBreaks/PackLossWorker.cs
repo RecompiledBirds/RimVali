@@ -7,7 +7,7 @@ namespace AvaliMod
     {
         public override bool StateCanOccur(Pawn pawn)
         {
-            if (pawn.def == AvaliDefs.RimVali &&
+            if (AvaliDefs.IsAvali(pawn) &&
                 (pawn.needs.mood.thoughts.memories.Memories.Any(x => x.def == AvaliDefs.AvaliPackLoss) ||
                  pawn.story.traits.HasTrait(AvaliDefs.AvaliPackBroken)))
             {

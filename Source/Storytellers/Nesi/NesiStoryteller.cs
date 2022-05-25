@@ -102,11 +102,11 @@ namespace AvaliMod
                 firstUpdate = true;
                 daysSinceLastPawnUpdate = GenDate.DaysPassed;
                 countAvali = RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Where(pawn => pawn.def == AvaliDefs.RimVali).Count();
+                    .Where(pawn => AvaliDefs.IsAvali(pawn)).Count();
                 countNotAvali = RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Where(pawn => pawn.def != AvaliDefs.RimVali).Count();
+                    .Where(pawn => !AvaliDefs.IsAvali(pawn)).Count();
                 hasPawnsNotAvali= RimValiCore.RimValiUtility.AllPawnsOfFactionSpawned(Faction.OfPlayer)
-                    .Any(pawn => pawn.RaceProps.Humanlike && pawn.def != AvaliDefs.RimVali);
+                    .Any(pawn => pawn.RaceProps.Humanlike && !AvaliDefs.IsAvali(pawn));
 
 
             }

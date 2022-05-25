@@ -51,7 +51,7 @@ namespace AvaliMod
         {
             if (tick == 240)
             {
-                pawns = RimValiCore.RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.RimVali, map);
+                pawns = RimValiCore.RimValiUtility.AllPawnsOfRaceOnMap(AvaliDefs.AvaliRaces, map);
                 var task = new Task(UpdateAllPawnThoughts);
                 task.Start();
                 //UpdateAllPawnThoughts();

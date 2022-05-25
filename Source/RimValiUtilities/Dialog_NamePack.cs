@@ -25,6 +25,8 @@ namespace AvaliMod
         public override void DoWindowContents(Rect inRect)
         {
             AvaliPack pack = RimValiUtility.Driver.GetCurrentPack(pawn);
+            if (RimValiMod.settings.advancedAnaylitics)
+                Log.Message($"[RIMVALI ANAYLITICS]: Pawn could find pack: {pack != null}");
             var flag = false;
             if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Return)
             {

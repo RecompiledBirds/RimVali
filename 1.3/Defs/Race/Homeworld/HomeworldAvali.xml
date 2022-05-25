@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RimValiCore.RVR.RimValiRaceDef ParentName="BaseAvaliRace" Name="BaseFullAvali">
+		<defName>RimVali</defName>
+		<label>Avali</label>
+		<description>Cute, fluffy raptors with highly advanced tech. The primary solvent in avali biology is ammonia, making them mostly incompatible with humans. Avali don't like being hot, as their blood boils at a much lower temp then a human's blood, but they can survive in the cold no problem.</description>
+
+		<butcherAndHarvestThoughts>
+			<butcherThoughts>
+				<li>
+					<race>RimVali</race>
+					<butcheredPawnThought>ButcheredAvali</butcheredPawnThought>
+					<knowButcheredPawn>KnowButcheredAvaliCorpse</knowButcheredPawn>
+				</li>
+			</butcherThoughts>
+			<harvestedThoughts>
+				<li>
+					<race>RimVali</race>
+				</li>
+			</harvestedThoughts>
+			<!-- Do we really care if another race has had their organs harvested or been butchered? -->
+			<careAboutUndefinedRaces>false</careAboutUndefinedRaces>
+		</butcherAndHarvestThoughts>
+
+		<graphics>
+			<skinColorSet>Skin</skinColorSet>
+			<bodyTex>avali/Heads/AvaliHead</bodyTex>
+			<headTex>avali/Heads/AvaliHead</headTex>
+			<headOffsets>
+				<south>(0,0)</south>
+				<east>(0,0)</east>
+				<west>(0,0)</west>
+				<north>(0,0)</north>
+			</headOffsets>
+			<colorSets>
+				<li>
+					<name>Skin</name>
+					<isGendered>true</isGendered>
+					<colorGenerator>
+						<firstColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(200, 200, 200)</min>
+									<max>(255, 255, 255)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>(220, 220, 220)</min>
+									<max>(240, 240, 240)</max>
+								</li>
+								<li>
+									<weight>5</weight>
+									<min>RGBA(40, 40, 40, 255)</min>
+									<max>RGBA(60, 60, 60, 255)</max>
+								</li>
+							</options>
+						</firstColor>
+						<secondColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(50, 50, 50)</min>
+									<max>(200, 200, 200)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>RGBA(40, 40, 40, 255)</min>
+									<max>RGBA(60, 60, 60, 255)</max>
+								</li>
+							</options>
+						</secondColor>
+						<thirdColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(50, 50, 50)</min>
+									<max>(200, 200, 200)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>(40, 40, 40)</min>
+									<max>(60, 60, 60)</max>
+								</li>
+							</options>
+						</thirdColor>
+					</colorGenerator>
+					<colorGeneratorFemale>
+						<firstColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(185, 185, 185)</min>
+									<max>(215, 215, 215)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>(220, 220, 220)</min>
+									<max>(240, 240, 240)</max>
+								</li>
+								<li>
+									<weight>1</weight>
+									<min>RGBA(40, 40, 40, 255)</min>
+									<max>RGBA(60, 60, 60, 255)</max>
+								</li>
+							</options>
+						</firstColor>
+						<secondColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(185, 185, 185)</min>
+									<max>(215, 215, 215)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>(220, 220, 220)</min>
+									<max>(240, 240, 240)</max>
+								</li>
+								<li>
+									<weight>1</weight>
+									<min>RGBA(40, 40, 40, 255)</min>
+									<max>RGBA(60, 60, 60, 255)</max>
+								</li>
+							</options>
+						</secondColor>
+						<thirdColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(185, 185, 185)</min>
+									<max>(215, 215, 215)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>(220, 220, 220)</min>
+									<max>(240, 240, 240)</max>
+								</li>
+								<li>
+									<weight>1</weight>
+									<min>RGBA(40, 40, 40, 255)</min>
+									<max>RGBA(60, 60, 60, 255)</max>
+								</li>
+							</options>
+						</thirdColor>
+					</colorGeneratorFemale>
+				</li>
+				<li>
+					<name>Eye</name>
+					<isDyeable>false</isDyeable>
+					<colorGenerator>
+						<firstColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(0, 0, 0)</min>
+									<max>(255, 255, 255)</max>
+								</li>
+							</options>
+						</firstColor>
+						<secondColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(50, 50, 50)</min>
+									<max>(200, 200, 200)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>RGBA(40, 40, 40, 255)</min>
+									<max>RGBA(60, 60, 60, 255)</max>
+								</li>
+							</options>
+						</secondColor>
+						<thirdColor Class="ColorGenerator_Options">
+							<options>
+								<li>
+									<weight>10</weight>
+									<min>(50, 50, 50)</min>
+									<max>(200, 200, 200)</max>
+								</li>
+								<li>
+									<weight>2</weight>
+									<min>(40, 40, 40)</min>
+									<max>(60, 60, 60)</max>
+								</li>
+							</options>
+						</thirdColor>
+					</colorGenerator>
+				</li>
+			</colorSets>
+		</graphics>
+		<renderableDefs>
+			<li>Head</li>
+			<li>Body</li>
+
+			<li>EarLL</li>
+			<li>EarLR</li>
+			<li>EarUR</li>
+			<li>EarUL</li>
+
+			<li>EyeL</li>
+			<li>EyeR</li>
+
+			<li>AvaliMouth</li>
+
+			<li>TailMain</li>
+			<li>TailSkirt</li>
+		</renderableDefs>
+
+		<statBases>
+			<MarketValue>1500</MarketValue>
+			<MoveSpeed>5.5</MoveSpeed>
+			<Flammability>200</Flammability>
+			<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+			<ComfyTemperatureMax>15</ComfyTemperatureMax>
+			<LeatherAmount>5</LeatherAmount>
+			<ResearchSpeed>1.5</ResearchSpeed>
+			<MiningSpeed>0.8</MiningSpeed>
+			<SocialImpact>1.5</SocialImpact>
+			<ConstructionSpeed>0.8</ConstructionSpeed>
+			<AnimalGatherSpeed>0.3</AnimalGatherSpeed>
+			<AnimalGatherYield>0.3</AnimalGatherYield>
+			<ImmunityGainSpeed>1.15</ImmunityGainSpeed>
+			<PsychicSensitivity>1.5</PsychicSensitivity>
+			<ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+			<Mass>45</Mass>
+			<RestRateMultiplier>0.55</RestRateMultiplier>
+		</statBases>
+		<tools>
+			<li>
+				<label>teeth</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>1.6</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>Left Talons</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>4</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+		<race>
+			<baseBodySize>0.8</baseBodySize>
+			<baseHungerRate>0.6</baseHungerRate>
+			<baseHealthScale>0.7</baseHealthScale>
+		</race>
+	</RimValiCore.RVR.RimValiRaceDef>
+</Defs>

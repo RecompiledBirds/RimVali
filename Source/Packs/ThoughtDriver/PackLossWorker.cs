@@ -118,7 +118,7 @@ namespace AvaliMod
             }
             else
             {
-                if (p.def != AvaliDefs.RimVali || !RimValiMod.settings.packLossEnabled || p.IsPackBroken())
+                if (!AvaliDefs.IsAvali(p) || !RimValiMod.settings.packLossEnabled || p.IsPackBroken())
                     return ThoughtState.Inactive;
                 PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
                 var packComp = p.TryGetComp<PackComp>();

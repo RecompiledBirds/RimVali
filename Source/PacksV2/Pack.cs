@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using AvaliMod;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,8 +116,10 @@ namespace Rimvali.Rewrite.Packs
         /// <returns></returns>
         public float GetAvgOpinionOf(Pawn pawn)
         {
-            return GetAllPawns.Sum(packMember => packMember.relations.OpinionOf(pawn)) /
+            float result = GetAllPawns.Sum(packMember => packMember.relations.OpinionOf(pawn)) /
                    (float)(GetAllPawns.Count());
+            RimValiUtility.LogAnaylitics($"Pack {this.name} average opinion of {pawn.Name.ToStringShort}: {result}");
+            return result;
         }
 
         /// <summary>
@@ -126,7 +129,9 @@ namespace Rimvali.Rewrite.Packs
         /// <returns></returns>
         public float GetPawnOpinionOf(Pawn pawn)
         {
-            return GetAllPawns.Sum(packMember => pawn.relations.OpinionOf(packMember) / (float)GetAllPawns.Count);
+            float result = GetAllPawns.Sum(packMember => pawn.relations.OpinionOf(packMember) / (float)GetAllPawns.Count); 
+            RimValiUtility.LogAnaylitics($"Pawn {pawn.Name.ToStringShort} average opinion of {this.name}: {result}");
+            return result;
         }
        
         /// <summary>
@@ -135,6 +140,7 @@ namespace Rimvali.Rewrite.Packs
         /// <param name="pawn"></param>
         public void SetLeader(Pawn pawn)
         {
+            RimValiUtility.LogAnaylitics($"Setting {pawn.Name.ToStringShort} as leader of {this.Name}");
             leaderPawn = pawn;
             if (pawns.Contains(pawn))
                 pawns.Remove(pawn);
@@ -169,6 +175,7 @@ namespace Rimvali.Rewrite.Packs
         /// <param name="registerAsDead">Should the pawn be set as dead?</param>
         public void RemovePawn(Pawn pawn, bool registerAsDead = false)
         {
+            RimValiUtility.LogAnaylitics($"Removing {pawn.Name.ToStringShort} from {this.Name}");
             if (pawns.Contains(pawn))
             {
                 pawns.Remove(pawn);

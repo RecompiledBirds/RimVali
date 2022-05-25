@@ -34,6 +34,8 @@ namespace AvaliMod
         public int ticksBetweenPackUpdate;
         public bool unstable;
 
+        public bool advancedAnaylitics;
+
         public RimValiModSettings()
         {
             ticksBetweenPackUpdate = 120;
@@ -61,6 +63,7 @@ namespace AvaliMod
             IWAvaliMaxTemp = 25;
             IWAvaliMinTemp = -5;
             unstable = true;
+            advancedAnaylitics = false;
         }
 
         public override void ExposeData()
@@ -93,6 +96,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref ticksBetweenPackUpdate, "ticksBetweenPackUpdate", 120, true);
             Scribe_Values.Look(ref canGetPackBroken, "canGetPackBroken", true, true);
             Scribe_Values.Look(ref unstable, "unstable", false, true);
+            Scribe_Values.Look(ref advancedAnaylitics, "anaylitics", false);
             base.ExposeData();
         }
     }

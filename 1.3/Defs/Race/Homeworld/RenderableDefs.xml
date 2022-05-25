@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RimValiCore.RVR.RenderableDef Abstract="True" ParentName="BaseAvaliPart" Name = "BaseAvaliUpperEar">
+		<linkMaskIndexWith>Head</linkMaskIndexWith>
+		<linkIndexWithDef>Head</linkIndexWithDef>
+		<east>
+			<position>(-0.1,0.4)</position>
+			<layer>-0.3024662</layer>
+			<size>0.8</size>
+		</east>
+		<north>
+			<position>(0,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0.4)</position>
+			<layer>0.029</layer>
+			<size>0.8</size>
+		</south>
+		<west>
+			<position>(0.1,0.4)</position>
+			<layer>-1</layer>
+			<size>0.8</size>
+		</west>
+	</RimValiCore.RVR.RenderableDef>
+	<RimValiCore.RVR.RenderableDef Abstract="True" ParentName="BaseAvaliPart" Name = "BaseAvaliLowerEar">
+		<linkMaskIndexWith>Head</linkMaskIndexWith>
+		<linkIndexWithDef>Head</linkIndexWithDef>
+		<east>
+			<position>(-0.1,0.4)</position>
+			<layer>-1</layer>
+			<size>0.8</size>
+		</east>
+		<north>
+			<position>(0,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0.4)</position>
+			<layer>0.029</layer>
+			<size>0.8</size>
+		</south>
+		<west>
+			<position>(0.1,0.4)</position>
+			<size>0.8</size>
+			<layer>-0.3034662</layer>
+		</west>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliLowerEar">
+		<defName>EarLL</defName>
+		<textures>
+			<li>
+				<tex>avali/Ears/Male/LowerLeft/MaleLowerLeft</tex>
+				<femaleTex>avali/Ears/Female/LowerLeft/FemaleLowerLeft</femaleTex>
+				<alternateMaskPaths>
+					<li>avali/Ears/Male/LowerLeft/Variant</li>
+					<li>avali/Ears/Male/LowerLeft/Variant2</li>
+				</alternateMaskPaths>
+				<alternateFemaleMaskPaths>
+
+				</alternateFemaleMaskPaths>
+			</li>
+		</textures>
+		<bodyPart>left lower ear</bodyPart>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Ears/LL/LowerLeft</tex>
+			</li>
+		</backstoryTextures>
+		<west>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3014662</layer>
+			<size>0.8</size>
+		</west>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliLowerEar">
+		<defName>EarLR</defName>
+		<textures>
+			<li>
+				<tex>avali/Ears/Male/LowerRight/MaleLowerRight</tex>
+				<femaleTex>avali/Ears/Female/LowerRight/FemaleLowerRight</femaleTex>
+				<alternateMaskPaths>
+					<li>avali/Ears/Male/LowerRight/Variant</li>
+					<li>avali/Ears/Male/LowerRight/Variant2</li>
+				</alternateMaskPaths>
+				<alternateFemaleMaskPaths>
+
+				</alternateFemaleMaskPaths>
+			</li>
+		</textures>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Ears/LR/LowerRight</tex>
+			</li>
+		</backstoryTextures>
+		<bodyPart>right lower ear</bodyPart>
+		<east>
+			<position>(-0.1,0.4)</position>
+			<layer>-0.3014662</layer>
+			<size>0.8</size>
+		</east>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliUpperEar">
+		<defName>EarUR</defName>
+		<textures>
+			<li>
+				<tex>avali/Ears/Male/UpperRight/MaleUpperRight</tex>
+				<femaleTex>avali/Ears/Female/UpperRight/FemaleUpperRight</femaleTex>
+				<alternateMaskPaths>
+					<li>avali/Ears/Male/UpperRight/Variant</li>
+					<li>avali/Ears/Male/UpperRight/Variant2</li>
+				</alternateMaskPaths>
+				<alternateFemaleMaskPaths>
+
+				</alternateFemaleMaskPaths>
+			</li>
+		</textures>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Ears/UR/UpperRight</tex>
+			</li>
+		</backstoryTextures>
+		<bodyPart>right upper ear</bodyPart>
+		<east>
+			<position>(-0.1,0.4)</position>
+			<layer>-0.3014662</layer>
+			<size>0.8</size>
+		</east>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliUpperEar">
+		<defName>EarUL</defName>
+		<textures>
+			<li>
+				<tex>avali/Ears/Male/UpperLeft/MaleUpperLeft</tex>
+				<femaleTex>avali/Ears/Female/UpperLeft/FemaleUpperLeft</femaleTex>
+				<alternateMaskPaths>
+					<li>avali/Ears/Male/UpperLeft/Variant</li>
+					<li>avali/Ears/Male/UpperLeft/Variant2</li>
+				</alternateMaskPaths>
+				<alternateFemaleMaskPaths>
+
+				</alternateFemaleMaskPaths>
+			</li>
+		</textures>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Ears/UL/UpperLeft</tex>
+			</li>
+		</backstoryTextures>
+		<bodyPart>left upper ear</bodyPart>
+		<west>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3014662</layer>
+			<size>0.8</size>
+		</west>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+		<defName>EyeL</defName>
+		<useColorSet>Eye</useColorSet>
+		<textures>
+			<li>
+				<tex>avali/Eyes/EyeL</tex>
+			</li>
+		</textures>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Eyes/EyeL</tex>
+			</li>
+		</backstoryTextures>
+		<!-- Minor error on my part. -->
+
+		<bodyPart>right eye</bodyPart>
+		<east>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</east>
+		<west>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</west>
+		<north>
+			<position>(0,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0.4)</position>
+			<layer>0.03</layer>
+			<size>0.8</size>
+		</south>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+		<defName>EyeR</defName>
+		<useColorSet>Eye</useColorSet>
+		<textures>
+			<li>
+				<tex>avali/Eyes/EyeR</tex>
+			</li>
+		</textures>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Eyes/EyeR</tex>
+			</li>
+		</backstoryTextures>
+		<!-- Minor error on my part. -->
+
+		<bodyPart>left eye</bodyPart>
+		<east>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</east>
+		<west>
+			<position>(-0.1,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</west>
+		<north>
+			<position>(0,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0.4)</position>
+			<layer>0.03</layer>
+			<size>0.8</size>
+		</south>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+		<defName>AvaliMouth</defName>
+		<textures>
+			<li>
+				<tex>avali/Mouth/Mouth</tex>
+			</li>
+		</textures>
+		<bodyPart>head</bodyPart>
+		<west>
+			<position>(-0.1,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</west>
+		<east>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</east>
+		<north>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3044662</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0.4)</position>
+			<layer>0.0275</layer>
+			<size>0.8</size>
+		</south>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+		<defName>TailSkirt</defName>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Tailskirt/Emil</tex>
+			</li>
+		</backstoryTextures>
+		<showsInBed>false</showsInBed>
+		<textures>
+			<li>
+				<tex>avali/Tail/Tailskirt/Male/MaleTailskirt</tex>
+				<femaleTex>avali/Tail/Tailskirt/Female/FemaleTailskirt</femaleTex>
+			</li>
+		</textures>
+		<bodyPart>avali Tail</bodyPart>
+		<east>
+			<position>(-0.13,-0.15)</position>
+			<layer>-0.3086463</layer>
+			<size>0.8</size>
+		</east>
+		<west>
+			<position>(0.13,-0.15)</position>
+			<layer>-0.3086463</layer>
+			<size>0.8</size>
+		</west>
+		<north>
+			<position>(0,0)</position>
+			<layer>-0.3086463</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0)</position>
+			<layer>-0.3086463</layer>
+			<size>0.8</size>
+		</south>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+		<defName>TailMain</defName>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Tail/EimilTail</tex>
+			</li>
+		</backstoryTextures>
+		<showsInBed>false</showsInBed>
+		<textures>
+			<li>
+				<tex>avali/Tail/Male/MaleTail</tex>
+				<femaleTex>avali/Tail/Female/FemaleTail</femaleTex>
+			</li>
+		</textures>
+		<bodyPart>avali Tail</bodyPart>
+		<east>
+			<position>(-0.41,0.12)</position>
+			<layer>-0.3094662</layer>
+			<size>0.8</size>
+		</east>
+		<west>
+			<position>(0.41,0.12)</position>
+			<layer>-0.3094662</layer>
+			<size>0.8</size>
+		</west>
+		<north>
+			<position>(-0.078,0.04)</position>
+			<layer>1</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0.22,0.1)</position>
+			<layer>-1</layer>
+			<size>0.8</size>
+		</south>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+		<defName>Head</defName>
+		<textures>
+			<li>
+				<tex>avali/Heads/Male/MaleHead</tex>
+				<femaleTex>avali/Heads/Female/FemaleHead</femaleTex>
+				<alternateMaskPaths>
+					<li>avali/Heads/Male/Variant</li>
+					<li>avali/Heads/Male/Variant2</li>
+				</alternateMaskPaths>
+				<alternateFemaleMaskPaths>
+
+				</alternateFemaleMaskPaths>
+			</li>
+		</textures>
+		<bodyPart>head</bodyPart>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Head/EimilHead</tex>
+			</li>
+		</backstoryTextures>
+		<east>
+			<position>(0.1,0.4)</position>
+			<layer>-0.3054662</layer>
+			<size>0.8</size>
+		</east>
+		<north>
+			<position>(0,0.4)</position>
+			<layer>-0.3054662</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0.4)</position>
+			<layer>0.027</layer>
+			<size>0.8</size>
+		</south>
+		<west>
+			<position>(-0.1,0.4)</position>
+			<layer>-0.3054662</layer>
+			<size>0.8</size>
+		</west>
+	</RimValiCore.RVR.RenderableDef>
+
+	<RimValiCore.RVR.RenderableDef ParentName="BaseAvaliPart">
+		<defName>Body</defName>
+		<textures>
+			<li>
+				<tex>avali/Body/Male/MaleBody</tex>
+				<femaleTex>avali/Body/Female/FemaleBody</femaleTex>
+			</li>
+		</textures>
+		<bodyPart>Torso</bodyPart>
+		<showsInBed>false</showsInBed>
+		<backstoryTextures>
+			<li>
+				<backstoryTitle>Eimilian</backstoryTitle>
+				<tex>avali/Unique/Eimilian/Body/Eimil_body</tex>
+			</li>
+		</backstoryTextures>
+		<east>
+			<position>(0,0)</position>
+			<layer>-0.3247589</layer>
+			<size>0.8</size>
+		</east>
+		<north>
+			<position>(0,0)</position>
+			<layer>-0.3247589</layer>
+			<size>0.8</size>
+		</north>
+		<south>
+			<position>(0,0)</position>
+			<layer>-0.3247589</layer>
+			<size>0.8</size>
+		</south>
+	</RimValiCore.RVR.RenderableDef>
+</Defs>

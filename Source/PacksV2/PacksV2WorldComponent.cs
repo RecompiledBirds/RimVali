@@ -60,11 +60,13 @@ namespace Rimvali.Rewrite.Packs
 
         public PacksV2WorldComponent(World world) : base(world)
         {
+            RimValiUtility.LogAnaylitics("Initalizing PACKSV2.");
             enabled = false;
             ranWarn = false;
             bool dateHasPassed = DateTime.Today.Day >= 1 && DateTime.Today.Month >= 5 && DateTime.Today.Year >= 2021;
             if (Find.GameInfo.RealPlayTimeInteracting < 10 || dateHasPassed)
                 enabled = true;
+            RimValiUtility.LogAnaylitics("Packs V2 is running!",enabled);
         }
 
         
@@ -74,6 +76,7 @@ namespace Rimvali.Rewrite.Packs
         /// <param name="pawn"></param>
         public void ClearPawnPack(Pawn pawn)
         {
+            RimValiUtility.LogAnaylitics($"Clearing {pawn.Name.ToStringShort}'s pack.");
             if (pawnPacks.ContainsKey(pawn))
                 pawnPacks.Remove(pawn);
         }
@@ -85,7 +88,10 @@ namespace Rimvali.Rewrite.Packs
         /// <returns></returns>
         public bool PawnHasPackWithMembers(Pawn pawn)
         {
-            return PawnHasPack(pawn) && packs[pawnPacks[pawn]].GetAllPawns.Count>1;
+            bool hasPackWithMembers = PawnHasPack(pawn) && packs[pawnPacks[pawn]].GetAllPawns.Count > 1;
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack with members.", hasPackWithMembers);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack members.", !hasPackWithMembers);
+            return hasPackWithMembers;
         }
 
         /// <summary>
@@ -95,7 +101,10 @@ namespace Rimvali.Rewrite.Packs
         /// <returns></returns>
         public bool PawnHasPack(Pawn pawn)
         {
-            return pawnPacks.ContainsKey(pawn);
+            bool hasPack = pawnPacks.ContainsKey(pawn);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack.", hasPack);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack.", !hasPack);
+            return hasPack;
         }
 
         public Pack GetPack(Pawn pawn) => pawnPacks.ContainsKey(pawn) ? packs[pawnPacks[pawn]] : null;
@@ -108,6 +117,7 @@ namespace Rimvali.Rewrite.Packs
         /// <param name="pawn"></param>
         public void AddPack(Pack pack, Pawn pawn = null)
         {
+            RimValiUtility.LogAnaylitics($"Adding pack {pack.Name} to packs list.");
             packs.Add(pack);
             pawnPacks[pawn] = packs.IndexOf(pack);
         }
@@ -156,9 +166,13 @@ namespace Rimvali.Rewrite.Packs
                                     cachedFactionPacks[pawn.Faction] = packs.Where(x => x.Faction == pawn.Faction).ToList();
 
                                 bool anyFactionPacksAcceptable = (!cachedFactionPacks[pawn.Faction].NullOrEmpty() && cachedFactionPacks[pawn.Faction].Any(x => x.GetAllPawns.Count < RimValiMod.settings.maxPackSize));
+
+                                RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a acceptable pack in their faction: {anyFactionPacksAcceptable}");
+
                                 bool hasPack = PawnHasPack(pawn);
                                 if (!hasPack && (packs.EnumerableNullOrEmpty() || !anyFactionPacksAcceptable) || random.Next(0, 12) == 2)
                                 {
+                                    RimValiUtility.LogAnaylitics($"Generating pack for {pawn}");
                                     Pack pack = new Pack(pawn.Faction, pawn, GetID);
                                     AddPack(pack, pawn);
                                     cachedFactionPacks[pawn.Faction].Add(pack);
@@ -169,10 +183,13 @@ namespace Rimvali.Rewrite.Packs
                     //If told to reevaluate speed, stop the stopwatch, calculate the ticks between each run, and reset the stopwatch.
                     if (reevaluateSpeed)
                     {
+                        RimValiUtility.LogAnaylitics("Re-evaluating pack system speed..");
                         packTimeWatcher.Stop();
                         calculatedTicks = (int)(packTimeWatcher.ElapsedTicks/5);
+                        RimValiUtility.LogAnaylitics($"Time elapsed: {packTimeWatcher.ElapsedMilliseconds}ms \nCalculated ticks: {calculatedTicks}");
                         packTimeWatcher.Reset();
                         reevaluateSpeed = false;
+                        
                     }
                     ticks = calculatedTicks;
                 }
@@ -197,6 +214,7 @@ namespace Rimvali.Rewrite.Packs
         /// <param name="pack"></param>
         public void JoinPawnToPack(Pawn pawn, ref Pack pack)
         {
+            RimValiUtility.LogAnaylitics($"Joining pawn {pawn.Name.ToStringShort} to pack {pack.Name}");
             pack.AddPawn(pawn);
             pawnPacks[pawn] = packs.IndexOf(pack);
         }

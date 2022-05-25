@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <StorytellerDef ParentName="BaseStoryteller">
+<StorytellerDef ParentName="BaseStoryteller">
     <defName>RanadeStoryTeller</defName>
     <label>&lt;color=#56CC2D&gt;Ranade the Raconteur&lt;/color&gt;</label>
     <description>There are two things that Ranade enjoys in life: A good story and some men. Whilst the latter doesn’t apply here, the former certainly does. He’ll happily offer or drag you through multiple quests, all in the name of teaching your colonists some hardship and perhaps showing some conflict on the way there. His thoughts are all on a continuous story and preferably gray areas.\n  &lt;color=#56CC2D&gt;He doesn’t care about you having non-Avali colonists, but he may be a tad biased towards more independent causes.&lt;/color&gt;</description>
@@ -23,9 +23,9 @@
         </acceptFractionByDaysPassedCurve>
       </li>
 
-      <!-- Intro -->
+
       <li Class="StorytellerCompProperties_ClassicIntro"/>
-      <!-- Home threats -->
+
       <li Class="StorytellerCompProperties_OnOffCycle">
         <category>ThreatBig</category>
         <minDaysPassed>4.0</minDaysPassed>
@@ -64,7 +64,7 @@
           </points>
         </acceptPercentFactorPerThreatPointsCurve>
       </li>
-      <!-- Home misc incidents-->
+
       <li Class="StorytellerCompProperties_CategoryMTB">
         <category>Misc</category>
         <allowedTargetTags>
@@ -82,7 +82,7 @@
         <category>DiseaseAnimal</category>
         <minDaysPassed>0.4</minDaysPassed>
       </li>
-      <!-- Ally/neutral interaction -->
+
       <li Class="StorytellerCompProperties_FactionInteraction">
         <incident>RaidFriendly</incident>
         <baseIncidentsPerYear>5</baseIncidentsPerYear>
@@ -117,7 +117,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
       </li>
-      <!-- Caravan / temp map -->
+
       <li Class="StorytellerCompProperties_CategoryIndividualMTBByBiome">
         <category>Misc</category>
         <allowedTargetTags>
@@ -141,7 +141,7 @@
           <li>Map_TempIncident</li>
         </allowedTargetTags>
       </li>
-      <!-- Quests - non-Royalty -->
+
       <li Class="StorytellerCompProperties_RandomQuest">
         <category>GiveQuest</category>
         <allowedTargetTags>
@@ -160,7 +160,7 @@
           <li>Ludeon.RimWorld.Royalty</li>
         </disableIfAnyModActive>
       </li>
-      <!-- Quests - Royalty -->
+
       <li Class="StorytellerCompProperties_RandomQuest">
         <category>GiveQuest</category>
         <allowedTargetTags>
@@ -179,7 +179,7 @@
           <li>Ludeon.RimWorld.Royalty</li>
         </enableIfAnyModActive>
       </li>
-      <!-- World misc incidents-->
+
       <li Class="StorytellerCompProperties_CategoryMTB">
         <category>Misc</category>
         <allowedTargetTags>
@@ -188,14 +188,14 @@
         <minDaysPassed>15</minDaysPassed>
         <mtbDays>15</mtbDays>
       </li>
-      <!-- Orbital trader -->
+
       <li Class="StorytellerCompProperties_OnOffCycle">
         <incident>OrbitalTraderArrival</incident>
         <onDays>7</onDays>
         <offDays>8</offDays>
         <numIncidentsRange>1</numIncidentsRange>
       </li>
-      <!-- Triggered -->
+
       <li Class="StorytellerCompProperties_Triggered">
         <incident>StrangerInBlackJoin</incident>
         <delayTicks>200</delayTicks>

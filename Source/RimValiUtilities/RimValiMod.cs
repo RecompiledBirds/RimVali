@@ -12,7 +12,8 @@ namespace AvaliMod
         private readonly bool hasCollectedModules;
         public ModContentPack mod;
         private SettingsWindow windowToShow;
-
+        public static string folderPath = $"{Application.dataPath}/RimVali/";
+        public static string filePath = $"{folderPath}gameinformation";
         public RimValiMod(ModContentPack content) : base(content)
         {
             GetDir = content.RootDir;
@@ -22,6 +23,8 @@ namespace AvaliMod
                 RVFFAInit.Startup();
                 hasCollectedModules = true;
             }
+
+  
 
             mod = content;
             if (LoadedModManager.RunningModsListForReading.Any(x => x.Name.ToLower().Contains("avali continued")))
@@ -37,6 +40,7 @@ namespace AvaliMod
 
             
             settings = GetSettings<RimValiModSettings>();
+            RimValiUtility.LogAnaylitics("Starting RV-anaylitics.");
         }
 
         public static string GetDir { get; private set; }
@@ -226,6 +230,7 @@ namespace AvaliMod
                 listing_Standard.GapLine(10);
                 listing_Standard.CheckboxLabeled("ToggleDebug".Translate(), ref settings.enableDebugMode);
                 listing_Standard.Label("RVBuild".Translate(RimValiUtility.build.Named("BUILD")));
+                listing_Standard.CheckboxLabeled("Advanced anayltics", ref settings.mapCompOn,$"This allows us to collect a bit more specific information (without sorting through a log file), to better understand issues. When you enabled this, a file is created at {folderPath} containing information.");
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
                 listing_Standard.ButtonText("ResetPackLoss");
 
