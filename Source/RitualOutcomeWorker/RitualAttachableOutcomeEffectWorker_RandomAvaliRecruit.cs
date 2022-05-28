@@ -18,6 +18,7 @@ namespace AvaliMod
 				Slate slate = new Slate();
 				slate.Set("map", jobRitual.Map, false);
 				slate.Set("overridePawnGenParams", new PawnGenerationRequest(kind: AvaliDefs.RimValiColonist, context: PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, colonistRelationChanceFactor: 20f, prohibitedTraits: null, fixedIdeo: jobRitual.Ritual.ideo), false);
+				RimValiCore.RVRFrameWork.PawnGeneratorTranspiler.SkipReplacementGeneratorOnce();
 				QuestUtility.GenerateQuestAndMakeAvailable(QuestScriptDefOf.WandererJoins, slate);
 				extraOutcomeDesc = def.letterInfoText;
 				return;
