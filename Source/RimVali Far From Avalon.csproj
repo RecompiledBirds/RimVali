@@ -8,7 +8,7 @@
     <ProjectGuid>{2F885FB4-711D-47FB-AA2D-47069D72DB63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AvaliMod</RootNamespace>
+    <RootNamespace>RimVali</RootNamespace>
     <AssemblyName>RimVali_Far_From_Avalon</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -51,6 +51,7 @@
     <Compile Include="HarmonyPatches\Holovali_Patches.cs" />
     <Compile Include="HarmonyPatches\PlantUtilityPatches.cs" />
     <Compile Include="HarmonyPatches\RimValiPatches.cs" />
+    <Compile Include="HarmonyPatches\StockpilePatches.cs" />
     <Compile Include="HarmonyPatches\TicksPerMove_Patch.cs" />
     <Compile Include="HarmonyPatches\WorkableTemperatureApplies.cs" />
     <Compile Include="HediffStuff\AddHediff.cs" />

@@ -108,5 +108,8 @@ namespace AvaliMod
 
         //Interaction Defs
         public static InteractionDef DeclinePackJoin;
+
+        //ThingCategoryDefs
+        public static ThingCategoryDef AvaliResources;
     }
 }

@@ -230,7 +230,7 @@ namespace AvaliMod
                 listing_Standard.GapLine(10);
                 listing_Standard.CheckboxLabeled("ToggleDebug".Translate(), ref settings.enableDebugMode);
                 listing_Standard.Label("RVBuild".Translate(RimValiUtility.build.Named("BUILD")));
-                listing_Standard.CheckboxLabeled("Advanced anayltics", ref settings.mapCompOn,$"This allows us to collect a bit more specific information (without sorting through a log file), to better understand issues. When you enabled this, a file is created at {folderPath} containing information.");
+                listing_Standard.CheckboxLabeled("Advanced anayltics", ref settings.advancedAnaylitics,$"This allows us to collect a bit more specific information. Optional due to increased logging.");
                 listing_Standard.CheckboxLabeled("Enable map component", ref settings.mapCompOn);
                 listing_Standard.ButtonText("ResetPackLoss");
 

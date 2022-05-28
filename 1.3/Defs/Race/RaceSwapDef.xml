@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RimValiCore.RVRFrameWork.RaceSwapDef>
+		<defName>RV_AvaliRaceSwap</defName>
+		<targetRaces>
+			<li>RimVali</li>
+			<li>RV_ThermicAvali</li>
+		</targetRaces>
+		<replacementRaces>
+			<li>RimVali</li>
+			<li>RV_ThermicAvali</li>
+		</replacementRaces>
+	</RimValiCore.RVRFrameWork.RaceSwapDef>
+</Defs>

@@ -19,23 +19,18 @@ namespace AvaliMod
         {
             foreach (CreditsEntry creditsEntry in __result)
             {
-                yield return creditsEntry;
-                if (!(creditsEntry is CreditRecord_Role creditRole) ||
-                    creditRole.creditee != "Many other gracious volunteers!")
-                {
-                    continue;
-                }
+                yield return creditsEntry;               
+            }
 
+            yield return new CreditRecord_Space(150f);
+            yield return new CreditRecord_Title("RimVali would like to thank several people:");
+            foreach (CreditDef def in DefDatabase<CreditDef>.AllDefs)
+            {
                 yield return new CreditRecord_Space(150f);
-                yield return new CreditRecord_Title("RimVali would like to thank several people:");
-                foreach (CreditDef def in DefDatabase<CreditDef>.AllDefs)
+                yield return new CreditRecord_Title(def.title);
+                foreach (string name in def.names)
                 {
-                    yield return new CreditRecord_Space(150f);
-                    yield return new CreditRecord_Title(def.title);
-                    foreach (string name in def.names)
-                    {
-                        yield return new CreditRecord_Role(null, name);
-                    }
+                    yield return new CreditRecord_Role(null, name);
                 }
             }
         }

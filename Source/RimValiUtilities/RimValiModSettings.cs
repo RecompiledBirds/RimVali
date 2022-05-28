@@ -96,7 +96,7 @@ namespace AvaliMod
             Scribe_Values.Look(ref ticksBetweenPackUpdate, "ticksBetweenPackUpdate", 120, true);
             Scribe_Values.Look(ref canGetPackBroken, "canGetPackBroken", true, true);
             Scribe_Values.Look(ref unstable, "unstable", false, true);
-            Scribe_Values.Look(ref advancedAnaylitics, "anaylitics", false);
+            Scribe_Values.Look(ref advancedAnaylitics, "anaylitics");
             base.ExposeData();
         }
     }
