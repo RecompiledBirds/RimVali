@@ -87,6 +87,7 @@
     <Compile Include="RimValiUtilities\RimValiMod.cs" />
     <Compile Include="RimValiUtilities\RimValiModSettings.cs" />
     <Compile Include="RimValiUtilities\RimValiUtils.cs" />
+    <Compile Include="Storytellers\Jhin\JhinStoryteller.cs" />
     <Compile Include="Storytellers\Nesi\NesiStorytellerProps.cs" />
     <Compile Include="Storytellers\Nesi\NesiStoryteller.cs" />
     <Compile Include="Storytellers\StorytellerData.cs" />

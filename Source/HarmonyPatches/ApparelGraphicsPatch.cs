@@ -15,6 +15,8 @@ namespace AvaliMod
         public static void Patch(ref Apparel apparel, ref BodyTypeDef bodyType, ref ApparelGraphicRecord rec)
         {
             Pawn pawn = apparel.Wearer;
+            string bodyTypePath = $"{apparel.def.apparel.wornGraphicPath}_{bodyType.defName}";
+            string typeLessPath = $"{apparel.def.apparel.wornGraphicPath}";
             if (apparel.def.apparel.layers.Any(d => d == ApparelLayerDefOf.Overhead) &&
                 apparel.def.apparel.wornGraphicPath != null)
             {
@@ -22,24 +24,30 @@ namespace AvaliMod
                 {
                     return;
                 }
-
-                var path = $"{apparel.def.apparel.wornGraphicPath}_{bodyType.defName}";
-                if (pawn.def is RimValiRaceDef def && ContentFinder<Texture2D>.Get($"{path}_north", false) != null &&
-                    ContentFinder<Texture2D>.Get($"{path}_east", false) != null &&
-                    ContentFinder<Texture2D>.Get($"{path}_south", false) != null)
+                
+                if (pawn.def is RimValiRaceDef def)
                 {
-                    Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout,
-                        apparel.def.graphicData.drawSize /
-                        def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size, apparel.DrawColor);
-                    rec = new ApparelGraphicRecord(graphic, apparel);
+                    if (ContentFinder<Texture2D>.Get($"{bodyTypePath}_north", false) != null)
+                    {
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(bodyTypePath, ShaderDatabase.Cutout,
+                        (apparel.def.graphicData.drawSize /
+                        def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size) * 0.02f, apparel.DrawColor);
+                        rec = new ApparelGraphicRecord(graphic, apparel);
+                    }
+                    else if (ContentFinder<Texture2D>.Get($"{typeLessPath}_north", false) != null)
+                    {
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(typeLessPath, ShaderDatabase.Cutout,
+                        (apparel.def.graphicData.drawSize / def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size) * 0.02f, apparel.DrawColor);
+                        rec = new ApparelGraphicRecord(graphic, apparel);
+                    }
                 }
                 else if (!(pawn.def is RimValiRaceDef))
                 {
-                    if (ContentFinder<Texture2D>.Get($"{path}_north", false) != null &&
-                        ContentFinder<Texture2D>.Get($"{path}_east", false) != null &&
-                        ContentFinder<Texture2D>.Get($"{path}_south", false) != null)
+                    if (ContentFinder<Texture2D>.Get($"{bodyTypePath}_north", false) != null &&
+                        ContentFinder<Texture2D>.Get($"{bodyTypePath}_east", false) != null &&
+                        ContentFinder<Texture2D>.Get($"{bodyTypePath}_south", false) != null)
                     {
-                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.Cutout,
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(bodyTypePath, ShaderDatabase.Cutout,
                             apparel.def.graphicData.drawSize, apparel.DrawColor);
                         rec = new ApparelGraphicRecord(graphic, apparel);
                     }
@@ -47,14 +55,36 @@ namespace AvaliMod
             }
             else if (!apparel.def.apparel.wornGraphicPath.NullOrEmpty())
             {
-                var str = $"{apparel.def.apparel.wornGraphicPath}_{bodyType.defName}";
-                if (ContentFinder<Texture2D>.Get($"{str}_north", false) == null ||
-                    ContentFinder<Texture2D>.Get($"{str}_east", false) == null ||
-                    ContentFinder<Texture2D>.Get($"{str}_south", false) == null)
+                Log.Message("vanilla");
+                if (pawn.def is RimValiRaceDef def)
                 {
-                    Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(apparel.def.apparel.wornGraphicPath,
-                        ShaderDatabase.Cutout, apparel.def.graphicData.drawSize, apparel.DrawColor);
-                    rec = new ApparelGraphicRecord(graphic, apparel);
+                    Log.Message("test");
+                    if (ContentFinder<Texture2D>.Get($"{bodyTypePath}_north", false) != null)
+                    {
+                        Log.Message("hello");
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(bodyTypePath, ShaderDatabase.Cutout,
+                        (apparel.def.graphicData.drawSize /
+                        def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size) * 0.02f, apparel.DrawColor);
+                        rec = new ApparelGraphicRecord(graphic, apparel);
+                    }
+                    else if (ContentFinder<Texture2D>.Get($"{typeLessPath}_north", false) != null)
+                    {
+                        Log.Message("hi");
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(typeLessPath, ShaderDatabase.Cutout,
+                        (apparel.def.graphicData.drawSize / def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size) * 0.02f, apparel.DrawColor);
+                        rec = new ApparelGraphicRecord(graphic, apparel);
+                    }
+                }
+                else
+                {
+                    if (ContentFinder<Texture2D>.Get($"{bodyTypePath}_north", false) != null &&
+                        ContentFinder<Texture2D>.Get($"{bodyTypePath}_east", false) != null &&
+                        ContentFinder<Texture2D>.Get($"{bodyTypePath}_south", false) != null)
+                    {
+                        Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(bodyTypePath, ShaderDatabase.Cutout,
+                            apparel.def.graphicData.drawSize, apparel.DrawColor);
+                        rec = new ApparelGraphicRecord(graphic, apparel);
+                    }
                 }
             }
         }

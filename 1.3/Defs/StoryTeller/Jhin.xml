@@ -8,7 +8,7 @@
 		<portraitTiny>avali/Storyteller/Jhin_Portrait</portraitTiny>
 		<listOrder>40</listOrder>
 		<comps>
-			<li Class="AvaliMod.NesiStoryTellerProps">
+			<li Class="AvaliMod.JhinStoryTellerProps">
 				<minDaysPassed>0.6</minDaysPassed>
 				<onDays>0.5</onDays>
 				<offDays>0.5</offDays>
