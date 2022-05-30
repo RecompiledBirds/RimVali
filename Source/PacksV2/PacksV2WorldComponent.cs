@@ -36,7 +36,7 @@ namespace Rimvali.Rewrite.Packs
         {
             get
             {
-                if (!ranWarn && (!(Find.GameInfo.RealPlayTimeInteracting < 10 ||enabled)))
+                if (!ranWarn && (!(Find.GameInfo.RealPlayTimeInteracting < 10 || enabled)))
                 {
                     ranWarn = true;
                     ChoiceLetter choiceLetter = LetterMaker.MakeLetter("EnhancedModeTitle".Translate(),
@@ -66,10 +66,10 @@ namespace Rimvali.Rewrite.Packs
             bool dateHasPassed = DateTime.Today.Day >= 1 && DateTime.Today.Month >= 5 && DateTime.Today.Year >= 2021;
             if (Find.GameInfo.RealPlayTimeInteracting < 10 || dateHasPassed)
                 enabled = true;
-            RimValiUtility.LogAnaylitics("Packs V2 is running!",enabled);
+            RimValiUtility.LogAnaylitics("Packs V2 is running!", enabled);
         }
 
-        
+
         /// <summary>
         /// Clear a pawn's pack value.
         /// </summary>
@@ -110,11 +110,11 @@ namespace Rimvali.Rewrite.Packs
         /// </summary>
         /// <param name="pawn"></param>
         /// <returns></returns>
-        public bool PawnHasPackWithMembers(Pawn pawn,bool extraLogging=true)
+        public bool PawnHasPackWithMembers(Pawn pawn, bool extraLogging = true)
         {
-            bool hasPackWithMembers = PawnHasPack(pawn,extraLogging) && packs[pawnPacks[pawn]].GetAllPawns.Count > 1;
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack with members.", hasPackWithMembers&&extraLogging);
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack members.", !hasPackWithMembers&&extraLogging);
+            bool hasPackWithMembers = PawnHasPack(pawn, extraLogging) && packs[pawnPacks[pawn]].GetAllPawns.Count > 1;
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack with members.", hasPackWithMembers && extraLogging);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack members.", !hasPackWithMembers && extraLogging);
             return hasPackWithMembers;
         }
 
@@ -123,15 +123,15 @@ namespace Rimvali.Rewrite.Packs
         /// </summary>
         /// <param name="pawn"></param>
         /// <returns></returns>
-        public bool PawnHasPack(Pawn pawn,bool extraLogging=true)
+        public bool PawnHasPack(Pawn pawn, bool extraLogging = true)
         {
             bool hasPack = pawnPacks.ContainsKey(pawn);
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack.", hasPack&&extraLogging);
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack.", !hasPack&&extraLogging);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack.", hasPack && extraLogging);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack.", !hasPack && extraLogging);
             return hasPack;
         }
 
-        public Pack GetPack(Pawn pawn) => pawnPacks.ContainsKey(pawn) ? packs[pawnPacks[pawn]] : null;
+        public Pack GetPack(Pawn pawn) { try { return pawnPacks.ContainsKey(pawn) ? packs[pawnPacks[pawn]] : null; } catch (Exception e) { Log.Error($"{e}"); if (pawnPacks.ContainsKey(pawn)){ pawnPacks.Remove(pawn); } } return null; }
 
 
         /// <summary>
