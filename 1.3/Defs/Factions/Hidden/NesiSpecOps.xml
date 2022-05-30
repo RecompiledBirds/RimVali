@@ -28,6 +28,8 @@
       </li>
     </backstoryFilters>
     <hidden>true</hidden>
+	  <canStageAttacks>false</canStageAttacks>
+	  <canSiege>false</canSiege>
     <rescueesCanJoin>true</rescueesCanJoin>
     <autoFlee>false</autoFlee>
     <geneticVariance>1</geneticVariance>

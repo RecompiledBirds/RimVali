@@ -8,7 +8,7 @@ using RimValiCore;
 using AvaliMod;
 using Verse;
 
-namespace RimVali.Storytellers.Jhin
+namespace RimVali.Storytellers
 {
     public class JhinStoryTellerProps : StorytellerCompProperties
     {

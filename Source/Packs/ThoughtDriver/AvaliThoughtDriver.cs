@@ -42,56 +42,8 @@ namespace AvaliMod
             Scribe_Collections.Look(ref pawnsAreMissing, "missingPawns", LookMode.Reference);
         }
 
-        public bool CheckIfLost(Pawn pawn)
-        {
-            TaleManager manager = Find.TaleManager;
-            manager.AllTalesListForReading.Any(x => x.DominantPawn == pawn);
-            if (pawnsAreMissing.Count > 0 && pawn.IsKidnapped() && !pawnsAreMissing.Contains(pawn))
-            {
-                pawnsAreMissing.Add(pawn);
-                return true;
-            }
 
-            return false;
-        }
 
-        public void UpdatePawns()
-        {
-            if (!RimValiUtility.Driver.Packs.EnumerableNullOrEmpty())
-            {
-                foreach (AvaliPack pack in RimValiUtility.Driver.Packs)
-                {
-                    foreach (Pawn pawn in pack.GetAllNonNullPawns)
-                    {
-                        var packComp = pawn.TryGetComp<PackComp>();
-                        AvaliPack pawnPack = RimValiUtility.Driver.GetCurrentPack(pawn);
-                        GivePackThoughts(pawnPack, packComp);
-                    }
-                }
-            }
-        }
-
-        private void GivePackThoughts(AvaliPack pawnPack, PackComp packComp)
-        {
-            if (pawnPack != null && packComp != null)
-            {
-                foreach (Pawn packmate in pawnPack.GetAllNonNullPawns.Where(x => x.Alive() && x != pawnPack.leaderPawn))
-                {
-                    var thought_Memory2 = (Thought_Memory)ThoughtMaker.MakeThought(packComp.Props.togetherThought);
-                    if (packmate != null && pawnPack.leaderPawn != null &&
-                        !thought_Memory2.TryMergeWithExistingMemory(out bool _))
-                    {
-                        packmate.needs.mood.thoughts.memories.TryGainMemory(thought_Memory2, pawnPack.leaderPawn);
-                    }
-                }
-            }
-        }
-
-        public void UpdateThreaded()
-        {
-            UpdatePawns();
-            threadRunning = false;
-        }
 
         int fails = 0;
         private void UpdateV2()
@@ -133,40 +85,11 @@ namespace AvaliMod
             }
         }
 
-        
+
 
         public override void WorldComponentTick()
         {
-            if (!PacksV2WorldComponent.EnhancedMode)
-            {
-                if (RimValiMod.settings.packThoughtsEnabled && mapCompOn && !(RimValiUtility.Driver.Packs == null) &&
-                    RimValiUtility.Driver.Packs.Count > 0)
-                {
-                    if (onTick == 120)
-                    {
-                        pawns = RimValiUtility.PawnsInWorld;
-                        if (CanStartNextThread)
-                        {
-                            threadRunning = true;
-                            ThreadStart packThreadRef = UpdateThreaded;
-                            var packThread = new Thread(packThreadRef);
-                            packThread.Start();
-                        }
-                        else
-                        {
-                            UpdatePawns();
-                        }
-
-                        onTick = 0;
-                    }
-
-                    onTick++;
-                }
-            }
-            else
-            {
-                UpdateV2();
-            }
+            UpdateV2();
         }
     }
 }

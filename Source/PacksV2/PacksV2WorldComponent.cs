@@ -81,16 +81,40 @@ namespace Rimvali.Rewrite.Packs
                 pawnPacks.Remove(pawn);
         }
 
+        public void RemovePack(Pack pack)
+        {
+            RimValiUtility.LogAnaylitics($"Removing pack: {pack.Name}");
+            if (packs.Contains(pack))
+            {
+                foreach (Pawn p in pack.GetAllPawns)
+                {
+                    ClearPawnPack(p);
+                }
+                List<Pack> packsToUpdate = packs.GetRange(packs.IndexOf(pack), (packs.Count - 1) - packs.IndexOf(pack));
+
+                packs.Remove(pack);
+
+
+                foreach (Pack packToFix in packsToUpdate)
+                {
+                    foreach (Pawn pawn in packToFix.GetAllPawns)
+                    {
+                        pawnPacks[pawn] = packs.IndexOf(packToFix);
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Does the pawn have a pack with at least one other avali?
         /// </summary>
         /// <param name="pawn"></param>
         /// <returns></returns>
-        public bool PawnHasPackWithMembers(Pawn pawn)
+        public bool PawnHasPackWithMembers(Pawn pawn,bool extraLogging=true)
         {
-            bool hasPackWithMembers = PawnHasPack(pawn) && packs[pawnPacks[pawn]].GetAllPawns.Count > 1;
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack with members.", hasPackWithMembers);
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack members.", !hasPackWithMembers);
+            bool hasPackWithMembers = PawnHasPack(pawn,extraLogging) && packs[pawnPacks[pawn]].GetAllPawns.Count > 1;
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack with members.", hasPackWithMembers&&extraLogging);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack members.", !hasPackWithMembers&&extraLogging);
             return hasPackWithMembers;
         }
 
@@ -99,11 +123,11 @@ namespace Rimvali.Rewrite.Packs
         /// </summary>
         /// <param name="pawn"></param>
         /// <returns></returns>
-        public bool PawnHasPack(Pawn pawn)
+        public bool PawnHasPack(Pawn pawn,bool extraLogging=true)
         {
             bool hasPack = pawnPacks.ContainsKey(pawn);
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack.", hasPack);
-            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack.", !hasPack);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a pack.", hasPack&&extraLogging);
+            RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} does not have a pack.", !hasPack&&extraLogging);
             return hasPack;
         }
 
@@ -160,17 +184,18 @@ namespace Rimvali.Rewrite.Packs
                     {
                         foreach (Pawn pawn in pawns)
                         {
-                            if (pawn != null && pawn.Faction != null)
+                            bool hasPack = PawnHasPack(pawn);
+                            if (pawn != null && pawn.Faction != null&&!hasPack)
                             {
                                 if (!cachedFactionPacks.ContainsKey(pawn.Faction))
                                     cachedFactionPacks[pawn.Faction] = packs.Where(x => x.Faction == pawn.Faction).ToList();
 
-                                bool anyFactionPacksAcceptable = (!cachedFactionPacks[pawn.Faction].NullOrEmpty() && cachedFactionPacks[pawn.Faction].Any(x => x.GetAllPawns.Count < RimValiMod.settings.maxPackSize));
+                                bool anyFactionPacksAcceptable = (!cachedFactionPacks[pawn.Faction].NullOrEmpty() && cachedFactionPacks[pawn.Faction].Any(x => x.GetAllPawns.Count < RimValiMod.settings.maxPackSize&&x.GetAvgOpinionOf(pawn)>=RimValiMod.settings.packOpReq));
 
                                 RimValiUtility.LogAnaylitics($"{pawn.Name.ToStringShort} has a acceptable pack in their faction: {anyFactionPacksAcceptable}");
 
-                                bool hasPack = PawnHasPack(pawn);
-                                if (!hasPack && (packs.EnumerableNullOrEmpty() || !anyFactionPacksAcceptable) || random.Next(0, 12) == 2)
+                                
+                                if (packs.EnumerableNullOrEmpty() || !anyFactionPacksAcceptable)
                                 {
                                     RimValiUtility.LogAnaylitics($"Generating pack for {pawn}");
                                     Pack pack = new Pack(pawn.Faction, pawn, GetID);

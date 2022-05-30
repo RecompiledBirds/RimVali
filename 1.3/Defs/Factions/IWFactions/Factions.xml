@@ -15,6 +15,12 @@
     <canStageAttacks>true</canStageAttacks>
 	<allowedCultures><li>Astropolitan</li></allowedCultures>
     <leaderTitle>Pack Leader</leaderTitle>
+	  <minSettlementTemperatureChanceCurve>
+		  <points>
+			  <li>(-30,1000)</li>
+			  <li>(-20,0)</li>
+		  </points>
+	  </minSettlementTemperatureChanceCurve>
     <colorSpectrum>
       <li>(1, 0.52, 0.05)</li>
       <li>(1, 1, 1)</li>
@@ -107,6 +113,12 @@
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>Pack Leader</leaderTitle>
+	  <minSettlementTemperatureChanceCurve>
+		  <points>
+			  <li>(-30,1000)</li>
+			  <li>(-20,0)</li>
+		  </points>
+	  </minSettlementTemperatureChanceCurve>
     <colorSpectrum>
       <li>(1, 0.52, 0.05)</li>
       <li>(1, 1, 1)</li>

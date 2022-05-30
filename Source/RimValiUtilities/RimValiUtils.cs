@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using RimValiCore;
 using RimValiCore.RVR;
@@ -20,10 +21,23 @@ namespace AvaliMod
             "RimValiModules".TranslateSimple() + "\n" +
             string.Join("\n", Enumerable.Select(foundModules, module => module.name));
 
-        public static void LogAnaylitics(object message, bool otherEvaluation=true)
+        public static void LogAnaylitics(object message,bool otherEvaluation = true)
         {
-            if (RimValiMod.settings.advancedAnaylitics&&otherEvaluation)
+            if (RimValiMod.settings.advancedAnaylitics && otherEvaluation)
+            {
                 Log.Message($"[RIMVALI ANAYLITICS]: {message}");
+                StackTrace trace = new StackTrace();
+                string tracedFrames="";
+
+                for(int a = 1; a<trace.GetFrames().Length-1&& a<8; a++)
+                {
+                    StackFrame frame = trace.GetFrame(a);
+                    tracedFrames += ($"At  MethodName: {frame.GetMethod()}, Line: {frame.GetFileLineNumber()}\n");
+                }
+
+                Log.Message($"[RVA Trace]:{tracedFrames}");
+            }
+            
         }
         public static HashSet<Pawn> PawnsInWorld
         {

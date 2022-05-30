@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-<RimValiCore.QLine.QL_Quest>
-        <defName>testQuest_0</defName>
-        <questAction>RimValiCore.QLine.PrototypeWorker_0</questAction>
-        <label>test quest_0</label>
-        <description>test quest_0</description>
-    </RimValiCore.QLine.QL_Quest>
-    
-    <RimValiCore.QLine.QL_Quest>
-        <defName>testQuest_1</defName>
-        <questAction>RimValiCore.QLine.PrototypeWorker_1</questAction>
-        <label>test quest_1</label>
-        <description>test quest_1</description>
-    </RimValiCore.QLine.QL_Quest>
-    
-    <RimValiCore.QLine.QL_Quest>
-        <defName>testQuest_2</defName>
-        <questAction>RimValiCore.QLine.PrototypeWorker_1</questAction>
-        <label>test quest_2</label>
-        <description>test quest_2</description>
-    </RimValiCore.QLine.QL_Quest>
-    
-    <RimValiCore.QLine.QL_Quest>
-        <defName>testQuest_3</defName>
-        <questAction>RimValiCore.QLine.PrototypeWorker_0</questAction>
-        <label>test quest_3</label>
-        <description>test quest_3</description>
-    </RimValiCore.QLine.QL_Quest>
-    
-    <MainButtonDef>
-        <defName>QuestQUI</defName>
-        <label>QLine</label>
-        <description>Open GUI designer.</description>
-        <workerClass>MainButtonWorker_ToggleTab</workerClass>
-        <tabWindowClass>RimValiCore.QLine.QL_Window</tabWindowClass>
-        <order>66</order>
-        <minimized>True</minimized>
-        <!-- <iconPath>NesGUI/NGUILogo</iconPath> -->
-        <defaultHotKey></defaultHotKey>
-     </MainButtonDef>
-
-
+	<RimValiCore.QLine.QL_Quest>
+		<defName>testQuest_0</defName>
+		<questAction>RimValiCore.QLine.PrototypeWorker_0</questAction>
+		<label>test quest_0</label>
+		<description>test quest_0</description>
+		<texPath>Quest/TriFeather</texPath>
+	</RimValiCore.QLine.QL_Quest>
+	
+	<RimValiCore.QLine.QL_Quest>
+		<defName>testQuest_1</defName>
+		<questAction>RimValiCore.QLine.PrototypeWorker_1</questAction>
+		<label>test quest_1</label>
+		<texPath>Quest/TriFeather</texPath>
+		<description>test quest_1</description>
+	</RimValiCore.QLine.QL_Quest>
+	
+	<RimValiCore.QLine.QL_Quest>
+		<defName>testQuest_2</defName>
+		<questAction>RimValiCore.QLine.PrototypeWorker_1</questAction>
+		<label>test quest_2</label>
+		<texPath>Quest/TriFeather</texPath>
+		<description>test quest_2</description>
+	</RimValiCore.QLine.QL_Quest>
+	
+	<RimValiCore.QLine.QL_Quest>
+		<defName>testQuest_3</defName>
+		<questAction>RimValiCore.QLine.PrototypeWorker_0</questAction>
+		<label>test quest_3</label>
+		<texPath>Quest/TriFeather</texPath>
+		<description>test quest_3</description>
+	</RimValiCore.QLine.QL_Quest>
+	
+	<MainButtonDef>
+		<defName>QuestQUI</defName>
+		<label>QLine</label>
+		<description>Open GUI designer.</description>
+		<workerClass>MainButtonWorker_ToggleTab</workerClass>
+		<tabWindowClass>RimValiCore.QLine.QL_Window</tabWindowClass>
+		<order>66</order>
+		<minimized>True</minimized>
+		<!-- <iconPath>NesGUI/NGUILogo</iconPath> -->
+		<defaultHotKey></defaultHotKey>
+	 </MainButtonDef>
 
   <AvaliMod.ModuleDef>
     <defName>RimValiCore</defName>

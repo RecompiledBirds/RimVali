@@ -55,13 +55,10 @@ namespace AvaliMod
             }
             else if (!apparel.def.apparel.wornGraphicPath.NullOrEmpty())
             {
-                Log.Message("vanilla");
                 if (pawn.def is RimValiRaceDef def)
                 {
-                    Log.Message("test");
                     if (ContentFinder<Texture2D>.Get($"{bodyTypePath}_north", false) != null)
                     {
-                        Log.Message("hello");
                         Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(bodyTypePath, ShaderDatabase.Cutout,
                         (apparel.def.graphicData.drawSize /
                         def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size) * 0.02f, apparel.DrawColor);
@@ -69,7 +66,6 @@ namespace AvaliMod
                     }
                     else if (ContentFinder<Texture2D>.Get($"{typeLessPath}_north", false) != null)
                     {
-                        Log.Message("hi");
                         Graphic graphic = GraphicDatabase.Get<Graphic_Multi>(typeLessPath, ShaderDatabase.Cutout,
                         (apparel.def.graphicData.drawSize / def.renderableDefs.First(x => x.defName.ToLower() == "head").south.size) * 0.02f, apparel.DrawColor);
                         rec = new ApparelGraphicRecord(graphic, apparel);

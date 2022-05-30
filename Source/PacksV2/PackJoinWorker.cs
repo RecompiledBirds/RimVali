@@ -18,7 +18,11 @@ namespace Rimvali.Rewrite.Packs
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, out string letterText, out string letterLabel, out LetterDef letterDef, out LookTargets lookTargets)
         {
             PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
+            
             base.Interacted(initiator, recipient, extraSentencePacks, out letterText, out letterLabel, out letterDef, out lookTargets);
+            if(!packsComp.PawnHasPackWithMembers(recipient)&&packsComp.PawnHasPack(recipient))
+                packsComp.RemovePack(packsComp.GetPack(recipient));
+
             Pack pack = packsComp.GetPack(initiator);
             //Get pack avg opinion of recipient.
             float avgOP = pack.GetAvgOpinionOf(recipient);
@@ -41,7 +45,7 @@ namespace Rimvali.Rewrite.Packs
             }
             
             //If they joined, notify the user
-            if (joined)
+            if (joined && initiator.Faction==Faction.OfPlayer&&recipient.Faction==Faction.OfPlayer)
             {
                 letterDef = LetterDefOf.PositiveEvent;
 
@@ -69,12 +73,11 @@ namespace Rimvali.Rewrite.Packs
             bool initatiorPackHasSpace = packsComp.PawnHasPack(initiator) && packsComp.GetPack(initiator).GetAllPawns.Count < RimValiMod.settings.maxPackSize;
             bool bothAreAvali = AvaliDefs.IsAvali(initiator) && AvaliDefs.IsAvali(recipient);
             
-            //Check both are avali, unstable mode is on, initator has a pack, recipient does not, both are of the same faction, and initator's pack has space.
-            if (recipient.IsPackBroken() || packsComp.PawnHasPack(recipient) || !bothAreAvali || !PacksV2WorldComponent.EnhancedMode || initiator.Faction != recipient.Faction || !initatiorPackHasSpace)
+
+            if (recipient.IsPackBroken() || packsComp.PawnHasPackWithMembers(recipient) || !bothAreAvali || !PacksV2WorldComponent.EnhancedMode || initiator.Faction != recipient.Faction || !initatiorPackHasSpace)
                 return 0f;
             
-            //This is important for day 0 pack creation.
-            //Recipient does not have pack, initiator does, initator's pack is less then max size, and the creation date is today.
+
             if (bothAreAvali && packsComp.GetPack(initiator).CreationDate.ToString() == new Date().ToString() && initatiorPackHasSpace)
                 return 10000f;
            
