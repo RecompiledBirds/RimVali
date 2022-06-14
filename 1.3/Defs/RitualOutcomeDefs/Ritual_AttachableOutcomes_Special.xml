@@ -7,8 +7,8 @@
 		<letterInfoText>A wanderer has arrived and wants to join your colony.</letterInfoText>
 		<workerClass>AvaliMod.RitualAttachableOutcomeEffectWorker_RandomAvaliRecruit</workerClass>
 		<disallowedRituals>
-		  <li>FuneralStandard</li>
-		  <li>FuneralNoCorpse</li>
+		  <li MayRequire="ludeon.rimworld.ideology">FuneralStandard</li>
+		  <li MayRequire="ludeon.rimworld.ideology">FuneralNoCorpse</li>
 		</disallowedRituals>
 	  </RitualAttachableOutcomeEffectDef>
 </Defs>
