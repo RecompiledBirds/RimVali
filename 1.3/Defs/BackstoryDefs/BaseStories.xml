@@ -4,7 +4,7 @@
     <defName>AvaliRuffian</defName>
     <title>Ruffian</title>
     <shortTitle>Ruffian</shortTitle>
-    <storyDesc>[PAWN_NameDef] had always felt as if not all rules applied to them. Most of [PAWN_possessive] free time was spent along a thin line between legal and illegal be it through grifting valuable assets from notable personalities or having a small edge ahead of everyone else at the gambling table. It didn't take long for their acquired skills to evolve into a lifestyle and that lifestyle into a very real issue with the law. Eventually, [PAWN_pronoun] was forced to flee from their past actions and has found themselves on this planet. Their wild personality makes it very difficult for them to focus on a project for an extended period of time however.</storyDesc>
+    <storyDesc>[PAWN_nameDef] had always felt as if not all rules applied to them. Most of [PAWN_possessive] free time was spent along a thin line between legal and illegal be it through grifting valuable assets from notable personalities or having a small edge ahead of everyone else at the gambling table. It didn't take long for their acquired skills to evolve into a lifestyle and that lifestyle into a very real issue with the law. Eventually, [PAWN_pronoun] was forced to flee from their past actions and has found themselves on this planet. Their wild personality makes it very difficult for them to focus on a project for an extended period of time however.</storyDesc>
     <spawnInCategories>
       <li>RimValiBackstories</li>
     </spawnInCategories>

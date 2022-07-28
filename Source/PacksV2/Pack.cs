@@ -1,4 +1,5 @@
 ﻿using AvaliMod;
+using RimValiCore;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Rimvali.Rewrite.Packs
     /// </summary>
     public class Pack : IExposable, ILoadReferenceable
     {
-        private Date creationDate = new Date();
+        private RimworldDate creationDate = new RimworldDate();
         private List<DeathDate> deathDates = new List<DeathDate>();
         private Faction faction;
         private Pawn leaderPawn;
@@ -85,7 +86,7 @@ namespace Rimvali.Rewrite.Packs
             }
         }
 
-        public Date CreationDate
+        public RimworldDate CreationDate
         {
             get
             {
@@ -118,7 +119,7 @@ namespace Rimvali.Rewrite.Packs
         {
             float result = GetAllPawns.Sum(packMember => packMember.relations.OpinionOf(pawn)) /
                    (float)(GetAllPawns.Count());
-            RimValiUtility.LogAnaylitics($"Pack {this.name} average opinion of {pawn.Name.ToStringShort}: {result}");
+            AvaliMod.RimValiUtility.LogAnaylitics($"Pack {this.name} average opinion of {pawn.Name.ToStringShort}: {result}");
             return result;
         }
 
@@ -129,8 +130,8 @@ namespace Rimvali.Rewrite.Packs
         /// <returns></returns>
         public float GetPawnOpinionOf(Pawn pawn)
         {
-            float result = GetAllPawns.Sum(packMember => pawn.relations.OpinionOf(packMember) / (float)GetAllPawns.Count); 
-            RimValiUtility.LogAnaylitics($"Pawn {pawn.Name.ToStringShort} average opinion of {this.name}: {result}");
+            float result = GetAllPawns.Sum(packMember => pawn.relations.OpinionOf(packMember) / (float)GetAllPawns.Count);
+            AvaliMod.RimValiUtility.LogAnaylitics($"Pawn {pawn.Name.ToStringShort} average opinion of {this.name}: {result}");
             return result;
         }
        
@@ -140,7 +141,7 @@ namespace Rimvali.Rewrite.Packs
         /// <param name="pawn"></param>
         public void SetLeader(Pawn pawn)
         {
-            RimValiUtility.LogAnaylitics($"Setting {pawn.Name.ToStringShort} as leader of {this.Name}");
+            AvaliMod.RimValiUtility.LogAnaylitics($"Setting {pawn.Name.ToStringShort} as leader of {this.Name}");
             leaderPawn = pawn;
             if (pawns.Contains(pawn))
                 pawns.Remove(pawn);
@@ -175,7 +176,7 @@ namespace Rimvali.Rewrite.Packs
         /// <param name="registerAsDead">Should the pawn be set as dead?</param>
         public void RemovePawn(Pawn pawn, bool registerAsDead = false)
         {
-            RimValiUtility.LogAnaylitics($"Removing {pawn.Name.ToStringShort} from {this.Name}");
+            AvaliMod.RimValiUtility.LogAnaylitics($"Removing {pawn.Name.ToStringShort} from {this.Name}");
             if (pawns.Contains(pawn))
             {
                 pawns.Remove(pawn);

@@ -9,7 +9,7 @@
       <Nutrition>0.2</Nutrition>
     </statBases>
     <graphicData>
-      <texPath>avali/Things/Plants/Soog/avali_soog_plant</texPath>
+      <texPath>RimValiFFA/Things/Plants/Soog/avali_soog_plant</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <ingestible />
@@ -19,7 +19,7 @@
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>RimValiRawSoog</harvestedThingDef>
       <harvestYield>6</harvestYield>
-      <immatureGraphicPath>avali/Things/Plants/Soog/avali_soog_plant</immatureGraphicPath>
+      <immatureGraphicPath>RimValiFFA/Things/Plants/Soog/avali_soog_plant</immatureGraphicPath>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.3~0.8</visualSizeRange>

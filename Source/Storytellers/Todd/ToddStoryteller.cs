@@ -78,7 +78,7 @@ namespace AvaliMod
             int incCount = IncidentCycleUtility.IncidentCountThisInterval(target,
                 Find.Storyteller.storytellerComps.IndexOf(this), Props.minDaysPassed, Props.onDays, Props.offDays,
                 Props.minSpacingDays, Props.minIncidents, Props.maxIncidents, num);
-            for (var i = 0; i < incCount; i++)
+            for (int i = 0; i < incCount; i++)
             {
                 RimValiUtility.LogAnaylitics("Storyteller-Todd: Firing incident(s)");
                 FiringIncident inc = null;

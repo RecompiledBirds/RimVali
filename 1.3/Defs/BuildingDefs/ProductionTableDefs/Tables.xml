@@ -47,7 +47,7 @@
       <li>ResearchNanoForge</li>
     </researchPrerequisites>
     <graphicData>
-      <texPath>avali/Buildings/Production/NanoForge</texPath>
+      <texPath>RimValiFFA/Buildings/Production/NanoForge</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(3,2)</drawSize>
@@ -113,7 +113,7 @@
       <ComponentIndustrial>10</ComponentIndustrial>
     </costList>
     <graphicData>
-      <texPath>avali/Buildings/Production/AvaliResearchTable</texPath>
+      <texPath>RimValiFFA/Buildings/Production/AvaliResearchTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(4,5)</drawSize>
@@ -172,7 +172,7 @@
     <label>Illuminate Nexus Connection</label>
     <description>This device can be used to access higher levels of tech, thanks to its connection to the nexus.</description>
     <graphicData>
-      <texPath>avali/Buildings/Production/SyncCrystal</texPath>
+      <texPath>RimValiFFA/Buildings/Production/SyncCrystal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>3</drawSize>
     </graphicData>
@@ -263,7 +263,7 @@
       <li>ResearchNanoLoom</li>
     </researchPrerequisites>
     <graphicData>
-      <texPath>avali/Buildings/Production/Loom/Loom</texPath>
+      <texPath>RimValiFFA/Buildings/Production/Loom/Loom</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>(2,1.8)</drawSize>

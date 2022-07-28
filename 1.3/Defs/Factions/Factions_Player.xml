@@ -11,8 +11,8 @@
     <backstoryCategories>
       <li>RimValiBackstories</li>
     </backstoryCategories>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>RimValiFFA/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>RimValiFFA/WorldIcons/Town</settlementTexturePath>
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
@@ -76,8 +76,8 @@
     <backstoryCategories>
       <li>EimilStory</li>
     </backstoryCategories>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>RimValiFFA/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>RimValiFFA/WorldIcons/Town</settlementTexturePath>
 
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>

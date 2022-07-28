@@ -4,7 +4,13 @@
 	<designationCategory>RimVali_AvaliSecurity</designationCategory>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/AIMS/mortar_base</texPath>
+
+
+
+
+
+
+		<texPath>RimValiFFA/Buildings/Turrets/AIMS/mortar_base</texPath>
       <drawSize>(2,2)</drawSize>
     </graphicData>
     <defName>AvaliAIMS</defName>
@@ -37,7 +43,7 @@
       <turretBurstWarmupTime>7.0</turretBurstWarmupTime>
       <turretBurstCooldownTime>30.0</turretBurstCooldownTime>
     </building>
-    <uiIconPath>avali/Buildings/Turrets/AIMS/AIMS_GUI_IMAGE</uiIconPath>
+    <uiIconPath>RimValiFFA/Buildings/Turrets/AIMS/AIMS_GUI_IMAGE</uiIconPath>
     <uiIconScale>0.9</uiIconScale>
   </ThingDef>
 
@@ -46,7 +52,7 @@
     <label>AIMS</label>
     <description>AIMS launch system.</description>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/AIMS/AIMS</texPath>
+      <texPath>RimValiFFA/Buildings/Turrets/AIMS/AIMS</texPath>
     </graphicData>
     <weaponTags>
       <li>Artillery_BaseDestroyer</li>

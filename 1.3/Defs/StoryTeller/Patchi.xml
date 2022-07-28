@@ -4,8 +4,8 @@
 		<defName>RimVali_PatchiPeaceful</defName>
 		<label>Patchi the Peaceful</label>
 		<description>TODO</description>
-		<portraitLarge>avali/Storyteller/Patchi</portraitLarge>
-		<portraitTiny>avali/Storyteller/Patchi</portraitTiny>
+		<portraitLarge>RimValiFFA/Storyteller/Patchi</portraitLarge>
+		<portraitTiny>RimValiFFA/Storyteller/Patchi</portraitTiny>
 		<listOrder>40</listOrder>
 		<comps>
 

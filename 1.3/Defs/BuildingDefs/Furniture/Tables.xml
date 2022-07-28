@@ -5,7 +5,7 @@
     <defName>Illuminate2x2Table</defName>
     <label>2x2 Avali table</label>
     <graphicData>
-      <texPath>avali/Buildings/Furniture/SmallTable/SmallTable</texPath>
+      <texPath>RimValiFFA/Buildings/Furniture/SmallTable/SmallTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -33,7 +33,7 @@
     <defName>Illuminate2x4Table</defName>
     <label>2x4 Avali table</label>
     <graphicData>
-      <texPath>avali/Buildings/Furniture/Table/Table</texPath>
+      <texPath>RimValiFFA/Buildings/Furniture/Table/Table</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,4)</drawSize>
       <damageData>

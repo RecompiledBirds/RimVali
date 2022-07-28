@@ -27,7 +27,7 @@
     <description>Tungsten. A reddish-grayish ore. Avali commonly use it, especially in their rail weapons, as a bullet/projectile. However, it can't be used in this form.</description>
     <descriptionHyperlinks><ThingDef>AvaliTungstenPowder</ThingDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>avali/Things/Tungsten/TungstenOre</texPath>
+      <texPath>RimValiFFA/Things/Tungsten/TungstenOre</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -63,7 +63,7 @@
     <description>Crushed tungsten; it's ready for the heat and pressure treatment to mold it now.</description>
     <descriptionHyperlinks><ThingDef>AvaliTungsten</ThingDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>avali/Things/Tungsten/TungstenPowder</texPath>
+      <texPath>RimValiFFA/Things/Tungsten/TungstenPowder</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -155,7 +155,7 @@
     <description>A supermaterial. This material is a hybrid of tungsten and aerogel, to make one of the strongest resources avali have ever made.</description>
     <descriptionHyperlinks><ThingDef>AvaliTungsten</ThingDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>avali/Things/Tungsten/AeroTungsten</texPath>
+      <texPath>RimValiFFA/Things/Tungsten/AeroTungsten</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

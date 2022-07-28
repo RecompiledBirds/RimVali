@@ -53,11 +53,11 @@
 		<defName>EarLL</defName>
 		<textures>
 			<li>
-				<tex>avali/Ears/Male/LowerLeft/MaleLowerLeft</tex>
-				<femaleTex>avali/Ears/Female/LowerLeft/FemaleLowerLeft</femaleTex>
+				<tex>RimValiFFA/Ears/Male/LowerLeft/MaleLowerLeft</tex>
+				<femaleTex>RimValiFFA/Ears/Female/LowerLeft/FemaleLowerLeft</femaleTex>
 				<alternateMaskPaths>
-					<li>avali/Ears/Male/LowerLeft/Variant</li>
-					<li>avali/Ears/Male/LowerLeft/Variant2</li>
+					<li>RimValiFFA/Ears/Male/LowerLeft/Variant</li>
+					<li>RimValiFFA/Ears/Male/LowerLeft/Variant2</li>
 				</alternateMaskPaths>
 				<alternateFemaleMaskPaths>
 
@@ -68,7 +68,7 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Ears/LL/LowerLeft</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Ears/LL/LowerLeft</tex>
 			</li>
 		</backstoryTextures>
 		<west>
@@ -82,11 +82,11 @@
 		<defName>EarLR</defName>
 		<textures>
 			<li>
-				<tex>avali/Ears/Male/LowerRight/MaleLowerRight</tex>
-				<femaleTex>avali/Ears/Female/LowerRight/FemaleLowerRight</femaleTex>
+				<tex>RimValiFFA/Ears/Male/LowerRight/MaleLowerRight</tex>
+				<femaleTex>RimValiFFA/Ears/Female/LowerRight/FemaleLowerRight</femaleTex>
 				<alternateMaskPaths>
-					<li>avali/Ears/Male/LowerRight/Variant</li>
-					<li>avali/Ears/Male/LowerRight/Variant2</li>
+					<li>RimValiFFA/Ears/Male/LowerRight/Variant</li>
+					<li>RimValiFFA/Ears/Male/LowerRight/Variant2</li>
 				</alternateMaskPaths>
 				<alternateFemaleMaskPaths>
 
@@ -96,7 +96,7 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Ears/LR/LowerRight</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Ears/LR/LowerRight</tex>
 			</li>
 		</backstoryTextures>
 		<bodyPart>right lower ear</bodyPart>
@@ -111,11 +111,11 @@
 		<defName>EarUR</defName>
 		<textures>
 			<li>
-				<tex>avali/Ears/Male/UpperRight/MaleUpperRight</tex>
-				<femaleTex>avali/Ears/Female/UpperRight/FemaleUpperRight</femaleTex>
+				<tex>RimValiFFA/Ears/Male/UpperRight/MaleUpperRight</tex>
+				<femaleTex>RimValiFFA/Ears/Female/UpperRight/FemaleUpperRight</femaleTex>
 				<alternateMaskPaths>
-					<li>avali/Ears/Male/UpperRight/Variant</li>
-					<li>avali/Ears/Male/UpperRight/Variant2</li>
+					<li>RimValiFFA/Ears/Male/UpperRight/Variant</li>
+					<li>RimValiFFA/Ears/Male/UpperRight/Variant2</li>
 				</alternateMaskPaths>
 				<alternateFemaleMaskPaths>
 
@@ -125,7 +125,7 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Ears/UR/UpperRight</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Ears/UR/UpperRight</tex>
 			</li>
 		</backstoryTextures>
 		<bodyPart>right upper ear</bodyPart>
@@ -140,11 +140,11 @@
 		<defName>EarUL</defName>
 		<textures>
 			<li>
-				<tex>avali/Ears/Male/UpperLeft/MaleUpperLeft</tex>
-				<femaleTex>avali/Ears/Female/UpperLeft/FemaleUpperLeft</femaleTex>
+				<tex>RimValiFFA/Ears/Male/UpperLeft/MaleUpperLeft</tex>
+				<femaleTex>RimValiFFA/Ears/Female/UpperLeft/FemaleUpperLeft</femaleTex>
 				<alternateMaskPaths>
-					<li>avali/Ears/Male/UpperLeft/Variant</li>
-					<li>avali/Ears/Male/UpperLeft/Variant2</li>
+					<li>RimValiFFA/Ears/Male/UpperLeft/Variant</li>
+					<li>RimValiFFA/Ears/Male/UpperLeft/Variant2</li>
 				</alternateMaskPaths>
 				<alternateFemaleMaskPaths>
 
@@ -154,7 +154,7 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Ears/UL/UpperLeft</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Ears/UL/UpperLeft</tex>
 			</li>
 		</backstoryTextures>
 		<bodyPart>left upper ear</bodyPart>
@@ -170,13 +170,13 @@
 		<useColorSet>Eye</useColorSet>
 		<textures>
 			<li>
-				<tex>avali/Eyes/EyeL</tex>
+				<tex>RimValiFFA/Eyes/EyeL</tex>
 			</li>
 		</textures>
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Eyes/EyeL</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Eyes/EyeL</tex>
 			</li>
 		</backstoryTextures>
 		<!-- Minor error on my part. -->
@@ -199,7 +199,7 @@
 		</north>
 		<south>
 			<position>(0,0.4)</position>
-			<layer>0.03</layer>
+			<layer>0.028</layer>
 			<size>0.8</size>
 		</south>
 	</RimValiCore.RVR.RenderableDef>
@@ -209,13 +209,13 @@
 		<useColorSet>Eye</useColorSet>
 		<textures>
 			<li>
-				<tex>avali/Eyes/EyeR</tex>
+				<tex>RimValiFFA/Eyes/EyeR</tex>
 			</li>
 		</textures>
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Eyes/EyeR</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Eyes/EyeR</tex>
 			</li>
 		</backstoryTextures>
 		<!-- Minor error on my part. -->
@@ -238,7 +238,7 @@
 		</north>
 		<south>
 			<position>(0,0.4)</position>
-			<layer>0.03</layer>
+			<layer>0.028</layer>
 			<size>0.8</size>
 		</south>
 	</RimValiCore.RVR.RenderableDef>
@@ -247,7 +247,7 @@
 		<defName>AvaliMouth</defName>
 		<textures>
 			<li>
-				<tex>avali/Mouth/Mouth</tex>
+				<tex>RimValiFFA/Mouth/Mouth</tex>
 			</li>
 		</textures>
 		<bodyPart>head</bodyPart>
@@ -278,14 +278,14 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Tailskirt/Emil</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Tailskirt/Emil</tex>
 			</li>
 		</backstoryTextures>
 		<showsInBed>false</showsInBed>
 		<textures>
 			<li>
-				<tex>avali/Tail/Tailskirt/Male/MaleTailskirt</tex>
-				<femaleTex>avali/Tail/Tailskirt/Female/FemaleTailskirt</femaleTex>
+				<tex>RimValiFFA/Tail/Tailskirt/Male/MaleTailskirt</tex>
+				<femaleTex>RimValiFFA/Tail/Tailskirt/Female/FemaleTailskirt</femaleTex>
 			</li>
 		</textures>
 		<bodyPart>avali Tail</bodyPart>
@@ -316,14 +316,14 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Tail/EimilTail</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Tail/EimilTail</tex>
 			</li>
 		</backstoryTextures>
 		<showsInBed>false</showsInBed>
 		<textures>
 			<li>
-				<tex>avali/Tail/Male/MaleTail</tex>
-				<femaleTex>avali/Tail/Female/FemaleTail</femaleTex>
+				<tex>RimValiFFA/Tail/Male/MaleTail</tex>
+				<femaleTex>RimValiFFA/Tail/Female/FemaleTail</femaleTex>
 			</li>
 		</textures>
 		<bodyPart>avali Tail</bodyPart>
@@ -353,11 +353,11 @@
 		<defName>Head</defName>
 		<textures>
 			<li>
-				<tex>avali/Heads/Male/MaleHead</tex>
-				<femaleTex>avali/Heads/Female/FemaleHead</femaleTex>
+				<tex>RimValiFFA/Heads/Male/MaleHead</tex>
+				<femaleTex>RimValiFFA/Heads/Female/FemaleHead</femaleTex>
 				<alternateMaskPaths>
-					<li>avali/Heads/Male/Variant</li>
-					<li>avali/Heads/Male/Variant2</li>
+					<li>RimValiFFA/Heads/Male/Variant</li>
+					<li>RimValiFFA/Heads/Male/Variant2</li>
 				</alternateMaskPaths>
 				<alternateFemaleMaskPaths>
 
@@ -368,7 +368,7 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Head/EimilHead</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Head/EimilHead</tex>
 			</li>
 		</backstoryTextures>
 		<east>
@@ -397,8 +397,8 @@
 		<defName>Body</defName>
 		<textures>
 			<li>
-				<tex>avali/Body/Male/MaleBody</tex>
-				<femaleTex>avali/Body/Female/FemaleBody</femaleTex>
+				<tex>RimValiFFA/Body/Male/MaleBody</tex>
+				<femaleTex>RimValiFFA/Body/Female/FemaleBody</femaleTex>
 			</li>
 		</textures>
 		<bodyPart>Torso</bodyPart>
@@ -406,7 +406,7 @@
 		<backstoryTextures>
 			<li>
 				<backstoryTitle>Eimilian</backstoryTitle>
-				<tex>avali/Unique/Eimilian/Body/Eimil_body</tex>
+				<tex>RimValiFFA/Unique/Eimilian/Body/Eimil_body</tex>
 			</li>
 		</backstoryTextures>
 		<east>

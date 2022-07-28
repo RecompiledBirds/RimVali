@@ -13,7 +13,7 @@
     </recipeMaker>
    
     <graphicData>
-      <texPath>avali/Things/Apparel/TraditionalWear/TraditionalWear_Avali_south</texPath>
+		<texPath>RimValiFFA/Things/Apparel/TraditionalWear/TraditionalWear_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.00</drawSize>
       <shaderType>CutoutComplex</shaderType>
@@ -84,7 +84,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/HUD/HUD_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/HUD/HUD_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -115,7 +115,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/HUD/hud</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/HUD/HUD</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -175,7 +175,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/AvaliHeaddress/Headdress_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/AvaliHeaddress/Headdress_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -203,7 +203,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>avali/Things/Apparel/AvaliHeaddress/Headress</wornGraphicPath>
+      <wornGraphicPath>avali/Things/Apparel/AvaliHeaddress/Headdress</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -247,7 +247,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/AvaliHood/Hood_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/AvaliHood/Hood_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -318,7 +318,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/BellCloak/Cloak_Avali_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/BellCloak/Cloak_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -394,7 +394,7 @@
       <li>Apparel</li>
     </thingCategories>
     <graphicData>
-      <texPath>avali/Things/Apparel/ThermalWraps/ThermalWraps_Avali_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/ThermalWraps/ThermalWraps_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>

@@ -13,8 +13,8 @@
       <li>Tribal</li>
     </backstoryCategories>
 	<allowedCultures><li>Astropolitan</li></allowedCultures>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>RimValiFFA/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>RimValiFFA/WorldIcons/Town</settlementTexturePath>
     <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>

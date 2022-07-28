@@ -9,7 +9,7 @@
       <Nutrition>0.2</Nutrition>
     </statBases>
     <graphicData>
-      <texPath>avali/Things/Plants/Nakati/NakatiPlantFull</texPath>
+      <texPath>RimValiFFA/Things/Plants/Nakati/NakatiPlantFull</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <ingestible />
@@ -19,12 +19,18 @@
       <harvestTag>Standard</harvestTag>
       <harvestedThingDef>NakatiBark</harvestedThingDef>
       <harvestYield>6</harvestYield>
-      <immatureGraphicPath>avali/Things/Plants/Nakati/NakatiPlant</immatureGraphicPath>
+      <immatureGraphicPath>RimValiFFA/Things/Plants/Nakati/NakatiPlant</immatureGraphicPath>
       <topWindExposure>0.1</topWindExposure>
       <growDays>3</growDays>
       <visualSizeRange>0.3~0.8</visualSizeRange>
       <wildOrder>2</wildOrder>
       <purpose>Food</purpose>
     </plant>
+	  <comps>
+		  <li Class="RimValiCore.RimValiPlants.RVPlantCompProperties">
+			  <minPreferredTemp>-50</minPreferredTemp>
+			  <maxPreferredTemp>0</maxPreferredTemp>
+		  </li>
+	  </comps>
   </ThingDef>
 </Defs>

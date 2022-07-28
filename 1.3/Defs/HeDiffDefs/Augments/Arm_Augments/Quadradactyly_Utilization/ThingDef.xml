@@ -3,7 +3,7 @@
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>TetradactylyUtilization</defName>
     <graphicData>
-      <texPath>avali/Things/Cybernetics/Arm</texPath>
+      <texPath>RimValiFFA/Things/Cybernetics/Arm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

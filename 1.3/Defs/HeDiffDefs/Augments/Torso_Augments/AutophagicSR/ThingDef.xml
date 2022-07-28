@@ -3,7 +3,7 @@
   <ThingDef ParentName="AvaliBasicBodyPartBionicBase">
     <defName>AvaliASR</defName>
     <graphicData>
-      <texPath>avali/Things/Cybernetics/Torso</texPath>
+      <texPath>RimValiFFA/Things/Cybernetics/Torso</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

@@ -68,7 +68,7 @@
     </costList>
 	
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/r_o_o_m_s</texturePath>
+    <texturePath>RimValiFFA/Floors/r_o_o_m_s</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -108,7 +108,7 @@
     </costList>
 	
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/flower_floor</texturePath>
+    <texturePath>RimValiFFA/Floors/flower_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -157,7 +157,7 @@
     </costList>
 	  
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/chaos</texturePath>
+    <texturePath>RimValiFFA/Floors/chaos</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -190,7 +190,7 @@
     </costList>
 	  
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/diamond</texturePath>
+    <texturePath>RimValiFFA/Floors/diamond</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -224,7 +224,7 @@
     </costList>
 	  
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/scrap_floor</texturePath>
+    <texturePath>RimValiFFA/Floors/scrap_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -257,7 +257,7 @@
     </costList>
 	  
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/shingles</texturePath>
+    <texturePath>RimValiFFA/Floors/shingles</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>
@@ -290,7 +290,7 @@
     </costList>
 	 
     <designationHotKey>Misc7</designationHotKey>
-    <texturePath>avali/Floors/weave_floor</texturePath>
+    <texturePath>RimValiFFA/Floors/weave_floor</texturePath>
     <constructEffect>ConstructMetal</constructEffect>
     <researchPrerequisites>
       <li>Smithing</li>

@@ -49,7 +49,8 @@
     <defName>AvaliPistolBullet</defName>
     <label>Avali Bullet</label>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+
+		<texPath>RimValiFFA/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -67,7 +68,7 @@
     <label>Illuminate Pistol</label>
     <description>A common Illuminate pattern pistol. Unlike its Terran counterparts this weapon uses coil-based acceleration. Whilst It has more accuracy and a shorter travel time than a Terran auto pistol, it hits with less power when compared to one.</description>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Pistol</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Pistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.4</uiIconScale>
@@ -135,7 +136,7 @@
     <defName>AvaliSMGBullet</defName>
     <label>Avali SMG bullet</label>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -152,7 +153,7 @@
     <label>Illuminate SMG</label>
     <description>A coil-based Illuminate SMG. Whilst it does theoretically have a better service range compared to its Terran counterparts, this weapon is best used for medium to short ranged engagements. Besides this fact, it still has two qualities that make it reliable—its accuracy and travel time.</description>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/SMG</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/SMG</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
@@ -220,7 +221,7 @@
     <defName>AvaliMinigunBullet</defName>
     <label>Avali minigun bullet</label>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Bullet/SmallBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -237,7 +238,7 @@
     <label>Illuminate minigun</label>
     <description>An Illuminate pattern Minigun. When compared to other Illuminate weapons, it quickly becomes both different in design and function. Trading in accuracy for sheer overwhelming force and using classic chemical cartridges for propulsion instead of coil-based acceleration.</description>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Vali_Illuminate_Minigun</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Vali_Illuminate_Minigun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
@@ -307,7 +308,7 @@
     <defName>AvaliRifleBullet</defName>
     <label>Avali Rifle bullet</label>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Bullet/RifleBullet</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Bullet/RifleBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -325,7 +326,7 @@
     <label>Illuminate Rifle</label>
     <description>A common Illuminate pattern rifle. Praised by both soldiers and hunters for its reliability, it is practically standard issue for any weaponized operation. Its high range and very short travel time makes it perfect for picking off distant enemies.</description>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Rifle</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Rifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -393,7 +394,7 @@
     <defName>AvaliSniperBullet</defName>
     <label>Avali Sniper Rifle bullet</label>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Bullet/SniperBullet</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Bullet/SniperBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -411,7 +412,7 @@
     <label>Illuminate Sniper Rifle</label>
     <description>A high-powered Illuminate pattern sniper rifle. This sophisticated weapon optimizes the use of Helium-cooling to keep its powerful and plentiful coils from overheating in it’s user’s talons. With its long range and powerful bullet, it is highly loved by Illuminate snipers for picking off high-value targets with.</description>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/SniperRifle</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/SniperRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -478,7 +479,7 @@
     <defName>AvaliShotgunBullet</defName>
     <label>Avali Shotgun bullet</label>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Bullet/ShotgunBullet</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Bullet/ShotgunBullet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -496,7 +497,7 @@
     <label>Illuminate Shotgun</label>
     <description>An Illuminate Pattern shotgun. Together with its advanced coil technology and a simple choke at the end, it fires a highly concentrated wad of pellets towards its enemies. Whilst longer range than its Terran counterparts, it has to trade in short range usability to make this possible.</description>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Shotgun</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/Shotgun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_Shotgun</soundInteract>
@@ -565,7 +566,7 @@
     <description>An Illuminate rocket launcher. Anti-Tank weapons are important in any war, and this rocket launcher is no different. Using a fin-stabilized system together with a small jet system, this rocket ensures you hit where you aim. Despite its good range, near-perfect accuracy and high-explosive payload. It fires a slow and easy to dodge projectile and should be used with good prior planning.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>avali/Things/Weapons/Guns/RocketLauncher</texPath>
+      <texPath>RimValiFFA/Things/Weapons/Guns/RocketLauncher</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -624,11 +625,11 @@
   <ThingDef ParentName="BaseBullet">
     <defName>AvaliRocketLauncherRocket</defName>
     <label>rocket</label>
-    <graphicData>
-      <texPath>avali/Things/Weapons/Guns/Bullet/Rocket</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-    </graphicData>
+	<graphicData>
+		<texPath>RimValiFFA/Things/Weapons/Guns/Bullet/Rocket</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>TransparentPostLight</shaderType>
+	</graphicData>
     <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>Bomb</damageDef>

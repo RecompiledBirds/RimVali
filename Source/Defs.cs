@@ -9,6 +9,9 @@ namespace AvaliMod
     [DefOf]
     public static class AvaliDefs
     {
+
+        public static FactionDef RimValiPlayerColony;
+
         public  static bool IsAvali(Pawn pawn)
         {
             return AvaliRaces.Contains(pawn.def);

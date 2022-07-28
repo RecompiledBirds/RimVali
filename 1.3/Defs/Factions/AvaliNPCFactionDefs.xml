@@ -110,7 +110,7 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
-    <factionIconPath>avali/WorldIcons/Town</factionIconPath>
+    <settlementTexturePath>RimValiFFA/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>RimValiFFA/WorldIcons/Town</factionIconPath>
   </FactionDef>
 </Defs>

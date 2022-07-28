@@ -21,7 +21,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/SpecOpsArmor/SpecOpsArmor_Avali_south</texPath>
+		<texPath>RimValiFFA/Things/Apparel/SpecOpsArmor/SpecOpsArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -122,7 +122,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/SpecOpsHelmet/SpecOpsHelmet_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/SpecOpsHelmet/SpecOpsHelmet_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -219,7 +219,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/ScoutHelmet/ScoutHelmet_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/ScoutHelmet/ScoutHelmet_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -314,7 +314,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/CombatHelmet/CombatHelmet_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/CombatHelmet/CombatHelmet_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -406,7 +406,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/CombatArmor/CombatArmor_Avali_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/CombatArmor/CombatArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -504,7 +504,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/ScoutArmor/ScoutArmor_Avali_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/ScoutArmor/ScoutArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <uiIconScale>1.25</uiIconScale>
@@ -594,7 +594,7 @@
       </skillRequirements>
     </recipeMaker>
     <graphicData>
-      <texPath>avali/Things/Apparel/NezaiArmor/NezaiArmor_Avali_south</texPath>
+      <texPath>RimValiFFA/Things/Apparel/NezaiArmor/NezaiArmor_Avali_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tradeTags>

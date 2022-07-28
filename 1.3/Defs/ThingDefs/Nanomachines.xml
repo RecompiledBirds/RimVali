@@ -22,7 +22,7 @@
     <rotatable>false</rotatable>
     <description>A group of specialised nanomachines, capable of reshaping and reparing themselves.</description>
     <graphicData>
-      <texPath>avali/Things/Nanomachines/Nanomachines</texPath>
+      <texPath>RimValiFFA/Things/Nanomachines/Nanomachines</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

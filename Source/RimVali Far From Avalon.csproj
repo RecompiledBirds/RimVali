@@ -18,15 +18,18 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
     <OutputPath>..\1.3\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -65,7 +68,6 @@
     <Compile Include="MentalBreaks\PackBreakWorker.cs" />
     <Compile Include="MentalBreaks\PackLossWorker.cs" />
     <Compile Include="ModuleDef.cs" />
-    <Compile Include="PacksV2\Dates.cs" />
     <Compile Include="PacksV2\Pack.cs" />
     <Compile Include="PacksV2\PackJoinWorker.cs" />
     <Compile Include="PacksV2\PacksV2WorldComponent.cs" />

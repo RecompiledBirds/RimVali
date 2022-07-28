@@ -131,7 +131,28 @@ namespace Rimvali.Rewrite.Packs
             return hasPack;
         }
 
-        public Pack GetPack(Pawn pawn) { try { return pawnPacks.ContainsKey(pawn) ? packs[pawnPacks[pawn]] : null; } catch (Exception e) { Log.Error($"{e}"); if (pawnPacks.ContainsKey(pawn)){ pawnPacks.Remove(pawn); } } return null; }
+        public Pack GetPack(Pawn pawn) { 
+            try { 
+                return pawnPacks.ContainsKey(pawn) ? packs[pawnPacks[pawn]] : null; 
+            } catch (Exception e) { 
+              
+                if (pawnPacks.ContainsKey(pawn))
+                {
+                    Pack pack = packs.First(x => x.GetAllPawns.Contains(pawn));
+                    if (pack != null)
+                    {
+                        pawnPacks[pawn]=packs.IndexOf(pack);
+                        return pack;
+                    }
+                    else
+                    {
+                        Log.Error($"{e}");
+                        pawnPacks.Remove(pawn);
+                    }
+                }
+            } 
+            return null;
+        }
 
 
         /// <summary>

@@ -8,7 +8,7 @@
     <thingClass>Building_TurretGun</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/BasicTurret_Base</texPath>
+      <texPath>RimValiFFA/Buildings/Turrets/BasicTurret_Base</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
       <damageData>
@@ -19,7 +19,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/Buildings/Turrets/BasicTurret_Image</uiIconPath>
+    <uiIconPath>RimValiFFA/Buildings/Turrets/BasicTurret_Image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -123,7 +123,7 @@
     <label>Basic avali turret gun</label>
     <description>An automatic railgun, made to be mounted to an Avali turret.</description>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/BasicTurret_Head</texPath>
+      <texPath>RimValiFFA/Buildings/Turrets/BasicTurret_Head</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.5</drawSize>
     </graphicData>
@@ -162,7 +162,7 @@
     <description>A heavy minigun turret. Like its handheld counterpart, this turret is equipped with cartridge based rotary cannons. But unlike the handheld version, it sports a deadly accuracy together with its overwhelming firepower. These turrets were inspired by the historic reusage of ship mounted weapons for colony defense, but after a diktat by the Illuminate government that told everyone to stop cannibalizing the colony ships, these were quickly designed as an alternative.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
+      <texPath>RimValiFFA/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -173,7 +173,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/Buildings/Turrets/Brrrt_image</uiIconPath>
+    <uiIconPath>RimValiFFA/Buildings/Turrets/Brrrt_image</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -278,7 +278,8 @@
     <label>Basic avali turret gun</label>
     <description>A set of miniguns, made to be mounted to an Avali turret.</description>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/Avali_Turret_Brrt</texPath>
+      <texPath>RimValiFFA
+	  /Buildings/Turrets/Avali_Turret_Brrt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1,0.5)</drawSize>
     </graphicData>

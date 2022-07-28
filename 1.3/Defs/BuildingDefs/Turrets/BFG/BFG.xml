@@ -9,7 +9,7 @@
     <description>A very heavy railturret. No-one was truly prepared for what one would be able to find on the Rim, predators were always expected, but Mechanoids and other highly armoured creatures sometimes proved to be difficult to be taken out with normal Avali weapons. Because of that fact, this weapon was designed. Sporting a highly accurate railgun, it is able to rip off most limbs with a single shot and frequently makes short work of its targets. Because of its large size and overwhelming power, it has quite comically been nicknamed as the "BFG".</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
+		<texPath>RimValiFFA/Buildings/Turrets/Avali_Turret_Base_2x2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -20,7 +20,7 @@
         <offset>(0,0,0)</offset>
       </shadowData>
     </graphicData>
-    <uiIconPath>avali/Buildings/Turrets/BFG/BFG_GUI_IMG</uiIconPath>
+    <uiIconPath>RimValiFFA/Buildings/Turrets/BFG/BFG_GUI_IMG</uiIconPath>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -111,7 +111,7 @@
     <defName>BFGBullet</defName>
     <label>BFG bullet</label>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/BFG/BFG_sabot_launched</texPath>
+      <texPath>RimValiFFA/Buildings/Turrets/BFG/BFG_sabot_launched</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
@@ -132,7 +132,7 @@
     <label>BFG</label>
     <description>BFG</description>
     <graphicData>
-      <texPath>avali/Buildings/Turrets/BFG/BFG_turret</texPath>
+      <texPath>RimValiFFA/Buildings/Turrets/BFG/BFG_turret</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.5</drawSize>
     </graphicData>

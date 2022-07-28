@@ -13,5 +13,11 @@
     </plant>
     <selectable>true</selectable>
     <pathCost>14</pathCost>
+	  <comps>
+		  <li Class="RimValiCore.RimValiPlants.RVPlantCompProperties">
+			  <minPreferredTemp>-50</minPreferredTemp>
+			  <maxPreferredTemp>0</maxPreferredTemp>
+		  </li>
+	  </comps>
   </ThingDef>
 </Defs>

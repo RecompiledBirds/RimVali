@@ -21,7 +21,7 @@
     <description>A type of avali fabric, stored in neat, stackable pucks (similar to &lt;color=#0099ff&gt;aerogel&lt;/color&gt;).</description>
     <descriptionHyperlinks><ThingDef>AvaliAerogel</ThingDef></descriptionHyperlinks>
     <graphicData>
-      <texPath>avali/Things/Cloth/NanoCarbon</texPath>
+      <texPath>RimValiFFA/Things/Cloth/NanoCarbon</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -71,7 +71,7 @@
     <rotatable>false</rotatable>
     <description>Avali nanofiber is very important. They use it in clothing, their tents, and more! It's fairly strong too, for a cloth-like material</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/Nanofibre</texPath>
+      <texPath>RimValiFFA/Things/Cloth/Nanofibre</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -171,7 +171,7 @@
     <rotatable>false</rotatable>
     <description>Avali aeroweave. It's a terrible at conducting heat, which makes it an amazing insulator for clothing and such.</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/Aeroweave</texPath>
+      <texPath>RimValiFFA/Things/Cloth/Aeroweave</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -245,7 +245,7 @@
     <rotatable>false</rotatable>
     <description>A special type of nano fiber, with carbon woven in. This version is more resistant to damage like bullets, but is stiff, slowing the wearer.</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/CarbonFiber</texPath>
+      <texPath>RimValiFFA/Things/Cloth/CarbonFiber</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>
@@ -323,7 +323,7 @@
     <rotatable>false</rotatable>
     <description>Tungsten-Aero fiber is a strong, resilient material made from a combination of aero tungsten carbide, and nano carbon fiber.</description>
     <graphicData>
-      <texPath>avali/Things/Cloth/TungstenAero-Fiber</texPath>
+      <texPath>RimValiFFA/Things/Cloth/TungstenAero-Fiber</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.85</drawSize>
     </graphicData>

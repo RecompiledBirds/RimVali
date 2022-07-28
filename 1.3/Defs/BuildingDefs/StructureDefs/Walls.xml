@@ -8,7 +8,7 @@
     <thingClass>Building</thingClass>
     <category>Building</category>
     <graphicData>
-      <texPath>avali/Buildings/Walls/TentWall_Atlas</texPath>
+      <texPath>RimValiFFA/Buildings/Walls/TentWall_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <linkType>CornerFiller</linkType>
       <linkFlags>

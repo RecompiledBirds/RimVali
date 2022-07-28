@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<!--
 	<StorytellerDef ParentName="BaseStoryteller">
 		<defName>RimVali_JhinJusticar</defName>
 		<label> Jhin the Justicar</label>
 		<description>Come and take a trip with Jhin down the memory lane, now with your new adversaries, be ready for slaver raids, and special events, and what's a mediocre drama without some love sprinkled in? I'm sure some live drama will not break up the morale! Getting off the planet is not least of your priorities, you'll be hunted even there! no less now slavers utilise cheap labour, who knew right? Just give primitives some cheep booze and see them raiding camps for slaves (by the way, you're on the list) so now be ready for primitives as well! oh, where are my manners, I forgot the most important thing, Hello I'm Jhin Wonderlust, ex avali illuminate coloniser and abused slave escapee, not gonna lie, they might be after you because of me, so, what do you say? ready to free some slaves?</description>
-		<portraitLarge>avali/Storyteller/Jhin</portraitLarge>
-		<portraitTiny>avali/Storyteller/Jhin_Portrait</portraitTiny>
+		<portraitLarge>RimValiFFA/Storyteller/Jhin</portraitLarge>
+		<portraitTiny>RimValiFFA/Storyteller/Jhin_Portrait</portraitTiny>
 		<listOrder>40</listOrder>
 		<comps>
 			<li Class="RimVali.Storytellers.JhinStoryTellerProps">
@@ -22,9 +23,9 @@
 				</acceptFractionByDaysPassedCurve>
 			</li>
 
-			<!-- Intro -->
+
 			<li Class="StorytellerCompProperties_ClassicIntro"/>
-			<!-- Home threats -->
+
 			<li Class="StorytellerCompProperties_OnOffCycle">
 				<category>ThreatBig</category>
 				<minDaysPassed>4.0</minDaysPassed>
@@ -63,7 +64,7 @@
 					</points>
 				</acceptPercentFactorPerThreatPointsCurve>
 			</li>
-			<!-- Home misc incidents-->
+
 			<li Class="StorytellerCompProperties_CategoryMTB">
 				<category>Misc</category>
 				<allowedTargetTags>
@@ -81,7 +82,7 @@
 				<category>DiseaseAnimal</category>
 				<minDaysPassed>0.4</minDaysPassed>
 			</li>
-			<!-- Ally/neutral interaction -->
+
 			<li Class="StorytellerCompProperties_FactionInteraction">
 				<incident>RaidFriendly</incident>
 				<baseIncidentsPerYear>5</baseIncidentsPerYear>
@@ -116,7 +117,7 @@
 					<li>Map_PlayerHome</li>
 				</allowedTargetTags>
 			</li>
-			<!-- Caravan / temp map -->
+
 			<li Class="StorytellerCompProperties_CategoryIndividualMTBByBiome">
 				<category>Misc</category>
 				<allowedTargetTags>
@@ -140,7 +141,7 @@
 					<li>Map_TempIncident</li>
 				</allowedTargetTags>
 			</li>
-			<!-- Quests - non-Royalty -->
+
 			<li Class="StorytellerCompProperties_RandomQuest">
 				<category>GiveQuest</category>
 				<allowedTargetTags>
@@ -159,7 +160,7 @@
 					<li>Ludeon.RimWorld.Royalty</li>
 				</disableIfAnyModActive>
 			</li>
-			<!-- Quests - Royalty -->
+
 			<li Class="StorytellerCompProperties_RandomQuest">
 				<category>GiveQuest</category>
 				<allowedTargetTags>
@@ -178,7 +179,7 @@
 					<li>Ludeon.RimWorld.Royalty</li>
 				</enableIfAnyModActive>
 			</li>
-			<!-- World misc incidents-->
+
 			<li Class="StorytellerCompProperties_CategoryMTB">
 				<category>Misc</category>
 				<allowedTargetTags>
@@ -187,18 +188,18 @@
 				<minDaysPassed>15</minDaysPassed>
 				<mtbDays>15</mtbDays>
 			</li>
-			<!-- Orbital trader -->
+
 			<li Class="StorytellerCompProperties_OnOffCycle">
 				<incident>OrbitalTraderArrival</incident>
 				<onDays>7</onDays>
 				<offDays>8</offDays>
 				<numIncidentsRange>1</numIncidentsRange>
 			</li>
-			<!-- Triggered -->
+	
 			<li Class="StorytellerCompProperties_Triggered">
 				<incident>StrangerInBlackJoin</incident>
 				<delayTicks>200</delayTicks>
 			</li>
 		</comps>
-	</StorytellerDef>
+	</StorytellerDef>-->
 </Defs>

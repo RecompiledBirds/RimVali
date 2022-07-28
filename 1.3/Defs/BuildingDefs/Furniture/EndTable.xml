@@ -7,7 +7,7 @@
     <description>A small bedside table that makes nearby beds a little more comfortable. This one has been designed in a more Avalonian style, sporting an angular look as well as small crystals on the top that light up when receiving power.</description>
     <surfaceType>Item</surfaceType>
     <graphicData>
-      <texPath>avali/Buildings/Furniture/TableLight/Unlit/EndTable</texPath>
+      <texPath>RimValiFFA/Buildings/Furniture/TableLight/Unlit/EndTable</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -38,7 +38,7 @@
         <mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead>
       </li>
       <li Class="RimValiCore.DrawCompProps">
-        <texPath>avali/Buildings/Furniture/TableLight/Lit/EndTableLit</texPath>
+        <texPath>RimValiFFA/Buildings/Furniture/TableLight/Lit/EndTableLit</texPath>
         <offset>(0,0,0)</offset>
       </li>
       <li Class="CompProperties_Power">

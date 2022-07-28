@@ -94,8 +94,8 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
-    <factionIconPath>avali/Symbols/Rimvali_Logo_2</factionIconPath>
+    <settlementTexturePath>RimValiFFA/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>RimValiFFA/Symbols/Rimvali_Logo_2</factionIconPath>
   </FactionDef>
 
   <FactionDef ParentName="FactionBase">
@@ -194,7 +194,7 @@
         </options>
       </li>
     </pawnGroupMakers>
-    <settlementTexturePath>avali/WorldIcons/Town</settlementTexturePath>
-    <factionIconPath>avali/Symbols/Vali_Angy_Tribe_Logo</factionIconPath>
+    <settlementTexturePath>RimValiFFA/WorldIcons/Town</settlementTexturePath>
+    <factionIconPath>RimValiFFA/Symbols/Vali_Angy_Tribe_Logo</factionIconPath>
   </FactionDef>
 </Defs>
