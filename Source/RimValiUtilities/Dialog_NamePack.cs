@@ -1,3 +1,4 @@
+using Rimvali.Rewrite.Packs;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -13,7 +14,6 @@ namespace AvaliMod
         public Dialog_NamePack(Pawn pawn)
         {
             this.pawn = pawn;
-            curPackName = RimValiUtility.Driver.GetCurrentPack(pawn).name;
             forcePause = true;
             absorbInputAroundWindow = true;
             closeOnClickedOutside = true;
@@ -24,7 +24,7 @@ namespace AvaliMod
 
         public override void DoWindowContents(Rect inRect)
         {
-            AvaliPack pack = RimValiUtility.Driver.GetCurrentPack(pawn);
+            Pack pack = Find.World.GetComponent<PacksV2WorldComponent>().GetPack(pawn);
             if (RimValiMod.settings.advancedAnaylitics)
                 Log.Message($"[RIMVALI ANAYLITICS]: Pawn could find pack: {pack != null}");
             var flag = false;
@@ -35,7 +35,7 @@ namespace AvaliMod
             }
 
             Text.Font = GameFont.Medium;
-            string text = "PackNameLabel".Translate(pack.name.Named("PACKNAME"));
+            string text = "PackNameLabel".Translate(pack.Name.Named("PACKNAME"));
             Widgets.Label(new Rect(15f, 15f, 500f, 50f), text);
             Text.Font = GameFont.Small;
             string text2 = Widgets.TextField(new Rect(15f, 50f, inRect.width / 2f - 20f, 35f), curPackName);
@@ -49,10 +49,10 @@ namespace AvaliMod
             {
                 if (string.IsNullOrEmpty(curPackName))
                 {
-                    curPackName = pack.name;
+                    curPackName = pack.Name;
                 }
 
-                pack.name = curPackName;
+                pack.Name = curPackName;
                 Find.WindowStack.TryRemove(this);
             }
         }

@@ -39,11 +39,6 @@ namespace AvaliMod
         public override bool IsVisible { get; } =
             LoadedModManager.GetMod<RimValiMod>().GetSettings<RimValiModSettings>().packsEnabled;
 
-        public virtual string GetPackName(Rect rect, AvaliPack pack)
-        {
-            return pack.name;
-        }
-
         public virtual string GetPackName(Rect rect, Pack pack)
         {
             return pack.Name;

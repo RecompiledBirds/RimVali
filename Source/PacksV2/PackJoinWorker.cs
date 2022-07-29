@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using AvaliMod;
+using RimValiCore;
+
 namespace Rimvali.Rewrite.Packs
 {
     public class PackJoinWorker : InteractionWorker
@@ -29,7 +31,7 @@ namespace Rimvali.Rewrite.Packs
             //Get recipient's opinion of the pack.
             float recipientOpinion = pack.GetPawnOpinionOf(recipient);
             //Get the current date.
-            var date = new Date();
+            var date = new RimworldDate();
             bool joined = false;
             //Important for day 0 pack creation!
             if (date.ToString() == pack.CreationDate.ToString())
@@ -78,7 +80,7 @@ namespace Rimvali.Rewrite.Packs
                 return 0f;
             
 
-            if (bothAreAvali && packsComp.GetPack(initiator).CreationDate.ToString() == new Date().ToString() && initatiorPackHasSpace)
+            if (bothAreAvali && packsComp.GetPack(initiator).CreationDate.ToString() == new RimworldDate().ToString() && initatiorPackHasSpace)
                 return 10000f;
            
             return PackCurve.Evaluate(initiator.relations.CompatibilityWith(recipient));

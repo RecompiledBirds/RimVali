@@ -2,6 +2,8 @@
 using RimWorld;
 using Verse;
 using Rimvali.Rewrite.Packs;
+using RimValiCore;
+
 namespace AvaliMod
 {
     public class DeathActionWorker_Test : DeathActionWorker
@@ -28,7 +30,7 @@ namespace AvaliMod
             }
 
 
-            var deathDate = new DeathDate(pawn)
+            var deathDate = new RimworldDeathDate(pawn)
             {
                 day = GenDate.DayOfYear(1, Find.WorldGrid.LongLatOf(corpse.Map.Tile).x),
             };

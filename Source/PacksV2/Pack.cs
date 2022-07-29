@@ -16,7 +16,7 @@ namespace Rimvali.Rewrite.Packs
     public class Pack : IExposable, ILoadReferenceable
     {
         private RimworldDate creationDate = new RimworldDate();
-        private List<DeathDate> deathDates = new List<DeathDate>();
+        private List<RimworldDeathDate> deathDates = new List<RimworldDeathDate>();
         private Faction faction;
         private Pawn leaderPawn;
         private string name = "NoName";
@@ -102,7 +102,7 @@ namespace Rimvali.Rewrite.Packs
             }
         }
 
-        public List<DeathDate> DeathDates
+        public List<RimworldDeathDate> DeathDates
         {
             get
             {
@@ -188,7 +188,7 @@ namespace Rimvali.Rewrite.Packs
             }
             if (registerAsDead)
             {
-                deathDates.Add(new DeathDate(pawn));
+                deathDates.Add(new RimworldDeathDate(pawn));
             }
             PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
             packsComp.ClearPawnPack(pawn);
@@ -214,4 +214,5 @@ namespace Rimvali.Rewrite.Packs
             return $"pack_{id}";
         }
     }
+
 }

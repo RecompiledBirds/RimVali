@@ -93,7 +93,7 @@ namespace AvaliMod
 
                     if (pawn.Position.ShouldSpawnMotesAt(pawn.Map))
                     {
-                        if (mustBeSharingRoomWithPack && pawn.CheckIfPackmatesInRoom())
+                        if (mustBeSharingRoomWithPack && pawn.PackMatesInRoom())
                         {
                             SpawnText(pawn, textToShow, mustBeAwake, genderLock, gender, timeToFade, mustBeAsleep);
                         }

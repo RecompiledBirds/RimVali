@@ -1,4 +1,4 @@
-using Rimvali.Rewrite.Packs;
+﻿using Rimvali.Rewrite.Packs;
 using RimWorld;
 using Verse;
 
@@ -11,8 +11,7 @@ namespace AvaliMod
             if (!PacksV2WorldComponent.EnhancedMode)
             {
                 var avaliThoughtDriver = pawn.TryGetComp<AvaliThoughtDriver>();
-                if (RimValiUtility.Driver != null && RimValiUtility.Driver.HasPack(pawn) && avaliThoughtDriver != null &&
-                    pawn.Awake() && pawn.CheckIfPackmatesInRoom())
+                if (pawn.Awake() && pawn.PackMatesInRoom())
                 {
                     return ThoughtState.ActiveDefault;
                 }

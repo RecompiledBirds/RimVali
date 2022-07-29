@@ -1,8 +1,8 @@
+﻿using Rimvali.Rewrite.Packs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Rimvali.Rewrite.Packs;
 using RimValiCore;
 using RimWorld;
 using RimWorld.Planet;
@@ -78,9 +78,9 @@ namespace AvaliMod
                 }
                 fails = 0;
             }
-            catch(Exception error)
+            catch (Exception error)
             {
-                Log.ErrorOnce($"{error}",1);
+                Log.ErrorOnce($"{error}", 1);
                 fails++;
             }
         }

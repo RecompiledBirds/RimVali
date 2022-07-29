@@ -36,14 +36,7 @@ namespace Rimvali.Rewrite.Packs
         {
             get
             {
-                if (!ranWarn && (!(Find.GameInfo.RealPlayTimeInteracting < 10 || enabled)))
-                {
-                    ranWarn = true;
-                    ChoiceLetter choiceLetter = LetterMaker.MakeLetter("EnhancedModeTitle".Translate(),
-                       "EnhancedModeDesc".Translate(), AvaliDefs.IlluminateAirdrop);
-                    Find.LetterStack.ReceiveLetter(choiceLetter);
-                }
-                return (Find.GameInfo.RealPlayTimeInteracting < 10 || enabled) && RimValiMod.settings.unstable;
+                return true;
             }
         }
 
