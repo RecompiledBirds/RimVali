@@ -22,7 +22,7 @@ namespace Rimvali.Rewrite.Packs
             PacksV2WorldComponent packsComp = Find.World.GetComponent<PacksV2WorldComponent>();
             
             base.Interacted(initiator, recipient, extraSentencePacks, out letterText, out letterLabel, out letterDef, out lookTargets);
-            if(!packsComp.PawnHasPackWithMembers(recipient)&&packsComp.PawnHasPack(recipient))
+            if(!packsComp.PawnHasPackWithMembers(recipient) && packsComp.PawnHasPack(recipient))
                 packsComp.RemovePack(packsComp.GetPack(recipient));
 
             Pack pack = packsComp.GetPack(initiator);
@@ -33,8 +33,10 @@ namespace Rimvali.Rewrite.Packs
             //Get the current date.
             var date = new RimworldDate();
             bool joined = false;
+
             //Important for day 0 pack creation!
-            if (date.ToString() == pack.CreationDate.ToString())
+            bool isDayZero = date.ToString() == pack.CreationDate.ToString();
+            if (isDayZero)
             {
                 packsComp.JoinPawnToPack(recipient, ref pack);
                 joined = true;
@@ -57,7 +59,8 @@ namespace Rimvali.Rewrite.Packs
             }
 
             //An interaction that simply serves as a little bit of flavour text when a recipient does not like the pack.
-            if(recipientOpinion < RimValiMod.settings.packOpReq)
+            //Day 0 check to prevent confusing messages
+            if(recipientOpinion < RimValiMod.settings.packOpReq && !isDayZero)
                 recipient.interactions.TryInteractWith(initiator, AvaliDefs.DeclinePackJoin);
         }
 
