@@ -304,8 +304,8 @@
 		  <li>InstallPE</li>
 
 		  <!-- Royalty -->
-		  <li>CureBloodRot</li>
-		  <li>CureAbasia</li>
+		  <li MayRequire="ludeon.rimworld.royalty">CureBloodRot</li>
+		  <li MayRequire="ludeon.rimworld.royalty">CureAbasia</li>
 	  </recipes>
 	  <hasHair>false</hasHair>
   </RimValiCore.RVR.RimValiRaceDef>
